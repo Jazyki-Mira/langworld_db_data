@@ -1,5 +1,8 @@
 # langworld_db_data
-Data files for Jazyki Mira (Languages of the World) database
+Data files for Jazyki Mira (Languages of the World) database.
+
+This repository is meant to be pulled into other repositories 
+with actual apps (using `git subtree`). 
 
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
