@@ -4,13 +4,4 @@ Data files for Jazyki Mira (Languages of the World) database.
 This repository is meant to be pulled into other repositories 
 with actual apps (using `git subtree`). 
 
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
-
-This work is licensed under a
-[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
-
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
-
-[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
-[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
-[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+Shield: [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
