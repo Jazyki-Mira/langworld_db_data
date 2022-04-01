@@ -2,7 +2,7 @@ import pytest
 
 from langworld_db_data.filetools.csv_xls import *
 from langworld_db_data.filetools.txt import read_plain_text_from_file
-from langworld_db_data.tests.paths import *
+from tests.paths import *
 
 
 def test_convert_xls_to_csv():

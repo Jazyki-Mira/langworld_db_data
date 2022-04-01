@@ -1,7 +1,7 @@
 import pytest
 
 from langworld_db_data.filetools.json_toml_yaml import *
-from langworld_db_data.tests.paths import *
+from tests.paths import *
 
 
 def test_check_yaml_file_passes_with_valid_data():

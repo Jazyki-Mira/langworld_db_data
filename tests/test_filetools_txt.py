@@ -1,7 +1,7 @@
 import pytest
 
 from langworld_db_data.filetools.txt import *
-from langworld_db_data.tests.paths import *
+from tests.paths import *
 
 
 def test_check_encoding_of_file():
