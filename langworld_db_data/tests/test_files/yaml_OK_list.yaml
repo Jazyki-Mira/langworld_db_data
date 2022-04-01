@@ -1,0 +1,7 @@
+---
+- a
+- 'b'
+- c:
+    - origin: unknown
+- "'d' value with leading single quote"
+- '"e" value with leading double quote'

@@ -1,0 +1,147 @@
+from collections import Counter
+import csv
+from pathlib import Path
+from typing import Literal, NamedTuple, Union
+
+from openpyxl import load_workbook
+
+CSVDelimiter = Literal[',', ';']
+
+
+def convert_xls_to_csv(
+        path_to_input_excel_file: Path,
+        sheet_name: str,
+        path_to_output_csv_file: Path,
+        delimiter: CSVDelimiter = ',',
+        overwrite: bool = True,
+):
+    # TODO think about decorator for this:
+    if not overwrite and path_to_output_csv_file.exists():
+        raise FileExistsError(f'File {path_to_output_csv_file} already exists')
+
+    wb = load_workbook(path_to_input_excel_file, data_only=True)
+    ws = wb[sheet_name]
+
+    rows_to_write = []
+    for row in ws.iter_rows():
+        rows_to_write.append([cell.value for cell in row])
+
+    write_csv(
+        rows=rows_to_write,
+        path_to_file=path_to_output_csv_file,
+        overwrite=overwrite,
+        delimiter=delimiter,
+    )
+    wb.close()
+
+
+def read_csv(
+        path_to_file: Path,
+        read_as: Literal['dicts', 'plain_rows', 'plain_rows_no_header'],
+        delimiter: CSVDelimiter = ',',
+) -> list[Union[dict[str, str], list[str]]]:
+    """Opens CSV file and reads it as plain rows (list of lists)
+    or list of dictionaries (top row is considered row with keys,
+    each row is a dictionary with keys taken from top row).
+    """
+
+    with path_to_file.open(mode='r', encoding='utf-8-sig', newline='') as fh:
+
+        if read_as not in ('dicts', 'plain_rows', 'plain_rows_no_header'):
+            raise ValueError(f'Type {read_as} not supported.')
+
+        if read_as == 'dicts':
+            reader = csv.DictReader(fh, delimiter=delimiter)
+        else:
+            reader = csv.reader(fh, delimiter=delimiter)
+
+        return list(reader)[1:] if read_as == 'plain_rows_no_header' else list(reader)
+
+
+def read_dict_from_2_csv_columns(
+        path_to_file: Path, key_col: str, val_col: str, delimiter: CSVDelimiter = ','
+) -> dict[str, str]:
+    """Reads CSV file, returns data of two columns: one as keys, the other one as values.
+    """
+    if key_col == val_col:
+        raise ValueError(f'You passed same name for both key and value columns ({key_col})')
+
+    rows = read_csv(path_to_file, read_as='plain_rows', delimiter=delimiter)
+
+    header_row, data_rows = rows[0], rows[1:]
+
+    if not (key_col in header_row and val_col in header_row):
+        raise KeyError(f'Name of {key_col=} or {val_col=} not found in {header_row=}')
+
+    counter = Counter(header_row)
+
+    if counter[key_col] > 1 or counter[val_col] > 1:
+        raise ValueError(f'One of columns ({key_col=} or {val_col=}) was encountered '
+                         f'more than once in {header_row=}')
+
+    key_index, val_index = header_row.index(key_col), header_row.index(val_col)
+
+    key_column = [row[key_index] for row in data_rows]
+    if len(set(key_column)) < len(key_column):
+        raise ValueError(f'Values in column {key_col} are not unique. '
+                         f'Using them as keys may lead to unpredictable behavior.')
+
+    value_column = [row[val_index] for row in data_rows]
+
+    return {k: v for k, v in zip(key_column, value_column)}
+
+
+def write_csv(
+        rows: Union[list, tuple], path_to_file: Path, overwrite: bool, delimiter: CSVDelimiter
+):
+    """Writes rows to CSV file. All rows (items of main list) must be
+    of same type (all lists, all tuples, all dicts or all NamedTuples).
+
+    If rows are lists or tuples, plain rows will be written.
+    If rows are dicts or NamedTuples, header row will be automatically added.
+    """
+
+    if not overwrite and path_to_file.exists():
+        raise FileExistsError(f'File {path_to_file} already exists')
+
+    types_of_rows = set([type(row) for row in rows])
+    if len(types_of_rows) > 1:
+        # Strictly speaking, I should be able to write list of lists combined with tuples
+        # or list of dicts combined with NamedTuples, but this is overcomplicating
+        # and potentially unpredictable. I should not be doing these things in calling code.
+        # So for sake of simplicity, this is justified.
+        raise TypeError(f'Cannot write items of different types ({types_of_rows}) '
+                        'in the same set of rows. '
+                        'All items have to be either lists, dicts or NamedTuples')
+
+    # it is bad practice to change input data structure, so making a copy
+    rows_to_write = rows[:]
+
+    print(f'Writing CSV to file {path_to_file}')
+
+    with path_to_file.open(mode='w+', encoding='utf-8', newline='') as fh:
+        if hasattr(rows[0], '_asdict'):
+            # NamedTuple cannot be used in `isinstance` statement, so I use `hasattr`.
+            # I have to put this check first, because isinstance(item, tuple)
+            # will evaluate to True for NamedTuple, which will lead to wrong behavior
+            # (absence of header row)
+            writer = csv.DictWriter(fh, fieldnames=list(rows[0]._asdict().keys()), delimiter=delimiter)
+            rows_to_write = [row._asdict() for row in rows]
+        elif isinstance(rows[0], dict):
+            writer = csv.DictWriter(fh, fieldnames=list(rows[0].keys()), delimiter=delimiter)
+        elif isinstance(rows[0], (list, tuple)):
+            writer = csv.writer(fh, delimiter=delimiter)
+        else:
+            raise TypeError(f'Each item of the list of rows is of type {type(rows[0])}. '
+                            'Supported types are list, tuple, dict, NamedTuple.')
+
+        if isinstance(writer, csv.DictWriter):
+            print('Writing header')
+            writer.writeheader()
+
+        writer.writerows(rows_to_write)
+        print(f'Written {len(rows_to_write)} rows')
+
+
+if __name__ == '__main__':
+    pass

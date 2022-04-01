@@ -1,0 +1,4 @@
+a: b
+c:
+  - value 'e'
+  - 'd' value (this line should fail)
