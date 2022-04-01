@@ -8,6 +8,7 @@ pytest = "*"
 toml = "*"
 pyyaml = "*"
 openpyxl = "*"
+pytest-cov = "*"
 
 [dev-packages]
 
