@@ -108,7 +108,7 @@ class CustomValueLister:
         content = (
             '# Значения типа `custom` с группировкой по признакам\n'
             'Оглавление файла открывается кнопкой сверху слева рядом с индикатором количества строк.\n\n'
-            'Файл с группировкой по **томам и языкам** лежит [здесь](custom_values_by_volume_and_doculect_sample.md).\n'
+            'Файл с группировкой по **томам и языкам** лежит [здесь](custom_values_by_volume_and_doculect.md).\n'
         )
 
         current_feature = ''
