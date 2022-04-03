@@ -6,9 +6,9 @@ from tests.paths import *
 
 
 def test_convert_xls_to_csv():
-    path_to_excel_file = DIR_WITH_TEST_FILES / 'feature_profile_belarusian.xlsx'
-    path_to_output_csv_file = DIR_WITH_TEST_FILES / 'test_convert_excel_to_csv.csv'
-    path_to_gold_standard_csv_file = DIR_WITH_TEST_FILES / 'test_convert_excel_to_csv_gold_standard.csv'
+    path_to_excel_file = DIR_WITH_FILETOOLS_TEST_FILES / 'feature_profile_belarusian.xlsx'
+    path_to_output_csv_file = DIR_WITH_FILETOOLS_TEST_FILES / 'test_convert_excel_to_csv.csv'
+    path_to_gold_standard_csv_file = DIR_WITH_FILETOOLS_TEST_FILES / 'test_convert_excel_to_csv_gold_standard.csv'
 
     if path_to_output_csv_file.exists():
         path_to_output_csv_file.unlink()
@@ -44,7 +44,7 @@ def test_read_csv():
     with path_to_auto_test_file.open(mode='w+', encoding='utf-8') as fh:
         fh.writelines(lines_to_write)
 
-    path_to_manual_file_from_excel = DIR_WITH_TEST_FILES / 'csv_manually_created_in_excel.csv'
+    path_to_manual_file_from_excel = DIR_WITH_FILETOOLS_TEST_FILES / 'csv_manually_created_in_excel.csv'
 
     for path_ in (path_to_auto_test_file, path_to_manual_file_from_excel):
 
@@ -67,11 +67,11 @@ def test_read_csv():
 def test_read_csv_raises_exception_with_wrong_read_as():
     with pytest.raises(ValueError):
         # noinspection PyTypeChecker
-        read_csv(Path(DIR_WITH_TEST_FILES / 'csv_manually_created_in_excel.csv'), read_as='foo')
+        read_csv(Path(DIR_WITH_FILETOOLS_TEST_FILES / 'csv_manually_created_in_excel.csv'), read_as='foo')
 
 
 def test_read_dict_from_2_csv_columns():
-    file = DIR_WITH_TEST_FILES / 'read_dict_from_2_csv_columns.csv'
+    file = DIR_WITH_FILETOOLS_TEST_FILES / 'read_dict_from_2_csv_columns.csv'
 
     dict1 = read_dict_from_2_csv_columns(file, 'col3', 'col1')
     assert len(dict1) == 3

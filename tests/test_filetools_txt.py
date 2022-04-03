@@ -24,7 +24,7 @@ def test_read_non_empty_lines_from_txt_file():
 
 
 def test_read_plain_text_from_file():
-    for file in DIR_WITH_TEST_FILES.glob('read_plain_text*.txt'):
+    for file in DIR_WITH_FILETOOLS_TEST_FILES.glob('read_plain_text*.txt'):
         print(f'TEST: reading plain content from {file=}')
         assert read_plain_text_from_file(file) == 'foo bar\nфу бар'
 
