@@ -420,7 +420,7 @@ wanji,language,1,0,Wanji,ванджский,,,south_east_iran,,,38.38014,71.4730
 waneci,language/dialect,0,0,Waneci,ванеци,,,south_east_iran,wne,wane1241,30.0501,67.8327,pak,7,150,,1,
 sargulami,language,1,0,Sargulami,саргулямский,,,south_east_iran,,,37.00322,70.87064,afg,7,58,,1,
 khunsari,dialect,0,0,Khunsari,хунсари,,,north_west_iran,,khun1261,33.36292,50.31487,irn,6,222,,1,
-median,language,1,0,Median,мидийский,,,north_west_iran,xme,,34.80002,48.51539,irn,,,,1,
+median,language,1,0,Median,мидийский,,,north_west_iran,xme,,34.80002,48.51539,irn,6,13,,1,
 sivandi,language/dialect,0,0,Sivandi,сивенди,,,north_west_iran,siy,siva1239,30.08,52.92,irn,6,236,,1,
 tajrishi,language/dialect,0,0,Tajrishi,таджриши,,,north_west_iran,,,35.79589,51.43157,irn,6,246,,1,
 vonishuni,dialect,0,0,Vonishuni,вонишуни,,,north_west_iran,,,33.98824,51.41069,irn,6,226,,1,
