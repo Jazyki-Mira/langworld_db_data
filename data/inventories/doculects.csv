@@ -297,7 +297,7 @@ avestan,language,1,0,Avestan,авесты,,,iran,ave,aves1237,29.9808,52.9094,ir
 bactrian,language,1,0,Bactrian,бактрийский,,,south_east_iran,xbc,bact1239,36.758,66.8988,afg,7,38,,1,
 khotanese,language,1,0,Khotanese,хотаносакский,,,south_east_iran,kho,khot1251,37.103,79.9288,chn,7,46,,1,
 sogdian,language,1,0,Sogdian,согдийский,,,north_east_iran,sog,sogd1245,39.6541,66.9597,uzb,7,58,,1,
-khwarezmian,language,1,0,Khwarezmian,хорезмийский,,,north_east_iran,xco,khwa1238,41.55,60.6333,uzb,7,95,,1,
+khwaresmian,language,1,0,Khwaresmian,хорезмийский,,,north_east_iran,xco,khwa1238,41.55,60.6333,uzb,7,95,,1,
 pashto,language,0,0,Pashto,пашто,,,south_east_iran,pus,nucl1276,34.5328,69.1658,afg,7,111,,1,
 munji,language,0,0,Munji,мунджанский,,,south_east_iran,mnj,munj1244,36.0379,70.6723,afg,7,154,,1,
 wakhi,language,0,0,Wakhi,ваханский,,,south_east_iran,wbl,wakh1245,35.5167,69.8667,afg,7,174,,1,
