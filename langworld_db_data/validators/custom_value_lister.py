@@ -2,9 +2,10 @@ from pathlib import Path
 
 from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_BY_DOCULECT,
+    DISCUSSION_FILE_BY_FEATURE,
     FEATURE_PROFILES_DIR,
     FILE_WITH_DOCULECTS,
-    FILE_WITH_NAMES_OF_FEATURES, DISCUSSION_FILE_BY_FEATURE
+    FILE_WITH_NAMES_OF_FEATURES,
 )
 from langworld_db_data.filetools.csv_xls import read_csv, read_dict_from_2_csv_columns
 
@@ -42,8 +43,14 @@ class CustomValueLister:
                 if row['value_type'] == 'custom'
             ]
 
-    def write_grouped_by_volume_and_doculect(self):
-        content = ''
+    def write_grouped_by_volume_and_doculect(
+            self, output_file: Path = DISCUSSION_FILE_BY_DOCULECT
+    ):
+        content = (
+            '# Значения типа `custom` с группировкой по томам и языкам\n'
+            'Оглавление файла открывается кнопкой сверху слева рядом с индикатором количества строк.\n\n'
+            'Файл с группировкой по **признакам** лежит [здесь](custom_values_by_feature.md).\n'
+        )
         current_volume = ''
 
         for volume_doculect_id in self.custom_rows_for_volume_doculect_id:
@@ -70,10 +77,12 @@ class CustomValueLister:
             content += '\n'
 
         # print(content)
-        with DISCUSSION_FILE_BY_DOCULECT.open(mode='w+', encoding='utf-8') as fh:
+        with output_file.open(mode='w+', encoding='utf-8') as fh:
             fh.write(content)
 
-    def write_grouped_by_feature(self):
+    def write_grouped_by_feature(
+        self, output_file: Path = DISCUSSION_FILE_BY_FEATURE
+    ):
         rows_with_custom_values = []
 
         for volume_doculect_id in self.custom_rows_for_volume_doculect_id:
@@ -96,7 +105,11 @@ class CustomValueLister:
                 row[2])
         )
 
-        content = ''
+        content = (
+            '# Значения типа `custom` с группировкой по признакам\n'
+            'Оглавление файла открывается кнопкой сверху слева рядом с индикатором количества строк.\n\n'
+            'Файл с группировкой по **томам и языкам** лежит [здесь](custom_values_by_volume_and_doculect_sample.md).\n'
+        )
 
         current_feature = ''
         current_value = ''
@@ -122,7 +135,7 @@ class CustomValueLister:
 
         # print(content)
 
-        with DISCUSSION_FILE_BY_FEATURE.open(mode='w+', encoding='utf-8') as fh:
+        with output_file.open(mode='w+', encoding='utf-8') as fh:
             fh.write(content)
 
 

@@ -4,7 +4,7 @@ MAIN_DIR = Path(__file__).parent.parent.parent
 DATA_DIR = MAIN_DIR / 'data'
 
 DISCUSSION_DIR = DATA_DIR / 'discussion'
-DISCUSSION_FILE_BY_DOCULECT = DISCUSSION_DIR / 'custom_values_by_volume_and_doculect.md'
+DISCUSSION_FILE_BY_DOCULECT = DISCUSSION_DIR / 'custom_values_by_volume_and_doculect_sample.md'
 DISCUSSION_FILE_BY_FEATURE = DISCUSSION_DIR / 'custom_values_by_feature.md'
 
 INVENTORIES_DIR = DATA_DIR / 'inventories'
