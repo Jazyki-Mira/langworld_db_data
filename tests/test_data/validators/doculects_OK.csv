@@ -1,0 +1,9 @@
+id,type,is_extinct,is_multiple,name_en,name_ru,custom_title_en,custom_title_ru,family_id,iso_639_3,glottocode,latitude,longitude,main_country_id,encyclopedia_volume_id,page,encyclopedia_map_id,has_feature_profile,comment
+agul,language,0,0,Aghul,агульский,,,lezg,agx,aghu1253,41.7518,47.6875,rus,9,,"9-1, 9-2",1,
+catalan,language,0,0,Catalan,каталонский,,,occit_rom,cat,stan1289,41.6666,2,esp,11,492,"11-4, 11-10",1,
+corsican,language/dialect,0,0,Corsican,корсиканский,,,italo_rom,cos,cors1241,41.70,9.26,fra,11,146,"11-10, 11-3",1,
+franco_provencal,language,0,0,Franco-Provençal,франкопровансальский,,,gallo_rom,frp,fran1260,45.81,6.48,ita,11,304,"11-2, 11-3",1,
+pashto,language,0,0,Pashto,пашто,,,south_east_iran,pus,nucl1276,34.5328,69.1658,afg,7,111,,1,
+susu,language,0,0,Susu,сусу,,,susu_jall,sus,susu1250,9.5167,-13.7,gin,21,221,"21-1, 21-3",1,
+ukrainian,language,0,0,Ukrainian,украинский,,,east_slav,ukr,ukra1253,50.45,30.5,ukr,13,541,"13-1, 13-10",1,
+kati,language,0,0,Kati,кати,,,nurist,bsh,kati1270,35.3845,71.3177,afg,,,,0,NOTE FOR TEST: there is no feature profile but zero in previous column precludes from looking for it

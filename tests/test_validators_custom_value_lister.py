@@ -1,9 +1,9 @@
 from langworld_db_data.validators.custom_value_lister import CustomValueLister
-from tests.paths import DIR_WITH_VALIDATORS_TEST_FILES
+from tests.paths import DIR_WITH_TEST_FEATURE_PROFILES, DIR_WITH_VALIDATORS_TEST_FILES
 
 # Note that 'agul.csv' does not contain any custom values.  It is just there to make sure
 # there are no errors with files that have no custom values.
-cvl = CustomValueLister(dir_with_feature_profiles=DIR_WITH_VALIDATORS_TEST_FILES / 'feature_profiles')
+cvl = CustomValueLister(dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES)
 
 
 def test_write_grouped_by_volume_and_doculect():
