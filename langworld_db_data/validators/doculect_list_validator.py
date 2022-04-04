@@ -42,7 +42,7 @@ class DoculectListValidator:
         """
         for doculect in self.doculects:
             if doculect['has_feature_profile'] == '1' and  doculect['id'] not in self.names_of_feature_profiles:
-                raise ValidatorError(f'Doculect {doculect} has no file with feature profile.')
+                raise ValidatorError(f'Doculect {doculect["id"]} has no file with feature profile.')
         else:
             print(f'OK: Every doculect that is marked as having a feature profile has a matching .csv file.')
 
