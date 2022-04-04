@@ -5,11 +5,11 @@ from langworld_db_data.filetools.csv_xls import read_csv
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
-class DoculectListValidatorError(ValidatorError):
+class DoculectInventoryValidatorError(ValidatorError):
     pass
 
 
-class DoculectListValidator:
+class DoculectInventoryValidator:
     def __init__(
             self,
             dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
@@ -24,7 +24,7 @@ class DoculectListValidator:
         self.doculect_ids = {d['id'] for d in self.doculects}
 
         if len(self.doculect_ids) != len(self.doculects):
-            raise DoculectListValidatorError(f'Some IDs in list of doculects are not unique')
+            raise DoculectInventoryValidatorError(f'Some IDs in list of doculects are not unique')
 
         self.has_feature_profile_for_doculect_id = {
             d['id']: d['has_feature_profile'] for d in self.doculects
@@ -53,11 +53,11 @@ class DoculectListValidator:
         """
         for name in self.names_of_feature_profiles:
             if name not in self.doculect_ids:
-                raise DoculectListValidatorError(
+                raise DoculectInventoryValidatorError(
                     f'Feature profile {name} has no match in file with doculects.'
                 )
             if self.has_feature_profile_for_doculect_id[name] != '1':
-                raise DoculectListValidatorError(
+                raise DoculectInventoryValidatorError(
                     f'Feature profile {name} is not marked with "1" in file with doculects.'
                 )
         else:
@@ -65,5 +65,4 @@ class DoculectListValidator:
 
 
 if __name__ == '__main__':
-    dlv = DoculectListValidator()
-    dlv.validate()
+    DoculectInventoryValidator().validate()
