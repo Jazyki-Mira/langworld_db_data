@@ -61,7 +61,7 @@ karakalpak,language,0,0,Kara-Kalpak,каракалпакский,,,kipchak_nogai
 karakhanid_uighur,language,1,0,Karakhanid Uighur,караханидско-уйгурский,,,karluk,,,39.27,75.59,chn,2,64,,1,
 kazakh,language,0,0,Kazakh,казахский,,,kipchak_nogai,kaz,kaza1248,51.1833,71.4,kaz,2,242,,1,
 khakas,language,0,0,Khakas,хакасский,,,khak_turk,kjh,khak1248,53.7166,91.4166,rus,2,458,,1,
-khorezmian,language,1,0,Khorezmian,хорезмско-тюркский,,,karluk,zkh,,47.161,47.5646,rus,2,139,,1,
+khwarezmian_turkic,language,1,0,Khwarezmian Turkic,хорезмско-тюркский,,,karluk,zkh,,47.161,47.5646,rus,2,139,,1,
 kumyk,language,0,0,Kumyk,кумыкский,,,kipchak_cuman,kum,kumy1244,43.397,46.9775,rus,2,318,,1,
 kyrgyz,language,0,0,Kirghiz,киргизский,,,kyrg_kipchak,kir,kirg1245,42.8666,74.5666,kgz,2,286,,1,
 nogai,language,0,0,Nogai,ногайский,,,kipchak_nogai,nog,noga1249,43.8028,46.2744,rus,2,328,,1,
