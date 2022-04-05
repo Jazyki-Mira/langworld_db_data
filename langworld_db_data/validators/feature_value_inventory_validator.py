@@ -6,7 +6,7 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NAMES_OF_FEATURES,
 )
-from langworld_db_data.filetools.csv_xls import read_csv, read_dict_from_2_csv_columns
+from langworld_db_data.filetools.csv_xls import read_csv
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -67,6 +67,30 @@ class FeatureValueInventoryValidator:
                 )
 
         print(f'OK: all value IDs are derived from feature ID')
+
+        # Check uniqueness of Russian and English value names within one feature
+        names_of_listed_values_for_feature_id = {
+            feature_id: [] for feature_id in self.feature_ids
+        }
+
+        for locale in ('en', 'ru'):
+
+            for feature_id in self.feature_ids:
+                names_of_listed_values_for_feature_id[feature_id] = [
+                    row[locale] for row in self.rows_with_listed_values if row['feature_id'] == feature_id
+                ]
+
+            for feature_id in names_of_listed_values_for_feature_id:
+                counter = Counter(names_of_listed_values_for_feature_id[feature_id])
+
+                duplicate_value_names = [value for value in counter if counter[value] > 1]
+
+                if duplicate_value_names:
+                    raise FeatureValueInventoryValidatorError(
+                        f'Duplicate value names found for feature {feature_id}: {", ".join(duplicate_value_names)}'
+                    )
+
+        print(f'OK: all values within each feature have unique names')
 
 
 if __name__ == '__main__':

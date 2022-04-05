@@ -65,6 +65,28 @@ def test__validate_listed_values_fails_for_malformed_ids():
     assert 'Value ID A-222 was not formed correctly from feature ID A-2' in str(e)
 
 
+def test__validate_listed_values_fails_for_non_unique_value_names_within_one_feature():
+    validator = FeatureValueInventoryValidator(
+        file_with_features=GOOD_FEATURES_FILE,
+        file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / 'features_listed_values_bad_non_unique_name_en.csv'
+    )
+
+    with pytest.raises(FeatureValueInventoryValidatorError) as e:
+        validator.validate()
+
+    assert 'Duplicate value names found for feature A-1: Three' in str(e)
+
+    validator = FeatureValueInventoryValidator(
+        file_with_features=GOOD_FEATURES_FILE,
+        file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / 'features_listed_values_bad_non_unique_name_ru.csv'
+    )
+
+    with pytest.raises(FeatureValueInventoryValidatorError) as e:
+        validator.validate()
+
+    assert 'Duplicate value names found for feature A-1: Три' in str(e)
+
+
 def test_validate_passes_for_good_files():
     validator = FeatureValueInventoryValidator(
         file_with_features=GOOD_FEATURES_FILE,
