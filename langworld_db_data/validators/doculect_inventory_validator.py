@@ -65,4 +65,6 @@ class DoculectInventoryValidator:
 
 
 if __name__ == '__main__':
+    # When running the test suite, validation of real data will also be done.
+    # It is not necessary to run the validator manually here if the tests were run.
     DoculectInventoryValidator().validate()

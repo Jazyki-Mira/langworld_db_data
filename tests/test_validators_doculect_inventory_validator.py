@@ -55,7 +55,6 @@ def test__match_files_to_doculects_fails_with_less_doculects_than_files():
     assert 'Feature profile pashto is not marked with "1" in file with doculects' in str(e)
 
 
-
 def test_validate_passes_for_good_file():
     validator_with_good_files.validate()
 
@@ -70,3 +69,10 @@ def test_validate_fails_for_bad_files():
                 file_with_doculects=file,
             )
             validator.validate()
+
+
+def test_validate_real_data():
+    # Previous tests test the validator. Now test the real DATA using the validator.
+    # Empty arguments mean that default (i.e. real) files/dirs will be used.
+    validator = DoculectInventoryValidator()
+    validator.validate()

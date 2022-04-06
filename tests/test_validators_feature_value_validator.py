@@ -93,3 +93,10 @@ def test_validate_passes_for_good_files():
         file_with_listed_values=GOOD_LISTED_VALUES_FILE,
     )
     validator.validate()
+
+
+def test_validate_real_data():
+    # Previous tests test the validator. Now test the real DATA using the validator.
+    # Empty arguments mean that default (i.e. real) files/dirs will be used.
+    validator = FeatureValueInventoryValidator()
+    validator.validate()
