@@ -4,44 +4,13 @@ from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_BY_DOCULECT,
     DISCUSSION_FILE_BY_FEATURE,
     FEATURE_PROFILES_DIR,
-    FILE_WITH_DOCULECTS,
-    FILE_WITH_NAMES_OF_FEATURES,
 )
-from langworld_db_data.filetools.csv_xls import read_csv, read_dict_from_2_csv_columns
+from langworld_db_data.markdown_generators.abstract_value_lister import AbstractValueLister
 
 
-class CustomValueLister:
+class CustomValueLister(AbstractValueLister):
     def __init__(self, dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR):
-        self.doculect_ru_for_doculect_id = read_dict_from_2_csv_columns(
-            FILE_WITH_DOCULECTS, 'id', 'name_ru'
-        )
-
-        self.feature_ru_for_feature_id = read_dict_from_2_csv_columns(
-            FILE_WITH_NAMES_OF_FEATURES, 'id', 'ru'
-        )
-
-        self.encyclopedia_volume_for_doculect_id = read_dict_from_2_csv_columns(
-            FILE_WITH_DOCULECTS, 'id', 'encyclopedia_volume_id'
-        )
-
-        # replace empty values with zeroes for sorting
-        for key in self.encyclopedia_volume_for_doculect_id:
-            if not self.encyclopedia_volume_for_doculect_id[key]:
-                self.encyclopedia_volume_for_doculect_id[key] = '0'
-
-        self.custom_rows_for_volume_doculect_id = {}
-
-        list_of_files = sorted(
-            list(dir_with_feature_profiles.glob('*.csv')),
-            key=lambda f: (int(self.encyclopedia_volume_for_doculect_id[f.stem]), f.stem)
-        )
-
-        for file in list_of_files:
-            key = f'{self.encyclopedia_volume_for_doculect_id[file.stem]}:{file.stem}'
-            self.custom_rows_for_volume_doculect_id[key] = [
-                row for row in read_csv(file, read_as='dicts')
-                if row['value_type'] == 'custom'
-            ]
+        super().__init__(value_type='custom', dir_with_feature_profiles=dir_with_feature_profiles)
 
     def write_grouped_by_volume_and_doculect(
             self, output_file: Path = DISCUSSION_FILE_BY_DOCULECT
@@ -53,8 +22,8 @@ class CustomValueLister:
         )
         current_volume = ''
 
-        for volume_doculect_id in self.custom_rows_for_volume_doculect_id:
-            if not self.custom_rows_for_volume_doculect_id[volume_doculect_id]:
+        for volume_doculect_id in self.filtered_rows_for_volume_doculect_id:
+            if not self.filtered_rows_for_volume_doculect_id[volume_doculect_id]:
                 continue
 
             volume, doculect_id = volume_doculect_id.split(':')[0], volume_doculect_id.split(':')[1]
@@ -66,7 +35,7 @@ class CustomValueLister:
                 f'### [{self.doculect_ru_for_doculect_id[doculect_id]}]'
                 f'(../feature_profiles/{doculect_id}.csv)\n\n'
             )
-            for row in self.custom_rows_for_volume_doculect_id[volume_doculect_id]:
+            for row in self.filtered_rows_for_volume_doculect_id[volume_doculect_id]:
                 content += (
                     f'- **{row["feature_id"]}** ({self.feature_ru_for_feature_id[row["feature_id"]]}): '
                     f'{row["value_ru"]}'
@@ -85,8 +54,8 @@ class CustomValueLister:
     ):
         rows_with_custom_values = []
 
-        for volume_doculect_id in self.custom_rows_for_volume_doculect_id:
-            if self.custom_rows_for_volume_doculect_id[volume_doculect_id]:
+        for volume_doculect_id in self.filtered_rows_for_volume_doculect_id:
+            if self.filtered_rows_for_volume_doculect_id[volume_doculect_id]:
                 rows_with_custom_values += [
                     [
                         volume_doculect_id.split(':')[1],
@@ -94,7 +63,7 @@ class CustomValueLister:
                         row['value_ru'],
                         row['comment_ru']
                     ]
-                    for row in self.custom_rows_for_volume_doculect_id[volume_doculect_id]
+                    for row in self.filtered_rows_for_volume_doculect_id[volume_doculect_id]
                 ]
 
         rows_sorted_by_feature = sorted(
