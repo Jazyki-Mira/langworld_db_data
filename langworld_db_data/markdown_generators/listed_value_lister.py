@@ -58,19 +58,20 @@ class ListedValueLister(AbstractValueLister):
             content += f'\n\n## {feature_id} — {feature_name_for_feature_id[feature_id]}\n'
 
             for value_id in feature_to_value_to_doculects[feature_id]:
-                content += f'\n- **{value_name_for_value_id[value_id]}** ({value_id}): '
+                content += f'\n- **{value_name_for_value_id[value_id]}** ({value_id}): ' \
+                           f'кол-во языков — **{len(feature_to_value_to_doculects[feature_id][value_id])}**'
 
-                if not feature_to_value_to_doculects[feature_id][value_id]:
-                    content += '_Нет языков_'
-
-                else:
-                    for volume_and_doculect_id in feature_to_value_to_doculects[feature_id][value_id]:
-                        volume, doculect_id = volume_and_doculect_id.split(':')
-                        content += (
-                            f'[{self.doculect_ru_for_doculect_id[doculect_id]}]'
-                            f'(../feature_profiles/{doculect_id}.csv)<sub>{volume}</sub>, '
-                        )
-                    content = content[:-2]  # removing last ', '
+                # if not feature_to_value_to_doculects[feature_id][value_id]:
+                #     content += '_Нет языков_'
+                #
+                # else:
+                #     for volume_and_doculect_id in feature_to_value_to_doculects[feature_id][value_id]:
+                #         volume, doculect_id = volume_and_doculect_id.split(':')
+                #         content += (
+                #             f'[{self.doculect_ru_for_doculect_id[doculect_id]}]'
+                #             f'(../feature_profiles/{doculect_id}.csv)<sub>{volume}</sub>, '
+                #         )
+                #     content = content[:-2]  # removing last ', '
 
         # print(content)
 
