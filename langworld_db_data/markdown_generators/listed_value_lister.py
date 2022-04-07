@@ -61,6 +61,7 @@ class ListedValueLister(AbstractValueLister):
                 content += f'\n- **{value_name_for_value_id[value_id]}** ({value_id}): ' \
                            f'кол-во языков — **{len(feature_to_value_to_doculects[feature_id][value_id])}**'
 
+                # # This is good but leads to a very large file being generated. GitHub refuses to show its content.
                 # if not feature_to_value_to_doculects[feature_id][value_id]:
                 #     content += '_Нет языков_'
                 #
