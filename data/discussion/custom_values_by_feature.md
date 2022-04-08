@@ -829,7 +829,7 @@
 - нет данных: [милийский](../feature_profiles/milyan.csv)
 - отстствует: [гафат](../feature_profiles/gafat.csv)
 - отсутствует: [рутульский](../feature_profiles/rutul.csv), [аргобба](../feature_profiles/argobba.csv), [чаха](../feature_profiles/chaha.csv), [харари](../feature_profiles/harari.csv)
-## F-6: Согласование числительных в роде
+## F-6: Согласование количественных числительных в роде
 
 - Данных нет: [скифский](../feature_profiles/scythian.csv)
 - Для один-два, от 3-10 - полярное согласование: [геэз](../feature_profiles/geez.csv)
