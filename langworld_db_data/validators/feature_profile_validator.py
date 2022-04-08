@@ -35,7 +35,7 @@ class FeatureProfileValidator:
 
         for i, row in enumerate(rows, start=1):
             if not row['feature_id']:
-                raise FeatureProfileValidatorError(f'File {file.stem} doees not contains feature ID in row {i + 1}')
+                raise FeatureProfileValidatorError(f'File {file.stem} does not contain feature ID in row {i + 1}')
 
             if row['value_type'] not in ('listed', 'custom', 'not_stated', 'explicit_gap', 'not_applicable'):
                 raise FeatureProfileValidatorError(f'File {file.stem} contains invalid value type in row {i + 1}')
@@ -51,7 +51,14 @@ class FeatureProfileValidator:
                         f'File {file.stem} does not contain value text in row {i + 1}'
                     )
 
-            if row['value_type'] == 'listed':
+            elif row['value_type'] in ('not_stated', 'not_applicable', 'explicit_gap'):
+                if row['value_id'] or row['value_ru']:
+                    raise FeatureProfileValidatorError(
+                        f'File {file.stem} must not contain value ID or value text in row {i + 1} '
+                        f'or value type must be different'
+                    )
+
+            elif row['value_type'] == 'listed':
                 if not re.match(rf"{row['feature_id']}-\d+", row['value_id']):
                     raise FeatureProfileValidatorError(
                         f'File {file.stem} contains invalid value ID {row["value_id"]} in row {i + 1}'
