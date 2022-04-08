@@ -5,7 +5,7 @@ from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_FEATURE,
     FEATURE_PROFILES_DIR,
 )
-from langworld_db_data.markdown_generators.abstract_value_lister import AbstractValueLister
+from langworld_db_data.mdlisters.abstract_value_lister import AbstractValueLister
 
 
 class CustomValueLister(AbstractValueLister):

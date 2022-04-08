@@ -6,7 +6,7 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_NAMES_OF_FEATURES,
     DISCUSSION_FILE_WITH_LISTED_VALUES,
 )
-from langworld_db_data.markdown_generators.abstract_value_lister import AbstractValueLister
+from langworld_db_data.mdlisters.abstract_value_lister import AbstractValueLister
 from langworld_db_data.filetools.csv_xls import read_csv, read_dict_from_2_csv_columns
 
 

@@ -1,4 +1,4 @@
-from langworld_db_data.markdown_generators.listed_value_lister import ListedValueLister
+from langworld_db_data.mdlisters.listed_value_lister import ListedValueLister
 from tests.paths import DIR_WITH_TEST_FEATURE_PROFILES, DIR_WITH_VALIDATORS_TEST_FILES
 
 
