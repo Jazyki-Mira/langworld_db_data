@@ -11,8 +11,13 @@ from langworld_db_data.filetools.csv_xls import read_csv, read_dict_from_2_csv_c
 
 
 class ListedValueLister(AbstractValueLister):
-    def __init__(self, dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR):
+    def __init__(
+        self,
+        dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
+        file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
+    ):
         super().__init__(value_type='listed', dir_with_feature_profiles=dir_with_feature_profiles)
+        self.file_with_listed_values = file_with_listed_values
     
     def write_grouped_by_feature(
         self, output_file: Path = DISCUSSION_FILE_WITH_LISTED_VALUES
@@ -23,7 +28,7 @@ class ListedValueLister(AbstractValueLister):
             read_csv(FILE_WITH_NAMES_OF_FEATURES, read_as='dicts')
         ]
 
-        rows_with_listed_values = read_csv(FILE_WITH_LISTED_VALUES, read_as='dicts')
+        rows_with_listed_values = read_csv(self.file_with_listed_values, read_as='dicts')
 
         feature_to_value_to_doculects = {
             feature_id: {
@@ -43,7 +48,7 @@ class ListedValueLister(AbstractValueLister):
         )
 
         value_name_for_value_id = read_dict_from_2_csv_columns(
-            FILE_WITH_LISTED_VALUES,
+            self.file_with_listed_values,
             key_col='id',
             val_col='ru'
         )
