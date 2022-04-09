@@ -130,3 +130,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Auxiliary calling modules
+/langworld_db_data/add_listed_value.py
