@@ -503,6 +503,7 @@ H-2-17,H-2,"Subject and object personal pronouns, prepositions, and verbal agree
 H-2-18,H-2,"Case affixes, subject and object personal pronouns, prepositions, and verbal agreement","Падежные аффиксы, субъектная и объектная форма личных местоимений, предлоги и глагольное согласование"
 H-2-19,H-2,"Case affixes, subject and object personal pronouns, prepositions, verbal agreement, and word order","Падежные аффиксы, субъектная и объектная форма личных местоимений, предлоги, глагольное согласование и порядок слов"
 H-2-20,H-2,"Subject and object personal pronouns, case and number flections, prepositions, and verbal agreement","Субъектная и объектная форма местоимений, падежно-числовые флексии, предлоги и глагольное согласование"
+H-2-21,H-2,"Verbal agreement, subject, direct and indirect object personal pronouns, and word order","Субъектная, прямо- и косвеннообъектная форма личных местоимений, глагольное согласование  и порядок слов"
 H-3-1,H-3,Absolutive,Абсолютив
 H-3-2,H-3,Genitive,Генитив
 H-3-3,H-3,Oblique,Косвенный падеж
@@ -590,6 +591,8 @@ H-6-33,H-6,Pronouns and adverbs,Местоимения и наречия
 H-6-34,H-6,"Pronouns, adverbs, and prepositions","Местоимения, наречия и предлоги"
 H-6-35,H-6,Adverbs and prepositional-nominal constructions,Наречия и предложно-именные конструкции
 H-6-36,H-6,"Nominal affixes, spatial adverbs, postpositions, and particles","Именные аффиксы, наречия места, послелоги и частицы"
+H-6-37,H-6,"Pronouns, pronoun adverbs, and prepositions","Местоимения, местоименные наречия и предлоги"
+H-6-38,H-6,Spatial adverbs and prepositions,Наречия места и предлоги
 H-7-1,H-7,Marked,Маркированное
 H-7-2,H-7,Unmarked,Немаркированное
 H-8-1,H-8,Same,Одинаковое
@@ -612,6 +615,7 @@ I-1-13,I-1,Auxiliary verb + participle and reflexive particles,Вспомога�
 I-1-14,I-1,Auxiliary verb + participle and personal-reflexive pronoun,Вспомогательный глагол + причастие и лично-возвратное местоимение
 I-1-15,I-1,Passive participle,Страдательное причастие
 I-1-16,I-1,Morphonological alternation and affixes,Значимое морфонологическое чередование и аффиксы
+I-1-17,I-1,Auxiliary verb + participle and pronominal verb form,Вспомогательный глагол + причастие и местоименная форма глагола
 I-2-1,I-2,Present,Присутствует
 I-2-2,I-2,Absent,Отсутствует
 I-3-1,I-3,Passive and causative,Пассив и каузатив
