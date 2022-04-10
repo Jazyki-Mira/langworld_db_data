@@ -1395,7 +1395,6 @@
 
 - Вид, время, модальность и полярность: [мано](../feature_profiles/mano.csv)
 - Время, позитивность/негативность и модальность (наклонение): [малаялам](../feature_profiles/malayalam.csv)
-- Лицо, число род, вид, время и модальность (наклонение): [ирула](../feature_profiles/irula.csv)
 - Лицо, число, вид и время: [хазара](../feature_profiles/hazaragi.csv), [персидский](../feature_profiles/persian.csv), [таджикский](../feature_profiles/tajik.csv), [белуджский](../feature_profiles/balochi.csv)
 - Лицо, число, вид, время, залог и модальность (наклонение): [хотаносакский](../feature_profiles/khotanese.csv), [готский](../feature_profiles/gothic.csv)
 - Лицо, число, вид, время, наклонение и залог: [парачи](../feature_profiles/parachi.csv)
@@ -1409,9 +1408,6 @@
 - Лицо, число, переходность/непереходность; вид и время: [давани](../feature_profiles/davani.csv)
 - Лицо, число, род (в энклитических формах), вид, время и модальность: [сангесари](../feature_profiles/sangesari.csv)
 - Лицо, число, род и время: [бадага](../feature_profiles/badaga.csv)
-- Лицо, число, род, вид, время и модальность (наклонение): [хуфский](../feature_profiles/khufi.csv), [пашто](../feature_profiles/pashto.csv), [рушанский](../feature_profiles/rushani.csv), [шугнанский](../feature_profiles/shughni.csv), [гарви](../feature_profiles/garwi.csv), [кашмири](../feature_profiles/kashmiri.csv), [майян](../feature_profiles/mayan.csv), [пашаи](../feature_profiles/pashai.csv), [шина](../feature_profiles/shina.csv), [тирахи](../feature_profiles/tirahi.csv), [фриульский](../feature_profiles/friulian.csv), [белорусский](../feature_profiles/belorussian.csv), [старославянский](../feature_profiles/old_church_slavonic.csv), [польский](../feature_profiles/polish.csv), [русский](../feature_profiles/russian.csv), [словацкий](../feature_profiles/slovak.csv), [словенский](../feature_profiles/slovene.csv), [украинский](../feature_profiles/ukrainian.csv), [кота](../feature_profiles/kota.csv), [тамильский](../feature_profiles/tamil.csv)
-- Лицо, число, род, вид, время и модальность (наклонения): [полабский](../feature_profiles/polabian.csv)
-- Лицо, число, род, вид, время и наклонение: [заза](../feature_profiles/zaza.csv)
 - Лицо, число, род, вид, время переходность/непереходность, залог и наклонение: [ормури](../feature_profiles/ormuri.csv)
 - Лицо, число, род, вид, время, позитивность/негативность и модальность (наклонение): [каннада](../feature_profiles/kannada.csv)
 - Лицо, число, род, время/вид, позитивность/негативность и модальность (наклонение): [телугу](../feature_profiles/telugu.csv)
