@@ -1175,7 +1175,6 @@
 - Местоимения, предлоги и послелоги: [ормури](../feature_profiles/ormuri.csv)
 - Местоимения, предлоги и пространственные падежи: [древненовгородский](../feature_profiles/old_novgorod.csv)
 - Местоимения, пространственные падежи и послелоги: [кота](../feature_profiles/kota.csv)
-- Местоименные наречия и предлоги: [арагонский](../feature_profiles/aragonese.csv)
 - Местоименные предлоги и наречия: [бретонский](../feature_profiles/breton.csv), [корнский](../feature_profiles/cornish.csv), [ирландский](../feature_profiles/irish_gaelic.csv)
 - Местоименные предлоги и наречия места: [валлийский](../feature_profiles/welsh.csv)
 - Наречия и предложные сочетания: [болгарский](../feature_profiles/bulgarian.csv)
