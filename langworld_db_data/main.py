@@ -1,3 +1,4 @@
+from langworld_db_data.cldfwriters.cldf_dataset_writer import CLDFDatasetWriter
 from langworld_db_data.mdlisters.custom_value_lister import CustomValueLister
 from langworld_db_data.mdlisters.listed_value_lister import ListedValueLister
 from langworld_db_data.validators.doculect_inventory_validator import DoculectInventoryValidator
@@ -19,6 +20,9 @@ def main():
     CustomValueLister().write_grouped_by_feature()
     CustomValueLister().write_grouped_by_volume_and_doculect()
     ListedValueLister().write_grouped_by_feature()
+
+    print('\nWriting CLDF')
+    CLDFDatasetWriter().write()
 
 
 if __name__ == '__main__':
