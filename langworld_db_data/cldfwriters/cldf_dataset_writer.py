@@ -83,8 +83,8 @@ class CLDFDatasetWriter:
             language_id = file.stem
             relevant_rows = [
                 row for row in read_csv(file, read_as='dicts')
-                # custom values are only in Russian. Not sure how best to handle explicit_gap yet.
-                if row['value_type'] == 'listed'
+                # not sure how best to handle explicit_gap yet.
+                if row['value_type'] in ('listed', 'custom')
             ]
 
             for relevant_row in relevant_rows:
@@ -92,7 +92,8 @@ class CLDFDatasetWriter:
                     'ID': value_table_row_id,
                     'Language_ID': language_id,
                     'Parameter_ID': relevant_row['feature_id'],
-                    'Value': self.value_en_for_value_id[relevant_row['value_id']],
+                    # English value will be empty for values that are not yet in the inventory
+                    'Value': self.value_en_for_value_id.get(relevant_row['value_id'], ''),
                     'Value_RU': relevant_row['value_ru'],
                     'Code_ID': relevant_row['value_id'],
                     'Comment': relevant_row['comment_en'],
