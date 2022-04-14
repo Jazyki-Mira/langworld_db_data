@@ -33,12 +33,15 @@ class CLDFDatasetWriter:
 
         dataset = StructureDataset.in_dir(CLDF_DIR)
 
-        for column_name in ('Value_RU', 'Comment_RU'):
-            dataset.add_columns('ValueTable', column_name)
-
         for component_name in ('CodeTable', 'LanguageTable', 'ParameterTable'):
             dataset.add_component(component_name)
             dataset.add_columns(component_name, 'Name_RU')
+
+        for column_name in ('Value_RU', 'Comment_RU'):
+            dataset.add_columns('ValueTable', column_name)
+
+        for column_name in ('ISO639P3code', 'Glottocode'):
+            dataset['LanguageTable', column_name].separator = "; "
 
         # CodeTable
         listed_values = [
@@ -64,7 +67,8 @@ class CLDFDatasetWriter:
             {
                 'ID': row['id'], 'Name': row['name_en'], 'Macroarea': '',
                 'Latitude': row['latitude'], 'Longitude': row['longitude'],
-                'Glottocode': row['glottocode'], 'ISO639P3code': row['iso_639_3'],
+                'Glottocode': row['glottocode'].split(', '),
+                'ISO639P3code': row['iso_639_3'].split(', '),
                 # custom columns:
                 'Name_RU': row['name_ru']
             }

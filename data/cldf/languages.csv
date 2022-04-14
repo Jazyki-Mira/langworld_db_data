@@ -23,7 +23,7 @@ rhaeto_romance,Romansch,,46.55,9.93,roma1326,roh,ретороманский
 romanian,Romanian,,44.04,26.0833,roma1327,ron,румынский
 sardinian,Sardinian,,39.2166,9.1166,sard1257,srd,сардинский
 spanish,Spanish,,40.4333,-3.7,stan1288,spa,испанский
-enets,Enets,,70.9596,84.2651,enet1250,"enf, enh",энецкий
+enets,Enets,,70.9596,84.2651,enet1250,enf; enh,энецкий
 erzya,Erzya,,54.1302,45.4394,erzy1239,myv,эрзянский
 estonian,Estonian,,59.4333,24.75,esto1258,est,эстонский
 finnish,Finnish,,60.1733,24.9486,finn1318,fin,финский
@@ -45,9 +45,9 @@ udmurt,Udmurt,,56.8498,53.2184,udmu1245,udm,удмуртский
 veps,Veps,,60.3269,34.8046,veps1250,vep,вепсский
 votic,Votic,,59.5858,28.4518,voti1245,vot,водский
 alabugat_tatar,Alabugat Tatar (Nogai),,43.8028,46.2744,,,алабугатских татар (ногайцев)
-altai,Altai,,51.95,85.9666,"nort2686, sout2694","atv, alt",алтайский
+altai,Altai,,51.95,85.9666,nort2686; sout2694,atv; alt,алтайский
 astrakhan_karagash_nogai,Astrakhan Karagash Nogai,,47.2643,47.2412,,,астраханских ногайцев-карагашей
-azerbaijani,Azerbaijani,,40.3833,49.9833,"nort2697, sout2697",aze,азербайджанский
+azerbaijani,Azerbaijani,,40.3833,49.9833,nort2697; sout2697,aze,азербайджанский
 bashkir,Bashkir,,54.7333,55.9666,bash1264,bak,башкирский
 bulgar,Bolgarian,,45.189,36.825,bolg1250,xbo,булгарский
 chagatai,Chagatai,,37.6,61.8333,chag1247,chg,чагатайский
@@ -120,7 +120,7 @@ russian,Russian,,55.7558,37.6176,russ1263,rus,русский
 serbocroatian,Serbocroatian,,44.8205,20.4622,sout1528,hbs,сербохорватский
 slovak,Slovak,,48.1447,17.1127,slov1269,slk,словацкий
 slovene,Slovene,,46.05,14.5166,slov1268,slv,словенский
-sorbian,Sorbian,,51.5001,14.7444,sorb1249,"dsb, hsb",серболужицкий
+sorbian,Sorbian,,51.5001,14.7444,sorb1249,dsb; hsb,серболужицкий
 ukrainian,Ukrainian,,50.45,30.5,ukra1253,ukr,украинский
 latvian,Latvian,,56.9421,24.162,latv1249,lav,латышский
 lithuanian,Lithuanian,,54.6775,25.3382,lith1251,lit,литовский
@@ -138,11 +138,11 @@ phoenician,Phoenician,,32,35,phoe1239,phn,финикийский
 turoyo,Turoyo,,37.4,41.4833,turo1239,tru,туройо
 ugaritic,Ugaritic,,35.6003,35.7987,ugar1238,uga,угаритский
 afrikaans,Afrikaans,,-25.7256,28.2438,afri1274,afr,африкаанс
-danish,Danish,,55.6869,12.5833,"dani1285, juti1236","dan, jut",датский
+danish,Danish,,55.6869,12.5833,dani1285; juti1236,dan; jut,датский
 dutch,Dutch,,52.3833,4.9,dutc1256,nld,нидерландский
 english,English,,51.5,0,stan1293,eng,английский
 faroese,Faroese,,62,-6.7833,faro1244,fao,фарерский
-frisian,Frisian,,53.0333,6.3166,"west2354, nort2626, sate1242","fry, frr, stq",фризский
+frisian,Frisian,,53.0333,6.3166,west2354; nort2626; sate1242,fry; frr; stq,фризский
 german,German,,52.5166,13.3833,stan1295,deu,немецкий
 gothic,Gothic,,44.4167,12.02,goth1244,got,готский
 icelandic,Icelandic,,64.23,-21.8266,icel1247,isl,исландский
@@ -158,12 +158,12 @@ kumzari,Kumzari,,26.16,56.42,kumz1235,zum,кумзари
 kurdshuli,Kurdshuli,,30.65308656467516,52.672619742742995,,,курдшули
 middle_persian,Middle Persian,,29.608,52.5247,pahl1241,pal,среднеперсидский
 old_persian,Old Persian,,29.6081,52.5247,oldp1254,peo,древнеперсидский
-persian,Persian,,35.7,51.4166,west2369,"fas, pes",персидский
+persian,Persian,,35.7,51.4166,west2369,fas; pes,персидский
 tajik,Tajik,,38.5677,68.7936,taji1245,tgk,таджикский
 tati,Tati,,41.3438,48.6254,musl1236,ttt,татский
 abdui,Abdui,,29.599167,51.863056,,,абдуи
 aftari,Aftari,,35.36,53.70,afta1234,,афтари
-balochi,Balochi,,30.36,67.02,"east2304, sout2642, west2368",bal,белуджский
+balochi,Balochi,,30.36,67.02,east2304; sout2642; west2368,bal,белуджский
 biyabuneki,Biyabuneki,,35.53,53.29,biya1234,,биябунеки
 farizandi,Farizandi,,33.46,51.95,fari1234,,фаризанди
 gilaki,Gilaki,,37.2755,49.6028,gila1241,glk,гилянский
@@ -219,7 +219,7 @@ ubykh,Ubykh,,43.5585,39.8597,ubyk1235,uby,убыхский
 breton,Breton,,48.2246,-3.9331,bret1244,bre,бретонский
 celtiberian,Celtiberian,,41.5,-1.0333,celt1247,xce,кельтиберский
 cornish,Cornish,,50.4575,-4.746,corn1251,cor,корнский
-gaulish,Gaulish,,39.34,32.84,"tran1282, gala1252, cisa1237","xtg, xga, xcg",галльский
+gaulish,Gaulish,,39.34,32.84,tran1282; gala1252; cisa1237,xtg; xga; xcg,галльский
 irish_gaelic,Irish Gaelic,,53.7876,-9.1845,iris1253,gle,ирландский
 lepontic,Lepontic,,45.98,8.92,lepo1240,xlp,лепонтийский
 manx,Manx,,54.2106,-4.5318,manx1243,glv,мэнкский
@@ -281,8 +281,8 @@ kui,Kui,,19.5908,83.9575,kuii1252,kxu,куи
 kuvi,Kuvi,,18.9478,83.5839,kuvi1243,kxv,куви
 konda,Konda,,18.2763,82.9385,kond1295,kfc,конда
 gondi,Gondi,,19.5804,80.4418,nort3258,gon,гонди
-kurukh,Kurukh,,23.36,85.33,"kuru1301, nepa1253, kisa1261","kru, kxl, xis",курух
-malto,Malto,,22.5667,88.3667,"kuma1274, saur1249","kmj, mjt",малто
+kurukh,Kurukh,,23.36,85.33,kuru1301; nepa1253; kisa1261,kru; kxl; xis,курух
+malto,Malto,,22.5667,88.3667,kuma1274; saur1249,kmj; mjt,малто
 brahui,Brahui,,29.0369,66.5826,brah1256,brh,брахуи
 ket,Ket,,62.6236,87.7148,kett1243,ket,кетский
 yugh,Yugh,,61.0901,88.1982,yugh1239,yug,югский
@@ -313,7 +313,7 @@ yazghulami,Yazghulami,,38.1982,71.4276,yazg1240,yah,язгулямский
 yaghnobi,Yaghnobi,,38.5632,68.4475,yagn1238,yai,ягнобский
 ossetian,Ossetian,,42.2238,43.9838,iron1242,oss,осетинский
 kashmiri,Kashmiri,,34.5,76,kash1277,kas,кашмири
-shina,Shina,,35.35,75.9,"shin1264, kohi1248","scl, plk",шина
+shina,Shina,,35.35,75.9,shin1264; kohi1248,scl; plk,шина
 phalura,Phalura,,35.7264,71.7434,phal1254,phl,пхалура
 mayan,Mayan,,35.3151,72.908,indu1241,mvy,майян
 garwi,Garwi,,35.2893,72.6168,kala1373,gwc,гарви
@@ -321,7 +321,7 @@ torwali,Torwali,,35.5833,72.5,torw1241,trw,торвали
 khowar,Khowar,,34.1254,71.5649,khow1242,khw,кховар
 kalasha,Kalasha,,35.6684,71.7201,kala1372,kls,калаша
 tirahi,Tirahi,,34.3139,70.3729,tira1253,tra,тирахи
-pashai,Pashai,,34.66,70.2,"nort2666, nort2665, sout2672, sout2671","aee, glh, psi, psh",пашаи
+pashai,Pashai,,34.66,70.2,nort2666; nort2665; sout2672; sout2671,aee; glh; psi; psh,пашаи
 grangali,Grangali,,34.8666,71.1333,gran1245,nli,глангали
 shumashti,Shumashti,,34.6108,70.7569,shum1235,sts,шумашти
 katarkalai,Katarkalai,,34.4166,70.3333,wota1240,wsv,катаркалаи
@@ -347,19 +347,19 @@ bote,Bote,,27.9208,83.5082,bote1238,bmj,боте
 danwar,Danwar,,26.9661,86.3223,koch1253,dhw,данувар
 darai,Darai,,27.9264,84.331,dara1250,dry,дараи
 kumal,Kumal,,27.788,84.548,kumh1238,kra,кумал
-tharu,Tharu,,30.33,78.06,"dang1260, kath1250, rana1246, chit1274, koch1247, buks1238, sonh1238","thl, tkt, thr, the, thq, tkb, soi",тхару
+tharu,Tharu,,30.33,78.06,dang1260; kath1250; rana1246; chit1274; koch1247; buks1238; sonh1238,thl; tkt; thr; the; thq; tkb; soi,тхару
 maithili,Maithili,,25.37,85.13,mait1250,mai,майтхили
 bhojpuri,Bhojpuri,,28.1667,84.25,bhoj1244,bho,бходжпури
 magahi,Magahi,,25.6,85.1,maga1260,mag,магахи
-sadani,Sadani,,23.66,85.1,"sadr1248, orao1237","sck, sdr",садани/садри
+sadani,Sadani,,23.66,85.1,sadr1248; orao1237,sck; sdr,садани/садри
 assamese,Assamese,,26.15,91.77,assa1263,asm,ассамский
 bengali,Bengali,,24.3666,88.6,beng1280,ben,бенгальский
 rajbanshi_nepal,Rajbanshi (Nepal),,23.2167,72.6833,rang1265,rkt,раджбанши/камта (Непал)
 oriya,Oriya,,20.27,85.84,,ori,ория
-punjabi,Punjabi,,31.5497,74.3436,"panj1256, west2386","pan, pnb",панджаби
+punjabi,Punjabi,,31.5497,74.3436,panj1256; west2386,pan; pnb,панджаби
 pothohari,Pot(h)ohari,,31,72,paha1251,phr,потхорари
-hindko,Hindko,,34,71.32,"sout2668, nort2662","hnd, hno",хиндко
-sindhi,Sindhi,,24.86,67.01,"sind1272, lasi1242, sind1270","snd, lss, sbn",синдхи
+hindko,Hindko,,34,71.32,sout2668; nort2662,hnd; hno,хиндко
+sindhi,Sindhi,,24.86,67.01,sind1272; lasi1242; sind1270,snd; lss; sbn,синдхи
 parya,Parya,,38.5094,68.0932,pary1242,paq,парья
 gujarati,Gujarati,,23.22,72.68,guja1252,guj,гуджарати
 saurashtra,Saurashtra,,13.09,80.27,saur1248,saz,саураштра
@@ -372,7 +372,7 @@ lomavren,Lomavren,,40.1833,44.5167,loma1235,rmi,ломаврен
 hittite,Hittite,,40.0197,34.6152,hitt1242,oht,хеттский
 lydian,Lydian,,40,30,lydi1241,xld,лидийский
 palaic,Palaic,,39,35,pala1331,plq,палайский
-luwian,Luwian,,40.0197,34.6153,"cune1239, hier1240","xlu, hlu",лувийский
+luwian,Luwian,,40.0197,34.6153,cune1239; hier1240,xlu; hlu,лувийский
 lycian,Lycian,,36.7333,29.9,lyci1241,xlc,ликийский
 milyan,Milyan,,36.7333,29.9,mily1238,imy,милийский
 phrygian,Phrygian,,39,35,phry1239,xpg,фригийский
@@ -392,7 +392,7 @@ udi,Udi,,41.8818,46.9171,udii1243,udi,удинсткий
 khinalug,Khinalug,,41.1777,48.1297,khin1240,kjj,хиналугский
 bamana,Bamana,,12.65,-8,bamb1269,bam,бамана
 kpelle,Kpelle,,7.75,-8.8167,kpel1252,kpe,кпелле
-looma,Looma,,7.92,-10.8,"loma1260, toba1269","lom, tob",лоома
+looma,Looma,,7.92,-10.8,loma1260; toba1269,lom; tob,лоома
 dan,Dan,,6.85,-5.3,nucl1770,dnj,дан
 kla_dan,Kla-Dan,,6.85,-5.3,klad1234,lda,кла-дан
 guro,Guro,,7,-6.5,guro1248,goa,гуро
