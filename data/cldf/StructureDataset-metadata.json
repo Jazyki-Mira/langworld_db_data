@@ -71,12 +71,10 @@
                     },
                     {
                         "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#value",
                         "name": "Value_RU"
                     },
                     {
                         "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#comment",
                         "name": "Comment_RU"
                     }
                 ],
@@ -157,7 +155,6 @@
                     },
                     {
                         "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
                         "name": "Name_RU"
                     }
                 ],
@@ -247,7 +244,6 @@
                     },
                     {
                         "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
                         "name": "Name_RU"
                     }
                 ],
@@ -285,7 +281,6 @@
                     },
                     {
                         "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
                         "name": "Name_RU"
                     }
                 ],

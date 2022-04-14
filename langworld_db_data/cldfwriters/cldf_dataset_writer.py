@@ -35,17 +35,10 @@ class CLDFDatasetWriter:
 
         for column_name in ('Value_RU', 'Comment_RU'):
             dataset.add_columns('ValueTable', column_name)
-            # not sure if it is OK for one row to have 2 columns with http://cldf.clld.org/v1.0/terms.rdf#value
-            dataset['ValueTable', column_name].propertyUrl = (
-                dataset['ValueTable', column_name.replace('_RU', '')].propertyUrl
-            )
 
         for component_name in ('CodeTable', 'LanguageTable', 'ParameterTable'):
             dataset.add_component(component_name)
-
             dataset.add_columns(component_name, 'Name_RU')
-            # not sure if it is OK for one row to have 2 columns with http://cldf.clld.org/v1.0/terms.rdf#name
-            dataset[component_name, 'Name_RU'].propertyUrl = dataset[component_name, 'Name'].propertyUrl
 
         # CodeTable
         listed_values = [
