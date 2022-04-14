@@ -33,18 +33,37 @@ class CLDFDatasetWriter:
 
         dataset = StructureDataset.in_dir(CLDF_DIR)
 
+        for column_name in ('Value_RU', 'Comment_RU'):
+            dataset.add_columns('ValueTable', column_name)
+            # not sure if it is OK for one row to have 2 columns with http://cldf.clld.org/v1.0/terms.rdf#value
+            dataset['ValueTable', column_name].propertyUrl = (
+                dataset['ValueTable', column_name.replace('_RU', '')].propertyUrl
+            )
+
         for component_name in ('CodeTable', 'LanguageTable', 'ParameterTable'):
             dataset.add_component(component_name)
 
+            dataset.add_columns(component_name, 'Name_RU')
+            # not sure if it is OK for one row to have 2 columns with http://cldf.clld.org/v1.0/terms.rdf#name
+            dataset[component_name, 'Name_RU'].propertyUrl = dataset[component_name, 'Name'].propertyUrl
+
         # CodeTable
         listed_values = [
-            {'ID': row['id'], 'Parameter_ID': row['feature_id'], 'Name': row['en'], 'Description': ''}
+            {
+                'ID': row['id'], 'Parameter_ID': row['feature_id'], 'Name': row['en'], 'Description': '',
+                # custom columns:
+                'Name_RU': row['ru']
+            }
             for row in self.listed_values
         ]
 
         # ParameterTable
         features = [
-            {'ID': row['id'], 'Name': row['en'], 'Description': ''}
+            {
+                'ID': row['id'], 'Name': row['en'], 'Description': '',
+                # custom columns:
+                'Name_RU': row['ru']
+            }
             for row in self.features
         ]
 
@@ -52,7 +71,9 @@ class CLDFDatasetWriter:
             {
                 'ID': row['id'], 'Name': row['name_en'], 'Macroarea': '',
                 'Latitude': row['latitude'], 'Longitude': row['longitude'],
-                'Glottocode': row['glottocode'], 'ISO639P3code': row['iso_639_3']
+                'Glottocode': row['glottocode'], 'ISO639P3code': row['iso_639_3'],
+                # custom columns:
+                'Name_RU': row['name_ru']
             }
             for row in self.doculects
         ]
@@ -75,8 +96,10 @@ class CLDFDatasetWriter:
                     'Language_ID': language_id,
                     'Parameter_ID': relevant_row['feature_id'],
                     'Value': self.value_en_for_value_id[relevant_row['value_id']],
+                    'Value_RU': relevant_row['value_ru'],
                     'Code_ID': relevant_row['value_id'],
                     'Comment': relevant_row['comment_en'],
+                    'Comment_RU': relevant_row['comment_ru'],
                     'Source': '',
                 })
                 value_table_row_id += 1
