@@ -384,7 +384,7 @@ tocharian_b,language,1,0,Tocharian B,тохарский В,,,tochar,txb,tokh1243
 andronovo_aryan,language,1,0,Andronovo Aryan,андроновский арийский,,,indo_aryan,,,55.56153,90.01418,rus,20,217,,1,
 galatian,language,1,0,Galatian,галатский,,,celt,xga,gala1252,39.97122,32.87817,tur,20,196,,1,
 mitanni_indo_aryan,language,1,0,Mitanni Indo-Aryan,митаннийский индоарийский,,,indo_aryan,,,36.84683,40.12033,tur,20,198,,1,
-tsakhur,language,0,0,Tsakhur,цахурский,,,lezg,kr,tsak1249,41.6523,46.9775,rus,,,,0,
+tsakhur,language,0,0,Tsakhur,цахурский,,,lezg,tkr,tsak1249,41.6523,46.9775,rus,,,,0,
 archi,language,0,0,Archi,арчинский,,,lezg,aqc,arch1244,41.9839,46.8127,rus,,,,0,
 kryz,language,0,0,Kryz,крызский,,,lezg,kry,kryt1240,41.1455,48.164,aze,,,,0,
 budukh,language,0,0,Budukh,будухский,,,lezg,bdk,budu1248,41.1207,48.3233,aze,,,,0,
