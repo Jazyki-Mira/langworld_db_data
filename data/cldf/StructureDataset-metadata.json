@@ -12,7 +12,7 @@
     "tables": [
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ValueTable",
-            "dc:extent": 22844,
+            "dc:extent": 22846,
             "tableSchema": {
                 "columns": [
                     {
