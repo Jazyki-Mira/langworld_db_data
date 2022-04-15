@@ -1613,7 +1613,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1612,balochi,A-15,,,,,Дорсальные и церебральные,
 1613,balochi,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
 1614,balochi,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,
-1615,balochi,A-18,,,,,По придыхательности/непридыхательности,
+1615,balochi,A-18,By aspiration,A-18-13,,,По аспирации,
 1616,balochi,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 1617,balochi,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Губные, переднеязычные, среднеязычные и заднеязычные",
 1618,balochi,B-1,Non-phonological,B-1-3,,,Нефонологическое,
@@ -6922,7 +6922,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6921,icelandic,A-15,"Dental, interdental and alveolar",A-15-11,,,"Дентальные, интердентальные и альвеолярные",
 6922,icelandic,A-16,Velar,A-16-1,,,Велярные,
 6923,icelandic,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,
-6924,icelandic,A-18,,,,,По палатализации и долготе,
+6924,icelandic,A-18,By palatalization and length,A-18-15,,,По палатализации и долготе,
 6925,icelandic,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 6926,icelandic,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Губные, переднеязычные, среднеязычные и заднеязычные",
 6927,icelandic,A-21,By vocalization and length,A-21-10,,,По звонкости и долготе,
@@ -8861,7 +8861,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8860,kashmiri,A-15,,,,,"Смычные: чистые (неносовые/носовые), аффрикаты (одно-/двухфокусные) и щелевые: однофокусные (срединные и боковые) и двухфокусные",
 8861,kashmiri,A-16,,,,,Смычные чистые неносовые и щелевые однофокусные срединные,
 8862,kashmiri,A-17,,,,,Только ларингальные,
-8863,kashmiri,A-18,,,,,По палатализации и лабиализации,
+8863,kashmiri,A-18,By palatalization and labialization,A-18-16,,,По палатализации и лабиализации,
 8864,kashmiri,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Кроме дрожащих сонорные согласные традиционно включены в общую классификацию шумных согласных.
 8865,kashmiri,A-20,"Labial, coronal and dorsal",A-20-14,,,"Губные, переднеязычные и среднеязычные",
 8866,kashmiri,A-21,By palatalization and labialization,A-21-11,,,По палатализации и лабиализации,
@@ -10454,7 +10454,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10453,kurdish,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,
 10454,kurdish,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 10455,kurdish,A-20,Labial and coronal,A-20-7,,,Губные и переднеязычные,
-10456,kurdish,A-21,,,,,По аспирации,
+10456,kurdish,A-21,By aspiration,A-21-19,,,По аспирации,
 10457,kurdish,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
 10458,kurdish,B-2,Dynamic,B-2-1,,,Динамическое,
 10459,kurdish,B-3,Syllable,B-3-1,,,Слог,
@@ -11446,7 +11446,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11445,lycian,A-10,,,,,их нет,
 11446,lycian,A-11,Opposition by presence and absence of voice,A-11-1,,,Есть противопоставления по звонкости/глухости,
 11447,lycian,A-12,Plosives and affricates,A-12-2,,,Взрывные и аффрикаты,
-11448,lycian,A-14,,,,,дентальноальвеолярные,
+11448,lycian,A-14,Dental-alveolar,A-14-3,,,Дентально-альвеорялрные,
 11449,lycian,A-15,Dental-alveolar,A-15-23,,,Дентально-альвеолярные,
 11450,lycian,A-16,Uvular,A-16-3,,,Увулярные,
 11451,lycian,A-18,By pharyngealization,A-18-5,,,По фарингализации,
@@ -12261,10 +12261,10 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12260,mayan,A-15,,,,,Нецеребральные и церебральные,
 12261,mayan,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
 12262,mayan,A-17,,,,,Только ларингальные,
-12263,mayan,A-18,,,,,По аспирации,
+12263,mayan,A-18,By aspiration,A-18-13,,,По аспирации,
 12264,mayan,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 12265,mayan,A-20,,,,,"Губные, переднеязычные (нецеребральные и церебральные) и среднеязычные",
-12266,mayan,A-21,,,,,По аспирации,
+12266,mayan,A-21,By aspiration,A-21-19,,,По аспирации,
 12267,mayan,B-9,Phonological,B-9-1,,,Фонологическая,Других данных нет.
 12268,mayan,B-13,Nasalization,B-13-1,,,Назализация,Фонологический статус назализации гласных не всегда ясен.
 12269,mayan,D-5,Differences in phonetic structure,D-5-2,,,Различия в фонетическом составе,
@@ -12507,7 +12507,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12506,meimei,A-17,,,,,Верхнефарингальные щелевые,
 12507,meimei,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 12508,meimei,A-20,"Labial, coronal and dorsal",A-20-14,,,"Губные, переднеязычные и среднеязычные",Других данных нет.
-12509,meimei,A-21,,,,,По звонкости и палатализации,
+12509,meimei,A-21,By vocalization and palatalization,A-21-17,,,По звонкости и палатализации,
 12510,meimei,B-1,Non-phonological,B-1-3,,,Нефонологическое,
 12511,meimei,B-2,Dynamic,B-2-1,,,Динамическое,
 12512,meimei,B-3,Syllable,B-3-1,,,Слог,
@@ -12635,7 +12635,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12634,milyan,A-18,By labialization,A-18-2,,,По лабиализации,
 12635,milyan,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",боковые
 12636,milyan,A-20,"Labial, coronal and dorsal",A-20-14,,,"Губные, переднеязычные и среднеязычные",
-12637,milyan,A-21,,,,,По палатализации и назализации,
+12637,milyan,A-21,By vocalization and nasalization,A-21-18,,,По палатализации и назализации,
 12638,milyan,B-1,,,,,нет данных,
 12639,milyan,B-2,,,,,нет данных,
 12640,milyan,B-3,Syllable,B-3-1,,,Слог,
@@ -13734,7 +13734,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13733,norwegian,A-15,"Dental, alveolar and postalveolar",A-15-14,,,"Дентальные, альвеолярные и постальвеолярные",Имеются региональные различия.
 13734,norwegian,A-16,Velar,A-16-1,,,Велярные,
 13735,norwegian,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,
-13736,norwegian,A-18,,,,,По долготе,
+13736,norwegian,A-18,By length,A-18-14,,,По долготе,
 13737,norwegian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайд /j/ определяется как полугласный. Переднеязычные назальные и плавные включают в себя какуминальные.
 13738,norwegian,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Губные, переднеязычные, среднеязычные и заднеязычные",Переднеязычные назальные и плавные включают в себя альвеолярные и постальвеолярные.
 13739,norwegian,A-21,By length,A-21-7,,,По долготе,
@@ -15116,7 +15116,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15115,parachi,A-18,Absent,A-18-1,,,Отсутствуют,Других данных нет.
 15116,parachi,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 15117,parachi,A-20,"Labial, coronal and dorsal",A-20-14,,,"Губные, переднеязычные и среднеязычные",
-15118,parachi,A-21,,,,,По придыхательности/непридыхательности,
+15118,parachi,A-21,By aspiration,A-21-19,,,По аспирации,
 15119,parachi,B-1,Non-phonological,B-1-3,,,Нефонологическое,Других данных нет.
 15120,parachi,B-2,Dynamic,B-2-1,,,Динамическое,
 15121,parachi,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -15272,7 +15272,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15271,pashai,A-15,,,,,Нецеребральные и церебральные,
 15272,pashai,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
 15273,pashai,A-17,,,,,Только ларингальные,
-15274,pashai,A-18,,,,,По аспирации,
+15274,pashai,A-18,By aspiration,A-18-13,,,По аспирации,
 15275,pashai,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /y/ определяются как однофокусные срединные щелевые.
 15276,pashai,A-20,"Labial, coronal and dorsal",A-20-14,,,"Губные, переднеязычные и среднеязычные",
 15277,pashai,A-21,Absent,A-21-1,,,Отсутствуют,
@@ -19078,7 +19078,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19077,swedish,A-15,,,,,"Дентальные, альвеолярные и постальвеолярные (ретрофлексные)",Большинство исследователей считает ретрофлексные вариантами бифонемных сочетаний (аллофонами соответствующих дентальных).
 19078,swedish,A-16,Velar,A-16-1,,,Велярные,
 19079,swedish,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,
-19080,swedish,A-18,,,,,По долготе,
+19080,swedish,A-18,By length,A-18-14,,,По долготе,
 19081,swedish,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 19082,swedish,A-20,"Labial, coronal and guttural",A-20-16,,,"Губные, переднеязычные и заднеязычные",В южной Швеции вместо переднеязычного /r/ употребляется увулярное /R/.
 19083,swedish,A-21,By length,A-21-7,,,По долготе,
@@ -19846,7 +19846,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19845,telugu,A-15,"Dental, alveolar, and retroflex",A-15-20,,,"Дентальные, альвеолярные и ретрофлексные",
 19846,telugu,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
 19847,telugu,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,
-19848,telugu,A-18,,,,,По аспирации,
+19848,telugu,A-18,By aspiration,A-18-13,,,По аспирации,
 19849,telugu,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 19850,telugu,A-20,,,,,"Губные, переднеязычные (дентальные и ретрофлексные) и среднеязычные (палатальные)",
 19851,telugu,A-21,Absent,A-21-1,,,Отсутствуют,
@@ -21948,7 +21948,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21947,welsh,A-18,Absent,A-18-1,,,Отсутствуют,Cтатус геминированных согласных в центральных и южных диалектах неясен.
 21948,welsh,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",Для В.я. специфичны глухие латеральный /?/ (латеральный спирант) и дрожащий /?/ (аспирированный сонант).
 21949,welsh,A-20,"Labial, coronal and guttural",A-20-16,,,"Губные, переднеязычные и заднеязычные",
-21950,welsh,A-21,,,,,По аспирации,
+21950,welsh,A-21,By aspiration,A-21-19,,,По аспирации,
 21951,welsh,B-1,Non-phonological,B-1-3,,,Нефонологическое,
 21952,welsh,B-2,,,,,Слабо-динамическое,
 21953,welsh,B-3,Syllable,B-3-1,,,Слог,
