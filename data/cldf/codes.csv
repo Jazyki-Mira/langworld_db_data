@@ -68,6 +68,11 @@ A-11-11,A-11,Emphatic consonants present,,Есть эмфатические со
 A-11-12,A-11,Opposition by strain,,Есть противопоставление по напряженности и ненапряженности
 A-11-13,A-11,"Opposition by voice presence/absence, emphatic consonants present",,Есть противопоставление по звонкости/глухости и эмфатические согласные
 A-11-14,A-11,Opposition by voice presence/absence and strain,,Есть противопоставление по звонкости/глухости и напряженности/ненапряженности
+A-11-15,A-11,Opposition by voice presence/absence and labialization,,Есть противопоставления по звонкости/глухости и лабиализации
+A-11-16,A-11,Opposition by voice presence/absence and palatalization,,Есть противопоставления по звонкости/глухости и наличию/отсутствию палатализации
+A-11-17,A-11,Opposition by voice presence/absence and intensity,,Есть противопоставления по звонкости/глухости и интенсивности
+A-11-18,A-11,"Strong (voiceless), weak (voiced) and geminate consonants present",,"Есть сильные (глухие), слабые (звонкие) и геминированные согласные"
+A-11-19,A-11,Emphatic and implosive consonants present,,Есть эмфатические и имплозивные согласные
 A-12-1,A-12,Plosives and fricatives,,Взрывные и фрикативные
 A-12-2,A-12,Plosives and affricates,,Взрывные и аффрикаты
 A-12-3,A-12,"Plosives, fricatives and affricates",,"Взрывные, фрикативные и аффрикаты"
