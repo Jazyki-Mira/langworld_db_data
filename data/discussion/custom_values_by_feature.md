@@ -154,7 +154,6 @@
 - Нисходящие дифтонги и дифтонги с вокализованными согласными (вокоидами): [датский](../feature_profiles/danish.csv)
 - Нисходящие и ряд дифтонгов со слабым r на основе ротацированных гласных: [согдийский](../feature_profiles/sogdian.csv)
 - Равновесные и нисходящие: [бадага](../feature_profiles/badaga.csv)
-- их нет: [лувийский](../feature_profiles/luwian.csv), [ликийский](../feature_profiles/lycian.csv), [палайский](../feature_profiles/palaic.csv)
 - нет данных: [джого](../feature_profiles/jogo.csv)
 ## A-11: Инвентарь шумных согласных по ларингальным признакам
 
