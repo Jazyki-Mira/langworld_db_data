@@ -118,11 +118,9 @@
 - Четыре ряда: [таджикский](../feature_profiles/tajik.csv)
 ## A-4: Фонологические ступени долготы
 
-- Две ступени долготы гласных фонологически не интерпретируются: [парачи](../feature_profiles/parachi.csv)
-- Две ступени долготы фонологически не интерпретируются: [фаризанди](../feature_profiles/farizandi.csv), [вонишуни](../feature_profiles/vonishuni.csv), [зефреи](../feature_profiles/zefrei.csv)
+- Две ступени долготы гласных фонологически не интерпретируются: [фаризанди](../feature_profiles/farizandi.csv), [джавшакани](../feature_profiles/jawshakani.csv), [парачи](../feature_profiles/parachi.csv), [вонишуни](../feature_profiles/vonishuni.csv), [яран(д)и](../feature_profiles/yarandi.csv), [зефреи](../feature_profiles/zefrei.csv)
 - Длгота (устойчивость?) гласных носит фонемный характер: [таджриши](../feature_profiles/tajrishi.csv)
 - Наличие и характер фонологического противопоставления по долготе неясны: [тирахи](../feature_profiles/tirahi.csv)
-- Статус двух ступеней долготы фонологически не интерпретируется: [джавшакани](../feature_profiles/jawshakani.csv), [яран(д)и](../feature_profiles/yarandi.csv)
 - Фонологические разряды устойчивых/неустойчивых: [таджикский](../feature_profiles/tajik.csv)
 - Фонологический статус долгих и кратких фонем не установлен: [заза](../feature_profiles/zaza.csv)
 ## A-5: Противопоставление гласных по лабиализации
