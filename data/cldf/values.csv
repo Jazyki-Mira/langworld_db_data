@@ -14122,7 +14122,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14121,old_church_slavonic,A-3,Front and non-front,A-3-5,,,Передний и непередний,
 14122,old_church_slavonic,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,
 14123,old_church_slavonic,A-5,,,,,В непереднем ряду,
-14124,old_church_slavonic,A-6,,,,,В переднем и непереднем рядах,
+14124,old_church_slavonic,A-6,Present for front and non-front values,A-6-8,,,В переднем и непереднем рядах,
 14125,old_church_slavonic,A-7,No vowel opposition in pharyngealization,A-7-1,,,Противопоставление гласных по фарингализации отсутствует,
 14126,old_church_slavonic,A-8,No vowel opposition in ATR,A-8-1,,,Противопоставление гласных по продвинутости корня языка отсутствует,
 14127,old_church_slavonic,A-9,No diphthongs and triphthongs,A-9-1,,,Дифтонги и трифтонги отсутствуют,
@@ -15105,7 +15105,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15104,parachi,A-2,"Close, close-mid, mid and open",A-2-4,,,"Верхний, верхне-средний, средний и нижний",Вокализм П.я. представляет собой гетерогенную систему на основе заимствований из дардских языков и языков дари пашто.
 15105,parachi,A-3,,,,,"Передний, нейтральный и задний",Других жанных нет.
 15106,parachi,A-4,,,,,Две ступени долготы гласных фонологически не интерпретируются,
-15107,parachi,A-6,,,,,В нейтральном и заднем рядах,Других данных нет.
+15107,parachi,A-6,Present for neutral and back vowels,A-6-7,,,В нейтральном и заднем рядах,Других данных нет.
 15108,parachi,A-11,Opposition by voice presence/absence and by aspiration,A-11-6,,,Есть противопоставления по звонкости/глухости и по аспирации,
 15109,parachi,A-12,,,,,Смычные: чистые (неносовые и носовые) и аффрикаты; щелевые: срединные (одно- и двухфокусные); дрожащие,
 15110,parachi,A-13,"Labial, coronal, dorsal, guttural and postuvular",A-13-2,,,"Губные, переднеязычные, среднеязычные, заднеязычные и постувулярные",
