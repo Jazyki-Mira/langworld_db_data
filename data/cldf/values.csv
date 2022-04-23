@@ -1519,7 +1519,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1518,badaga,A-5,No vowel opposition in labialization,A-5-1,,,Противопоставление гласных по лабиализации отсутствует,
 1519,badaga,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
 1520,badaga,A-9,Only diphthongs present,A-9-2,,,Только дифтонги,
-1521,badaga,A-10,,,,,Равновесные и нисходящие,
+1521,badaga,A-10,Even and falling (descending),A-10-5,,,Равновесные и нисходящие,
 1522,badaga,A-11,Opposition by presence and absence of voice,A-11-1,,,Есть противопоставления по звонкости/глухости,Противопоставление по звонкости/глухости релевантно только для шумных смычных.
 1523,badaga,A-12,Plosives and fricatives,A-12-1,,,Взрывные и фрикативные,
 1524,badaga,A-13,"Labial, coronal, dorsal, guttural and postuvular",A-13-2,,,"Губные, переднеязычные, среднеязычные, заднеязычные и постувулярные",
@@ -3758,7 +3758,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3757,danish,A-5,Present for front and back vowels,A-5-6,,,В переднем и заднем рядах,
 3758,danish,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
 3759,danish,A-9,Only diphthongs present,A-9-2,,,Только дифтонги,
-3760,danish,A-10,,,,,Нисходящие дифтонги и дифтонги с вокализованными согласными (вокоидами),
+3760,danish,A-10,Falling (descending) diphtongs and diphtongs with vocalized consonants (vocoids),A-10-4,,,Нисходящие дифтонги и дифтонги с вокализованными согласными (вокоидами),
 3761,danish,A-11,Opposition by voice presence/absence and by aspiration,A-11-6,,,Есть противопоставления по звонкости/глухости и по аспирации,"Глухие смычные противопоставлены по аспирации (напряженности), фрикативные противопоставлены по признаку глухие/звонкие."
 3762,danish,A-12,Plosives and fricatives,A-12-1,,,Взрывные и фрикативные,
 3763,danish,A-13,"Labial, coronal, dorsal, guttural and postuvular",A-13-2,,,"Губные, переднеязычные, среднеязычные, заднеязычные и постувулярные",
@@ -14125,7 +14125,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14124,old_church_slavonic,A-8,No vowel opposition in ATR,A-8-1,,,Противопоставление гласных по продвинутости корня языка отсутствует,
 14125,old_church_slavonic,A-9,No diphthongs and triphthongs,A-9-1,,,Дифтонги и трифтонги отсутствуют,
 14126,old_church_slavonic,A-11,Opposition by presence and absence of voice,A-11-1,,,Есть противопоставления по звонкости/глухости,
-14127,old_church_slavonic,A-12,,,,,"Взрывные, аффрикаты, фрикативные и сложные",
+14127,old_church_slavonic,A-12,"Plosives, fricatives, affricates and compound consonants",A-12-5,,,"Взрывные, фрикативные, аффрикаты и сложные",
 14128,old_church_slavonic,A-13,"Labial, coronal and guttural",A-13-1,,,"Губные, переднеязычные и заднеязычные",
 14129,old_church_slavonic,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
 14130,old_church_slavonic,A-15,,,,,Шумные переднеязычные согласные по месту образования терминологически не интерпретируются,
@@ -14355,7 +14355,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14354,old_novgorod,A-9,Only diphthongs present,A-9-2,,,Только дифтонги,
 14355,old_novgorod,A-10,Falling (descending),A-10-2,,,Нисходящие,
 14356,old_novgorod,A-11,Opposition by presence and absence of voice,A-11-1,,,Есть противопоставления по звонкости/глухости,
-14357,old_novgorod,A-12,,,,,"Взрывные, фрикативные, аффрикаты и сложные",
+14357,old_novgorod,A-12,"Plosives, fricatives, affricates and compound consonants",A-12-5,,,"Взрывные, фрикативные, аффрикаты и сложные",
 14358,old_novgorod,A-13,"Labial, coronal and guttural",A-13-1,,,"Губные, переднеязычные и заднеязычные",Других данных нет.
 14359,old_novgorod,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
 14360,old_novgorod,A-15,Dental-alveolar,A-15-23,,,Дентально-альвеолярные,Других данных нет.
