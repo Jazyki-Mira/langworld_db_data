@@ -51,6 +51,8 @@ A-8-8,A-8,"Present for front, central and back vowels",,"В переднем, с
 A-9-1,A-9,No diphthongs and triphthongs,,Дифтонги и трифтонги отсутствуют
 A-9-2,A-9,Only diphthongs present,,Только дифтонги
 A-9-3,A-9,Both diphthongs and triphthongs present,,Дифтонги и трифтонги
+A-9-4,A-9,Biphonemic clusters with a semivowel or a semiconsonant,,Бифонемные сочетания с полугласным или полусогласным
+A-9-5,A-9,Diphtongoids (vowels in monosyllabic words),,Дифтонгоиды (гласные в составе односложных слов)
 A-10-1,A-10,Rising (ascending),,Восходящие
 A-10-2,A-10,Falling (descending),,Нисходящие
 A-10-3,A-10,Rising (ascending) and falling (descending),,Восходящие и нисходящие

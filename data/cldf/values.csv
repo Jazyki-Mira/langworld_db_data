@@ -7567,7 +7567,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7566,italian,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,
 7567,italian,A-5,No vowel opposition in labialization,A-5-1,,,Противопоставление гласных по лабиализации отсутствует,
 7568,italian,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
-7569,italian,A-9,,,,,Бифонемные сочетания с полугласным или полусогласным,Существуют трех- и четырехэлементные сочетания с одним или двумя полугласными или полусогласными.
+7569,italian,A-9,Biphonemic clusters with a semivowel or a semiconsonant,A-9-4,,,Бифонемные сочетания с полугласным или полусогласным,Существуют трех- и четырехэлементные сочетания с одним или двумя полугласными или полусогласными.
 7570,italian,A-10,Rising (ascending) and falling (descending),A-10-3,,,Восходящие и нисходящие,
 7571,italian,A-11,Opposition by presence and absence of voice,A-11-1,,,Есть противопоставления по звонкости/глухости,
 7572,italian,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
@@ -13183,7 +13183,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13182,munji,A-4,Two,A-4-2,,,Две ступени,
 13183,munji,A-5,No vowel opposition in labialization,A-5-1,,,Противопоставление гласных по лабиализации отсутствует,
 13184,munji,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
-13185,munji,A-9,,,,,Дифтонгоиды - гласные в составе односложных слов,
+13185,munji,A-9,Diphtongoids (vowels in monosyllabic words),A-9-5,,,Дифтонгоиды (гласные в составе односложных слов),
 13186,munji,A-11,Opposition by presence and absence of voice,A-11-1,,,Есть противопоставления по звонкости/глухости,
 13187,munji,A-12,,,,,Смычные: чистые (неносовые и носовые) и аффрикаты (одно- и двухфокусные); щелевые: срединные (одно- и двухфокусные) и боковые; дрожащие,Классификация авторов статьи.
 13188,munji,A-13,"Labial, coronal, dorsal, guttural and postuvular",A-13-2,,,"Губные, переднеязычные, среднеязычные, заднеязычные и постувулярные",
