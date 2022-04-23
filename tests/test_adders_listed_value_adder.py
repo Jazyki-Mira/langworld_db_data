@@ -15,6 +15,9 @@ GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION = (
 )
 GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION = OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES / 'gold_standard'
 
+STEMS_OF_EXPECTED_OUTPUT_FILES = ('catalan', 'corsican', 'franco_provencal')
+STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED = ('pashto', 'ukrainian')
+
 
 @pytest.fixture(scope='function')
 def test_adder():
@@ -49,7 +52,7 @@ def test__add_to_inventory_of_listed_values_adds_good_value(test_adder):
     new_value_id = test_adder._add_to_inventory_of_listed_values(
         feature_id='A-11',
         new_value_en='New value, listed with a comma',
-        new_value_ru='Первые, вторые и третьи',
+        new_value_ru='Есть первые, вторые и третьи',
     )
     assert new_value_id == 'A-11-15'
 
@@ -67,15 +70,21 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
     test_adder._mark_value_as_listed_in_feature_profiles(
         feature_id='A-11',
         new_value_id='A-11-15',
-        new_value_ru='Первые, вторые и третьи',
+        new_value_ru='Есть первые, вторые и третьи',
         custom_values_to_rename=[
-            'Третьи, вторые и первые',
+            'первые, вторые и третьи',  # it is also lowercase in feature profile
+            'третьи, вторые и первые',  # first word is capitalized in feature profile
             'Первые, третьи и вторые'
         ]
     )
 
+    for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
+        assert (OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES / f'{stem}.csv').exists(), \
+            f'File {stem}.csv was not created. It means that no changes were made while there should have been changes'
+
     for file in OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES.glob('*.csv'):
-        assert file.stem not in ('pashto', 'ukrainian'), f"File {file.name} is not supposed to be changed"
+        assert file.stem not in STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED, \
+            f"File {file.name} is not supposed to be changed"
 
         print(f'TEST: checking amended feature profile {file.name}')
         gold_standard_file = GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION / file.name
@@ -106,9 +115,10 @@ def test_add_listed_value(test_adder):
     test_adder.add_listed_value(
         feature_id='A-11',
         new_value_en='New value, listed with a comma',
-        new_value_ru='Первые, вторые и третьи',
+        new_value_ru='Есть первые, вторые и третьи',
         custom_values_to_rename=[
-            'Третьи, вторые и первые',
+            'первые, вторые и третьи',
+            'третьи, вторые и первые',
             'Первые, третьи и вторые'
         ]
     )
@@ -122,8 +132,13 @@ def test_add_listed_value(test_adder):
 
     test_adder.output_file_with_listed_values.unlink()
 
+    for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
+        assert (OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES / f'{stem}.csv').exists(), \
+            f'File {stem}.csv was not created. It means that no changes were made while there should have been changes'
+
     for file in OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES.glob('*.csv'):
-        assert file.stem not in ('pashto', 'ukrainian'), f"File {file.name} is not supposed to be changed"
+        assert file.stem not in STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED, \
+            f"File {file.name} is not supposed to be changed"
 
         print(f'TEST: checking amended feature profile {file.name}')
         gold_standard_file = GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION / file.name

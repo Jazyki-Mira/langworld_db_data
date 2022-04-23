@@ -120,8 +120,10 @@ class ListedValueAdder:
                 ):
                     value_ru = row['value_ru'].strip()
                     value_ru = value_ru[:-1] if value_ru.endswith('.') else value_ru
-                    value_ru = value_ru[0].upper() + value_ru[1:]
-                    if value_ru not in [new_value_ru] + custom_values_to_rename:
+
+                    if value_ru.lower() not in [v.lower() for v in
+                        [new_value_ru] + custom_values_to_rename
+                    ]:
                         break
 
                     print(f'{file.name}: changing row {i + 2} (feature {feature_id}). '
