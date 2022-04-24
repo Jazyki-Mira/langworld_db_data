@@ -214,14 +214,10 @@
 - Список из 26 согласных фонем по месту образования терминологически не интерпретируется: [хорезмийский](../feature_profiles/khwaresmian.csv)
 ## A-15: Шумные переднеязычные согласные по месту образования
 
-- В энциклопедии указано "дентоальвеолярные": [мано](../feature_profiles/mano.csv)
-- Дентально-альвеолярные и постальвеолярные: [серболужицкий](../feature_profiles/sorbian.csv)
 - Дентальные (нецеребральные и церебральные): [кховар](../feature_profiles/khowar.csv), [шина](../feature_profiles/shina.csv)
 - Дентальные и передненебные: [португальский](../feature_profiles/portuguese.csv), [румынский](../feature_profiles/romanian.csv), [русский](../feature_profiles/russian.csv), [сербохорватский](../feature_profiles/serbocroatian.csv), [словенский](../feature_profiles/slovene.csv)
 - Дентальные, альвеолярные (апикальные и предорсальные) и передненебные: [сефардский](../feature_profiles/judeo_spanish.csv)
 - Дентальные, альвеолярные (дорсальные и апико-альвеолярные) и передненебные: [фриульский](../feature_profiles/friulian.csv)
-- Дентальные, альвеолярные и альвео-палатальные: [корсиканский](../feature_profiles/corsican.csv), [белорусский](../feature_profiles/belorussian.csv)
-- Дентальные, альвеолярные и палатальные: [итальянский](../feature_profiles/italian.csv)
 - Дентальные, альвеолярные и передненебные: [каталонский](../feature_profiles/catalan.csv), [французский](../feature_profiles/french.csv), [мегленорумынский](../feature_profiles/megleno_romanian.csv), [старофранцузский](../feature_profiles/old_french.csv), [ретороманский](../feature_profiles/rhaeto_romance.csv)
 - Дентальные, альвеолярные и постальвеолярные (ретрофлексные): [шведский](../feature_profiles/swedish.csv)
 - Дентальные, альвеолярные и препалатальные: [истрорумынский](../feature_profiles/istro_romanian.csv), [ладинский](../feature_profiles/ladin.csv)
