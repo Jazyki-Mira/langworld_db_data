@@ -92,12 +92,12 @@ A-12-2,A-12,Plosives and affricates,Взрывные и аффрикаты
 A-12-3,A-12,"Plosives, fricatives and affricates","Взрывные, фрикативные и аффрикаты"
 A-12-4,A-12,"Plosives, voiced, prenasalized, fricatives and affricates","Взрывные, звонкие, преназализованные, фрикативные и аффрикаты"
 A-12-5,A-12,"Plosives, fricatives, affricates and compound consonants","Взрывные, фрикативные, аффрикаты и сложные"
-A-13-1,A-13,"Labial, coronal and guttural","Губные, переднеязычные и заднеязычные"
-A-13-2,A-13,"Labial, coronal, dorsal, guttural and postuvular","Губные, переднеязычные, среднеязычные, заднеязычные и постувулярные"
-A-13-3,A-13,"Labial, coronal, dorsal and guttural","Губные, переднеязычные, среднеязычные и заднеязычные"
-A-13-4,A-13,"Labial, coronal, dorsal and postuvular","Губные, переднеязычные, среднеязычные и постувулярные"
-A-13-5,A-13,"Labial, coronal, guttural and postuvular","Губные, переднеязычные, заднеязычные и постувулярные"
-A-13-6,A-13,"Labial, dental-alveolar, palatal, velar and labialized velar","Губные, зубно-альвеолярные, палатальные, велярные и велярные огубленные"
+A-13-1,A-13,"Labial, coronal and guttural","Лабиальные, переднеязычные и заднеязычные"
+A-13-2,A-13,"Labial, coronal, dorsal, guttural and postuvular","Лабиальные, переднеязычные, среднеязычные, заднеязычные и постувулярные"
+A-13-3,A-13,"Labial, coronal, dorsal and guttural","Лабиальные, переднеязычные, среднеязычные и заднеязычные"
+A-13-4,A-13,"Labial, coronal, dorsal and postuvular","Лабиальные, переднеязычные, среднеязычные и постувулярные"
+A-13-5,A-13,"Labial, coronal, guttural and postuvular","Лабиальные, переднеязычные, заднеязычные и постувулярные"
+A-13-6,A-13,"Labial, dental-alveolar, palatal, velar and labialized velar","Лабиальные, дентально-альвеолярные, палатальные, велярные и велярные огубленные"
 A-14-1,A-14,Only bilabial,Только билабиальные
 A-14-2,A-14,Bilabial and labiodental,Билабиальные и лабиодентальные
 A-14-3,A-14,Dental-alveolar,Дентально-альвеорялрные
@@ -121,7 +121,7 @@ A-15-17,A-15,Alveolar and retroflex,Альвеолярные и ретрофле
 A-15-18,A-15,"Alveolar, retroflex and alveopalatal","Альвеолярные, ретрофлексные и альвео-палатальные"
 A-15-19,A-15,"Dental, alveolar, postalveolar, and retroflex","Дентальные, альвеолярные, постальвеолярные и ретрофлексные"
 A-15-20,A-15,"Dental, alveolar, and retroflex","Дентальные, альвеолярные и ретрофлексные"
-A-15-21,A-15,Dental-alveolar and palatal,Зубно-альвеолярные и палатальные
+A-15-21,A-15,Dental-alveolar and palatal,Дентально-альвеолярные и палатальные
 A-15-22,A-15,"Dental, alveolar and dental-alveolar","Дентальные, альвеолярные и дентально-альвеолярные"
 A-15-23,A-15,Dental-alveolar,Дентально-альвеолярные
 A-15-24,A-15,Alveolar and alveopalatal,Альвеолярные и альвео-палатальные
@@ -159,24 +159,24 @@ A-19-4,A-19,"Nasal, vibrant and glide","Назальные, вибранты и 
 A-19-5,A-19,"Liquid, vibrant and glide","Плавные, вибранты и глайды"
 A-19-6,A-19,"Nasal, liquid, vibrant and glide","Назальные, плавные, вибранты и глайды"
 A-19-7,A-19,Nasal and glide,Назальные и глайды
-A-19-8,A-19,"Approximant, nasal, vibrant and lateral","Аппроксиманты, носовые, вибранты и боковые"
+A-19-8,A-19,"Approximant, nasal, vibrant and lateral","Аппроксиманты, назальные, вибранты и латеральные"
 A-20-1,A-20,Coronal,Переднеязычные
 A-20-2,A-20,Dorsal,Среднеязычные
 A-20-3,A-20,Guttural,Заднеязычные
 A-20-4,A-20,Lateral,Латеральные
 A-20-5,A-20,Retroflex,Ретрофлексные
-A-20-6,A-20,Labial and guttural,Губные и заднеязычные
-A-20-7,A-20,Labial and coronal,Губные и переднеязычные
+A-20-6,A-20,Labial and guttural,Лабиальные и заднеязычные
+A-20-7,A-20,Labial and coronal,Лабиальные и переднеязычные
 A-20-8,A-20,Coronal and guttural,Переднеязычные и заднеязычные
 A-20-9,A-20,Coronal and postuvular,Переднеязычные и постувулярные
 A-20-10,A-20,Dorsal and guttural,Среднеязычные и заднеязычные
-A-20-11,A-20,"Labial, coronal, dorsal, guttural and postuvular","Губные, переднеязычные, среднеязычные, заднеязычные и постувулярные"
-A-20-12,A-20,"Labial, coronal, guttural and postuvular","Губные, переднеязычные, заднеязычные и постувулярные"
-A-20-13,A-20,"Labial, coronal, dorsal and postuvular","Губные, переднеязычные, среднеязычные и постувулярные"
-A-20-14,A-20,"Labial, coronal and dorsal","Губные, переднеязычные и среднеязычные"
+A-20-11,A-20,"Labial, coronal, dorsal, guttural and postuvular","Лабиальные, переднеязычные, среднеязычные, заднеязычные и постувулярные"
+A-20-12,A-20,"Labial, coronal, guttural and postuvular","Лабиальные, переднеязычные, заднеязычные и постувулярные"
+A-20-13,A-20,"Labial, coronal, dorsal and postuvular","Лабиальные, переднеязычные, среднеязычные и постувулярные"
+A-20-14,A-20,"Labial, coronal and dorsal","Лабиальные, переднеязычные и среднеязычные"
 A-20-15,A-20,"Coronal, dorsal and guttural","Переднеязычные, среднеязычные и заднеязычные"
-A-20-16,A-20,"Labial, coronal and guttural","Губные, переднеязычные и заднеязычные"
-A-20-17,A-20,"Labial, coronal, dorsal and guttural","Губные, переднеязычные, среднеязычные и заднеязычные"
+A-20-16,A-20,"Labial, coronal and guttural","Лабиальные, переднеязычные и заднеязычные"
+A-20-17,A-20,"Labial, coronal, dorsal and guttural","Лабиальные, переднеязычные, среднеязычные и заднеязычные"
 A-20-18,A-20,Coronal and dorsal,Переднеязычные и среднеязычные
 A-21-1,A-21,Absent,Отсутствуют
 A-21-2,A-21,By vocalization,По звонкости
