@@ -1,4 +1,7 @@
+from pycldf import Dataset
+
 from langworld_db_data.cldfwriters.cldf_dataset_writer import CLDFDatasetWriter
+from langworld_db_data.constants.paths import FILE_WITH_CLDF_DATASET_METADATA
 from langworld_db_data.mdlisters.custom_value_lister import CustomValueLister
 from langworld_db_data.mdlisters.listed_value_lister import ListedValueLister
 from langworld_db_data.validators.doculect_inventory_validator import DoculectInventoryValidator
@@ -23,6 +26,9 @@ def main():
 
     print('\nWriting CLDF')
     CLDFDatasetWriter().write()
+
+    print('\nValidating CLDF')
+    Dataset.from_metadata(FILE_WITH_CLDF_DATASET_METADATA).validate()
 
 
 if __name__ == '__main__':

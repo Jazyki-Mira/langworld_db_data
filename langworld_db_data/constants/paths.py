@@ -4,6 +4,7 @@ MAIN_DIR = Path(__file__).parent.parent.parent
 DATA_DIR = MAIN_DIR / 'data'
 
 CLDF_DIR = DATA_DIR / 'cldf'
+FILE_WITH_CLDF_DATASET_METADATA = CLDF_DIR / 'StructureDataset-metadata.json'
 
 DISCUSSION_DIR = DATA_DIR / 'discussion'
 DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT = DISCUSSION_DIR / 'custom_values_by_volume_and_doculect.md'
