@@ -41,8 +41,9 @@ def test__validate_one_file_fails_with_bad_files(test_validator, file_stem, expe
     assert expected_error_message in str(e)
 
 
-def test__validate_one_file_prints_message_in_non_strict_mode(capsys):
-    FeatureProfileValidator(strict_mode=False)._validate_one_file(
+def test__validate_one_file_prints_message_in_non_strict_mode(capsys, test_validator):
+    test_validator.strict_mode = False
+    test_validator._validate_one_file(
         DIR_WITH_BAD_PROFILES / f'corsican_non_matching_listed_value.csv'
     )
     stdout = capsys.readouterr()
