@@ -6,7 +6,7 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NAMES_OF_FEATURES,
 )
-from langworld_db_data.filetools.csv_xls import read_csv
+from langworld_db_data.filetools.csv_xls import check_csv_for_malformed_rows, read_csv
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -20,6 +20,10 @@ class FeatureValueInventoryValidator:
         file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
         file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
     ):
+
+        for file in (file_with_features, file_with_listed_values):
+            check_csv_for_malformed_rows(file)
+
         self.feature_ids = [row['id'] for row in read_csv(file_with_features, read_as='dicts')]
 
         self.rows_with_listed_values = read_csv(file_with_listed_values, read_as='dicts')

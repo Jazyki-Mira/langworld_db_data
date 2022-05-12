@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_DOCULECTS
-from langworld_db_data.filetools.csv_xls import read_csv
+from langworld_db_data.filetools.csv_xls import check_csv_for_malformed_rows, read_csv
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -19,6 +19,8 @@ class DoculectInventoryValidator:
         self.names_of_feature_profiles: set[str] = {
             f.stem for f in self.feature_profiles
         }
+
+        check_csv_for_malformed_rows(file_with_doculects)
 
         self.doculects: list[dict] = read_csv(file_with_doculects, read_as='dicts')
         self.doculect_ids = {d['id'] for d in self.doculects}

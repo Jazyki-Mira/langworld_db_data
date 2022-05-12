@@ -2,7 +2,11 @@ from pathlib import Path
 import re
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
-from langworld_db_data.filetools.csv_xls import read_csv, read_dict_from_2_csv_columns
+from langworld_db_data.filetools.csv_xls import (
+    check_csv_for_malformed_rows,
+    read_csv,
+    read_dict_from_2_csv_columns
+)
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -18,6 +22,10 @@ class FeatureProfileValidator:
             strict_mode: bool = True,
     ):
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob('*.csv')))
+
+        for file in self.feature_profiles:
+            check_csv_for_malformed_rows(file)
+
         self.value_ru_for_value_id = read_dict_from_2_csv_columns(
             file_with_listed_values,
             key_col='id',
