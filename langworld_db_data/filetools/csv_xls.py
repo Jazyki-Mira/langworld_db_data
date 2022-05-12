@@ -1,11 +1,42 @@
 from collections import Counter
 import csv
 from pathlib import Path
-from typing import Literal, NamedTuple, Union
+from typing import Literal, Union
 
 from openpyxl import load_workbook
 
 CSVDelimiter = Literal[',', ';']
+
+
+def check_csv_for_malformed_rows(path_to_file: Path):
+    """
+    Checks whether all rows in CSV file have the same number of columns.
+    Throws IndexError if they do not.
+    """
+    rows = read_csv(path_to_file, read_as='plain_rows')
+    row_count_for_number_of_columns = Counter(len(row) for row in rows)
+
+    if len(row_count_for_number_of_columns) == 1:
+        return
+
+    # See what count is least frequent.  It is most likely that the least frequent number of columns
+    # indicates a mistake. Although it is theoretically possible that there are so many wrong rows
+    # in a file that the wrong number becomes more frequent, it is very unlikely.
+    least_frequent_numbers_of_columns = [
+        item for item in row_count_for_number_of_columns
+        if row_count_for_number_of_columns[item] == sorted(row_count_for_number_of_columns.values())[0]
+    ]
+    # I made it a list because it is theoretically possible that one row has one wrong number of columns
+    # and one more row has one more wrong number of columns (also wrong, but different)
+
+    indices_of_likely_invalid_rows = []
+    for i, row in enumerate(rows, start=1):
+        if len(row) in least_frequent_numbers_of_columns:
+            indices_of_likely_invalid_rows.append(str(i))
+
+    raise IndexError(
+        f'File {path_to_file.name}: Following rows have abnormal number of columns: {", ".join(indices_of_likely_invalid_rows)}'
+    )
 
 
 def convert_xls_to_csv(

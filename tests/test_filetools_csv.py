@@ -1,3 +1,5 @@
+from typing import NamedTuple
+
 import pytest
 
 from langworld_db_data.filetools.csv_xls import *
@@ -62,6 +64,18 @@ def test_read_csv():
         assert list_of_dicts == expected_list_of_dicts
 
     path_to_auto_test_file.unlink()
+
+
+def test_check_csv_passes_for_good_file():
+    file = DIR_WITH_FILETOOLS_TEST_FILES / 'doculects_output_gold_standard.csv'
+    check_csv_for_malformed_rows(file)
+
+
+def test_check_csv_throws_exception_for_malformed_rows():
+    file = DIR_WITH_FILETOOLS_TEST_FILES / 'csv_doculects_with_incomplete_rows.csv'
+    with pytest.raises(IndexError) as e:
+        check_csv_for_malformed_rows(file)
+    assert 'Following rows have abnormal number of columns: 3, 5' in str(e)
 
 
 def test_read_csv_raises_exception_with_wrong_read_as():
