@@ -14263,7 +14263,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14262,old_french,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,
 14263,old_french,G-7,Same,G-7-2,,,Совпадают,
 14264,old_french,H-1,One-two,H-1-1,,,Один-два,"Двухпадежная система склонения существительных, прилагательных и артиклей."
-14265,old_french,H-2,,,,,"Глагольное согласование, падежные аффиксы, субъектная, прямо- и косвеннообъектная форма личных местоимений и предлоги",
+14265,old_french,H-2,"Case and number flections, subject, direct and indirect object personal pronouns, prepositions, and verbal agreement",H-2-20,,,"Падежно-числовые флексии, субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги и глагольное согласование",
 14266,old_french,H-3,Nominative,H-3-4,,,Номинатив,
 14267,old_french,H-4,Oblique,H-4-6,,,Косвенный,
 14268,old_french,H-5,Possessive pronouns and prepositions,H-5-19,,,Посессивные местоимения и предлоги,
