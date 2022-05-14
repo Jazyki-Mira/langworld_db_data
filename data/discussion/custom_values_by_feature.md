@@ -812,7 +812,6 @@
 - Вигезимальная: [глангали](../feature_profiles/grangali.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [тирахи](../feature_profiles/tirahi.csv)
 - Двадцатиричная: [гарви](../feature_profiles/garwi.csv), [калаша](../feature_profiles/kalasha.csv), [майян](../feature_profiles/mayan.csv), [торвали](../feature_profiles/torwali.csv)
 - Двадцатиричная (предположительно): [сави](../feature_profiles/sawi.csv)
-- Десятеричная с элементами двенадцатеричной и двадцатеричной: [французский](../feature_profiles/french.csv)
 - Других данных нет: [меймеи](../feature_profiles/meimei.csv)
 - двадцатиричная: [абхазский](../feature_profiles/abkhaz.csv)
 - нет данных: [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv)
