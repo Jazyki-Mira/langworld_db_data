@@ -10621,7 +10621,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10620,ladin,B-5,,,,,Любой слог слова,
 10621,ladin,B-9,Phonological and non-phonological,B-9-4,,,Фонологическая и нефонологическая,Фонологическая в ударном слоге в верхнебадиотском и мареббанском диалектах.
 10622,ladin,B-13,,,,,"Палатализация, ротацизм, вокализация и фонация",
-10623,ladin,B-14,,,,,Ослабленная,
+10623,ladin,B-14,Slackened voice,B-14-9,,,Ослабленная,
 10624,ladin,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 10625,ladin,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 10626,ladin,D-1,No restrictions,D-1-1,,,Отсутствуют,
@@ -13849,7 +13849,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13848,occitan,B-5,"Ultima, penult or antepenult",B-5-17,,,"Конечный слог, пенультима или антепенультима",
 13849,occitan,B-9,Non-phonological and rhythmic,B-9-6,,,Нефонологическая и ритмическая,Имеются долгие и краткие комбинаторные варианты гласных в зависимости от ударения и позиции слога.
 13850,occitan,B-13,,,,,"Назализация, палатализация, озвончение, вокализация, удлинение и фонация",
-13851,occitan,B-14,,,,,Ослабленная,
+13851,occitan,B-14,Slackened voice,B-14-9,,,Ослабленная,
 13852,occitan,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 13853,occitan,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 13854,occitan,D-1,Limited set of consonants possible,D-1-4,,,Ограниченный набор согласных,

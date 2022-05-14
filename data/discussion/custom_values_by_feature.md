@@ -516,7 +516,6 @@
 ## B-14: Типы фонации
 
 - Напряженная, длительная и более высокая по тону для ударных гласных: [португальский](../feature_profiles/portuguese.csv)
-- Ослабленная: [ладинский](../feature_profiles/ladin.csv), [окситанский](../feature_profiles/occitan.csv)
 - Ослабленная, интенсивная и придыхательная: [язгулямский](../feature_profiles/yazghulami.csv)
 - Придыхательная (аспирация и преаспирация): [фарерский](../feature_profiles/faroese.csv)
 - Придыхательная (аспирация): [фризский](../feature_profiles/frisian.csv), [шведский](../feature_profiles/swedish.csv)
