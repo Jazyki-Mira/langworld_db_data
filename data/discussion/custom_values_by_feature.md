@@ -553,18 +553,13 @@
 - Допустим тип слога из одного гласного: [йезди и кермани](../feature_profiles/yazdi_and_kermani.csv)
 - Нет данных: [гоо](../feature_profiles/goo.csv)
 - От одного до трех слогов в слове: [тамильский](../feature_profiles/tamil.csv)
-- Преимущественно двусложные слова: [истророманский](../feature_profiles/istriot.csv)
-- Преимущественно одно- и двусложные слова: [парачи](../feature_profiles/parachi.csv), [ваханский](../feature_profiles/wakhi.csv), [румынский](../feature_profiles/romanian.csv)
-- Преимущественно односложные и двусложные слова: [ишкашимский](../feature_profiles/ishkashimi.csv)
 - Преобладают одно- и двусложные корневые морфемы и двуморфемные (корень + флексия), но односложные словоформы: [немецкий](../feature_profiles/german.csv)
 - При образовании сложных слов и словоформ количество слогов может быть более четырех: [семнанский](../feature_profiles/semnani.csv)
 - Характерно большое количество односложных и двусложных слов: [талышский](../feature_profiles/talysh.csv)
 - Число слогов от одного до четырех: [валлийский](../feature_profiles/welsh.csv)
 - нет данных: [джого](../feature_profiles/jogo.csv)
-- преимущественно одно- и двухсложные слова: [уан](../feature_profiles/wan.csv)
 ## D-4: Различия между знаменательными и служебными словами
 
-- Различия  в структуре слога: [гбан](../feature_profiles/gban.csv), [тура](../feature_profiles/tura.csv)
 - нет данных: [ликийский](../feature_profiles/lycian.csv), [гоо](../feature_profiles/goo.csv)
 ## D-5: Различия между исконными и заимствованными словами
 
