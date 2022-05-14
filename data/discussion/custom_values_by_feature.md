@@ -439,8 +439,6 @@
 - Гласный основы или гласный аффикса: [телугу](../feature_profiles/telugu.csv)
 - Гласный последующего слога: [тамильский](../feature_profiles/tamil.csv)
 - Гласный следующего слога: [сардинский](../feature_profiles/sardinian.csv)
-- Гласный флексии (окончания): [исландский](../feature_profiles/icelandic.csv)
-- Гласный флексии (регрессивный сингармонизм): [румынский](../feature_profiles/romanian.csv)
 - Нет данных: [муан](../feature_profiles/mwan.csv)
 - Предшествующий гласный: [эвенкийский](../feature_profiles/evenki.csv)
 - Ударенные гласные в глагольных основах - исторический умлаут: [семнанский](../feature_profiles/semnani.csv)
@@ -465,7 +463,7 @@
 - Метатеза, ассимиляция и оглушение согласных и выпадение согласых и гласных: [ишкашимский](../feature_profiles/ishkashimi.csv)
 - Назализация гласных, палатализация, ассимиляция, оглушение и озвончение согласных: [польский](../feature_profiles/polish.csv)
 - Назализация и веляризация: [мегленорумынский](../feature_profiles/megleno_romanian.csv)
-- Назализация и фонация: [фризский](../feature_profiles/frisian.csv), [галисийский](../feature_profiles/galician.csv), [румынский](../feature_profiles/romanian.csv)
+- Назализация и фонация: [фризский](../feature_profiles/frisian.csv), [галисийский](../feature_profiles/galician.csv)
 - Назализация, геминация (удлинение), фонация и связывание (liaison): [франкопровансальский](../feature_profiles/franco_provencal.csv)
 - Назализация, йотирование, лабиализация/делабиализация: [истрорумынский](../feature_profiles/istro_romanian.csv)
 - Назализация, палатализация, озвончение, вокализация, удлинение и фонация: [окситанский](../feature_profiles/occitan.csv)
@@ -522,7 +520,6 @@
 - Ослабленная, интенсивная и придыхательная: [язгулямский](../feature_profiles/yazghulami.csv)
 - Придыхательная (аспирация и преаспирация): [фарерский](../feature_profiles/faroese.csv)
 - Придыхательная (аспирация): [фризский](../feature_profiles/frisian.csv), [шведский](../feature_profiles/swedish.csv)
-- Слабая: [галисийский](../feature_profiles/galician.csv), [гасконский](../feature_profiles/gascon.csv)
 - Слабая и придыхательная: [телугу](../feature_profiles/telugu.csv)
 ## C-1: Начальный согласный в слоге
 
