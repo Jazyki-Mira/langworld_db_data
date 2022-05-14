@@ -5110,7 +5110,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5109,friulian,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 5110,friulian,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
 5111,friulian,A-15,,,,,"Дентальные, альвеолярные (дорсальные и апико-альвеолярные) и передненебные",Подсистемы сибилянтов в разных говорах значительно различаются.
-5112,friulian,A-16,,,,,Превелярные (постпалатальные) и велярные,
+5112,friulian,A-16,Prevelar (postpalatal) and velar,A-16-8,,,Превелярные (постпалатальные) и велярные,
 5113,friulian,A-18,By palatalization,A-18-4,,,По палатализации,
 5114,friulian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /j/ традиционно определяются как полусогласные.
 5115,friulian,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
@@ -5437,7 +5437,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5436,garwi,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
 5437,garwi,A-15,,,,,Нецеребральные и церебральные,
 5438,garwi,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
-5439,garwi,A-17,,,,,Только ларингальные,
+5439,garwi,A-17,Only laringal,A-17-4,,,Только ларингальные,
 5440,garwi,A-18,,,,,"Трехчленная корреляция по аспирации; корреляция церебральности переднеязычных, шипящих, дрожащих; корреляция звонкости охватывает и латеральные",
 5441,garwi,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 5442,garwi,A-20,,,,,"Лабиальные, переднеязычные (нецеребральные и церебральные), среднеязычные и заднеязычные",
@@ -5663,7 +5663,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5662,gban,A-14,Only bilabial,A-14-1,,,Только билабиальные,
 5663,gban,A-15,Alveolar,A-15-3,,,Альвеолярные,
 5664,gban,A-16,Velar and labiovelar,A-16-4,,,Велярные и лабиовелярные,
-5665,gban,A-17,,,,,Ларингальные,
+5665,gban,A-17,Only laringal,A-17-4,,,Только ларингальные,
 5666,gban,A-18,By labialization,A-18-2,,,По лабиализации,
 5667,gban,A-19,"Nasal, liquid and glide",A-19-3,,,"Назальные, плавные и глайды",
 5668,gban,A-20,"Labial, coronal and guttural",A-20-16,,,"Лабиальные, переднеязычные и заднеязычные",
@@ -7480,7 +7480,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7479,istro_romanian,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 7480,istro_romanian,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 7481,istro_romanian,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-7482,istro_romanian,A-15,,,,,"Дентальные, альвеолярные и препалатальные",
+7482,istro_romanian,A-15,"Dental, alveolar and prepalatal",A-15-29,,,"Дентальные, альвеолярные и препалатальные",
 7483,istro_romanian,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,Фонемы /k/ и /g/ определяются как постпалатальные.
 7484,istro_romanian,A-18,By palatalization,A-18-4,,,По палатализации,
 7485,istro_romanian,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
@@ -8220,7 +8220,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8219,kalasha,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
 8220,kalasha,A-15,,,,,Шумные переднеязычные согласные по месту образования терминологически не интерпретируются. Отмечается корреляция по нецеребральности/церебральности,
 8221,kalasha,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
-8222,kalasha,A-17,,,,,Только ларингальные,
+8222,kalasha,A-17,Only laringal,A-17-4,,,Только ларингальные,
 8223,kalasha,A-18,Absent,A-18-1,,,Отсутствуют,Других данных нет.
 8224,kalasha,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 8225,kalasha,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
@@ -8860,7 +8860,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8859,kashmiri,A-14,Only bilabial,A-14-1,,,Только билабиальные,
 8860,kashmiri,A-15,,,,,"Смычные: чистые (неносовые/носовые), аффрикаты (одно-/двухфокусные) и щелевые: однофокусные (срединные и боковые) и двухфокусные",
 8861,kashmiri,A-16,,,,,Смычные чистые неносовые и щелевые однофокусные срединные,
-8862,kashmiri,A-17,,,,,Только ларингальные,
+8862,kashmiri,A-17,Only laringal,A-17-4,,,Только ларингальные,
 8863,kashmiri,A-18,By palatalization and labialization,A-18-16,,,По палатализации и лабиализации,
 8864,kashmiri,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Кроме дрожащих сонорные согласные традиционно включены в общую классификацию шумных согласных.
 8865,kashmiri,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
@@ -9069,7 +9069,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9068,katarkalai,A-14,Only bilabial,A-14-1,,,Только билабиальные,
 9069,katarkalai,A-15,,,,,Нецеребральные и церебральные,
 9070,katarkalai,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
-9071,katarkalai,A-17,,,,,Только ларингальные,
+9071,katarkalai,A-17,Only laringal,A-17-4,,,Только ларингальные,
 9072,katarkalai,A-18,By palatalization,A-18-4,,,По палатализации,
 9073,katarkalai,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайд /y/ определяется как среднеязычный срединный  однофокусный щелевой.
 9074,katarkalai,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
@@ -9544,7 +9544,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9543,khowar,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
 9544,khowar,A-15,,,,,Дентальные (нецеребральные и церебральные),Терминологическая интерпретация всех переднеязычных требует уточнения.
 9545,khowar,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
-9546,khowar,A-17,,,,,Только ларингальные,
+9546,khowar,A-17,Only laringal,A-17-4,,,Только ларингальные,
 9547,khowar,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 9548,khowar,A-20,,,,,"Лабиальные, переднеязычные (нецеребральные и церебральные), среднеязычные и заднеязычные",
 9549,khowar,A-21,Absent,A-21-1,,,Отсутствуют,Других данных нет.
@@ -10607,9 +10607,9 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10606,ladin,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 10607,ladin,A-13,"Labial, coronal, dorsal, guttural and postuvular",A-13-2,,,"Лабиальные, переднеязычные, среднеязычные, заднеязычные и постувулярные",
 10608,ladin,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-10609,ladin,A-15,,,,,"Дентальные, альвеолярные и препалатальные",
+10609,ladin,A-15,"Dental, alveolar and prepalatal",A-15-29,,,"Дентальные, альвеолярные и препалатальные",
 10610,ladin,A-16,Velar,A-16-1,,,Велярные,
-10611,ladin,A-17,,,,,Ларингальные,
+10611,ladin,A-17,Only laringal,A-17-4,,,Только ларингальные,
 10612,ladin,A-18,Absent,A-18-1,,,Отсутствуют,
 10613,ladin,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 10614,ladin,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
@@ -12258,7 +12258,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12257,mayan,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
 12258,mayan,A-15,,,,,Нецеребральные и церебральные,
 12259,mayan,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
-12260,mayan,A-17,,,,,Только ларингальные,
+12260,mayan,A-17,Only laringal,A-17-4,,,Только ларингальные,
 12261,mayan,A-18,By aspiration,A-18-13,,,По аспирации,
 12262,mayan,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 12263,mayan,A-20,,,,,"Лабиальные, переднеязычные (нецеребральные и церебральные) и среднеязычные",
@@ -15268,7 +15268,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15267,pashai,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
 15268,pashai,A-15,,,,,Нецеребральные и церебральные,
 15269,pashai,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
-15270,pashai,A-17,,,,,Только ларингальные,
+15270,pashai,A-17,Only laringal,A-17-4,,,Только ларингальные,
 15271,pashai,A-18,By aspiration,A-18-13,,,По аспирации,
 15272,pashai,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /y/ определяются как однофокусные срединные щелевые.
 15273,pashai,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
@@ -15505,7 +15505,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15504,phalura,A-14,Only bilabial,A-14-1,,,Только билабиальные,
 15505,phalura,A-15,,,,,Лабиальные и переднеязычные (нецеребральные и церебральные),
 15506,phalura,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
-15507,phalura,A-17,,,,,Только ларингальные,
+15507,phalura,A-17,Only laringal,A-17-4,,,Только ларингальные,
 15508,phalura,A-18,Absent,A-18-1,,,Отсутствуют,
 15509,phalura,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Кроме дрожащих сонорные классифицируются как шумные смычные и щелевые.
 15510,phalura,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
@@ -17156,7 +17156,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17155,sawi,A-14,Only bilabial,A-14-1,,,Только билабиальные,
 17156,sawi,A-15,,,,,Нецеребральные и церебральные,
 17157,sawi,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
-17158,sawi,A-17,,,,,Только ларингальные,
+17158,sawi,A-17,Only laringal,A-17-4,,,Только ларингальные,
 17159,sawi,A-18,Absent,A-18-1,,,Отсутствуют,
 17160,sawi,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Кроме дрожащих сонорные классифицируются как смычные и щелевые шумные согласные.
 17161,sawi,A-20,,,,,"Лабиальные, переднеязычные (нецеребральные и церебральные) и среднеязычные",
@@ -17560,7 +17560,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17559,shina,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
 17560,shina,A-15,,,,,Дентальные (нецеребральные и церебральные),
 17561,shina,A-16,,,,,Велярные и увулярные (?),
-17562,shina,A-17,,,,,Ларингальные,
+17562,shina,A-17,Only laringal,A-17-4,,,Только ларингальные,
 17563,shina,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды","Назальные, плавные и глайды традиционно классифицируются в составе шумных согласных."
 17564,shina,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 17565,shina,A-21,,,,,По аспирации и дополнительной артикуляции (нецеребральный/церебральный),
@@ -17845,7 +17845,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17844,shumashti,A-14,Only bilabial,A-14-1,,,Только билабиальные,
 17845,shumashti,A-15,,,,,Нецеребральные и церебральные,
 17846,shumashti,A-16,Velar,A-16-1,,,Велярные,
-17847,shumashti,A-17,,,,,Только ларингальные,
+17847,shumashti,A-17,Only laringal,A-17-4,,,Только ларингальные,
 17848,shumashti,A-18,Absent,A-18-1,,,Отсутствуют,
 17849,shumashti,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /y/ определяются как лабиальные и среднеязычные щелевые.
 17850,shumashti,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
@@ -20471,7 +20471,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20470,torwali,A-14,Only bilabial,A-14-1,,,Только билабиальные,
 20471,torwali,A-15,,,,,Переднеязычные согласные по месту образования терминологически не интерпретируются. Отмечается наличие неценебральных и церебральных,
 20472,torwali,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
-20473,torwali,A-17,,,,,Только ларингальные,
+20473,torwali,A-17,Only laringal,A-17-4,,,Только ларингальные,
 20474,torwali,A-18,Absent,A-18-1,,,Отсутствуют,Других данных нет.
 20475,torwali,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 20476,torwali,A-20,,,,,"Лабиальные, переднеязычные (нецеребральные и церебральные) и среднеязычные",
@@ -22487,7 +22487,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22486,yazghulami,A-13,"Labial, coronal, dorsal, guttural and postuvular",A-13-2,,,"Лабиальные, переднеязычные, среднеязычные, заднеязычные и постувулярные",
 22487,yazghulami,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
 22488,yazghulami,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
-22489,yazghulami,A-17,,,,,Ларингальные,
+22489,yazghulami,A-17,Only laringal,A-17-4,,,Только ларингальные,
 22490,yazghulami,A-18,By labialization and palatalization,A-18-6,,,По лабиализации и палатализации,
 22491,yazghulami,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",Плавные и назальные определяются как смычно-проходные (боковые и носовые).
 22492,yazghulami,A-20,Labial and coronal,A-20-7,,,Лабиальные и переднеязычные,

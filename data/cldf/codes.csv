@@ -129,6 +129,7 @@ A-15-25,A-15,Interdental and dental-alveolar,,Интердентальные и 
 A-15-26,A-15,"Dental, alveolar and palatal",,"Дентальные, альвеолярные и палатальные"
 A-15-27,A-15,"Dental, alveolar and alveo-palatal",,"Дентальные, альвеолярные и альвео-палатальные"
 A-15-28,A-15,Dental-alveolar and postalveolar,,Дентально-альвеолярные и постальвеолярные
+A-15-29,A-15,"Dental, alveolar and prepalatal",,"Дентальные, альвеолярные и препалатальные"
 A-16-1,A-16,Velar,,Велярные
 A-16-2,A-16,Labiovelar,,Лабиовелярные
 A-16-3,A-16,Uvular,,Увулярные
@@ -136,9 +137,11 @@ A-16-4,A-16,Velar and labiovelar,,Велярные и лабиовелярные
 A-16-5,A-16,Velar and uvular,,Велярные и увулярные
 A-16-6,A-16,"Velar, uvular and labiovelar",,"Велярные, увулярные и лабиовелярные"
 A-16-7,A-16,Velar and labialized velar,,Велярные и велярные-огубленные
+A-16-8,A-16,Prevelar (postpalatal) and velar,,Превелярные (постпалатальные) и велярные
 A-17-1,A-17,Only pharyngeal,,Только фарингальные
 A-17-2,A-17,Only glottal,,Только глоттальные
 A-17-3,A-17,Both pharyngeal and glottal,,Фарингальные и глоттальные
+A-17-4,A-17,Only laringal,,Только ларингальные
 A-18-1,A-18,Absent,,Отсутствуют
 A-18-2,A-18,By labialization,,По лабиализации
 A-18-3,A-18,By nasalization,,По назализации
