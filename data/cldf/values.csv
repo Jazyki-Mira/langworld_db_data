@@ -13862,7 +13862,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13861,occitan,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,Современный О.я. ближе к аналитическим языкам типа французского.
 13862,occitan,F-1,Two,F-1-2,,,Два,
 13863,occitan,F-2,,,,,Артикли и перегласовка основы,
-13864,occitan,F-3,,,,,"В прилагательном, личных местоимениях 3-го лица ед. и мн. числа, числительном, причастии и артикле",
+13864,occitan,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
 13865,occitan,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
 13866,occitan,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 13867,occitan,F-7,Absent,F-7-1,,,Отсутствуют,
