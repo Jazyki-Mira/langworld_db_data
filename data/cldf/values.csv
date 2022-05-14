@@ -9563,7 +9563,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9562,khowar,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 9563,khowar,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,
 9564,khowar,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
-9565,khowar,F-9,,,,,"Лексическй, морфологический и синтаксический",
+9565,khowar,F-9,"Lexical, morphological, and syntactic",F-9-7,,,"Лексический, морфологический и синтаксический",
 9566,khowar,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 9567,khowar,G-2,Marked and unmarked,G-2-3,,,Маркированное и немаркированное,
 9568,khowar,G-4,Predicative,G-4-2,,,Предикативное,
