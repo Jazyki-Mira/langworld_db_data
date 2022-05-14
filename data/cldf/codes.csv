@@ -408,6 +408,8 @@ E-2-6,E-2,"Cumulative affixes, several conjugation types, phonetically unconditi
 E-2-7,E-2,Phonetically unconditioned stem alternations and cumulative affixes,,Фонетически необусловленные изменения в основе и кумулятивность аффиксов
 E-2-8,E-2,"Internal flection, phonetically unconditioned fusion",,Внутренняя флексия и фонетически необусловленная фузия
 E-2-9,E-2,Internal and external flection,,Внутренняя и внешняя флексия
+E-2-10,E-2,Internal flection and cumulative affixes,,Внутренняя флексия и кумулятивность аффиксов
+E-2-11,E-2,"Cumulative affixes, phonetically unconditioned stem alternations and phonetically unconditioned fusion",,"Кумулятивность аффиксов, фонетически необусловленные изменения в основе и фонетически необусловленная фузия"
 E-3-1,E-3,One affix can express only one meaning,,Отсутствие полисемантизма аффиксов
 E-3-2,E-3,Single inflection/conjugation type,,Единый тип склонения или спряжения
 E-3-3,E-3,Low degree of fusion between root and non-root morphemes,,Низкая степень фузии между некорневыми и корневыми морфемами
@@ -432,6 +434,8 @@ F-2-2,F-2,Umlaut,,Перегласовка основы
 F-2-3,F-2,Verbal affixes,,Аффиксация в глаголе
 F-2-4,F-2,Verbal affixes and adjective affixes,,Аффиксация в глаголе и прилагательном
 F-2-5,F-2,Umlaut and affixes,,Перегласовка основы и аффиксация
+F-2-6,F-2,Nominal flections and articles,,Именные флексии и артикли
+F-2-7,F-2,Nominal flections,,Именные флексии
 F-3-1,F-3,Articles,,В артикле
 F-3-2,F-3,Verbs,,В глаголе
 F-3-3,F-3,Pronouns,,В местоимении
