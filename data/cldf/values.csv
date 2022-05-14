@@ -1311,7 +1311,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1310,avestan,F-1,Three,F-1-3,,,Три,
 1311,avestan,F-2,,,,,"Флексии, тип и перегласовка основы",
 1312,avestan,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",
-1313,avestan,F-6,,,,,Для числительных от одного до четырех,
+1313,avestan,F-6,"For ""one"", ""two"", ""three"", ""four""",F-6-5,,,"Для числительных ""один"", ""два"", ""три"" и ""четыре""",
 1314,avestan,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 1315,avestan,F-9,Morphological,F-9-2,,,Морфологический,
 1316,avestan,G-1,"Singular, dual and plural",G-1-2,,,"Единственное, двойственное и множественное",
@@ -6950,7 +6950,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6949,icelandic,F-2,Articles,F-2-1,,,Артикли,
 6950,icelandic,F-3,,,,,"В артикле, прилагательном и местоимении",
 6951,icelandic,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
-6952,icelandic,F-6,"For ""one"", ""two"", ""three"", ""four""",F-6-5,,,"Для числительных ""один"", ""два"", ""три"", ""четыре""",
+6952,icelandic,F-6,"For ""one"", ""two"", ""three"", ""four""",F-6-5,,,"Для числительных ""один"", ""два"", ""три"" и ""четыре""",
 6953,icelandic,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 6954,icelandic,G-2,Unmarked,G-2-2,,,Немаркированное,
 6955,icelandic,G-3,,,,,Множественное величия (pluralis majestatis),
@@ -14253,7 +14253,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14252,old_french,F-2,Articles,F-2-1,,,Артикли,
 14253,old_french,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
 14254,old_french,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
-14255,old_french,F-6,,,,,"Для числительных ""один"", ""два"" и ""три""",
+14255,old_french,F-6,"For ""one"", ""two"", ""three""",F-6-6,,,"Для числительных ""один"", ""два"" и ""три""",
 14256,old_french,F-7,Absent,F-7-1,,,Отсутствуют,
 14257,old_french,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
 14258,old_french,F-9,Lexical and syntactic,F-9-4,,,Лексический и синтаксический,
@@ -14535,7 +14535,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14534,old_russian,F-2,,,,,Флексии родовой принадлежности существительных,
 14535,old_russian,F-3,"Adjectives. Numerals, and pronouns",F-3-14,,,"В прилагательном, числительном и местоимении",
 14536,old_russian,F-5,"In singular, dual, and plural",F-5-3,,,"В единственном, двойственном и множественном числе",
-14537,old_russian,F-6,,,,,"Для чтслительных ""один"", ""два"", ""три"" и ""четыре""",Других данных нет.
+14537,old_russian,F-6,"For ""one"", ""two"", ""three"", ""four""",F-6-5,,,"Для числительных ""один"", ""два"", ""три"" и ""четыре""",Других данных нет.
 14538,old_russian,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 14539,old_russian,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,
 14540,old_russian,F-9,Lexical and morphological,F-9-6,,,Лексический и морфологический,
@@ -18155,7 +18155,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18154,slovene,F-2,,,,,Аффиксация в системе имени и глагола,
 18155,slovene,F-3,,,,,"В прилагательном, числительном, местоимении, причастии и глаголе",
 18156,slovene,F-5,"In singular, dual, and plural",F-5-3,,,"В единственном, двойственном и множественном числе",
-18157,slovene,F-6,,,,,Для числительных от одного до четырех,"Числительное ""один"" имеет формы трех родов. Числительные от двух до четырех - формы мужского и женского/среднего рода."
+18157,slovene,F-6,"For ""one"", ""two"", ""three"", ""four""",F-6-5,,,"Для числительных ""один"", ""два"", ""три"" и ""четыре""","Числительное ""один"" имеет формы трех родов. Числительные от двух до четырех - формы мужского и женского/среднего рода."
 18158,slovene,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,Только в парадигме склонения существительных мужского рода в единственном числе.
 18159,slovene,F-9,Morphological and syntactic,F-9-5,,,Морфологический и синтаксический,
 18160,slovene,G-1,"Singular, dual and plural",G-1-2,,,"Единственное, двойственное и множественное",
@@ -19219,7 +19219,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19218,swiss_german,F-2,,,,,Артикли и аффиксация в прилагательном,
 19219,swiss_german,F-3,"Adjectives, numerals, pronouns, and articles",F-3-20,,,"В прилагательном, числительном, местоимении и артикле",
 19220,swiss_german,F-5,Only in singular,F-5-1,,,Только в единственном числе,
-19221,swiss_german,F-6,,,,,"Для числительных ""один"", ""два"" и ""три""",
+19221,swiss_german,F-6,"For ""one"", ""two"", ""three""",F-6-6,,,"Для числительных ""один"", ""два"" и ""три""",
 19222,swiss_german,F-7,Absent,F-7-1,,,Отсутствуют,
 19223,swiss_german,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
 19224,swiss_german,F-9,Lexical and syntactic,F-9-4,,,Лексический и синтаксический,
