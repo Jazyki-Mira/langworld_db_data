@@ -2645,7 +2645,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2644,catalan,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 2645,catalan,G-6,Decimal,G-6-1,,,Десятичная,
 2646,catalan,G-7,Same,G-7-2,,,Совпадают,
-2647,catalan,H-2,"Verbal agreement, subject, direct and indirect object personal pronouns, and word order",H-2-21,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, глагольное согласование  и порядок слов",
+2647,catalan,H-2,"Subject, direct and indirect object personal pronouns, verbal agreement and word order",H-2-21,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, глагольное согласование и порядок слов",
 2648,catalan,H-5,,,,,Притяжательные местоимения и прилагательные,
 2649,catalan,H-6,Spatial adverbs and prepositions,H-6-38,,,Наречия места и предлоги,К.я. обнаруживает отличия от иберо-романских языков и сходства с итальянским и французским языками.
 2650,catalan,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,Формы пассивного залога малоупотребительны. Аналитический пассив характерен для письменного языка.
@@ -4942,7 +4942,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4941,french,G-6,Decimal with elements of duodecimal and vigesimal,G-6-11,,,Десятичная с элементами двенадцатеричной и двадцатеричной,
 4942,french,G-7,Same,G-7-2,,,Совпадают,
 4943,french,H-1,No case,H-1-6,,,Категория падежа у имени существительного отсутствует,
-4944,french,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, приглагольные местоимения, предлоги и порядок слов",
+4944,french,H-2,"Subject, direct and indirect object personal pronouns, prepositions, verbal agreement, and word order",H-2-22,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",
 4945,french,H-5,,,,,"Притяжательные местоимения, предлоги и стяженные формы предлога и определенного артикля",
 4946,french,H-6,,,,,"Предлоги, местоимения и наречия",
 4947,french,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,
@@ -5382,7 +5382,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5381,galician,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 5382,galician,G-6,Decimal,G-6-1,,,Десятичная,
 5383,galician,G-7,Same,G-7-2,,,Совпадают,
-5384,galician,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, приглагольные местоимения, предлоги и порядок слов",
+5384,galician,H-2,"Subject, direct and indirect object personal pronouns, prepositions, verbal agreement, and word order",H-2-22,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",
 5385,galician,H-5,,,,,"Притяжательные местоименные прилагательные (в приименной позиции с определенным артиклем), предлоги и относительные прилагательные",
 5386,galician,H-6,,,,,"Указательные местоимения, предложно-именные конструкции и наречия места",
 5387,galician,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,Залоговые отношения в Г.я. выражаются нерегулярно и плохо изучены.
@@ -13874,7 +13874,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13873,occitan,G-6,Decimal,G-6-1,,,Десятичная,
 13874,occitan,G-7,Same,G-7-2,,,Совпадают,
 13875,occitan,H-1,No case,H-1-6,,,Категория падежа у имени существительного отсутствует,
-13876,occitan,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги и порядок слов",
+13876,occitan,H-2,"Subject, direct and indirect object personal pronouns, prepositions, verbal agreement, and word order",H-2-22,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",
 13877,occitan,H-5,,,,,"Притяжательные местоимения и прилагательные, личные местоимения и предлоги",
 13878,occitan,H-6,,,,,"Указательные местоимения и наречия, предлоги и усиленные наречиями сложные аналитические формы",
 13879,occitan,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,
@@ -16138,7 +16138,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16137,rhaeto_romance,G-6,Decimal,G-6-1,,,Десятичная,
 16138,rhaeto_romance,G-7,Same,G-7-2,,,Совпадают,
 16139,rhaeto_romance,H-1,No case,H-1-6,,,Категория падежа у имени существительного отсутствует,Сохраняются реликтовые формы номинатива и аккузатива (остатки латинского склонения).
-16140,rhaeto_romance,H-2,,,,,"Глагольное согласование, субъектная и прямо- и косвеннообъектная форма личных местоимений, приглагольные местоимения, предлоги и порядок слов",
+16140,rhaeto_romance,H-2,"Subject, direct and indirect object personal pronouns, prepositions, verbal agreement, and word order",H-2-22,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",
 16141,rhaeto_romance,H-3,Nominative,H-3-4,,,Номинатив,
 16142,rhaeto_romance,H-5,,,,,Притяжательные местоимения (ударная и безударная формы) и предлоги,
 16143,rhaeto_romance,H-6,,,,,"Предлоги (простые и сложные), наречия, глагольные аффиксы и конструкции ""глагол + предлог/наречие""",Развитая система пространственной ориентации отличает Р.я. от других романских языков.
