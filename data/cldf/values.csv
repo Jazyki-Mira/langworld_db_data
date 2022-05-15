@@ -13858,7 +13858,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13857,occitan,D-7,Accompanying and distinctive,D-7-4,,,Сопутствующие и смыслоразличительные,
 13858,occitan,D-8,"Vowel, consonant and mixed alternations",D-8-8,,,"Вокалические, консонантные и смешанные",
 13859,occitan,E-1,Fusional,E-1-3,,,Флективный,
-13860,occitan,E-2,"Cumulative affixes, phonetically unconditioned stem alternations and phonetically unconditioned fusion",E-2-11,,,"Кумулятивность аффиксов, фонетически необусловленные изменения в основе и фонетически необусловленная фузия",
+13860,occitan,E-2,"Cumulative flections, phonetically unconditioned stem alternations and phonetically unconditioned fusion",E-2-11,,,"Кумулятивность флексий, фонетически необусловленные изменения в основе и фонетически необусловленная фузия",
 13861,occitan,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,Современный О.я. ближе к аналитическим языкам типа французского.
 13862,occitan,F-1,Two,F-1-2,,,Два,
 13863,occitan,F-2,,,,,Артикли и перегласовка основы,
