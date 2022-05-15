@@ -425,7 +425,6 @@
 ## B-11: Признак гармонического уподобления гласных
 
 - В рамках морфемы сочетаются гласные из множества {a o e} либо {a ? ? u i}: [боко](../feature_profiles/boko.csv)
-- Открытость/закрытость: [фриульский](../feature_profiles/friulian.csv), [галисийский](../feature_profiles/galician.csv), [сардинский](../feature_profiles/sardinian.csv)
 - По огубленности или по ряду: [татский](../feature_profiles/tati.csv)
 - Подъем, долгота, лабиализация: [эвенкийский](../feature_profiles/evenki.csv)
 - Ряд и долгота: [талышский](../feature_profiles/talysh.csv)
@@ -438,7 +437,6 @@
 - Гласный корня: [табасаранский](../feature_profiles/tabasaran.csv)
 - Гласный основы или гласный аффикса: [телугу](../feature_profiles/telugu.csv)
 - Гласный последующего слога: [тамильский](../feature_profiles/tamil.csv)
-- Гласный следующего слога: [сардинский](../feature_profiles/sardinian.csv)
 - Нет данных: [муан](../feature_profiles/mwan.csv)
 - Предшествующий гласный: [эвенкийский](../feature_profiles/evenki.csv)
 - Ударенные гласные в глагольных основах - исторический умлаут: [семнанский](../feature_profiles/semnani.csv)

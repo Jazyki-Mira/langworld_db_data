@@ -286,6 +286,7 @@ B-11-11,B-11,"Backness, height and roundedness",,"Ряд, подъем и лаб
 B-11-12,B-11,"Height, length, and labialization",,"Подъем, долгота и лабиализация"
 B-11-13,B-11,Nasalization,,Назализация
 B-11-14,B-11,ATR and nasalization,,Степень продвинутости языка (ATR) и назализация
+B-11-15,B-11,Openness/closedness,,Открытость/закрытость
 B-12-1,B-12,First vowel of word,,Первый гласный слова
 B-12-2,B-12,First vowel of affix,,Первый гласный аффикса
 B-12-3,B-12,First vowel of root,,Первый гласный корня
@@ -297,6 +298,7 @@ B-12-8,B-12,First vowel of word or last vowel of stem,,Первый гласны
 B-12-9,B-12,First vowel of affix or first vowel of root,,Первый гласный аффикса или первый гласный корня
 B-12-10,B-12,Last vowel of word,,Последний гласный слова
 B-12-11,B-12,Vowel of flection,,Гласный флексии
+B-12-12,B-12,Vowel of next syllable,,Гласный следующего слога
 B-13-1,B-13,Nasalization,,Назализация
 B-13-2,B-13,Palatalization,,Палатализация
 B-13-3,B-13,Pharyngealization,,Фарингализация
