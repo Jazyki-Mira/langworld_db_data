@@ -846,7 +846,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 845,aragonese,H-6,"Adverbs, pronominal adverbs, and prepositions",H-6-39,,,"Наречия, местоименные наречия и предлоги","Особенностью А.я./д. является наличие местоименных наречий, аналогичных каталанским и французским."
 846,aragonese,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
 847,aragonese,I-6,Syncretic,I-6-2,,,Синкретическое,
-848,aragonese,I-7,Auxiliary verbs and affixes,I-7-3,,,Вспомогательный глагол и аффиксы,
+848,aragonese,I-7,Auxiliary verb + participle and affixes,I-7-7,,,Вспомогательный глагол + причастие и аффиксы,
 849,aragonese,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
 850,aragonese,I-9,In singular and plural,I-9-3,,,В единственном и множественном числе,
 851,aragonese,J-1,"Pronominal adverbs, adjectives and nouns",J-1-10,,,"Местоименные наречия, прилагательные и существительные",
@@ -2653,7 +2653,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2652,catalan,I-4,,,,,"Пассив, медий, фактитив и реципрок",
 2653,catalan,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
 2654,catalan,I-6,Syncretic,I-6-2,,,Синкретическое,
-2655,catalan,I-7,,,,,"Аффиксы, вспомогательный глагол и перифрастические формы",
+2655,catalan,I-7,Auxiliary verb + participle and affixes,I-7-7,,,Вспомогательный глагол + причастие и аффиксы,
 2656,catalan,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
 2657,catalan,I-9,In singular and plural,I-9-3,,,В единственном и множественном числе,
 2658,catalan,J-1,"Pronominal adverbs, adjectives and nouns",J-1-10,,,"Местоименные наречия, прилагательные и существительные",
@@ -5389,7 +5389,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5388,galician,I-4,,,,,"Актив, рефлексив и реципрок",
 5389,galician,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
 5390,galician,I-6,Syncretic,I-6-2,,,Синкретическое,
-5391,galician,I-7,,,,,Аффиксы и глагольные перифразы,
+5391,galician,I-7,Auxiliary verb + participle and affixes,I-7-7,,,Вспомогательный глагол + причастие и аффиксы,
 5392,galician,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
 5393,galician,I-9,In singular and plural,I-9-3,,,В единственном и множественном числе,
 5394,galician,J-1,"Pronominal adverbs, adjectives and nouns",J-1-10,,,"Местоименные наречия, прилагательные и существительные",
@@ -7438,7 +7438,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7437,istriot,H-6,"Demonstrative pronouns, adverbs, and prepositions",H-6-40,,,"Указательные местоимения, наречия и предлоги",Других данных нет.
 7438,istriot,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
 7439,istriot,I-6,Syncretic,I-6-2,,,Синкретическое,
-7440,istriot,I-7,,,,,Вспомогательный глагол + причастие и аффиксы,
+7440,istriot,I-7,Auxiliary verb + participle and affixes,I-7-7,,,Вспомогательный глагол + причастие и аффиксы,
 7441,istriot,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
 7442,istriot,I-9,In singular and plural,I-9-3,,,В единственном и множественном числе,Формы 3-го лица единственного и множественного числа совпадают. В некоторых говорах совпадают формы 1-го и 2-го лица единственного числа.
 7443,istriot,J-1,Pronouns-nouns and pronouns-adjectives,J-1-11,,,Местоимения-существительные и местоимения-прилагательные,Других данных нет.
@@ -8033,7 +8033,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8032,judeo_spanish,H-5,Possessive pronouns,H-5-4,,,Посессивные местоимения,
 8033,judeo_spanish,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,
 8034,judeo_spanish,I-2,Present,I-2-1,,,Присутствует,
-8035,judeo_spanish,I-4,,,,,Актив и рефлексив,
+8035,judeo_spanish,I-4,Active and reflexive,I-4-10,,,Актив и рефлексив,
 8036,judeo_spanish,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
 8037,judeo_spanish,I-6,Syncretic,I-6-2,,,Синкретическое,
 8038,judeo_spanish,I-7,"Auxiliary verbs, affixes and function words",I-7-5,,,"Вспомогательный глагол, аффиксы и служебные слова",
@@ -12458,7 +12458,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12457,megleno_romanian,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,
 12458,megleno_romanian,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
 12459,megleno_romanian,I-6,Syncretic,I-6-2,,,Синкретическое,
-12460,megleno_romanian,I-7,,,,,Вспомогательный глагол + причастие и аффиксы,
+12460,megleno_romanian,I-7,Auxiliary verb + participle and affixes,I-7-7,,,Вспомогательный глагол + причастие и аффиксы,
 12461,megleno_romanian,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
 12462,megleno_romanian,I-9,In singular and plural,I-9-3,,,В единственном и множественном числе,
 12463,megleno_romanian,J-1,"Pronominal adverbs, adjectives and nouns",J-1-10,,,"Местоименные наречия, прилагательные и существительные",
