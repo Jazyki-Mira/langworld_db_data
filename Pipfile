@@ -10,6 +10,7 @@ pyyaml = "*"
 openpyxl = "*"
 pytest-cov = "*"
 pycldf = "*"
+pyperclip = "*"
 
 [dev-packages]
 
