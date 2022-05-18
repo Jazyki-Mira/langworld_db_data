@@ -29,6 +29,11 @@ def test_read_plain_text_from_file():
         assert read_plain_text_from_file(file) == 'foo bar\nфу бар'
 
 
+def test_remove_extra_space():
+    for str_ in ('foo bar', ' foo bar', 'foo bar ', ' foo bar  ', 'foo  bar', ' foo   bar '):
+        assert remove_extra_space(str_) == 'foo bar'
+
+
 @pytest.mark.parametrize(
     'content, expected_output',
     [

@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 from typing import Union
 
@@ -43,6 +44,13 @@ def read_plain_text_from_file(path_to_file: Path) -> str:
             content = fh.read()
 
     return content
+
+
+def remove_extra_space(str_: str) -> str:
+    """Removes leading and trailing space,
+    replaces multiple spaces within string with one.
+    """
+    return re.sub(r'\s+', ' ', str_.strip())
 
 
 def write_plain_text_to_file(
