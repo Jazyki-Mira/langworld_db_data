@@ -3,12 +3,12 @@ import pytest
 from langworld_db_data.adders.listed_value_adder import *
 from langworld_db_data.filetools.csv_xls import read_csv
 from langworld_db_data.filetools.txt import read_non_empty_lines_from_txt_file
-from tests.paths import DIR_WITH_TEST_FILES
-
-DIR_WITH_ADDERS_TEST_FILES = DIR_WITH_TEST_FILES / 'adders'
-DIR_WITH_ADDERS_FEATURE_PROFILES = DIR_WITH_ADDERS_TEST_FILES / 'feature_profiles'
-OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES = DIR_WITH_ADDERS_FEATURE_PROFILES / 'output'
-INPUT_FILE_WITH_LISTED_VALUES = DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values.csv'
+from tests.paths import (
+    DIR_WITH_ADDERS_TEST_FILES,
+    DIR_WITH_ADDERS_FEATURE_PROFILES,
+    INPUT_FILE_WITH_LISTED_VALUES,
+    OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES,
+)
 
 GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION = (
         DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_gold_standard_after_addition.csv'
@@ -21,10 +21,9 @@ STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED = ('pashto', 'ukrainian')
 
 @pytest.fixture(scope='function')
 def test_adder():
-    output_file = DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_output.csv'
     return ListedValueAdder(
         input_file_with_listed_values=INPUT_FILE_WITH_LISTED_VALUES,
-        output_file_with_listed_values=output_file,
+        output_file_with_listed_values=DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_output.csv',
         input_dir_with_feature_profiles=DIR_WITH_ADDERS_FEATURE_PROFILES,
         output_dir_with_feature_profiles=OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES,
     )
