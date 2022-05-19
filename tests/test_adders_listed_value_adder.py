@@ -11,7 +11,7 @@ from tests.paths import (
 )
 
 GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION = (
-        DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_gold_standard_after_addition.csv'
+        DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_gold_standard_for_listed_value_adder.csv'
 )
 GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION = OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES / 'gold_standard'
 
