@@ -105,24 +105,32 @@ class FeatureAdder(Adder):
         print(f'\nProcessing new values in {id_of_new_feature}')
         value_rows = read_csv(self.input_file_with_listed_values, read_as='dicts')
 
+        rows_to_add = []
         for i, new_listed_value in enumerate(listed_values_to_add, start=1):
             value_id = f'{id_of_new_feature}{SEPARATOR}{i}'
-
-            print(f'\nAdding new value (ID {value_id} - {new_listed_value["ru"]}) to file with listed values')
-            value_rows = self.insert_row(
-                rows_before_insertion=value_rows,
-                row_to_add={
+            print(f'Value ID {value_id} - {new_listed_value["ru"]} will be added to the file with listed values')
+            rows_to_add.append({
                     'id': value_id,
                     'feature_id': id_of_new_feature,
                     'en': new_listed_value['en'],
                     'ru': new_listed_value['ru'],
-                },
-                category_id=cat_id,
-                id_of_new_feature=id_of_new_feature,
-                feature_id_to_add_after=feature_id_to_add_after,
-            )
+                })
 
-            print(f'Adding new value (ID {value_id} - {new_listed_value["ru"]}) to feature profiles')
+        value_rows_with_new_values_inserted = self.insert_rows(
+            rows_before_insertion=value_rows,
+            rows_to_add=rows_to_add,
+            category_id=cat_id,
+            feature_id_to_add_after=feature_id_to_add_after,
+        )
+
+        write_csv(
+            rows=value_rows_with_new_values_inserted,
+            path_to_file=self.output_file_with_listed_values,
+            overwrite=True,
+            delimiter=','
+        )
+
+            # print(f'Adding new value (ID {value_id} - {new_listed_value["ru"]}) to feature profiles')
 
             # for file in self.input_feature_profiles:
             #     profile_rows = read_csv(file, read_as='dicts')
@@ -155,9 +163,6 @@ class FeatureAdder(Adder):
             #         delimiter=','
             #     )
 
-        # for row in value_rows:
-        #     print(row)
-        write_csv(value_rows, self.output_file_with_listed_values, overwrite=True, delimiter=',')
 
     def _generate_feature_id(
             self,
@@ -198,35 +203,33 @@ class FeatureAdder(Adder):
             return f'{category_id}{SEPARATOR}{custom_index_str}'
 
     @staticmethod
-    def insert_row(
+    def insert_rows(
             rows_before_insertion: list[dict],
-            row_to_add: dict,
+            rows_to_add: list[dict],
             category_id: str,
-            id_of_new_feature: str,
             feature_id_to_add_after: Optional[str],
     ):
         rows = rows_before_insertion[:]
+        insertion_point = -1
+
         if feature_id_to_add_after is None:
             for row_index, row in enumerate(rows):
                 if row['feature_id'].split(SEPARATOR)[0] > category_id:
-                    rows.insert(row_index, row_to_add)
+                    insertion_point = row_index
                     break
         else:
-            feature_found = False
+            found_feature_to_add_after = False
             for row_index, row in enumerate(rows):
-
-                if row['feature_id'] == id_of_new_feature:
-                    # we are in the block of newly added values, don't have to do anything in these lines
-                    continue
-
-                if row['feature_id'] == feature_id_to_add_after and not feature_found:
+                if row['feature_id'] == feature_id_to_add_after and not found_feature_to_add_after:
                     # found beginning of block of values for relevant feature
-                    feature_found = True
-                elif row['feature_id'] != feature_id_to_add_after and feature_found:
-                    # found end of block, can insert new value right before current row
-                    rows.insert(row_index, row_to_add)
+                    found_feature_to_add_after = True
+                elif row['feature_id'] != feature_id_to_add_after and found_feature_to_add_after:
+                    # found end of block
+                    insertion_point = row_index
                     break
-        return rows
+
+        return rows[:insertion_point] + rows_to_add + rows[insertion_point:]
+
 
 if __name__ == '__main__':
     pass
