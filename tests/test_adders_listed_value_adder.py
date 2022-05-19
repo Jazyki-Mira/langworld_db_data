@@ -23,7 +23,7 @@ STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED = ('pashto', 'ukrainian')
 def test_adder():
     return ListedValueAdder(
         input_file_with_listed_values=INPUT_FILE_WITH_LISTED_VALUES,
-        output_file_with_listed_values=DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_output.csv',
+        output_file_with_listed_values=DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_output_value_adder.csv',
         input_dir_with_feature_profiles=DIR_WITH_ADDERS_FEATURE_PROFILES,
         output_dir_with_feature_profiles=OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES,
     )
