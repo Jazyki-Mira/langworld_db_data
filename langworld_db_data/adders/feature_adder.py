@@ -36,7 +36,7 @@ class FeatureAdder(Adder):
             feature_ru: str,
             listed_values_to_add: list[dict],
             index_of_new_feature: Optional[int] = None,
-            index_to_add_after: Optional[int] = None,
+            insert_after_index: Optional[int] = None,
     ):
         
         _ = remove_extra_space
@@ -63,13 +63,14 @@ class FeatureAdder(Adder):
         ):
             raise FeatureAdderError(f'English or Russian feature name is already present in list of features')
 
-        if (
-                index_to_add_after is not None
-                and f'{cat_id}{SEPARATOR}{index_to_add_after}' not in [row['id'] for row in rows_with_features]
-        ):
-            raise FeatureAdderError(
-                f'Cannot add feature after {cat_id}{SEPARATOR}{index_to_add_after}: '
-                f'There is no feature with index {index_of_new_feature} in category {cat_id}.')
+        feature_id_to_add_after = None
+        if insert_after_index is not None:
+            feature_id_to_add_after = f'{cat_id}{SEPARATOR}{insert_after_index}'
+
+            if feature_id_to_add_after not in [row['id'] for row in rows_with_features]:
+                raise FeatureAdderError(
+                    f'Cannot add feature after {cat_id}{SEPARATOR}{insert_after_index}: '
+                    f'There is no feature with index {index_of_new_feature} in category {cat_id}.')
 
         id_of_new_feature = self._generate_feature_id(
             category_id=cat_id,
@@ -79,7 +80,7 @@ class FeatureAdder(Adder):
         print(f'\nAdding feature {id_of_new_feature} ({feature_en} / {feature_ru}) to list of features', end=' ')
         row_to_add = {'id': id_of_new_feature, 'en': feat_en, 'ru': feat_ru}
 
-        if index_to_add_after is None:
+        if insert_after_index is None:
             print(f'after the last feature in category {cat_id}')
             rows_to_write = (
                 [row for row in rows_with_features if row['id'].split(SEPARATOR)[0] <= cat_id]
@@ -87,7 +88,6 @@ class FeatureAdder(Adder):
                 + [row for row in rows_with_features if row['id'].split(SEPARATOR)[0] > cat_id]
             )
         else:
-            feature_id_to_add_after = f'{cat_id}{SEPARATOR}{index_to_add_after}'
             print(f'after feature {feature_id_to_add_after}')
             rows_to_write = []
             for row in rows_with_features:
@@ -102,15 +102,77 @@ class FeatureAdder(Adder):
             delimiter=','
         )
 
-        # either add at least one listed value right here along with feature creation
-        # or change ListedValueAdder to create listed value with ID "X-1" if the feature
-        # is present in list of features but does not have any listed values yet
+        print(f'\nProcessing new values in {id_of_new_feature}')
+        value_rows = read_csv(self.input_file_with_listed_values, read_as='dicts')
 
-        # Which Adder is going to add lines with 'not_stated' to feature profiles?
+        for i, new_listed_value in enumerate(listed_values_to_add, start=1):
+            value_id = f'{id_of_new_feature}{SEPARATOR}{i}'
 
-        # I think that it makes sense to create some listed values at first run, and
-        # ListedValueAdder will deal with simpler cases when the feature is already present
-        # and has some listed values
+            print(f'\nAdding new value (ID {value_id} - {new_listed_value["ru"]}) to file with listed values')
+            row_to_add = {
+                'id': value_id,
+                'feature_id': id_of_new_feature,
+                'en': new_listed_value['en'],
+                'ru': new_listed_value['ru'],
+            }
+
+            if feature_id_to_add_after is None:
+                for row_index, row in enumerate(value_rows):
+                    if row['feature_id'].split(SEPARATOR)[0] > cat_id:
+                        value_rows.insert(row_index, row_to_add)
+                        break
+            else:
+                feature_found = False
+                for row_index, row in enumerate(value_rows):
+
+                    if row['feature_id'] == id_of_new_feature:
+                        # we are in the block of newly added values, don't have to do anything in these lines
+                        continue
+
+                    if row['feature_id'] == feature_id_to_add_after and not feature_found:
+                        # found beginning of block of values for relevant feature
+                        feature_found = True
+                    elif row['feature_id'] != feature_id_to_add_after and feature_found:
+                        # found end of block, can insert new value right before current row
+                        value_rows.insert(row_index, row_to_add)
+                        break
+
+        # for row in value_rows:
+        #     print(row)
+        write_csv(value_rows, self.output_file_with_listed_values, overwrite=True, delimiter=',')
+
+            # print(f'Adding new value (ID {value_id} - {new_listed_value["ru"]}) to feature profiles')
+            #
+            # for file in self.input_feature_profiles:
+            #     profile_rows = read_csv(file, read_as='dicts')
+            #
+            #     row_to_add = {
+            #         'feature_id': id_of_new_feature, 'feature_name_ru': feat_ru,
+            #         'value_type': 'not_stated',
+            #         'value_id': value_id,
+            #         'value_ru': new_listed_value['ru'],
+            #         'comment_ru': '', 'comment_en': '',
+            #     }
+            #
+            #     if insert_after_index is None:
+            #         profile_rows_to_write = (
+            #                 [row for row in profile_rows if row['feature_id'].split(SEPARATOR)[0] <= cat_id]
+            #                 + [row_to_add]
+            #                 + [row for row in profile_rows if row['feature_id'].split(SEPARATOR)[0] > cat_id]
+            #         )
+            #     else:
+            #         profile_rows_to_write = []
+            #         for row in profile_rows:
+            #             rows_to_write.append(row)
+            #             if row['feature_id'] == feature_id_to_add_after:
+            #                 rows_to_write.append(row_to_add)
+            #
+            #     write_csv(
+            #         profile_rows_to_write,
+            #         self.output_dir_with_feature_profiles / file.name,
+            #         overwrite=True,
+            #         delimiter=','
+            #     )
 
     def _generate_feature_id(
             self,

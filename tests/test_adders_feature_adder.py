@@ -22,9 +22,9 @@ def test_feature_adder():
         input_file_with_features=DIR_WITH_ADDERS_TEST_FILES / 'features.csv',
         output_file_with_features=DIR_WITH_ADDERS_TEST_FILES / 'features_output.csv',
         input_file_with_listed_values=INPUT_FILE_WITH_LISTED_VALUES,
-        output_file_with_listed_values=DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_output.csv',
+        output_file_with_listed_values=DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_output_feature_adder.csv',
         input_dir_with_feature_profiles=DIR_WITH_ADDERS_FEATURE_PROFILES,
-        output_dir_with_feature_profiles=OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES,
+        output_dir_with_feature_profiles=OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES,  # TODO change dir
     )
 
 
@@ -86,7 +86,7 @@ def test_add_feature_fails_with_non_existent_index_of_feature_to_insert_after(te
                 feature_en='Foo',
                 feature_ru='Фу',
                 listed_values_to_add=dummy_values_to_add,
-                index_to_add_after=number,
+                insert_after_index=number,
             )
 
         assert f'Cannot add feature after A-{number}' in str(e)
@@ -117,14 +117,14 @@ def test__build_feature_id_generates_auto_index(test_feature_adder):
     assert feature_id == 'A-22'
 
 
-def test_add_feature_writes_good_output_file(test_feature_adder):
+def test_add_feature_writes_good_output_files(test_feature_adder):
     features_to_add = (
         {'category_id': 'A', 'feature_en': 'New feature in A', 'feature_ru': 'Новый признак в A'},
         {'category_id': 'C', 'feature_en': 'New feature in C', 'feature_ru': 'Новый признак в C'},
         {'category_id': 'D', 'feature_en': 'New feature in D with custom index', 'feature_ru': 'Новый признак в D',
          'index_of_new_feature': 415},
         {'category_id': 'N', 'feature_en': 'New feature in N with custom index in custom place',
-         'feature_ru': 'Новый признак в N в указанной строке', 'index_of_new_feature': 201, 'index_to_add_after': 2},
+         'feature_ru': 'Новый признак в N в указанной строке', 'index_of_new_feature': 201, 'insert_after_index': 2},
     )
 
     for kwargs in features_to_add:
@@ -133,16 +133,26 @@ def test_add_feature_writes_good_output_file(test_feature_adder):
         # Re-wire output to input, otherwise the adder will just take the input file again
         # and only last feature will be added in the end:
         test_feature_adder.input_file_with_features = test_feature_adder.output_file_with_features
-        # This is justified in test because in normal use output file is same as input file.
+        test_feature_adder.input_file_with_listed_values = test_feature_adder.output_file_with_listed_values
+        # This is justified in test because in normal use output file is same as input file
+        # and features will be added one by one.
 
     assert test_feature_adder.output_file_with_features.exists()
+    assert test_feature_adder.input_file_with_listed_values.exists()
 
     output_lines = read_csv(test_feature_adder.output_file_with_features, read_as='plain_rows')
     gold_standard_lines = read_csv(
-        DIR_WITH_ADDERS_TEST_FILES / 'features_output_gold_standard.csv', read_as='plain_rows'
+        DIR_WITH_ADDERS_TEST_FILES / 'features_gold_standard_after_addition.csv', read_as='plain_rows'
     )
+    for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
+        assert output_line == gold_standard_line
 
+    output_lines = read_csv(test_feature_adder.output_file_with_listed_values, read_as='plain_rows')
+    gold_standard_lines = read_csv(
+        DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_gold_standard_for_feature_adder.csv', read_as='plain_rows'
+    )
     for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
         assert output_line == gold_standard_line
 
     test_feature_adder.output_file_with_features.unlink()
+    test_feature_adder.output_file_with_listed_values.unlink()
