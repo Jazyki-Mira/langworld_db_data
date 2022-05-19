@@ -35,7 +35,8 @@ class FeatureAdder(Adder):
             feature_en: str,
             feature_ru: str,
             listed_values_to_add: list[dict],
-            feature_index: Optional[int] = None
+            index_of_new_feature: Optional[int] = None,
+            index_to_add_after: Optional[int] = None,
     ):
         
         _ = remove_extra_space
@@ -62,17 +63,38 @@ class FeatureAdder(Adder):
         ):
             raise FeatureAdderError(f'English or Russian feature name is already present in list of features')
 
+        if (
+                index_to_add_after is not None
+                and f'{cat_id}{SEPARATOR}{index_to_add_after}' not in [row['id'] for row in rows_with_features]
+        ):
+            raise FeatureAdderError(
+                f'Cannot add feature after {cat_id}{SEPARATOR}{index_to_add_after}: '
+                f'There is no feature with index {index_of_new_feature} in category {cat_id}.')
+
         id_of_new_feature = self._generate_feature_id(
             category_id=cat_id,
-            custom_feature_index=feature_index,
+            custom_index_of_new_feature=index_of_new_feature,
         )
         
-        print(f'\nAdding feature {id_of_new_feature} ({feature_en} / {feature_ru}) to list of features')
-        rows_to_write = (
-            [row for row in rows_with_features if row['id'].split(SEPARATOR)[0] <= cat_id]
-            + [{'id': id_of_new_feature, 'en': feat_en, 'ru': feat_ru}]
-            + [row for row in rows_with_features if row['id'].split(SEPARATOR)[0] > cat_id]
-        )                    
+        print(f'\nAdding feature {id_of_new_feature} ({feature_en} / {feature_ru}) to list of features', end=' ')
+        row_to_add = {'id': id_of_new_feature, 'en': feat_en, 'ru': feat_ru}
+
+        if index_to_add_after is None:
+            print(f'after the last feature in category {cat_id}')
+            rows_to_write = (
+                [row for row in rows_with_features if row['id'].split(SEPARATOR)[0] <= cat_id]
+                + [row_to_add]
+                + [row for row in rows_with_features if row['id'].split(SEPARATOR)[0] > cat_id]
+            )
+        else:
+            feature_id_to_add_after = f'{cat_id}{SEPARATOR}{index_to_add_after}'
+            print(f'after feature {feature_id_to_add_after}')
+            rows_to_write = []
+            for row in rows_with_features:
+                rows_to_write.append(row)
+                if row['id'] == feature_id_to_add_after:
+                    rows_to_write.append(row_to_add)
+
         write_csv(
             rows=rows_to_write,
             path_to_file=self.output_file_with_features,
@@ -93,7 +115,7 @@ class FeatureAdder(Adder):
     def _generate_feature_id(
             self,
             category_id: str,
-            custom_feature_index: Optional[int],
+            custom_index_of_new_feature: Optional[int],
     ):
         """
         Generates feature ID. If custom feature index is given, tries to use it.
@@ -101,10 +123,10 @@ class FeatureAdder(Adder):
         (to reserve indices that are higher than 100 for custom feature indices)
         and produces feature ID with next index (plus one).
         """
-        if custom_feature_index is not None and custom_feature_index < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS:
+        if custom_index_of_new_feature is not None and custom_index_of_new_feature < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS:
             raise FeatureAdderError(
                 f'For clarity, manual feature indices must be greater than {INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS} '
-                f'(you gave {str(custom_feature_index)}).'
+                f'(you gave {custom_index_of_new_feature}).'
             )
 
         feature_ids_in_category = [
@@ -112,14 +134,14 @@ class FeatureAdder(Adder):
             if row['id'].startswith(f'{category_id}{SEPARATOR}')
         ]
 
-        if custom_feature_index is None:
+        if custom_index_of_new_feature is None:
             largest_index_under_100 = max(
                 int(feature_id.split(SEPARATOR)[1]) for feature_id in feature_ids_in_category
                 if int(feature_id.split(SEPARATOR)[1]) < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
             )
-            return f'{category_id}{SEPARATOR}{str(largest_index_under_100 + 1)}'
+            return f'{category_id}{SEPARATOR}{largest_index_under_100 + 1}'
 
-        custom_index_str = str(custom_feature_index)
+        custom_index_str = str(custom_index_of_new_feature)
 
         if f'{category_id}{SEPARATOR}{custom_index_str}' in feature_ids_in_category:
             raise FeatureAdderError(

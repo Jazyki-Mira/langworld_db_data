@@ -78,27 +78,41 @@ def test_add_feature_fails_with_existing_feature_name(test_feature_adder):
         assert 'English or Russian feature name is already' in str(e)
 
 
+def test_add_feature_fails_with_non_existent_index_of_feature_to_insert_after(test_feature_adder):
+    for number in [0, 22, 250]:
+        with pytest.raises(FeatureAdderError) as e:
+            test_feature_adder.add_feature(
+                category_id='A',
+                feature_en='Foo',
+                feature_ru='Фу',
+                listed_values_to_add=dummy_values_to_add,
+                index_to_add_after=number,
+            )
+
+        assert f'Cannot add feature after A-{number}' in str(e)
+
+
 def test__build_feature_id_fails_with_existing_index(test_feature_adder):
     with pytest.raises(FeatureAdderError) as e:
-        test_feature_adder._generate_feature_id(category_id='A', custom_feature_index=1)
+        test_feature_adder._generate_feature_id(category_id='A', custom_index_of_new_feature=211)
 
-    assert 'Feature index 1 already in use in category A' in str(e)
+    assert 'Feature index 211 already in use in category A' in str(e)
 
 
 def test__build_feature_id_fails_with_small_index(test_feature_adder):
     with pytest.raises(FeatureAdderError) as e:
-        test_feature_adder._generate_feature_id(category_id='A', custom_feature_index=99)
+        test_feature_adder._generate_feature_id(category_id='A', custom_index_of_new_feature=99)
 
     assert 'must be greater than 100 (you gave 99)' in str(e)
 
 
 def test__build_feature_id_works_with_good_custom_index(test_feature_adder):
-    feature_id = test_feature_adder._generate_feature_id(category_id='A', custom_feature_index=130)
+    feature_id = test_feature_adder._generate_feature_id(category_id='A', custom_index_of_new_feature=130)
     assert feature_id == 'A-130'
 
 
 def test__build_feature_id_generates_auto_index(test_feature_adder):
-    feature_id = test_feature_adder._generate_feature_id(category_id='A', custom_feature_index=None)
+    feature_id = test_feature_adder._generate_feature_id(category_id='A', custom_index_of_new_feature=None)
     # note that there is a feature with ID A-211 in test file with features. Code must ignore this ID.
     assert feature_id == 'A-22'
 
@@ -107,12 +121,14 @@ def test_add_feature_writes_good_output_file(test_feature_adder):
     features_to_add = (
         {'category_id': 'A', 'feature_en': 'New feature in A', 'feature_ru': 'Новый признак в A'},
         {'category_id': 'C', 'feature_en': 'New feature in C', 'feature_ru': 'Новый признак в C'},
-        {'category_id': 'N', 'feature_en': 'New feature in N with custom index', 'feature_ru': 'Новый признак в N',
-         'feature_index': 415},
+        {'category_id': 'D', 'feature_en': 'New feature in D with custom index', 'feature_ru': 'Новый признак в D',
+         'index_of_new_feature': 415},
+        {'category_id': 'N', 'feature_en': 'New feature in N with custom index in custom place',
+         'feature_ru': 'Новый признак в N в указанной строке', 'index_of_new_feature': 201, 'index_to_add_after': 2},
     )
 
-    for args in features_to_add:
-        test_feature_adder.add_feature(**args, listed_values_to_add=dummy_values_to_add)
+    for kwargs in features_to_add:
+        test_feature_adder.add_feature(**kwargs, listed_values_to_add=dummy_values_to_add)
 
         # Re-wire output to input, otherwise the adder will just take the input file again
         # and only last feature will be added in the end:
