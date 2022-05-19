@@ -109,40 +109,21 @@ class FeatureAdder(Adder):
             value_id = f'{id_of_new_feature}{SEPARATOR}{i}'
 
             print(f'\nAdding new value (ID {value_id} - {new_listed_value["ru"]}) to file with listed values')
-            row_to_add = {
-                'id': value_id,
-                'feature_id': id_of_new_feature,
-                'en': new_listed_value['en'],
-                'ru': new_listed_value['ru'],
-            }
+            value_rows = self.insert_row(
+                rows_before_insertion=value_rows,
+                row_to_add={
+                    'id': value_id,
+                    'feature_id': id_of_new_feature,
+                    'en': new_listed_value['en'],
+                    'ru': new_listed_value['ru'],
+                },
+                category_id=cat_id,
+                id_of_new_feature=id_of_new_feature,
+                feature_id_to_add_after=feature_id_to_add_after,
+            )
 
-            if feature_id_to_add_after is None:
-                for row_index, row in enumerate(value_rows):
-                    if row['feature_id'].split(SEPARATOR)[0] > cat_id:
-                        value_rows.insert(row_index, row_to_add)
-                        break
-            else:
-                feature_found = False
-                for row_index, row in enumerate(value_rows):
+            print(f'Adding new value (ID {value_id} - {new_listed_value["ru"]}) to feature profiles')
 
-                    if row['feature_id'] == id_of_new_feature:
-                        # we are in the block of newly added values, don't have to do anything in these lines
-                        continue
-
-                    if row['feature_id'] == feature_id_to_add_after and not feature_found:
-                        # found beginning of block of values for relevant feature
-                        feature_found = True
-                    elif row['feature_id'] != feature_id_to_add_after and feature_found:
-                        # found end of block, can insert new value right before current row
-                        value_rows.insert(row_index, row_to_add)
-                        break
-
-        # for row in value_rows:
-        #     print(row)
-        write_csv(value_rows, self.output_file_with_listed_values, overwrite=True, delimiter=',')
-
-            # print(f'Adding new value (ID {value_id} - {new_listed_value["ru"]}) to feature profiles')
-            #
             # for file in self.input_feature_profiles:
             #     profile_rows = read_csv(file, read_as='dicts')
             #
@@ -173,6 +154,10 @@ class FeatureAdder(Adder):
             #         overwrite=True,
             #         delimiter=','
             #     )
+
+        # for row in value_rows:
+        #     print(row)
+        write_csv(value_rows, self.output_file_with_listed_values, overwrite=True, delimiter=',')
 
     def _generate_feature_id(
             self,
@@ -212,6 +197,36 @@ class FeatureAdder(Adder):
         else:
             return f'{category_id}{SEPARATOR}{custom_index_str}'
 
+    @staticmethod
+    def insert_row(
+            rows_before_insertion: list[dict],
+            row_to_add: dict,
+            category_id: str,
+            id_of_new_feature: str,
+            feature_id_to_add_after: Optional[str],
+    ):
+        rows = rows_before_insertion[:]
+        if feature_id_to_add_after is None:
+            for row_index, row in enumerate(rows):
+                if row['feature_id'].split(SEPARATOR)[0] > category_id:
+                    rows.insert(row_index, row_to_add)
+                    break
+        else:
+            feature_found = False
+            for row_index, row in enumerate(rows):
+
+                if row['feature_id'] == id_of_new_feature:
+                    # we are in the block of newly added values, don't have to do anything in these lines
+                    continue
+
+                if row['feature_id'] == feature_id_to_add_after and not feature_found:
+                    # found beginning of block of values for relevant feature
+                    feature_found = True
+                elif row['feature_id'] != feature_id_to_add_after and feature_found:
+                    # found end of block, can insert new value right before current row
+                    rows.insert(row_index, row_to_add)
+                    break
+        return rows
 
 if __name__ == '__main__':
     pass
