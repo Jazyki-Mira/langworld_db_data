@@ -175,7 +175,10 @@ class FeatureAdder(Adder):
         (to reserve indices that are higher than 100 for custom feature indices)
         and produces feature ID with next index (plus one).
         """
-        if custom_index_of_new_feature is not None and custom_index_of_new_feature < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS:
+        if (
+            custom_index_of_new_feature is not None
+            and custom_index_of_new_feature < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
+        ):
             raise FeatureAdderError(
                 f'For clarity, manual feature indices must be greater than {INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS} '
                 f'(you gave {custom_index_of_new_feature}).'
@@ -210,13 +213,13 @@ class FeatureAdder(Adder):
             feature_id_to_add_after: Optional[str],
     ):
         rows = rows_before_insertion[:]
-        insertion_point = -1
 
         if feature_id_to_add_after is None:
             for row_index, row in enumerate(rows):
                 if row['feature_id'].split(SEPARATOR)[0] > category_id:
-                    insertion_point = row_index
-                    break
+                    return rows[:row_index] + rows_to_add + rows[row_index:]
+            else:  # we have reached end of file
+                return rows + rows_to_add
         else:
             found_feature_to_add_after = False
             for row_index, row in enumerate(rows):
@@ -225,10 +228,9 @@ class FeatureAdder(Adder):
                     found_feature_to_add_after = True
                 elif row['feature_id'] != feature_id_to_add_after and found_feature_to_add_after:
                     # found end of block
-                    insertion_point = row_index
-                    break
-
-        return rows[:insertion_point] + rows_to_add + rows[insertion_point:]
+                    return rows[:row_index] + rows_to_add + rows[row_index:]
+            else:
+                return rows + rows_to_add
 
 
 if __name__ == '__main__':

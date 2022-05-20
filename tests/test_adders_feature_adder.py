@@ -125,6 +125,11 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
          'index_of_new_feature': 415},
         {'category_id': 'N', 'feature_en': 'New feature in N with custom index in custom place',
          'feature_ru': 'Новый признак в N в указанной строке', 'index_of_new_feature': 201, 'insert_after_index': 2},
+        # adding to the very end of file (with custom index):
+        {'category_id': 'N', 'feature_en': 'New feature in N inserted after 5', 'feature_ru': 'Новый признак N после 5',
+         'insert_after_index': 5},
+        # adding to the very end of file:
+        {'category_id': 'N', 'feature_en': 'New feature in N (in the very end)', 'feature_ru': 'Новый признак N конец'},
     )
 
     for kwargs in features_to_add:
@@ -147,6 +152,8 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
     for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
         assert output_line == gold_standard_line
 
+    test_feature_adder.output_file_with_features.unlink()
+
     output_lines = read_csv(test_feature_adder.output_file_with_listed_values, read_as='plain_rows')
     gold_standard_lines = read_csv(
         DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_gold_standard_for_feature_adder.csv', read_as='plain_rows'
@@ -154,5 +161,4 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
     for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
         assert output_line == gold_standard_line
 
-    test_feature_adder.output_file_with_features.unlink()
     test_feature_adder.output_file_with_listed_values.unlink()
