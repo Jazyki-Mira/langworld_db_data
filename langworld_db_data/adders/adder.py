@@ -2,6 +2,7 @@ from pathlib import Path
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
 
+AUX_ROW_MARKER = '_aux'
 SEPARATOR = '-'
 
 

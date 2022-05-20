@@ -5,7 +5,7 @@ from tests.paths import (
     DIR_WITH_ADDERS_TEST_FILES,
     DIR_WITH_ADDERS_FEATURE_PROFILES,
     INPUT_FILE_WITH_LISTED_VALUES,
-    OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES,
+    OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES,
 )
 
 
@@ -24,7 +24,7 @@ def test_feature_adder():
         input_file_with_listed_values=INPUT_FILE_WITH_LISTED_VALUES,
         output_file_with_listed_values=DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_output_feature_adder.csv',
         input_dir_with_feature_profiles=DIR_WITH_ADDERS_FEATURE_PROFILES,
-        output_dir_with_feature_profiles=OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES,
+        output_dir_with_feature_profiles=OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES,
     )
 
 
@@ -135,15 +135,25 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
     for kwargs in features_to_add:
         test_feature_adder.add_feature(**kwargs, listed_values_to_add=dummy_values_to_add)
 
-        # Re-wire output to input, otherwise the adder will just take the input file again
+        # Re-wire output to input after addition of first feature,
+        # otherwise the adder will just take the input file again
         # and only last feature will be added in the end:
         test_feature_adder.input_file_with_features = test_feature_adder.output_file_with_features
         test_feature_adder.input_file_with_listed_values = test_feature_adder.output_file_with_listed_values
+        test_feature_adder.input_feature_profiles = test_feature_adder.output_dir_with_feature_profiles.glob('*.csv')
         # This is justified in test because in normal use output file is same as input file
         # and features will be added one by one.
 
     assert test_feature_adder.output_file_with_features.exists()
     assert test_feature_adder.input_file_with_listed_values.exists()
+
+    gold_standard_feature_profiles = list(
+        (OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES / 'gold_standard').glob('*.csv')
+    )
+
+    for file in gold_standard_feature_profiles:
+        print(f'\nTEST: checking {file.name} for added feature')
+        assert (test_feature_adder.output_dir_with_feature_profiles / file.name).exists()
 
     output_lines = read_csv(test_feature_adder.output_file_with_features, read_as='plain_rows')
     gold_standard_lines = read_csv(
@@ -162,3 +172,14 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
         assert output_line == gold_standard_line
 
     test_feature_adder.output_file_with_listed_values.unlink()
+
+    for file in gold_standard_feature_profiles:
+        output_file = test_feature_adder.output_dir_with_feature_profiles / file.name
+
+        output_lines = read_csv(output_file, read_as='plain_rows')
+        gold_standard_lines = read_csv(file, read_as='plain_rows')
+
+        for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
+            assert output_line == gold_standard_line
+
+        output_file.unlink()
