@@ -5,7 +5,7 @@ from tests.paths import (
     DIR_WITH_ADDERS_TEST_FILES,
     DIR_WITH_ADDERS_FEATURE_PROFILES,
     INPUT_FILE_WITH_LISTED_VALUES,
-    OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES,
+    OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES,
 )
 
 
@@ -24,7 +24,7 @@ def test_feature_adder():
         input_file_with_listed_values=INPUT_FILE_WITH_LISTED_VALUES,
         output_file_with_listed_values=DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_output_feature_adder.csv',
         input_dir_with_feature_profiles=DIR_WITH_ADDERS_FEATURE_PROFILES,
-        output_dir_with_feature_profiles=OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES,  # TODO change dir
+        output_dir_with_feature_profiles=OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES,
     )
 
 

@@ -7,13 +7,13 @@ from tests.paths import (
     DIR_WITH_ADDERS_TEST_FILES,
     DIR_WITH_ADDERS_FEATURE_PROFILES,
     INPUT_FILE_WITH_LISTED_VALUES,
-    OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES,
+    OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES,
 )
 
 GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION = (
         DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_gold_standard_for_listed_value_adder.csv'
 )
-GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION = OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES / 'gold_standard'
+GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION = OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / 'gold_standard'
 
 STEMS_OF_EXPECTED_OUTPUT_FILES = ('catalan', 'corsican', 'franco_provencal')
 STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED = ('pashto', 'ukrainian')
@@ -25,7 +25,7 @@ def test_adder():
         input_file_with_listed_values=INPUT_FILE_WITH_LISTED_VALUES,
         output_file_with_listed_values=DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_output_value_adder.csv',
         input_dir_with_feature_profiles=DIR_WITH_ADDERS_FEATURE_PROFILES,
-        output_dir_with_feature_profiles=OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES,
+        output_dir_with_feature_profiles=OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES,
     )
 
 
@@ -78,10 +78,10 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
     )
 
     for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
-        assert (OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES / f'{stem}.csv').exists(), \
+        assert (OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / f'{stem}.csv').exists(), \
             f'File {stem}.csv was not created. It means that no changes were made while there should have been changes'
 
-    for file in OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES.glob('*.csv'):
+    for file in OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES.glob('*.csv'):
         assert file.stem not in STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED, \
             f"File {file.name} is not supposed to be changed"
 
@@ -132,10 +132,10 @@ def test_add_listed_value(test_adder):
     test_adder.output_file_with_listed_values.unlink()
 
     for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
-        assert (OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES / f'{stem}.csv').exists(), \
+        assert (OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / f'{stem}.csv').exists(), \
             f'File {stem}.csv was not created. It means that no changes were made while there should have been changes'
 
-    for file in OUTPUT_DIR_WITH_ADDERS_FEATURE_PROFILES.glob('*.csv'):
+    for file in OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES.glob('*.csv'):
         assert file.stem not in STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED, \
             f"File {file.name} is not supposed to be changed"
 
