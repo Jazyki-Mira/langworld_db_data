@@ -52,16 +52,9 @@
 ## A-2: Подъемы гласных
 
 - Верхние (от одного до трех не-нижних) и нижний: [кашмири](../feature_profiles/kashmiri.csv)
-- Верхний (закрытые в разной степени и открытые), средний (закрытые и открытые) и нижний: [мазандеранский](../feature_profiles/mazanderani.csv)
-- Верхний (закрытые и открытые), средний (закрытые и открытые) и нижний: [фарерский](../feature_profiles/faroese.csv)
 - Верхний и нижний в раннеавестийском; верхний, средний и нижний в позднеавестийском: [авесты](../feature_profiles/avestan.csv)
 - Верхний, верхне-средний, средне-нижний и нижний: [кашубский](../feature_profiles/kashubian.csv)
 - Верхний, средне-верхний, средне-нижний и нижний: [словенский](../feature_profiles/slovene.csv)
-- Верхний, средний (закрытые и открытые) и нижний: [каталонский](../feature_profiles/catalan.csv), [корсиканский](../feature_profiles/corsican.csv), [франкопровансальский](../feature_profiles/franco_provencal.csv), [французский](../feature_profiles/french.csv), [фриульский](../feature_profiles/friulian.csv), [галисийский](../feature_profiles/galician.csv), [гасконский](../feature_profiles/gascon.csv), [истророманский](../feature_profiles/istriot.csv), [истрорумынский](../feature_profiles/istro_romanian.csv), [итальянский](../feature_profiles/italian.csv), [ретороманский](../feature_profiles/rhaeto_romance.csv)
-- Верхний, средний (закрытые и открытые) и нижний (закрытые и открытые): [португальский](../feature_profiles/portuguese.csv)
-- Верхний, средний (закрытые, нейтральные и открытые) и нижний: [старофранцузский](../feature_profiles/old_french.csv)
-- Верхний, средний (открытые и закрытые) и нижний: [мегленорумынский](../feature_profiles/megleno_romanian.csv), [окситанский](../feature_profiles/occitan.csv), [сардинский](../feature_profiles/sardinian.csv)
-- Верхний, средний (открытые, полуоткрытые, закрытые и полузакрытые) и нижний: [фризский](../feature_profiles/frisian.csv)
 - Гласные по признаку подъема терминологически не интерпретируются: [язгулямский](../feature_profiles/yazghulami.csv)
 - Закрытые, средние и открытые: [сивенди](../feature_profiles/sivandi.csv)
 - Нижний и ненижний при наличии множества позиционных вариантов: [шугнанский](../feature_profiles/shughni.csv)
