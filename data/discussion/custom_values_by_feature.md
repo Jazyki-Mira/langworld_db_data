@@ -206,14 +206,11 @@
 ## A-15: Шумные переднеязычные согласные по месту образования
 
 - Дентальные (нецеребральные и церебральные): [кховар](../feature_profiles/khowar.csv), [шина](../feature_profiles/shina.csv)
-- Дентальные и передненебные: [португальский](../feature_profiles/portuguese.csv), [румынский](../feature_profiles/romanian.csv), [русский](../feature_profiles/russian.csv), [сербохорватский](../feature_profiles/serbocroatian.csv), [словенский](../feature_profiles/slovene.csv)
 - Дентальные, альвеолярные (апикальные и предорсальные) и передненебные: [сефардский](../feature_profiles/judeo_spanish.csv)
 - Дентальные, альвеолярные (дорсальные и апико-альвеолярные) и передненебные: [фриульский](../feature_profiles/friulian.csv)
-- Дентальные, альвеолярные и передненебные: [каталонский](../feature_profiles/catalan.csv), [французский](../feature_profiles/french.csv), [мегленорумынский](../feature_profiles/megleno_romanian.csv), [старофранцузский](../feature_profiles/old_french.csv), [ретороманский](../feature_profiles/rhaeto_romance.csv)
 - Дентальные, альвеолярные и постальвеолярные (ретрофлексные): [шведский](../feature_profiles/swedish.csv)
 - Дентальные, альвеолярные, ретрофлексные и постдентальные: [тода](../feature_profiles/toda.csv)
 - Дентальные, интердентальные, альвеолярные (апико-альвеолярные) и передненебные: [галисийский](../feature_profiles/galician.csv)
-- Дентальные, интердентальные, альвеолярные и передненебные: [арумынский](../feature_profiles/aromanian.csv), [астурийский](../feature_profiles/asturian.csv), [франкопровансальский](../feature_profiles/franco_provencal.csv), [сардинский](../feature_profiles/sardinian.csv)
 - Дорсальные и апикальные; церебральные: [парачи](../feature_profiles/parachi.csv)
 - Дорсальные и церебральные: [белуджский](../feature_profiles/balochi.csv), [ишкашимский](../feature_profiles/ishkashimi.csv), [сангличский](../feature_profiles/sanglechi.csv), [ваханский](../feature_profiles/wakhi.csv)
 - Дорсальные, апикальные и церебральные: [ормури](../feature_profiles/ormuri.csv)
@@ -269,11 +266,9 @@
 ## A-20: Инвентарь сонорных согласных по месту образования
 
 - Лабиальные и переднеязычные (дентальные и альвеолярные): [древнерусский](../feature_profiles/old_russian.csv)
-- Лабиальные, альвеолярные, передненебные и средненебные: [сардинский](../feature_profiles/sardinian.csv)
 - Лабиальные, дентально-альвеолярные и палатальные: [словацкий](../feature_profiles/slovak.csv)
 - Лабиальные, дентальные и средненебные: [сербохорватский](../feature_profiles/serbocroatian.csv)
 - Лабиальные, дентальные, передненебные и средненебные: [словенский](../feature_profiles/slovene.csv)
-- Лабиальные, переднеязычные (апикальные и предорсальные) и передненебные: [сефардский](../feature_profiles/judeo_spanish.csv)
 - Лабиальные, переднеязычные (дентальные и ретрофлексные) и среднеязычные (палатальные): [бадага](../feature_profiles/badaga.csv), [телугу](../feature_profiles/telugu.csv)
 - Лабиальные, переднеязычные (дентальные, альвеолярные и ретрофлексные), среднеязычные (палатальные) и заднеязычные: [каннада](../feature_profiles/kannada.csv)
 - Лабиальные, переднеязычные (нецеребральные и церебральные) и среднеязычные: [майян](../feature_profiles/mayan.csv), [сави](../feature_profiles/sawi.csv), [торвали](../feature_profiles/torwali.csv)
@@ -558,7 +553,6 @@
 - Различий не выявлено: [сусу](../feature_profiles/susu.csv)
 - Различия в количестве слогов: [каннада](../feature_profiles/kannada.csv)
 - Различия в слоговом составе - все служебные морфемы односложны (кроме окончания инструментально-комитативного падежа): [татский](../feature_profiles/tati.csv)
-- Различия в фонетическом составе, количестве слогов и акцентные различия: [исландский](../feature_profiles/icelandic.csv)
 - нет данных: [гоо](../feature_profiles/goo.csv)
 ## D-7: Функциональный тип чередований
 

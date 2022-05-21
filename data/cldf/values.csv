@@ -949,7 +949,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 948,aromanian,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 949,aromanian,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 950,aromanian,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-951,aromanian,A-15,,,,,"Дентальные, интердентальные, альвеолярные и передненебные",
+951,aromanian,A-15,"Dental, interdental, alveolar, and front-palatal",A-15-32,,,"Дентальные, интердентальные, альвеолярные и передненебные",
 952,aromanian,A-16,Velar,A-16-1,,,Велярные,
 953,aromanian,A-18,By palatalization,A-18-4,,,По палатализации,
 954,aromanian,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
@@ -1149,7 +1149,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1148,asturian,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 1149,asturian,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",Полусогласный /j/ определяется как звонкий среднеязычный фрикативный cогласный.
 1150,asturian,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-1151,asturian,A-15,,,,,"Дентальные, интердентальные, альвеолярные и передненебные",
+1151,asturian,A-15,"Dental, interdental, alveolar, and front-palatal",A-15-32,,,"Дентальные, интердентальные, альвеолярные и передненебные",
 1152,asturian,A-16,Velar,A-16-1,,,Велярные,
 1153,asturian,A-18,Absent,A-18-1,,,Отсутствуют,
 1154,asturian,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
@@ -2608,7 +2608,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2607,catalan,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 2608,catalan,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 2609,catalan,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-2610,catalan,A-15,,,,,"Дентальные, альвеолярные и передненебные",
+2610,catalan,A-15,"Dental, alveolar, and front-palatal",A-15-31,,,"Дентальные, альвеолярные и передненебные",
 2611,catalan,A-16,Velar,A-16-1,,,Велярные,
 2612,catalan,A-18,Absent,A-18-1,,,Отсутствуют,
 2613,catalan,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /j/ определяются как полусогласные. Их фонологический статус спорен.
@@ -4823,7 +4823,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4822,franco_provencal,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 4823,franco_provencal,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 4824,franco_provencal,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-4825,franco_provencal,A-15,,,,,"Дентальные, интердентальные, альвеолярные и передненебные",
+4825,franco_provencal,A-15,"Dental, interdental, alveolar, and front-palatal",A-15-32,,,"Дентальные, интердентальные, альвеолярные и передненебные",
 4826,franco_provencal,A-16,Velar,A-16-1,,,Велярные,
 4827,franco_provencal,A-18,By palatalization,A-18-4,,,По палатализации,
 4828,franco_provencal,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /j/ традиционно определяются как полугласные.
@@ -4907,7 +4907,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4906,french,A-12,Plosives and fricatives,A-12-1,,,Взрывные и фрикативные,
 4907,french,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 4908,french,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-4909,french,A-15,,,,,"Дентальные, альвеолярные и передненебные",
+4909,french,A-15,"Dental, alveolar, and front-palatal",A-15-31,,,"Дентальные, альвеолярные и передненебные",
 4910,french,A-16,Velar,A-16-1,,,Велярные,
 4911,french,A-18,Absent,A-18-1,,,Отсутствуют,
 4912,french,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды","Глайды /w/, /u?/ и /j/ традиционно определяются как полугласные."
@@ -5371,7 +5371,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5370,galician,D-1,Limited set of consonants possible,D-1-4,,,Ограниченный набор согласных,
 5371,galician,D-2,Limited set of vowels and consonants possible,D-2-8,,,Ограниченный набор гласных и согласных,
 5372,galician,D-5,Differences in phonetic structure,D-5-2,,,Различия в фонетическом составе,
-5373,galician,D-6,Differences in phonetic strcutre and in syllable structure,D-6-8,,,Различия в фонетическом составе и в структуре слога,
+5373,galician,D-6,Differences in phonetic structure and in syllable structure,D-6-8,,,Различия в фонетическом составе и в структуре слога,
 5374,galician,D-7,Accompanying,D-7-2,,,Сопутствующие,Других данных нет.
 5375,galician,D-8,Vowel and consonant alternations,D-8-6,,,Вокалические и консонантные,
 5376,galician,E-1,Fusional with some agglutinative features,E-1-4,,,Флективный с элементами агглютинации,
@@ -5912,7 +5912,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5911,german,D-3,,,,,"Преобладают одно- и двусложные корневые морфемы и двуморфемные (корень + флексия), но односложные словоформы",
 5912,german,D-4,"Differences in phonetic structure, in syllable structure and accentual differences",D-4-7,,,"Различия в фонетическом составе, в структуре слога и акцентные различия",
 5913,german,D-5,Differences in phonetic structure,D-5-2,,,Различия в фонетическом составе,
-5914,german,D-6,Differences in phonetic strcutre and in syllable structure,D-6-8,,,Различия в фонетическом составе и в структуре слога,
+5914,german,D-6,Differences in phonetic structure and in syllable structure,D-6-8,,,Различия в фонетическом составе и в структуре слога,
 5915,german,D-7,Accompanying and distinctive,D-7-4,,,Сопутствующие и смыслоразличительные,
 5916,german,D-8,"Vowel, consonant and mixed alternations",D-8-8,,,"Вокалические, консонантные и смешанные",
 5917,german,E-1,Fusional with some agglutinative features,E-1-4,,,Флективный с элементами агглютинации,
@@ -6951,7 +6951,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6950,icelandic,D-1,No restrictions,D-1-1,,,Отсутствуют,Других данных нет.
 6951,icelandic,D-2,Limited set of vowels and consonants possible,D-2-8,,,Ограниченный набор гласных и согласных,
 6952,icelandic,D-4,Differences in phonetic structure and accentual differences,D-4-5,,,Различия в фонетическом составе и акцентные различия,
-6953,icelandic,D-6,,,,,"Различия в фонетическом составе, количестве слогов и акцентные различия",
+6953,icelandic,D-6,"Differences in phonetic structure, number of syllables and accentuation",D-6-10,,,"Различия в фонетическом составе, количестве слогов и акцентные различия",
 6954,icelandic,D-7,Accompanying and distinctive,D-7-4,,,Сопутствующие и смыслоразличительные,
 6955,icelandic,D-8,"Vowel, consonant, and phoneme complex alternations",D-8-11,,,"Вокалические, консонантные и чередования комплексов",
 6956,icelandic,E-1,Fusional,E-1-3,,,Флективный,И.я. обладает наиболее развитой среди германских языков морфологической системой.
@@ -8009,7 +8009,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8008,judeo_spanish,A-16,Velar,A-16-1,,,Велярные,Фонема /h/ реализуется в заимствованиях как глухой гортанный звук.
 8009,judeo_spanish,A-18,Absent,A-18-1,,,Отсутствуют,
 8010,judeo_spanish,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
-8011,judeo_spanish,A-20,,,,,"Лабиальные, переднеязычные (апикальные и предорсальные) и передненебные",
+8011,judeo_spanish,A-20,"Labial, coronal (apical and pre-dorsal), and front-palatal",A-20-19,,,"Лабиальные, переднеязычные (апикальные и предорсальные) и передненебные",
 8012,judeo_spanish,A-21,By length,A-21-7,,,По долготе,Одноударный вибрант /r/ противопоставляется многоударному (долгому) вибранту /r:/.
 8013,judeo_spanish,B-1,Phonological,B-1-2,,,Фонологическое,
 8014,judeo_spanish,B-2,Dynamic,B-2-1,,,Динамическое,
@@ -12433,7 +12433,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12432,megleno_romanian,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 12433,megleno_romanian,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 12434,megleno_romanian,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-12435,megleno_romanian,A-15,,,,,"Дентальные, альвеолярные и передненебные",
+12435,megleno_romanian,A-15,"Dental, alveolar, and front-palatal",A-15-31,,,"Дентальные, альвеолярные и передненебные",
 12436,megleno_romanian,A-16,Velar,A-16-1,,,Велярные,
 12437,megleno_romanian,A-18,By palatalization,A-18-4,,,По палатализации,
 12438,megleno_romanian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /j/ традиционно определяются как полусогласные.
@@ -14248,7 +14248,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14247,old_french,A-12,Plosives and fricatives,A-12-1,,,Взрывные и фрикативные,"Имелся ряд аффрикат, упростившихся к XIII в. во фрикативные."
 14248,old_french,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 14249,old_french,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-14250,old_french,A-15,,,,,"Дентальные, альвеолярные и передненебные",
+14250,old_french,A-15,"Dental, alveolar, and front-palatal",A-15-31,,,"Дентальные, альвеолярные и передненебные",
 14251,old_french,A-16,Velar,A-16-1,,,Велярные,
 14252,old_french,A-18,Absent,A-18-1,,,Отсутствуют,
 14253,old_french,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /j/ традиционно определяются как полугласные.
@@ -15965,7 +15965,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15964,portuguese,A-12,Plosives and fricatives,A-12-1,,,Взрывные и фрикативные,Особенностью португальской системы согласных является отсутствие аффрикат.
 15965,portuguese,A-13,"Labial, coronal and guttural",A-13-1,,,"Лабиальные, переднеязычные и заднеязычные",
 15966,portuguese,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-15967,portuguese,A-15,,,,,Дентальные и передненебные,
+15967,portuguese,A-15,Dental and front-palatal,A-15-30,,,Дентальные и передненебные,
 15968,portuguese,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
 15969,portuguese,A-18,Absent,A-18-1,,,Отсутствуют,
 15970,portuguese,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
@@ -15988,7 +15988,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15987,portuguese,D-2,Limited set of consonants possible,D-2-5,,,Ограниченный набор согласных,
 15988,portuguese,D-4,"Differences in phonetic structure, in syllable structure and accentual differences",D-4-7,,,"Различия в фонетическом составе, в структуре слога и акцентные различия",
 15989,portuguese,D-5,No differences,D-5-1,,,Отсутствуют,
-15990,portuguese,D-6,Differences in phonetic strcutre and in syllable structure,D-6-8,,,Различия в фонетическом составе и в структуре слога,
+15990,portuguese,D-6,Differences in phonetic structure and in syllable structure,D-6-8,,,Различия в фонетическом составе и в структуре слога,
 15991,portuguese,D-7,Accompanying and distinctive,D-7-4,,,Сопутствующие и смыслоразличительные,
 15992,portuguese,D-8,Vowel and consonant alternations,D-8-6,,,Вокалические и консонантные,
 15993,portuguese,E-1,Fusional with some agglutinative features,E-1-4,,,Флективный с элементами агглютинации,
@@ -16122,7 +16122,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16121,rhaeto_romance,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 16122,rhaeto_romance,A-13,"Labial, coronal, dorsal, guttural and postuvular",A-13-2,,,"Лабиальные, переднеязычные, среднеязычные, заднеязычные и постувулярные",
 16123,rhaeto_romance,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-16124,rhaeto_romance,A-15,,,,,"Дентальные, альвеолярные и передненебные",
+16124,rhaeto_romance,A-15,"Dental, alveolar, and front-palatal",A-15-31,,,"Дентальные, альвеолярные и передненебные",
 16125,rhaeto_romance,A-16,Velar,A-16-1,,,Велярные,
 16126,rhaeto_romance,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,
 16127,rhaeto_romance,A-18,Absent,A-18-1,,,Отсутствуют,Специфическая щелевая средненебная фонема /с?/ (нем. Ich-Laut) употребляется в конечной позиции.
@@ -16221,7 +16221,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16220,romanian,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 16221,romanian,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 16222,romanian,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-16223,romanian,A-15,,,,,Дентальные и передненебные,
+16223,romanian,A-15,Dental and front-palatal,A-15-30,,,Дентальные и передненебные,
 16224,romanian,A-16,Velar,A-16-1,,,Велярные,
 16225,romanian,A-18,By palatalization,A-18-4,,,По палатализации,
 16226,romanian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /j/ определяются как полусогласные.
@@ -16481,7 +16481,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16480,russian,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 16481,russian,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 16482,russian,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-16483,russian,A-15,,,,,Дентальные и передненебные,
+16483,russian,A-15,Dental and front-palatal,A-15-30,,,Дентальные и передненебные,
 16484,russian,A-16,,,,,Средненебные и задненебные,
 16485,russian,A-18,Absent,A-18-1,,,Отсутствуют,
 16486,russian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
@@ -16949,11 +16949,11 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16948,sardinian,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 16949,sardinian,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 16950,sardinian,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-16951,sardinian,A-15,,,,,"Дентальные, интердентальные, альвеолярные и передненебные",
+16951,sardinian,A-15,"Dental, interdental, alveolar, and front-palatal",A-15-32,,,"Дентальные, интердентальные, альвеолярные и передненебные",
 16952,sardinian,A-16,Velar,A-16-1,,,Велярные,
 16953,sardinian,A-18,Absent,A-18-1,,,Отсутствуют,
 16954,sardinian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /j/ традиционно определяются как полусогласные.
-16955,sardinian,A-20,,,,,"Лабиальные, альвеолярные, передненебные и средненебные",
+16955,sardinian,A-20,"Labial, alveolar, front-palatal, and mid-palatal",A-20-20,,,"Лабиальные, альвеолярные, передненебные и средненебные",
 16956,sardinian,A-21,Absent,A-21-1,,,Отсутствуют,
 16957,sardinian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
 16958,sardinian,B-2,Dynamic,B-2-1,,,Динамическое,
@@ -17434,7 +17434,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17433,serbocroatian,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 17434,serbocroatian,A-13,,,,,"Лабиальные, дентальные, передненебные, средненебные, велярные",
 17435,serbocroatian,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-17436,serbocroatian,A-15,,,,,Дентальные и передненебные,
+17436,serbocroatian,A-15,Dental and front-palatal,A-15-30,,,Дентальные и передненебные,
 17437,serbocroatian,A-16,Velar,A-16-1,,,Велярные,
 17438,serbocroatian,A-18,Absent,A-18-1,,,Отсутствуют,
 17439,serbocroatian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды","Сонорный /r/ является слогообразующим, различает краткость/долготу и нисходящую/восходящую интонацию в ударных слогах."
@@ -18148,7 +18148,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18147,slovene,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 18148,slovene,A-13,,,,,"Лабиальные, дентальные, передненебные, средненебные и задненебные",
 18149,slovene,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-18150,slovene,A-15,,,,,Дентальные и передненебные,
+18150,slovene,A-15,Dental and front-palatal,A-15-30,,,Дентальные и передненебные,
 18151,slovene,A-16,,,,,Задненебные,
 18152,slovene,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",Глайд /j/ интерпретируется как средненебный звонкий фрикативный.
 18153,slovene,A-20,,,,,"Лабиальные, дентальные, передненебные и средненебные",
@@ -18609,7 +18609,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18608,spanish,D-2,Limited set of consonants possible,D-2-5,,,Ограниченный набор согласных,
 18609,spanish,D-4,Differences in phonetic structure and accentual differences,D-4-5,,,Различия в фонетическом составе и акцентные различия,
 18610,spanish,D-5,"Differences in phonetic structure, in syllable structure and in accentuation",D-5-7,,,"Различия в фонетическом составе, в структуре слога и акцентные различия",
-18611,spanish,D-6,Differences in phonetic strcutre and in syllable structure,D-6-8,,,Различия в фонетическом составе и в структуре слога,
+18611,spanish,D-6,Differences in phonetic structure and in syllable structure,D-6-8,,,Различия в фонетическом составе и в структуре слога,
 18612,spanish,D-7,Accompanying and distinctive,D-7-4,,,Сопутствующие и смыслоразличительные,
 18613,spanish,D-8,"Vowel, consonant and mixed alternations",D-8-8,,,"Вокалические, консонантные и смешанные",
 18614,spanish,E-1,Fusional with some agglutinative features,E-1-4,,,Флективный с элементами агглютинации,
@@ -19978,7 +19978,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19977,tigre,B-9,Phonological and non-phonological,B-9-4,,,Фонологическая и нефонологическая,
 19978,tigre,C-1,No null onset,C-1-1,,,Обязательно имеется,
 19979,tigre,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
-19980,tigre,D-6,Differences in phonetic strcutre and in syllable structure,D-6-8,,,Различия в фонетическом составе и в структуре слога,
+19980,tigre,D-6,Differences in phonetic structure and in syllable structure,D-6-8,,,Различия в фонетическом составе и в структуре слога,
 19981,tigre,E-1,Fusional-agglutinative,E-1-5,,,Флективно-агглютинативный,
 19982,tigre,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 19983,tigre,F-1,Two,F-1-2,,,Два,
