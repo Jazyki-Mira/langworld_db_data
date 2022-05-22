@@ -3552,7 +3552,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3551,czech,H-1,Three-seven,H-1-2,,,Три-семь,
 3552,czech,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
 3553,czech,H-4,Genitive or dative,H-4-11,,,Генитив или датив,
-3554,czech,H-5,,,,,"Притяжательные прилагательные, притяжательные местоимения и предложно-падежные конструкции",
+3554,czech,H-5,"Possessive pronouns and adjectives, and prepositional-nominal constructions",H-5-31,,,Посессивные местоимения и прилагательные и предложно-падежные конструкции,
 3555,czech,H-6,"Pronouns, adverbs, and prepositions",H-6-34,,,"Местоимения, наречия и предлоги",
 3556,czech,H-7,Marked,H-7-1,,,Маркированное,
 3557,czech,H-8,Different,H-8-2,,,Различное,
@@ -3714,7 +3714,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3713,dalmatian,G-6,Decimal,G-6-1,,,Десятичная,
 3714,dalmatian,G-7,Same,G-7-2,,,Совпадают,
 3715,dalmatian,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза, приглагольные местоимения, предлоги и порядок слов",
-3716,dalmatian,H-5,"Possessive pronouns, adjectives and prepositions",H-5-29,,,"Посессивные местоимения, прилагательные и предлоги",
+3716,dalmatian,H-5,"Possessive pronouns and adjectives, and prepositions",H-5-29,,,Посессивные местоимения и прилагательные и предлоги,
 3717,dalmatian,H-6,Spatial adverbs and prepositions,H-6-38,,,Наречия места и предлоги,
 3718,dalmatian,I-1,,,,,Вспомогательный глагол + причастие и местоименные глаголы,
 3719,dalmatian,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
@@ -5394,7 +5394,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5393,galician,G-7,Same,G-7-2,,,Совпадают,
 5394,galician,H-2,"Subject, direct and indirect object personal pronouns, prepositions, verbal agreement, and word order",H-2-22,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",
 5395,galician,H-5,,,,,"Притяжательные местоименные прилагательные (в приименной позиции с определенным артиклем), предлоги и относительные прилагательные",
-5396,galician,H-6,,,,,"Указательные местоимения, предложно-именные конструкции и наречия места",
+5396,galician,H-6,"Demonstrative pronouns, spatial adverbs, and prepositions",H-6-42,,,"Указательные местоимения, наречия места и предлоги",
 5397,galician,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,Залоговые отношения в Г.я. выражаются нерегулярно и плохо изучены.
 5398,galician,I-4,,,,,"Актив, рефлексив и реципрок",
 5399,galician,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
@@ -10664,7 +10664,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10663,ladin,H-1,No case,H-1-6,,,Категория падежа у имени существительного отсутствует,
 10664,ladin,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза и предлоги",
 10665,ladin,H-5,Possessive pronouns,H-5-4,,,Посессивные местоимения,Особенность Л.я. - отсутствие определенного артикля перед притяжательными местоимениями в присубстантивном употреблении.
-10666,ladin,H-6,,,,,Наречия места и направления (большое количество сложных форм) и предлоги,
+10666,ladin,H-6,"Demonstrative pronouns, spatial adverbs, and prepositions",H-6-42,,,"Указательные местоимения, наречия места и предлоги",
 10667,ladin,I-1,,,,,"Вспомогательный глагол + причастие, предлоги и местоименная форма глагола",
 10668,ladin,I-4,Passive and reflexive,I-4-4,,,Пассив и рефлексив,
 10669,ladin,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
@@ -16992,7 +16992,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16991,sardinian,G-6,Decimal,G-6-1,,,Десятичная,
 16992,sardinian,G-7,Same,G-7-2,,,Совпадают,
 16993,sardinian,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, приглагольные местоимения, местоименная реприза и предлоги",Есть особые ударные объектные формы личных местоимений 1-го и 2-го лица ед. числа с предлогами.
-16994,sardinian,H-5,"Possessive pronouns, adjectives and prepositions",H-5-29,,,"Посессивные местоимения, прилагательные и предлоги",Притяжательные местоимения находятся в постпозиции к существительному с артиклем.
+16994,sardinian,H-5,"Possessive pronouns and adjectives, and prepositions",H-5-29,,,Посессивные местоимения и прилагательные и предлоги,Притяжательные местоимения находятся в постпозиции к существительному с артиклем.
 16995,sardinian,H-6,"Pronouns, adverbs, and prepositions",H-6-34,,,"Местоимения, наречия и предлоги",
 16996,sardinian,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,
 16997,sardinian,I-4,Passive and reflexive,I-4-4,,,Пассив и рефлексив,
@@ -18631,8 +18631,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18630,spanish,G-6,Decimal,G-6-1,,,Десятичная,
 18631,spanish,G-7,Same,G-7-2,,,Совпадают,
 18632,spanish,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений, местоименная реприза, приглагольные местоимения, предлоги и порядок слов",
-18633,spanish,H-5,,,,,"Притяжательные местоимения, притяжательные прилагательные, предлоги и косвеннообъектные формы личных местоимений",
-18634,spanish,H-6,,,,,"Наречия места, местоимения, простые и сложные предлоги и предложные обороты",
+18633,spanish,H-5,"Possessive pronouns and adjectives, personal pronouns, and prepositions",H-5-24,,,"Посессивные местоимения и прилагательные, личные местоимения и предлоги",
+18634,spanish,H-6,"Demonstrative pronouns, spatial adverbs, and prepositions",H-6-42,,,"Указательные местоимения, наречия места и предлоги",
 18635,spanish,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,
 18636,spanish,I-2,Present,I-2-1,,,Присутствует,
 18637,spanish,I-4,Passive and reflexive,I-4-4,,,Пассив и рефлексив,
