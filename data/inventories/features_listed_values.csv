@@ -1170,9 +1170,9 @@ M-3-10,M-3,SOV/ VSO,SOV/ VSO
 M-3-11,M-3,SOV/ OSV,SOV/ OSV
 M-3-12,M-3,VSO/ VOS,VSO/ VOS
 M-4-1,M-4,Modifier precedes noun,Определение предшествует определяемому
-M-4-2,M-4,Modifier follows noun,Определение следует за определямым
+M-4-2,M-4,Modifier follows noun,Определение следует за определяемым
 M-4-3,M-4,Not fixed,Не фиксирован
-M-4-4,M-4,Preposition and postposition,Препозиция и постпозиция
+M-4-4,M-4,Preposition or postposition,Препозиция или постпозиция
 M-5-1,M-5,Possible,Возможно
 M-5-2,M-5,Impossible,Невозможно
 N-1-1,N-1,Main clause precedes subordinate clause,Главное предшествует придаточному
