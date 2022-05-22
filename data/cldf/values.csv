@@ -18643,7 +18643,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18642,spanish,I-9,In singular and plural,I-9-3,,,В единственном и множественном числе,
 18643,spanish,I-10,Affix,I-10-2,,,Аффикс,Маркирование переходности/непереходности местоименной формой глагола происходит непоследовательно.
 18644,spanish,J-1,"Pronominal adverbs, adjectives and nouns",J-1-10,,,"Местоименные наречия, прилагательные и существительные",
-18645,spanish,J-2,"Demonstrative and indefinite pronouns, adverbs, prepositions, and articles",J-2-27,,,"Указательные и неопределенные местоимения, наречия, предлоги и артикли",
+18645,spanish,J-2,"Demonstrative and indefinite pronouns, impersonal pronouns, adverbs, prepositions, and articles",J-2-38,,,"Указательные и неопределенные местоимения, непредметные местоимения, наречия, предлоги и артикли",
 18646,spanish,J-3,Prepositions,J-3-3,,,Предлоги,
 18647,spanish,J-4,Pronouns and adverbs,J-4-6,,,Местоимения и наречия,
 18648,spanish,J-5,Absent,J-5-1,,,Отсутствует,
