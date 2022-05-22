@@ -1803,13 +1803,7 @@
 - нейтральная, эргативная и инверсивная: [кабардинский](../feature_profiles/kabardian.csv)
 ## M-2: Фиксированность порядка слов
 
-- Относительно  свободный: [старофранцузский](../feature_profiles/old_french.csv)
-- Относительно свободный: [гурани](../feature_profiles/gurani.csv), [сивенди](../feature_profiles/sivandi.csv), [таджриши](../feature_profiles/tajrishi.csv), [йезди и кермани](../feature_profiles/yazdi_and_kermani.csv), [авесты](../feature_profiles/avestan.csv), [бактрийский](../feature_profiles/bactrian.csv), [мунджанский](../feature_profiles/munji.csv), [осетинский](../feature_profiles/ossetian.csv), [ваханский](../feature_profiles/wakhi.csv), [фризский](../feature_profiles/frisian.csv), [немецкий](../feature_profiles/german.csv), [корсиканский](../feature_profiles/corsican.csv), [истрорумынский](../feature_profiles/istro_romanian.csv), [итальянский](../feature_profiles/italian.csv), [окситанский](../feature_profiles/occitan.csv), [португальский](../feature_profiles/portuguese.csv), [румынский](../feature_profiles/romanian.csv), [испанский](../feature_profiles/spanish.csv), [серболужицкий](../feature_profiles/sorbian.csv)
-- Относительно свободный,: [фарерский](../feature_profiles/faroese.csv)
-- Порядок слов более свободный, чем во французском языке: [франкопровансальский](../feature_profiles/franco_provencal.csv)
 - Порядок слов обусловлен характером подлежащего и сказуемого: [парачи](../feature_profiles/parachi.csv)
-- Порядок слов относительно свободный: [гасконский](../feature_profiles/gascon.csv)
-- более свободный, чем в хеттский: [палайский](../feature_profiles/palaic.csv)
 ## M-3: Основной порядок слов в предложении
 
 - OVS/SVO: [милийский](../feature_profiles/milyan.csv)

@@ -1357,7 +1357,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1356,avestan,L-1,"Derivation, reduplication and compounding",L-1-19,,,"Аффиксация, редупликация и словосложение",
 1357,avestan,L-2,Prefixes and suffixes,L-2-3,,,Префиксы и суффиксы,
 1358,avestan,M-1,Accusative,M-1-3,,,Аккузативная,
-1359,avestan,M-2,,,,,Относительно свободный,
+1359,avestan,M-2,Relatively free,M-2-3,,,Относительно свободный,
 1360,avestan,N-3,Finite forms,N-3-1,,,Финитные формы,
 1361,avestan,N-4,Subordination and compounding,N-4-4,,,Сочинение и подчинение,
 1362,avestan,N-5,Both syndesis and asyndeton possible,N-5-3,,,Союзная и бессоюзная,
@@ -1505,7 +1505,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1504,bactrian,L-1,,,,,Аффиксация и основосложение,
 1505,bactrian,L-2,Suffixes,L-2-2,,,Суффиксы,
 1506,bactrian,M-1,,,,,Сочетание номинативных конструкций с квазиэргативными,
-1507,bactrian,M-2,,,,,Относительно свободный,
+1507,bactrian,M-2,Relatively free,M-2-3,,,Относительно свободный,
 1508,bactrian,M-3,SOV,M-3-2,,,SOV,
 1509,bactrian,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
 1510,bactrian,N-1,Not fixed,N-1-3,,,Не фиксирован,
@@ -3421,7 +3421,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3420,corsican,L-1,Derivation and compounding,L-1-12,,,Аффиксация и словосложение,Основные словообразовательные типы совпадают с итальянским языком.
 3421,corsican,L-2,"Infixes, prefixes and suffixes",L-2-7,,,"Инфиксы, префиксы и суффиксы",
 3422,corsican,M-1,Accusative,M-1-3,,,Аккузативная,
-3423,corsican,M-2,,,,,Относительно свободный,
+3423,corsican,M-2,Relatively free,M-2-3,,,Относительно свободный,
 3424,corsican,M-4,Not fixed,M-4-3,,,Не фиксирован,
 3425,corsican,M-5,Possible,M-5-1,,,Возможно,
 3426,corsican,N-3,Both finite and non-finite forms possible,N-3-3,,,Финитные и нефинитные формы,
@@ -4735,7 +4735,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4734,faroese,L-1,,,,,"Словосложение, аффиксация, конверсия, усечение и сращение","Способы и правила словообразования такие же, как в исландском языке."
 4735,faroese,L-2,,,,,"Префиксы, постфиксы (суффиксы и флексии), супрафиксы, циркумфиксы и интерфиксы",
 4736,faroese,M-1,Accusative,M-1-3,,,Аккузативная,
-4737,faroese,M-2,,,,,"Относительно свободный,",
+4737,faroese,M-2,Relatively free,M-2-3,,,Относительно свободный,
 4738,faroese,M-3,SVO,M-3-1,,,SVO,
 4739,faroese,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
 4740,faroese,N-3,Finite forms,N-3-1,,,Финитные формы,Других данных нет.
@@ -4891,7 +4891,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4890,franco_provencal,K-16,Number and gender / agreement class,K-16-7,,,Числа и рода / согласовательного класса,
 4891,franco_provencal,K-17,Internal flection and affixes,K-17-5,,,Внутренняя флексия и аффиксы,
 4892,franco_provencal,M-1,Accusative,M-1-3,,,Аккузативная,
-4893,franco_provencal,M-2,,,,,"Порядок слов более свободный, чем во французском языке",
+4893,franco_provencal,M-2,Relatively free,M-2-3,,,Относительно свободный,
 4894,franco_provencal,M-5,Possible,M-5-1,,,Возможно,
 4895,franco_provencal,N-4,Subordination and compounding,N-4-4,,,Сочинение и подчинение,В речи паратаксис преобладает над гипотаксисом.
 4896,franco_provencal,N-5,Both syndesis and asyndeton possible,N-5-3,,,Союзная и бессоюзная,
@@ -5097,7 +5097,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5096,frisian,L-1,"Derivation, compounding and abbreviation",L-1-14,,,"Аффиксация, словосложение и аббревиация",
 5097,frisian,L-2,"Infixes, prefixes and suffixes",L-2-7,,,"Инфиксы, префиксы и суффиксы",
 5098,frisian,M-1,Accusative,M-1-3,,,Аккузативная,
-5099,frisian,M-2,,,,,Относительно свободный,
+5099,frisian,M-2,Relatively free,M-2-3,,,Относительно свободный,
 5100,frisian,M-3,SVO,M-3-1,,,SVO,Язык номинативного строя без принципиальных отличий от порядка слов в нидерландском языке.
 5101,frisian,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
 5102,frisian,M-5,Impossible,M-5-2,,,Невозможно,
@@ -5593,7 +5593,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5592,gascon,L-1,Derivation and compounding,L-1-12,,,Аффиксация и словосложение,
 5593,gascon,L-2,Suffixes,L-2-2,,,Суффиксы,
 5594,gascon,M-1,Accusative,M-1-3,,,Аккузативная,
-5595,gascon,M-2,,,,,Порядок слов относительно свободный,
+5595,gascon,M-2,Relatively free,M-2-3,,,Относительно свободный,
 5596,gascon,M-3,SVO,M-3-1,,,SVO,
 5597,gascon,M-5,Possible,M-5-1,,,Возможно,
 5598,gascon,N-1,Not fixed,N-1-3,,,Не фиксирован,
@@ -5980,7 +5980,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5979,german,L-1,,,,,"Аффиксация, конверсия, основосложение, основосложение с суффиксацией, сращение и аббревиация",
 5980,german,L-2,,,,,"Префиксы, конфиксы, суффиксы и суффиксоиды (полуаффиксы)",
 5981,german,M-1,Accusative,M-1-3,,,Аккузативная,
-5982,german,M-2,,,,,Относительно свободный,
+5982,german,M-2,Relatively free,M-2-3,,,Относительно свободный,
 5983,german,M-3,SVO,M-3-1,,,SVO,
 5984,german,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,"Согласованное определение предшествует, несогласованное - следует за определяемым."
 5985,german,M-5,Impossible,M-5-2,,,Невозможно,
@@ -6484,7 +6484,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6483,gurani,L-1,"Derivation, reduplication and compounding",L-1-19,,,"Аффиксация, редупликация и словосложение",
 6484,gurani,L-2,,,,,Аффиксы и отделяемые приставки (послелоги),
 6485,gurani,M-1,,,,,Аккузативная и эргативная,
-6486,gurani,M-2,,,,,Относительно свободный,
+6486,gurani,M-2,Relatively free,M-2-3,,,Относительно свободный,
 6487,gurani,M-3,SOV/ OSV,M-3-11,,,SOV/ OSV,
 6488,gurani,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,В составе изафетной конструкции.
 6489,gurani,N-4,Subordination and compounding,N-4-4,,,Сочинение и подчинение,
@@ -7570,7 +7570,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7569,istro_romanian,L-1,Derivation and compounding,L-1-12,,,Аффиксация и словосложение,Активные словообразовательные процессы отсутствуют.
 7570,istro_romanian,L-2,Prefixes and suffixes,L-2-3,,,Префиксы и суффиксы,
 7571,istro_romanian,M-1,Accusative,M-1-3,,,Аккузативная,
-7572,istro_romanian,M-2,,,,,Относительно свободный,
+7572,istro_romanian,M-2,Relatively free,M-2-3,,,Относительно свободный,
 7573,istro_romanian,M-4,Not fixed,M-4-3,,,Не фиксирован,
 7574,istro_romanian,N-4,Subordination and compounding,N-4-4,,,Сочинение и подчинение,
 7575,istro_romanian,N-5,Both syndesis and asyndeton possible,N-5-3,,,Союзная и бессоюзная,
@@ -7667,7 +7667,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7666,italian,L-1,,,,,"Аффиксация, конверсия, редупликация и словосложение",
 7667,italian,L-2,Prefixes and suffixes,L-2-3,,,Префиксы и суффиксы,
 7668,italian,M-1,Accusative,M-1-3,,,Аккузативная,
-7669,italian,M-2,,,,,Относительно свободный,
+7669,italian,M-2,Relatively free,M-2-3,,,Относительно свободный,
 7670,italian,M-3,SVO,M-3-1,,,SVO,
 7671,italian,M-4,Not fixed,M-4-3,,,Не фиксирован,Позиция определения связана с его семантикой и функцией. Многосложные прилагательные располагаются в постпозиции.
 7672,italian,M-5,Possible,M-5-1,,,Возможно,
@@ -13277,7 +13277,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13276,munji,L-1,,,,,"Аффиксация, словосложение и аналитические словообразовательные модели переходных и непереходных глаголов (именной элемент + вспомогательный глагол)",
 13277,munji,L-2,Prefixes,L-2-1,,,Префиксы,
 13278,munji,M-1,,,,,Номинативная и эргативная,
-13279,munji,M-2,,,,,Относительно свободный,
+13279,munji,M-2,Relatively free,M-2-3,,,Относительно свободный,
 13280,munji,M-3,SVO,M-3-1,,,SVO,
 13281,munji,N-3,Both finite and non-finite forms possible,N-3-3,,,Финитные и нефинитные формы,
 13282,munji,N-4,Subordination and compounding,N-4-4,,,Сочинение и подчинение,
@@ -13931,7 +13931,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13930,occitan,L-1,Derivation and conversion,L-1-24,,,Аффиксация и конверсия,
 13931,occitan,L-2,Prefixes and suffixes,L-2-3,,,Префиксы и суффиксы,
 13932,occitan,M-1,Accusative,M-1-3,,,Аккузативная,
-13933,occitan,M-2,,,,,Относительно свободный,"В современном О.я. порядок слов близок к французскому, но более свободен."
+13933,occitan,M-2,Relatively free,M-2-3,,,Относительно свободный,"В современном О.я. порядок слов близок к французскому, но более свободен."
 13934,occitan,M-3,SVO,M-3-1,,,SVO,
 13935,occitan,M-4,Not fixed,M-4-3,,,Не фиксирован,
 13936,occitan,M-5,Possible,M-5-1,,,Возможно,
@@ -14326,7 +14326,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14325,old_french,L-1,Derivation and conversion,L-1-24,,,Аффиксация и конверсия,
 14326,old_french,L-2,Prefixes and suffixes,L-2-3,,,Префиксы и суффиксы,
 14327,old_french,M-1,Accusative,M-1-3,,,Аккузативная,
-14328,old_french,M-2,,,,,Относительно  свободный,"Более свободный, чем в современном французском языке."
+14328,old_french,M-2,Relatively free,M-2-3,,,Относительно свободный,"Более свободный, чем в современном французском языке."
 14329,old_french,M-3,SVO,M-3-1,,,SVO,
 14330,old_french,M-4,,,,,"Препозиция, постпозиция и аппозиция",
 14331,old_french,M-5,Possible,M-5-1,,,Возможно,
@@ -14962,7 +14962,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14961,ossetian,K-17,Internal flection and affixes,K-17-5,,,Внутренняя флексия и аффиксы,
 14962,ossetian,L-1,Derivation and compounding,L-1-12,,,Аффиксация и словосложение,
 14963,ossetian,L-2,,,,,Суффиксы и превербы,
-14964,ossetian,M-2,,,,,Относительно свободный,
+14964,ossetian,M-2,Relatively free,M-2-3,,,Относительно свободный,
 14965,ossetian,M-3,SOV,M-3-2,,,SOV,
 14966,ossetian,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
 14967,ossetian,N-4,Subordination and compounding,N-4-4,,,Сочинение и подчинение,
@@ -15051,7 +15051,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15050,palaic,L-1,Derivation and reduplication,L-1-9,,,Аффиксация и редупликация,
 15051,palaic,L-2,Suffixes,L-2-2,,,Суффиксы,
 15052,palaic,M-1,Active,M-1-1,,,Активная,
-15053,palaic,M-2,,,,,"более свободный, чем в хеттский",
+15053,palaic,M-2,Relatively free,M-2-3,,,Относительно свободный,"Порядок слов более свободный, чем в хеттском"
 15054,palaic,M-3,SOV,M-3-2,,,SOV,
 15055,pao_an,A-1,Three,A-1-2,,,Три,
 15056,pao_an,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
@@ -16049,7 +16049,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16048,portuguese,L-1,"Conversion, reduplication and compounding",L-1-18,,,"Конверсия, словосложение и аффиксация",
 16049,portuguese,L-2,Prefixes and suffixes,L-2-3,,,Префиксы и суффиксы,
 16050,portuguese,M-1,Accusative,M-1-3,,,Аккузативная,
-16051,portuguese,M-2,,,,,Относительно свободный,
+16051,portuguese,M-2,Relatively free,M-2-3,,,Относительно свободный,
 16052,portuguese,M-3,SVO,M-3-1,,,SVO,
 16053,portuguese,M-4,Not fixed,M-4-3,,,Не фиксирован,
 16054,portuguese,M-5,Possible,M-5-1,,,Возможно,
@@ -16311,7 +16311,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16310,romanian,L-2,Prefixes and suffixes,L-2-3,,,Префиксы и суффиксы,
 16311,romanian,L-3,Apposition and subordination,L-3-5,,,Аппозиция и подчинение,Других данных нет.
 16312,romanian,M-1,Accusative,M-1-3,,,Аккузативная,
-16313,romanian,M-2,,,,,Относительно свободный,
+16313,romanian,M-2,Relatively free,M-2-3,,,Относительно свободный,
 16314,romanian,M-3,SVO,M-3-1,,,SVO,
 16315,romanian,M-4,Not fixed,M-4-3,,,Не фиксирован,
 16316,romanian,M-5,Possible,M-5-1,,,Возможно,
@@ -18031,7 +18031,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18030,sivandi,L-1,Derivation,L-1-6,,,Аффиксация,
 18031,sivandi,L-2,,,,,"Суффиксы (в именном словообразовании), полусуффиксы (в наречиях), интерфиксы, превербы и поствербы (в глагольном словообразовании)",
 18032,sivandi,M-1,Accusative,M-1-3,,,Аккузативная,
-18033,sivandi,M-2,,,,,Относительно свободный,
+18033,sivandi,M-2,Relatively free,M-2-3,,,Относительно свободный,
 18034,sivandi,M-3,SOV,M-3-2,,,SOV,
 18035,sivandi,N-4,Subordination and compounding,N-4-4,,,Сочинение и подчинение,
 18036,sivandi,N-5,Both syndesis and asyndeton possible,N-5-3,,,Союзная и бессоюзная,
@@ -18570,7 +18570,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18569,sorbian,L-1,,,,,"Аффиксация, конверсия, основосложение, сращение и калькирование немецких композитов",
 18570,sorbian,L-2,"Prefixes, suffixes, and interfixes",L-2-16,,,"Префиксы, суффиксы и интерфиксы",
 18571,sorbian,M-1,Accusative,M-1-3,,,Аккузативная,
-18572,sorbian,M-2,,,,,Относительно свободный,
+18572,sorbian,M-2,Relatively free,M-2-3,,,Относительно свободный,
 18573,sorbian,M-3,SVO/ SOV,M-3-5,,,SVO/ SOV,В простом предложении с составным глагольным сказуемым реализуется рамочная конструкция.
 18574,sorbian,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,"Согласованное определение в препозиции, несогласованное - в постпозиции к определяемому."
 18575,sorbian,M-5,Possible,M-5-1,,,Возможно,
@@ -18672,7 +18672,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18671,spanish,L-1,"Derivation, compounding, conversion and abbreviation",L-1-20,,,"Аффиксация, словосложение, конверсия и аббревиация",
 18672,spanish,L-2,Prefixes and suffixes,L-2-3,,,Префиксы и суффиксы,
 18673,spanish,M-1,Accusative,M-1-3,,,Аккузативная,
-18674,spanish,M-2,,,,,Относительно свободный,
+18674,spanish,M-2,Relatively free,M-2-3,,,Относительно свободный,
 18675,spanish,M-3,SVO,M-3-1,,,SVO,
 18676,spanish,M-4,Not fixed,M-4-3,,,Не фиксирован,
 18677,spanish,M-5,Possible,M-5-1,,,Возможно,
@@ -19514,7 +19514,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19513,tajrishi,K-18,Prefixal-suffixal,K-18-1,,,Префиксально-суффиксальная,
 19514,tajrishi,L-1,Derivation and compounding,L-1-12,,,Аффиксация и словосложение,
 19515,tajrishi,L-2,Prefixes and suffixes,L-2-3,,,Префиксы и суффиксы,
-19516,tajrishi,M-2,,,,,Относительно свободный,
+19516,tajrishi,M-2,Relatively free,M-2-3,,,Относительно свободный,
 19517,tajrishi,M-3,SOV,M-3-2,,,SOV,
 19518,tajrishi,M-4,Not fixed,M-4-3,,,Не фиксирован,
 19519,tajrishi,N-5,Both syndesis and asyndeton possible,N-5-3,,,Союзная и бессоюзная,
@@ -21803,7 +21803,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21802,wakhi,L-1,"Derivation, reduplication and compounding",L-1-19,,,"Аффиксация, редупликация и словосложение",
 21803,wakhi,L-2,Prefixes and suffixes,L-2-3,,,Префиксы и суффиксы,
 21804,wakhi,M-1,Accusative,M-1-3,,,Аккузативная,
-21805,wakhi,M-2,,,,,Относительно свободный,В отличие от большинства иранских языков.
+21805,wakhi,M-2,Relatively free,M-2-3,,,Относительно свободный,В отличие от большинства иранских языков.
 21806,wakhi,M-3,SOV,M-3-2,,,SOV,
 21807,wakhi,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
 21808,wakhi,N-4,"Subordination, compounding and clause chaining",N-4-5,,,"Сочинение, подчинение и цепочки клауз",
@@ -22495,7 +22495,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22494,yazdi_and_kermani,L-1,Derivation and compounding,L-1-12,,,Аффиксация и словосложение,
 22495,yazdi_and_kermani,L-2,"Infixes, prefixes and suffixes",L-2-7,,,"Инфиксы, префиксы и суффиксы",
 22496,yazdi_and_kermani,L-3,Coordination and subordination,L-3-3,,,Сочинение и подчинение,
-22497,yazdi_and_kermani,M-2,,,,,Относительно свободный,
+22497,yazdi_and_kermani,M-2,Relatively free,M-2-3,,,Относительно свободный,
 22498,yazdi_and_kermani,M-3,SOV,M-3-2,,,SOV,
 22499,yazdi_and_kermani,N-3,Finite forms,N-3-1,,,Финитные формы,
 22500,yazdi_and_kermani,N-4,Subordination and compounding,N-4-4,,,Сочинение и подчинение,
