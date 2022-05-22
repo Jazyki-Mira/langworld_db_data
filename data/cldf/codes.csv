@@ -429,12 +429,12 @@ E-2-8,E-2,"Internal flection, phonetically unconditioned fusion",,Внутрен
 E-2-9,E-2,Internal and external flection,,Внутренняя и внешняя флексия
 E-2-10,E-2,Internal flection and cumulative flections,,Внутренняя флексия и кумулятивность флексий
 E-2-11,E-2,"Cumulative flections, phonetically unconditioned stem alternations and phonetically unconditioned fusion",,"Кумулятивность флексий, фонетически необусловленные изменения в основе и фонетически необусловленная фузия"
-E-3-1,E-3,One affix can express only one meaning,,Отсутствие полисемантизма аффиксов
+E-3-1,E-3,One flection can only express one meaning,,Отсутствие полисемантизма флексий
 E-3-2,E-3,Single inflection/conjugation type,,Единый тип склонения или спряжения
 E-3-3,E-3,Low degree of fusion between root and non-root morphemes,,Низкая степень фузии между некорневыми и корневыми морфемами
 E-3-4,E-3,No phonetic alternations in morphemes,,Постоянство морфемного облика
-E-3-5,E-3,"One affix can express only one meaning, single inflection/conjugation type, no phonetic alternations in morphemes",,"Отсутствие полисемантизма аффиксов, единый тип склонения или спряжения и постоянство морфемного облика"
-E-3-6,E-3,"One affix can express only one meaning, single inflection/conjugation type, no phonetic alternations in morphemes, basic form bare stem",,"Отсутствие полисемантизма аффиксов, единый тип склонения или спряжения, постоянство морфемного облика и совпадение исходной формы с чистой основой"
+E-3-5,E-3,"One flection can only express one meaning, single inflection/conjugation type, no phonetic alternations in morphemes",,"Отсутствие полисемантизма флексий, единый тип склонения или спряжения и постоянство морфемного облика"
+E-3-6,E-3,"One flection can only express one meaning, single inflection/conjugation type, no phonetic alternations in morphemes, basic form bare stem",,"Отсутствие полисемантизма флексий, единый тип склонения или спряжения, постоянство морфемного облика и совпадение исходной формы с чистой основой"
 E-3-7,E-3,"No phonetic alternations in morphemes, basic form bare stem",,Постоянство морфемного облика и совпадение исходной формы с чистой основой
 E-4-1,E-4,Polysynthetic,,Полисентетический
 E-4-2,E-4,Analytic,,Аналитический
