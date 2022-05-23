@@ -849,6 +849,7 @@ J-2-35,J-2,"Demonstrative and impersonal pronouns, and adverbs",Указател
 J-2-36,J-2,"Demonstrative pronouns, impersonal pronoun, adverbs, prepositions, and articles","Указательные местоимения, непредметное местоимение, наречия, предлоги и артикли"
 J-2-37,J-2,"Demonstrative and personal pronouns, impersonal pronouns, adverbs, prepositions, and articles","Указательные и личные местоимения, непредметные местоимения, наречия, предлоги и артикли"
 J-2-38,J-2,"Demonstrative and indefinite pronouns, impersonal pronouns, adverbs, prepositions, and articles","Указательные и неопределенные местоимения, непредметные местоимения, наречия, предлоги и артикли"
+J-2-39,J-2,"Demonstrative pronouns, adverbs, and prepositions","Указательные местоимения, наречия и предлоги"
 J-3-1,J-3,Directionals,Дирекционалы
 J-3-2,J-3,Postpositions,Послелоги
 J-3-3,J-3,Prepositions,Предлоги
@@ -907,6 +908,8 @@ J-6-21,J-6,"Articles, pronouns and numerals","Артикли, местоимен
 J-6-22,J-6,"Articles, adjectives, participles and numerals","Артикли, прилагательные, причастия и числительные"
 J-6-23,J-6,"Articles, prepositions, pronouns and numerals","Артикли, предлоги, местоимения и числительные"
 J-6-24,J-6,Articles and pronouns,Артикли и местоимения
+J-6-25,J-6,"Pronouns, numerals, and particles","Местоимения, числительные и частицы"
+J-6-26,J-6,"Articles, prepositions, and pronouns","Артикли, предлоги и местоимения"
 J-7-1,J-7,In noun phrase,В именной группе
 J-7-2,J-7,In verb phrase,В глагольной группе
 J-7-3,J-7,In pronouns,В местоимениях
@@ -1024,6 +1027,7 @@ K-11-18,K-11,"Animacy, person, case, number, gender and possessivity","Одуш�
 K-11-19,K-11,"Agreement class, number, and case","Согласовательный класс, число и падеж"
 K-11-20,K-11,Agreement class and number,Согласовательный класс и число
 K-11-21,K-11,"Gender, animacy, number, and case","Род, одушевленность, число и падеж"
+K-11-22,K-11,Person and number,Лицо и число
 K-12-1,K-12,Absent,Отсутствует
 K-12-2,K-12,Person and number,Лица и числа
 K-12-3,K-12,Agreement class and case,Согласовательного класса и падежа
@@ -1075,6 +1079,8 @@ K-15-11,K-15,"Case, possessivity and number","Падеж, посессивнос
 K-15-12,K-15,"(In)definiteness, number and state","Определенность, число и состояние"
 K-15-13,K-15,"Possessivity, (in)definiteness, and number","Посессивность, определенность, число"
 K-15-14,K-15,"(In)definiteness, number, and case","Определенность, число, падеж"
+K-15-15,K-15,"Person, number, and case","Лицо, число и падеж"
+K-15-16,K-15,"(In)definiteness, number and izafat","Определенность, число и изафет"
 K-16-1,K-16,Absent,Отсутствует
 K-16-2,K-16,Person and number,Лица и числа
 K-16-3,K-16,Person and number of the possessee,Лица и числа обладаемого
@@ -1091,6 +1097,7 @@ K-16-13,K-16,"Person, number and case","Лица, числа и падежа"
 K-16-14,K-16,"Gender / agreement class, number, case and definiteness","Рода / согласовательного класса, числа, падежа и определенности"
 K-16-15,K-16,"Number, case, person and number of possessor","Числа, падежа, лица посессора и числа посессора"
 K-16-16,K-16,"Gender / agreement class, number, case and animateness","Рода / согласовательного класса, числа, падежа и одушевленности"
+K-16-17,K-16,Number and definiteness,Числа и определённости
 K-17-1,K-17,Internal flection,Внутренняя флексия
 K-17-2,K-17,Affixes,Аффиксы
 K-17-3,K-17,Stem truncation and augmentation,Наращение/ усечение основы
@@ -1099,9 +1106,10 @@ K-17-5,K-17,Internal flection and affixes,Внутренняя флексия и
 K-17-6,K-17,Reduplication and affixes,Редупликация и аффиксы
 K-17-7,K-17,Reduplication and internal flection,Редупликация и внутренняя флексия
 K-17-8,K-17,Stem truncation/augmentation and affixes,Наращение/ усечение основы и аффиксы
-K-17-9,K-17,Internation inflection and stem truncation/augmentation,Внутренняя флексия и наращение/ усечение основы
-K-17-10,K-17,"Internation inflection, stem truncation/augmentation and affixes","Внутренняя флексия, наращение/ усечение основы и аффиксы"
-K-17-11,K-17,"Reduplication, internal inflection and affixes","Редупликация, внутренняя флексия и аффиксы"
+K-17-9,K-17,Internal flection and stem truncation/augmentation,Внутренняя флексия и наращение/ усечение основы
+K-17-10,K-17,"Internal flection, stem truncation/augmentation and affixes","Внутренняя флексия, наращение/ усечение основы и аффиксы"
+K-17-11,K-17,"Reduplication, internal flection and affixes","Редупликация, внутренняя флексия и аффиксы"
+K-17-12,K-17,Internal flection and tonal alternation,Внутренняя флексия и тоновые чередования
 K-18-1,K-18,Prefixal-suffixal,Префиксально-суффиксальная
 K-18-2,K-18,Mainly or only infixal,Преимущественно или только инфиксальная
 K-18-3,K-18,Mainly or only prefixal,Преимущественно или только префиксальная
@@ -1149,6 +1157,7 @@ L-2-14,L-2,"Prefixes, infixes, suffixes, postfixes and transfixes","Префик
 L-2-15,L-2,"Suffixes, prefixes, circumfixes and transfixes","Суффиксы, префиксы, циркумфиксы и трансфиксы"
 L-2-16,L-2,"Prefixes, suffixes, and interfixes","Префиксы, суффиксы и интерфиксы"
 L-2-17,L-2,"Prefixes, suffixes, postfixes, and interfixes","Префиксы, суффиксы, постфиксы и интерфиксы"
+L-2-18,L-2,"Prefixes, suffixes and circumfixes","Префиксы, суффиксы и циркумфиксы"
 L-3-1,L-3,Subordination,Только подчинение
 L-3-2,L-3,Coordination,Только сочинение
 L-3-3,L-3,Coordination and subordination,Сочинение и подчинение
@@ -1164,6 +1173,7 @@ M-1-6,M-1,Austronesian,Тематическая
 M-1-7,M-1,Accusative with elements of ergativity,Аккузативная с элементами эргативной
 M-1-8,M-1,"Accusative, ergative, and dative","Аккузативная, эргативная и дативная"
 M-1-9,M-1,Ergative with elements of accusative,Эргативная с элементами аккузативной
+M-1-10,M-1,Nominative and ergative,Номинативная и эргативная
 M-2-1,M-2,Fixed,Жесткий
 M-2-2,M-2,Non-fixed,Свободный
 M-2-3,M-2,Relatively free,Относительно свободный

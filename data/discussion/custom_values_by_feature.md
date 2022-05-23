@@ -1427,7 +1427,6 @@
 - Местоимения, определительные слова в изафетной конструкции, местоименные энклитики: [таджикский](../feature_profiles/tajik.csv)
 - Местоимения, числительные и предлоги: [сангличский](../feature_profiles/sanglechi.csv)
 - Местоимения, числительные, постпозитивные показатели неопределенности/единичности и послелоги, характеризующие определенность: [джавшакани](../feature_profiles/jawshakani.csv)
-- Местоимения, числительные, частицы: [нанайский](../feature_profiles/nanai.csv)
 - Прилагательные, местоимения, числительные и частицы: [русский](../feature_profiles/russian.csv)
 - Указательное местоимение в функции выделительного артикля: [древнеперсидский](../feature_profiles/old_persian.csv)
 - Указательные местоимения: [тирахи](../feature_profiles/tirahi.csv)
@@ -1658,7 +1657,6 @@
 - Число и неопределенность/единичность: [джавшакани](../feature_profiles/jawshakani.csv)
 - Число и определенность: [рошорвский](../feature_profiles/roshorvi.csv)
 - Число и определенность/неопределенность: [дари](../feature_profiles/dari.csv), [кумзари](../feature_profiles/kumzari.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [абдуи](../feature_profiles/abdui.csv), [хунсари](../feature_profiles/khunsari.csv), [кохруди](../feature_profiles/kohrudi.csv), [меймеи](../feature_profiles/meimei.csv), [сурхеи](../feature_profiles/surkhei.csv)
-- Число, определенность и изафет: [сонинке](../feature_profiles/soninke.csv)
 - Число, определенность и неопределенность/единичность: [биябунеки](../feature_profiles/biyabuneki.csv)
 - Число, падеж и неопределенность: [мунджанский](../feature_profiles/munji.csv), [сангличский](../feature_profiles/sanglechi.csv)
 - Число, падеж и определенность: [мегленорумынский](../feature_profiles/megleno_romanian.csv)
@@ -1684,7 +1682,6 @@
 - Числа и определенности/неопределенности: [персидский](../feature_profiles/persian.csv), [абдуи](../feature_profiles/abdui.csv), [ласгерди](../feature_profiles/lasgerdi.csv), [сивенди](../feature_profiles/sivandi.csv), [яран(д)и](../feature_profiles/yarandi.csv)
 - Числа, лица посессора и определенности: [афтари](../feature_profiles/aftari.csv)
 - Число и неопределенность/единичность (спорадически): [хазара](../feature_profiles/hazaragi.csv)
-- Число и определенность: [сонинке](../feature_profiles/soninke.csv)
 - определенность и род: [аргобба](../feature_profiles/argobba.csv)
 ## K-17: Средства словоизменения
 
@@ -1707,7 +1704,6 @@
 - Внутренняя и внешняя флексии, аффиксы и перегласовка основы: [шугнанский](../feature_profiles/shughni.csv)
 - Внутренняя флексии, аффиксы и супплетивизм: [бретонский](../feature_profiles/breton.csv)
 - Внутренняя флексия (количественные, качественные и просодические чередования в корне) и аффиксы: [датский](../feature_profiles/danish.csv)
-- Внутренняя флексия и тональные чередования: [сонинке](../feature_profiles/soninke.csv)
 - Внутренняя флексия, аффиксация, наращение и восстановление этимологического фонемного состава корневых морфем: [африкаанс](../feature_profiles/afrikaans.csv)
 - Внутренняя флексия, аффиксы и релятивные показатели: [ваханский](../feature_profiles/wakhi.csv)
 - Именные суффиксы и личные окончания глагола: [шамерзади](../feature_profiles/shamerzadi.csv)
@@ -1767,6 +1763,7 @@
 - Словосложение, аффиксация, конверсия, усечение, обратное словопроизводство, сращение и аббревиация: [норвежский](../feature_profiles/norwegian.csv)
 - Сложение основ и суффиксация: [мазандеранский](../feature_profiles/mazanderani.csv)
 - Суффиксация и сложение основ: [шамерзади](../feature_profiles/shamerzadi.csv), [велатру](../feature_profiles/velatru.csv)
+- аффиксация, композиция, редупликация, аналитическое конструирование: [керекский](../feature_profiles/kerek.csv)
 - аффиксация, конверсия, словосложение, редупликация и аналитизм: [чукотский](../feature_profiles/chukchi.csv)
 - аффиксация, словосложение, конверсия,аналитически - добавление связки?: [гунзибский](../feature_profiles/hunzib.csv)
 ## L-2: Аффиксы, участвующие в словообразовании
@@ -1798,7 +1795,6 @@
 
 - Аккузативная и эргативная: [гурани](../feature_profiles/gurani.csv), [заза](../feature_profiles/zaza.csv)
 - Нет данных: [мано](../feature_profiles/mano.csv)
-- Номинативная и эргативная: [мунджанский](../feature_profiles/munji.csv)
 - Номинативно-эргативная: [пашто](../feature_profiles/pashto.csv), [ванеци](../feature_profiles/waneci.csv), [пашаи](../feature_profiles/pashai.csv), [шумашти](../feature_profiles/shumashti.csv)
 - Номинативно-эргативная с преобладанием номинативности: [майян](../feature_profiles/mayan.csv), [тирахи](../feature_profiles/tirahi.csv)
 - Сочетание номинативных конструкций с квазиэргативными: [бактрийский](../feature_profiles/bactrian.csv)
@@ -1812,7 +1808,6 @@
 - Порядок слов обусловлен характером подлежащего и сказуемого: [парачи](../feature_profiles/parachi.csv)
 ## M-3: Основной порядок слов в предложении
 
-- OVS/SVO: [милийский](../feature_profiles/milyan.csv)
 - SOV, SVO, SOVO: [пашаи](../feature_profiles/pashai.csv)
 - SOV/SVO/VOS: [галльский](../feature_profiles/gaulish.csv)
 - VSO/OV(S)/SVO: [бретонский](../feature_profiles/breton.csv)
