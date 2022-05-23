@@ -314,6 +314,7 @@ B-11-12,B-11,"Height, length, and labialization",,"Подъем, долгота 
 B-11-13,B-11,Nasalization,,Назализация
 B-11-14,B-11,ATR and nasalization,,Степень продвинутости языка (ATR) и назализация
 B-11-15,B-11,Openness/closedness,,Открытость/закрытость
+B-11-16,B-11,Narrow and broad vowels,,Широкие и узкие гласные
 B-12-1,B-12,First vowel of word,,Первый гласный слова
 B-12-2,B-12,First vowel of affix,,Первый гласный аффикса
 B-12-3,B-12,First vowel of root,,Первый гласный корня
@@ -333,6 +334,7 @@ B-13-4,B-13,Phonation,,Фонация
 B-13-5,B-13,Velarization and palatalization,,Веляризация и палатализация
 B-13-6,B-13,Pharyngealization and phonation,,Фарингализация и фонация
 B-13-7,B-13,Palatalization and nasalization,,Палатализация и назализация
+B-13-8,B-13,Labialization and glottal stop,,Лабиализация и гортанная смычка
 B-14-1,B-14,Creaky voice,,Скрипучая
 B-14-2,B-14,Stiff voice and slack voice,,Напряженная и слабая
 B-14-3,B-14,"Stiff voice, slack voice and creaky voice",,"Напряженная, слабая и скрипучая"
@@ -441,6 +443,7 @@ E-2-8,E-2,"Internal flection, phonetically unconditioned fusion",,Внутрен
 E-2-9,E-2,Internal and external flection,,Внутренняя и внешняя флексия
 E-2-10,E-2,Internal flection and cumulative flections,,Внутренняя флексия и кумулятивность флексий
 E-2-11,E-2,"Cumulative flections, phonetically unconditioned stem alternations and phonetically unconditioned fusion",,"Кумулятивность флексий, фонетически необусловленные изменения в основе и фонетически необусловленная фузия"
+E-2-12,E-2,"Cumulative affixes, internal flection, several declension types",,"Кумулятивность аффиксов, внутренняя флексия, наличие параллельных типов склонения"
 E-3-1,E-3,One flection can only express one meaning,,Отсутствие полисемантизма флексий
 E-3-2,E-3,Single inflection/conjugation type,,Единый тип склонения или спряжения
 E-3-3,E-3,Low degree of fusion between root and non-root morphemes,,Низкая степень фузии между некорневыми и корневыми морфемами

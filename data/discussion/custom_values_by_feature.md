@@ -309,8 +309,11 @@
 - Тонически-квантитативно-динамическое: [тамильский](../feature_profiles/tamil.csv)
 - Фонетический способ реализации ударения не исследован: [язгулямский](../feature_profiles/yazghulami.csv)
 - Экспираторное с большей долготой ударных гласных: [татский](../feature_profiles/tati.csv)
+- акцентное чередование по хореическому типу: [ительменский](../feature_profiles/itelmen.csv)
+- демаркативная функция, место в слове о границах слова и ударной синтагмы: [древнеармянский](../feature_profiles/classical_armenian.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
 - нет данных: [ликийский](../feature_profiles/lycian.csv), [милийский](../feature_profiles/milyan.csv), [яурэ](../feature_profiles/yaoure.csv)
+- чередование слогов по хореистическому типу: [чукотский](../feature_profiles/chukchi.csv)
 ## B-3: Носитель ударения
 
 - Последний долгий гласный слова: [пашаи](../feature_profiles/pashai.csv)
