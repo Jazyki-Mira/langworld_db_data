@@ -94,6 +94,7 @@ A-11-16,A-11,Opposition by voice presence/absence and palatalization,Есть п
 A-11-17,A-11,Opposition by voice presence/absence and intensity,Есть противопоставления по звонкости/глухости и интенсивности
 A-11-18,A-11,"Strong (voiceless), weak (voiced) and geminate consonants present","Есть сильные (глухие), слабые (звонкие) и геминированные согласные"
 A-11-19,A-11,Emphatic and implosive consonants present,Есть эмфатические и имплозивные согласные
+A-11-20,A-11,Ejective and preruptive consonants present,Есть абруптивные и преруптивные согласные
 A-12-1,A-12,Plosives and fricatives,Взрывные и фрикативные
 A-12-2,A-12,Plosives and affricates,Взрывные и аффрикаты
 A-12-3,A-12,"Plosives, fricatives and affricates","Взрывные, фрикативные и аффрикаты"
@@ -938,6 +939,13 @@ J-8-15,J-8,"Negative particles, pronouns and adverbs","Отрицательны�
 J-8-16,J-8,"Negative particles, prefixes, conjunctions, and pronouns","Отрицательные частицы, префиксы, союзы и местоимения"
 J-8-17,J-8,"Negative affixes, particles, and pronouns","Отрицательные аффиксы, частицы и местоимения"
 J-8-18,J-8,Negative particles and pronouns,Отрицательные частицы и местоимения
+J-8-19,J-8,Negative affixes and predicatives,Отрицательные аффиксы и предикативы
+J-8-20,J-8,Negative verbs and predicatives,Отрицательные глаголы и предикативы
+J-8-21,J-8,"Negative affixes, verbs and predicatives","Отрицательные аффиксы, глаголы и предикативы"
+J-8-22,J-8,"Negative affixes, particles and predicatives","Отрицательные аффиксы, частицы и предикативы"
+J-8-23,J-8,"Negative and prohibitive affixes, negative particles","Отрицательные и запретительные аффиксы, отрицательные частицы"
+J-8-24,J-8,"Negative copulae, verbs, negation adjectives","Отрицательные связки, глаголы, прилагательные отрицания"
+J-8-25,J-8,"Negative affixes, predicatives, particles and pronouns","Отрицательные аффиксы, предикативы, частицы и местоимения"
 J-9-1,J-9,Incorporation,Инкорпорация
 J-9-2,J-9,Framing,Обрамление
 J-9-3,J-9,Preposition,Препозиция
