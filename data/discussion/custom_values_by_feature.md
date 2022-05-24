@@ -1540,8 +1540,6 @@
 ## K-6: Количество типов спряжения глаголов
 
 - Четырнадцать типов спряжения в зависимости от суффикса основы инфинитива: [словацкий](../feature_profiles/slovak.csv)
-- девять: [ингушский](../feature_profiles/ingush.csv)
-- шесть типов: [старояпонский](../feature_profiles/old_japanese.csv)
 ## K-7: Типы глагольного согласования
 
 - Других данных нет: [бактрийский](../feature_profiles/bactrian.csv)
@@ -1583,7 +1581,6 @@
 - класс и число: [ахвахский](../feature_profiles/akhvakh.csv), [андийский](../feature_profiles/andi.csv), [чамалинский](../feature_profiles/chamalal.csv), [гинухский](../feature_profiles/ginukh.csv), [каратинский](../feature_profiles/karata.csv), [табасаранский](../feature_profiles/tabasaran.csv)
 - класс, число, падеж: [ингушский](../feature_profiles/ingush.csv)
 - класс,число, падеж: [аварский](../feature_profiles/avar.csv)
-- определенность и падеж: [гафат](../feature_profiles/gafat.csv)
 - число и класс: [даргинский](../feature_profiles/dargwa.csv), [цезский](../feature_profiles/tsez.csv)
 ## K-12: Возможность кумулятивного выражения нескольких категорий в прилагательном
 
@@ -1601,7 +1598,6 @@
 - Согласовательного класса, числа, падежа и определенности/неопределенности: [заза](../feature_profiles/zaza.csv)
 - класс и число: [гинухский](../feature_profiles/ginukh.csv)
 - класса и числа: [хваршинский](../feature_profiles/khvarshi.csv)
-- определенность и род: [амхарский](../feature_profiles/amharic.csv)
 ## K-13: Атрибутивное согласование прилагательных
 
 - В атрибутивных сочетаниях прослеживаются примеры групповой флексии: [бактрийский](../feature_profiles/bactrian.csv)
@@ -1618,7 +1614,6 @@
 - не всегда присутствует: [каратинский](../feature_profiles/karata.csv)
 ## K-14: Типы атрибутивного согласования
 
-- По (не)определенности, роду, числу и падежу: [фарерский](../feature_profiles/faroese.csv)
 - По личности/неличности, роду, числу и падежу: [кашубский](../feature_profiles/kashubian.csv)
 - По роду, (не)личности, числу и падежу: [польский](../feature_profiles/polish.csv)
 - По роду, одушевленности/неодушевленности, числу и падежу: [словацкий](../feature_profiles/slovak.csv)
@@ -1627,10 +1622,7 @@
 - По роду, числу, падежу и определенности: [исландский](../feature_profiles/icelandic.csv), [старославянский](../feature_profiles/old_church_slavonic.csv)
 - По роду, числу, падежу, одушевленности/неодушевленности и личности/неличности: [серболужицкий](../feature_profiles/sorbian.csv)
 - По числу и определенности/непределенности: [кумзари](../feature_profiles/kumzari.csv), [хунсари](../feature_profiles/khunsari.csv)
-- определенность и падеж: [гафат](../feature_profiles/gafat.csv)
-- определенность, род, число, падеж: [амхарский](../feature_profiles/amharic.csv)
 - по классу, числу, прямой/косвенной форме (???): [хваршинский](../feature_profiles/khvarshi.csv)
-- по классу,числу и падежу: [ингушский](../feature_profiles/ingush.csv)
 ## K-15: Изменяемые грамматические категории, выражаемые существительным
 
 - Неопределенность и единичность: [зефреи](../feature_profiles/zefrei.csv)
@@ -1669,7 +1661,6 @@
 - Числа и определенности/неопределенности: [персидский](../feature_profiles/persian.csv), [абдуи](../feature_profiles/abdui.csv), [ласгерди](../feature_profiles/lasgerdi.csv), [сивенди](../feature_profiles/sivandi.csv), [яран(д)и](../feature_profiles/yarandi.csv)
 - Числа, лица посессора и определенности: [афтари](../feature_profiles/aftari.csv)
 - Число и неопределенность/единичность (спорадически): [хазара](../feature_profiles/hazaragi.csv)
-- определенность и род: [аргобба](../feature_profiles/argobba.csv)
 ## K-17: Средства словоизменения
 
 - Афииксы, личные окончания и частицы: [парачи](../feature_profiles/parachi.csv)
@@ -1771,13 +1762,10 @@
 - Суффиксы и флексии: [глангали](../feature_profiles/grangali.csv)
 - Суффиксы, постфиксы и ппрефиксы: [шугнанский](../feature_profiles/shughni.csv)
 - Суффиксы, префиксы, интерфиксы и постфикс-определенный артикль: [македонский](../feature_profiles/macedonian.csv)
-- суффиксы и циркумфиксы: [грузинский](../feature_profiles/georgian.csv)
 ## L-3: Отношения между соединяемыми основами при сложении основ
 
 - Копулятивный и детерминативный типы основосложения: [пашто](../feature_profiles/pashto.csv)
-- Нет данных: [бен](../feature_profiles/beng.csv), [боко](../feature_profiles/boko.csv), [гбан](../feature_profiles/gban.csv), [локо](../feature_profiles/loko.csv), [мано](../feature_profiles/mano.csv), [муан](../feature_profiles/mwan.csv), [сонинке](../feature_profiles/soninke.csv)
-- аппозиция: [чаха](../feature_profiles/chaha.csv)
-- нет данных: [гоо](../feature_profiles/goo.csv), [уан](../feature_profiles/wan.csv)
+- Нет данных: [бен](../feature_profiles/beng.csv), [боко](../feature_profiles/boko.csv), [гбан](../feature_profiles/gban.csv), [локо](../feature_profiles/loko.csv), [мано](../feature_profiles/mano.csv), [муан](../feature_profiles/mwan.csv), [сонинке](../feature_profiles/soninke.csv), [гоо](../feature_profiles/goo.csv), [уан](../feature_profiles/wan.csv)
 ## M-1: Стратегия кодирования глагольных актантов
 
 - Аккузативная и эргативная: [гурани](../feature_profiles/gurani.csv), [заза](../feature_profiles/zaza.csv)
