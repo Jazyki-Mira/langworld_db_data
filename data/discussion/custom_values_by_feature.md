@@ -368,10 +368,6 @@
 ## B-6: Количество уровней тонов
 
 - Предположительно можно реконструировать фарингализованный тон - просодическая "эризация": [хотаносакский](../feature_profiles/khotanese.csv)
-- Тоновые оппозиции не обнаружены: [сарыкольский](../feature_profiles/sariqoli.csv)
-- Тоновые оппозиции не предполагаются: [бактрийский](../feature_profiles/bactrian.csv)
-- Тоновые оппозиции не прослеживаются: [язгулямский](../feature_profiles/yazghulami.csv)
-- Тоновых противопоставлений в Т.я. нет: [тамильский](../feature_profiles/tamil.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
 ## B-7: Контурные признаки тона
 
@@ -406,7 +402,6 @@
 
 - Морфема (корневая или аффиксальная): [боко](../feature_profiles/boko.csv)
 - Частичный сингармонизм, ассимиляция гласных в пределах словоформы: [талышский](../feature_profiles/talysh.csv)
-- отсутствует: [абазинский](../feature_profiles/abaza.csv), [абхазский](../feature_profiles/abkhaz.csv), [ахвахский](../feature_profiles/akhvakh.csv), [андийский](../feature_profiles/andi.csv), [аварский](../feature_profiles/avar.csv), [бацбийский](../feature_profiles/bats.csv), [бежтинский](../feature_profiles/bezhta.csv), [чамалинский](../feature_profiles/chamalal.csv), [гинухский](../feature_profiles/ginukh.csv), [гунзибский](../feature_profiles/hunzib.csv), [ингушский](../feature_profiles/ingush.csv), [каратинский](../feature_profiles/karata.csv), [тиндинский](../feature_profiles/tindi.csv), [цезский](../feature_profiles/tsez.csv), [убыхский](../feature_profiles/ubykh.csv), [чаха](../feature_profiles/chaha.csv), [гафат](../feature_profiles/gafat.csv)
 - отутствует: [ботлихский](../feature_profiles/botlikh.csv)
 ## B-11: Признак гармонического уподобления гласных
 
