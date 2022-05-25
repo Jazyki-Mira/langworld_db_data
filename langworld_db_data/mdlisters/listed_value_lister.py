@@ -14,9 +14,14 @@ class ListedValueLister(AbstractValueLister):
     def __init__(
         self,
         dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
+        file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
         file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
     ):
-        super().__init__(value_type='listed', dir_with_feature_profiles=dir_with_feature_profiles)
+        super().__init__(
+            value_type='listed',
+            dir_with_feature_profiles=dir_with_feature_profiles,
+            file_with_features=file_with_features,
+        )
         self.file_with_listed_values = file_with_listed_values
     
     def write_grouped_by_feature(
@@ -25,7 +30,7 @@ class ListedValueLister(AbstractValueLister):
 
         feature_ids = [
             row['id'] for row in
-            read_csv(FILE_WITH_NAMES_OF_FEATURES, read_as='dicts')
+            read_csv(self.file_with_features, read_as='dicts')
         ]
 
         rows_with_listed_values = read_csv(self.file_with_listed_values, read_as='dicts')
@@ -42,7 +47,7 @@ class ListedValueLister(AbstractValueLister):
                 feature_to_value_to_doculects[row['feature_id']][row['value_id']].append(volume_and_doculect_id)
 
         feature_name_for_feature_id = read_dict_from_2_csv_columns(
-            FILE_WITH_NAMES_OF_FEATURES,
+            self.file_with_features,
             key_col='id',
             val_col='ru',
         )

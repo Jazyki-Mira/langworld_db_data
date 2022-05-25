@@ -10,15 +10,21 @@ from langworld_db_data.filetools.csv_xls import read_csv, read_dict_from_2_csv_c
 
 
 class AbstractValueLister(ABC):
-    def __init__(self, value_type: ValueType, dir_with_feature_profiles: Path):
+    def __init__(
+            self,
+            value_type: ValueType,
+            dir_with_feature_profiles: Path,
+            file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
+    ):
         self.value_type = value_type
+        self.file_with_features = file_with_features
 
         self.doculect_ru_for_doculect_id = read_dict_from_2_csv_columns(
             FILE_WITH_DOCULECTS, 'id', 'name_ru'
         )
 
         self.feature_ru_for_feature_id = read_dict_from_2_csv_columns(
-            FILE_WITH_NAMES_OF_FEATURES, 'id', 'ru'
+            self.file_with_features, 'id', 'ru'
         )
 
         self.encyclopedia_volume_for_doculect_id = read_dict_from_2_csv_columns(
