@@ -5,7 +5,7 @@ from langworld_db_data.filetools.csv_xls import read_csv
 
 
 def get_value_for_doculect_and_feature(
-        doculect_id: str, feature_id: str, copy_to_clipboard: bool = True
+        doculect_id: str, feature_id: str, copy_to_clipboard: bool = True, verbose: bool = True
 ) -> dict:
     """A helper function to get value for given feature in given doculect.
     Prints and returns found value type, ID and text.
@@ -22,18 +22,20 @@ def get_value_for_doculect_and_feature(
     if not file.exists():
         raise FileNotFoundError(f'Feature profile {doculect_id}.csv does not exist')
 
-    print(f'{doculect_id=}, {feature_id=}\n')
+    if verbose:
+        print(f'{doculect_id=}, {feature_id=}\n')
 
     for row in read_csv(file, read_as='dicts'):
         if row['feature_id'] == feature_id:
             data = {key: row[key] for key in ('value_type', 'value_id', 'value_ru', 'comment_ru')}
 
-            for attr in ('value_type', 'value_id', 'value_ru', 'comment_ru'):
-                attr_for_print = attr.replace("_ru", "").replace("_", " ").capitalize().replace('id', 'ID')
-                if data[attr]:
-                    print(f'{attr_for_print}: {data[attr]}')
-                else:
-                    print(f'{attr_for_print} is empty')
+            if verbose:
+                for attr in ('value_type', 'value_id', 'value_ru', 'comment_ru'):
+                    attr_for_print = attr.replace("_ru", "").replace("_", " ").capitalize().replace('id', 'ID')
+                    if data[attr]:
+                        print(f'{attr_for_print}: {data[attr]}')
+                    else:
+                        print(f'{attr_for_print} is empty')
 
             # sometimes a custom value can be written in comment while value itself is left empty
             text_to_copy = data['value_ru'] if data['value_ru'] else data['comment_ru']
