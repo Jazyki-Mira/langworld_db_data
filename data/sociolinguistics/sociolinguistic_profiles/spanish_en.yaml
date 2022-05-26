@@ -1,0 +1,144 @@
+---
+0.0.0:
+  - Spanish
+1.1.0:
+  - Span.
+1.1.1:
+  - Castilian
+1.1.2:
+  - Spanish<Ibero-Romance<Romance<Indo-European
+1.1.3:
+  - Spain
+  - Mexico
+  - Guatemala
+  - Honduras
+  - Costa Rica
+  - Nicaragua
+  - Panama
+  - El Salvador
+  - Dominican Republic
+  - Cuba
+  - Puerto Rico
+  - Argentina
+  - Bolivia
+  - Venezuela
+  - Colombia
+  - Paraguay
+  - Peru
+  - Uruguay
+  - Chile
+  - Ecuador
+  - United States of America:
+    - New Mexico state
+    - Texas state
+    - California state
+    - Arizona state
+    - Massachusetts state
+    - Connecticut state
+    - Delaware state
+    - Maryland state
+    - Virginia state
+    - North Carolina state
+    - South Carolina state
+    - Georgia state
+    - Florida state
+  - Equatorial Guinea
+  - Western Sahara
+  - Philippines
+  - Andorra
+  - number of speakers:
+    - about 20 million people
+1.2.1:
+  - Northern dial.group:
+    - Castilian dial.:
+      - Galician subdial.
+      - Asturleonese subdial.
+      - Navarro-Aragonese subdial.
+  - Southern dial.gr.:
+    - Andalusian dial.
+    - Murcia dial.
+    - Canarian dial.
+  - Caribbean dial.group:
+    - Mexican dial.
+    - Central America dial.group
+    - South America dial.group
+  - USA dial.group
+  - Africa dial. group
+  - Philippines dial.group
+1.3.1:
+  - state language:
+    - Spain
+    - everyday language
+    - official language
+    - Mexico
+    - Guatemala
+    - Honduras
+    - Costa Rica
+    - Panama
+    - El Salvador
+    - Dominican Republic
+    - Cuba
+    - Argentina
+    - Puerto Rico
+    - Bolivia
+    - Venezuela
+    - Colombia
+    - Paraguay
+    - Peru
+    - Uruguay
+    - Chile
+    - Ecuador
+    - Equatorial Guinea
+    - Western Sahara
+    - Philippines
+    - Andorra
+    - United States of America:
+      - New Mexico state
+  - koine
+  - Papiamento
+  - Chabacano
+  - Bamboo Spanish
+  - Palenquero
+  - language of international discourse
+  - bilingualism:
+    - Spanish - English
+    - Spanish - aboriginal languages
+1.3.2:
+  - based on one dialect:
+    - Castilian dial.
+1.3.3:
+  - at all levels
+1.4.0:
+  - writing system:
+    - alphabet:
+      - Latin script:
+        - with diacritics
+        - with digraphs
+1.5.0:
+  - formative stage (from 5th to 10th century AD)
+  - Old Spanish (from 10th to 13th century AD)
+  - Middle Spanish (from the middle of 13th to the end of 15th century AD)
+  - Classical Spanish (from 16th to the 1st half of 17th century AD)
+  - stage of codification (from 2nd half of 17th to 19th century AD)
+  - Modern Spanish (20th century AD)
+1.6.0:
+  - Cantabrian
+  - Basque
+  - Celtic:
+    - plural marker
+  - Native American:
+    - phonology
+  - Arabic:
+    - derivational suffix
+2.6.0:
+  - Latin
+  - Iberian
+  - Celtic
+  - Basque
+  - Gallo-Romance
+  - Italian
+  - Germanic
+  - Arabic
+  - Native American
+  - English
+  - French

@@ -1,0 +1,70 @@
+---
+0.0.0:
+  - ESTONIAN
+1.1.0:
+  - EST.
+1.1.1: 0
+1.1.2:
+  - ESTONIAN<BALTIC-FINNISH<FINNISH-PERMIC<FINNISH-UGRIC<URALIC
+1.1.3:
+  - Estonia (state)
+  - Sweden
+  - USA
+  - Canada
+  - Australia
+  - United Kingdom
+  - Germany
+1.2.1:
+  - Northern dialects:
+    - Middle Estonian dial.:
+      - Central dial.
+      - Western dial.
+      - Islands' dial.
+      - Eastern dial.
+    - North-eastern Estonian dialects:
+      - Coastal dial.
+      - Alutaguse dial.
+  - Southern dialects:
+    - Mulgi dial.
+    - Tartu dial.
+    - Võro dial.
+1.3.1:
+  - state:
+    - Estonia
+  - bilingualism:
+    - Estonian - Russian
+    - Estonian - English
+    - Estonian - Swedish
+    - Estonian - German
+1.3.2:
+  - based on one dialect:
+    - Central dialect
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - scientific centers
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - latin alphabet:
+        - with diacritics
+1.5.0: 0
+1.6.0:
+  - German:
+    - fusional verbs
+2.6.0:
+  - Russian:
+    - everyday vocabulary
+    - military terminology
+    - social and political vocabulary
+  - German:
+    - everyday vocabulary
+    - cultural vocabulary
+    - trade vocabulary
+    - social and political vocabulary
+  - Lettish
+  - Swedish
+  - Finnish

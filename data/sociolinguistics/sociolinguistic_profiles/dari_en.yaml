@@ -1,0 +1,84 @@
+---
+0.0.0:
+  - DARI
+1.1.0:
+  - DARI
+1.1.1:
+  - Dari Persian
+  - Farsi
+  - Afghan Persian
+1.1.2:
+  - DARI<SOUTHWEST IRANIAN<IRANIAN<INDO-EUROPEAN
+1.1.3:
+  - Afghanistan
+  - Tajikistan
+1.2.1:
+  - Kabuli dial.
+  - Badakhshan subdials.
+  - Panjshir subdials.
+  - Rogh subdials.
+  - dial. of Gerat Tajiks
+  - dial. of Parvan Tajiks
+  - dial. of Loghar Tajiks
+  - dial. of Farakh Tajiks
+  - dial. of Lagman Tajiks
+1.3.1:
+  - official:
+    - Afghanistan
+  - ceremonial language
+  - bilingualism:
+    - Dari - Pashto
+    - Dari - Baluchi
+    - Dari - Uzbek
+    - Dari - Nuristani
+    - Dari - Pamir
+1.3.2:
+  - based on one dialect:
+    - Kabuli dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic:
+        - with additional signs
+  - direction of writing differing from European:
+    - horizontal:
+      - from right to left
+1.5.0:
+  - Ancient Iranian era (IV-II cc. B.C.)
+  - Middle Iranian era (II c. B.C. - VIII-IX cc.)
+  - New Iranian era:
+    - language of classical Persian-Tajik literature (VII-IX cc. - XVI-XVIII cc.)
+    - establishment and development of Dari (XVIII c. - until now)
+1.6.0:
+  - Pashto:
+    - borrowing of affricates
+2.6.0:
+  - Tajik:
+    - kinship terms
+    - names of natural phenomena
+    - agricultural terms
+    - names of animals
+    - everyday vocabulary
+  - Arabic:
+    - social vocabulary
+  - Pashto (=Afghani):
+    - social vocabulary
+  - Indian:
+    - social vocabulary
+    - everyday vocabulary
+  - Turkic:
+    - everyday vocabulary
+  - Russian:
+    - social vocabulary
+    - everyday vocabulary
+  - English:
+    - social vocabulary
+    - scientific and technical terminology
+  - French:
+    - social vocabulary
+    - scientific and technical terminology

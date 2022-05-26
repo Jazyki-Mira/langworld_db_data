@@ -1,0 +1,92 @@
+---
+0.0.0:
+  - BALOCHI
+1.1.0:
+  - BALOCHI
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Pakistan
+  - Iran
+  - Afghanistan
+  - Turkmenistan
+  - Tajikistan
+1.2.1:
+  - Eastern dial. gr.
+  - Western dial. gr.:
+    - Sarhaddi Rakhshani dial.
+    - Afghan Rakhshani dial.
+    - Turkmen Rakhshani dial.
+    - Panjguri Rakhshani dial.
+    - Kalati Rakhshani dial.
+    - Sarawani dial.
+  - Mandwani (Northern) dial.
+  - Domki (Southern) dial.:
+    - Coastal dial.
+    - Lashari dial.
+    - Kachi dial.
+    - Karachi dial.
+  - Koroshi dial.
+  - Tendency:
+    - dialect continuum
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Balochi - Urdu
+    - Balochi - Persian
+    - Balochi - Pashto
+    - Balochi - Dari
+    - Balochi - Turkmen
+    - Balochi - Russian
+1.3.2:
+  - based on one dialect:
+    - Kachi dial.
+1.3.3:
+  - studied as a subject:
+    - high school
+  - studied as a foreign language:
+    - as an element of general education
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic script:
+        - with additional signs
+  - direction of writing different from European:
+    - horizontal:
+      - from right to left
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+        - with digraphs
+1.5.0: 0
+1.6.0:
+  - Arabic:
+    - phonetic properties
+  - Persian:
+    - ezafe construction
+  - Sindhi:
+    - cerebral/coronal stops
+    - progressive verb forms
+    - participle predicative combinations
+  - Urdu:
+    - cerebral/coronal stops
+    - progressive verb forms
+    - participle predicative combinations
+  - Brahui:
+    - cerebral/coronal stops
+    - progressive verb forms
+    - participle predicative combinations
+2.6.0:
+  - Arabic:
+    - religious and philosophical vocabulary
+    - social and political terminology
+    - military terminology
+    - abstract vocabulary
+  - Persian
+  - Pashto
+  - Brahui
+  - Urdu
+  - Hindi
+  - Sindhi
+  - Lasi
+  - Siraiki

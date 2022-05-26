@@ -1,0 +1,51 @@
+---
+0.0.0:
+  - WAKHI
+1.1.0:
+  - WAKHI
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Afghanistan
+  - China
+  - Pakistan
+  - Tajikistan
+  - Russia
+  - Turkey
+1.2.1:
+  - Gojal (Pakistan) dial.
+  - Ishkoman dial.
+  - Yasin dial.
+  - Yarkhun dial.
+  - Central Wakhi dial.
+  - Western Wakhi dial.
+  - Eastern Wakhi dial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Wakhi - Tajik
+    - Wakhi - Russian
+    - Wakhi - Shungan
+    - Wakhi - Dari
+    - Wakhi - Pashto
+1.3.2: 0
+1.3.3: 0
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic script
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+        - with additional signs
+      - Cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+1.5.0: 0
+1.6.0: 0
+2.6.0:
+  - Persian
+  - Tajik:
+    - everyday vocabulary
+  - Arabic
+  - Turkic

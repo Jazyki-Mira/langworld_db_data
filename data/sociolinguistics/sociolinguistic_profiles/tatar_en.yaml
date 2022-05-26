@@ -1,0 +1,91 @@
+---
+0.0.0:
+  - TATAR
+1.1.0:
+  - TATAR
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Russia
+  - Ukraine
+  - Uzbekistan
+  - Kazakhstan
+  - Tajikistan
+  - Azerbaijan
+  - Kyrgyzstan
+  - Turkmenistan
+  - China
+  - Finland
+  - Turkey
+  - USA
+  - Romania
+  - Israel
+  - Georgia
+  - Lithuania
+  - Latvia
+1.2.1:
+  - Central (Middle) Tatar dial.
+  - Western (Mişär = Mishar) Tatar dial.:
+    - Ch-dialects or Southern Mishar:
+      - Temnikovsky dial.
+      - Lyambirsky dial.
+      - Bashkortostan dial.
+      - Sharlyk dial.
+      - Orenburg dial.
+      - Dialects of Volgograd and Saratov oblasts
+      - Kuznetsk dial.
+      - Khvalynsk dial.
+    - Ts-dialects or Northern Mishar:
+      - Sergachsky dial.
+      - Drozhzhanovsky dial.
+      - Chistopolsky dial. (mixed)
+      - Melekessky dial.
+  - Siberian Tatar dial.
+1.3.1:
+  - official:
+    - Russia:
+      - Tatarstan
+  - everyday language
+  - bilingualism:
+    - Tatar - languages of post-Soviet states
+1.3.2:
+  - based on one dialect:
+    - Central Tatar dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+  - studied as a subject:
+    - secondary school
+    - high school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic script (hist.)
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+        - with digraphs (hist.)
+        - with additional signs
+      - Cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+1.5.0:
+  - Period of independent development (until the mid. of XVI c.)
+  - Period of establishment of nation-wide colloquial language (XVI c. - mid. of XIX c.)
+  - Period of influence of Tatar-Russian bilingualism (mid. of XX c. - nowadays)
+1.6.0:
+  - Arabic
+  - Persian:
+    - phonetics
+    - grammar
+  - Russian:
+    - grammar and syntax
+2.6.0:
+  - Russian:
+    - all lexical layers
+  - Arabic and Persian:
+    - cult vocabulary
+    - anthroponymy

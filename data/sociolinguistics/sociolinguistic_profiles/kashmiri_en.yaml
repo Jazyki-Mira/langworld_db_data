@@ -1,0 +1,73 @@
+---
+0.0.0:
+  - KASHMIRI
+1.1.0:
+  - KASHMIRI
+1.1.1:
+  - Koshur
+1.1.2: 0
+1.1.3:
+  - India
+  - Pakistan
+1.2.1:
+  - Standard Kashmiri dial.
+  - Kashtawari dial.
+  - Poguli dial.
+  - Siraji dial.
+  - Rambani dial.
+  - Reasi dial.
+1.3.1:
+  - state language:
+    - India
+  - official:
+    - Jammu and Kashmir union territory
+  - bilingualism:
+    - Kashmiri - Urdu
+    - Kashmiri - English
+1.3.2:
+  - based on one dialect:
+    - Standard Kashmiri dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+  - studied as a subject:
+    - high school
+1.4.0:
+  - writing system:
+    - abugida (alphasyllabary):
+      - Takri script (hist.)
+      - Sharada script (hist.)
+      - Devanagari script
+    - consonantal writing:
+      - Arabic script:
+        - with additional signs
+  - direction of writing different from European:
+    - horizontal:
+      - from right to left
+1.5.0: 0
+1.6.0:
+  - Urdu:
+    - grammaticalization of analytical verb forms
+  - Persian:
+    - labial and velar fricatives in loanwords
+  - non-Indo-European:
+    - phonologization of cerebral consonants
+    - changes in pronoun system
+    - changes in grammatical classes of stems
+2.6.0:
+  - Sanskrit
+  - Persian:
+    - common vocabulary
+    - cultural vocabulary
+  - Arabic:
+    - religious vocabulary
+    - cultural vocabulary
+    - common vocabulary
+  - Hindi:
+    - terminology
+  - Urdu:
+    - cultural vocabulary
+    - terminology
+  - English:
+    - terminology
+    - cultural vocabulary

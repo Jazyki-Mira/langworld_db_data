@@ -1,0 +1,48 @@
+---
+0.0.0:
+  - ENETS
+1.1.0:
+  - ENETS
+1.1.1:
+  - Yeniseian samoyed (hist.)
+  - Madu (hist.)
+1.1.2:
+  - ENETS<SAMOYEDIC<URALIC
+1.1.3:
+  - Russia
+1.2.1:
+  - Forest (Bai) Enets dial.
+  - Tundra (Madu or Somatu) Enets dial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Enets - Russian
+    - Enets - Nenets
+    - Enets - Dolgan
+    - Enets - Even
+    - Enets - Nganasan
+1.3.2: 0
+1.3.3: 0
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - cyrillic alphabet:
+        - with diacritics
+1.5.0: 0
+1.6.0:
+  - Nenets:
+    - phonetics
+    - morphology
+  - Russian:
+    - phonetics
+    - morphology
+2.6.0:
+  - Nenets:
+    - reindeer terms
+    - everyday vocabulary
+  - Nganasan:
+    - hunting vocabulary
+  - Ket:
+    - personal pronouns
+  - Russian:
+    - various vocabulary

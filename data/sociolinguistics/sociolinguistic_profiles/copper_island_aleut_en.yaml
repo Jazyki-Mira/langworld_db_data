@@ -1,0 +1,36 @@
+---
+0.0.0:
+  - MEDNYJ ALEUT
+1.1.0:
+  - MED.AL.
+1.1.1:
+  - Copper Island Creole
+  - Copper Island Aleut
+1.1.2:
+  - MEDNYJ ALEUT<ALEUT<ESKIMO-ALEUT<PALEOASIATIC
+1.1.3:
+  - Russia
+1.2.1: 0
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Mednyj Aleut - Aleut
+    - Mednyj Aleut - Russian
+1.3.2: 0
+1.3.3: 0
+1.4.0: 0
+1.5.0: 0
+1.6.0:
+  - Aleut:
+    - phonology
+    - morphology
+    - syntax
+  - Russian:
+    - phonology
+    - syntax
+2.6.0:
+  - Aleut:
+    - verbal lexicon
+  - Russian:
+    - substantive lexicon
+    - lexicon of other parts of speech

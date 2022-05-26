@@ -1,0 +1,81 @@
+---
+0.0.0:
+  - BASHKIR
+1.1.0:
+  - BASHK.
+1.1.1: 0
+1.1.2:
+  - BASHKIR<BASHKIR<KYPCHAK<TURKIC<ALTAI
+1.1.3:
+  - Russia:
+    - Bashkortostan (state)
+1.2.1:
+  - Eastern (=Kuvakan) Dial.:
+    - Aye subdial.
+    - Argayash subdial.
+    - Salyut subdial.
+    - Miass subdial.
+    - Kyzyl subdial.
+  - Southern (=Yurmatin) Dial.:
+    - Yk-Sakmar subdial.
+    - Middle subdial.
+    - Dem subdial.
+    - Zigan subdial.
+    - Urshak subdial.
+  - Nortwestern (Western) dial.:
+    - Gaynin subdial.
+    - Kara-Idel subdial.
+    - Low Bel-Yksk subdial.
+    - Middle Ural subdial.
+    - Tanyp subdial.
+1.3.1:
+  - state language:
+    - Bashkortostan
+  - bilingualism:
+    - Bashkir - Russian
+    - Bashkir - Tatar
+1.3.2:
+  - result of dialectal mix
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic (hist.)
+    - alphabetic writing:
+      - latin alphabet (hist.)
+      - cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+1.5.0:
+  - Ancient Bashkir (before the XIII c.)
+  - Period of Kipchak influence (XIII-XIV cc.)
+  - Consolidation period (XV-XVI cc.)
+  - Modern period (20-ths of the XX c. - until now)
+1.6.0:
+  - Russian:
+    - borrowing of consonants
+    - structure of anthroponyms
+    - loan translation
+  - Arabic:
+    - borrowing of consonants
+  - Mongolian:
+    - word-forming affixes
+2.6.0:
+  - Sanskrit:
+    - cultural vocabulary
+  - Chinese:
+    - cultural vocabulary
+    - industrial vocabulary
+  - Mongolian:
+    - cultural vocabulary
+    - industrial vocabulary
+  - Sogdian
+  - Persian
+  - Arabic
+  - Russian:
+    - everyday vocabulary
+    - terminology
+    - internationalisms

@@ -1,0 +1,84 @@
+---
+0.0.0:
+  - POLISH
+1.1.0:
+  - POLISH
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Poland (state)
+  - Lithuania
+  - Belarus
+  - Russia
+  - Kazakhstan
+  - Ukraine
+  - Latvia
+  - Czech Republic
+  - Slovakia
+  - Germany
+  - UK
+  - France
+  - USA
+  - Canada
+  - Brazil
+  - Australia
+1.2.1:
+  - Greater Polish (Wielkopolska) dial.
+  - Lesser Poland (Małopolska) dial.
+  - Masovian dial.
+  - Silesian dial.
+1.3.1:
+  - state language:
+    - Poland
+  - official
+  - everyday language
+1.3.2:
+  - based on one dialect:
+    - Greater Polish (Wielkopolska) dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+    - religious education institutions
+  - studied as a subject:
+    - secondary school
+    - high school
+    - scientific centers
+    - theological seminaries
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+        - with digraphs
+1.5.0:
+  - Pre-writing period (until the middle of XII c.)
+  - Old Polish period (mid. of XII c. until the end of XV - beg. of ХVI c.)
+  - Middle Polish period (beg. of XVI c. - mid. of XVIII c.)
+  - New Polish period (second half of XVIII c. - nowadays)
+1.6.0:
+  - Latin:
+    - inflection of nominative and accusative cases
+    - participle and transgressive constructions
+  - Czech:
+    - suffixes and prefixes
+    - no declension nouns
+2.6.0:
+  - Latin:
+    - all lexical layers
+  - Ancient Greek:
+    - scientific and technical vocabulary
+  - German:
+    - Christian terminology
+    - legal and philosophical vocabulary
+  - Czech
+  - English
+  - Italian
+  - French
+  - Russian
+  - Hungarian
+  - Ukrainian
+  - Belarusian

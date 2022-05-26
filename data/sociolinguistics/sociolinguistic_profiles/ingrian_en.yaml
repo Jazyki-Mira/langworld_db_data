@@ -1,0 +1,42 @@
+---
+0.0.0:
+  - INGRIAN
+1.1.0:
+  - INGR.
+1.1.1:
+  - Karelian (hist.)
+1.1.2:
+  - INGRIAN<BALTIC-FINNISH<FINNISH-PERMIC<FINNISH-UGRIC<URALIC
+1.1.3:
+  - Russia
+1.2.1:
+  - Hevaha dial.
+  - Oredezhi dial.
+  - Soikkola dial.
+  - Lower Luga dial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Ingrian - Russian
+1.3.2: 0
+1.3.3: 0
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - latin alphabet:
+        - with diacritics
+1.5.0:
+  - Pra-Ingrian (from the 1-st c. of the II thous.years A.D.)
+  - dialect segmentation (from XVII c.)
+1.6.0:
+  - Russian:
+    - voiced/voiceless occlusives opposition
+    - hissing/hushing sibilants opposition
+    - palatalization
+    - loss of potential mood
+    - loss of the 3-d person of imperative
+2.6.0:
+  - Russian:
+    - various vocabulary
+  - Finnish:
+    - general vocabulary

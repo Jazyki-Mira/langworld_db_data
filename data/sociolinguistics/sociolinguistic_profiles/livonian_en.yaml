@@ -1,0 +1,45 @@
+---
+0.0.0:
+  - LIVONIAN
+1.1.0:
+  - LIVON.
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Latvia
+1.2.1:
+  - Western Livonian dial.
+  - Middle Livonian dial.
+  - Eastern Livonian dial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Livonian - Latvian
+    - Livonian - Estonian
+1.3.2:
+  - based on one dialect:
+    - Eastern Livonian dial.
+1.3.3:
+  - studied as a subject:
+    - high school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+1.5.0: 0
+1.6.0:
+  - Latvian:
+    - delabialization of consonants
+    - reduced number of cases
+    - borrowing of verb prefixes
+    - change of verb government type
+2.6.0:
+  - Old Baltic languages
+  - Old Russian
+  - Germanic
+  - Estonian
+  - Latvian:
+    - various vocabulary

@@ -1,0 +1,53 @@
+---
+0.0.0:
+  - TURKI (EXT.)
+1.1.0:
+  - TURKI (EXT.)
+1.1.1:
+  - Chagatai
+1.1.2:
+  - TURKI<TURKIC<ALTAIC
+1.1.3:
+  - Uzbekistan (hist.)
+  - Kazakhstan (hist.)
+  - Kyrgyzstan (hist.)
+  - Turkmenistan (hist.)
+  - Iran (hist.)
+  - Afghanistan (hist.)
+  - India (hist.)
+  - Russia (hist.)
+1.2.1:
+  - Central Asian dial.
+  - Golden Horde dial.
+  - Volga Coast dial.
+  - Northern Caucasian dial.
+1.3.1: 0
+1.3.2:
+  - several literary standards
+1.3.3: 0
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic:
+        - with inserted vowels
+        - with diacritics
+  - direction of writing different from European:
+    - horizontal:
+      - from right to left
+1.5.0:
+  - Early Central Asian Turki (XVII c. - end of the XVIII c.)
+  - Late Central Asian Turki (end of the XVIII c. - beg. of the XX c.)
+  - Early Volga Coast Turki (XVII c. - 1-st half of the XIX c.)
+  - Late Volga Coast Turki (2-nd half of the XIX c. - beg. of the XX c.)
+1.6.0:
+  - Arabic
+  - Persian:
+    - analytical word formation
+2.6.0:
+  - Arabic:
+    - religious vocabulary
+    - cultural vocabulary
+    - scientific vocabulary
+  - Persian:
+    - various vocabulary
+  - Russian

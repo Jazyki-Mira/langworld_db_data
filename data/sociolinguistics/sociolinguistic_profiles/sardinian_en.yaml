@@ -1,0 +1,61 @@
+---
+0.0.0:
+  - SARDINIAN
+1.1.0:
+  - SARDIN.
+1.1.1:
+  - Sard
+1.1.2: 0
+1.1.3:
+  - Italy:
+    - Sardinia
+1.2.1:
+  - Campidanese Sardinian dial.:
+    - Western Campidanese subdial.
+    - Sarrabese subdial.
+    - Southern Barbagian subdial.
+    - Oristano subdial.
+    - Ogliastra subdial.
+    - Cagliari subdial.
+    - Sulcis subdial.
+  - Logudorese Sardinian dial.:
+    - Northern Logudorese subdial.
+    - Central (Common) Logudorese subdial.
+    - Nuorese subdial.
+1.3.1:
+  - official:
+    - Italy:
+      - Sardinia
+  - everyday language
+  - bilingualism:
+    - Sardinian - Italian
+1.3.2:
+  - preserves peculiarities of dialects
+1.3.3:
+  - studied as a subject:
+    - high school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet
+1.5.0:
+  - Period of independent development (XI - XIV cc.)
+  - Period of Spanish influence (XIV - XVIII cc.)
+  - Period of Italian influence (XVIII c. - nowadays)
+1.6.0:
+  - Spanish:
+    - prepositional marker of animated object
+  - Italian:
+    - passive constructions
+2.6.0:
+  - Spanish:
+    - social vocabulary
+    - religious vocabulary
+    - everyday vocabulary
+  - Catalan:
+    - social vocabulary
+    - religious vocabulary
+    - everyday vocabulary
+  - Italian:
+    - social vocabulary
+    - everyday vocabulary

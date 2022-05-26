@@ -1,0 +1,56 @@
+---
+0.0.0:
+  - WESTERN YUGUR
+1.1.0:
+  - WEST. YUG.
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - China
+1.2.1: 0
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Western Yugur - Chinese
+    - Western Yugur - Mongolian
+    - Western Yugur - Tibetan
+1.3.2: 0
+1.3.3: 0
+1.4.0:
+  - writing system:
+    - consonantal/alphabetic writing:
+      - Old Uyghur alphabet (hist.)
+    - alphabetic writing:
+      - Latin alphabet
+1.5.0:
+  - Early (Old Yugur) period (VII-VIII cc.)
+  - Middle period (VIII-IX cc.)
+  - Later period (XI-XIX cc.)
+  - Modern period (XIX c. - nowadays)
+1.6.0:
+  - Old Kyrgyz:
+    - fricativization
+  - Kipchak:
+    - varieties of hushing sibilants
+    - iotization of open vowels in anlaut
+    - alternation of consonants in affixes
+  - Chinese:
+    - correlation of strong/weak aspirated consonants
+    - erization of syllable finals in pronouns
+    - weakening of vowel harmony
+    - loss of plural forms of all persons of possessive category
+    - verb morphology
+2.6.0:
+  - Chinese:
+    - everyday vocabulary
+    - household vocabulary
+    - social vocabulary
+  - Mongolian:
+    - household vocabulary
+    - cultural and everyday vocabulary
+    - religious vocabulary
+  - Tibetan:
+    - religious vocabulary
+    - everyday vocabulary
+  - Sanskrit
+  - Iranian

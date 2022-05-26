@@ -1,0 +1,52 @@
+---
+0.0.0:
+  - RUTUL
+1.1.0:
+  - RUTUL
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Russia
+  - Azerbaijan
+1.2.1:
+  - North Rutul dial. gr.:
+    - Asar-Kala dial.
+    - Luchek dial.
+    - Ixrek dial.
+    - Muxrek dial.
+    - Shinaz dial.
+    - Vrush dial.
+  - South Rutul dial. gr.:
+    - Khnov dial.
+    - Borch dial.
+1.3.1:
+  - official:
+    - Russia:
+      - Dagestan
+  - everyday language
+  - bilingualism:
+    - Rutul - Russian
+    - Rutul - Lezgian
+    - Rutul - Azerbaijani
+1.3.2: 0
+1.3.3:
+  - studied as a subject:
+    - primary school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Cyrillic alphabet:
+        - with digraphs
+        - with additional signs
+1.5.0: 0
+1.6.0:
+  - Azerbaijani:
+    - umlauted vowels
+  - Russian:
+    - labial vowel
+2.6.0:
+  - Persian
+  - Armenian
+  - Turkic
+  - Arabic
+  - Russian

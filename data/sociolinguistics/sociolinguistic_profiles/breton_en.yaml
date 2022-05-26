@@ -1,0 +1,53 @@
+---
+0.0.0:
+  - BRETON
+1.1.0:
+  - BRETON
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - France:
+    - Brittany
+  - USA
+1.2.1:
+  - Leoneg (Léonard) dial.
+  - Tregerieg (Trégorrois) dial.
+  - Kerneveg (Cornouaillais) dial.
+  - Gwenedeg (Vannetais) dial.
+  - Tendency:
+    - dialect continuum
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Breton - French
+1.3.2:
+  - based on one dialect:
+    - Leoneg (Léonard) dial.
+1.3.3:
+  - studied as a subject:
+    - secondary school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+        - with digraphs
+1.5.0:
+  - Old Breton (c.800 to c.1100)
+  - Middle Breton (c.1100 to c.1650)
+  - Modern Breton (c.1650 to present)
+1.6.0:
+  - French:
+    - phonology
+    - morphology
+    - syntax
+    - double negation
+    - syntactic calques
+2.6.0:
+  - Latin:
+    - everyday vocabulary
+    - scientific terminology
+  - French:
+    - all lexical layers

@@ -1,0 +1,75 @@
+---
+0.0.0:
+  - SELKUP
+1.1.0:
+  - SELK.
+1.1.1: 0
+1.1.2:
+  - SELKUP<SAMOYEDIC<URALIC
+1.1.3:
+  - Russia
+1.2.1:
+  - Taz (Northern) dial.:
+    - Middle-Taz subdial.
+    - Upper-Taz subdial.
+    - Baishen subdial. (=Turukhan subdial.)
+    - Karasin subdial.
+    - Elogui subdial.
+  - Tym (Central) Dial.:
+    - Tym subdial.
+    - Narym subdial.:
+      - Subdials. of Selkups of rivers Vasugan, Parabel, Vakh
+  - Southern dial.:
+      - Upper Ob subdial.
+      - Chai subdial.
+      - Chulim subdial.
+      - subdials. of Selkups of Middle Ob
+  - Ket dial.:
+      - Middle-Ket subdial.
+      - Ket-Pumnokal subdial.
+  - Tendency:
+    - dialect continuum
+1.3.1:
+  - everyday language
+  - lingua franca (hist.)
+  - bilingualism:
+    - Selkup - Russian
+1.3.2:
+  - based on one dialect:
+    - Taz dial.
+1.3.3: 0
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - latin alphabet (hist.):
+        - with diacrtics
+        - with additional signs
+      - cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+1.5.0: 0
+1.6.0:
+  - Khanty:
+    - phonological phenomena
+    - use of preverbs
+    - loss of conjugated negative verb
+  - Ket:
+    - structure of case system
+    - grammatical expression of animateness/nonanimateness
+  - Turkic:
+    - isafet
+  - Russian:
+    - structure of complex and compound sentences
+    - constructions with double negation
+    - plural number of noun at a quantitative numeral
+    - postposition of a definite object to predicate
+    - particles
+2.6.0:
+  - Khanty
+  - Ket
+  - Evenki
+  - Turkic:
+    - household vocabulary
+    - cultural vocabulary
+  - Russian:
+    - cultural vocabulary

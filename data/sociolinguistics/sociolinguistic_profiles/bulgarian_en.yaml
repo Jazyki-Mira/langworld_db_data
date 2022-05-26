@@ -1,0 +1,114 @@
+---
+0.0.0:
+  - BULGARIAN
+1.1.0:
+  - BULGAR.
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Bulgaria (state)
+  - Serbia
+  - North Macedonia
+  - Greece
+  - Turkey
+  - Ukraine
+  - Moldova
+  - Romania
+  - Russia
+  - Hungary
+  - Czech Republic
+  - Slovakia
+1.2.1:
+  - Eastern Bulgarian dial. gr.:
+    - Moesian dialects:
+      - Shumen dialect
+    - Balkan dialects:
+      - Central Balkan dialect
+      - Kotel-Elena-Dryanovo dialect
+      - Panagyurishte dialect
+      - Pirdop dialect
+      - Teteven dialect
+      - Erkech dialect
+      - Subbalkan dialect
+      - Transitional Balkan dialects
+    - Rup dialects:
+      - Strandzha dialect
+      - Thracian dialect
+      - Hvoyna dialect
+      - Chepino dialect
+      - Paulician dialect
+      - Zlatograd dialect
+      - Smolyan dialect
+      - Pomak dialect (Greece)
+      - Babyak dialect
+      - Razlog dialect
+      - Serres-Nevrokop dialect
+      - Solun dialect
+  - Western Bulgarian dial. gr.:
+    - Northwestern Bulgarian dialects:
+      - Byala Slatina-Pleven dialect
+      - Vidin-Lom dialect
+    - Southwestern Bulgarian dialects:
+      - Botevgrad dialect
+      - Vratsa dialect
+      - Ihtiman dialect
+      - Elin Pelin dialect
+      - Sofia dialect
+      - Samokov dialect
+      - Dupnitsa dialect
+      - Kyustendil dialect
+    - Pirin-Malashevo dialects:
+      - Blagoevgrad dialect
+      - Petrich dialect
+      - Pianec-Kamenitsa-Kraishte dialect
+      - Malashevo dialect
+    - Transitional Bulgarian dialects:
+      - Tran dialect
+      - Breznik dialect
+      - Belogradchik dialect
+      - Bosilegrad dialect
+      - Tsaribrod dialect
+1.3.1:
+  - state language:
+    - Bulgaria
+  - everyday language
+1.3.2:
+  - based on one dialect group:
+    - Balkan dialects
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - secondary school
+    - high school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Cyrillic alphabet
+1.5.0:
+  - Pre-written period (VII c.- 60s of IX c.)
+  - Old Bulgarian period (60s of IX c. - end of XI c.)
+  - Middle Bulgarian period (XII - XIX cc.)
+  - New Bulgarian period (XV c. - first quarter of XIX c.)
+  - Modern period (XIX c. - nowadays)
+1.6.0:
+  - Balkan languages:
+    - constructions with personal forms of verbs
+    - pronoun repetition of complement
+    - coincidence of expression of addressee and possessor
+    - postposition of article
+    - simplification of pronoun and noun declension
+    - forms of future tense
+2.6.0:
+  - Macedonian:
+    - non-codified (tacit) idioms
+  - Turkish:
+    - phraseologisms
+  - Greek
+  - Serbian
+  - English
+  - Russian

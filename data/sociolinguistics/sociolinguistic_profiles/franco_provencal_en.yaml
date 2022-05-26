@@ -1,0 +1,66 @@
+---
+0.0.0:
+  - FRANCO-PROVENÇAL
+1.1.0:
+  - FR.-PROV.
+1.1.1:
+  - Francoprovençal
+  - Arpitan
+  - Romand
+1.1.2:
+  - Gallo-Romance<Italo-Western<Romance<Italic<Indo-European
+1.1.3:
+  - France
+  - Switzerland
+  - Italy
+1.2.1:
+  - Vaudois dial.
+  - Franc-Comtois dial.
+  - Jurassien dial.
+  - Lyonnais dial.
+  - Savoyard dial.
+  - Valdôtain dial.
+  - Dauphinois dial.
+  - Faetar and Cellese dial.
+  - Piedmont dialects
+  - Tendency:
+    - dialect continuum
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Franco-Provençal - French
+    - Franco-Provençal - Italian
+1.3.2:
+  - literary standard is lost
+1.3.3: 0
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+1.5.0:
+  - Romanization period (until VI c.)
+  - Initial Romance period (XI - XII cc.)
+  - Decadence period (XIII c. - nowadays)
+1.6.0:
+  - langues d'oïl:
+    - diphthongization of stressed vowels in open syllable
+    - diphthongization of open central vowel
+    - lenition of stop consonants in intervocalic position
+    - palatalization of palato-alveolar fricative
+  - French:
+    - shift from analytic to synthetic type
+    - weakening of unstressed verb flections
+    - loss of gender and number markers in nouns
+    - non-morphological way of expressing grammatical categories
+    - destruction of opposition of 2 types of imperferct
+    - disappearance of vowel-diphthong alternation
+  - Occitan:
+    - change in affixation of verbs in perfect tense
+  - Italian:
+    - morphological gender marker in verbs
+    - possessive pronouns with definite article
+2.6.0:
+  - Burgundian
+  - Germanic
+  - French

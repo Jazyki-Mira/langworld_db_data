@@ -1,0 +1,129 @@
+---
+0.0.0:
+  - SLOVENE
+1.1.0:
+  - SLOVENE
+1.1.1:
+  - Slovenian
+1.1.2: 0
+1.1.3:
+  - Slovenia (state)
+  - Austria
+  - Italy
+  - Hungary
+  - Croatia
+  - USA
+  - Argentina
+  - Australia
+  - Canada
+  - Germany
+  - France
+1.2.1:
+  - Upper Carniolan dial. gr.:
+    - Upper Carniolan dial.:
+      - Eastern Upper Carniolan subdial.
+    - Selca dial.
+  - Lower Carniolan dial. gr.:
+    - Lower Carniolan dial.:
+      - Eastern Lower Carniolan subdial.
+    - North White Carniolan dial.
+    - South White Carniolan dial.
+    - Kostel dial.
+  - Styrian dial. gr.:
+    - Central Savinja dial.
+    - Upper Savinja dial.:
+      - Solčava subdial.
+    - Central Styrian dial.
+    - South Pohorje dial.:
+      - Kozjak subdial.
+    - Kozje-Bizeljsko dial.
+    - Lower Sava Valley dial.:
+      - Zagorje-Trbovlje subdial.
+      - Laško subdial.
+      - Sevnica-Krško subdial.
+  - Pannonian dial. gr.:
+    - Prekmurje dial.
+    - Slovene Hills dial.
+    - Prlekija dial.
+    - Haloze dial.
+  - Carinthian dial. gr.:
+    - North Pohorje–Remšnik dial.
+    - Mežica dial.
+    - Jaun Valley dial.
+    - Ebriach dial.
+    - Rosen Valley dial.
+    - Gail Valley dial.:
+      - Kranjska Gora subdial.
+  - Littoral dial. gr.:
+    - Resia(n) dial.
+    - Soča dial.
+    - Torre Valley dial.
+    - Natisone Valley dial.
+    - Brda dial.
+    - Karst dial.:
+      - Banjšice subdial.
+    - Istrian dial.:
+      - Rižana subdial.
+      - Šavrin Hills subdial.
+    - Inner Carniolan dial.
+    - Čičarija dial.
+  - Rovte dial. gr.:
+    - Tolmin dial.:
+      - Bača subdial.
+    - Cerkno dial.
+    - Poljane dial.
+    - Škofja Loka dial.
+    - Črni Vrh dial.
+    - Horjul dial.
+  - Mixed Kočevje subdialects
+1.3.1:
+  - state language:
+    - Slovenia
+  - everyday language
+  - bilingualism:
+    - Slovene - Italian
+    - Slovene - Hungarian
+    - Slovene - German
+1.3.2:
+  - based on one dialect:
+    - Carinthian dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - secondary school
+    - high school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacrtics
+        - with digraphs
+1.5.0:
+  - Praslavic period (VI - VIII cc.)
+  - Alpine Slavic period (IX - X/XI cc.)
+  - Period of Slovene language formation (XII - XIII cc.)
+  - Period of dialectization (XIV - XVI cc.)
+  - Modern period (XVII - nowadays)
+1.6.0:
+  - Serbo-Croatian:
+    - pronoun and verb suffixes
+    - falling tone
+    - prothesis
+    - case inflection
+  - West Slavic
+  - German
+  - Romance
+  - Hungarian
+2.6.0:
+  - Romance:
+    - toponyms
+  - Germanic:
+    - everyday vocabulary
+    - religious vocabulary
+    - social vocabulary
+  - Slavic

@@ -1,0 +1,51 @@
+---
+0.0.0:
+  - SVAN
+1.1.0:
+  - SVAN
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Georgia
+  - Abkhazia
+1.2.1:
+  - Upper Svan dial. gr.:
+    - Upper Bal dial.:
+      - Ushguli subdial.
+      - Kala subdial.
+      - Ipar subdial.
+      - Mulakh subdial.
+      - Mestia subdial.
+      - Lenzer subdial.
+      - Latal subdial.
+    - Lower Bal dial.:
+      - Becho subdial.
+      - Tskhumar subdial.
+      - Etser subdial.
+      - Par subdial.
+      - Chubekh subdial.
+      - Lakham subdial.
+  - Lower Svan dial. gr.:
+    - Lashkh dial.
+    - Lentekhian dial.:
+      - Lentekhi subdial.
+      - Kheled subdial.
+      - Khopur subdial.
+      - Rtskhmelur subdial.
+      - Cholur subdial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Svan - Georgian
+1.3.2: 0
+1.3.3: 0
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Georgian script
+1.5.0: 0
+1.6.0: 0
+2.6.0:
+  - Georgian
+  - Zan
+  - Circassian

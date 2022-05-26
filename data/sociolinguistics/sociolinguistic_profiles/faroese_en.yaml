@@ -1,0 +1,51 @@
+---
+0.0.0:
+  - FAROESE
+1.1.0:
+  - FAROESE
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Denmark:
+    - Faroe Islands (official)
+    - Greenland
+1.2.1:
+  - Northern dial. gr.:
+    - Tórshavn dial.
+    - Southern Streymoy dial.
+    - Vagara dial.
+  - Southern dial. gr.:
+    - Sandoy island dial.
+    - Suðuroy island dial.
+1.3.1:
+  - official:
+    - Faroe Islands
+  - everyday language
+  - bilingualism:
+    - Faroese - Danish
+    - Faroese - English
+1.3.2:
+  - based on one dialect:
+    - Tórshavn dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+        - with additional signs
+1.5.0:
+  - Nonliterate period (until XIV c.)
+  - Period of first writings (XIV - XVII cc.)
+  - Orthography development period (end of XVIII c. - nowadays)
+1.6.0:
+  - Danish:
+    - calques
+  - Icelandic:
+    - calques
+2.6.0:
+  - Danish
+  - Icelandic

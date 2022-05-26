@@ -1,0 +1,72 @@
+---
+0.0.0:
+  - OLD CHURCH SLAVONIC
+1.1.0:
+  - OCS
+1.1.1:
+  - Old Slavonic
+  - Old Church Slavic
+  - Old Slavic
+  - Pal(a)eo-Slavic
+1.1.2: 0
+1.1.3:
+  - Great Moravia
+  - Pannonia
+  - Russia
+  - Belarus
+  - Ukraine
+  - Kazakhstan
+  - Moldova
+  - Serbia
+  - Bulgaria
+  - Czech Republic
+  - Slovakia
+  - Montenegro
+  - North Makedonia
+  - Poland
+  - USA
+1.2.1:
+  - Russian variety
+  - Bulgarian variety
+  - Ukrainian variety
+  - Serbian variety
+  - Tendency:
+    - dependency on the language of inhabited country
+1.3.1:
+  - ceremonial language
+  - bilingualism:
+    - Old Church Salvic - language of inhabited country
+1.3.2:
+  - based on one subdial. gr.:
+    - Bulgaro-Macedonian subdialects
+  - various literary standards
+1.3.3:
+  - language of teaching:
+    - religious education institutions
+  - studied as a subject:
+    - theological seminaries
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Glagolitic script
+      - Cyrillic script
+1.5.0:
+  - Cyril and Methodius period (69-80 yy. IX c.)
+  - Tsar Simeon I the Great period (end of IX - beg. of X cc.)
+  - Old perod (until XIV c.)
+  - Middle period (XIV - XV cc.)
+  - Late period (XVI - XVIII cc.)
+  - New period (XIX - nowadays)
+1.6.0:
+  - Greek:
+    - syntactic models
+    - phonetic paradigms and syntagmatics
+2.6.0:
+  - Greek:
+    - anthroponyms
+    - religious terms
+    - names of months, fruits and plants, animals, doctrines, materials
+  - Latin
+  - Germanic

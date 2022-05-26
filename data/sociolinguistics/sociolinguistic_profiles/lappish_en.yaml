@@ -1,0 +1,89 @@
+---
+0.0.0:
+  - SAMI
+1.1.0:
+  - SAMI
+1.1.1:
+  - Lopar (hist.)
+  - Lappish
+1.1.2:
+  - SAMI<BALTIC-FINNISH<FINNISH-PERMIC<FINNISH-UGRIC<URALIC
+1.1.3:
+  - Norway
+  - Sweden
+  - Finland
+  - Russia
+1.2.1:
+  - Western Sami languages:
+    - Southwestern languages:
+      - Southern Sami:
+        - Åsele dialect
+        - Jämtland dialect
+      - Ume Sami
+    - Northwestern languages:
+      - Northwestern proper languages:
+        - Pite Sami
+        - Lule Sami
+      - Northern Sami:
+        - Torne Sami
+        - Finnmark Sami
+        - Sea Sami
+  - Eastern Sami languages:
+    - Mainland:
+      - Inari Sami
+      - Kemi Sami (ext.)
+      - Skolt Sami
+      - Akkala Sami (ext.)
+      - Kainuu Sami (ext.)
+    - Peninsular:
+      - Kildin Sami
+      - Ter Sami
+  - Tendency:
+    - dialect continuum
+1.3.1:
+  - everyday language
+  - official:
+    - Norway
+  - bilingualism:
+    - Sami - Norwegian
+    - Sami - Swedish
+    - Sami - Finnish
+    - Sami - Russian
+1.3.2: 0
+1.3.3:
+  - language of teaching:
+    - primary school
+  - studied as a subject:
+    - scientific centers
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - latin alphabet:
+        - with diacritics
+      - cyrillic alphabet:
+        - with diacritics
+1.5.0:
+  - Ancient Proto-Sami
+  - Late Proto-Sami
+  - Modern Sami
+1.6.0:
+  - Swedish:
+    - syntax
+  - Norwegian:
+    - syntax
+  - Finnish:
+    - syntax
+  - Russian:
+    - syntax
+2.6.0:
+  - Baltic:
+    - various vocabulary
+  - Germanic:
+    - various vocabulary
+  - Russian:
+    - household vocabulary
+    - cultural vocabulary
+    - social vocabulary
+  - Samoyedic

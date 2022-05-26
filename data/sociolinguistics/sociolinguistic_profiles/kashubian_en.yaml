@@ -1,0 +1,64 @@
+---
+0.0.0:
+  - KASHUBIAN
+1.1.0:
+  - KASHUB.
+1.1.1:
+  - Cassubian
+1.1.2: 0
+1.1.3:
+  - Poland
+  - USA
+  - Canada
+1.2.1:
+  - Northern Kashubian dial. gr.:
+    - Slowinski dial.:
+      - Northern subdialects
+  - Middle Kashubian dial. gr.
+  - Southern Kashubian dial. gr.
+  - Tendency:
+    - dialect diversity
+1.3.1:
+  - everyday language
+  - official:
+    - Pomeranian Voivodeship
+  - standard written language
+  - bilingualism:
+    - Kashubian - Polish
+    - Kashubian - German
+1.3.2:
+  - result of dialectal mix
+1.3.3:
+  - language of teaching:
+    - primary school
+  - studied as a subject:
+    - high school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+        - with digraphs
+        - with additional signs
+1.5.0:
+  - Pre-Revival period (beg. of XV c. - first half of XIX c.)
+  - Revival period (40-50s of XIX c.)
+  - New-Kashubian period (XX c.)
+  - Modern period (end of XX c.)
+1.6.0:
+  - Polish:
+    - palatalized dental consonants
+    - past tense verb inflection
+  - German:
+    - formation of cardinal numerals
+    - separable particles
+    - preposition before nouns in instrumental case
+    - formation of passive voice
+2.6.0:
+  - German:
+    - religious vocabulary
+    - everyday vocabulary
+  - Polish:
+    - various vocabulary

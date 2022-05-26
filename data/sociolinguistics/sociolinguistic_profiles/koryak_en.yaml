@@ -1,0 +1,56 @@
+---
+0.0.0:
+  - KORYAK
+1.1.0:
+  - KORYAK
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Russia
+1.2.1:
+  - Chavchuven dial.
+  - Karagin dial.
+  - Apukin dial.
+  - Alutor dial.
+  - Palan dial.
+  - Kakhtanin dial.
+  - Rekinnik dial.
+  - Kamen dial.
+  - Itkan dial.
+  - Paren dial.
+  - Gin dial.
+1.3.1:
+  - everyday language
+  - standard written language
+  - bilingualism:
+    - Koryak - Russian
+    - Koryak - Chukchi
+    - Koryak - Even
+    - Koryak - Itelmen
+1.3.2:
+  - based on one dialect:
+    - Chavchuven dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+  - studied as a subject:
+    - secondary school
+    - high school
+    - scientific centers
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet (hist.)
+      - Cyrillic alphabet
+1.5.0: 0
+1.6.0:
+  - Russian:
+    - borrowing of phonemes
+    - syntactic constructions
+    - preposition of postpositions
+2.6.0:
+  - Russian:
+    - all lexical layers
+  - Even
+  - Chukchi

@@ -1,0 +1,56 @@
+---
+0.0.0:
+  - AROMANIAN
+1.1.0:
+  - AROM.
+1.1.1:
+  - Macedo-Romanian
+  - Vlach
+1.1.2:
+  - AROMANIAN<BALKAN-ROMANCE<ROMANCE<INDO-EUROPEAN
+1.1.3:
+  - Greece
+  - Albania
+  - North Macedonia
+  - Bulgaria
+  - Romania
+  - Serbia
+  - Turkey
+  - United States of America
+  - Germany
+  - France
+1.2.1:
+  - Northern Aromanian dial.gr.:
+    - Farsherot subdial.
+    - Moscopol subdial.
+    - Muserec subdial.
+    - Gopesh subdial.
+    - Mulovishte subdial.
+    - Biala De Sus subdial.
+    - Jos subdial.
+  - Southern Aromanian dial.gr.:
+    - Pind subdial.
+    - Gramostian subdial.
+    - Olimp subdial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Aromanian - language of the resident country
+1.3.2: 0
+1.3.3: 0
+1.4.0: 0
+1.5.0: 0
+1.6.0:
+  - Greek:
+    - definite articles before personal names
+    - absence of prepositions before adverbs of place
+  - Macedonian
+  - Albanian
+  - Romanian
+2.6.0:
+  - Latin
+  - Balcan
+  - Greek
+  - Slavonic
+  - Albanian
+  - Turkish

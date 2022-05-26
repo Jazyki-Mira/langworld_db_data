@@ -1,0 +1,62 @@
+---
+0.0.0:
+  - KHAKAS
+1.1.0:
+  - KHAKAS
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Russia
+1.2.1:
+  - "'Hissing' dial. gr.":
+    - Sagay dial.
+    - Beltir dial.
+  - "'Hushing' dial. gr.":
+    - Kacha dial.
+    - Koybal dial.
+    - Kyzyl dial.
+1.3.1:
+  - official:
+    - Russia:
+      - Khakassia
+  - everyday language
+  - bilingualism:
+    - Khakas - Russian
+1.3.2:
+  - based on two dialects:
+    - Sagay dial.
+    - Kacha dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - secondary school
+    - high school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet (hist.):
+        - with diacritics
+        - with additional signs
+      - Cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+1.5.0: 0
+1.6.0:
+  - Russian:
+    - addition of new consonants
+    - borrowing of inflection of adjectives
+    - more flexible word order
+    - development of new types of sentences
+2.6.0:
+  - Mongolian:
+    - common vocabulary
+  - Arabic
+  - Iranian
+  - Chinese
+  - Russian:
+    - household vocabulary
+    - cultural vocabulary
+    - social and political vocabulary

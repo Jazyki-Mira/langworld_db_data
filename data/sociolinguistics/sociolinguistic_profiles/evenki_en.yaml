@@ -1,0 +1,124 @@
+---
+0.0.0:
+  - EVENKI
+1.1.0:
+  - EVENKI
+1.1.1:
+  - Tungus
+  - Solon
+1.1.2: 0
+1.1.3:
+  - Russia
+  - China
+  - Mongolia
+1.2.1:
+  - Northern (spirant) dial. gr.:
+    - Ilimpeya dial.:
+      - Ilimpeya subdial.
+      - Agata subdial.
+      - Bol'shoi Porog subdial.
+    - Tura subdial.
+    - Tutonchany dial.
+    - Dudinka/Khantai dial.
+    - Yerbogachen dial.:
+      - Yerbogachen subdial.
+      - Nakanno subdial.
+  - Southern (sibilant) dial. gr.:
+    - Hushing dial. gr.:
+      - Sym dial.:
+        - Tokma or Upper Nepa subdial.
+        - Upper Lena or Kachug subdial.
+        - Angara subdial.
+      - Northern Baikal dial.
+    - Hissing dial. gr.:
+      - Stony Tunguska dial.:
+        - Vanavara subdial.
+        - Kuyumba subdial.
+        - Poligus subdial.
+        - Surinda subdial.
+        - Taimura or Chirinda subdial.
+        - Uchami subdial.
+        - Chemdal'sk subdial.
+      - Nepa dial.:
+        - Nepa subdial.
+        - Kirensk subdial.
+      - Vitim-Nercha/Baunt-Talocha dial.:
+        - Baunt subdial.
+        - Talocha subdial.
+        - Tungukochan subdial.
+        - Nercha subdial.
+  - Eastern (sibilant-spirant) dial. gr.:
+    - Vitim-Olyokma dial.:
+      - Barguzin subdial.
+      - Vitim/Kalar subdial.
+      - Olyokma subdial.
+      - Tungir subdial.
+      - Tokko subdial.
+    - Upper Aldan dial.:
+      - Aldan subdial.
+      - Upper Amur subdial.
+      - Amga subdial.
+      - Dzheltulak subdial.
+      - Timpton subdial.
+      - Tommot subdial.
+      - Khingan subdial.
+      - Chul'man subdial.
+      - Chul'man-Gilyui subdial.
+    - Uchur-Zeya dial.:
+      - Uchur subdial.
+      - Zeya subdial.
+    - Selemdzha-Bureya-Urmi dial.:
+      - Selemdzha subdial.
+      - Bureya subdial.
+      - Urmi subdial.
+    - Ayan-Mai dial.:
+      - Ayan subdial.
+      - Aim subdial.
+      - Mai subdial.
+      - Nel'kan subdial.
+      - Totti subdial.
+    - Tugur-Chumikan dial.:
+      - Tugur subdial.
+      - Chumikan subdial.
+    - Sakhalin dial.
+  - China dial. gr.:
+    - Hihue or Hoy dial.
+    - Haila’er dial.
+    - Aoluguya (Olguya) dial.
+    - Chenba’erhu (Old Bargu) dial.
+    - Morigele (Mergel) dial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Evenki - Russian
+    - Evenki - Yakut
+    - Evenki - Buryat
+1.3.2:
+  - based on one dialect:
+    - Nepa dial.(hist.)
+    - Stony Tunguska dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet (hist.):
+        - with diacritics
+        - with additional signs
+      - Cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+      - Manchu alphabet
+  - direction of writing different from European:
+    - vertical:
+      - from top to bottom
+1.5.0: 0
+1.6.0: 0
+2.6.0:
+  - Russian:
+    - social and political vocabulary
+    - terminology
+    - everyday vocabulary

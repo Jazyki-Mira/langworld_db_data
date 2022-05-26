@@ -1,0 +1,61 @@
+---
+0.0.0:
+  - OCCITAN
+1.1.0:
+  - OCC.
+1.1.1:
+  - lenga d'oc
+  - provençal
+1.1.2: 0
+1.1.3:
+  - France
+  - Italy
+  - Spain
+  - Monaco
+1.2.1:
+  - Northern Occitan dial. gr.:
+    - Limousin dial.
+    - Auvergnat dial.
+    - Vivaro-Alpine dial.
+  - Southern Occitan dial. gr.:
+    - Languedocien dial.
+    - Provençal dial.
+  - Gascon dial. gr.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Occitan - French
+    - Occitan - Italian
+1.3.2:
+  - no literary standard
+1.3.3:
+  - studied as a subject:
+    - primary school
+    - secondary school
+    - high school
+    - scientific centers
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - latin alphabet:
+        - with diacritics
+        - with digraphs
+1.5.0:
+  - Old Occitan period (X-XV cc.)
+  - Middle Occitan period (end of the XV-XVIII cc.)
+  - Modern Occitan period (XIX c. - until now)
+1.6.0:
+  - Celtic:
+    - labialization
+    - palatalization of the "CT" group
+  - French:
+    - all language levels
+2.6.0:
+  - Celtic:
+    - wildlife and landscape vocabulary
+    - household items
+  - French
+  - Greek:
+    - religious vocabulary
+  - Germanic
+  - Arabic

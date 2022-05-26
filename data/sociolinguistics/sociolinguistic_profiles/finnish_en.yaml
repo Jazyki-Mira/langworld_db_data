@@ -1,0 +1,61 @@
+---
+0.0.0:
+  - FINNISH
+1.1.0:
+  - FIN.
+1.1.1:
+  - Suomi
+1.1.2:
+  - FINNISH<BALTIC-FINNISH<FINNISH-PERMIC<FINNISH-UGRIC<URALIC
+1.1.3:
+  - Finland (state)
+  - Sweden
+  - Estonia
+  - Norway
+  - Russia
+  - Canada
+  - USA
+1.2.1:
+  - Western dialects:
+    - Southern-Western dialects
+    - Tavastian dialects
+    - Southern Botnian dialects
+    - Middle and Northern Botnian dialects:
+      - Middle Botnian dialects
+      - Northern Botnian dialects
+    - Peräpohjola dialects
+  - Eastern dialects:
+    - Savonian dialects
+    - Southern-Eastern dialects
+1.3.1:
+  - state language:
+    - Finland
+  - everyday language
+  - bilingualism:
+    - Finnish - Swedish
+1.3.2:
+  - supradialectal form
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - secondary school
+    - high school
+  - studied as a foreign language:
+    - as an element of general education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - latin alphabet:
+        - with diacritics
+1.5.0:
+  - Pre-Written (till 40s of XVI c.)
+  - Old Finnish (1540 - 1820)
+  - Early New-Finnish (1820 - 1870)
+  - Modern Finnish (1870 - until now)
+1.6.0: 0
+2.6.0:
+  - Russian
+  - Swedish

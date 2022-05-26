@@ -1,0 +1,55 @@
+---
+0.0.0:
+  - LAK
+1.1.0:
+  - LAK
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Russia
+1.2.1:
+  - Kumukh dial.
+  - Vitskhi dial.
+  - Arakul dial.
+  - Balkhar dial.
+  - Shadni dial.
+  - Shalib dial.
+  - Vikhli dial.
+  - Kuli dial.
+  - Kaya dial.
+1.3.1:
+  - official:
+    - Dagestan
+  - everyday language
+  - bilingualism:
+    - Lak - Russian
+1.3.2:
+  - based on one dialect:
+    - Kumukh dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+  - studied as a subject:
+    - secondary school
+    - high school
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic script (hist.):
+        - with additional signs
+    - alphabetic writing:
+      - Latin alphabet (hist.):
+        - with diacritics
+        - with additional signs
+      - Cyrillic alphabet:
+        - with digraphs
+        - with additional signs
+1.5.0:
+  - Pre-written period
+  - Written period
+1.6.0: 0
+2.6.0:
+  - Arabic
+  - Persian
+  - Turkic
+  - Russian

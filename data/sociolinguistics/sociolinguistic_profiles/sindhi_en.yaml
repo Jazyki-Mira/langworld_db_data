@@ -1,0 +1,53 @@
+---
+0.0.0:
+  - Sindhi
+1.1.0: 0
+1.1.1: 0
+1.1.2:
+  - Sindhi<Northwestern<Indo-Aryan<Indo-European
+1.1.3:
+  - Pakistan:
+    - Sindh province
+  - India:
+    - Maharashtra state
+    - Rajasthan state
+    - Madhya Pradesh state
+    - Gujarat state
+  - number of speakers:
+    - about 3 million people
+1.2.1:
+  - Vicholi
+  - Lasi
+  - Lari
+  - Thareli
+  - Kachhi
+1.3.1:
+  - official:
+    - Pakistan
+    - India
+1.3.2:
+  - based on one dialect:
+    - Vicholi
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - high school
+    - scientific centers
+1.4.0:
+  - writing system:
+    - abjad:
+      - Arabic:
+        - with additional signs
+    - abugida:
+      - Devanagari
+      - Landa
+  - direction:
+    - horizontal:
+      - right to left
+1.5.0: 0
+1.6.0: 0
+2.6.0:
+  - Sanskrit

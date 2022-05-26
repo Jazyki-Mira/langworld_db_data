@@ -1,0 +1,90 @@
+---
+0.0.0:
+  - UYGHUR
+1.1.0:
+  - UYGHUR
+1.1.1:
+  - Uighur
+  - Eastern Turki (hist.)
+1.1.2: 0
+1.1.3:
+  - China:
+    - Xinjiang Uyghur Autonomous Region
+  - Kazakhstan
+  - Uzbekistan
+  - Kyrgyzstan
+  - Turkmenistan
+  - Saudi Arabia
+  - Turkey
+  - Afghanistan
+1.2.1:
+  - Central dial.:
+    - Turpan subdial.
+    - Kucha subdial.
+    - Aksu subdial.
+    - Kashgar subdial.
+    - Yarkand subdial.
+  - Southern (Hotan) dial.
+  - Eastern (Lopnor) dial.
+1.3.1:
+  - official:
+    - China:
+      - Xinjiang Uyghur Autonomous Region
+  - everyday language
+  - bilingualism:
+    - Uyghur - Kazakh
+    - Uyghur - Uzbek
+    - Uyghur - Kyrgyz
+    - Uyghur - Turkmen
+    - Uyghur - Russian
+    - Uyghur - Chinese
+1.3.2:
+  - based on one dialect:
+    - Central dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - secondary school
+    - high school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic script
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+        - with digraphs
+        - with additional signs
+      - Cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+1.5.0:
+  - Ancient period
+  - Medieval period
+  - Modern period:
+    - New period
+    - Newest period
+1.6.0:
+  - Arabic
+  - Iranian:
+    - affixes
+  - Chinese
+  - Russian
+2.6.0:
+  - Russian:
+    - scientific, cultural, technical and art terms
+  - Iranian:
+    - agricultural, building and everyday terms
+  - Arabic:
+    - abstract vocabulary
+    - religious vocabulary
+    - scientific and cultural terms
+  - Chinese:
+    - toponyms
+    - names of food
+    - administrative and government terms

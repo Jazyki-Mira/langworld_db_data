@@ -1,0 +1,63 @@
+---
+0.0.0:
+  - SINHALA
+1.1.0:
+  - SINH.
+1.1.1:
+  - Sinhalese
+1.1.2: 0
+1.1.3:
+  - Sri Lanka (state)
+1.2.1:
+  - Uva dial.
+  - Southern dial.
+  - Up-country dial.
+  - Sabaragamu dial.
+1.3.1:
+  - state language:
+    - Sri Lanka
+  - bilingualism:
+    - Sinhala - English
+    - Sinhala - Tamil
+1.3.2:
+  - result of dialectal mix
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - scientific centers
+1.4.0:
+  - writing system:
+    - abugida (alphasyllabary):
+      - Sinhala script
+1.5.0:
+  - Sinhala Prakrit period (III c. BC - IV-V c. AD)
+  - Old Sinhala period (V - VIII cc.)
+  - Medieval Sinhala period (VIII - XIII cc.)
+  - Modern period (XIV c. - nowadays)
+1.6.0:
+  - Vedda
+  - Dravidian:
+    - impersonal verb dependent constructions
+2.6.0:
+  - Dravidian:
+    - kinship terms
+    - names of professions
+    - cultural and everyday vocabulary
+    - religious vocabulary
+    - abstract vocabulary
+  - Sanskrit:
+    - literary (bookish) words
+  - English:
+    - administrative terms
+    - technical vocabulary
+    - cultural vocabulary
+  - Portuguese:
+    - cultural and everyday vocabulary
+    - religious vocabulary
+    - botanical terms
+  - Dutch:
+    - everyday vocabulary
+    - calendar vocabulary

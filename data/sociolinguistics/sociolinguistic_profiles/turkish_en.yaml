@@ -1,0 +1,106 @@
+---
+0.0.0:
+  - TURKISH
+1.1.0:
+  - TURK.
+1.1.1:
+  - Istanbul Turkish
+  - Turkey Turkish
+1.1.2: 0
+1.1.3:
+  - Turkey (state)
+  - Northern Cyprus (state)
+  - Cyprus (official)
+  - Azerbaijan
+  - Iraq
+  - Syria
+  - Lebanon
+  - Israel
+  - Greece
+  - Bulgaria
+  - Romania
+  - Kosovo
+  - North Macedonia
+  - Bosnia and Herzegovina
+1.2.1:
+  - Anatolian dial. gr.:
+    - West Anatolian dial.
+    - East Anatolian dial.
+    - North East Anatolian dial. gr.:
+      - Eastern Black Sea coast dialects:
+        - Trabzon dial.
+        - Rize dial.
+        - Artvin dial.
+  - Balkan Turkish dial. gr.
+  - Cypriot Turkish dial.
+  - Karamanli Turkish dial.
+  - Meskhetian Turkish dial.
+  - Syrian Turkmen dial.
+1.3.1:
+  - state language:
+    - Turkey
+    - Northern Cyprus
+  - official:
+    - Cyprus
+  - everyday language
+1.3.2:
+  - based on one dialect:
+    - Istanbul dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic script (hist.)
+  - direction of writing different from European:
+    - horizontal:
+      - from right to left (hist.)
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+1.5.0:
+  - Anatolian Turkish period (XIII - end of XV cc.)
+  - Early Turkish period (2nd half of XV - XVII cc.)
+  - Middle Turkish period (XVII - 1st half of XIX cc.)
+  - New Turkish period (XIX - 1st quarter of XX cc.)
+  - Modern Turkish period (30s of XX c. - nowadays)
+1.6.0:
+  - Arabic:
+    - conjunctions and modal words
+  - Persian:
+    - Persian ezafe
+    - conjunctions and modal words
+2.6.0:
+  - Arabic:
+    - abstract vocabulary
+    - terminology
+    - religious vocabulary
+    - cultural vocabulary
+    - poetic terms
+  - Persian:
+    - abstract vocabulary
+    - terminology
+    - religious vocabulary
+    - cultural vocabulary
+    - poetic terms
+  - Greek:
+    - everyday vocabulary
+  - Italian:
+    - sea vocabulary
+    - trade vocabulary
+  - French:
+    - technical terms
+  - German:
+    - technical terms
+  - English:
+    - technical terms
+    - sports terms
+  - Armenian
+  - Albanian
+  - Hungarian
+  - Romanian
+  - Slavic
+  - Mongolian

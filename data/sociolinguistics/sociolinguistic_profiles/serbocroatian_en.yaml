@@ -1,0 +1,98 @@
+---
+0.0.0:
+  - SERBO-CROATIAN
+1.1.0:
+  - SERBO-CROAT.
+1.1.1:
+  - Serbo-Croat
+  - Serbo-Croat-Bosnian (SCB)
+  - Bosnian-Croatian-Serbian (BCS)
+  - Bosnian-Croatian-Montenegrin-Serbian (BCMS)
+1.1.2: 0
+1.1.3:
+  - Serbia (state)
+  - Croatia (state)
+  - Bosnia and Herzegovina (state)
+  - Montenegro (state)
+  - Kosovo (state)
+  - Italy
+  - Austria
+  - Hungary
+  - Slovenia
+  - North Macedonia
+  - Germany
+  - USA
+  - Canada
+  - Australia
+1.2.1:
+  - standard forms:
+    - Serbian variety
+    - Croatian variety
+    - Bosnian variety
+    - Montenegrin variety
+  - dialects:
+    - Shtokavian dial.
+    - Chakavian dial.
+    - Kajkavian dial.
+    - Torlakian dial.
+1.3.1:
+  - state language:
+    - Serbia
+    - Croatia
+    - Bosnia and Herzegovina
+    - Montenegro
+    - Kosovo
+  - everyday language
+  - bilingualism:
+    - Serbo-Croatian - language of inhabited country
+1.3.2:
+  - based on one dialect:
+    - Eastern Herzegovinian subdial. of Neo-Shtokavian dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - secondary school
+    - high school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Glagolitic alphabet (hist.)
+      - Latin alphabet:
+        - with diacritics
+        - with digraphs
+        - with additional signs
+      - Cyrillic alphabet:
+        - with additional signs
+    - consonantal writing:
+      - Arabic alphabet (hist.)
+1.5.0:
+  - First period (until XII c.)
+  - Second period (XIII - XIV cc.)
+  - Period of mass migrations (XV - XVII cc.)
+  - Last period (end of XVII c. -  nowadays)
+1.6.0:
+  - Greek:
+    - phonemes
+  - Turkish:
+    - phonemes
+  - Balkan languages:
+    - future tense with copula
+    - simplification of time and case systems
+    - loss of declension of numerals
+    - decrease of use of indeclinable adjectives
+2.6.0:
+  - Old Church Slavonic
+  - Germanic
+  - Iranian
+  - Greek
+  - Romance
+  - French
+  - English
+  - Hungarian
+  - Russian
+  - Czech

@@ -1,0 +1,58 @@
+---
+0.0.0:
+  - FRISIAN
+1.1.0:
+  - FRIS.
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Netherlands
+  - Germany
+1.2.1:
+  - West Frisian dial. gr.:
+    - Hindeloopen-Molkwerum Frisian dial.
+    - Schiermonnikoog Frisian dial.
+    - Terschelling Frisian dial.
+    - Mainland West Frisian dial.
+  - North Frisian dial. gr.:
+    - Insular North Frisian dial. gr.:
+      - Sylt Frisian (Söl'ring) dial.
+      - Föhr-Amrum Frisian (Fering, Öömrang) dial.
+      - Heligolandic Frisian (Halunder) dial.
+    - Mainland North Frisian dial. gr.:
+      - Wiedingharde Frisian dial.
+      - Bökingharde Frisian (incl. Mooring) dial.
+      - Karrharde Frisian dial.
+      - Northern Goesharde Frisian dial.
+      - Central Goesharde Frisian dial.
+      - Southern Goesharde Frisian dial. (ext.)
+      - Halligen Frisian dial.
+  - East Frisian dial. gr.:
+    - Saterland Frisian dial.
+    - Wangerooge Frisian dial.
+    - Wursten Frisian dial.
+1.3.1:
+  - everyday language
+  - koine
+  - bilingualism:
+    - Frisian - Dutch
+    - Frisian - German
+1.3.2:
+  - result of dialectal mix
+1.3.3:
+  - language of teaching:
+    - primary school
+  - studied as a subject:
+    - secondary school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet
+1.5.0:
+  - Old Frisian period (until 1550 y.)
+  - Middle Frisian period (1550 y. - 1800 y.)
+  - Modern Frisian period (1880 y. - nowadays)
+1.6.0: 0
+2.6.0:
+  - Dutch:
+    - terminology

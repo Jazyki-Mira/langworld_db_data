@@ -1,0 +1,81 @@
+---
+0.0.0:
+  - EVEN
+1.1.0:
+  - EVEN
+1.1.1:
+  - Lamut (hist.)
+  - Ewen
+  - Eben
+  - Orich
+  - Ilqan
+1.1.2: 0
+1.1.3:
+  - Russia
+1.2.1:
+  - Arman dial.
+  - Indigirka dial.
+  - Kamchatka dial.
+  - Kolyma-Omolon dial.
+  - Okhotsk dial.
+  - Ola dial.
+  - Tompon dial.
+  - Upper Kolyma dial.
+  - Sakkyryr dial.
+  - Lamunkhin dial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Even - Russian
+    - Even - Yakut
+1.3.2:
+  - based on one dialect:
+    - Ola dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Church Slavonic alphabet (hist.)
+      - Latin alphabet (hist.):
+        - with diacritics
+        - with additional signs
+      - Cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+1.5.0: 0
+1.6.0:
+  - Russian:
+    - derivational affixes
+    - conjunctions
+    - syntactic calques
+  - Yakut:
+    - derivational affixes
+    - conjunctions
+    - syntactic calques
+2.6.0:
+  - Mongolian:
+    - cultural vocabulary
+    - everyday vocabulary
+  - Chukchi:
+    - cultural vocabulary
+    - everyday vocabulary
+  - Nivkh:
+    - cultural vocabulary
+    - everyday vocabulary
+  - Koryak:
+    - cultural vocabulary
+    - everyday vocabulary
+  - Yakut:
+    - cultural vocabulary
+    - everyday vocabulary
+    - names of months
+  - Russian:
+    - cultural vocabulary
+    - everyday vocabulary
+    - political vocabulary
+    - economics vocabulary
+    - internationalisms

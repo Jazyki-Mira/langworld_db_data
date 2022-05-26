@@ -1,0 +1,163 @@
+---
+0.0.0:
+  - FRENCH
+1.1.0:
+  - FRENCH
+1.1.1: 0
+1.1.2:
+  - Gallo-Romance<Italo-Western<Romance<Italic<Indo-European
+1.1.3:
+  - France (state)
+  - Belgium (state)
+  - Canada (state)
+  - Switzerland (state)
+  - Monaco (state)
+  - Gabon (state)
+  - Benin (state)
+  - Burkina Faso (state)
+  - Burundi (state)
+  - Cameroon (state)
+  - Central African Republic (state)
+  - Chad (state)
+  - Comoros (state)
+  - Congo (state)
+  - DR Congo (state)
+  - Djibouti (state)
+  - Equatorial Guinea (state)
+  - Guinea (state)
+  - Haiti (state)
+  - Ivory Coast (state)
+  - Luxembourg (state)
+  - Madagascar (state)
+  - Mali (state)
+  - Niger (state)
+  - Rwanda (state)
+  - Seychelles (state)
+  - Togo (state)
+  - Vanuatu (state)
+  - Senegal (state)
+  - Algeria
+  - Morocco
+  - Tunisia
+  - Mauritius
+  - Italy
+  - UK
+  - USA
+  - India
+  - Laos
+  - Cambodia
+  - Vietnam
+1.2.1:
+  - African French dial. gr.:
+    - Maghreb French dial. gr.
+  - Canadian French dial. gr:
+    - Acadian French dial.
+    - Chiac dial.
+    - Newfoundland French dial.
+    - Quebec French dial.
+    - Ontario French dial.
+  - USA French dial. gr.:
+    - Louisiana French dial.
+    - New England French dial.
+    - Frenchville French dial.
+    - Missouri French dial.
+    - Muskrat French dial.
+    - Métis French dial.
+  - Guianese French dial.
+  - Haitian French dial.
+  - Cambodian French dial.
+  - Indian French dial.
+  - Lao French dial.
+  - Vietnamese French dial.
+  - New Caledonian French dial.
+  - European French dial. gr.:
+    - Metropolitan (Standard) French dial.
+    - Aostan French dial.
+    - Belgian French dial.
+    - Jersey Legal French dial.
+    - Meridional (Francitan) French dial.
+    - Swiss French dial.
+1.3.1:
+  - state language:
+    - France
+    - Belgium
+    - Canada
+    - Switzerland
+    - Monaco
+    - Gabon
+    - Benin
+    - Burkina Faso
+    - Burundi
+    - Cameroon
+    - Central African Republic
+    - Chad
+    - Comoros
+  - Congo:
+    - DR Congo
+    - Djibouti
+    - Equatorial Guinea
+    - Guinea
+    - Haiti
+    - Ivory Coast
+    - Luxembourg
+    - Madagascar
+    - Mali
+    - Niger
+    - Rwanda
+    - Seychelles
+    - Togo
+    - Vanuatu
+    - Senegal
+  - official
+  - everyday language
+  - koine
+  - language of international discourse
+  - bilingualism:
+    - French - English
+    - French - German
+    - French - Arabic
+    - French - Italian
+    - French - Creole
+1.3.2:
+  - based on one dialect:
+    - Metropolitan (Standard) French dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - secondary school
+    - high school
+  - studied as a foreign language:
+    - as an element of general education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+1.5.0:
+  - Proto-French (Gallo-Romance) period (V-VIII cc.)
+  - Old French period (IX-XIII cc.)
+  - Middle French period (XIV-XV cc.)
+  - Early New French period (XVI c.)
+  - New French period (XVII-XVIII cc.)
+  - Modern period (XIX c. - nowadays)
+1.6.0:
+  - Gaulish:
+    - vigesimal (base-20) numeral system
+  - Frankish:
+    - absence of elision before words of Germanic origin
+    - borrowing of derivational affixes
+2.6.0:
+  - Latin
+  - Italian:
+    - cultural vocabulary
+    - military vocabulary
+  - Spanish
+  - Portuguese
+  - Arabic
+  - English:
+    - economics vocabulary
+    - social vocabulary
+    - sports terms

@@ -1,0 +1,69 @@
+---
+0.0.0:
+  - SALAR
+1.1.0:
+  - SALAR
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - China
+1.2.1:
+  - Western dial.
+  - Eastern dial.
+  - Transitional dial.
+1.3.1:
+  - official:
+    - China:
+      - Xunhua Salar Autonomous County
+      - Jishishan Bonan, Dongxiang and Salar Autonomous County
+  - everyday language
+  - standard written language (hist.)
+  - bilingualism:
+    - Salar - Chinese
+    - Salar - Dungan
+    - Salar - Tibetan
+    - Salar - Mongolian
+    - Salar - Turkmen
+    - Salar - Arabic
+    - Salar - Persian
+1.3.2: 0
+1.3.3: 0
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic script (hist.)
+1.5.0:
+  - Language of handwritten Salar books period (XVI-XVIII cc.)
+  - Modern period (XVIII - nowadays)
+1.6.0:
+  - Kipchak:
+    - case and verb forms
+  - Uyghur:
+    - alternative of phoneme 'i'
+    - negative copula
+  - Chinese:
+    - phonology
+    - morphology
+    - syntax
+2.6.0:
+  - Chinese:
+    - governmental and administrative vocabulary
+    - scientific and art terms
+    - everyday vocabulary
+    - kinship terms
+    - proper nouns
+  - Arabic:
+    - religious vocabulary
+    - proper nouns
+    - everyday and cultural reality
+  - Persian:
+    - religious vocabulary
+  - Mongolian:
+    - kinship terms
+    - everyday vocabulary
+    - flora terms
+  - Tibetan:
+    - hunting terms
+    - names of folk customs
+    - proper names
+    - terms of family relations

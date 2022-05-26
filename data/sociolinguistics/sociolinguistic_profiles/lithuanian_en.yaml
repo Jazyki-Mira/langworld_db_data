@@ -1,0 +1,74 @@
+---
+0.0.0:
+  - LITHUANIAN
+1.1.0:
+  - LITH.
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Lithuania (state)
+  - Belarus
+  - Poland
+  - Russia
+  - Ukraine
+  - Latvia
+  - USA
+  - Brazil
+  - Argentina
+  - Canada
+  - UK
+  - Australia
+  - Germany
+  - Uruguay
+1.2.1:
+  - Samogitian (Lowland Lithuanian) dial.:
+    - West subdial. gr.
+    - North subdial. gr.
+    - South subdial. gr.
+  - Aukštaitian (Highland Lithuanian) dial.:
+    - East subdial. gr.
+    - West (Suvalkiečiai) subdial. gr.
+    - South (Dzūkai) subdial. gr.
+1.3.1:
+  - state language:
+    - Lithuania
+  - everyday language
+  - bilingualism:
+    - Lithuanian - Russian
+1.3.2:
+  - based on one dialect:
+    - Aukštaitian dial.:
+      - West (Suvalkiečiai) subdial. gr.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - secondary school
+    - high school
+    - scientific centers
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+1.5.0:
+  - Old period (XVI - XVIII cc.)
+  - Modern period (beg. of XIX c. - until now):
+    - beg. of XIX c. - 1883 y. (appearance of "Auštra" magazine)
+    - 1883 - 1918 yy.
+    - period of existence of the Republic of Lithuania (1918 - 1940 yy.)
+    - Soviet period (1940 - 1990 yy.)
+    - Period of independency (1991 y. - until now))
+1.6.0:
+  - Balto-Finnic:
+    - semantic category of epistemic modals
+2.6.0:
+  - Old Russian
+  - Belarusian
+  - Russian
+  - German
+  - English

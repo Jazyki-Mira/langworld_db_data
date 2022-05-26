@@ -1,0 +1,73 @@
+---
+0.0.0:
+  - TUROYO
+1.1.0:
+  - TUROYO
+1.1.1:
+  - Surayt
+1.1.2: 0
+1.1.3:
+  - Turkey
+  - Syria
+  - Lebanon
+  - Palestine
+  - Jordan
+  - Iraq
+  - Germany
+  - Sweden
+  - USA
+  - Canada
+  - Australia
+1.2.1:
+  - Midyat dialect
+  - village dialects:
+    - Midwoyo subdialect
+    - Kfarzoyo subdialect
+    - Iwarnoyo subdialect
+    - Nihloyo subdialect
+    - Izloyo subdialect
+  - Tendency:
+    - mutual intelligibility of dialects
+1.3.1:
+  - everyday language
+1.3.2:
+  - result of dialectal mix
+1.3.3:
+  - studied as a subject (optionally):
+    - secondary school
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Syriac alphabet (hist.)
+    - alphabetic writing:
+      - Latin alphabet
+1.5.0: 0
+1.6.0:
+  - Arabic (Anatolian dialect):
+    - phonology
+    - morphology
+  - Kurdish:
+    - appearance of certain consonant phonemes
+    - morphology
+2.6.0:
+  - Arabic:
+    - names of animals and plants
+    - common designations of people and kinship terms
+    - names of food and meals
+    - names of periods of time
+    - names of household items
+    - abstract terms
+    - economic vocabulary
+    - legal and administrative vocabulary
+    - religious vocabulary
+    - various vocabulary
+  - Kurdish:
+    - nature vocabulary
+    - agricultural vocabulary
+    - food preparation vocabulary
+    - names of household items
+    - various vocabulary
+  - Turkic:
+    - administrative terminology
+    - military vocabulary
+    - various vocabulary

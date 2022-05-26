@@ -1,0 +1,108 @@
+---
+0.0.0:
+  - UKRAINIAN
+1.1.0:
+  - UKR.
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Ukraine (state)
+  - Russia
+  - Belarus
+  - Moldova
+  - Poland
+  - Romania
+  - Serbia
+  - Slovakia
+  - Bosnia and Herzegovina
+  - Croatia
+  - Czech Republic
+  - Hungary
+  - Turkmenistan
+  - Azerbaijan
+  - Latvia
+  - Lithuania
+  - Estonia
+  - Georgia
+  - Israel
+  - Kazakhstan
+  - Kyrgyzstan
+  - Uzbekistan
+  - Tajikistan
+  - Armenia
+  - Australia
+1.2.1:
+  - Northern (Polissian) dial. gr.:
+    - Eastern Polissian dial.
+    - Central Polissian dial.
+    - West Polissian dial.
+  - South-western dial. gr.:
+    - Podillian dial.
+    - Volynian dial.
+    - Upper Dniestrian dial.
+    - Pokuttia (Bukovynian) dial.
+    - Hutsul dial.
+    - Boyko dial.
+    - Lemko dial.
+    - Rusyn dial.
+  - South-eastern dial. gr.:
+    - Middle Dnieprian dial.
+    - Slobozhan dial.
+    - Steppe dial.
+  - Upper Sannian dial.
+  - Balachka dial. gr.
+1.3.1:
+  - state language:
+    - Ukraine
+  - official:
+    - Transnistria
+  - everyday language
+  - bilingualism:
+    - Ukrainian - Russian
+    - Ukrainian - 'Surzhyk'
+    - Ukrainian - language of inhabited country
+1.3.2:
+  - based on one dialect:
+    - Middle Dnieprian dial.
+1.3.3:
+  - at all levels
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - secondary school
+    - high school
+    - scientific centers
+  - studied as a foreign language:
+    - as an element of general education
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Cyrillic alphabet
+1.5.0:
+  - Period of loss of reduced vowels (end of XI - XII c.)
+  - Period when Ukraine was a part of Grand Duchy of Lithuania (XIV - XVI cc.)
+  - Modern period (XVII c. - nowadays)
+1.6.0:
+  - Old Church Slavonic:
+    - "'f' and 'g' phonemes"
+  - European languages:
+    - internationalisms
+2.6.0:
+  - Russian:
+    - all lexical layers
+  - East Slavic languages:
+    - everyday vocabulary
+  - Greek:
+    - literary (bookish) terms
+  - Latin:
+    - scientific terms
+  - Polish:
+    - everyday vocabulary
+  - Turkish
+  - German
+  - French
+  - English
+  - Italian

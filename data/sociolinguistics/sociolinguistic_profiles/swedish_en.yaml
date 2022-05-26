@@ -1,0 +1,80 @@
+---
+0.0.0:
+  - SWEDISH
+1.1.0:
+  - SWED.
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Sweden (state)
+  - Finland
+  - Åland Islands
+  - Estonia
+  - USA
+  - Canada
+1.2.1:
+  - Norrland dial. gr.
+  - Finland Swedish dial. gr.
+  - Svealand dial. gr.
+  - Gotland dial. gr.
+  - Götaland dial. gr.
+  - South Swedish dial. gr.
+  - Tendency:
+    - dialect continuum
+1.3.1:
+  - state language:
+    - Sweden
+    - Finland
+  - official:
+    - Åland Islands
+  - everyday language
+1.3.2:
+  - result of dialectal mix
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+1.5.0:
+  - Old Swedish period (800 - 1525 yy.):
+    - Runic period (800 - 1225 yy.)
+    - Classical period (1225 - 1375 yy.)
+    - Late Old Swedish period (1375 - 1525 yy.)
+  - New Swedish period (1525 y. - nowadays):
+    - Early New Swedish period (1525 - 1732 yy.)
+    - Modern period (1732 y. - nowadays)
+1.6.0:
+  - Low German:
+    - derivational affixes
+  - High German:
+    - derivational affixes
+  - Latin:
+    - derivational affixes
+  - Greek:
+    - derivational affixes
+2.6.0:
+  - Latin:
+    - trade and building terms
+    - everyday vocabulary
+    - church terms
+    - scientific terminology
+  - Low German:
+    - social terms
+    - crafts and trade terms
+  - High German:
+    - mining and military terms
+    - trade vocabulary
+  - French:
+    - political vocabulary
+    - everyday vocabulary
+    - art terms
+  - English:
+    - technical terminology
+    - economics terms
+    - sports terminology
+    - everyday vocabulary

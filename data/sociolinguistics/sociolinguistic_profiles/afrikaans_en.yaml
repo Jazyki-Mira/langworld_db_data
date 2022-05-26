@@ -1,0 +1,59 @@
+---
+0.0.0:
+  - AFRIKAANS
+1.1.0:
+  - AFRIK.
+1.1.1:
+  - Boer
+  - Cape-Dutch (hist.)
+  - Boer-Dutch (hist.)
+  - Vulgar Dutch (hist.)
+1.1.2:
+  - AFRIKAANS<LOW GERMAN<WEST GERMANIC<GERMANIC<INDO-.EUROPEAN
+1.1.3:
+  - Republic of South Africa (state language)
+  - Namibia
+  - Botswana
+  - Republic of Malawi
+  - Zambia
+  - Republic of Zimbabwe
+1.2.1: 0
+1.3.1:
+  - state language:
+    - Republic of South Africa
+  - official:
+    - Namibia
+  - bilingualism:
+    - Afrikaans - English
+    - Afrikaans - German
+1.3.2:
+  - borrowed literary form
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - latin alphabet:
+        - with diacritics
+1.5.0:
+  - Early oral-colloquial (17-18 cc.)
+  - Middle (appearance of written form) (19 c.)
+  - New (literary) (20 c.)
+1.6.0:
+  - German
+  - English
+2.6.0:
+  - German
+  - French:
+    - anthroponyms
+  - Malayo-Portugese:
+    - common vocabulary
+  - Hottentot:
+    - names of local realities
+  - Bushman:
+    - names of local realities
+  - Bantu:
+    - names of local realities

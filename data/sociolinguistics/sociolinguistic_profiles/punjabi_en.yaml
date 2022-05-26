@@ -1,0 +1,66 @@
+---
+0.0.0:
+  - PUNJABI
+1.1.0:
+  - PUNJ.
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - India
+  - Pakistan
+1.2.1:
+  - Majhi (Standard Punjabi) dial.
+  - Shahpuri dial.
+  - Malwai dial.
+  - Doabi dial.
+  - Puadhi dial.
+  - Jhangochi/Jhangvi dial.
+  - Jatki/Jangli/Rachnavi dial.
+  - Chenavari dial.
+  - Tendency:
+    - dialectal homogeneity
+1.3.1:
+  - official:
+    - India
+  - everyday language
+  - bilingualism:
+    - Punjabi - Hindi
+    - Punjabi - Urdu
+    - Punjabi - English
+1.3.2:
+  - based on one dialect:
+    - Majhi dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - high school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - abugida (alphasyllabary):
+      - Gurmukhi script
+      - Devanagari script
+      - Laṇḍā script (hist.)
+    - consonantal writing:
+      - Shahmukhi script
+1.5.0:
+  - Early period (XI - beg. of XV cc.)
+  - Medieval period (XV - beg. of XVIII cc.)
+  - New period (XVIII - XIX cc.)
+  - Modern period (end of XIX c. - nowadays)
+1.6.0:
+  - Dardic:
+    - ablaut by noun inflection (epenthesis)
+2.6.0:
+  - Sanskrit
+  - Hindi
+  - Persian
+  - Arabic
+  - Urdu
+  - English:
+    - everyday vocabulary
+    - international vocabulary

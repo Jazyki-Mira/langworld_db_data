@@ -1,0 +1,69 @@
+---
+0.0.0:
+  - CATALAN
+1.1.0:
+  - CATAL.
+1.1.1: 0
+1.1.2:
+  - Catalan<Ibero-Romance<Romance<Indo-European
+1.1.3:
+  - Spain
+  - France
+  - Andorra
+  - Italy
+  - Cuba
+  - Argentina
+1.2.1:
+  - Western Catalan dial. gr.:
+    - Northwestern dial.
+    - Valencian dial.
+  - Eastern Catalan dial. gr.:
+    - Central dial.
+    - Balearic dial.
+    - Northern/Rossellonese dial.
+    - Alguerese dial.
+1.3.1:
+  - everyday language
+  - offical:
+    - Andorra
+  - standard written language
+  - bilingualism:
+    - Catalan - Spanish
+    - Catalan - French
+    - Catalan - Sardinian
+    - Catalan - Italian
+1.3.2:
+  - based on nation-wide language
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+  - studied as a subject:
+    - secondary school
+    - high school
+    - scientific centers
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Latin alphabet:
+        - with digraphs
+        - with additional signs
+1.5.0:
+  - Old Catalan period (until the end of XV c.)
+  - Decadence period (XVI - beg. of XIX c.)
+  - Modern period (XIX-XX cc.)
+1.6.0:
+  - Spanish:
+    - phonetics
+    - syntax
+    - neuter article
+2.6.0:
+  - Latin
+  - Basque-Iberian
+  - Celtic
+  - Germanic
+  - Spanish
+  - Arabic
+  - (Franco)Provencal
+  - French
+  - Italian

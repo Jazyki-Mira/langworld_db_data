@@ -1,0 +1,95 @@
+---
+0.0.0:
+  - CZECH
+1.1.0:
+  - CZECH
+1.1.1: 0
+1.1.2:
+  - CZECH<CZECH-SLOVAK<WEST SLAVIC<SLAVIC<INDO-EUROPEAN
+1.1.3:
+  - Czech Republic (state)
+  - Slovakia
+  - Austria
+  - Romania
+  - Croatia
+  - Bosnia and Herzegovina
+  - Russia
+  - Ukraine
+  - Moldavia
+  - United States of America
+  - Canada
+  - Argentina
+  - Australia
+1.2.1:
+  - Czech dial.gr.:
+    - Central (=Middle Czech) dials.
+    - North-Eastern dial.
+    - South-Western dials.
+    - South-Eastern dials.
+  - Moravian dial.gr.:
+    - Central Moravian dials.
+    - North Moravian dials.
+    - East Moravian dials.
+1.3.1:
+  - state language:
+    - Czech Republic
+  - official:
+    - Austria
+    - Bosnia and Herzegovina
+    - Croatia
+    - Slovakia
+  - everyday language
+  - bilingualism:
+    - Czech - language of the inhabited country
+1.3.2:
+  - based on one dialect:
+    - Central (=Middle Czech) dial.
+  - archaic literary standard
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a subject:
+    - secondary school
+    - high school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system
+  - alphabetic writing:
+      - latin alphabet:
+        - with diacritics
+        - with digraphs
+1.5.0:
+  - Ancient Czech (until 1500):
+    - Pre-written period (until XIII c.)
+    - Written period
+  - Old Czech (XVI - beg. of XVIII c.)
+  - Modern Czech (2-nd half of the XVIII c. - until now)
+1.6.0:
+  - German:
+    - diphtongization and monophtongization
+    - depalatalization of consonants
+    - word formation models
+    - verbal nouns
+    - simple sentence constructions
+    - verbal prefixes
+  - Slovak
+  - Polish
+  - Latin
+  - Greek
+  - English
+2.6.0:
+  - Germanic:
+    - social vocabulary
+    - military terminology
+    - religious vocabulary
+  - Greek:
+    - religious vocabulary
+  - Latin:
+    - scientific vocabulary
+  - Slavonic:
+    - bookish vocabulary
+  - Russian:
+    - all lexical layers

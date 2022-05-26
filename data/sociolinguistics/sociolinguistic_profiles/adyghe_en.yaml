@@ -1,0 +1,68 @@
+---
+0.0.0:
+  - ADYGHE
+1.1.0:
+  - ADYG.
+1.1.1:
+  - Lower-Adyghe
+  - Kiach
+1.1.2:
+  - ADYGHE<CIRCASIAN<NORTHWEST CAUCASIAN<CAUCASIAN
+1.1.3:
+  - Russia:
+    - Adyghe aut.region
+    - Krasnodar region
+  - Turkey
+  - Jordan
+  - Syria
+  - North Macedonia
+  - Israel
+  - Iraq
+  - Saudi Arabia
+1.2.1:
+  - Abadzekh dial.
+  - Bjedug dial.
+  - Temirgoev dial.
+  - Shapsug dial.
+1.3.1:
+  - official:
+    - Russia:
+      - Adyghe aut.region
+  - bilingualism:
+    - Adyghe - Russia
+1.3.2:
+  - based on one dialect:
+    - Temirgoev dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a foreign language:
+    - only as an element of special edication
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - arabic (hist.)
+    - alphabetic writing:
+      - latin alphabet (hist.)
+      - cyrillic alphabet
+1.5.0:
+  - pre-written (before 1918)
+  - written (from 1918 to date)
+1.6.0:
+  - Russian:
+    - monophthongization in the middle of the word
+    - free variation of diphthongs and long vowels
+    - compound sentences
+    - new models of direct and indirect speech
+    - removal of ergative/absolutive opposition in borrowed words
+2.6.0:
+  - Arabic:
+    - religious vocabulary
+  - Turkic:
+    - everyday vocabulary
+  - Persian:
+    - trade vocabulary
+  - Russian:
+    - social vocabulary

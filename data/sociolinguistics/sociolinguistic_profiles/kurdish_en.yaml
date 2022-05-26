@@ -1,0 +1,75 @@
+---
+0.0.0:
+  - KURDISH
+1.1.0:
+  - KURD.
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Turkey
+  - Iran
+  - Iraq
+  - Syria
+  - Lebanon
+  - Armenia
+  - Azerbaijan
+  - Georgia
+  - Turkmenistan
+  - Europe
+  - USA
+1.2.1:
+  - Kurmanji (Northern Kurdish)
+  - Sorani (Central Kurdish)
+  - Southern Kurdish (Palewani or Xwarig)
+  - Laki
+  - Tendency:
+    - dialect continuum
+1.3.1:
+  - official:
+    - Iraq
+  - everyday language
+  - bilingualism:
+    - Kurdish - Arabic
+    - Kurdish - Turkish
+    - Kurdish - Farsi
+    - Kurdish - Armenian
+    - Kurdish - Georgian
+    - Kurdish - Azerbaijani
+    - Kurdish - Turkmen
+1.3.2:
+  - based on one dialect (Sorani):
+    - Suleimani dialect
+  - based on one dialect (Kurmanji):
+    - Armenian Kurds dialect
+1.3.3:
+  - studied as a subject (Kurmanji):
+    - secondary school
+  - language of teaching (Sorani):
+    - primary school
+    - secondary school
+    - high school
+1.4.0:
+  - writing system:
+    - consonantal writing (Sorani):
+      - Arabic
+    - alphabetic writing (Kurmanji):
+      - Latin alphabet (hist.)
+      - Cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+1.5.0: 0
+1.6.0:
+  - Arabic:
+    - vowel aynization
+  - Armenian
+  - Russian
+2.6.0:
+  - Arabic:
+    - all lexical layers
+  - Turkish:
+    - nouns
+  - Armenian:
+    - geographical names
+    - various vocabulary
+  - Russian:
+    - internationalisms

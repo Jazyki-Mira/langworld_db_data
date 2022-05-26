@@ -1,0 +1,61 @@
+---
+0.0.0:
+  - KHANTY
+1.1.0:
+  - KHANT.
+1.1.1:
+  - OSTYAK (HIST.)
+1.1.2:
+  - KHANTY<OB-UGRIC<FINNO-UGRIC<URALIC
+1.1.3:
+  - Russia
+1.2.1:
+  - Eastern dial.gr.:
+    - Surgut dial.:
+      - Agan dial.
+      - Yugan subdial.
+      - Trom-Agan subdial.
+      - Pim subdial.
+    - Vakh-Vasyugan dial.
+    - Salym dial.
+  - Southern dial.gr. (=Irtysh Coast subdials.):
+    - Irtysh subdial. (ext.)
+    - Demyan subdial. (ext.)
+    - Kondin subdial. (ext.)
+  - Western dial.gr.:
+    - Northern dials.:
+      - Obdor subdial.
+    - Ob Coast dial.gr.:
+      - Middle Ob subdial.
+      - Kazym subdial.
+      - Berjozov (Shurishkar) subdial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Khanty - Russian
+1.3.2: 0
+1.3.3:
+  - language of teaching:
+    - primary school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - latin alphabet (hist.)
+      - cyrillic alphabet
+1.5.0: 0
+1.6.0:
+  - Komi:
+    - word formation
+  - Russian:
+    - syntax
+2.6.0:
+  - Iranian:
+    - various vocabulary
+  - Komi:
+    - common vocabulary
+  - Tatar:
+    - common vocabulary
+  - Russian:
+    - various vocabulary
+  - Mansi
+  - Nenets

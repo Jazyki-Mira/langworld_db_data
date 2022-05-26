@@ -1,0 +1,52 @@
+---
+0.0.0:
+  - TALYSH
+1.1.0:
+  - TALYSH
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Azerbaijan
+  - Iran
+1.2.1:
+  - Northern Talyshi dial.:
+    - Lankaran subdial.
+    - Astara subdial.
+    - Lerik subdial.
+    - Masalli subdial.
+  - Central Talyshi dial.
+  - Southern Talyshi dial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Talysh - Azerbaijani
+    - Talysh - Persian
+1.3.2:
+  - based on one dialect:
+    - Northern Talyshi dial.
+1.3.3: 0
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic script
+    - alphabetic writing:
+      - Latin alphabet:
+        - with diacritics
+        - with additional signs
+      - Cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+1.5.0: 0
+1.6.0:
+  - Azerbaijani:
+    - partial vowel harmony
+    - progressive and regressive assimilation
+    - change of the phoneme "u", its more front articulation
+    - word formation
+2.6.0:
+  - Arabic:
+    - religious vocabulary
+    - cultural and social vocabulary
+    - time concepts
+  - Azerbaijani:
+    - household and economic vocabulary

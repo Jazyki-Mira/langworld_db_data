@@ -1,0 +1,62 @@
+---
+0.0.0:
+  - YAKUT
+1.1.0:
+  - YAKUT
+1.1.1:
+  - Yakutian
+  - Sakha
+  - Saqa
+  - Saxa
+1.1.2: 0
+1.1.3:
+  - Russia
+1.2.1:
+  - Western dial. gr.:
+    - Vilyuysk dial.
+    - Northwestern variety
+  - Eastern dial. gr.:
+    - Central dial.
+    - Northeastern variety
+  - Dolgan dial.
+1.3.1:
+  - everyday language
+  - official:
+    - Russia:
+      - Yakutia (Sakha)
+  - bilingualism:
+    - Yakut - Russian
+    - Yakut - Even
+    - Yakut - Evenki
+    - Yakut - Dolgan
+1.3.2:
+  - based on one dialect:
+    - Central dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+  - studied as a subject:
+    - secondary school
+    - high school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Cyrillic alphabet:
+        - with additional signs
+1.5.0: 0
+1.6.0:
+  - Mongolian:
+    - morphology
+    - phonology
+  - Evenki and Even:
+    - affix of locative case
+    - affix of comitative case
+2.6.0:
+  - Russian:
+    - all lexical layers
+  - Mongolian:
+    - household vocabulary
+  - Evenki and Even:
+    - toponyms
+    - reindeer husbandry terms and housing terms

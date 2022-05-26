@@ -1,0 +1,68 @@
+---
+0.0.0:
+  - AGHUL
+1.1.0:
+  - AGHUL
+1.1.1: 0
+1.1.2:
+  - AGUL<LEZGIN<NORTHEAST CAUCASIAN<CAUCASIAN
+1.1.3:
+  - Russia:
+    - Daghestan
+1.2.1:
+  - Burkikhan dial.
+  - Koshan dial.
+  - Keren dial.
+  - Tpig dial.
+  - Fitin dial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Aghul - Dargwa
+    - Aghul - Koshan
+    - Aghul - Tabasaran
+    - Aghul - Lak
+    - Aghul - Lezgin
+    - Aghul - Russian
+1.3.2:
+  - based on one dialect:
+    - Tpig dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - cyrillic alphabet:
+        - with additional signs
+1.5.0: 0
+1.6.0:
+  - Lezgin:
+    - ergative form in personal pronouns
+  - Tabasaran:
+    - personal verb conjugation
+    - auxiliary verbs
+  - Arabic:
+    - syntax of complex and compound sentence
+  - Turkic:
+    - syntax of complex and compound sentence
+  - Iranic:
+    - syntax of complex and compound sentence
+  - Russian:
+    - modal words
+    - auxiliary words
+2.6.0:
+  - Arabic:
+    - religious vocabulary
+    - ethical vocabulary
+    - philosophical vocabulary
+    - educational vocabulary
+  - Iranic:
+    - everyday vocabulary
+  - Turkic:
+    - everyday vocabulary
+  - Russian:
+    - everyday vocabulary
+    - social and political vocabulary
+    - scientific vocabulary
+    - cultural vocabulary

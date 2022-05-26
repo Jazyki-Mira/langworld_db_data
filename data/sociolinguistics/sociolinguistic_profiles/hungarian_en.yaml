@@ -1,0 +1,82 @@
+---
+0.0.0:
+  - HUNGARIAN
+1.1.0:
+  - HUNG.
+1.1.1: 0
+1.1.2:
+  - HUNGARIAN<UGRIC<FINNISH-UGRIC<URALIC
+1.1.3:
+  - Hungary (state)
+  - Romania
+  - Slovakia
+  - Serbia
+  - Ukraine
+  - United States of America
+  - Canada
+  - Israel
+  - Austria
+  - Australia
+  - Croatia
+  - Slovenia
+1.2.1:
+  - Alföld dial.
+  - West Danube dial.
+  - Danube-Tisza dial.
+  - King's Pass Hungarian dial.
+  - Northeast Hungarian dial.
+  - Palóc (=Northwest Hungarian) dial.
+  - Székely dial.
+  - West Hungarian dial.
+  - Hungarian Csángó
+  - Tendency:
+    - mutual intelligibility of the dialects
+1.3.1:
+  - state language:
+    - Hungary
+    - bilingualism
+    - Hungarian - other European languages
+1.3.2:
+  - based on one dialect:
+    - Northeast Hungarian dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+    - secondary school
+    - high school
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - latin alphabet:
+        - with diacritics
+        - with digraphs
+1.5.0:
+  - Old Hungarian (10 c.- 1526)
+  - Middle Hungarian (1526 - 1772)
+  - Modern Hungarian (from 1772)
+1.6.0:
+  - Turkic:
+    - analytical verb forms
+  - German:
+    - individual types of word composition and government
+  - Slavic
+2.6.0:
+  - Iranian
+  - Turkic:
+    - cattle breeding and agricultural terminology
+    - crafts, dwelling and clothes terminology
+    - social and cultural vocabulary
+  - Slavic:
+    - everyday vocabulary
+    - kinship terms
+    - spiritual and social life terminology
+  - German:
+    - everyday vocabulary
+    - military terminology
+  - Latin:
+    - religious vocabulary
+    - administrative and military terminology
+    - names of months
+    - flora and fauna terminology

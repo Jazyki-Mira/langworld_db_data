@@ -1,0 +1,42 @@
+---
+0.0.0:
+  - ZAZA
+1.1.0:
+  - ZAZA
+1.1.1:
+  - Zazaki
+  - Kirmanjki
+  - Kirdki
+  - Dimli
+1.1.2: 0
+1.1.3:
+  - Eastern Turkey
+1.2.1:
+  - Northern Zaza dial.:
+    - West-Dersim subdial.
+    - East-Dersim subdial.
+  - Southern Zaza dial.:
+    - Sivereki subdial.
+    - Kori subdial.
+    - Hazzu subdial.
+    - Motki subdial.
+    - Dumbuli subdial.
+    - Eastern/Central Zazaki subdial.
+    - Dersimki subdial.
+1.3.1:
+  - everyday language
+1.3.2: 0
+1.3.3: 0
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic (hist.)
+    - alphabetic writing:
+      - Latin alphabet
+1.5.0: 0
+1.6.0:
+  - Turkish
+2.6.0:
+  - Arabic
+  - Turkish
+  - Armenian

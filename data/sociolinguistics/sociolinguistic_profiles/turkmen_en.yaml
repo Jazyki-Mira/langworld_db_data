@@ -1,0 +1,80 @@
+---
+0.0.0:
+  - TURKMEN
+1.1.0:
+  - TURKMEN
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Turkmenistan (state)
+  - Uzbekistan
+  - Tajikistan
+  - Kazakhstan
+  - Russia
+  - Iran
+  - Afghanistan
+  - Iraq
+  - Turkey
+  - Syria
+1.2.1:
+  - Teke (Tekke) dial.
+  - Nohurly dial.
+  - Ýomud dial.
+  - Änewli dial.
+  - Hasarly dial.
+  - Nerezim dial.
+  - Gökleň dial.
+  - Salyr dial.
+  - Saryk dial.
+  - Ärsary dial.
+  - Çowdur dial.
+  - Trukhmen (Russian) dial.
+1.3.1:
+  - state language:
+    - Turkmenistan
+  - everyday language
+  - bilingualism:
+    - Turkmen - Uzbek
+    - Turkmen - Kazakh
+    - Turkmen - Russian
+1.3.2:
+  - based on one dialect:
+    - Teke dial.
+1.3.3:
+  - language of teaching:
+    - secondary school
+    - high school
+1.4.0:
+  - writing system:
+    - consonantal writing:
+      - Arabic script
+  - direction of writing different of European:
+    - horizontal:
+      - from right to left
+    - alphabetic writing:
+      - Cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+      - Latin alphabet:
+        - with diacritics
+1.5.0:
+  - Ancient period (until XVIII c.)
+  - Period of establishment of literary Turkmen (XVIII c.)
+  - Modern period (1917 y. - nowadays)
+1.6.0:
+  - Turkic
+  - Arabic:
+    - syntactic models
+    - derivational affixes
+  - Persian:
+    - syntactic models
+  - Russian:
+    - phonetics
+    - morphology
+    - abbreviations
+    - syntax
+2.6.0:
+  - Russian:
+    - all lexical layers
+  - Iranian
+  - Arabic

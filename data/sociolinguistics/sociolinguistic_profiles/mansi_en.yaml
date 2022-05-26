@@ -1,0 +1,56 @@
+---
+0.0.0:
+  - MANSI
+1.1.0:
+  - MANSI
+1.1.1:
+  - Vogul
+1.1.2: 0
+1.1.3:
+  - Russia
+1.2.1:
+  - Northern Mansi dial. gr.
+  - Southern Mansi dial. gr. (hist.)
+  - Western Mansi dial. gr. (hist.)
+  - Eastern Mansi dial. gr.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Mansi - Russian
+1.3.2:
+  - based on one dialect:
+    - Sosva dial. (Northern Mansi dial. gr.)
+1.3.3:
+  - studied as a subject:
+    - primary school
+    - high school
+    - scientific centers
+  - studied as a foreign language:
+    - only as an element of special education
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - latin alphabet (hist.)
+      - Cyrillic alphabet:
+        - with diacritics
+1.5.0: 0
+1.6.0:
+  - Russian:
+    - appearance of voiced and other consonants
+    - changes in the word order
+    - spread of certain types of compound sentences
+2.6.0:
+  - Iranian
+  - Turkic
+  - Tatar:
+    - cattle breeding and agricultural terms
+    - social and political vocabulary
+    - household vocabulary
+  - Komi
+  - Russian:
+    - cultural vocabulary
+    - names of animals and housing
+    - household vocabulary
+  - Samoyedic:
+    - reindeer breeding terms
+    - clothing terminology

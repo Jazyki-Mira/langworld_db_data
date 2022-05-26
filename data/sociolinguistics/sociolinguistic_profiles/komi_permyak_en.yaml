@@ -1,0 +1,61 @@
+---
+0.0.0:
+  - KOMI-PERMYAK
+1.1.0:
+  - KOMI-PERM.
+1.1.1: 0
+1.1.2: 0
+1.1.3:
+  - Russia
+1.2.1:
+  - Northern dial. gr.:
+    - l-type gr.:
+      - Upper Lupya dial.
+      - Mysy dial.
+      - Kosa-Kama dial.
+      - Kochevo dial.
+      - Zyuzdino (Afanasyevo) dial.
+      - Yazva dial.
+  - Southern dial. gr.:
+    - v-type gr.:
+      - Kudymkar-Inva dial.
+      - Lower Inva dial.
+    - l-type gr.:
+      - On dial.
+      - Nerdva dial.
+1.3.1:
+  - everyday language
+  - language of international discourse:
+    - Komi-Permyak Okrug
+  - bilingualism:
+    - Komi-Permyak - Russian
+1.3.2:
+  - based on one dialect:
+    - Kudymkar-Inva dial.
+1.3.3:
+  - language of teaching:
+    - primary school
+  - studied as a subject:
+    - secondary school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - Cyrillic alphabet:
+        - with diacritics
+        - with additional signs
+1.5.0:
+  - Pre-revolutionary (XVIII c. - 1917 y.)
+  - Post-revolutionary (1917 y. - nowadays)
+1.6.0:
+  - Russian:
+    - consonantism
+    - verb word formation
+    - adjective word formation
+    - imperative forms
+    - model of genitive phrases
+    - conjunctions
+    - particles
+    - complex sentence structure
+2.6.0:
+  - Russian:
+    - all lexical layers
