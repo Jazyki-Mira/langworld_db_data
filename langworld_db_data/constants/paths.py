@@ -18,7 +18,10 @@ FILE_WITH_NAMES_OF_FEATURES = INVENTORIES_DIR / 'features.csv'
 FILE_WITH_LISTED_VALUES = INVENTORIES_DIR / 'features_listed_values.csv'
 
 FEATURE_PROFILES_DIR = DATA_DIR / 'feature_profiles'
-SOCIOLINGUISTIC_PROFILES_DIR = DATA_DIR / 'sociolinguistic_profiles'
+
+SOCIOLINGUISTIC_DIR = DATA_DIR / 'sociolinguistics'
+SOCIOLINGUISTIC_PROFILES_DIR = SOCIOLINGUISTIC_DIR / 'sociolinguistic_profiles'
+
 
 if __name__ == '__main__':
     pass
