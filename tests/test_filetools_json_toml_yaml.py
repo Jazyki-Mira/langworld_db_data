@@ -39,5 +39,5 @@ def test_read_json_toml_yaml_raises_exception_with_unsupported_file_type():
 def test_read_json_toml_yaml_raises_exception_with_bad_yaml():
     for file in DIR_WITH_FILETOOLS_TEST_FILES.glob('yaml_bad*.yaml'):
         print(f'TEST: file {file}')
-        with pytest.raises(ValueError):
+        with pytest.raises(ParserError):
             read_json_toml_yaml(file)
