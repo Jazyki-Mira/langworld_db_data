@@ -1,7 +1,8 @@
 from pycldf import Dataset
 
 from langworld_db_data.cldfwriters.cldf_dataset_writer import CLDFDatasetWriter
-from langworld_db_data.constants.paths import FILE_WITH_CLDF_DATASET_METADATA
+from langworld_db_data.filetools.json_toml_yaml import check_yaml_file
+from langworld_db_data.constants.paths import DATA_DIR, FILE_WITH_CLDF_DATASET_METADATA
 from langworld_db_data.mdlisters.custom_value_lister import CustomValueLister
 from langworld_db_data.mdlisters.listed_value_lister import ListedValueLister
 from langworld_db_data.validators.doculect_inventory_validator import DoculectInventoryValidator
@@ -18,6 +19,12 @@ def main():
     # at later stages of the project (when I am sure that a mismatch can only be caused by planned renaming
     # of a value  in the inventory).
     FeatureProfileValidator(strict_mode=True).validate()
+
+    # So far it seems unnecessary to create a whole validator class,
+    # so just running check_yaml_file() from filetools:
+    print(f'\nChecking YAML files')
+    for file in DATA_DIR.rglob('*.yaml'):
+        check_yaml_file(file, verbose=False)
 
     print('\nWriting Markdown files')
     CustomValueLister().write_grouped_by_feature()
