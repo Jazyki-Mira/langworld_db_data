@@ -56,7 +56,7 @@ def read_json_toml_yaml(path_to_file: Path) -> Union[dict, list]:
     extension = path_to_file.suffix.replace('.', '')
 
     if extension == 'yaml':
-        check_yaml_file(path_to_file)
+        check_yaml_file(path_to_file, verbose=False)
 
     data = None
 
