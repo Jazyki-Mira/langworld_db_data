@@ -15,7 +15,7 @@ def test_init_fails_with_file_with_non_unique_doculect_ids():
             dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
             file_with_doculects=DIR_WITH_VALIDATORS_TEST_FILES / 'doculects_bad_non_unique_doculects.csv'
         )
-    assert 'Some IDs in list of doculects are not unique' in str(e)
+    assert 'repeating values in column <id>: ukrainian' in str(e)
 
 
 def test__match_doculects_to_files_fails_with_more_doculects_than_files():

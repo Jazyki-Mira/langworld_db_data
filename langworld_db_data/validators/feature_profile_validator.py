@@ -4,6 +4,7 @@ import re
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
 from langworld_db_data.filetools.csv_xls import (
     check_csv_for_malformed_rows,
+    check_csv_for_repetitions_in_column,
     read_csv,
     read_dict_from_2_csv_columns
 )
@@ -25,6 +26,8 @@ class FeatureProfileValidator:
 
         for file in self.feature_profiles:
             check_csv_for_malformed_rows(file)
+            for column_name in ('feature_id', 'feature_name_ru'):
+                check_csv_for_repetitions_in_column(file, column_name=column_name)
 
         self.value_ru_for_value_id = read_dict_from_2_csv_columns(
             file_with_listed_values,

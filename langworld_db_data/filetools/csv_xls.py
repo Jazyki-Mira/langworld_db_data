@@ -35,8 +35,29 @@ def check_csv_for_malformed_rows(path_to_file: Path):
             indices_of_likely_invalid_rows.append(str(i))
 
     raise IndexError(
-        f'File {path_to_file.name}: Following rows have abnormal number of columns: {", ".join(indices_of_likely_invalid_rows)}'
+        f'File {path_to_file.name}: Following rows have abnormal number of columns: '
+        f'{", ".join(indices_of_likely_invalid_rows)}'
     )
+
+
+def check_csv_for_repetitions_in_column(path_to_file: Path, column_name: str):
+    """Throws ValueError if there are repetitions in given column of given file.
+    """
+    rows = read_csv(path_to_file, read_as='dicts')
+
+    if column_name not in rows[0]:
+        raise KeyError(f'Cannot check uniqueness of value in column <{column_name}> because it does not exist')
+
+    values_in_column = [row[column_name] for row in rows]
+
+    counter = Counter(values_in_column)
+
+    non_unique_keys = [key for key in counter if counter[key] > 1]
+
+    if non_unique_keys:
+        raise ValueError(
+            f'File {path_to_file} has repeating values in column <{column_name}>: {", ".join(non_unique_keys)}'
+        )
 
 
 def convert_xls_to_csv(

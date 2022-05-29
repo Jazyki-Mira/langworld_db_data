@@ -66,16 +66,40 @@ def test_read_csv():
     path_to_auto_test_file.unlink()
 
 
-def test_check_csv_passes_for_good_file():
+def test_check_csv_for_malformed_rows_passes_for_good_file():
     file = DIR_WITH_FILETOOLS_TEST_FILES / 'doculects_output_gold_standard.csv'
     check_csv_for_malformed_rows(file)
 
 
-def test_check_csv_throws_exception_for_malformed_rows():
+def test_check_csv_for_malformed_rows_throws_exception_for_malformed_rows():
     file = DIR_WITH_FILETOOLS_TEST_FILES / 'csv_doculects_with_incomplete_rows.csv'
     with pytest.raises(IndexError) as e:
         check_csv_for_malformed_rows(file)
     assert 'Following rows have abnormal number of columns: 3, 5' in str(e)
+
+
+def test_check_csv_for_repetitions_in_column_passes_for_good_file():
+    file = DIR_WITH_FILETOOLS_TEST_FILES / 'doculects_output_gold_standard.csv'
+    check_csv_for_repetitions_in_column(path_to_file=file, column_name='id')
+
+
+def test_check_csv_for_repetitions_in_column_throws_exception_with_wrong_column_name():
+    file = DIR_WITH_FILETOOLS_TEST_FILES / 'doculects_output_gold_standard.csv'
+    with pytest.raises(KeyError) as e:
+        check_csv_for_repetitions_in_column(path_to_file=file, column_name='foo')
+    assert 'column <foo> because it does not exist' in str(e)
+
+
+def test_check_csv_for_repetitions_in_column_throws_exception_with_repetition_in_column():
+    file = DIR_WITH_FILETOOLS_TEST_FILES / 'csv_doculects_with_duplicate_values.csv'
+    with pytest.raises(ValueError) as e:
+        check_csv_for_repetitions_in_column(path_to_file=file, column_name='id')
+    assert 'repeating values in column <id>: asturian, catalan' in str(e)
+
+
+def test_check_csv_for_repetitions_in_column_passes_for_file_with_repetition_in_column_if_different_column_is_checked():
+    file = DIR_WITH_FILETOOLS_TEST_FILES / 'csv_doculects_with_duplicate_values.csv'
+    check_csv_for_repetitions_in_column(path_to_file=file, column_name='name_ru')
 
 
 def test_read_csv_raises_exception_with_wrong_read_as():

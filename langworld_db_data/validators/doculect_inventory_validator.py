@@ -1,7 +1,11 @@
 from pathlib import Path
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_DOCULECTS
-from langworld_db_data.filetools.csv_xls import check_csv_for_malformed_rows, read_csv
+from langworld_db_data.filetools.csv_xls import (
+    check_csv_for_malformed_rows,
+    check_csv_for_repetitions_in_column,
+    read_csv
+)
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -21,12 +25,13 @@ class DoculectInventoryValidator:
         }
 
         check_csv_for_malformed_rows(file_with_doculects)
+        try:
+            check_csv_for_repetitions_in_column(file_with_doculects, column_name='id')
+        except ValueError as e:
+            raise ValidatorError(str(e))
 
         self.doculects: list[dict] = read_csv(file_with_doculects, read_as='dicts')
         self.doculect_ids = {d['id'] for d in self.doculects}
-
-        if len(self.doculect_ids) != len(self.doculects):
-            raise DoculectInventoryValidatorError(f'Some IDs in list of doculects are not unique')
 
         self.has_feature_profile_for_doculect_id = {
             d['id']: d['has_feature_profile'] for d in self.doculects

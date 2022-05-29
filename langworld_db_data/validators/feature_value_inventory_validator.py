@@ -6,7 +6,11 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NAMES_OF_FEATURES,
 )
-from langworld_db_data.filetools.csv_xls import check_csv_for_malformed_rows, read_csv
+from langworld_db_data.filetools.csv_xls import (
+    check_csv_for_malformed_rows,
+    check_csv_for_repetitions_in_column,
+    read_csv
+)
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -20,20 +24,22 @@ class FeatureValueInventoryValidator:
         file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
         file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
     ):
+        print('\nChecking inventories of features and listed values')
 
         for file in (file_with_features, file_with_listed_values):
             check_csv_for_malformed_rows(file)
+            check_csv_for_repetitions_in_column(file, column_name='id')
+        print('OK: No malformed rows found, all feature IDs and value IDs are unique')
 
         self.feature_ids = [row['id'] for row in read_csv(file_with_features, read_as='dicts')]
 
         self.rows_with_listed_values = read_csv(file_with_listed_values, read_as='dicts')
 
     def validate(self):
-        print('\nChecking inventories of features and listed values')
-        self._validate_features()
+        self._validate_feature_ids()
         self._validate_listed_values()
 
-    def _validate_features(self):
+    def _validate_feature_ids(self):
         if len(self.feature_ids) > len(set(self.feature_ids)):
             raise FeatureValueInventoryValidatorError('Some feature IDs are not unique')
 
@@ -44,17 +50,6 @@ class FeatureValueInventoryValidator:
         print(f'Feature IDs OK')
 
     def _validate_listed_values(self):
-        value_ids = [row['id'] for row in self.rows_with_listed_values]
-
-        counter = Counter(value_ids)
-        duplicate_ids = [item for item in counter if counter[item] > 1]
-
-        if duplicate_ids:
-            raise FeatureValueInventoryValidatorError(
-                f'Following value IDs are not unique: {", ".join(duplicate_ids)}'
-            )
-
-        print('OK: all value IDs are unique')
 
         feature_id_for_value_id = {
             row['id']: row['feature_id'] for row in self.rows_with_listed_values
