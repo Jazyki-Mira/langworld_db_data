@@ -1,0 +1,65 @@
+---
+0.0.0:
+  - ARAGON
+1.1.0:
+  - ARAGON
+1.1.1:
+  - Aragon dialect
+  - Pyrenean Roman
+1.1.2:
+  - ARAGON<IBERIAN-ROMANCE<ROMANCE<INDO-EUROPEAN
+1.1.3:
+  - Spain
+1.2.1:
+  - Western Aragon dial.gr.:
+    - Acsontan dial.
+    - Cheso Valley subdial.
+  - Central Pyrenean dial.gr.:
+    - Tensin subdial.
+    - Bergot subdial.
+    - Belsetan subdial.
+    - Balibio subdial.
+  - Eastern Aragon dial.gr.:
+    - Chistabin subdial.
+    - Benak subdial.
+    - Fueba subdial.
+    - Ribargosa subdials.:
+      - Upper Ribargosa subdial.
+      - Middle Ribargosa subdial.
+      - Lower Ribargosa subdial.
+  - Southern Aragon dial.gr.:
+    - Aierbe subdial.
+    - Sottonera subdial.
+    - Ueski subdial.
+    - Balbastro subdial.
+1.3.1:
+  - everyday language
+  - bilingualism:
+    - Aragon - Spanish
+1.3.2:
+  - based on one dialect:
+    - Upper Aragon dials.
+1.3.3:
+  - studied as a subject:
+    - high school
+1.4.0:
+  - writing system:
+    - alphabetic writing:
+      - latin alphabet:
+        - with digraphs
+1.5.0:
+  - Ancient period (IX-XI cc.)
+  - Medieval period (XII-beg.of XIII cc.)
+  - Spanization period (2-d half of XV-XIX cc.)
+1.6.0:
+  - Catalan
+  - Spanish
+  - Occitan
+2.6.0:
+  - Latin
+  - Gasconian
+  - Catalan
+  - Basque
+  - Iberian
+  - Celtic
+  - Arabian
