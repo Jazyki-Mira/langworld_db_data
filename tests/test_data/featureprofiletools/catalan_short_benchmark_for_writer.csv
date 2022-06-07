@@ -1,0 +1,5 @@
+feature_id,feature_name_ru,value_type,value_id,value_ru,comment_ru,comment_en
+A-1,Количество степеней подъема,listed,A-1-2,Три,,
+A-2,Подъемы гласных,custom,,"Верхний, средний (закрытые и открытые) и нижний",,
+A-3,Ряды гласных,listed,A-3-4,"Передний, средний и задний",,
+_aux,,not_applicable,,,И.И.Иванов,
