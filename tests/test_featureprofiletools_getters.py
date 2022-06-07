@@ -49,3 +49,10 @@ def test_get_value_for_doculect_and_feature(doculect_id, feature_id, expected_ou
         verbose=True,
     )
     assert dict_ == expected_output
+
+
+def test_get_value_for_doculect_and_feature_fails_with_wrong_feature_id():
+    with pytest.raises(KeyError) as e:
+        get_value_for_doculect_and_feature('catalan', 'X-99', DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES)
+
+    assert "'X-99' not found for doculect_id='catalan'" in str(e)

@@ -1,4 +1,3 @@
-from collections import defaultdict
 from pathlib import Path
 import pyperclip
 
@@ -46,32 +45,34 @@ def get_value_for_doculect_and_feature(
     `sudo apt install xclip` first.
     """
 
-    file = dir_with_feature_profiles / f'{doculect_id}.csv'
+    try:
+        loaded_data_for_feature = get_feature_profile_as_dict(
+            doculect_id=doculect_id,
+            dir_with_feature_profiles=dir_with_feature_profiles,
+        )[feature_id]
+    except KeyError:
+        raise KeyError(f'{feature_id=} not found for {doculect_id=}')
+
+    data_to_return = {
+        key: loaded_data_for_feature[key] for key in ('value_type', 'value_id', 'value_ru', 'comment_ru')
+    }
 
     if verbose:
         print(f'{doculect_id=}, {feature_id=}\n')
+        for key in data_to_return.keys():
+            key_for_print = key.replace("_ru", "").replace("_", " ").capitalize().replace('id', 'ID')
+            if data_to_return[key]:
+                print(f'{key_for_print}: {data_to_return[key]}')
+            else:
+                print(f'{key_for_print} is empty')
 
-    for row in read_csv(file, read_as='dicts'):
-        if row['feature_id'] == feature_id:
-            data = {key: row[key] for key in ('value_type', 'value_id', 'value_ru', 'comment_ru')}
+    # sometimes a custom value can be written in comment while value itself is left empty
+    text_to_copy = data_to_return['value_ru'] if data_to_return['value_ru'] else data_to_return['comment_ru']
+    if copy_to_clipboard and text_to_copy:
+        pyperclip.copy(text_to_copy)
+        print('\nValue (or comment for empty value) copied to clipboard')
 
-            if verbose:
-                for attr in ('value_type', 'value_id', 'value_ru', 'comment_ru'):
-                    attr_for_print = attr.replace("_ru", "").replace("_", " ").capitalize().replace('id', 'ID')
-                    if data[attr]:
-                        print(f'{attr_for_print}: {data[attr]}')
-                    else:
-                        print(f'{attr_for_print} is empty')
-
-            # sometimes a custom value can be written in comment while value itself is left empty
-            text_to_copy = data['value_ru'] if data['value_ru'] else data['comment_ru']
-            if copy_to_clipboard and text_to_copy:
-                pyperclip.copy(text_to_copy)
-                print('\nValue (or comment for empty value) copied to clipboard')
-
-            return data
-
-    raise KeyError(f'{feature_id=} not found for {doculect_id=}')
+    return data_to_return
 
 
 if __name__ == '__main__':
