@@ -1,7 +1,31 @@
+from collections import defaultdict
+from pathlib import Path
 import pyperclip
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
 from langworld_db_data.filetools.csv_xls import read_csv
+
+
+def get_feature_profile_as_dict(
+    doculect_id: str,
+    dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
+) -> dict[str, dict[str, str]]:
+    """
+    Reads feature profile and returns dictionary:
+    {`feature ID`: {'feature_name_ru': ...,
+    'value_type': ..., 'value_id': ...,
+    'value_ru': ..., 'comment_ru': ..., 'comment_en': ...}
+    """
+    file = dir_with_feature_profiles / f'{doculect_id}.csv'
+
+    feature_id_to_row_dict = {}
+
+    for row in read_csv(file, read_as='dicts'):
+        feature_id_to_row_dict[row['feature_id']] = {
+            key: row[key] for key in row.keys() if key != 'feature_id'
+        }
+
+    return feature_id_to_row_dict
 
 
 def get_value_for_doculect_and_feature(
