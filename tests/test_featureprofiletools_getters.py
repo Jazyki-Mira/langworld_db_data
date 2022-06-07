@@ -1,3 +1,5 @@
+import pytest
+
 from langworld_db_data.featureprofiletools.getters import *
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 
@@ -25,3 +27,25 @@ def test_get_feature_profile_as_dict():
             'comment_ru': '', 'comment_en': ''
         },
     }
+
+
+@pytest.mark.parametrize(
+    'doculect_id, feature_id, expected_output',
+    [
+        ('catalan', 'A-1', {
+            'value_type': 'listed', 'value_id': 'A-1-2', 'value_ru': 'Три', 'comment_ru': ''
+        }),
+        ('catalan', 'D-6', {
+            'value_type': 'not_stated', 'value_id': '', 'value_ru': '', 'comment_ru': 'Систематизированных данных нет.'
+        }),
+    ]
+)
+def test_get_value_for_doculect_and_feature(doculect_id, feature_id, expected_output):
+    dict_ = get_value_for_doculect_and_feature(
+        doculect_id=doculect_id,
+        feature_id=feature_id,
+        dir_with_feature_profiles=DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES,
+        copy_to_clipboard=False,
+        verbose=True,
+    )
+    assert dict_ == expected_output

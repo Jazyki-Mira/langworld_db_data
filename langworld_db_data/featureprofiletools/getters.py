@@ -29,7 +29,11 @@ def get_feature_profile_as_dict(
 
 
 def get_value_for_doculect_and_feature(
-        doculect_id: str, feature_id: str, copy_to_clipboard: bool = True, verbose: bool = True
+        doculect_id: str,
+        feature_id: str,
+        dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
+        copy_to_clipboard: bool = True,
+        verbose: bool = True
 ) -> dict:
     """A helper function to get value for given feature in given doculect.
     Prints and returns found value type, ID and text.
@@ -42,9 +46,7 @@ def get_value_for_doculect_and_feature(
     `sudo apt install xclip` first.
     """
 
-    file = FEATURE_PROFILES_DIR / f'{doculect_id}.csv'
-    if not file.exists():
-        raise FileNotFoundError(f'Feature profile {doculect_id}.csv does not exist')
+    file = dir_with_feature_profiles / f'{doculect_id}.csv'
 
     if verbose:
         print(f'{doculect_id=}, {feature_id=}\n')
