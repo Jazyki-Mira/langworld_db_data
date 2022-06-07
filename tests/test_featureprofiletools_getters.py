@@ -11,21 +11,30 @@ def test_get_feature_profile_as_dict():
     )
 
     assert dict_ == {
-        'A-1': {
-            'feature_name_ru': 'Количество степеней подъема',
-            'value_type': 'listed', 'value_id': 'A-1-2', 'value_ru': 'Три',
-            'comment_ru': '', 'comment_en': ''
-        },
-        'A-2': {
-            'feature_name_ru': 'Подъемы гласных',
-            'value_type': 'custom', 'value_id': '', 'value_ru': 'Верхний, средний (закрытые и открытые) и нижний',
-            'comment_ru': '', 'comment_en': ''
-        },
-        'A-3': {
-            'feature_name_ru': 'Ряды гласных',
-            'value_type': 'listed', 'value_id': 'A-3-4', 'value_ru': 'Передний, средний и задний',
-            'comment_ru': '', 'comment_en': ''
-        },
+        'A-1': ValueForFeatureProfileDictionary(
+            feature_name_ru='Количество степеней подъема',
+            value_type='listed',
+            value_id='A-1-2',
+            value_ru='Три',
+            comment_ru='',
+            comment_en='',
+        ),
+        'A-2': ValueForFeatureProfileDictionary(
+            feature_name_ru='Подъемы гласных',
+            value_type='custom',
+            value_id='',
+            value_ru='Верхний, средний (закрытые и открытые) и нижний',
+            comment_ru='',
+            comment_en='',
+        ),
+        'A-3': ValueForFeatureProfileDictionary(
+            feature_name_ru='Ряды гласных',
+            value_type='listed',
+            value_id='A-3-4',
+            value_ru='Передний, средний и задний',
+            comment_ru='',
+            comment_en='',
+        ),
     }
 
 
