@@ -11,7 +11,7 @@ def test_validator():
     return FeatureProfileValidator(
         dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
         file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / 'features_listed_values_OK.csv',
-        strict_mode=True,
+        must_raise_exception_at_value_name_mismatch=True,
     )
 
 
@@ -41,8 +41,8 @@ def test__validate_one_file_fails_with_bad_files(test_validator, file_stem, expe
     assert expected_error_message in str(e)
 
 
-def test__validate_one_file_prints_message_in_non_strict_mode(capsys, test_validator):
-    test_validator.strict_mode = False
+def test__validate_one_file_prints_message_in_non_must_raise_exception_at_value_name_mismatch(capsys, test_validator):
+    test_validator.must_raise_exception_at_value_name_mismatch = False
     test_validator._validate_one_file(
         DIR_WITH_BAD_PROFILES / f'corsican_non_matching_listed_value.csv'
     )
@@ -56,4 +56,4 @@ def test_validate_fails_with_bad_data():
 
 
 def test_validate_real_data():
-    FeatureProfileValidator(strict_mode=True).validate()
+    FeatureProfileValidator(must_raise_exception_at_value_name_mismatch=True).validate()

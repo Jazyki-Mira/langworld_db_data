@@ -20,7 +20,7 @@ class FeatureProfileValidator:
             self,
             dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
             file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
-            strict_mode: bool = True,
+            must_raise_exception_at_value_name_mismatch: bool = True,
     ):
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob('*.csv')))
 
@@ -34,7 +34,7 @@ class FeatureProfileValidator:
             key_col='id',
             val_col='ru',
         )
-        self.strict_mode = strict_mode
+        self.must_raise_exception_at_value_name_mismatch = must_raise_exception_at_value_name_mismatch
 
     def validate(self):
         for feature_profile in self.feature_profiles:
@@ -81,7 +81,7 @@ class FeatureProfileValidator:
                         f'in row {i + 1} does not match name of this value in inventory '
                         f'(value ID {row["value_id"]} should be {self.value_ru_for_value_id[row["value_id"]]})'
                     )
-                    if self.strict_mode:
+                    if self.must_raise_exception_at_value_name_mismatch:
                         raise FeatureProfileValidatorError(message)
                     else:
                         print(message)
