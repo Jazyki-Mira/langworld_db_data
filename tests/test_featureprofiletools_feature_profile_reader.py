@@ -1,11 +1,16 @@
 import pytest
 
-from langworld_db_data.featureprofiletools.getters import *
+from langworld_db_data.featureprofiletools.feature_profile_reader import *
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 
 
-def test_get_feature_profile_as_dict():
-    dict_ = get_feature_profile_as_dict(
+@pytest.fixture(scope='function')
+def test_reader():
+    return FeatureProfileReader()
+
+
+def test_read_feature_profile_as_dict(test_reader):
+    dict_ = test_reader.read_feature_profile_as_dict(
         doculect_id='catalan_short',
         dir_with_feature_profiles=DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
     )
@@ -49,8 +54,8 @@ def test_get_feature_profile_as_dict():
         }),
     ]
 )
-def test_get_value_for_doculect_and_feature(doculect_id, feature_id, expected_output):
-    dict_ = get_value_for_doculect_and_feature(
+def test_read_value_for_doculect_and_feature(test_reader, doculect_id, feature_id, expected_output):
+    dict_ = test_reader.read_value_for_doculect_and_feature(
         doculect_id=doculect_id,
         feature_id=feature_id,
         dir_with_feature_profiles=DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES,
@@ -60,8 +65,8 @@ def test_get_value_for_doculect_and_feature(doculect_id, feature_id, expected_ou
     assert dict_ == expected_output
 
 
-def test_get_value_for_doculect_and_feature_fails_with_wrong_feature_id():
+def test_read_value_for_doculect_and_feature_fails_with_wrong_feature_id(test_reader):
     with pytest.raises(KeyError) as e:
-        get_value_for_doculect_and_feature('catalan', 'X-99', DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES)
+        test_reader.read_value_for_doculect_and_feature('catalan', 'X-99', DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES)
 
     assert "'X-99' not found for doculect_id='catalan'" in str(e)
