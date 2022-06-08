@@ -16,7 +16,7 @@ FILE_WITH_CATEGORIES = INVENTORIES_DIR / 'feature_categories.csv'
 FILE_WITH_DOCULECTS = INVENTORIES_DIR / 'doculects.csv'
 FILE_WITH_NAMES_OF_FEATURES = INVENTORIES_DIR / 'features.csv'
 FILE_WITH_LISTED_VALUES = INVENTORIES_DIR / 'features_listed_values.csv'
-FILE_WITH_NOT_APPLICABLE_RULES = INVENTORIES_DIR / 'feature_not_applicable_rules.yaml'
+FILE_WITH_NOT_APPLICABLE_RULES = INVENTORIES_DIR / 'features_not_applicable_rules.yaml'
 
 FEATURE_PROFILES_DIR = DATA_DIR / 'feature_profiles'
 
