@@ -8,18 +8,31 @@ from langworld_db_data.filetools.csv_xls import read_csv
 
 class FeatureProfileReader:
 
-    @staticmethod
-    def read_feature_profile_as_dict(
+    def read_feature_profile_as_dict_from_doculect_id(
+        self,
         doculect_id: str,
         dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
     ) -> dict[str, ValueForFeatureProfileDictionary]:
         """
+        Accepts Doculect ID and directory with feature profiles.
+
         Reads feature profile and returns dictionary:
         Keys are feature IDs, values are `ValueForFeatureProfileDictionary` objects
         with the rest of the columns for the respective row.
         """
-        file = dir_with_feature_profiles / f'{doculect_id}.csv'
+        return self.read_feature_profile_as_dict_from_file(dir_with_feature_profiles / f'{doculect_id}.csv')
 
+    @staticmethod
+    def read_feature_profile_as_dict_from_file(
+        file: Path,
+    ) -> dict[str, ValueForFeatureProfileDictionary]:
+        """
+        Accepts path to feature profile.
+
+        Reads feature profile and returns dictionary:
+        Keys are feature IDs, values are `ValueForFeatureProfileDictionary` objects
+        with the rest of the columns for the respective row.
+        """
         feature_id_to_row_dict = {}
 
         for row in read_csv(file, read_as='dicts'):
@@ -48,7 +61,7 @@ class FeatureProfileReader:
         """
 
         try:
-            loaded_data_for_feature = self.read_feature_profile_as_dict(
+            loaded_data_for_feature = self.read_feature_profile_as_dict_from_doculect_id(
                 doculect_id=doculect_id,
                 dir_with_feature_profiles=dir_with_feature_profiles,
             )[feature_id]

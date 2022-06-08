@@ -9,39 +9,49 @@ def test_reader():
     return FeatureProfileReader()
 
 
-def test_read_feature_profile_as_dict(test_reader):
-    dict_ = test_reader.read_feature_profile_as_dict(
+benchmark_dict = {
+    'A-1': ValueForFeatureProfileDictionary(
+        feature_name_ru='Количество степеней подъема',
+        value_type='listed',
+        value_id='A-1-2',
+        value_ru='Три',
+        comment_ru='',
+        comment_en='',
+    ),
+    'A-2': ValueForFeatureProfileDictionary(
+        feature_name_ru='Подъемы гласных',
+        value_type='custom',
+        value_id='',
+        value_ru='Верхний, средний (закрытые и открытые) и нижний',
+        comment_ru='',
+        comment_en='',
+    ),
+    'A-3': ValueForFeatureProfileDictionary(
+        feature_name_ru='Ряды гласных',
+        value_type='listed',
+        value_id='A-3-4',
+        value_ru='Передний, средний и задний',
+        comment_ru='',
+        comment_en='',
+    ),
+}
+
+
+def test_read_feature_profile_as_dict_from_doculect_id(test_reader):
+    dict_ = test_reader.read_feature_profile_as_dict_from_doculect_id(
         doculect_id='catalan_short',
         dir_with_feature_profiles=DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
     )
 
-    assert dict_ == {
-        'A-1': ValueForFeatureProfileDictionary(
-            feature_name_ru='Количество степеней подъема',
-            value_type='listed',
-            value_id='A-1-2',
-            value_ru='Три',
-            comment_ru='',
-            comment_en='',
-        ),
-        'A-2': ValueForFeatureProfileDictionary(
-            feature_name_ru='Подъемы гласных',
-            value_type='custom',
-            value_id='',
-            value_ru='Верхний, средний (закрытые и открытые) и нижний',
-            comment_ru='',
-            comment_en='',
-        ),
-        'A-3': ValueForFeatureProfileDictionary(
-            feature_name_ru='Ряды гласных',
-            value_type='listed',
-            value_id='A-3-4',
-            value_ru='Передний, средний и задний',
-            comment_ru='',
-            comment_en='',
-        ),
-    }
+    assert dict_ == benchmark_dict
 
+
+def test_read_feature_profile_as_dict_from_file(test_reader):
+    dict_ = test_reader.read_feature_profile_as_dict_from_file(
+        DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / 'catalan_short.csv'
+    )
+
+    assert dict_ == benchmark_dict
 
 @pytest.mark.parametrize(
     'doculect_id, feature_id, expected_output',
