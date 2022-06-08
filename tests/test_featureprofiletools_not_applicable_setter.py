@@ -1,7 +1,7 @@
 import pytest
 
 from langworld_db_data.featureprofiletools.not_applicable_setter import *
-from langworld_db_data.filetools.csv_xls import read_csv
+from tests.helpers import check_existence_of_output_csv_file_and_with_gold_standard
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 
 DIR_WITH_TEST_FEATURE_PROFILES = (
@@ -34,12 +34,8 @@ def test_replace_not_stated_with_not_applicable_in_all_profiles_according_to_rul
 
     for benchmark_file in dir_with_benchmark_files.glob('*.csv'):
         test_output_file = DIR_WITH_TEST_FEATURE_PROFILES / 'output' / benchmark_file.name
-        assert test_output_file.exists()
 
-        output_lines = read_csv(test_output_file, read_as='plain_rows')
-        benchmark_lines = read_csv(benchmark_file, read_as='plain_rows')
-
-        for output_line, benchmark_line in zip(output_lines, benchmark_lines):
-            assert output_line == benchmark_line
-
-        test_output_file.unlink()
+        check_existence_of_output_csv_file_and_with_gold_standard(
+            output_file=test_output_file,
+            gold_standard_file=benchmark_file,
+        )

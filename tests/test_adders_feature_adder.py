@@ -1,6 +1,7 @@
 import pytest
 
 from langworld_db_data.adders.feature_adder import *
+from tests.helpers import check_existence_of_output_csv_file_and_with_gold_standard
 from tests.paths import (
     DIR_WITH_ADDERS_TEST_FILES,
     DIR_WITH_ADDERS_FEATURE_PROFILES,
@@ -151,35 +152,20 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
         (OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES / 'gold_standard').glob('*.csv')
     )
 
-    for file in gold_standard_feature_profiles:
-        print(f'\nTEST: checking {file.name} for added feature')
-        assert (test_feature_adder.output_dir_with_feature_profiles / file.name).exists()
-
-    output_lines = read_csv(test_feature_adder.output_file_with_features, read_as='plain_rows')
-    gold_standard_lines = read_csv(
-        DIR_WITH_ADDERS_TEST_FILES / 'features_gold_standard_after_addition.csv', read_as='plain_rows'
+    check_existence_of_output_csv_file_and_with_gold_standard(
+        output_file=test_feature_adder.output_file_with_features,
+        gold_standard_file=DIR_WITH_ADDERS_TEST_FILES / 'features_gold_standard_after_addition.csv',
     )
-    for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
-        assert output_line == gold_standard_line
 
-    test_feature_adder.output_file_with_features.unlink()
-
-    output_lines = read_csv(test_feature_adder.output_file_with_listed_values, read_as='plain_rows')
-    gold_standard_lines = read_csv(
-        DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_gold_standard_for_feature_adder.csv', read_as='plain_rows'
+    check_existence_of_output_csv_file_and_with_gold_standard(
+        output_file=test_feature_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_gold_standard_for_feature_adder.csv',
     )
-    for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
-        assert output_line == gold_standard_line
-
-    test_feature_adder.output_file_with_listed_values.unlink()
 
     for file in gold_standard_feature_profiles:
-        output_file = test_feature_adder.output_dir_with_feature_profiles / file.name
+        test_output_file = test_feature_adder.output_dir_with_feature_profiles / file.name
 
-        output_lines = read_csv(output_file, read_as='plain_rows')
-        gold_standard_lines = read_csv(file, read_as='plain_rows')
-
-        for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
-            assert output_line == gold_standard_line
-
-        output_file.unlink()
+        check_existence_of_output_csv_file_and_with_gold_standard(
+            output_file=test_output_file,
+            gold_standard_file=file,
+        )
