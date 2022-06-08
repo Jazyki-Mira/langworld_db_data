@@ -18,7 +18,10 @@ def main():
     # Since value name in feature profile is only there for readability, I could disable strict mode
     # at later stages of the project (when I am sure that a mismatch can only be caused by planned renaming
     # of a value  in the inventory).
-    FeatureProfileValidator(must_raise_exception_at_value_name_mismatch=True).validate()
+    FeatureProfileValidator(
+        must_raise_exception_at_value_name_mismatch=True,
+        must_raise_exception_at_not_applicable_rule_breach=False,  # can set to True when existing profiles are amended
+    ).validate()
 
     # So far it seems unnecessary to create a whole validator class,
     # so just running check_yaml_file() from filetools:

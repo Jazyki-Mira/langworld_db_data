@@ -1,13 +1,19 @@
 from pathlib import Path
 import re
 
-from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
+from langworld_db_data.constants.paths import (
+    FEATURE_PROFILES_DIR,
+    FILE_WITH_LISTED_VALUES,
+    FILE_WITH_NOT_APPLICABLE_RULES,
+)
+from langworld_db_data.featureprofiletools.feature_profile_reader import FeatureProfileReader
 from langworld_db_data.filetools.csv_xls import (
     check_csv_for_malformed_rows,
     check_csv_for_repetitions_in_column,
     read_csv,
     read_dict_from_2_csv_columns
 )
+from langworld_db_data.filetools.json_toml_yaml import read_json_toml_yaml
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -20,9 +26,14 @@ class FeatureProfileValidator:
             self,
             dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
             file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
+            file_with_rules_for_not_applicable_value_type: Path = FILE_WITH_NOT_APPLICABLE_RULES,
             must_raise_exception_at_value_name_mismatch: bool = True,
+            must_raise_exception_at_not_applicable_rule_breach: bool = False,
     ):
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob('*.csv')))
+        self.reader = FeatureProfileReader()
+
+        self.rules_for_not_applicable_value_type = read_json_toml_yaml(file_with_rules_for_not_applicable_value_type)
 
         for file in self.feature_profiles:
             check_csv_for_malformed_rows(file)
@@ -34,9 +45,12 @@ class FeatureProfileValidator:
             key_col='id',
             val_col='ru',
         )
+
         self.must_raise_exception_at_value_name_mismatch = must_raise_exception_at_value_name_mismatch
+        self.must_raise_exception_at_not_applicable_rule_breach = must_raise_exception_at_not_applicable_rule_breach
 
     def validate(self):
+        print(f'\nChecking feature profiles ({len(self.feature_profiles)} files)')
         for feature_profile in self.feature_profiles:
             self._validate_one_file(feature_profile)
 
@@ -85,6 +99,40 @@ class FeatureProfileValidator:
                         raise FeatureProfileValidatorError(message)
                     else:
                         print(message)
+
+        breaches_of_rules_for_not_applicable = []
+        data_from_profile = self.reader.read_feature_profile_as_dict_from_file(file)
+        # TODO I can refactor the code above (that handles rows) to work with this dictionary
+
+        rules = self.rules_for_not_applicable_value_type
+        for feature_id in rules:
+
+            # noinspection PyTypeChecker
+            if data_from_profile[feature_id].value_id == rules[feature_id]['trigger']:
+
+                # noinspection PyTypeChecker
+                for id_of_feature_that_must_be_not_applicable in rules[feature_id]['features_to_get_not_applicable']:
+
+                    if data_from_profile[id_of_feature_that_must_be_not_applicable].value_type != 'not_applicable':
+
+                        error_message = (
+                                f'{file.stem.capitalize()}: Feature {feature_id} '
+                                f'"{data_from_profile[feature_id].feature_name_ru}" has value ID '
+                                f'{data_from_profile[feature_id].value_id} '
+                                f'"{data_from_profile[feature_id].value_ru}" => feature ID '
+                                f"{id_of_feature_that_must_be_not_applicable} must have value type 'not_applicable'. "
+                                f'Instead, it has value '
+                                f'"{data_from_profile[id_of_feature_that_must_be_not_applicable].value_ru}" (value type'
+                                f': {data_from_profile[id_of_feature_that_must_be_not_applicable].value_type})'
+                        )
+                        print(error_message)
+                        breaches_of_rules_for_not_applicable.append(error_message)
+
+        if breaches_of_rules_for_not_applicable and self.must_raise_exception_at_not_applicable_rule_breach:
+            raise FeatureProfileValidatorError(
+                f"File {file.name}: found {len(breaches_of_rules_for_not_applicable)} breaches of rules "
+                f"for 'not_applicable' value type."
+            )
 
 
 if __name__ == '__main__':
