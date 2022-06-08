@@ -1,7 +1,7 @@
 import pytest
 
 from langworld_db_data.adders.feature_adder import *
-from tests.helpers import check_existence_of_output_csv_file_and_with_gold_standard
+from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
     DIR_WITH_ADDERS_TEST_FILES,
     DIR_WITH_ADDERS_FEATURE_PROFILES,
@@ -152,12 +152,12 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
         (OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES / 'gold_standard').glob('*.csv')
     )
 
-    check_existence_of_output_csv_file_and_with_gold_standard(
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_feature_adder.output_file_with_features,
         gold_standard_file=DIR_WITH_ADDERS_TEST_FILES / 'features_gold_standard_after_addition.csv',
     )
 
-    check_existence_of_output_csv_file_and_with_gold_standard(
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_feature_adder.output_file_with_listed_values,
         gold_standard_file=DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_gold_standard_for_feature_adder.csv',
     )
@@ -165,7 +165,7 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
     for file in gold_standard_feature_profiles:
         test_output_file = test_feature_adder.output_dir_with_feature_profiles / file.name
 
-        check_existence_of_output_csv_file_and_with_gold_standard(
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=test_output_file,
             gold_standard_file=file,
         )

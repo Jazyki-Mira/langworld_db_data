@@ -1,7 +1,7 @@
 import pytest
 
 from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import *
-from tests.helpers import check_existence_of_output_csv_file_and_with_gold_standard
+from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 
 
@@ -51,7 +51,7 @@ def test_write(test_writer):
         output_path=output_file,
     )
 
-    check_existence_of_output_csv_file_and_with_gold_standard(
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=output_file,
         gold_standard_file=DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / 'catalan_short_benchmark_for_writer.csv',
     )

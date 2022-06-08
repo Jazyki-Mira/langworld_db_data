@@ -1,7 +1,7 @@
 import pytest
 
 from langworld_db_data.writers.doculect_in_country_writer import *
-from tests.helpers import check_existence_of_output_csv_file_and_with_gold_standard
+from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import DIR_WITH_WRITERS_TEST_FILES
 
 TEST_DIR_FOR_DOCULECT_IN_COUNTRY_WRITER = DIR_WITH_WRITERS_TEST_FILES / 'doculect_in_country_writer'
@@ -46,7 +46,7 @@ def test__add_aliases(test_writer):
 def test_write(test_writer):
     test_writer.write()
 
-    check_existence_of_output_csv_file_and_with_gold_standard(
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=TEST_OUTPUT_FILE,
         gold_standard_file=TEST_DIR_FOR_DOCULECT_IN_COUNTRY_WRITER / 'output_benchmark.csv',
     )

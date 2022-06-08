@@ -1,7 +1,7 @@
 import pytest
 
 from langworld_db_data.adders.listed_value_adder import *
-from tests.helpers import check_existence_of_output_csv_file_and_with_gold_standard
+from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
     DIR_WITH_ADDERS_TEST_FILES,
     DIR_WITH_ADDERS_FEATURE_PROFILES,
@@ -56,7 +56,7 @@ def test__add_to_inventory_of_listed_values_adds_good_value(test_adder):
 
     assert test_adder.output_file_with_listed_values.exists()
 
-    check_existence_of_output_csv_file_and_with_gold_standard(
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
         gold_standard_file=GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION,
     )
@@ -84,7 +84,7 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
 
         print(f'TEST: checking amended feature profile {file.name}')
 
-        check_existence_of_output_csv_file_and_with_gold_standard(
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=file,
             gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION / file.name,
         )
@@ -114,7 +114,7 @@ def test_add_listed_value(test_adder):
         ]
     )
 
-    check_existence_of_output_csv_file_and_with_gold_standard(
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
         gold_standard_file=GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION,
     )
@@ -128,7 +128,7 @@ def test_add_listed_value(test_adder):
             f"File {file.name} is not supposed to be changed"
 
         print(f'TEST: checking amended feature profile {file.name}')
-        check_existence_of_output_csv_file_and_with_gold_standard(
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=file,
             gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION / file.name,
         )
