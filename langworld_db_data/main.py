@@ -1,6 +1,7 @@
 from pycldf import Dataset
 
 from langworld_db_data.cldfwriters.cldf_dataset_writer import CLDFDatasetWriter
+from langworld_db_data.filetools.csv_xls import check_csv_for_malformed_rows
 from langworld_db_data.filetools.json_toml_yaml import check_yaml_file
 from langworld_db_data.constants.paths import DATA_DIR, FILE_WITH_CLDF_DATASET_METADATA
 from langworld_db_data.mdlisters.custom_value_lister import CustomValueLister
@@ -13,6 +14,19 @@ from langworld_db_data.validators.genealogy_validator import GenealogyValidator
 
 
 def main():
+    print('\nRunning general checks of CSV and YAML files')
+
+    print('Checking YAML files')
+    for file in DATA_DIR.rglob('*.yaml'):
+        check_yaml_file(file, verbose=False)
+
+    print('Checking CSV files for malformed rows')
+    for file in DATA_DIR.rglob('*.csv'):
+        check_csv_for_malformed_rows(file)
+    # Check for uniqueness in columns cannot be done universally, it depends on a specific file
+
+    print('OK: General checks passed')
+
     # These will also run during testing, but it doesn't hurt to check again
     AssetValidator().validate()
     DoculectInventoryValidator().validate()
@@ -26,13 +40,6 @@ def main():
         must_raise_exception_at_value_name_mismatch=True,
         must_raise_exception_at_not_applicable_rule_breach=False,  # can set to True when existing profiles are amended
     ).validate()
-
-    # So far it seems unnecessary to create a whole validator class,
-    # so just running check_yaml_file() from filetools:
-    print(f'\nChecking YAML files')
-    for file in DATA_DIR.rglob('*.yaml'):
-        check_yaml_file(file, verbose=False)
-    # TODO move up, add general check of CSV
 
     print('\nWriting Markdown files')
     CustomValueLister().write_grouped_by_feature()
