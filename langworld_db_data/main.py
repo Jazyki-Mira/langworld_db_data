@@ -9,12 +9,14 @@ from langworld_db_data.validators.asset_validator import AssetValidator
 from langworld_db_data.validators.doculect_inventory_validator import DoculectInventoryValidator
 from langworld_db_data.validators.feature_profile_validator import FeatureProfileValidator
 from langworld_db_data.validators.feature_value_inventory_validator import FeatureValueInventoryValidator
+from langworld_db_data.validators.genealogy_validator import GenealogyValidator
 
 
 def main():
     # These will also run during testing, but it doesn't hurt to check again
     AssetValidator().validate()
     DoculectInventoryValidator().validate()
+    GenealogyValidator().validate()
     FeatureValueInventoryValidator().validate()
     # Strict mode triggers exception if value name does not match value name in an inventory for given value ID.
     # Since value name in feature profile is only there for readability, I could disable strict mode
@@ -30,6 +32,7 @@ def main():
     print(f'\nChecking YAML files')
     for file in DATA_DIR.rglob('*.yaml'):
         check_yaml_file(file, verbose=False)
+    # TODO move up, add general check of CSV
 
     print('\nWriting Markdown files')
     CustomValueLister().write_grouped_by_feature()

@@ -1,0 +1,147 @@
+id,en,ru
+altai,Altaic,Алтайские
+mongol,Mongolic,Монгольские
+foobar,Fubaric,Фубарские
+tung,Tungusic,Тунгусо-маньчжурские
+south_east_tung,Southeastern Tungusic,Амурские
+north_tung,Northern Tungusic,Сибирские
+south_tung,Southern Tungusic,Южные
+turk,Turkic,Тюркские
+oghur,Oghur,Булгарские
+old_turk,Old Turkic,Древнетюркские
+karluk,Karluk,Карлукские
+kipchak,Kipchak,Кыпчакские
+kyrg_kipchak,Kyrgyz-Kipchak,Киргизско-кыпчакские
+kipchak_nogai,Kipchak-Nogai,Кыпчакско-ногайские
+kipchak_cuman,Kipchak-Cuman,Кыпчакско-половецкие
+kipchak_bulgar,Kipchak-Bulgar,Поволжско-кыпчакские
+oghuz_turk,Oghuz Turkic,Огузские
+sayan_turk,Sayan Turkic,Саянские
+khak_turk,Khakas Turkic,Хакасские
+yakut_turk,Yakut Turkic,Якутские
+japon,Japonic,Японо-рюкюские
+afroas,Afroasiatic,Афразийские
+sem,Semitic,Семитские
+east_sem,East Semitic,Восточносемитские
+west_sem,West Semitic,Западносемитские
+cent_sem,Central Semitic,Центральносемитские
+north_sem,Northwest Semitic,Северозападносемитские
+canaan,Canaanite,Ханаанские
+aram,Aramaic,Арамейские
+neo_aram,Neo-Aramaic,Новоарамейские
+south_sem,South Semitic,Южносемитские
+ethio_sem,Ethiopian Semitic,Эфиосемитские
+dravid,Dravidian,Дравидийские
+gondwan,Gondwanian,Гондванские
+north_drav,Northern Dravidian,Северные
+cent_drav,Central Dravidian,Центральные
+south_cent_drav,South-Central Dravidian,Юго-восточные
+south_drav,Southern Dravidian,Южные
+yenisei,Yeniseian,Енисейские
+north_yen,Northern Yeniseian,Североенисейские
+south_yen,Southern Yeniseian,Южноенисейские
+isolate,Isolate,Изоляты
+indo_euro,Indo-European,Индоевропейские
+anatol,Anatolian,Анатолийские
+indo_iran,Indo-Iranian,Арийские
+nurist,Nuristani,Нуристанские
+indo_aryan,Indo-Aryan,Индоарийские
+cent_indo_aryan,Central Indo-Aryan,Центральные
+pahari,Pahari,Пахари
+bihari,Bihari,Бихари
+east_indo_aryan,Eastern Indo-Aryan,Восточные
+north_indo_aryan,Northwestern Indo-Aryan,Северо-западные
+south_indo_aryan,Southwestern Indo-Aryan,Юго-западные
+insu_indo_aryan,Insular Indo-Aryan,Островные
+iran,Iranian,Иранские
+north_east_iran,Northeastern Iranian,Северо-восточные
+north_west_iran,Northwestern Iranian,Северо-западные
+south_east_iran,Southeastern Iranian,Юго-восточные
+south_west_iran,Southwestern Iranian,Юго-западные
+dard,Dardic,Дардские
+armen,Armenian,Армянские
+balt,Baltic,Балтийские
+germ,Germanic,Германские
+east_germ,East Germanic,Восточногернманские
+west_germ,West Germanic,Западногерманские
+anglo_fris,Anglo-Frisian,Англо-фризские
+south_germ,South Germanic,Южногерманские
+north_germ,North Germanic,Скандинавские
+ital,Italic,Италийские
+rom,Romance,Романские
+east_rom,Eastern Romance,Балкано-романские
+balk_rom,Balkan Romance,Северодунайские
+italo_west,Italo-Western,Западно-романские
+gallo_rom,Gallo-Romance,Галло-романские
+ibero_rom,Iberian Romance,Иберо-романские
+italo_rom,Italo-Romance,Итало-романские
+occit_rom,Occitano-Romance,Окситано-романские
+rhaet_rom,Rhaeto-Romance,Ретороманские
+celt,Celtic,Кельтские
+britton,Brittonic,Бриттские
+goidel,Goidelic,Гойдельские
+cont_celt,Continental Celtic,Континентальные
+slav,Slavic,Славянские
+east_slav,East Slavic,Восточнославянские
+west_slav,West Slavic,Западнославянские
+lechit,Lechitic,Лехитские
+sorb,Sorbian,Серболужицкие
+czech_slovak,Czech-Slovak,Чешско-словацкие
+south_slav,South Slavic,Южнославянские
+south_east_slav,Southeastern Slavic,Восточные
+south_west_slav,Southwestern Slavic,Западные
+tochar,Tocharian,Тохарские
+caucas,Caucasian,Кавказские
+north_west_cauc,Northwest Caucasian,Абхазо-адыгские
+abazgi,Abazgi,Абхазо-абазинские
+circas,Circassian,Адыгские
+ubykh,Ubykh,Убыхские
+kartvel,Kartvelian,Картвельские
+north_kartv,North Kartvelian,Севернокартвельские
+south_kartv,South Kartvelian,Южнокартвельские
+north_east_cauc,Northeast Caucasian,Нахско-дагестанские
+avar_andi,Avar-Andic,Аваро-андо-цезские
+avar,Avar,Аварские
+andi,Andic,Андийские
+tsez,Tsezic,Цезские
+darg,Dargic,Даргинские
+lak,Lak,Лакские
+lezg,Lezgic,Лезгинские
+nakh,Nakh,Нахские
+mande,Mande,Манде
+western,Western,Западные
+manding,Manding,Манден
+manding_west,Manding-West,Северо-западные
+manding_east,Manding-East,Восточные
+mokole,Mokole,Моколе
+jogo_jero,Jogo-Jero,Джого-джери
+susu_jall,Susu-Jallomke,Сусу-дьялонке
+south_west_mande,Southwestern Mande,Юго-западная
+soni_bozo,Soninke-Bozo,Сонинке-бозо
+south_east_mande,Southeastern,Юго-восточные
+south_mande,South Mande,Южные
+east_mande,East Mande,Восточные
+ural,Uralic,Уральские
+samoyed,Samoyedic,Самодийские
+north_samo,Northern Samoyed,Северные
+south_samo,Southern Samoyed,Южные
+finno_ugr,Finno-Ugric,Финно-угорские
+ugric,Ugric,Угорские
+ob_ugric,Ob-Ugric,Обско-угорские
+finno_perm,Finno-Permic,Финно-пермские
+permic,Permic,Пермские
+finno_volga,Finno-Volgaic,Финно-волжские
+mari,Mari,Марийские
+mordv,Mordvinic,Мордовские
+finn,Finnic,Прибалтийско-финские
+sami,Sami,Саамские
+hurro_urar,Hurro-Urartian,Хуррито-урартские
+chuk_kamch,Chukotko-Kamchatkan,Чукотско-камчатские
+north_chuk_kamch,North Chukotko-Kamchatkan,Северные
+south_chuk_kamch,South Chukotko-Kamchatkan,Южные
+eskimo_aleut,Eskimo-Aleut,Эскимосско-алеутские
+aleut,Aleut,Алеутские
+eskimo,Eskimo,Эскимосские
+inuit,Inuit,Инуитские
+yupik,Yupik,Юпикские
+yukag,Yukaghir,Юкагирские
