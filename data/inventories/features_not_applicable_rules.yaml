@@ -8,6 +8,10 @@ B-1:
     - B-3
     - B-4
     - B-5
+B-4:
+  trigger: B-4-2
+  features_to_get_not_applicable:
+    - B-5
 B-6:
   trigger: B-6-4
   features_to_get_not_applicable:
