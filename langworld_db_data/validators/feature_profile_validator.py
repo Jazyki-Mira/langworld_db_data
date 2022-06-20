@@ -5,6 +5,7 @@ from langworld_db_data.constants.paths import (
     FEATURE_PROFILES_DIR,
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NOT_APPLICABLE_RULES,
+    FILE_WITH_VALUE_TYPES,
 )
 from langworld_db_data.featureprofiletools.feature_profile_reader import FeatureProfileReader
 from langworld_db_data.filetools.csv_xls import (
@@ -27,6 +28,7 @@ class FeatureProfileValidator:
             dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
             file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
             file_with_rules_for_not_applicable_value_type: Path = FILE_WITH_NOT_APPLICABLE_RULES,
+            file_with_value_types: Path = FILE_WITH_VALUE_TYPES,
             must_raise_exception_at_value_name_mismatch: bool = True,
             must_raise_exception_at_not_applicable_rule_breach: bool = False,
     ):
@@ -34,6 +36,7 @@ class FeatureProfileValidator:
         self.reader = FeatureProfileReader()
 
         self.rules_for_not_applicable_value_type = read_json_toml_yaml(file_with_rules_for_not_applicable_value_type)
+        self.valid_value_types = [row['id'] for row in read_csv(file_with_value_types, read_as='dicts')]
 
         for file in self.feature_profiles:
             check_csv_for_malformed_rows(file)
@@ -62,7 +65,7 @@ class FeatureProfileValidator:
             if not row['feature_id']:
                 raise FeatureProfileValidatorError(f'File {file.stem} does not contain feature ID in row {i + 1}')
 
-            if row['value_type'] not in ('listed', 'custom', 'not_stated', 'explicit_gap', 'not_applicable'):
+            if row['value_type'] not in self.valid_value_types:
                 raise FeatureProfileValidatorError(f'File {file.stem} contains invalid value type in row {i + 1}')
 
             if row['value_type'] == 'custom':

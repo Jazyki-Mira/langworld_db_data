@@ -1,0 +1,6 @@
+id,en,ru
+listed,Value included in list of approved values,Значение из утвержденного списка значений признака
+custom,Custom value that has not yet included in list of approved values,"Значение, не включенное в утвержденный список значений"
+not_stated,No information on the feature was found in the encyclopedia,В энциклопедии не содержится информации о данном признаке
+explicit_gap,Encyclopedia explicitly states that no data is present on the given feature,В энциклопедии содержится явное указание на отсутствие информации о данном признаке
+not_applicable,No value can be chosen in this feature because of a value in a different feature,В этом признаке не может быть выбрано ни одно из значений из-за значения другого признака
