@@ -114,7 +114,7 @@ A-13-9,A-13,"Labial, coronal, dorsal, guttural and laringal","Лабиальны
 A-13-10,A-13,"Labial, coronal, dorsal, velar-uvular and laringal","Лабиальные, переднеязычные, среднеязычные, велярно-увулярные и гортанные"
 A-14-1,A-14,Only bilabial,Только билабиальные
 A-14-2,A-14,Bilabial and labiodental,Билабиальные и лабиодентальные
-A-14-3,A-14,Dental-alveolar,Дентально-альвеорялрные
+A-14-3,A-14,Dental-alveolar,Дентально-альвеолярные
 A-15-1,A-15,Dental,Дентальные
 A-15-2,A-15,Interdental,Интердентальные
 A-15-3,A-15,Alveolar,Альвеолярные
@@ -990,6 +990,7 @@ K-6-4,K-6,Four types of conjugation,Четыре типа спряжения
 K-6-5,K-6,Six types of conjugation,Шесть типов спряжения
 K-6-6,K-6,Forteen types of conjugation,Четырнадцать типов спряжения
 K-6-7,K-6,Nine types of conjugation,Девять типов спряжения
+K-6-8,K-6,Ten types of conjugation,Десять типов спряжения
 K-7-1,K-7,No verb agreement,Глагольное согласование отсутствует
 K-7-2,K-7,Subject,Субъектное
 K-7-3,K-7,Subject and object,Субъектное и объектное
@@ -1156,6 +1157,7 @@ L-1-23,L-1,"Derivation, conversion, reduplication, compounding and abbreviation"
 L-1-24,L-1,Derivation and conversion,Аффиксация и конверсия
 L-1-25,L-1,"Derivation, compounding, conversion, and clipping","Аффиксация, словосложение, конверсия, усечение"
 L-1-26,L-1,"Affixation, conversion, compounding, abbreviation, reduplication, and clipping","Аффиксация, конверсия, словосложение, аббревиация, редупликация и усечение"
+L-1-27,L-1,"Affixation, derivation, incorporation, reduplication, and analytic constructions","Аффиксация, деривация, инкорпорация, редупликация и аналитическое конструирование"
 L-2-1,L-2,Prefixes,Префиксы
 L-2-2,L-2,Suffixes,Суффиксы
 L-2-3,L-2,Prefixes and suffixes,Префиксы и суффиксы
