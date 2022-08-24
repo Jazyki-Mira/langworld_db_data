@@ -115,7 +115,7 @@ macedonian,language,0,0,Macedonian,македонский,,,,,south_east_slav,mk
 old_church_slavonic,language,1,0,Old Church Slavonic,старославянский,,,"Old Slavonic, Old Church Slavic, Old Slavic, Pal(a)eo-Slavic","церковнославянский, древнецерковнославянский, староцерковнославянский",south_east_slav,chu,chur1257,41.1391,22.5025,mkd,13,36,1,,
 old_russian,language,1,0,Old Russian,древнерусский,,,"Old East Slavic, (Old) Ruthenian, Rusian",,east_slav,orv,oldr1238,50.4438,30.5784,ukr,13,449,1,,
 polabian,language,1,0,Polabian,полабский,,,,"древянский, древяно-полабский, залабский, вендский, люнебургско-вендский",lechit,pox,pola1255,52.9666,11.15,deu,13,433,1,,
-polish,language,0,0,Polish,польский,,,,польск.,lechit,pol,poli1260,52.2166,21.0333,pol,13,373,1,,
+polish,language,0,0,Polish,польский,,,,,lechit,pol,poli1260,52.2166,21.0333,pol,13,373,1,,
 russian,language,0,0,Russian,русский,,,,великорусский,east_slav,rus,russ1263,55.7558,37.6176,rus,13,476,1,,
 serbocroatian,language,0,0,Serbocroatian,сербохорватский,,,"Serbo-Croat, Serbo-Croat-Bosnian (SCB), Bosnian-Croatian-Serbian (BCS), Bosnian-Croatian-Montenegrin-Serbian (BCMS)","сербский, хорватский, боснийский",south_west_slav,hbs,sout1528,44.8205,20.4622,srb,13,151,1,,
 slovak,language,0,0,Slovak,словацкий,,,Slovakian,венгерословенский,czech_slovak,slk,slov1269,48.1447,17.1127,svk,13,293,1,,
