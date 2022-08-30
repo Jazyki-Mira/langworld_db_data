@@ -58,45 +58,47 @@ class FeatureProfileValidator:
             self._validate_one_file(feature_profile)
 
     def _validate_one_file(self, file: Path):
-        # print(f'Checking feature profile {file.stem}')
-        rows = read_csv(file, read_as='dicts')
+        try:
+            data_from_profile = self.reader.read_feature_profile_as_dict_from_file(file)
+        except ValueError as e:
+            raise FeatureProfileValidatorError(e)
 
-        for i, row in enumerate(rows, start=1):
-            if not row['feature_id']:
-                raise FeatureProfileValidatorError(f'File {file.stem} does not contain feature ID in row {i + 1}')
+        for i, feature_id in enumerate(data_from_profile.keys(), start=1):
+            # possible absence of feature ID in file is caught when reading data_from_profile
+            data_row = data_from_profile[feature_id]
 
-            if row['value_type'] not in self.valid_value_types:
+            if data_row.value_type not in self.valid_value_types:
                 raise FeatureProfileValidatorError(f'File {file.stem} contains invalid value type in row {i + 1}')
 
-            if row['value_type'] == 'custom':
-                if row['value_id']:
+            if data_row.value_type == 'custom':
+                if data_row.value_id:
                     raise FeatureProfileValidatorError(
-                        f'File {file.stem} must not contain value ID {row["value_id"]} in row {i + 1} '
-                        f'or value type must be "listed"'
+                        f'File {file.stem} must not contain value ID {data_row.value_id} '
+                        f'in row {i + 1} or value type must be "listed"'
                     )
-                if not row['value_ru']:
+                if not data_row.value_ru:
                     raise FeatureProfileValidatorError(
                         f'File {file.stem} does not contain value text in row {i + 1}'
                     )
 
-            elif row['value_type'] in ('not_stated', 'not_applicable', 'explicit_gap'):
-                if row['value_id'] or row['value_ru']:
+            elif data_row.value_type in ('not_stated', 'not_applicable', 'explicit_gap'):
+                if data_row.value_id or data_row.value_ru:
                     raise FeatureProfileValidatorError(
                         f'File {file.stem} must not contain value ID or value text in row {i + 1} '
                         f'or value type must be different'
                     )
 
-            elif row['value_type'] == 'listed':
-                if not re.match(rf"{row['feature_id']}-\d+", row['value_id']):
+            elif data_row.value_type == 'listed':
+                if not re.match(rf"{feature_id}-\d+", data_row.value_id):
                     raise FeatureProfileValidatorError(
-                        f'File {file.stem} contains invalid value ID {row["value_id"]} in row {i + 1}'
+                        f'File {file.stem} contains invalid value ID {data_row.value_id} in row {i + 1}'
                     )
 
-                if row['value_ru'] != self.value_ru_for_value_id[row['value_id']]:
+                if data_row.value_ru != self.value_ru_for_value_id[data_row.value_id]:
                     message = (
-                        f'File {file.stem}, row {i + 1}: value {row["value_ru"]} for value ID {row["value_id"]} '
+                        f'File {file.stem}, row {i + 1}: value {data_row.value_ru} for value ID {data_row.value_id} '
                         f'in row {i + 1} does not match name of this value in inventory '
-                        f'(value ID {row["value_id"]} should be {self.value_ru_for_value_id[row["value_id"]]})'
+                        f'(value ID {data_row.value_id} should be {self.value_ru_for_value_id[data_row.value_id]})'
                     )
                     if self.must_raise_exception_at_value_name_mismatch:
                         raise FeatureProfileValidatorError(message)
@@ -104,8 +106,6 @@ class FeatureProfileValidator:
                         print(message)
 
         breaches_of_rules_for_not_applicable = []
-        data_from_profile = self.reader.read_feature_profile_as_dict_from_file(file)
-        # TODO I can refactor the code above (that handles rows) to work with this dictionary
 
         rules = self.rules_for_not_applicable_value_type
         for feature_id in rules:

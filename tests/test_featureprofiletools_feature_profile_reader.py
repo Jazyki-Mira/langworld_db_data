@@ -53,6 +53,15 @@ def test_read_feature_profile_as_dict_from_file(test_reader):
 
     assert dict_ == benchmark_dict
 
+
+def test_read_feature_profile_as_dict_from_file_fails_with_bad_file(test_reader):
+    with pytest.raises(ValueError) as e:
+        test_reader.read_feature_profile_as_dict_from_file(
+            DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / 'corsican_bad_no_feature_ID.csv'
+        )
+    assert 'does not contain feature ID in row 4' in str(e)
+
+
 @pytest.mark.parametrize(
     'doculect_id, feature_id, expected_output',
     [
