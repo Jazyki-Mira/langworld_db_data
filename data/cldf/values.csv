@@ -14915,7 +14915,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14914,orok,M-3,SOV,M-3-2,,,SOV,
 14915,orok,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
 14916,orok,N-5,Asyndeton dominant,N-5-2,,,Преобладает бессоюзная,
-14917,ossetian,A-1,Five,A-1-4,,,Пять,Семь гласных по количству степеней подъема не интерпретируются.
+14917,ossetian,A-1,Five,A-1-4,,,Пять,Семь гласных по количеству степеней подъема не интерпретируются.
 14918,ossetian,A-3,,,,,Гласные по признаку ряда терминологически не интерпретируются,
 14919,ossetian,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,
 14920,ossetian,A-5,No vowel opposition in labialization,A-5-1,,,Противопоставление гласных по лабиализации отсутствует,
