@@ -67,7 +67,6 @@ def convert_xls_to_csv(
         delimiter: CSVDelimiter = ',',
         overwrite: bool = True,
 ):
-    # TODO think about decorator for this:
     if not overwrite and path_to_output_csv_file.exists():
         raise FileExistsError(f'File {path_to_output_csv_file} already exists')
 
