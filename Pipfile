@@ -11,6 +11,8 @@ openpyxl = "*"
 pytest-cov = "*"
 pycldf = "*"
 pyperclip = "*"
+yapf = "*"
+flake8 = "*"
 
 [dev-packages]
 
