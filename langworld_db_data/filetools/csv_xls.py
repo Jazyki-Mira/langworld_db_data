@@ -34,10 +34,8 @@ def check_csv_for_malformed_rows(path_to_file: Path):
         if len(row) in least_frequent_numbers_of_columns:
             indices_of_likely_invalid_rows.append(str(i))
 
-    raise IndexError(
-        f'File {path_to_file.name}: Following rows have abnormal number of columns: '
-        f'{", ".join(indices_of_likely_invalid_rows)}'
-    )
+    raise IndexError(f'File {path_to_file.name}: Following rows have abnormal number of columns: '
+                     f'{", ".join(indices_of_likely_invalid_rows)}')
 
 
 def check_csv_for_repetitions_in_column(path_to_file: Path, column_name: str):
@@ -56,16 +54,15 @@ def check_csv_for_repetitions_in_column(path_to_file: Path, column_name: str):
 
     if non_unique_keys:
         raise ValueError(
-            f'File {path_to_file} has repeating values in column <{column_name}>: {", ".join(non_unique_keys)}'
-        )
+            f'File {path_to_file} has repeating values in column <{column_name}>: {", ".join(non_unique_keys)}')
 
 
 def convert_xls_to_csv(
-        path_to_input_excel_file: Path,
-        sheet_name: str,
-        path_to_output_csv_file: Path,
-        delimiter: CSVDelimiter = ',',
-        overwrite: bool = True,
+    path_to_input_excel_file: Path,
+    sheet_name: str,
+    path_to_output_csv_file: Path,
+    delimiter: CSVDelimiter = ',',
+    overwrite: bool = True,
 ):
     if not overwrite and path_to_output_csv_file.exists():
         raise FileExistsError(f'File {path_to_output_csv_file} already exists')
@@ -87,9 +84,9 @@ def convert_xls_to_csv(
 
 
 def read_csv(
-        path_to_file: Path,
-        read_as: Literal['dicts', 'plain_rows', 'plain_rows_no_header'],
-        delimiter: CSVDelimiter = ',',
+    path_to_file: Path,
+    read_as: Literal['dicts', 'plain_rows', 'plain_rows_no_header'],
+    delimiter: CSVDelimiter = ',',
 ) -> list[Union[dict[str, str], list[str]]]:
     """Opens CSV file and reads it as plain rows (list of lists)
     or list of dictionaries (top row is considered row with keys,
@@ -109,9 +106,10 @@ def read_csv(
         return list(reader)[1:] if read_as == 'plain_rows_no_header' else list(reader)
 
 
-def read_dict_from_2_csv_columns(
-        path_to_file: Path, key_col: str, val_col: str, delimiter: CSVDelimiter = ','
-) -> dict[str, str]:
+def read_dict_from_2_csv_columns(path_to_file: Path,
+                                 key_col: str,
+                                 val_col: str,
+                                 delimiter: CSVDelimiter = ',') -> dict[str, str]:
     """Reads CSV file, returns data of two columns: one as keys, the other one as values.
     """
     if key_col == val_col:
@@ -142,9 +140,7 @@ def read_dict_from_2_csv_columns(
     return {k: v for k, v in zip(key_column, value_column)}
 
 
-def write_csv(
-        rows: Union[list, tuple], path_to_file: Path, overwrite: bool, delimiter: CSVDelimiter
-):
+def write_csv(rows: Union[list, tuple], path_to_file: Path, overwrite: bool, delimiter: CSVDelimiter):
     """Writes rows to CSV file. All rows (items of main list) must be
     of same type (all lists, all tuples, all dicts or all NamedTuples).
 

@@ -11,6 +11,7 @@ class AdderError(Exception):
 
 
 class Adder:
+
     def __init__(
         self,
         *,

@@ -9,9 +9,8 @@ from tests.paths import (
     OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES,
 )
 
-GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION = (
-        DIR_WITH_ADDERS_TEST_FILES / 'features_listed_values_gold_standard_for_listed_value_adder.csv'
-)
+GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION = (DIR_WITH_ADDERS_TEST_FILES /
+                                             'features_listed_values_gold_standard_for_listed_value_adder.csv')
 GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION = OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / 'gold_standard'
 
 STEMS_OF_EXPECTED_OUTPUT_FILES = ('catalan', 'corsican', 'franco_provencal')
@@ -37,9 +36,21 @@ def test__add_to_inventory_of_listed_values_throws_exception_with_invalid_featur
 
 def test__add_to_inventory_of_listed_values_throws_exception_with_existing_value(test_adder):
     for bad_args in [
-        {'feature_id': 'A-3', 'new_value_en': 'Central and back', 'new_value_ru': 'Средний и задний'},
-        {'feature_id': 'A-3', 'new_value_en': 'Some different value', 'new_value_ru': 'Средний и задний'},
-        {'feature_id': 'A-3', 'new_value_en': 'Central and back', 'new_value_ru': 'Что-то новое'},
+        {
+            'feature_id': 'A-3',
+            'new_value_en': 'Central and back',
+            'new_value_ru': 'Средний и задний'
+        },
+        {
+            'feature_id': 'A-3',
+            'new_value_en': 'Some different value',
+            'new_value_ru': 'Средний и задний'
+        },
+        {
+            'feature_id': 'A-3',
+            'new_value_en': 'Central and back',
+            'new_value_ru': 'Что-то новое'
+        },
     ]:
         with pytest.raises(ListedValueAdderError) as e:
             test_adder.add_listed_value(**bad_args)
@@ -71,8 +82,7 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
             'первые, вторые и третьи',  # it is also lowercase in feature profile
             'третьи, вторые и первые',  # first word is capitalized in feature profile
             'Первые, третьи и вторые'
-        ]
-    )
+        ])
 
     for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
         assert (OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / f'{stem}.csv').exists(), \
@@ -92,9 +102,21 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
 
 def test_add_listed_value_throws_exception_with_empty_args(test_adder):
     for bad_set_of_values in [
-        {'feature_id': '', 'new_value_en': 'Value', 'new_value_ru': 'Значение'},
-        {'feature_id': 'A-1', 'new_value_en': '', 'new_value_ru': 'Значение'},
-        {'feature_id': 'A-1', 'new_value_en': 'Value', 'new_value_ru': ''},
+        {
+            'feature_id': '',
+            'new_value_en': 'Value',
+            'new_value_ru': 'Значение'
+        },
+        {
+            'feature_id': 'A-1',
+            'new_value_en': '',
+            'new_value_ru': 'Значение'
+        },
+        {
+            'feature_id': 'A-1',
+            'new_value_en': 'Value',
+            'new_value_ru': ''
+        },
     ]:
         with pytest.raises(ListedValueAdderError) as e:
             test_adder.add_listed_value(**bad_set_of_values)
@@ -107,12 +129,7 @@ def test_add_listed_value(test_adder):
         feature_id='A-11',
         new_value_en='New value, listed with a comma',
         new_value_ru='Есть первые, вторые и третьи',
-        custom_values_to_rename=[
-            'первые, вторые и третьи',
-            'третьи, вторые и первые',
-            'Первые, третьи и вторые'
-        ]
-    )
+        custom_values_to_rename=['первые, вторые и третьи', 'третьи, вторые и первые', 'Первые, третьи и вторые'])
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,

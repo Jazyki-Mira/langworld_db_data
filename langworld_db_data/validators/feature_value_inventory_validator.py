@@ -6,11 +6,8 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NAMES_OF_FEATURES,
 )
-from langworld_db_data.filetools.csv_xls import (
-    check_csv_for_malformed_rows,
-    check_csv_for_repetitions_in_column,
-    read_csv
-)
+from langworld_db_data.filetools.csv_xls import (check_csv_for_malformed_rows, check_csv_for_repetitions_in_column,
+                                                 read_csv)
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -19,6 +16,7 @@ class FeatureValueInventoryValidatorError(ValidatorError):
 
 
 class FeatureValueInventoryValidator:
+
     def __init__(
         self,
         file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
@@ -51,26 +49,20 @@ class FeatureValueInventoryValidator:
 
     def _validate_listed_values(self):
 
-        feature_id_for_value_id = {
-            row['id']: row['feature_id'] for row in self.rows_with_listed_values
-        }
+        feature_id_for_value_id = {row['id']: row['feature_id'] for row in self.rows_with_listed_values}
 
         for value_id in feature_id_for_value_id:
             if not value_id.startswith(feature_id_for_value_id[value_id]):
                 raise FeatureValueInventoryValidatorError(
-                    f'Value ID {value_id} does not start with feature ID {feature_id_for_value_id[value_id]}'
-                )
+                    f'Value ID {value_id} does not start with feature ID {feature_id_for_value_id[value_id]}')
             if not re.match(rf'{feature_id_for_value_id[value_id]}-\d+', value_id):
                 raise FeatureValueInventoryValidatorError(
-                    f'Value ID {value_id} was not formed correctly from feature ID {feature_id_for_value_id[value_id]}'
-                )
+                    f'Value ID {value_id} was not formed correctly from feature ID {feature_id_for_value_id[value_id]}')
 
         print(f'OK: all value IDs are derived from feature ID')
 
         # Check uniqueness of Russian and English value names within one feature
-        names_of_listed_values_for_feature_id = {
-            feature_id: [] for feature_id in self.feature_ids
-        }
+        names_of_listed_values_for_feature_id = {feature_id: [] for feature_id in self.feature_ids}
 
         for locale in ('en', 'ru'):
 
@@ -86,8 +78,7 @@ class FeatureValueInventoryValidator:
 
                 if duplicate_value_names:
                     raise FeatureValueInventoryValidatorError(
-                        f'Duplicate value names found for feature {feature_id}: {", ".join(duplicate_value_names)}'
-                    )
+                        f'Duplicate value names found for feature {feature_id}: {", ".join(duplicate_value_names)}')
 
         print(f'OK: all values within each feature have unique names')
 

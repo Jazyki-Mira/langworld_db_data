@@ -36,4 +36,3 @@ def test_write_grouped_by_feature():
 
     assert gold_content == test_content
     output_file.unlink()
-

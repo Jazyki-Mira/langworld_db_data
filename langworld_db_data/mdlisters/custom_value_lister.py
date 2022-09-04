@@ -9,17 +9,14 @@ from langworld_db_data.mdlisters.abstract_value_lister import AbstractValueListe
 
 
 class CustomValueLister(AbstractValueLister):
+
     def __init__(self, dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR):
         super().__init__(value_type='custom', dir_with_feature_profiles=dir_with_feature_profiles)
 
-    def write_grouped_by_volume_and_doculect(
-            self, output_file: Path = DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT
-    ):
-        content = (
-            '# Значения типа `custom` с группировкой по томам и языкам\n'
-            'Оглавление файла открывается кнопкой сверху слева рядом с индикатором количества строк.\n\n'
-            'Файл с группировкой по **признакам** лежит [здесь](custom_values_by_feature.md).\n'
-        )
+    def write_grouped_by_volume_and_doculect(self, output_file: Path = DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT):
+        content = ('# Значения типа `custom` с группировкой по томам и языкам\n'
+                   'Оглавление файла открывается кнопкой сверху слева рядом с индикатором количества строк.\n\n'
+                   'Файл с группировкой по **признакам** лежит [здесь](custom_values_by_feature.md).\n')
         current_volume = ''
 
         for volume_doculect_id in self.filtered_rows_for_volume_doculect_id:
@@ -31,15 +28,11 @@ class CustomValueLister(AbstractValueLister):
                 content += f'## Том {volume}\n'
                 current_volume = volume
 
-            content += (
-                f'### [{self.doculect_ru_for_doculect_id[doculect_id]}]'
-                f'(../feature_profiles/{doculect_id}.csv)\n\n'
-            )
+            content += (f'### [{self.doculect_ru_for_doculect_id[doculect_id]}]'
+                        f'(../feature_profiles/{doculect_id}.csv)\n\n')
             for row in self.filtered_rows_for_volume_doculect_id[volume_doculect_id]:
-                content += (
-                    f'- **{row["feature_id"]}** ({self.feature_ru_for_feature_id[row["feature_id"]]}): '
-                    f'{row["value_ru"]}'
-                )
+                content += (f'- **{row["feature_id"]}** ({self.feature_ru_for_feature_id[row["feature_id"]]}): '
+                            f'{row["value_ru"]}')
                 if row['comment_ru']:
                     content += f'\n\n\t_Комментарий: {row["comment_ru"]}_'
                 content += '\n'
@@ -49,36 +42,26 @@ class CustomValueLister(AbstractValueLister):
         with output_file.open(mode='w+', encoding='utf-8') as fh:
             fh.write(content)
 
-    def write_grouped_by_feature(
-        self, output_file: Path = DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_FEATURE
-    ):
+    def write_grouped_by_feature(self, output_file: Path = DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_FEATURE):
         rows_with_custom_values = []
 
         for volume_doculect_id in self.filtered_rows_for_volume_doculect_id:
             if self.filtered_rows_for_volume_doculect_id[volume_doculect_id]:
-                rows_with_custom_values += [
-                    [
-                        volume_doculect_id.split(':')[1],
-                        row['feature_id'],
-                        row['value_ru'],
-                        row['comment_ru']
-                    ]
-                    for row in self.filtered_rows_for_volume_doculect_id[volume_doculect_id]
-                ]
+                rows_with_custom_values += [[
+                    volume_doculect_id.split(':')[1], row['feature_id'], row['value_ru'], row['comment_ru']
+                ] for row in self.filtered_rows_for_volume_doculect_id[volume_doculect_id]]
 
         rows_sorted_by_feature = sorted(
             rows_with_custom_values,
             key=lambda row: (
                 row[1].split('-')[0],  # feature letter
                 int(row[1].split('-')[1]),  # feature number
-                row[2])
-        )
+                row[2]))
 
         content = (
             '# Значения типа `custom` с группировкой по признакам\n'
             'Оглавление файла открывается кнопкой сверху слева рядом с индикатором количества строк.\n\n'
-            'Файл с группировкой по **томам и языкам** лежит [здесь](custom_values_by_volume_and_doculect.md).\n'
-        )
+            'Файл с группировкой по **томам и языкам** лежит [здесь](custom_values_by_volume_and_doculect.md).\n')
 
         current_feature = ''
         current_value = ''
@@ -93,11 +76,9 @@ class CustomValueLister(AbstractValueLister):
             value = row[2]
 
             if value.lower() != current_value.lower():
-                content += (
-                    f'\n- {row[2]}: '
-                    f'[{self.doculect_ru_for_doculect_id[row[0]]}]'
-                    f'(../feature_profiles/{row[0]}.csv)'
-                )
+                content += (f'\n- {row[2]}: '
+                            f'[{self.doculect_ru_for_doculect_id[row[0]]}]'
+                            f'(../feature_profiles/{row[0]}.csv)')
                 current_value = value
             else:
                 content += f', [{self.doculect_ru_for_doculect_id[row[0]]}](../feature_profiles/{row[0]}.csv)'

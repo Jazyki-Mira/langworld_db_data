@@ -23,9 +23,7 @@ class FeatureProfileReader:
         return self.read_feature_profile_as_dict_from_file(dir_with_feature_profiles / f'{doculect_id}.csv')
 
     @staticmethod
-    def read_feature_profile_as_dict_from_file(
-        file: Path,
-    ) -> dict[str, ValueForFeatureProfileDictionary]:
+    def read_feature_profile_as_dict_from_file(file: Path, ) -> dict[str, ValueForFeatureProfileDictionary]:
         """
         Accepts path to feature profile.
 
@@ -43,14 +41,12 @@ class FeatureProfileReader:
 
         return feature_id_to_row_dict
 
-    def read_value_for_doculect_and_feature(
-            self,
-            doculect_id: str,
-            feature_id: str,
-            dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
-            copy_to_clipboard: bool = True,
-            verbose: bool = True
-    ) -> dict:
+    def read_value_for_doculect_and_feature(self,
+                                            doculect_id: str,
+                                            feature_id: str,
+                                            dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
+                                            copy_to_clipboard: bool = True,
+                                            verbose: bool = True) -> dict:
         """A helper function to get value for given feature in given doculect.
         Prints and returns found value type, ID, value text, and comment.
         **Copies value text to clipboard** (by default).
@@ -71,7 +67,8 @@ class FeatureProfileReader:
             raise KeyError(f'{feature_id=} not found for {doculect_id=}')
 
         data_to_return = {
-            key: getattr(loaded_data_for_feature, key) for key in ('value_type', 'value_id', 'value_ru', 'comment_ru')
+            key: getattr(loaded_data_for_feature, key)
+            for key in ('value_type', 'value_id', 'value_ru', 'comment_ru')
         }
 
         if verbose:

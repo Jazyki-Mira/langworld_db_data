@@ -3,11 +3,9 @@ from pathlib import Path
 from langworld_db_data.filetools.csv_xls import read_csv
 
 
-def check_existence_of_output_csv_file_and_compare_with_gold_standard(
-    output_file: Path,
-    gold_standard_file: Path,
-    unlink_if_successful: bool = True
-):
+def check_existence_of_output_csv_file_and_compare_with_gold_standard(output_file: Path,
+                                                                      gold_standard_file: Path,
+                                                                      unlink_if_successful: bool = True):
     """Checks if output file exists first, then
     compares CSV output with a gold standard file
     on a line by line basis.

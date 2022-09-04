@@ -8,8 +8,7 @@ from langworld_db_data.constants.paths import (
 from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
 from langworld_db_data.featureprofiletools.feature_profile_reader import FeatureProfileReader
 from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (
-    FeatureProfileWriterFromDictionary
-)
+    FeatureProfileWriterFromDictionary)
 from langworld_db_data.filetools.json_toml_yaml import read_json_toml_yaml
 
 
@@ -26,6 +25,7 @@ class NotApplicableSetter:
     that are wrong (i.e. not of type 'not_stated' and/or have some value text).
     It is a job of a validator to alert about such cases.
     """
+
     def __init__(
         self,
         dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
@@ -49,11 +49,9 @@ class NotApplicableSetter:
             for feature_id in self.rules:
 
                 # noinspection PyTypeChecker
-                print(
-                    f"Feature ID {feature_id}, value ID to trigger 'not_applicable' rules for this feature: "
-                    f"{self.rules[feature_id]['trigger']}. "
-                    f'Value in {file.stem}: {data_from_profile[feature_id].value_id}'
-                )
+                print(f"Feature ID {feature_id}, value ID to trigger 'not_applicable' rules for this feature: "
+                      f"{self.rules[feature_id]['trigger']}. "
+                      f'Value in {file.stem}: {data_from_profile[feature_id].value_id}')
 
                 # noinspection PyTypeChecker
                 if data_from_profile[feature_id].value_id == self.rules[feature_id]['trigger']:

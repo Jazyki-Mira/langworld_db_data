@@ -13,6 +13,7 @@ from langworld_db_data.filetools.csv_xls import read_csv, read_dict_from_2_csv_c
 
 
 class CLDFDatasetWriter:
+
     def __init__(
         self,
         dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
@@ -21,9 +22,7 @@ class CLDFDatasetWriter:
         file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
     ):
         self.listed_values = read_csv(file_with_listed_values, read_as='dicts')
-        self.value_en_for_value_id = read_dict_from_2_csv_columns(
-            file_with_listed_values, key_col='id', val_col='en'
-        )
+        self.value_en_for_value_id = read_dict_from_2_csv_columns(file_with_listed_values, key_col='id', val_col='en')
 
         self.doculects = read_csv(file_with_doculects, read_as='dicts')
         self.features = read_csv(file_with_features, read_as='dicts')
@@ -46,33 +45,38 @@ class CLDFDatasetWriter:
         # CodeTable
         listed_values = [
             {
-                'ID': row['id'], 'Parameter_ID': row['feature_id'], 'Name': row['en'], 'Description': '',
+                'ID': row['id'],
+                'Parameter_ID': row['feature_id'],
+                'Name': row['en'],
+                'Description': '',
                 # custom columns:
                 'Name_RU': row['ru']
-            }
-            for row in self.listed_values
+            } for row in self.listed_values
         ]
 
         # ParameterTable
         features = [
             {
-                'ID': row['id'], 'Name': row['en'], 'Description': '',
+                'ID': row['id'],
+                'Name': row['en'],
+                'Description': '',
                 # custom columns:
                 'Name_RU': row['ru']
-            }
-            for row in self.features
+            } for row in self.features
         ]
 
         languages = [
             {
-                'ID': row['id'], 'Name': row['name_en'], 'Macroarea': '',
-                'Latitude': row['latitude'], 'Longitude': row['longitude'],
+                'ID': row['id'],
+                'Name': row['name_en'],
+                'Macroarea': '',
+                'Latitude': row['latitude'],
+                'Longitude': row['longitude'],
                 'Glottocode': row['glottocode'].split(', '),
                 'ISO639P3code': row['iso_639_3'].split(', '),
                 # custom columns:
                 'Name_RU': row['name_ru']
-            }
-            for row in self.doculects
+            } for row in self.doculects
         ]
 
         value_table_rows = []

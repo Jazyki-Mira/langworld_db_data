@@ -1,11 +1,8 @@
 from pathlib import Path
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_DOCULECTS, FILE_WITH_GENEALOGY_NAMES
-from langworld_db_data.filetools.csv_xls import (
-    check_csv_for_malformed_rows,
-    check_csv_for_repetitions_in_column,
-    read_csv
-)
+from langworld_db_data.filetools.csv_xls import (check_csv_for_malformed_rows, check_csv_for_repetitions_in_column,
+                                                 read_csv)
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -14,16 +11,15 @@ class DoculectInventoryValidatorError(ValidatorError):
 
 
 class DoculectInventoryValidator:
+
     def __init__(
-            self,
-            dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
-            file_with_doculects: Path = FILE_WITH_DOCULECTS,
-            file_with_genealogy_names: Path = FILE_WITH_GENEALOGY_NAMES,
+        self,
+        dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
+        file_with_doculects: Path = FILE_WITH_DOCULECTS,
+        file_with_genealogy_names: Path = FILE_WITH_GENEALOGY_NAMES,
     ):
         self.feature_profiles: list[Path] = sorted(list(dir_with_feature_profiles.glob('*.csv')))
-        self.names_of_feature_profiles: set[str] = {
-            f.stem for f in self.feature_profiles
-        }
+        self.names_of_feature_profiles: set[str] = {f.stem for f in self.feature_profiles}
 
         check_csv_for_malformed_rows(file_with_doculects)
         try:
@@ -36,9 +32,7 @@ class DoculectInventoryValidator:
 
         self.genealogy_family_ids = {row['id'] for row in read_csv(file_with_genealogy_names, read_as='dicts')}
 
-        self.has_feature_profile_for_doculect_id = {
-            d['id']: d['has_feature_profile'] for d in self.doculects
-        }
+        self.has_feature_profile_for_doculect_id = {d['id']: d['has_feature_profile'] for d in self.doculects}
 
     def validate(self):
         """
@@ -61,8 +55,7 @@ class DoculectInventoryValidator:
             if doculect['family_id'] not in self.genealogy_family_ids:
                 raise DoculectInventoryValidatorError(
                     f"{doculect['id'].capitalize()}: genealogy family ID {doculect['family_id']} "
-                    f"not found in genealogy inventory"
-                )
+                    f"not found in genealogy inventory")
         print('OK: ID of language family for each doculect is present in genealogy inventory')
 
     def _match_doculects_to_files(self):
@@ -87,13 +80,10 @@ class DoculectInventoryValidator:
         """
         for name in self.names_of_feature_profiles:
             if name not in self.doculect_ids:
-                raise DoculectInventoryValidatorError(
-                    f'Feature profile {name} has no match in file with doculects.'
-                )
+                raise DoculectInventoryValidatorError(f'Feature profile {name} has no match in file with doculects.')
             if self.has_feature_profile_for_doculect_id[name] != '1':
                 raise DoculectInventoryValidatorError(
-                    f'Feature profile {name} is not marked with "1" in file with doculects.'
-                )
+                    f'Feature profile {name} is not marked with "1" in file with doculects.')
         else:
             print(f'OK: Every feature profile is marked correspondingly in file with doculects.')
 

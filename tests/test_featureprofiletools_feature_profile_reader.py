@@ -10,7 +10,8 @@ def test_reader():
 
 
 benchmark_dict = {
-    'A-1': ValueForFeatureProfileDictionary(
+    'A-1':
+    ValueForFeatureProfileDictionary(
         feature_name_ru='Количество степеней подъема',
         value_type='listed',
         value_id='A-1-2',
@@ -18,7 +19,8 @@ benchmark_dict = {
         comment_ru='',
         comment_en='',
     ),
-    'A-2': ValueForFeatureProfileDictionary(
+    'A-2':
+    ValueForFeatureProfileDictionary(
         feature_name_ru='Подъемы гласных',
         value_type='custom',
         value_id='',
@@ -26,7 +28,8 @@ benchmark_dict = {
         comment_ru='',
         comment_en='',
     ),
-    'A-3': ValueForFeatureProfileDictionary(
+    'A-3':
+    ValueForFeatureProfileDictionary(
         feature_name_ru='Ряды гласных',
         value_type='listed',
         value_id='A-3-4',
@@ -39,40 +42,39 @@ benchmark_dict = {
 
 def test_read_feature_profile_as_dict_from_doculect_id(test_reader):
     dict_ = test_reader.read_feature_profile_as_dict_from_doculect_id(
-        doculect_id='catalan_short',
-        dir_with_feature_profiles=DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
-    )
+        doculect_id='catalan_short', dir_with_feature_profiles=DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES)
 
     assert dict_ == benchmark_dict
 
 
 def test_read_feature_profile_as_dict_from_file(test_reader):
-    dict_ = test_reader.read_feature_profile_as_dict_from_file(
-        DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / 'catalan_short.csv'
-    )
+    dict_ = test_reader.read_feature_profile_as_dict_from_file(DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES /
+                                                               'catalan_short.csv')
 
     assert dict_ == benchmark_dict
 
 
 def test_read_feature_profile_as_dict_from_file_fails_with_bad_file(test_reader):
     with pytest.raises(ValueError) as e:
-        test_reader.read_feature_profile_as_dict_from_file(
-            DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / 'corsican_bad_no_feature_ID.csv'
-        )
+        test_reader.read_feature_profile_as_dict_from_file(DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES /
+                                                           'corsican_bad_no_feature_ID.csv')
     assert 'does not contain feature ID in row 4' in str(e)
 
 
-@pytest.mark.parametrize(
-    'doculect_id, feature_id, expected_output',
-    [
-        ('catalan', 'A-1', {
-            'value_type': 'listed', 'value_id': 'A-1-2', 'value_ru': 'Три', 'comment_ru': ''
-        }),
-        ('catalan', 'D-6', {
-            'value_type': 'not_stated', 'value_id': '', 'value_ru': '', 'comment_ru': 'Систематизированных данных нет.'
-        }),
-    ]
-)
+@pytest.mark.parametrize('doculect_id, feature_id, expected_output', [
+    ('catalan', 'A-1', {
+        'value_type': 'listed',
+        'value_id': 'A-1-2',
+        'value_ru': 'Три',
+        'comment_ru': ''
+    }),
+    ('catalan', 'D-6', {
+        'value_type': 'not_stated',
+        'value_id': '',
+        'value_ru': '',
+        'comment_ru': 'Систематизированных данных нет.'
+    }),
+])
 def test_read_value_for_doculect_and_feature(test_reader, doculect_id, feature_id, expected_output):
     dict_ = test_reader.read_value_for_doculect_and_feature(
         doculect_id=doculect_id,

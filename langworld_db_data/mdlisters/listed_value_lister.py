@@ -11,6 +11,7 @@ from langworld_db_data.filetools.csv_xls import read_csv, read_dict_from_2_csv_c
 
 
 class ListedValueLister(AbstractValueLister):
+
     def __init__(
         self,
         dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
@@ -23,22 +24,16 @@ class ListedValueLister(AbstractValueLister):
             file_with_features=file_with_features,
         )
         self.file_with_listed_values = file_with_listed_values
-    
-    def write_grouped_by_feature(
-        self, output_file: Path = DISCUSSION_FILE_WITH_LISTED_VALUES
-    ):
 
-        feature_ids = [
-            row['id'] for row in
-            read_csv(self.file_with_features, read_as='dicts')
-        ]
+    def write_grouped_by_feature(self, output_file: Path = DISCUSSION_FILE_WITH_LISTED_VALUES):
+
+        feature_ids = [row['id'] for row in read_csv(self.file_with_features, read_as='dicts')]
 
         rows_with_listed_values = read_csv(self.file_with_listed_values, read_as='dicts')
 
         feature_to_value_to_doculects = {
-            feature_id: {
-                row['id']: [] for row in rows_with_listed_values if row['feature_id'] == feature_id
-            }
+            feature_id: {row['id']: []
+                         for row in rows_with_listed_values if row['feature_id'] == feature_id}
             for feature_id in feature_ids
         }
 
@@ -52,16 +47,10 @@ class ListedValueLister(AbstractValueLister):
             val_col='ru',
         )
 
-        value_name_for_value_id = read_dict_from_2_csv_columns(
-            self.file_with_listed_values,
-            key_col='id',
-            val_col='ru'
-        )
+        value_name_for_value_id = read_dict_from_2_csv_columns(self.file_with_listed_values, key_col='id', val_col='ru')
 
-        content = (
-            f'# Значения типа `{self.value_type}`\n'
-            'Оглавление файла открывается кнопкой сверху слева рядом с индикатором количества строк.'
-        )
+        content = (f'# Значения типа `{self.value_type}`\n'
+                   'Оглавление файла открывается кнопкой сверху слева рядом с индикатором количества строк.')
 
         for feature_id in feature_name_for_feature_id:
             content += f'\n\n## {feature_id} — {feature_name_for_feature_id[feature_id]}\n'
@@ -88,9 +77,7 @@ class ListedValueLister(AbstractValueLister):
         with output_file.open(mode='w+', encoding='utf-8') as fh:
             fh.write(content)
 
-    def write_grouped_by_volume_and_doculect(
-            self, output_file: Path
-    ):
+    def write_grouped_by_volume_and_doculect(self, output_file: Path):
         pass
 
 

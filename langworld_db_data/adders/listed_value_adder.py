@@ -10,13 +10,11 @@ class ListedValueAdderError(AdderError):
 
 class ListedValueAdder(Adder):
 
-    def add_listed_value(
-        self,
-        feature_id: str,
-        new_value_en: str,
-        new_value_ru: str,
-        custom_values_to_rename: Optional[list[str]] = None
-    ):
+    def add_listed_value(self,
+                         feature_id: str,
+                         new_value_en: str,
+                         new_value_ru: str,
+                         custom_values_to_rename: Optional[list[str]] = None):
         """Adds listed value to the inventory and marks matching custom value
         in feature profiles as listed.  If one or more custom values
         in feature profiles were formulated differently but now
@@ -26,15 +24,13 @@ class ListedValueAdder(Adder):
         if not (feature_id and new_value_en and new_value_ru):
             raise ListedValueAdderError('None of the passed strings can be empty')
 
-        id_of_new_value = self._add_to_inventory_of_listed_values(
-            feature_id=feature_id, new_value_en=new_value_en, new_value_ru=new_value_ru
-        )
-        self._mark_value_as_listed_in_feature_profiles(
-            feature_id=feature_id,
-            new_value_id=id_of_new_value,
-            new_value_ru=new_value_ru,
-            custom_values_to_rename=custom_values_to_rename
-        )
+        id_of_new_value = self._add_to_inventory_of_listed_values(feature_id=feature_id,
+                                                                  new_value_en=new_value_en,
+                                                                  new_value_ru=new_value_ru)
+        self._mark_value_as_listed_in_feature_profiles(feature_id=feature_id,
+                                                       new_value_id=id_of_new_value,
+                                                       new_value_ru=new_value_ru,
+                                                       custom_values_to_rename=custom_values_to_rename)
 
     def _add_to_inventory_of_listed_values(
         self,
@@ -53,9 +49,7 @@ class ListedValueAdder(Adder):
         for i, row in enumerate(rows):
             if row['feature_id'] == feature_id:
                 if row['en'] == new_value_en or row['ru'] == new_value_ru:
-                    raise ListedValueAdderError(
-                        f'Row {row} already contains value you are trying to add'
-                    )
+                    raise ListedValueAdderError(f'Row {row} already contains value you are trying to add')
 
                 # Keep updating those with each row.
                 # This means that at the last row of the feature they will reach the required values.
@@ -64,49 +58,38 @@ class ListedValueAdder(Adder):
                 id_of_new_value = feature_id + SEPARATOR + str(last_digit_of_value_id + 1)
 
         row_with_new_value = [{
-            'id': id_of_new_value, 'feature_id': feature_id,
+            'id': id_of_new_value,
+            'feature_id': feature_id,
             'en': new_value_en[0].upper() + new_value_en[1:],
             'ru': new_value_ru[0].upper() + new_value_ru[1:]
         }]
 
-        rows_with_new_value_inserted = (
-            rows[:index_of_last_row_for_given_feature + 1]
-            + row_with_new_value
-            + rows[index_of_last_row_for_given_feature + 1:]
-        )
+        rows_with_new_value_inserted = (rows[:index_of_last_row_for_given_feature + 1] + row_with_new_value +
+                                        rows[index_of_last_row_for_given_feature + 1:])
 
-        write_csv(
-            rows_with_new_value_inserted,
-            path_to_file=self.output_file_with_listed_values,
-            overwrite=True,
-            delimiter=','
-        )
+        write_csv(rows_with_new_value_inserted,
+                  path_to_file=self.output_file_with_listed_values,
+                  overwrite=True,
+                  delimiter=',')
 
         return id_of_new_value
 
-    def _mark_value_as_listed_in_feature_profiles(
-        self,
-        feature_id: str,
-        new_value_id: str,
-        new_value_ru: str,
-        custom_values_to_rename: Optional[list[str]] = None
-    ):
+    def _mark_value_as_listed_in_feature_profiles(self,
+                                                  feature_id: str,
+                                                  new_value_id: str,
+                                                  new_value_ru: str,
+                                                  custom_values_to_rename: Optional[list[str]] = None):
 
         for file in self.input_feature_profiles:
             is_changed = False
             rows = read_csv(file, read_as='dicts')
 
             for i, row in enumerate(rows):
-                if (
-                        row['feature_id'] == feature_id and
-                        row['value_type'] == 'custom'
-                ):
+                if (row['feature_id'] == feature_id and row['value_type'] == 'custom'):
                     value_ru = row['value_ru'].strip()
                     value_ru = value_ru[:-1] if value_ru.endswith('.') else value_ru
 
-                    if value_ru.lower() not in [v.lower() for v in
-                        [new_value_ru] + custom_values_to_rename
-                    ]:
+                    if value_ru.lower() not in [v.lower() for v in [new_value_ru] + custom_values_to_rename]:
                         break
 
                     print(f'{file.name}: changing row {i + 2} (feature {feature_id}). '
@@ -119,10 +102,10 @@ class ListedValueAdder(Adder):
                     break
 
             if is_changed:
-                write_csv(
-                    rows, path_to_file=self.output_dir_with_feature_profiles / file.name,
-                    overwrite=True, delimiter=','
-                )
+                write_csv(rows,
+                          path_to_file=self.output_dir_with_feature_profiles / file.name,
+                          overwrite=True,
+                          delimiter=',')
 
 
 if __name__ == '__main__':

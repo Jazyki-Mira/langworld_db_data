@@ -28,8 +28,8 @@ def check_yaml_file(path_to_file: Path, verbose: bool = True):
     pattern_for_top_level_dict_keys = re.compile(r'^(- )?(?P<key>[^\s-]+)\s?:.*')
 
     top_level_dict_keys = [
-        pattern_for_top_level_dict_keys.match(line).group('key')
-        for line in data.split('\n') if pattern_for_top_level_dict_keys.match(line) is not None
+        pattern_for_top_level_dict_keys.match(line).group('key') for line in data.split('\n')
+        if pattern_for_top_level_dict_keys.match(line) is not None
     ]
 
     counter = Counter(top_level_dict_keys)

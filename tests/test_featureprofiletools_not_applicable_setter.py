@@ -4,19 +4,16 @@ from langworld_db_data.featureprofiletools.not_applicable_setter import *
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 
-DIR_WITH_TEST_FEATURE_PROFILES = (
-    DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / 'feature_profiles_for_not_applicable_setter'
-)
+DIR_WITH_TEST_FEATURE_PROFILES = (DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES /
+                                  'feature_profiles_for_not_applicable_setter')
 TEST_FILE_WITH_RULES = DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / 'features_not_applicable_rules.yaml'
 
 
 @pytest.fixture(scope='function')
 def test_setter():
-    return NotApplicableSetter(
-        dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
-        file_with_rules=TEST_FILE_WITH_RULES,
-        output_dir=DIR_WITH_TEST_FEATURE_PROFILES / 'output'
-    )
+    return NotApplicableSetter(dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
+                               file_with_rules=TEST_FILE_WITH_RULES,
+                               output_dir=DIR_WITH_TEST_FEATURE_PROFILES / 'output')
 
 
 def test__init__(test_setter):

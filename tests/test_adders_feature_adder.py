@@ -9,11 +9,13 @@ from tests.paths import (
     OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES,
 )
 
-
-dummy_values_to_add = [
-    {'ru': 'Одно явление', 'en': 'One thing'},
-    {'ru': 'Одно, два и третье', 'en': 'One thing, second thing, and third thing'}
-]
+dummy_values_to_add = [{
+    'ru': 'Одно явление',
+    'en': 'One thing'
+}, {
+    'ru': 'Одно, два и третье',
+    'en': 'One thing, second thing, and third thing'
+}]
 
 
 @pytest.fixture(scope='function')
@@ -31,10 +33,30 @@ def test_feature_adder():
 
 def test_add_feature_fails_with_empty_arg(test_feature_adder):
     for incomplete_set_of_args in (
-        {'category_id': '', 'feature_ru': 'раз', 'feature_en': 'one', 'listed_values_to_add': dummy_values_to_add},
-        {'category_id': 'A', 'feature_ru': '', 'feature_en': 'one', 'listed_values_to_add': dummy_values_to_add},
-        {'category_id': 'A', 'feature_ru': 'раз', 'feature_en': '', 'listed_values_to_add': dummy_values_to_add},
-        {'category_id': 'A', 'feature_ru': 'раз', 'feature_en': 'one', 'listed_values_to_add': []},
+        {
+            'category_id': '',
+            'feature_ru': 'раз',
+            'feature_en': 'one',
+            'listed_values_to_add': dummy_values_to_add
+        },
+        {
+            'category_id': 'A',
+            'feature_ru': '',
+            'feature_en': 'one',
+            'listed_values_to_add': dummy_values_to_add
+        },
+        {
+            'category_id': 'A',
+            'feature_ru': 'раз',
+            'feature_en': '',
+            'listed_values_to_add': dummy_values_to_add
+        },
+        {
+            'category_id': 'A',
+            'feature_ru': 'раз',
+            'feature_en': 'one',
+            'listed_values_to_add': []
+        },
     ):
         with pytest.raises(FeatureAdderError) as e:
             test_feature_adder.add_feature(**incomplete_set_of_args)
@@ -43,11 +65,21 @@ def test_add_feature_fails_with_empty_arg(test_feature_adder):
 
 
 def test_add_feature_fails_with_wrong_new_listed_values(test_feature_adder):
-    args = {'category_id': 'A', 'feature_ru': 'раз', 'feature_en': 'one',
-            'listed_values_to_add': [
-                {'ru': 'раз', 'en': 'this is fine'},
-                {'this': 'should fail', 'en': 'this is fine'},
-            ]}
+    args = {
+        'category_id': 'A',
+        'feature_ru': 'раз',
+        'feature_en': 'one',
+        'listed_values_to_add': [
+            {
+                'ru': 'раз',
+                'en': 'this is fine'
+            },
+            {
+                'this': 'should fail',
+                'en': 'this is fine'
+            },
+        ]
+    }
     with pytest.raises(FeatureAdderError) as e:
         test_feature_adder.add_feature(**args)
 
@@ -56,12 +88,10 @@ def test_add_feature_fails_with_wrong_new_listed_values(test_feature_adder):
 
 def test_add_feature_fails_with_wrong_category_id(test_feature_adder):
     with pytest.raises(FeatureAdderError) as e:
-        test_feature_adder.add_feature(
-            category_id='X',
-            feature_ru='имя',
-            feature_en='name',
-            listed_values_to_add=dummy_values_to_add
-        )
+        test_feature_adder.add_feature(category_id='X',
+                                       feature_ru='имя',
+                                       feature_en='name',
+                                       listed_values_to_add=dummy_values_to_add)
 
     assert f'Category ID <X> not found in file {test_feature_adder.file_with_categories.name}' in str(e)
 
@@ -120,17 +150,42 @@ def test__build_feature_id_generates_auto_index(test_feature_adder):
 
 def test_add_feature_writes_good_output_files(test_feature_adder):
     features_to_add = (
-        {'category_id': 'A', 'feature_en': 'New feature in A', 'feature_ru': 'Новый признак в A'},
-        {'category_id': 'C', 'feature_en': 'New feature in C', 'feature_ru': 'Новый признак в C'},
-        {'category_id': 'D', 'feature_en': 'New feature in D with custom index', 'feature_ru': 'Новый признак в D',
-         'index_of_new_feature': 415},
-        {'category_id': 'N', 'feature_en': 'New feature in N with custom index in custom place',
-         'feature_ru': 'Новый признак в N в указанной строке', 'index_of_new_feature': 201, 'insert_after_index': 2},
+        {
+            'category_id': 'A',
+            'feature_en': 'New feature in A',
+            'feature_ru': 'Новый признак в A'
+        },
+        {
+            'category_id': 'C',
+            'feature_en': 'New feature in C',
+            'feature_ru': 'Новый признак в C'
+        },
+        {
+            'category_id': 'D',
+            'feature_en': 'New feature in D with custom index',
+            'feature_ru': 'Новый признак в D',
+            'index_of_new_feature': 415
+        },
+        {
+            'category_id': 'N',
+            'feature_en': 'New feature in N with custom index in custom place',
+            'feature_ru': 'Новый признак в N в указанной строке',
+            'index_of_new_feature': 201,
+            'insert_after_index': 2
+        },
         # adding to the very end of file (with custom index):
-        {'category_id': 'N', 'feature_en': 'New feature in N inserted after 5', 'feature_ru': 'Новый признак N после 5',
-         'insert_after_index': 5},
+        {
+            'category_id': 'N',
+            'feature_en': 'New feature in N inserted after 5',
+            'feature_ru': 'Новый признак N после 5',
+            'insert_after_index': 5
+        },
         # adding to the very end of file:
-        {'category_id': 'N', 'feature_en': 'New feature in N (in the very end)', 'feature_ru': 'Новый признак N конец'},
+        {
+            'category_id': 'N',
+            'feature_en': 'New feature in N (in the very end)',
+            'feature_ru': 'Новый признак N конец'
+        },
     )
 
     for kwargs in features_to_add:
@@ -149,8 +204,7 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
     assert test_feature_adder.input_file_with_listed_values.exists()
 
     gold_standard_feature_profiles = list(
-        (OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES / 'gold_standard').glob('*.csv')
-    )
+        (OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES / 'gold_standard').glob('*.csv'))
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_feature_adder.output_file_with_features,

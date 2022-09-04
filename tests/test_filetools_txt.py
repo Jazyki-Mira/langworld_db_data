@@ -34,13 +34,10 @@ def test_remove_extra_space():
         assert remove_extra_space(str_) == 'foo bar'
 
 
-@pytest.mark.parametrize(
-    'content, expected_output',
-    [
-        ('foo bar', 'foo bar'),
-        (['foo', 'bar'], 'foo\nbar\n'),
-    ]
-)
+@pytest.mark.parametrize('content, expected_output', [
+    ('foo bar', 'foo bar'),
+    (['foo', 'bar'], 'foo\nbar\n'),
+])
 def test_write_plain_text_to_file_writes_content_to_file(content, expected_output):
 
     if PATH_TO_TEST_OUTPUT_TXT_FILE.exists():

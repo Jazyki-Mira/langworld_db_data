@@ -15,7 +15,8 @@ def test_write(test_writer):
 
     test_writer.write(
         feature_dict={
-            'A-1': ValueForFeatureProfileDictionary(
+            'A-1':
+            ValueForFeatureProfileDictionary(
                 feature_name_ru='Количество степеней подъема',
                 value_type='listed',
                 value_id='A-1-2',
@@ -23,7 +24,8 @@ def test_write(test_writer):
                 comment_ru='',
                 comment_en='',
             ),
-            'A-2': ValueForFeatureProfileDictionary(
+            'A-2':
+            ValueForFeatureProfileDictionary(
                 feature_name_ru='Подъемы гласных',
                 value_type='custom',
                 value_id='',
@@ -31,7 +33,8 @@ def test_write(test_writer):
                 comment_ru='',
                 comment_en='',
             ),
-            'A-3': ValueForFeatureProfileDictionary(
+            'A-3':
+            ValueForFeatureProfileDictionary(
                 feature_name_ru='Ряды гласных',
                 value_type='listed',
                 value_id='A-3-4',
@@ -39,7 +42,8 @@ def test_write(test_writer):
                 comment_ru='',
                 comment_en='',
             ),
-            '_aux': ValueForFeatureProfileDictionary(
+            '_aux':
+            ValueForFeatureProfileDictionary(
                 feature_name_ru='',
                 value_type='not_applicable',
                 value_id='',

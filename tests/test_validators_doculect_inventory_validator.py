@@ -3,17 +3,15 @@ from langworld_db_data.validators.doculect_inventory_validator import *
 from tests.paths import DIR_WITH_TEST_FEATURE_PROFILES, DIR_WITH_VALIDATORS_TEST_FILES
 
 GOOD_FILE_WITH_DOCULECTS = DIR_WITH_VALIDATORS_TEST_FILES / 'doculects_OK.csv'
-FILE_WITH_GENEALOGY_NAMES = (
-        DIR_WITH_VALIDATORS_TEST_FILES / 'genealogy_families_names_for_doculect_inventory_validator.csv'
-)
+FILE_WITH_GENEALOGY_NAMES = (DIR_WITH_VALIDATORS_TEST_FILES /
+                             'genealogy_families_names_for_doculect_inventory_validator.csv')
 
 
 def test__init__fails_with_file_with_non_unique_doculect_ids():
     with pytest.raises(DoculectInventoryValidatorError) as e:
-        _ = DoculectInventoryValidator(
-            dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
-            file_with_doculects=DIR_WITH_VALIDATORS_TEST_FILES / 'doculects_bad_non_unique_doculects.csv'
-        )
+        _ = DoculectInventoryValidator(dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
+                                       file_with_doculects=DIR_WITH_VALIDATORS_TEST_FILES /
+                                       'doculects_bad_non_unique_doculects.csv')
     assert 'repeating values in column <id>: ukrainian' in str(e)
 
 
@@ -29,10 +27,9 @@ def test__check_family_ids_in_genealogy_fails_with_bad_file():
 
 
 def test__match_doculects_to_files_fails_with_more_doculects_than_files():
-    validator = DoculectInventoryValidator(
-        dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
-        file_with_doculects=DIR_WITH_VALIDATORS_TEST_FILES / 'doculects_bad_more_doculects_than_files.csv'
-    )
+    validator = DoculectInventoryValidator(dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
+                                           file_with_doculects=DIR_WITH_VALIDATORS_TEST_FILES /
+                                           'doculects_bad_more_doculects_than_files.csv')
     validator._match_files_to_doculects()  # this must not fail because all files correspond to doculects
 
     with pytest.raises(ValidatorError) as e:
@@ -42,10 +39,9 @@ def test__match_doculects_to_files_fails_with_more_doculects_than_files():
 
 
 def test__match_files_to_doculects_fails_with_less_doculects_than_files():
-    validator = DoculectInventoryValidator(
-        dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
-        file_with_doculects=DIR_WITH_VALIDATORS_TEST_FILES / 'doculects_bad_less_doculects_than_files1.csv'
-    )
+    validator = DoculectInventoryValidator(dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
+                                           file_with_doculects=DIR_WITH_VALIDATORS_TEST_FILES /
+                                           'doculects_bad_less_doculects_than_files1.csv')
     validator._match_doculects_to_files()  # this must not fail because all doculects correspond to files
 
     with pytest.raises(ValidatorError) as e:
@@ -53,10 +49,9 @@ def test__match_files_to_doculects_fails_with_less_doculects_than_files():
 
     assert 'Feature profile pashto has no match in file with doculects' in str(e)
 
-    validator = DoculectInventoryValidator(
-        dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
-        file_with_doculects=DIR_WITH_VALIDATORS_TEST_FILES / 'doculects_bad_less_doculects_than_files2.csv'
-    )
+    validator = DoculectInventoryValidator(dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
+                                           file_with_doculects=DIR_WITH_VALIDATORS_TEST_FILES /
+                                           'doculects_bad_less_doculects_than_files2.csv')
     validator._match_doculects_to_files()  # this must not fail because all doculects correspond to files
 
     with pytest.raises(ValidatorError) as e:

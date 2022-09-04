@@ -4,11 +4,9 @@ from tests.paths import DIR_WITH_TEST_FEATURE_PROFILES, DIR_WITH_VALIDATORS_TEST
 
 
 def test_write_grouped_by_feature():
-    lister = ListedValueLister(
-        dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
-        file_with_features=DIR_WITH_VALIDATORS_TEST_FILES / 'features_OK.csv',
-        file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / 'features_listed_values_OK.csv'
-    )
+    lister = ListedValueLister(dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
+                               file_with_features=DIR_WITH_VALIDATORS_TEST_FILES / 'features_OK.csv',
+                               file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / 'features_listed_values_OK.csv')
 
     output_file = DIR_WITH_VALIDATORS_TEST_FILES / 'listed_values_by_feature.md'
 

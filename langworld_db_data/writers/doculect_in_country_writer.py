@@ -25,24 +25,40 @@ class DoculectInCountryWriter:
     """
 
     NOTES_TO_DELETE = (
-        'госуд., ист.', "госуд.", "ист.", 'state', 'state language', 'госуд.,ист.', 'hist.', 'state, hist.', 'я.п.м.',
-        'official', "Côte d'Ivoire", 'государственный',
-        "modern Syria", "совр. Турция", "modern-day Iraq", "present-day Afghanistan and Tajikistan",
-        "modern Turkey", "Levant", "Asia Minor", "Левант", "совр. Сирия", "Kingdom of Van",
+        'госуд., ист.',
+        "госуд.",
+        "ист.",
+        'state',
+        'state language',
+        'госуд.,ист.',
+        'hist.',
+        'state, hist.',
+        'я.п.м.',
+        'official',
+        "Côte d'Ivoire",
+        'государственный',
+        "modern Syria",
+        "совр. Турция",
+        "modern-day Iraq",
+        "present-day Afghanistan and Tajikistan",
+        "modern Turkey",
+        "Levant",
+        "Asia Minor",
+        "Левант",
+        "совр. Сирия",
+        "Kingdom of Van",
         # this is one long string, missing comma after 1st line is intended:
         "present-day France, Luxembourg, Belgium, most of Switzerland, "
         "and parts of Northern Italy, Netherlands, and Germany",
     )
 
-    def __init__(
-        self,
-        dir_with_sociolinguistic_profiles: Path = SOCIOLINGUISTIC_PROFILES_DIR,
-        file_with_countries: Path = FILE_WITH_COUNTRIES,
-        file_with_country_aliases: Path = FILE_WITH_COUNTRY_ALIASES,
-        file_with_doculects: Path = FILE_WITH_DOCULECTS,
-        output_file: Path = FILE_WITH_DOCULECTS_MATCHED_TO_COUNTRIES,
-        verbose: bool = False
-    ):
+    def __init__(self,
+                 dir_with_sociolinguistic_profiles: Path = SOCIOLINGUISTIC_PROFILES_DIR,
+                 file_with_countries: Path = FILE_WITH_COUNTRIES,
+                 file_with_country_aliases: Path = FILE_WITH_COUNTRY_ALIASES,
+                 file_with_doculects: Path = FILE_WITH_DOCULECTS,
+                 output_file: Path = FILE_WITH_DOCULECTS_MATCHED_TO_COUNTRIES,
+                 verbose: bool = False):
         self.output_file = output_file
         self.verbose = verbose
 
@@ -60,12 +76,12 @@ class DoculectInCountryWriter:
 
         if not self.sociolinguistic_profiles:
             raise DoculectInCountryWriterError(
-                f'No sociolinguistic profiles found in {dir_with_sociolinguistic_profiles}'
-            )
+                f'No sociolinguistic profiles found in {dir_with_sociolinguistic_profiles}')
 
         # this is the initial version that will have to be amended by reading the file with aliases
         self.doculect_id_to_countries: dict[str, set[str]] = {
-            row['id']: {row['main_country_id']} for row in read_csv(file_with_doculects, read_as='dicts')
+            row['id']: {row['main_country_id']}
+            for row in read_csv(file_with_doculects, read_as='dicts')
         }
 
         if self.verbose:
@@ -100,8 +116,7 @@ class DoculectInCountryWriter:
             [('doculect_id', 'country_id')] + sorted(rows_to_write, key=lambda tuple_: str(tuple_)),
             path_to_file=self.output_file,
             overwrite=overwrite,
-            delimiter=','
-        )
+            delimiter=',')
 
     def _add_aliases(self):
         """Adds entries with country aliases to the dictionary
@@ -129,8 +144,7 @@ class DoculectInCountryWriter:
 
                 try:
                     self.doculect_id_to_countries[doculect_id].add(
-                        self.country_name_and_locale_to_country_id[(clean_item, locale)]
-                    )
+                        self.country_name_and_locale_to_country_id[(clean_item, locale)])
                 except KeyError:
                     unrecognized_countries.add(clean_item)
 
