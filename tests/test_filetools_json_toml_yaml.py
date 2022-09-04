@@ -1,7 +1,7 @@
 import pytest
 
-from langworld_db_data.filetools.json_toml_yaml import *
-from tests.paths import *
+from langworld_db_data.filetools.json_toml_yaml import check_yaml_file, ParserError, read_json_toml_yaml
+from tests.paths import DIR_WITH_FILETOOLS_TEST_FILES
 
 
 def test_check_yaml_file_passes_with_valid_data():

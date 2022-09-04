@@ -56,10 +56,9 @@ class FeatureAdder(Adder):
 
         rows_with_features = read_csv(self.input_file_with_features, read_as='dicts')
         if (feat_en in [row['en'] for row in rows_with_features]
-                or feat_ru.strip() in [row['ru'] for row in rows_with_features]
-                # note that this check should not be restricted to one feature category
-            ):
-            raise FeatureAdderError(f'English or Russian feature name is already present in list of features')
+                or feat_ru.strip() in [row['ru'] for row in rows_with_features]):
+            # note that this check should not be restricted to one feature category
+            raise FeatureAdderError('English or Russian feature name is already present in list of features')
 
         feature_id_to_add_after = None
         if insert_after_index is not None:

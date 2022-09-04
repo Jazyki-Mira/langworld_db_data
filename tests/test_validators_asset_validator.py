@@ -1,6 +1,6 @@
 import pytest
 
-from langworld_db_data.validators.asset_validator import *
+from langworld_db_data.validators.asset_validator import AssetValidator, AssetValidatorError
 from tests.paths import DIR_WITH_VALIDATORS_TEST_FILES
 
 FILE_WITH_DOCULECTS = DIR_WITH_VALIDATORS_TEST_FILES / 'doculects_for_asset_validator.csv'
@@ -47,7 +47,7 @@ def test_validate_fails_with_bad_test_data():
     for file in DIR_WITH_VALIDATORS_TEST_FILES.glob('encyclopedia_map_to_doculect_bad*.csv'):
         print(f'TEST: file {file.name}')
 
-        with pytest.raises(ValidatorError):
+        with pytest.raises(AssetValidatorError):
             AssetValidator(
                 file_with_doculects=FILE_WITH_DOCULECTS,
                 file_with_encyclopedia_maps=FILE_WITH_MAPS,

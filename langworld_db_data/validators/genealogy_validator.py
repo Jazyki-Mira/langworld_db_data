@@ -8,7 +8,7 @@ from langworld_db_data.filetools.csv_xls import (
     check_csv_for_repetitions_in_column,
     read_csv,
 )
-from langworld_db_data.filetools.json_toml_yaml import check_yaml_file, read_json_toml_yaml
+from langworld_db_data.filetools.json_toml_yaml import check_yaml_file
 from langworld_db_data.filetools.txt import read_non_empty_lines_from_txt_file
 from langworld_db_data.validators.exceptions import ValidatorError
 

@@ -1,6 +1,6 @@
 import pytest
 
-from langworld_db_data.writers.doculect_in_country_writer import *
+from langworld_db_data.writers.doculect_in_country_writer import DoculectInCountryWriter, DoculectInCountryWriterError
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import DIR_WITH_WRITERS_TEST_FILES
 

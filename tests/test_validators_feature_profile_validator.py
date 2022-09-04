@@ -1,6 +1,6 @@
 import pytest
 
-from langworld_db_data.validators.feature_profile_validator import *
+from langworld_db_data.validators.feature_profile_validator import FeatureProfileValidator, FeatureProfileValidatorError
 from tests.paths import DIR_WITH_TEST_FEATURE_PROFILES, DIR_WITH_VALIDATORS_TEST_FILES
 
 DIR_WITH_BAD_PROFILES = DIR_WITH_TEST_FEATURE_PROFILES / 'must_fail'
@@ -46,7 +46,7 @@ def test__validate_one_file_fails_with_bad_files(test_validator, file_stem, expe
 def test__validate_one_file_prints_message_with_must_raise_exception_at_value_name_mismatch_set_to_false(
         capsys, test_validator):
     test_validator.must_raise_exception_at_value_name_mismatch = False
-    test_validator._validate_one_file(DIR_WITH_BAD_PROFILES / f'corsican_non_matching_listed_value.csv')
+    test_validator._validate_one_file(DIR_WITH_BAD_PROFILES / 'corsican_non_matching_listed_value.csv')
     stdout = capsys.readouterr()
     assert 'value Передний и задний for value ID A-3-4 in row 4 does not match' in str(stdout)
 

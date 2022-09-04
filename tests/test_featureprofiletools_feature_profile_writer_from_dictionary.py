@@ -1,6 +1,8 @@
 import pytest
 
-from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import *
+from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
+from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (
+    FeatureProfileWriterFromDictionary)
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 

@@ -50,7 +50,7 @@ class AssetValidator:
                 raise AssetValidatorError(
                     f'Row {i} in file {self.file_matching_maps_to_doculects.name}: '
                     f'Doculect ID {row["doculect_id"]} not found in file {self.file_with_doculects.name}')
-        print(f'OK: IDs of encyclopedia maps and doculects match IDs in respective files')
+        print('OK: IDs of encyclopedia maps and doculects match IDs in respective files')
 
 
 if __name__ == '__main__':

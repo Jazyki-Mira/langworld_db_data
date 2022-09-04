@@ -45,7 +45,7 @@ class FeatureValueInventoryValidator:
             if not re.match(r'[A-Z]-\d+', feature_id):
                 raise FeatureValueInventoryValidatorError(f'Invalid feature ID {feature_id}')
 
-        print(f'Feature IDs OK')
+        print('Feature IDs OK')
 
     def _validate_listed_values(self):
 
@@ -59,7 +59,7 @@ class FeatureValueInventoryValidator:
                 raise FeatureValueInventoryValidatorError(
                     f'Value ID {value_id} was not formed correctly from feature ID {feature_id_for_value_id[value_id]}')
 
-        print(f'OK: all value IDs are derived from feature ID')
+        print('OK: all value IDs are derived from feature ID')
 
         # Check uniqueness of Russian and English value names within one feature
         names_of_listed_values_for_feature_id = {feature_id: [] for feature_id in self.feature_ids}
@@ -80,7 +80,7 @@ class FeatureValueInventoryValidator:
                     raise FeatureValueInventoryValidatorError(
                         f'Duplicate value names found for feature {feature_id}: {", ".join(duplicate_value_names)}')
 
-        print(f'OK: all values within each feature have unique names')
+        print('OK: all values within each feature have unique names')
 
 
 if __name__ == '__main__':

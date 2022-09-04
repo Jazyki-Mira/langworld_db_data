@@ -1,6 +1,6 @@
 import pytest
 
-from langworld_db_data.validators.genealogy_validator import *
+from langworld_db_data.validators.genealogy_validator import GenealogyValidator, GenealogyValidatorError
 from tests.paths import DIR_WITH_VALIDATORS_TEST_FILES
 
 GOOD_FILE_WITH_HIERARCHY = DIR_WITH_VALIDATORS_TEST_FILES / 'genealogy_families_hierarchy_OK.yaml'

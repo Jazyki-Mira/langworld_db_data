@@ -1,6 +1,7 @@
 import pytest
 
-from langworld_db_data.validators.feature_value_inventory_validator import *
+from langworld_db_data.validators.feature_value_inventory_validator import (FeatureValueInventoryValidator,
+                                                                            FeatureValueInventoryValidatorError)
 from tests.paths import DIR_WITH_VALIDATORS_TEST_FILES
 
 GOOD_FEATURES_FILE = DIR_WITH_VALIDATORS_TEST_FILES / 'features_OK.csv'

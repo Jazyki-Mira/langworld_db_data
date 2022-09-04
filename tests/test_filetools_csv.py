@@ -1,10 +1,13 @@
+from pathlib import Path
 from typing import NamedTuple
 
 import pytest
 
-from langworld_db_data.filetools.csv_xls import *
+from langworld_db_data.filetools.csv_xls import (CSVDelimiter, check_csv_for_malformed_rows,
+                                                 check_csv_for_repetitions_in_column, convert_xls_to_csv, read_csv,
+                                                 read_dict_from_2_csv_columns, write_csv)
 from langworld_db_data.filetools.txt import read_plain_text_from_file
-from tests.paths import *
+from tests.paths import DIR_WITH_FILETOOLS_TEST_FILES, PATH_TO_TEST_OUTPUT_TXT_FILE, PATH_TO_TEST_OUTPUT_CSV_FILE
 
 
 def test_convert_xls_to_csv():
