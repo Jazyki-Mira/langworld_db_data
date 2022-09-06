@@ -30,9 +30,10 @@ class ListedValueLister(AbstractValueLister):
         feature_ids = [row['id'] for row in read_dicts_from_csv(self.file_with_features)]
 
         feature_to_value_to_doculects: dict[str, list] = {
-            feature_id: {row['id']: []
-                         for row in read_dicts_from_csv(self.file_with_listed_values)
-                         if row['feature_id'] == feature_id}
+            feature_id: {
+                row['id']: []
+                for row in read_dicts_from_csv(self.file_with_listed_values) if row['feature_id'] == feature_id
+            }
             for feature_id in feature_ids
         }
 

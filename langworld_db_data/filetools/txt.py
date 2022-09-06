@@ -53,8 +53,10 @@ def remove_extra_space(str_: str) -> str:
     return re.sub(r'\s+', ' ', str_.strip())
 
 
-def write_plain_text_to_file(
-        content: Union[str, list, tuple], file: Path, overwrite: bool, newline_char: str = '\n') -> None:
+def write_plain_text_to_file(content: Union[str, list, tuple],
+                             file: Path,
+                             overwrite: bool,
+                             newline_char: str = '\n') -> None:
     """Writes plain text to text file in UTF-8. If content is a list or a tuple,
     adds newline character at the end of each line automatically.
     """
