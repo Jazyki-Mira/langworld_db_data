@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from langworld_db_data.filetools.csv_xls import _read_csv
+from langworld_db_data.filetools.csv_xls import read_plain_rows_from_csv
 
 
 def check_existence_of_output_csv_file_and_compare_with_gold_standard(output_file: Path,
@@ -18,8 +18,8 @@ def check_existence_of_output_csv_file_and_compare_with_gold_standard(output_fil
 
     print(f'TEST: comparing test output file {output_file.name} '
           f'with gold standard file {gold_standard_file.name}')
-    output_lines = _read_csv(output_file, read_as='plain_rows')
-    gold_standard_lines = _read_csv(gold_standard_file, read_as='plain_rows')
+    output_lines = read_plain_rows_from_csv(output_file)
+    gold_standard_lines = read_plain_rows_from_csv(gold_standard_file)
 
     for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
         assert output_line == gold_standard_line, \

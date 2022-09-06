@@ -2,7 +2,7 @@ from collections import Counter
 import _csv  # for typing only
 import csv
 from pathlib import Path
-from typing import Literal, overload, Union
+from typing import Literal, Union
 
 from openpyxl import load_workbook
 
@@ -14,7 +14,7 @@ def check_csv_for_malformed_rows(path_to_file: Path) -> None:
     Checks whether all rows in CSV file have the same number of columns.
     Throws IndexError if they do not.
     """
-    rows = _read_csv(path_to_file, read_as='plain_rows')
+    rows = read_plain_rows_from_csv(path_to_file)
     row_count_for_number_of_columns = Counter(len(row) for row in rows)
 
     if len(row_count_for_number_of_columns) == 1:
@@ -42,7 +42,7 @@ def check_csv_for_malformed_rows(path_to_file: Path) -> None:
 def check_csv_for_repetitions_in_column(path_to_file: Path, column_name: str) -> None:
     """Throws ValueError if there are repetitions in given column of given file.
     """
-    rows = _read_csv(path_to_file, read_as='dicts')
+    rows = read_dicts_from_csv(path_to_file)
 
     if column_name not in rows[0]:
         raise KeyError(f'Cannot check uniqueness of value in column <{column_name}> because it does not exist')
@@ -84,46 +84,13 @@ def convert_xls_to_csv(
     wb.close()
 
 
-ReadCSVLiteral = Literal['dicts', 'plain_rows', 'plain_rows_no_header']
-
-
-@overload
-def _read_csv(path_to_file: Path, read_as: ReadCSVLiteral, delimiter: CSVDelimiter = ',') -> list[dict[str, str]]:
-    ...
-
-
-@overload
-def _read_csv(path_to_file: Path, read_as: ReadCSVLiteral, delimiter: CSVDelimiter = ',') -> list[list[str]]:
-    ...
-
-
-def _read_csv(path_to_file: Path,
-              read_as: ReadCSVLiteral,
-              delimiter: CSVDelimiter = ',') -> Union[list[dict[str, str]], list[list[str]]]:
-    """Opens CSV file and reads it as plain rows (list of lists)
-    or list of dictionaries (top row is considered row with keys,
-    each row is a dictionary with keys taken from top row).
-    """
-
-    with path_to_file.open(mode='r', encoding='utf-8-sig', newline='') as fh:
-
-        if read_as not in ('dicts', 'plain_rows', 'plain_rows_no_header'):
-            raise ValueError(f'Type {read_as} not supported.')
-
-        # noinspection PyUnresolvedReferences, PyProtectedMember
-        reader: Union[csv.DictReader, _csv._reader] = csv.reader(fh, delimiter=delimiter)
-        if read_as == 'dicts':
-            reader = csv.DictReader(fh, delimiter=delimiter)
-
-        return list(reader)[1:] if read_as == 'plain_rows_no_header' else list(reader)
-
-
 def read_dicts_from_csv(path_to_file: Path, delimiter: CSVDelimiter = ',') -> list[dict[str, str]]:
     """Opens CSV file and reads it as or list of dictionaries
     (top row is considered row with keys, each row is a dictionary
     with keys taken from top row).
     """
-    return _read_csv(path_to_file=path_to_file, delimiter=delimiter, read_as='dicts')
+    with path_to_file.open(mode='r', encoding='utf-8-sig', newline='') as fh:
+        return list(csv.DictReader(fh, delimiter=delimiter))
 
 
 def read_dict_from_2_csv_columns(path_to_file: Path,
@@ -135,7 +102,7 @@ def read_dict_from_2_csv_columns(path_to_file: Path,
     if key_col == val_col:
         raise ValueError(f'You passed same name for both key and value columns ({key_col})')
 
-    rows = _read_csv(path_to_file, read_as='plain_rows', delimiter=delimiter)
+    rows = read_plain_rows_from_csv(path_to_file, delimiter=delimiter)
 
     header_row, data_rows = rows[0], rows[1:]
 
@@ -164,12 +131,17 @@ def read_dict_from_2_csv_columns(path_to_file: Path,
     return {k: v for k, v in zip(key_column, value_column)}
 
 
-def read_plain_rows_from_csv(path_to_file: Path, delimiter: CSVDelimiter = ',', remove_1st_row: bool = False
-                             ) -> list[list[str]]:
+def read_plain_rows_from_csv(path_to_file: Path,
+                             delimiter: CSVDelimiter = ',',
+                             remove_1st_row: bool = False) -> list[list[str]]:
     """Opens CSV file and reads it as plain rows (list of lists)."""
+    with path_to_file.open(mode='r', encoding='utf-8-sig', newline='') as fh:
+        reader = csv.reader(fh, delimiter=delimiter)
+        rows = list(reader)
+
     if remove_1st_row:
-        return _read_csv(path_to_file=path_to_file, delimiter=delimiter, read_as='plain_rows_no_header')
-    return _read_csv(path_to_file=path_to_file, delimiter=delimiter, read_as='plain_rows')
+        return rows[1:]
+    return rows
 
 
 def write_csv(rows: Union[list, tuple], path_to_file: Path, overwrite: bool, delimiter: CSVDelimiter) -> None:
