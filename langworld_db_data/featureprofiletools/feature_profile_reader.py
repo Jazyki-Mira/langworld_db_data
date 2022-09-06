@@ -3,7 +3,7 @@ import pyperclip
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
 from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
-from langworld_db_data.filetools.csv_xls import read_csv
+from langworld_db_data.filetools.csv_xls import read_dicts_from_csv
 
 
 class FeatureProfileReader:
@@ -33,7 +33,7 @@ class FeatureProfileReader:
         """
         feature_id_to_row_dict = {}
 
-        for i, row in enumerate(read_csv(file, read_as='dicts'), start=1):
+        for i, row in enumerate(read_dicts_from_csv(file), start=1):
             if not row['feature_id']:
                 raise ValueError(f'File {file.stem} does not contain feature ID in row {i + 1}')
             relevant_columns = {key: row[key] for key in row if key != 'feature_id'}

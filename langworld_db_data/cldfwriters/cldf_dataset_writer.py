@@ -9,7 +9,7 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NAMES_OF_FEATURES,
 )
-from langworld_db_data.filetools.csv_xls import read_csv, read_dict_from_2_csv_columns
+from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, read_dict_from_2_csv_columns
 
 
 class CLDFDatasetWriter:
@@ -21,11 +21,11 @@ class CLDFDatasetWriter:
         file_with_doculects: Path = FILE_WITH_DOCULECTS,
         file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
     ):
-        self.listed_values: list[dict[str, str]] = read_csv(file_with_listed_values, read_as='dicts')
+        self.listed_values = read_dicts_from_csv(file_with_listed_values)
         self.value_en_for_value_id = read_dict_from_2_csv_columns(file_with_listed_values, key_col='id', val_col='en')
 
-        self.doculects: list[dict[str, str]] = read_csv(file_with_doculects, read_as='dicts')
-        self.features: list[dict[str, str]] = read_csv(file_with_features, read_as='dicts')
+        self.doculects = read_dicts_from_csv(file_with_doculects)
+        self.features = read_dicts_from_csv(file_with_features)
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob('*.csv')))
 
     def write(self) -> None:
@@ -85,9 +85,8 @@ class CLDFDatasetWriter:
         for file in self.feature_profiles:
 
             language_id = file.stem
-            rows: list[dict[str, str]] = read_csv(file, read_as='dicts')
             # not sure how best to handle explicit_gap yet.
-            relevant_rows = [row for row in rows if row['value_type'] in ('listed', 'custom')]
+            relevant_rows = [row for row in read_dicts_from_csv(file) if row['value_type'] in ('listed', 'custom')]
 
             for relevant_row in relevant_rows:
                 value_table_rows.append({

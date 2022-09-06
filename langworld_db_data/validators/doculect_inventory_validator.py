@@ -2,7 +2,7 @@ from pathlib import Path
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_DOCULECTS, FILE_WITH_GENEALOGY_NAMES
 from langworld_db_data.filetools.csv_xls import (check_csv_for_malformed_rows, check_csv_for_repetitions_in_column,
-                                                 read_csv)
+                                                 read_dicts_from_csv)
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -27,11 +27,10 @@ class DoculectInventoryValidator:
         except ValueError as e:
             raise DoculectInventoryValidatorError(str(e))
 
-        self.doculects: list[dict] = read_csv(file_with_doculects, read_as='dicts')
+        self.doculects: list[dict] = read_dicts_from_csv(file_with_doculects)
         self.doculect_ids = {d['id'] for d in self.doculects}
 
-        genealogy_rows: list[dict[str, str]] = read_csv(file_with_genealogy_names, read_as='dicts')
-        self.genealogy_family_ids = {row['id'] for row in genealogy_rows}
+        self.genealogy_family_ids = {row['id'] for row in read_dicts_from_csv(file_with_genealogy_names)}
 
         self.has_feature_profile_for_doculect_id = {d['id']: d['has_feature_profile'] for d in self.doculects}
 

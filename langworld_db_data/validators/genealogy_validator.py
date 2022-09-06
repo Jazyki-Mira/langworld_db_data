@@ -6,7 +6,7 @@ from langworld_db_data.constants.paths import FILE_WITH_GENEALOGY_HIERARCHY, FIL
 from langworld_db_data.filetools.csv_xls import (
     check_csv_for_malformed_rows,
     check_csv_for_repetitions_in_column,
-    read_csv,
+    read_dicts_from_csv,
 )
 from langworld_db_data.filetools.json_toml_yaml import check_yaml_file
 from langworld_db_data.filetools.txt import read_non_empty_lines_from_txt_file
@@ -27,8 +27,7 @@ class GenealogyValidator:
         self.file_with_hierarchy = file_with_hierarchy
         self.file_with_names = file_with_names
 
-        rows_with_names: list[dict[str, str]] = read_csv(self.file_with_names, read_as='dicts')
-        self.family_ids_from_file_with_names = [row['id'] for row in rows_with_names]
+        self.family_ids_from_file_with_names = [row['id'] for row in read_dicts_from_csv(self.file_with_names)]
 
     def validate(self) -> None:
         print('\nChecking genealogy')

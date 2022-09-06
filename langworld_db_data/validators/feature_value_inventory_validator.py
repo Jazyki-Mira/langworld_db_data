@@ -7,7 +7,7 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_NAMES_OF_FEATURES,
 )
 from langworld_db_data.filetools.csv_xls import (check_csv_for_malformed_rows, check_csv_for_repetitions_in_column,
-                                                 read_csv)
+                                                 read_dicts_from_csv)
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -29,10 +29,9 @@ class FeatureValueInventoryValidator:
             check_csv_for_repetitions_in_column(file, column_name='id')
         print('OK: No malformed rows found, all feature IDs and value IDs are unique')
 
-        feature_rows: list[dict[str, str]] = read_csv(file_with_features, read_as='dicts')
-        self.feature_ids = [row['id'] for row in feature_rows]
+        self.feature_ids = [row['id'] for row in read_dicts_from_csv(file_with_features)]
 
-        self.rows_with_listed_values: list[dict[str, str]] = read_csv(file_with_listed_values, read_as='dicts')
+        self.rows_with_listed_values = read_dicts_from_csv(file_with_listed_values)
 
     def validate(self) -> None:
         self._validate_feature_ids()

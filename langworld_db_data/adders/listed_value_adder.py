@@ -1,7 +1,7 @@
 from typing import Optional
 
 from langworld_db_data.adders.adder import Adder, AdderError, SEPARATOR
-from langworld_db_data.filetools.csv_xls import read_csv, write_csv
+from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
 
 class ListedValueAdderError(AdderError):
@@ -38,7 +38,7 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
     ) -> str:
-        rows: list[dict[str, str]] = read_csv(self.input_file_with_listed_values, read_as='dicts')
+        rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
         if not [r for r in rows if r['feature_id'] == feature_id]:
             raise ListedValueAdderError(f'Feature ID {feature_id} not found')
@@ -82,7 +82,7 @@ class ListedValueAdder(Adder):
 
         for file in self.input_feature_profiles:
             is_changed = False
-            rows: list[dict[str, str]] = read_csv(file, read_as='dicts')
+            rows = read_dicts_from_csv(file)
 
             for i, row in enumerate(rows):
                 if row['feature_id'] == feature_id and row['value_type'] == 'custom':

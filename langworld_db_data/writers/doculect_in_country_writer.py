@@ -8,7 +8,7 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_DOCULECTS_MATCHED_TO_COUNTRIES,
     SOCIOLINGUISTIC_PROFILES_DIR,
 )
-from langworld_db_data.filetools.csv_xls import read_csv, write_csv
+from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.filetools.json_toml_yaml import read_json_toml_yaml
 
 
@@ -62,7 +62,8 @@ class DoculectInCountryWriter:
         self.output_file = output_file
         self.verbose = verbose
 
-        doculect_rows: list[dict[str, str]] = read_csv(file_with_doculects, read_as='dicts')
+        doculect_rows = read_dicts_from_csv(file_with_doculects)
+
         self.doculect_ids = [row['id'] for row in doculect_rows]
 
         self.doculect_id_to_locale_to_file = {}
@@ -80,23 +81,21 @@ class DoculectInCountryWriter:
                 f'No sociolinguistic profiles found in {dir_with_sociolinguistic_profiles}')
 
         # this is the initial version that will have to be amended by reading the file with aliases
-        self.doculect_id_to_countries: dict[str, set[str]] = {
-            row['id']: {row['main_country_id']} for row in doculect_rows
-        }
+        self.doculect_id_to_countries: dict[str,
+                                            set[str]] = {row['id']: {row['main_country_id']}
+                                                         for row in doculect_rows}
 
         if self.verbose:
             print("Doculect ID to countries:", self.doculect_id_to_countries)
 
         self.country_name_and_locale_to_country_id = {}
 
-        rows_with_countries: list[dict[str, str]] = read_csv(file_with_countries, read_as='dicts')
-        for row in rows_with_countries:
+        for row in read_dicts_from_csv(file_with_countries):
             for locale in LOCALES:
                 # (row[locale], locale) gives a dictionary key like (Russia, en):
                 self.country_name_and_locale_to_country_id[(row[locale], locale)] = row['id']
 
-        rows_with_country_aliases: list[dict[str, str]] = read_csv(file_with_country_aliases, read_as='dicts')
-        for row in rows_with_country_aliases:
+        for row in read_dicts_from_csv(file_with_country_aliases):
             tuple_key = (row['alias'], row['locale'])
             if tuple_key not in self.country_name_and_locale_to_country_id:
                 self.country_name_and_locale_to_country_id[tuple_key] = row['country_id']

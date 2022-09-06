@@ -2,7 +2,7 @@ from collections import Counter
 from pathlib import Path
 
 from langworld_db_data.constants.paths import ASSETS_DIR, FILE_WITH_DOCULECTS
-from langworld_db_data.filetools.csv_xls import read_csv
+from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, read_plain_rows_from_csv
 from langworld_db_data.validators.exceptions import ValidatorError
 
 
@@ -27,8 +27,10 @@ class AssetValidator:
     def _validate_file_matching_maps_to_doculects(self) -> None:
         print('Checking file mapping encyclopedia maps to doculects')
 
-        map_to_doculect_rows: list[list[str]] = read_csv(self.file_matching_maps_to_doculects, read_as='plain_rows')
-        rows_as_tuples = [(row[0], row[1]) for row in map_to_doculect_rows]
+        rows_as_tuples = [
+            (row[0], row[1])
+            for row in read_plain_rows_from_csv(self.file_matching_maps_to_doculects, remove_1st_row=False)
+        ]
 
         counter = Counter(rows_as_tuples)
         for key in counter:
@@ -37,15 +39,11 @@ class AssetValidator:
                     f'File {self.file_matching_maps_to_doculects.name} has a repeating row: {key} ({counter[key]})')
         print('OK: No repeating rows found')
 
-        doculect_rows: list[dict[str, str]] = read_csv(self.file_with_doculects, read_as='dicts')
-        doculect_ids = [row['id'] for row in doculect_rows]
+        doculect_ids = [row['id'] for row in read_dicts_from_csv(self.file_with_doculects)]
 
-        map_rows: list[dict[str, str]] = read_csv(self.file_with_encyclopedia_maps, read_as='dicts')
-        map_ids = [row['id'] for row in map_rows]
+        map_ids = [row['id'] for row in read_dicts_from_csv(self.file_with_encyclopedia_maps)]
 
-        rows: list[dict[str, str]] = read_csv(self.file_matching_maps_to_doculects, read_as='dicts')
-
-        for i, row in enumerate(rows, start=2):
+        for i, row in enumerate(read_dicts_from_csv(self.file_matching_maps_to_doculects), start=2):
             if row['encyclopedia_map_id'] not in map_ids:
                 raise AssetValidatorError(
                     f'Row {i} in file {self.file_matching_maps_to_doculects.name}: '

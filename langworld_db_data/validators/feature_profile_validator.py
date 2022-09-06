@@ -9,7 +9,7 @@ from langworld_db_data.constants.paths import (
 )
 from langworld_db_data.featureprofiletools.feature_profile_reader import FeatureProfileReader
 from langworld_db_data.filetools.csv_xls import (check_csv_for_malformed_rows, check_csv_for_repetitions_in_column,
-                                                 read_csv, read_dict_from_2_csv_columns)
+                                                 read_dicts_from_csv, read_dict_from_2_csv_columns)
 from langworld_db_data.filetools.json_toml_yaml import read_json_toml_yaml
 from langworld_db_data.validators.exceptions import ValidatorError
 
@@ -35,8 +35,7 @@ class FeatureProfileValidator:
         self.rules_for_not_applicable_value_type: dict = read_json_toml_yaml(
             file_with_rules_for_not_applicable_value_type)
 
-        rows_with_value_types: list[dict[str, str]] = read_csv(file_with_value_types, read_as='dicts')
-        self.valid_value_types = [row['id'] for row in rows_with_value_types]
+        self.valid_value_types = [row['id'] for row in read_dicts_from_csv(file_with_value_types)]
 
         for file in self.feature_profiles:
             check_csv_for_malformed_rows(file)
