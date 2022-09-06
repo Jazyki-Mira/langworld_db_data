@@ -39,16 +39,17 @@ class AbstractValueLister(ABC):
 
         for file in list_of_files:
             key = f'{self.encyclopedia_volume_for_doculect_id[file.stem]}:{file.stem}'
+            rows: list[dict[str, str]] = read_csv(file, read_as='dicts')
             self.filtered_rows_for_volume_doculect_id[key] = [
-                row for row in read_csv(file, read_as='dicts') if row['value_type'] == self.value_type
+                row for row in rows if row['value_type'] == self.value_type
             ]
 
     @abstractmethod
-    def write_grouped_by_feature(self, output_file: Path):
+    def write_grouped_by_feature(self, output_file: Path) -> None:
         pass
 
     @abstractmethod
-    def write_grouped_by_volume_and_doculect(self, output_file: Path):
+    def write_grouped_by_volume_and_doculect(self, output_file: Path) -> None:
         pass
 
 

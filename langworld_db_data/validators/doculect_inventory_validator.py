@@ -30,11 +30,12 @@ class DoculectInventoryValidator:
         self.doculects: list[dict] = read_csv(file_with_doculects, read_as='dicts')
         self.doculect_ids = {d['id'] for d in self.doculects}
 
-        self.genealogy_family_ids = {row['id'] for row in read_csv(file_with_genealogy_names, read_as='dicts')}
+        genealogy_rows: list[dict[str, str]] = read_csv(file_with_genealogy_names, read_as='dicts')
+        self.genealogy_family_ids = {row['id'] for row in genealogy_rows}
 
         self.has_feature_profile_for_doculect_id = {d['id']: d['has_feature_profile'] for d in self.doculects}
 
-    def validate(self):
+    def validate(self) -> None:
         """
         Runs all checks.
 
@@ -45,7 +46,7 @@ class DoculectInventoryValidator:
         self._match_doculects_to_files()
         self._match_files_to_doculects()
 
-    def _check_family_ids_in_genealogy(self):
+    def _check_family_ids_in_genealogy(self) -> None:
         """Checks that ID of family for every doculect
         matches ID in file with names of families.
 
@@ -58,7 +59,7 @@ class DoculectInventoryValidator:
                     f"not found in genealogy inventory")
         print('OK: ID of language family for each doculect is present in genealogy inventory')
 
-    def _match_doculects_to_files(self):
+    def _match_doculects_to_files(self) -> None:
         """Checks that each doculect in list of doculects
         that is marked with '1' in 'has_feature_profile'
         actually has a feature profile.
@@ -71,7 +72,7 @@ class DoculectInventoryValidator:
         else:
             print('OK: Every doculect that is marked as having a feature profile has a matching .csv file.')
 
-    def _match_files_to_doculects(self):
+    def _match_files_to_doculects(self) -> None:
         """Checks that each feature profile matches a line
         in the file with doculects and that line has '1'
         in 'has_feature_profile' field.

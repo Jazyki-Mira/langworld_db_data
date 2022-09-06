@@ -20,26 +20,30 @@ class AssetValidator:
         self.file_with_encyclopedia_maps = file_with_encyclopedia_maps
         self.file_matching_maps_to_doculects = file_matching_maps_to_doculects
 
-    def validate(self):
+    def validate(self) -> None:
         print('\nValidating files describing assets')
         self._validate_file_matching_maps_to_doculects()
 
-    def _validate_file_matching_maps_to_doculects(self):
+    def _validate_file_matching_maps_to_doculects(self) -> None:
         print('Checking file mapping encyclopedia maps to doculects')
 
-        plain_rows_as_tuples = [(row[0], row[1])
-                                for row in read_csv(self.file_matching_maps_to_doculects, read_as='plain_rows')]
-        counter = Counter(plain_rows_as_tuples)
+        map_to_doculect_rows: list[list[str]] = read_csv(self.file_matching_maps_to_doculects, read_as='plain_rows')
+        rows_as_tuples = [(row[0], row[1]) for row in map_to_doculect_rows]
+
+        counter = Counter(rows_as_tuples)
         for key in counter:
             if counter[key] > 1:
                 raise AssetValidatorError(
                     f'File {self.file_matching_maps_to_doculects.name} has a repeating row: {key} ({counter[key]})')
         print('OK: No repeating rows found')
 
-        doculect_ids = [row['id'] for row in read_csv(self.file_with_doculects, read_as='dicts')]
-        map_ids = [row['id'] for row in read_csv(self.file_with_encyclopedia_maps, read_as='dicts')]
+        doculect_rows: list[dict[str, str]] = read_csv(self.file_with_doculects, read_as='dicts')
+        doculect_ids = [row['id'] for row in doculect_rows]
 
-        rows = read_csv(self.file_matching_maps_to_doculects, read_as='dicts')
+        map_rows: list[dict[str, str]] = read_csv(self.file_with_encyclopedia_maps, read_as='dicts')
+        map_ids = [row['id'] for row in map_rows]
+
+        rows: list[dict[str, str]] = read_csv(self.file_matching_maps_to_doculects, read_as='dicts')
 
         for i, row in enumerate(rows, start=2):
             if row['encyclopedia_map_id'] not in map_ids:

@@ -27,11 +27,10 @@ class GenealogyValidator:
         self.file_with_hierarchy = file_with_hierarchy
         self.file_with_names = file_with_names
 
-        self.family_ids_from_file_with_names = [row['id'] for row in read_csv(self.file_with_names, read_as='dicts')]
+        rows_with_names: list[dict[str, str]] = read_csv(self.file_with_names, read_as='dicts')
+        self.family_ids_from_file_with_names = [row['id'] for row in rows_with_names]
 
-        self.family_ids_from_file_with_hierarchy = []
-
-    def validate(self):
+    def validate(self) -> None:
         print('\nChecking genealogy')
 
         check_yaml_file(self.file_with_hierarchy, verbose=False)
@@ -86,7 +85,7 @@ class GenealogyValidator:
 
         return family_ids
 
-    def _check_ids_in_list_of_names(self, ids_from_hierarchy: list[str]):
+    def _check_ids_in_list_of_names(self, ids_from_hierarchy: list[str]) -> None:
         """
         Checks if IDs in file with names of families are formed correctly and
         match IDs of families in hierarchy file.

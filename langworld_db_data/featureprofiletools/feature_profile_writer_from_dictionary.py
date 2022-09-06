@@ -21,7 +21,7 @@ class FeatureProfileWriterFromDictionary:
     def write(
         feature_dict: dict[str, ValueForFeatureProfileDictionary],
         output_path: Path,
-    ):
+    ) -> None:
         rows_to_write = []
 
         for key in feature_dict:

@@ -13,7 +13,7 @@ from langworld_db_data.validators.feature_value_inventory_validator import Featu
 from langworld_db_data.validators.genealogy_validator import GenealogyValidator
 
 
-def main():
+def main() -> None:
     print('\nRunning general checks of CSV and YAML files')
 
     print('Checking YAML files')

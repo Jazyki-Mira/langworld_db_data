@@ -13,7 +13,8 @@ class CustomValueLister(AbstractValueLister):
     def __init__(self, dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR):
         super().__init__(value_type='custom', dir_with_feature_profiles=dir_with_feature_profiles)
 
-    def write_grouped_by_volume_and_doculect(self, output_file: Path = DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT):
+    def write_grouped_by_volume_and_doculect(self, output_file: Path = DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT
+                                             ) -> None:
         content = ('# Значения типа `custom` с группировкой по томам и языкам\n'
                    'Оглавление файла открывается кнопкой сверху слева рядом с индикатором количества строк.\n\n'
                    'Файл с группировкой по **признакам** лежит [здесь](custom_values_by_feature.md).\n')
@@ -42,7 +43,7 @@ class CustomValueLister(AbstractValueLister):
         with output_file.open(mode='w+', encoding='utf-8') as fh:
             fh.write(content)
 
-    def write_grouped_by_feature(self, output_file: Path = DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_FEATURE):
+    def write_grouped_by_feature(self, output_file: Path = DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_FEATURE) -> None:
         rows_with_custom_values = []
 
         for volume_doculect_id in self.filtered_rows_for_volume_doculect_id:

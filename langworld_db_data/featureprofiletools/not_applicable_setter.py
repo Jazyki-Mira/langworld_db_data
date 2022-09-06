@@ -39,7 +39,7 @@ class NotApplicableSetter:
         self.reader = FeatureProfileReader
         self.writer = FeatureProfileWriterFromDictionary
 
-    def replace_not_stated_with_not_applicable_in_all_profiles_according_to_rules(self):
+    def replace_not_stated_with_not_applicable_in_all_profiles_according_to_rules(self) -> None:
         for file in self.feature_profiles:
             print(f'\nReading file {file.name}')
 

@@ -62,7 +62,8 @@ class DoculectInCountryWriter:
         self.output_file = output_file
         self.verbose = verbose
 
-        self.doculect_ids = [row['id'] for row in read_csv(file_with_doculects, read_as='dicts')]
+        doculect_rows: list[dict[str, str]] = read_csv(file_with_doculects, read_as='dicts')
+        self.doculect_ids = [row['id'] for row in doculect_rows]
 
         self.doculect_id_to_locale_to_file = {}
 
@@ -80,8 +81,7 @@ class DoculectInCountryWriter:
 
         # this is the initial version that will have to be amended by reading the file with aliases
         self.doculect_id_to_countries: dict[str, set[str]] = {
-            row['id']: {row['main_country_id']}
-            for row in read_csv(file_with_doculects, read_as='dicts')
+            row['id']: {row['main_country_id']} for row in doculect_rows
         }
 
         if self.verbose:
@@ -89,12 +89,14 @@ class DoculectInCountryWriter:
 
         self.country_name_and_locale_to_country_id = {}
 
-        for row in read_csv(file_with_countries, read_as='dicts'):
+        rows_with_countries: list[dict[str, str]] = read_csv(file_with_countries, read_as='dicts')
+        for row in rows_with_countries:
             for locale in LOCALES:
                 # (row[locale], locale) gives a dictionary key like (Russia, en):
                 self.country_name_and_locale_to_country_id[(row[locale], locale)] = row['id']
 
-        for row in read_csv(file_with_country_aliases, read_as='dicts'):
+        rows_with_country_aliases: list[dict[str, str]] = read_csv(file_with_country_aliases, read_as='dicts')
+        for row in rows_with_country_aliases:
             tuple_key = (row['alias'], row['locale'])
             if tuple_key not in self.country_name_and_locale_to_country_id:
                 self.country_name_and_locale_to_country_id[tuple_key] = row['country_id']
@@ -102,7 +104,7 @@ class DoculectInCountryWriter:
         if self.verbose:
             print('Country name and locale to country ID:', self.country_name_and_locale_to_country_id)
 
-    def write(self, overwrite: bool = True):
+    def write(self, overwrite: bool = True) -> None:
         self._add_aliases()
 
         rows_to_write = []
@@ -118,7 +120,7 @@ class DoculectInCountryWriter:
             overwrite=overwrite,
             delimiter=',')
 
-    def _add_aliases(self):
+    def _add_aliases(self) -> None:
         """Adds entries with country aliases to the dictionary
         that matches country names and locales to country IDs.
         Initially this dictionary only consists of

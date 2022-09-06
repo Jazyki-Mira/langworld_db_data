@@ -11,7 +11,7 @@ from yaml.parser import ParserError
 YAML_INDENT = ' ' * 2
 
 
-def check_yaml_file(path_to_file: Path, verbose: bool = True):
+def check_yaml_file(path_to_file: Path, verbose: bool = True) -> None:
     """Checks YAML file and throws exception if some problem occurs while
     reading YAML data.
     """

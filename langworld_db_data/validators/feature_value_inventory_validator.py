@@ -29,15 +29,16 @@ class FeatureValueInventoryValidator:
             check_csv_for_repetitions_in_column(file, column_name='id')
         print('OK: No malformed rows found, all feature IDs and value IDs are unique')
 
-        self.feature_ids = [row['id'] for row in read_csv(file_with_features, read_as='dicts')]
+        feature_rows: list[dict[str, str]] = read_csv(file_with_features, read_as='dicts')
+        self.feature_ids = [row['id'] for row in feature_rows]
 
-        self.rows_with_listed_values = read_csv(file_with_listed_values, read_as='dicts')
+        self.rows_with_listed_values: list[dict[str, str]] = read_csv(file_with_listed_values, read_as='dicts')
 
-    def validate(self):
+    def validate(self) -> None:
         self._validate_feature_ids()
         self._validate_listed_values()
 
-    def _validate_feature_ids(self):
+    def _validate_feature_ids(self) -> None:
         if len(self.feature_ids) > len(set(self.feature_ids)):
             raise FeatureValueInventoryValidatorError('Some feature IDs are not unique')
 
@@ -47,7 +48,7 @@ class FeatureValueInventoryValidator:
 
         print('Feature IDs OK')
 
-    def _validate_listed_values(self):
+    def _validate_listed_values(self) -> None:
 
         feature_id_for_value_id = {row['id']: row['feature_id'] for row in self.rows_with_listed_values}
 
@@ -62,7 +63,7 @@ class FeatureValueInventoryValidator:
         print('OK: all value IDs are derived from feature ID')
 
         # Check uniqueness of Russian and English value names within one feature
-        names_of_listed_values_for_feature_id = {feature_id: [] for feature_id in self.feature_ids}
+        names_of_listed_values_for_feature_id: dict[str, list] = {feature_id: [] for feature_id in self.feature_ids}
 
         for locale in ('en', 'ru'):
 

@@ -38,7 +38,7 @@ class FeatureAdder(Adder):
         listed_values_to_add: list[dict],
         index_of_new_feature: Optional[int] = None,
         insert_after_index: Optional[int] = None,
-    ):
+    ) -> None:
 
         _ = remove_extra_space
         cat_id, feat_en, feat_ru = _(category_id), _(feature_en), _(feature_ru)
@@ -51,10 +51,11 @@ class FeatureAdder(Adder):
             if not ('en' in item and 'ru' in item):
                 raise FeatureAdderError(f"Listed value must have keys 'en' and 'ru'. Your value: {item}")
 
-        if cat_id not in [row['id'] for row in read_csv(self.file_with_categories, read_as='dicts')]:
+        rows_with_categories: list[dict[str, str]] = read_csv(self.file_with_categories, read_as='dicts')
+        if cat_id not in [row['id'] for row in rows_with_categories]:
             raise FeatureAdderError(f'Category ID <{cat_id}> not found in file {self.file_with_categories.name}')
 
-        rows_with_features = read_csv(self.input_file_with_features, read_as='dicts')
+        rows_with_features: list[dict[str, str]] = read_csv(self.input_file_with_features, read_as='dicts')
         if (feat_en in [row['en'] for row in rows_with_features]
                 or feat_ru.strip() in [row['ru'] for row in rows_with_features]):
             # note that this check should not be restricted to one feature category
@@ -148,7 +149,7 @@ class FeatureAdder(Adder):
         self,
         category_id: str,
         custom_index_of_new_feature: Optional[int],
-    ):
+    ) -> str:
         """
         Generates feature ID. If custom feature index is given, tries to use it.
         Otherwise, takes the largest feature ID that is **less than 100**
@@ -161,9 +162,9 @@ class FeatureAdder(Adder):
                 f'For clarity, manual feature indices must be greater than {INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS} '
                 f'(you gave {custom_index_of_new_feature}).')
 
+        rows_with_features: list[dict[str, str]] = read_csv(self.input_file_with_features, read_as='dicts')
         feature_ids_in_category = [
-            row['id'] for row in read_csv(self.input_file_with_features, read_as='dicts')
-            if row['id'].startswith(f'{category_id}{SEPARATOR}')
+            row['id'] for row in rows_with_features if row['id'].startswith(f'{category_id}{SEPARATOR}')
         ]
 
         if custom_index_of_new_feature is None:
@@ -181,11 +182,11 @@ class FeatureAdder(Adder):
 
     @staticmethod
     def insert_rows(
-        rows_before_insertion: list[dict],
-        rows_to_add: list[dict],
+        rows_before_insertion: list[dict[str, str]],
+        rows_to_add: list[dict[str, str]],
         category_id: str,
         feature_id_to_add_after: Optional[str],
-    ):
+    ) -> list[dict[str, str]]:
         rows = rows_before_insertion[:]
 
         if feature_id_to_add_after is None:

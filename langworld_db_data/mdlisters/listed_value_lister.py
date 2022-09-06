@@ -25,13 +25,14 @@ class ListedValueLister(AbstractValueLister):
         )
         self.file_with_listed_values = file_with_listed_values
 
-    def write_grouped_by_feature(self, output_file: Path = DISCUSSION_FILE_WITH_LISTED_VALUES):
+    def write_grouped_by_feature(self, output_file: Path = DISCUSSION_FILE_WITH_LISTED_VALUES) -> None:
 
-        feature_ids = [row['id'] for row in read_csv(self.file_with_features, read_as='dicts')]
+        feature_rows: list[dict[str, str]] = read_csv(self.file_with_features, read_as='dicts')
+        feature_ids = [row['id'] for row in feature_rows]
 
-        rows_with_listed_values = read_csv(self.file_with_listed_values, read_as='dicts')
+        rows_with_listed_values: list[dict[str, str]] = read_csv(self.file_with_listed_values, read_as='dicts')
 
-        feature_to_value_to_doculects = {
+        feature_to_value_to_doculects: dict[str, list] = {
             feature_id: {row['id']: []
                          for row in rows_with_listed_values if row['feature_id'] == feature_id}
             for feature_id in feature_ids
@@ -77,7 +78,7 @@ class ListedValueLister(AbstractValueLister):
         with output_file.open(mode='w+', encoding='utf-8') as fh:
             fh.write(content)
 
-    def write_grouped_by_volume_and_doculect(self, output_file: Path):
+    def write_grouped_by_volume_and_doculect(self, output_file: Path) -> None:
         pass
 
 

@@ -32,8 +32,11 @@ class FeatureProfileValidator:
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob('*.csv')))
         self.reader = FeatureProfileReader()
 
-        self.rules_for_not_applicable_value_type = read_json_toml_yaml(file_with_rules_for_not_applicable_value_type)
-        self.valid_value_types = [row['id'] for row in read_csv(file_with_value_types, read_as='dicts')]
+        self.rules_for_not_applicable_value_type: dict = read_json_toml_yaml(
+            file_with_rules_for_not_applicable_value_type)
+
+        rows_with_value_types: list[dict[str, str]] = read_csv(file_with_value_types, read_as='dicts')
+        self.valid_value_types = [row['id'] for row in rows_with_value_types]
 
         for file in self.feature_profiles:
             check_csv_for_malformed_rows(file)
@@ -49,12 +52,12 @@ class FeatureProfileValidator:
         self.must_raise_exception_at_value_name_mismatch = must_raise_exception_at_value_name_mismatch
         self.must_raise_exception_at_not_applicable_rule_breach = must_raise_exception_at_not_applicable_rule_breach
 
-    def validate(self):
+    def validate(self) -> None:
         print(f'\nChecking feature profiles ({len(self.feature_profiles)} files)')
         for feature_profile in self.feature_profiles:
             self._validate_one_file(feature_profile)
 
-    def _validate_one_file(self, file: Path):
+    def _validate_one_file(self, file: Path) -> None:
         try:
             data_from_profile = self.reader.read_feature_profile_as_dict_from_file(file)
         except ValueError as e:
