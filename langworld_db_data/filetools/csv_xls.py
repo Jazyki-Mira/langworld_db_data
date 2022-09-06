@@ -1,14 +1,15 @@
 from collections import Counter
+import _csv  # for typing only
 import csv
 from pathlib import Path
-from typing import Literal, Union
+from typing import Literal, overload, Union
 
 from openpyxl import load_workbook
 
 CSVDelimiter = Literal[',', ';']
 
 
-def check_csv_for_malformed_rows(path_to_file: Path):
+def check_csv_for_malformed_rows(path_to_file: Path) -> None:
     """
     Checks whether all rows in CSV file have the same number of columns.
     Throws IndexError if they do not.
@@ -38,7 +39,7 @@ def check_csv_for_malformed_rows(path_to_file: Path):
                      f'{", ".join(indices_of_likely_invalid_rows)}')
 
 
-def check_csv_for_repetitions_in_column(path_to_file: Path, column_name: str):
+def check_csv_for_repetitions_in_column(path_to_file: Path, column_name: str) -> None:
     """Throws ValueError if there are repetitions in given column of given file.
     """
     rows = read_csv(path_to_file, read_as='dicts')
@@ -63,7 +64,7 @@ def convert_xls_to_csv(
     path_to_output_csv_file: Path,
     delimiter: CSVDelimiter = ',',
     overwrite: bool = True,
-):
+) -> None:
     if not overwrite and path_to_output_csv_file.exists():
         raise FileExistsError(f'File {path_to_output_csv_file} already exists')
 
@@ -83,11 +84,22 @@ def convert_xls_to_csv(
     wb.close()
 
 
-def read_csv(
-    path_to_file: Path,
-    read_as: Literal['dicts', 'plain_rows', 'plain_rows_no_header'],
-    delimiter: CSVDelimiter = ',',
-) -> list[Union[dict[str, str], list[str]]]:
+ReadCSVLiteral = Literal['dicts', 'plain_rows', 'plain_rows_no_header']
+
+
+@overload
+def read_csv(path_to_file: Path, read_as: ReadCSVLiteral, delimiter: CSVDelimiter = ',') -> list[dict[str, str]]:
+    ...
+
+
+@overload
+def read_csv(path_to_file: Path, read_as: ReadCSVLiteral, delimiter: CSVDelimiter = ',') -> list[list[str]]:
+    ...
+
+
+def read_csv(path_to_file: Path,
+             read_as: ReadCSVLiteral,
+             delimiter: CSVDelimiter = ',') -> Union[list[dict[str, str]], list[list[str]]]:
     """Opens CSV file and reads it as plain rows (list of lists)
     or list of dictionaries (top row is considered row with keys,
     each row is a dictionary with keys taken from top row).
@@ -98,10 +110,10 @@ def read_csv(
         if read_as not in ('dicts', 'plain_rows', 'plain_rows_no_header'):
             raise ValueError(f'Type {read_as} not supported.')
 
+        # noinspection PyUnresolvedReferences, PyProtectedMember
+        reader: Union[csv.DictReader, _csv._reader] = csv.reader(fh, delimiter=delimiter)
         if read_as == 'dicts':
             reader = csv.DictReader(fh, delimiter=delimiter)
-        else:
-            reader = csv.reader(fh, delimiter=delimiter)
 
         return list(reader)[1:] if read_as == 'plain_rows_no_header' else list(reader)
 
@@ -118,6 +130,10 @@ def read_dict_from_2_csv_columns(path_to_file: Path,
     rows = read_csv(path_to_file, read_as='plain_rows', delimiter=delimiter)
 
     header_row, data_rows = rows[0], rows[1:]
+
+    # for mypy typechecking only
+    if not isinstance(header_row, list) or not isinstance(data_rows, list):
+        raise TypeError
 
     if not (key_col in header_row and val_col in header_row):
         raise KeyError(f'Name of {key_col=} or {val_col=} not found in {header_row=}')
@@ -140,7 +156,7 @@ def read_dict_from_2_csv_columns(path_to_file: Path,
     return {k: v for k, v in zip(key_column, value_column)}
 
 
-def write_csv(rows: Union[list, tuple], path_to_file: Path, overwrite: bool, delimiter: CSVDelimiter):
+def write_csv(rows: Union[list, tuple], path_to_file: Path, overwrite: bool, delimiter: CSVDelimiter) -> None:
     """Writes rows to CSV file. All rows (items of main list) must be
     of same type (all lists, all tuples, all dicts or all NamedTuples).
 
@@ -167,12 +183,16 @@ def write_csv(rows: Union[list, tuple], path_to_file: Path, overwrite: bool, del
     print(f'Writing CSV to file {path_to_file}')
 
     with path_to_file.open(mode='w+', encoding='utf-8', newline='') as fh:
+        # noinspection PyUnusedLocal, PyProtectedMember, PyUnresolvedReferences
+        writer: Union[csv.DictWriter, _csv._writer, None] = None  # for mypy typechecking only
         if hasattr(rows[0], '_asdict'):
             # NamedTuple cannot be used in `isinstance` statement, so I use `hasattr`.
             # I have to put this check first, because isinstance(item, tuple)
             # will evaluate to True for NamedTuple, which will lead to wrong behavior
             # (absence of header row)
+            # noinspection PyProtectedMember
             writer = csv.DictWriter(fh, fieldnames=list(rows[0]._asdict().keys()), delimiter=delimiter)
+            # noinspection PyProtectedMember
             rows_to_write = [row._asdict() for row in rows]
         elif isinstance(rows[0], dict):
             writer = csv.DictWriter(fh, fieldnames=list(rows[0].keys()), delimiter=delimiter)
