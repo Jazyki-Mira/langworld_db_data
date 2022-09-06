@@ -13,6 +13,7 @@ pycldf = "*"
 pyperclip = "*"
 yapf = "*"
 flake8 = "*"
+mypy = "*"
 
 [dev-packages]
 
