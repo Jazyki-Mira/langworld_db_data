@@ -33,6 +33,3 @@ SOCIOLINGUISTIC_DIR = DATA_DIR / 'sociolinguistics'
 SOCIOLINGUISTIC_PROFILES_DIR = SOCIOLINGUISTIC_DIR / 'sociolinguistic_profiles'
 FILE_WITH_COUNTRY_ALIASES = SOCIOLINGUISTIC_DIR / 'country_aliases_for_profile_parsing.csv'
 FILE_WITH_DOCULECTS_MATCHED_TO_COUNTRIES = SOCIOLINGUISTIC_DIR / 'doculects_to_countries.csv'
-
-if __name__ == '__main__':
-    pass

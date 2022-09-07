@@ -30,7 +30,3 @@ class FeatureProfileWriterFromDictionary:
             rows_to_write.append(row_dict)
 
         write_csv(rows_to_write, path_to_file=output_path, overwrite=True, delimiter=',')
-
-
-if __name__ == '__main__':
-    pass

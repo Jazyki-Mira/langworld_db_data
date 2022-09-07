@@ -51,7 +51,3 @@ class AbstractValueLister(ABC):
     @abstractmethod
     def write_grouped_by_volume_and_doculect(self, output_file: Path) -> None:
         pass
-
-
-if __name__ == '__main__':
-    pass

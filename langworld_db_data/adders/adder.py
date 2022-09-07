@@ -29,7 +29,3 @@ class Adder:
 
         self.output_file_with_listed_values = output_file_with_listed_values
         self.output_dir_with_feature_profiles = output_dir_with_feature_profiles
-
-
-if __name__ == '__main__':
-    pass

@@ -107,7 +107,3 @@ class ListedValueAdder(Adder):
                           path_to_file=self.output_dir_with_feature_profiles / file.name,
                           overwrite=True,
                           delimiter=',')
-
-
-if __name__ == '__main__':
-    pass

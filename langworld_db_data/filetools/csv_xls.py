@@ -196,7 +196,3 @@ def write_csv(rows: Union[list, tuple], path_to_file: Path, overwrite: bool, del
 
         writer.writerows(rows_to_write)
         print(f'Written {len(rows_to_write)} rows')
-
-
-if __name__ == '__main__':
-    pass

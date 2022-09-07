@@ -87,7 +87,3 @@ class FeatureProfileReader:
             print('\nValue (or comment for empty value) copied to clipboard')
 
         return data_to_return
-
-
-if __name__ == '__main__':
-    pass

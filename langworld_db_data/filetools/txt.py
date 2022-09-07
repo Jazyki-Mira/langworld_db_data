@@ -75,7 +75,3 @@ def write_plain_text_to_file(content: Union[str, list, tuple],
             msg = 'lines'
 
         print(f'Written {len(content)} {msg} into file {file}.')
-
-
-if __name__ == '__main__':
-    pass

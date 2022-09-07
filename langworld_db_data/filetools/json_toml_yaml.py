@@ -78,7 +78,3 @@ def read_json_toml_yaml(path_to_file: Path) -> Union[dict, list]:
         raise ParserError(f'Could not convert file {path_to_file} because of malformed data')
 
     return data
-
-
-if __name__ == '__main__':
-    pass

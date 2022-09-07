@@ -159,7 +159,3 @@ class DoculectInCountryWriter:
             clean_str = clean_str.replace(f'({note})', '')
 
         return clean_str.strip()
-
-
-if __name__ == '__main__':
-    pass
