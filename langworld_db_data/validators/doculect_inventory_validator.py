@@ -68,8 +68,7 @@ class DoculectInventoryValidator(Validator):
         for doculect in self.doculects:
             if doculect['has_feature_profile'] == '1' and doculect['id'] not in self.names_of_feature_profiles:
                 raise DoculectInventoryValidatorError(f'Doculect {doculect["id"]} has no file with feature profile.')
-        else:
-            print('OK: Every doculect that is marked as having a feature profile has a matching .csv file.')
+        print('OK: Every doculect that is marked as having a feature profile has a matching .csv file.')
 
     def _match_files_to_doculects(self) -> None:
         """Checks that each feature profile matches a line
@@ -84,8 +83,7 @@ class DoculectInventoryValidator(Validator):
             if self.has_feature_profile_for_doculect_id[name] != '1':
                 raise DoculectInventoryValidatorError(
                     f'Feature profile {name} is not marked with "1" in file with doculects.')
-        else:
-            print('OK: Every feature profile is marked correspondingly in file with doculects.')
+        print('OK: Every feature profile is marked correspondingly in file with doculects.')
 
 
 if __name__ == '__main__':
