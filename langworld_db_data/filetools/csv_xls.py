@@ -178,23 +178,24 @@ def write_csv(rows: Union[list, tuple], path_to_file: Path, overwrite: bool, del
     print(f'Writing CSV to file {path_to_file}')
 
     with path_to_file.open(mode='w+', encoding='utf-8', newline='') as fh:
+        first_row = rows[0]
         # noinspection PyUnusedLocal, PyProtectedMember, PyUnresolvedReferences
         writer: Union[csv.DictWriter, _csv._writer, None] = None  # for mypy typechecking only
-        if hasattr(rows[0], '_asdict'):
+        if hasattr(first_row, '_asdict'):
             # NamedTuple cannot be used in `isinstance` statement, so I use `hasattr`.
             # I have to put this check first, because isinstance(item, tuple)
             # will evaluate to True for NamedTuple, which will lead to wrong behavior
             # (absence of header row)
             # noinspection PyProtectedMember
-            writer = csv.DictWriter(fh, fieldnames=list(rows[0]._asdict().keys()), delimiter=delimiter)
+            writer = csv.DictWriter(fh, fieldnames=list(first_row._asdict().keys()), delimiter=delimiter)
             # noinspection PyProtectedMember
             rows_to_write = [row._asdict() for row in rows]
-        elif isinstance(rows[0], dict):
-            writer = csv.DictWriter(fh, fieldnames=list(rows[0].keys()), delimiter=delimiter)
-        elif isinstance(rows[0], (list, tuple)):
+        elif isinstance(first_row, dict):
+            writer = csv.DictWriter(fh, fieldnames=list(first_row.keys()), delimiter=delimiter)
+        elif isinstance(first_row, (list, tuple)):
             writer = csv.writer(fh, delimiter=delimiter)
         else:
-            raise TypeError(f'Each item of the list of rows is of type {type(rows[0])}. '
+            raise TypeError(f'Each item of the list of rows is of type {type(first_row)}. '
                             'Supported types are list, tuple, dict, NamedTuple.')
 
         if isinstance(writer, csv.DictWriter):
