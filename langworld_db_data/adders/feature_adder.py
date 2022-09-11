@@ -3,7 +3,7 @@ from typing import Optional
 
 from langworld_db_data.adders.adder import Adder, AdderError, AUX_ROW_MARKER, SEPARATOR
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
-from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
+from langworld_db_data.filetools.csv_xls import read_column_from_csv, read_dicts_from_csv, write_csv
 from langworld_db_data.filetools.txt import remove_extra_space
 
 INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS = 100
@@ -51,7 +51,7 @@ class FeatureAdder(Adder):
             if not ('en' in item and 'ru' in item):
                 raise FeatureAdderError(f"Listed value must have keys 'en' and 'ru'. Your value: {item}")
 
-        if cat_id not in [row['id'] for row in read_dicts_from_csv(self.file_with_categories)]:
+        if cat_id not in read_column_from_csv(path_to_file=self.file_with_categories, column_name='id'):
             raise FeatureAdderError(f'Category ID <{cat_id}> not found in file {self.file_with_categories.name}')
 
         rows_with_features = read_dicts_from_csv(self.input_file_with_features)

@@ -7,7 +7,7 @@ from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_LISTED_VALUES,
 )
 from langworld_db_data.mdlisters.abstract_value_lister import AbstractValueLister
-from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, read_dict_from_2_csv_columns
+from langworld_db_data.filetools.csv_xls import read_column_from_csv, read_dicts_from_csv, read_dict_from_2_csv_columns
 
 
 class ListedValueLister(AbstractValueLister):
@@ -27,7 +27,7 @@ class ListedValueLister(AbstractValueLister):
 
     def write_grouped_by_feature(self, output_file: Path = DISCUSSION_FILE_WITH_LISTED_VALUES) -> None:
 
-        feature_ids = [row['id'] for row in read_dicts_from_csv(self.file_with_features)]
+        feature_ids = read_column_from_csv(path_to_file=self.file_with_features, column_name='id')
 
         feature_to_value_to_doculects: dict[str, list] = {
             feature_id: {

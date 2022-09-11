@@ -3,14 +3,14 @@ from pathlib import Path
 
 from langworld_db_data.constants.paths import ASSETS_DIR, FILE_WITH_DOCULECTS
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, read_plain_rows_from_csv
-from langworld_db_data.validators.exceptions import ValidatorError
+from langworld_db_data.validators.validator import Validator, ValidatorError
 
 
 class AssetValidatorError(ValidatorError):
     pass
 
 
-class AssetValidator:
+class AssetValidator(Validator):
 
     def __init__(self,
                  file_with_doculects: Path = FILE_WITH_DOCULECTS,
@@ -39,9 +39,8 @@ class AssetValidator:
                     f'File {self.file_matching_maps_to_doculects.name} has a repeating row: {key} ({counter[key]})')
         print('OK: No repeating rows found')
 
-        doculect_ids = [row['id'] for row in read_dicts_from_csv(self.file_with_doculects)]
-
-        map_ids = [row['id'] for row in read_dicts_from_csv(self.file_with_encyclopedia_maps)]
+        doculect_ids = self._read_ids(self.file_with_doculects)
+        map_ids = self._read_ids(self.file_with_encyclopedia_maps)
 
         for i, row in enumerate(read_dicts_from_csv(self.file_matching_maps_to_doculects), start=2):
             if row['encyclopedia_map_id'] not in map_ids:

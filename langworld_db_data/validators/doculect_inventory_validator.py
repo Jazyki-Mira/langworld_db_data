@@ -3,14 +3,14 @@ from pathlib import Path
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_DOCULECTS, FILE_WITH_GENEALOGY_NAMES
 from langworld_db_data.filetools.csv_xls import (check_csv_for_malformed_rows, check_csv_for_repetitions_in_column,
                                                  read_dicts_from_csv)
-from langworld_db_data.validators.exceptions import ValidatorError
+from langworld_db_data.validators.validator import Validator, ValidatorError
 
 
 class DoculectInventoryValidatorError(ValidatorError):
     pass
 
 
-class DoculectInventoryValidator:
+class DoculectInventoryValidator(Validator):
 
     def __init__(
         self,
@@ -30,7 +30,7 @@ class DoculectInventoryValidator:
         self.doculects: list[dict] = read_dicts_from_csv(file_with_doculects)
         self.doculect_ids = {d['id'] for d in self.doculects}
 
-        self.genealogy_family_ids = {row['id'] for row in read_dicts_from_csv(file_with_genealogy_names)}
+        self.genealogy_family_ids = set(self._read_ids(file_with_genealogy_names))
 
         self.has_feature_profile_for_doculect_id = {d['id']: d['has_feature_profile'] for d in self.doculects}
 
