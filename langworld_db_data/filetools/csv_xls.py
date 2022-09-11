@@ -96,7 +96,7 @@ def read_dicts_from_csv(path_to_file: Path, delimiter: CSVDelimiter = ',') -> li
     (top row is considered row with keys, each row is a dictionary
     with keys taken from top row).
     """
-    with path_to_file.open(mode='r', encoding='utf-8-sig', newline='') as fh:
+    with path_to_file.open(encoding='utf-8-sig', newline='') as fh:
         return list(csv.DictReader(fh, delimiter=delimiter))
 
 
@@ -142,7 +142,7 @@ def read_plain_rows_from_csv(path_to_file: Path,
                              delimiter: CSVDelimiter = ',',
                              remove_1st_row: bool = False) -> list[list[str]]:
     """Opens CSV file and reads it as plain rows (list of lists)."""
-    with path_to_file.open(mode='r', encoding='utf-8-sig', newline='') as fh:
+    with path_to_file.open(encoding='utf-8-sig', newline='') as fh:
         reader = csv.reader(fh, delimiter=delimiter)
         rows = list(reader)
 

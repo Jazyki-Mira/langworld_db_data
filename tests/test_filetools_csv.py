@@ -28,10 +28,10 @@ def test_convert_xls_to_csv():
 
     assert path_to_output_csv_file.exists()
 
-    with path_to_output_csv_file.open(mode='r', encoding='utf-8') as fh:
+    with path_to_output_csv_file.open(encoding='utf-8') as fh:
         output_content = fh.read()
 
-    with path_to_gold_standard_csv_file.open(mode='r', encoding='utf-8') as fh:
+    with path_to_gold_standard_csv_file.open(encoding='utf-8') as fh:
         gold_standard = fh.read()
 
     assert output_content == gold_standard

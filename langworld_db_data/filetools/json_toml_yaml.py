@@ -18,7 +18,7 @@ def check_yaml_file(path_to_file: Path, verbose: bool = True) -> None:
     if verbose:
         print('Checking', path_to_file.name)
 
-    with path_to_file.open(mode='r', encoding='utf-8') as yaml_file:
+    with path_to_file.open(encoding='utf-8') as yaml_file:
         data = yaml_file.read()
 
     # YAML parser does not catch duplicate dict keys, it keeps the value of the last key it sees.
@@ -60,7 +60,7 @@ def read_json_toml_yaml(path_to_file: Path) -> Union[dict, list]:
 
     data = None
 
-    with path_to_file.open(mode='r', encoding='utf-8') as fh:
+    with path_to_file.open(encoding='utf-8') as fh:
         content = fh.read()
         # I could make the following more concise and avoid repetition
         # by binding extension to name of module, but what if modules change?

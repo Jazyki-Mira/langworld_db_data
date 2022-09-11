@@ -48,7 +48,7 @@ def test_write_plain_text_to_file_writes_content_to_file(content, expected_outpu
 
     assert PATH_TO_TEST_OUTPUT_TXT_FILE.exists()
 
-    with PATH_TO_TEST_OUTPUT_TXT_FILE.open(mode='r', encoding='utf-8') as fh:
+    with PATH_TO_TEST_OUTPUT_TXT_FILE.open(encoding='utf-8') as fh:
         assert fh.read() == expected_output
 
     PATH_TO_TEST_OUTPUT_TXT_FILE.unlink()
@@ -62,7 +62,7 @@ def test_write_plain_text_to_file_overwrites_content_in_overwrite_mode():
 
     assert PATH_TO_TEST_OUTPUT_TXT_FILE.exists()
 
-    with PATH_TO_TEST_OUTPUT_TXT_FILE.open(mode='r', encoding='utf-8') as fh:
+    with PATH_TO_TEST_OUTPUT_TXT_FILE.open(encoding='utf-8') as fh:
         assert fh.read() == 'bar'
 
     PATH_TO_TEST_OUTPUT_TXT_FILE.unlink()

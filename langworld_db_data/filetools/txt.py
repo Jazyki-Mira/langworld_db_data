@@ -10,10 +10,10 @@ def check_encoding_of_file(file: Path) -> str:
     """
     encoding = 'utf-8-sig'
     try:
-        fh = file.open(mode='r', encoding='utf-8')
+        fh = file.open(encoding='utf-8')
         fh.read()
     except UnicodeDecodeError:
-        fh = file.open(mode='r', encoding='cp1251')
+        fh = file.open(encoding='cp1251')
         fh.read()
         encoding = 'cp1251'
     fh.close()
@@ -30,17 +30,17 @@ def read_non_empty_lines_from_txt_file(path_to_file: Path) -> list[str]:
 
     encoding = check_encoding_of_file(path_to_file)
 
-    with path_to_file.open(mode='r', encoding=encoding) as fh:
+    with path_to_file.open(encoding=encoding) as fh:
         return [line.strip() for line in fh.readlines() if line.strip()]
 
 
 def read_plain_text_from_file(path_to_file: Path) -> str:
     try:
-        with path_to_file.open(mode='r', encoding='utf-8-sig') as fh:
+        with path_to_file.open(encoding='utf-8-sig') as fh:
             content = fh.read()
     except UnicodeDecodeError:
         print(f'Note: file {path_to_file.name} has ANSI encoding')
-        with path_to_file.open(mode='r', encoding='cp1251') as fh:
+        with path_to_file.open(encoding='cp1251') as fh:
             content = fh.read()
 
     return content

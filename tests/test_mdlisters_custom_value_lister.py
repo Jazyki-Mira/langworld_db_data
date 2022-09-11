@@ -13,9 +13,9 @@ def test_write_grouped_by_volume_and_doculect():
     cvl.write_grouped_by_volume_and_doculect(output_file=output_file)
     assert output_file.exists()
 
-    with gold_standard_file.open(mode='r', encoding='utf-8') as fh:
+    with gold_standard_file.open(encoding='utf-8') as fh:
         gold_content = fh.read()
-    with output_file.open(mode='r', encoding='utf-8') as fh:
+    with output_file.open(encoding='utf-8') as fh:
         test_content = fh.read()
 
     assert gold_content == test_content
@@ -29,9 +29,9 @@ def test_write_grouped_by_feature():
     cvl.write_grouped_by_feature(output_file=output_file)
     assert output_file.exists()
 
-    with gold_standard_file.open(mode='r', encoding='utf-8') as fh:
+    with gold_standard_file.open(encoding='utf-8') as fh:
         gold_content = fh.read()
-    with output_file.open(mode='r', encoding='utf-8') as fh:
+    with output_file.open(encoding='utf-8') as fh:
         test_content = fh.read()
 
     assert gold_content == test_content
