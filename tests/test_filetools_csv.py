@@ -6,7 +6,7 @@ import pytest
 # noinspection PyProtectedMember
 from langworld_db_data.filetools.csv_xls import (CSVDelimiter, check_csv_for_malformed_rows,
                                                  check_csv_for_repetitions_in_column, convert_xls_to_csv,
-                                                 read_dicts_from_csv, read_plain_rows_from_csv,
+                                                 read_column_from_csv, read_dicts_from_csv, read_plain_rows_from_csv,
                                                  read_dict_from_2_csv_columns, write_csv)
 from langworld_db_data.filetools.txt import read_plain_text_from_file
 from tests.paths import DIR_WITH_FILETOOLS_TEST_FILES, PATH_TO_TEST_OUTPUT_TXT_FILE, PATH_TO_TEST_OUTPUT_CSV_FILE
@@ -77,6 +77,20 @@ def test_read_dicts_from_csv_read_plain_rows_from_csv():
         assert list_of_dicts == expected_list_of_dicts
 
     path_to_auto_test_file.unlink()
+
+
+def test_read_column_from_csv():
+    file = DIR_WITH_FILETOOLS_TEST_FILES / 'doculects_output_gold_standard.csv'
+    values = read_column_from_csv(file, 'id')
+    assert len(values) == 408
+    assert values[0] == 'aragonese'
+    assert values[-1] == 'yukaghir'
+
+
+def test_read_column_from_csv_raises_key_error():
+    file = DIR_WITH_FILETOOLS_TEST_FILES / 'doculects_output_gold_standard.csv'
+    with pytest.raises(KeyError):
+        read_column_from_csv(file, 'foo')
 
 
 def test_check_csv_for_malformed_rows_passes_for_good_file():

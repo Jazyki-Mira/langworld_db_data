@@ -84,6 +84,13 @@ def convert_xls_to_csv(
     wb.close()
 
 
+def read_column_from_csv(path_to_file: Path, column_name: str) -> list[str]:
+    """Reads one column from CSV file. Column name is taken from the top row.
+    :raises KeyError if no such column is find.
+    """
+    return [row[column_name] for row in read_dicts_from_csv(path_to_file)]
+
+
 def read_dicts_from_csv(path_to_file: Path, delimiter: CSVDelimiter = ',') -> list[dict[str, str]]:
     """Opens CSV file and reads it as or list of dictionaries
     (top row is considered row with keys, each row is a dictionary
