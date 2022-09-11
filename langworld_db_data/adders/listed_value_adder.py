@@ -47,15 +47,17 @@ class ListedValueAdder(Adder):
         id_of_new_value = ''
 
         for i, row in enumerate(rows):
-            if row['feature_id'] == feature_id:
-                if row['en'] == new_value_en or row['ru'] == new_value_ru:
-                    raise ListedValueAdderError(f'Row {row} already contains value you are trying to add')
+            if row['feature_id'] != feature_id:
+                continue
 
-                # Keep updating those with each row.
-                # This means that at the last row of the feature they will reach the required values.
-                index_of_last_row_for_given_feature = i
-                last_digit_of_value_id = int(row['id'].split(SEPARATOR)[-1])
-                id_of_new_value = feature_id + SEPARATOR + str(last_digit_of_value_id + 1)
+            if row['en'] == new_value_en or row['ru'] == new_value_ru:
+                raise ListedValueAdderError(f'Row {row} already contains value you are trying to add')
+
+            # Keep updating those with each row.
+            # This means that at the last row of the feature they will reach the required values.
+            index_of_last_row_for_given_feature = i
+            last_digit_of_value_id = int(row['id'].split(SEPARATOR)[-1])
+            id_of_new_value = feature_id + SEPARATOR + str(last_digit_of_value_id + 1)
 
         row_with_new_value = [{
             'id': id_of_new_value,
