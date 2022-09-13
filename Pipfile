@@ -4,18 +4,18 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pytest = "*"
 toml = "*"
 pyyaml = "*"
 openpyxl = "*"
-pytest-cov = "*"
 pycldf = "*"
 pyperclip = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
 yapf = "*"
 flake8 = "*"
 mypy = "*"
-
-[dev-packages]
 
 [requires]
 python_version = "3.9"
