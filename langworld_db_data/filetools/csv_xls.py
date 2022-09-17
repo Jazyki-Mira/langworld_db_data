@@ -2,9 +2,10 @@ from collections import Counter
 import _csv  # for typing only
 import csv
 from pathlib import Path
-from typing import Literal, Union
+from typing import Iterable, Literal, Union
 
 from openpyxl import load_workbook
+import openpyxl.cell  # for typing
 
 CSVDelimiter = Literal[',', ';']
 
@@ -71,9 +72,7 @@ def convert_xls_to_csv(
     wb = load_workbook(path_to_input_excel_file, data_only=True)
     ws = wb[sheet_name]
 
-    rows_to_write = []
-    for row in ws.iter_rows():
-        rows_to_write.append([cell.value for cell in row])
+    rows_to_write = [_get_cell_values(row) for row in ws.iter_rows()]
 
     write_csv(
         rows=rows_to_write,
@@ -81,7 +80,25 @@ def convert_xls_to_csv(
         overwrite=overwrite,
         delimiter=delimiter,
     )
-    wb.close()
+
+
+def _get_cell_values(row: Iterable[openpyxl.cell.Cell]) -> list[str]:
+    """Takes a row produced from `.iter_rows()` and
+    returns list of values of cells.
+
+    **Note**: `openpyxl` returns `None` as value of an empty cell.
+    This function changes this behavior in that
+    it returns **an empty string** as value of an empty cell.
+    """
+    cell_values = []
+
+    for cell in row:
+        if cell.value is None:
+            cell_values.append('')
+        else:
+            cell_values.append(cell.value)
+
+    return cell_values
 
 
 def read_column_from_csv(path_to_file: Path, column_name: str) -> list[str]:
@@ -136,6 +153,32 @@ def read_dict_from_2_csv_columns(path_to_file: Path,
     value_column = [row[val_index] for row in data_rows]
 
     return {k: v for k, v in zip(key_column, value_column)}
+
+
+def read_dicts_from_xls(path_to_file: Path, sheet_name: str) -> list[dict[str, str]]:
+    """Opens Excel file and reads it as or list of dictionaries
+    (top row is considered row with keys, each row is a dictionary
+    with keys taken from top row).
+
+    Empty value cells will result in **empty strings** (not `None`)
+    as dictionary values.
+    """
+
+    wb = load_workbook(path_to_file, data_only=True)
+    ws = wb[sheet_name]
+
+    rows = list(ws.iter_rows())
+
+    keys = _get_cell_values(rows[0])
+    data_rows = [_get_cell_values(row) for row in rows[1:]]
+
+    dicts = [
+        {keys[col]: cell_value for col, cell_value in enumerate(data_row)}
+        for data_row in data_rows
+    ]
+
+    wb.close()
+    return dicts
 
 
 def read_plain_rows_from_csv(path_to_file: Path,
