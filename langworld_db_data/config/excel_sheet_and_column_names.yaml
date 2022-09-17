@@ -1,0 +1,10 @@
+sheet_name: input
+feature_id: feature_id
+feature_name_ru: Признак
+value_type: Тип значения
+value_id: ValueID
+listed_value_ru: Значение из списка (тип значения listed)
+custom_value_ru: Значение не из фиксированного списка (тип значения custom)
+comment_ru: Комментарий
+comment_en: Comment in English
+page: Страницы

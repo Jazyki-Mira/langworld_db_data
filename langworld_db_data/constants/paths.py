@@ -1,6 +1,7 @@
 from pathlib import Path
 
 MAIN_DIR = Path(__file__).parent.parent.parent
+CONFIG_DIR = Path(__file__).parent.parent / 'config'
 DATA_DIR = MAIN_DIR / 'data'
 
 CLDF_DIR = DATA_DIR / 'cldf'
