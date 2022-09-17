@@ -14,19 +14,6 @@ import openpyxl.worksheet.worksheet
 CSVDelimiter = Literal[',', ';']
 
 
-@contextmanager
-def load_worksheet(path_to_workbook: Path, sheet_name: str
-                   ) -> Generator[openpyxl.worksheet.worksheet.Worksheet, None, None]:
-    """Opens Excel workbook, returns worksheet,
-    closes the workbook after operation is done.
-    """
-    wb = load_workbook(path_to_workbook, data_only=True)
-    try:
-        yield wb[sheet_name]
-    finally:
-        wb.close()
-
-
 def check_csv_for_malformed_rows(path_to_file: Path) -> None:
     """
     Checks whether all rows in CSV file have the same number of columns.
@@ -86,7 +73,7 @@ def convert_xls_to_csv(
     if not overwrite and path_to_output_csv_file.exists():
         raise FileExistsError(f'File {path_to_output_csv_file} already exists')
 
-    with load_worksheet(path_to_workbook=path_to_input_excel_file, sheet_name=sheet_name) as ws:
+    with _load_worksheet(path_to_workbook=path_to_input_excel_file, sheet_name=sheet_name) as ws:
         rows_to_write = [_get_cell_values(row) for row in ws.iter_rows()]
 
         write_csv(
@@ -114,6 +101,19 @@ def _get_cell_values(row: Iterable[openpyxl.cell.Cell]) -> list[str]:
             cell_values.append(cell.value)
 
     return cell_values
+
+
+@contextmanager
+def _load_worksheet(path_to_workbook: Path, sheet_name: str
+                    ) -> Generator[openpyxl.worksheet.worksheet.Worksheet, None, None]:
+    """Opens Excel workbook, returns worksheet,
+    closes the workbook after operation is done.
+    """
+    wb = load_workbook(path_to_workbook, data_only=True)
+    try:
+        yield wb[sheet_name]
+    finally:
+        wb.close()
 
 
 def read_column_from_csv(path_to_file: Path, column_name: str) -> list[str]:
@@ -179,7 +179,7 @@ def read_dicts_from_xls(path_to_file: Path, sheet_name: str) -> list[dict[str, s
     as dictionary values.
     """
 
-    with load_worksheet(path_to_workbook=path_to_file, sheet_name=sheet_name) as ws:
+    with _load_worksheet(path_to_workbook=path_to_file, sheet_name=sheet_name) as ws:
         rows = list(ws.iter_rows())
 
         keys = _get_cell_values(rows[0])
