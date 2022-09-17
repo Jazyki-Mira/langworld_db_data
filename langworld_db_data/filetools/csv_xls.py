@@ -1,13 +1,30 @@
 from collections import Counter
+from collections.abc import Generator
+from contextlib import contextmanager
 import _csv  # for typing only
 import csv
 from pathlib import Path
 from typing import Iterable, Literal, Union
 
 from openpyxl import load_workbook
-import openpyxl.cell  # for typing
+# for typing:
+import openpyxl.cell
+import openpyxl.worksheet.worksheet
 
 CSVDelimiter = Literal[',', ';']
+
+
+@contextmanager
+def load_worksheet(path_to_workbook: Path, sheet_name: str
+                   ) -> Generator[openpyxl.worksheet.worksheet.Worksheet, None, None]:
+    """Opens Excel workbook, returns worksheet,
+    closes the workbook after operation is done.
+    """
+    wb = load_workbook(path_to_workbook, data_only=True)
+    try:
+        yield wb[sheet_name]
+    finally:
+        wb.close()
 
 
 def check_csv_for_malformed_rows(path_to_file: Path) -> None:
@@ -69,17 +86,15 @@ def convert_xls_to_csv(
     if not overwrite and path_to_output_csv_file.exists():
         raise FileExistsError(f'File {path_to_output_csv_file} already exists')
 
-    wb = load_workbook(path_to_input_excel_file, data_only=True)
-    ws = wb[sheet_name]
+    with load_worksheet(path_to_workbook=path_to_input_excel_file, sheet_name=sheet_name) as ws:
+        rows_to_write = [_get_cell_values(row) for row in ws.iter_rows()]
 
-    rows_to_write = [_get_cell_values(row) for row in ws.iter_rows()]
-
-    write_csv(
-        rows=rows_to_write,
-        path_to_file=path_to_output_csv_file,
-        overwrite=overwrite,
-        delimiter=delimiter,
-    )
+        write_csv(
+            rows=rows_to_write,
+            path_to_file=path_to_output_csv_file,
+            overwrite=overwrite,
+            delimiter=delimiter,
+        )
 
 
 def _get_cell_values(row: Iterable[openpyxl.cell.Cell]) -> list[str]:
@@ -164,21 +179,18 @@ def read_dicts_from_xls(path_to_file: Path, sheet_name: str) -> list[dict[str, s
     as dictionary values.
     """
 
-    wb = load_workbook(path_to_file, data_only=True)
-    ws = wb[sheet_name]
+    with load_worksheet(path_to_workbook=path_to_file, sheet_name=sheet_name) as ws:
+        rows = list(ws.iter_rows())
 
-    rows = list(ws.iter_rows())
+        keys = _get_cell_values(rows[0])
+        data_rows = [_get_cell_values(row) for row in rows[1:]]
 
-    keys = _get_cell_values(rows[0])
-    data_rows = [_get_cell_values(row) for row in rows[1:]]
+        dicts = [
+            {keys[col]: cell_value for col, cell_value in enumerate(data_row)}
+            for data_row in data_rows
+        ]
 
-    dicts = [
-        {keys[col]: cell_value for col, cell_value in enumerate(data_row)}
-        for data_row in data_rows
-    ]
-
-    wb.close()
-    return dicts
+        return dicts
 
 
 def read_plain_rows_from_csv(path_to_file: Path,
