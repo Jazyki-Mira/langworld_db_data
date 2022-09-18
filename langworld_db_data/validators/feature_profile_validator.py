@@ -107,10 +107,9 @@ class FeatureProfileValidator(Validator):
                         print(message)
 
             if data_row.feature_name_ru != self.feature_ru_for_feature_id[feature_id]:
-                message = (
-                    f'File {file.stem}, row {i + 1}: feature name {data_row.feature_name_ru} '
-                    f'in row {i + 1} does not match name of this feature in inventory '
-                    f'({self.feature_ru_for_feature_id[feature_id]})')
+                message = (f'File {file.stem}, row {i + 1}: feature name {data_row.feature_name_ru} '
+                           f'in row {i + 1} does not match name of this feature in inventory '
+                           f'({self.feature_ru_for_feature_id[feature_id]})')
                 if self.must_throw_error_at_feature_or_value_name_mismatch:
                     raise FeatureProfileValidatorError(message)
                 else:
