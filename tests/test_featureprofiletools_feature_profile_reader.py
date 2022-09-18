@@ -19,6 +19,7 @@ benchmark_dict = {
         value_ru='Три',
         comment_ru='',
         comment_en='',
+        page_numbers='',
     ),
     'A-2':
     ValueForFeatureProfileDictionary(
@@ -28,6 +29,7 @@ benchmark_dict = {
         value_ru='Верхний, средний (закрытые и открытые) и нижний',
         comment_ru='',
         comment_en='',
+        page_numbers='',
     ),
     'A-3':
     ValueForFeatureProfileDictionary(
@@ -37,6 +39,7 @@ benchmark_dict = {
         value_ru='Передний, средний и задний',
         comment_ru='',
         comment_en='',
+        page_numbers='',
     ),
 }
 

@@ -70,6 +70,7 @@ class NotApplicableSetter:
                                 value_id='',
                                 comment_en=data_from_profile[id_of_feature_to_be_changed].comment_en,
                                 comment_ru=data_from_profile[id_of_feature_to_be_changed].comment_ru,
+                                page_numbers='',
                             )
 
             self.writer.write(feature_dict=new_data, output_path=self.output_dir / file.name)

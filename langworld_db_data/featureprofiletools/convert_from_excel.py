@@ -46,6 +46,7 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
                       if value_type == 'listed' else _get('custom_value_ru')),
             comment_ru=_get('comment_ru'),
             comment_en=_get('comment_en'),
+            page_numbers=_get('page_numbers')
         )
 
     output_path = path_to_input_excel.parent / f'{path_to_input_excel.stem}.csv'

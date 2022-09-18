@@ -11,3 +11,4 @@ class ValueForFeatureProfileDictionary(NamedTuple):
     value_ru: str
     comment_ru: str
     comment_en: str
+    page_numbers: str

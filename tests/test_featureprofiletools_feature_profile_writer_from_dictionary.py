@@ -25,6 +25,7 @@ def test_write(test_writer):
                 value_ru='Три',
                 comment_ru='',
                 comment_en='',
+                page_numbers='',
             ),
             'A-2':
             ValueForFeatureProfileDictionary(
@@ -34,6 +35,7 @@ def test_write(test_writer):
                 value_ru='Верхний, средний (закрытые и открытые) и нижний',
                 comment_ru='',
                 comment_en='',
+                page_numbers='',
             ),
             'A-3':
             ValueForFeatureProfileDictionary(
@@ -43,6 +45,7 @@ def test_write(test_writer):
                 value_ru='Передний, средний и задний',
                 comment_ru='',
                 comment_en='',
+                page_numbers='',
             ),
             '_aux':
             ValueForFeatureProfileDictionary(
@@ -52,6 +55,7 @@ def test_write(test_writer):
                 value_ru='',
                 comment_ru='И.И.Иванов',
                 comment_en='',
+                page_numbers='',
             ),
         },
         output_path=output_file,
