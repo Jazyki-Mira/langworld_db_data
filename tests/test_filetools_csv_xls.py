@@ -5,11 +5,13 @@ import pytest
 
 # noinspection PyProtectedMember
 from langworld_db_data.filetools.csv_xls import (CSVDelimiter, check_csv_for_malformed_rows,
-                                                 check_csv_for_repetitions_in_column, convert_xls_to_csv,
-                                                 read_column_from_csv, read_dicts_from_csv, read_plain_rows_from_csv,
-                                                 read_dict_from_2_csv_columns, read_dicts_from_xls, write_csv)
+                                                 append_empty_column_to_csv, check_csv_for_repetitions_in_column,
+                                                 convert_xls_to_csv, read_column_from_csv, read_dicts_from_csv,
+                                                 read_plain_rows_from_csv, read_dict_from_2_csv_columns,
+                                                 read_dicts_from_xls, write_csv)
 from langworld_db_data.filetools.txt import read_plain_text_from_file
 from tests.paths import DIR_WITH_FILETOOLS_TEST_FILES, PATH_TO_TEST_OUTPUT_TXT_FILE, PATH_TO_TEST_OUTPUT_CSV_FILE
+from tests.test_helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 
 
 def test_convert_xls_to_csv():
@@ -233,3 +235,31 @@ def test_write_csv(rows, expected_file_content):
     assert content == expected_file_content
 
     PATH_TO_TEST_OUTPUT_CSV_FILE.unlink()
+
+
+def test_append_empty_column_to_csv_adds_new_column():
+    input_file = DIR_WITH_FILETOOLS_TEST_FILES / 'doculects_output_gold_standard.csv'
+    output_file = DIR_WITH_FILETOOLS_TEST_FILES / 'append_empty_column_doculects_output.csv'
+    gold_standard_file_after_append = DIR_WITH_FILETOOLS_TEST_FILES / 'append_empty_column_doculects_gold_standard.csv'
+
+    append_empty_column_to_csv(
+        path_to_file=input_file, name_of_new_column='new_column', custom_path_to_output_file=output_file)
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(output_file, gold_standard_file_after_append)
+
+
+def test_append_empty_column_to_csv_raises_exception_with_existing_custom_output_file():
+    input_file = DIR_WITH_FILETOOLS_TEST_FILES / 'doculects_output_gold_standard.csv'
+    existing_file = DIR_WITH_FILETOOLS_TEST_FILES / 'append_empty_column_doculects_gold_standard.csv'
+    with pytest.raises(FileExistsError):
+        append_empty_column_to_csv(
+            path_to_file=input_file, custom_path_to_output_file=existing_file, name_of_new_column='foo')
+
+
+def test_append_empty_column_to_csv_raises_exception_with_existing_column():
+    input_file = DIR_WITH_FILETOOLS_TEST_FILES / 'doculects_output_gold_standard.csv'
+    output_file = DIR_WITH_FILETOOLS_TEST_FILES / 'append_empty_column_doculects_output.csv'
+    with pytest.raises(ValueError):
+        append_empty_column_to_csv(
+            path_to_file=input_file, custom_path_to_output_file=output_file, name_of_new_column='type')
+
+    assert not output_file.exists()

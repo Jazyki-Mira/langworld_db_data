@@ -4,7 +4,7 @@ from contextlib import contextmanager
 import _csv  # for typing only
 import csv
 from pathlib import Path
-from typing import Iterable, Literal, Union
+from typing import Iterable, Literal, Optional, Union
 
 from openpyxl import load_workbook
 # for typing:
@@ -12,6 +12,34 @@ import openpyxl.cell
 import openpyxl.worksheet.worksheet
 
 CSVDelimiter = Literal[',', ';']
+
+
+def append_empty_column_to_csv(
+        path_to_file: Path,
+        name_of_new_column: str,
+        delimiter: CSVDelimiter = ',',
+        custom_path_to_output_file: Optional[Path] = None) -> None:
+    """Adds empty column (as last column) to CSV file. **Overwrites file**,
+    but optional output path can be specified to create a new file.
+
+    :raises ValueError if column name already exists in file.
+    :raises FileExistsError if custom output file is specified and already exists.
+    """
+    if custom_path_to_output_file is not None and custom_path_to_output_file.exists():
+        raise FileExistsError(f'You provided a custom path to output file {custom_path_to_output_file}, '
+                              f'but it already exists. To append column in place, do not indicate custom output path.')
+    output_path = custom_path_to_output_file if custom_path_to_output_file else path_to_file
+
+    rows = read_plain_rows_from_csv(path_to_file=path_to_file, delimiter=delimiter)
+    header_row, data_rows = rows[0], rows[1:]
+
+    if name_of_new_column in header_row:
+        raise ValueError(f'Column {name_of_new_column} already exists in {path_to_file.name}')
+
+    new_header_row: list[str] = header_row + [name_of_new_column]
+    new_data_rows = [row + [''] for row in data_rows]
+
+    write_csv([new_header_row] + new_data_rows, path_to_file=output_path, overwrite=True, delimiter=delimiter)
 
 
 def check_csv_for_malformed_rows(path_to_file: Path) -> None:
