@@ -1,8 +1,10 @@
 from pathlib import Path
 import re
 
+from langworld_db_data.constants.literals import AUX_ROW_MARKER
 from langworld_db_data.constants.paths import (
     FEATURE_PROFILES_DIR,
+    FILE_WITH_NAMES_OF_FEATURES,
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NOT_APPLICABLE_RULES,
     FILE_WITH_VALUE_TYPES,
@@ -23,11 +25,12 @@ class FeatureProfileValidator(Validator):
     def __init__(
         self,
         dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
+        file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
         file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
         file_with_rules_for_not_applicable_value_type: Path = FILE_WITH_NOT_APPLICABLE_RULES,
         file_with_value_types: Path = FILE_WITH_VALUE_TYPES,
-        must_raise_exception_at_value_name_mismatch: bool = True,
-        must_raise_exception_at_not_applicable_rule_breach: bool = False,
+        must_throw_error_at_feature_or_value_name_mismatch: bool = True,
+        must_throw_error_at_not_applicable_rule_breach: bool = False,
     ):
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob('*.csv')))
         self.reader = FeatureProfileReader()
@@ -42,14 +45,11 @@ class FeatureProfileValidator(Validator):
             for column_name in ('feature_id', 'feature_name_ru'):
                 check_csv_for_repetitions_in_column(file, column_name=column_name)
 
-        self.value_ru_for_value_id = read_dict_from_2_csv_columns(
-            file_with_listed_values,
-            key_col='id',
-            val_col='ru',
-        )
+        self.feature_ru_for_feature_id = read_dict_from_2_csv_columns(file_with_features, key_col='id', val_col='ru')
+        self.value_ru_for_value_id = read_dict_from_2_csv_columns(file_with_listed_values, key_col='id', val_col='ru')
 
-        self.must_raise_exception_at_value_name_mismatch = must_raise_exception_at_value_name_mismatch
-        self.must_raise_exception_at_not_applicable_rule_breach = must_raise_exception_at_not_applicable_rule_breach
+        self.must_throw_error_at_feature_or_value_name_mismatch = must_throw_error_at_feature_or_value_name_mismatch
+        self.must_throw_error_at_not_applicable_rule_breach = must_throw_error_at_not_applicable_rule_breach
 
     def validate(self) -> None:
         print(f'\nChecking feature profiles ({len(self.feature_profiles)} files)')
@@ -63,6 +63,9 @@ class FeatureProfileValidator(Validator):
             raise FeatureProfileValidatorError(e)
 
         for i, feature_id in enumerate(data_from_profile.keys(), start=1):
+            if feature_id == AUX_ROW_MARKER:
+                continue
+
             # possible absence of feature ID in file is caught when reading data_from_profile
             data_row = data_from_profile[feature_id]
 
@@ -88,15 +91,30 @@ class FeatureProfileValidator(Validator):
                     raise FeatureProfileValidatorError(
                         f'File {file.stem} contains invalid value ID {data_row.value_id} in row {i + 1}')
 
+                # Validation of whether value name (here) and feature name (later on) in feature profile
+                # match the names in inventories of features and values respectively is only done for the purpose
+                # of clarity and readability.  Russian names of features and values from feature profiles
+                # are not supposed to be used in code. Only IDs really matter.
+                # This is why I allow to skip throwing exception in case of mismatch (but prefer throwing it anyway).
                 if data_row.value_ru != self.value_ru_for_value_id[data_row.value_id]:
                     message = (
                         f'File {file.stem}, row {i + 1}: value {data_row.value_ru} for value ID {data_row.value_id} '
                         f'in row {i + 1} does not match name of this value in inventory '
                         f'(value ID {data_row.value_id} should be {self.value_ru_for_value_id[data_row.value_id]})')
-                    if self.must_raise_exception_at_value_name_mismatch:
+                    if self.must_throw_error_at_feature_or_value_name_mismatch:
                         raise FeatureProfileValidatorError(message)
                     else:
                         print(message)
+
+            if data_row.feature_name_ru != self.feature_ru_for_feature_id[feature_id]:
+                message = (
+                    f'File {file.stem}, row {i + 1}: feature name {data_row.feature_name_ru} '
+                    f'in row {i + 1} does not match name of this feature in inventory '
+                    f'({self.feature_ru_for_feature_id[feature_id]})')
+                if self.must_throw_error_at_feature_or_value_name_mismatch:
+                    raise FeatureProfileValidatorError(message)
+                else:
+                    print(message)
 
         breaches_of_rules_for_not_applicable = []
 
@@ -123,7 +141,7 @@ class FeatureProfileValidator(Validator):
                         print(error_message)
                         breaches_of_rules_for_not_applicable.append(error_message)
 
-        if breaches_of_rules_for_not_applicable and self.must_raise_exception_at_not_applicable_rule_breach:
+        if breaches_of_rules_for_not_applicable and self.must_throw_error_at_not_applicable_rule_breach:
             raise FeatureProfileValidatorError(
                 f"File {file.name}: found {len(breaches_of_rules_for_not_applicable)} breaches of rules "
                 f"for 'not_applicable' value type.")

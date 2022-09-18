@@ -1,7 +1,8 @@
 from pathlib import Path
 from typing import Optional
 
-from langworld_db_data.adders.adder import Adder, AdderError, AUX_ROW_MARKER, SEPARATOR
+from langworld_db_data.adders.adder import Adder, AdderError
+from langworld_db_data.constants.literals import AUX_ROW_MARKER, SEPARATOR
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.filetools.csv_xls import read_column_from_csv, read_dicts_from_csv, write_csv
 from langworld_db_data.filetools.txt import remove_extra_space

@@ -12,11 +12,12 @@ DIR_WITH_PROFILES_BREACHING_RULES_FOR_NOT_APPLICABLE = (
 def test_validator():
     return FeatureProfileValidator(
         dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
+        file_with_features=DIR_WITH_VALIDATORS_TEST_FILES / 'features_OK.csv',
         file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / 'features_listed_values_OK.csv',
         file_with_rules_for_not_applicable_value_type=(DIR_WITH_VALIDATORS_TEST_FILES /
                                                        'features_not_applicable_rules.yaml'),
-        must_raise_exception_at_value_name_mismatch=True,
-        must_raise_exception_at_not_applicable_rule_breach=False,
+        must_throw_error_at_feature_or_value_name_mismatch=True,
+        must_throw_error_at_not_applicable_rule_breach=False,
     )
 
 
@@ -43,9 +44,9 @@ def test__validate_one_file_fails_with_bad_files(test_validator, file_stem, expe
     assert expected_error_message in str(e)
 
 
-def test__validate_one_file_prints_message_with_must_raise_exception_at_value_name_mismatch_set_to_false(
+def test__validate_one_file_prints_message_with_must_throw_error_at_feature_or_value_name_mismatch_set_to_false(
         capsys, test_validator):
-    test_validator.must_raise_exception_at_value_name_mismatch = False
+    test_validator.must_throw_error_at_feature_or_value_name_mismatch = False
     test_validator._validate_one_file(DIR_WITH_BAD_PROFILES / 'corsican_non_matching_listed_value.csv')
     stdout = capsys.readouterr()
     assert 'value Передний и задний for value ID A-3-4 in row 4 does not match' in str(stdout)
@@ -58,7 +59,7 @@ def test_validate_fails_with_bad_data():
 
 def test__validate_one_file_prints_message_for_files_breaching_rules_for_not_applicable_with_flag_set_to_false(
         capsys, test_validator):
-    test_validator.must_raise_exception_at_not_applicable_rule_breach = False
+    test_validator.must_throw_error_at_not_applicable_rule_breach = False
 
     for file_name in ('agul', 'catalan'):
         test_validator._validate_one_file(DIR_WITH_PROFILES_BREACHING_RULES_FOR_NOT_APPLICABLE / f'{file_name}.csv')
@@ -71,12 +72,13 @@ def test_validate_fails_with_profiles_that_breach_rules_for_not_applicable_with_
     with pytest.raises(FeatureProfileValidatorError) as e:
         FeatureProfileValidator(
             dir_with_feature_profiles=DIR_WITH_PROFILES_BREACHING_RULES_FOR_NOT_APPLICABLE,
+            file_with_features=DIR_WITH_VALIDATORS_TEST_FILES / 'features_OK.csv',
             file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / 'features_listed_values_OK.csv',
-            must_raise_exception_at_not_applicable_rule_breach=True,
+            must_throw_error_at_not_applicable_rule_breach=True,
         ).validate()
 
     assert "breaches of rules for 'not_applicable' value type" in str(e)
 
 
 def test_validate_real_data():
-    FeatureProfileValidator(must_raise_exception_at_value_name_mismatch=True).validate()
+    FeatureProfileValidator(must_throw_error_at_feature_or_value_name_mismatch=True).validate()
