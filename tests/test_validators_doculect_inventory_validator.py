@@ -27,6 +27,17 @@ def test__check_family_ids_in_genealogy_fails_with_bad_file():
     assert 'genealogy family ID foobar not found' in str(e)
 
 
+def test__check_uniqueness_of_coordinates_fails_with_bad_file():
+    with pytest.raises(DoculectInventoryValidatorError) as e:
+        DoculectInventoryValidator(
+            dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
+            file_with_doculects=DIR_WITH_VALIDATORS_TEST_FILES / 'doculects_bad_non_unique_coordinates.csv',
+            file_with_genealogy_names=FILE_WITH_GENEALOGY_NAMES,
+        )._check_uniqueness_of_coordinates()
+
+    assert 'identical coordinates' in str(e)
+
+
 def test__match_doculects_to_files_fails_with_more_doculects_than_files():
     validator = DoculectInventoryValidator(dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
                                            file_with_doculects=DIR_WITH_VALIDATORS_TEST_FILES /

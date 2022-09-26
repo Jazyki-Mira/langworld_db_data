@@ -1,3 +1,4 @@
+from collections import defaultdict
 from pathlib import Path
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_DOCULECTS, FILE_WITH_GENEALOGY_NAMES
@@ -42,6 +43,7 @@ class DoculectInventoryValidator(Validator):
         """
         print('\nValidating inventory of doculects')
         self._check_family_ids_in_genealogy()
+        self._check_uniqueness_of_coordinates()
         self._match_doculects_to_files()
         self._match_files_to_doculects()
 
@@ -57,6 +59,28 @@ class DoculectInventoryValidator(Validator):
                     f"{doculect['id'].capitalize()}: genealogy family ID {doculect['family_id']} "
                     f"not found in genealogy inventory")
         print('OK: ID of language family for each doculect is present in genealogy inventory')
+
+    def _check_uniqueness_of_coordinates(self) -> None:
+        """Checks that all pairs of coordinates are unique.
+
+        :raises DoculectInventoryValidatorError
+        """
+        coords_to_doculect_ids: dict[tuple[str, str], list[str]] = defaultdict(list)
+        for doculect in self.doculects:
+            coords_to_doculect_ids[(doculect['latitude'],
+                                    doculect['longitude'])].append(f"{doculect['id']} ({doculect['glottocode']})")
+
+        coords_with_more_than_one_doculect = [
+            pair for pair in coords_to_doculect_ids if len(coords_to_doculect_ids[pair]) > 1
+        ]
+
+        if coords_with_more_than_one_doculect:
+            print('\nFound doculects with identical coordinates:')
+            for pair in coords_with_more_than_one_doculect:
+                print(", ".join(coords_to_doculect_ids[pair]), ': ', pair, sep='')
+            raise DoculectInventoryValidatorError('Some doculects have identical coordinates')
+
+        print('OK: All pairs of coordinates are unique')
 
     def _match_doculects_to_files(self) -> None:
         """Checks that each doculect in list of doculects
