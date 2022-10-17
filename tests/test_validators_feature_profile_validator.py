@@ -38,10 +38,8 @@ def test__init(test_validator):
     ('corsican_non_matching_listed_value', 'value Передний и задний for value ID A-3-4 in row 4 does not match'),
 ])
 def test__validate_one_file_fails_with_bad_files(test_validator, file_stem, expected_error_message):
-    with pytest.raises(FeatureProfileValidatorError) as e:
+    with pytest.raises(FeatureProfileValidatorError, match=expected_error_message):
         test_validator._validate_one_file(DIR_WITH_BAD_PROFILES / f'{file_stem}.csv')
-
-    assert expected_error_message in str(e)
 
 
 def test__validate_one_file_prints_message_with_must_throw_error_at_feature_or_value_name_mismatch_set_to_false(
@@ -69,15 +67,13 @@ def test__validate_one_file_prints_message_for_files_breaching_rules_for_not_app
 
 def test_validate_fails_with_profiles_that_breach_rules_for_not_applicable_with_flag_set_to_true():
 
-    with pytest.raises(FeatureProfileValidatorError) as e:
+    with pytest.raises(FeatureProfileValidatorError, match="breaches of rules for 'not_applicable' value type"):
         FeatureProfileValidator(
             dir_with_feature_profiles=DIR_WITH_PROFILES_BREACHING_RULES_FOR_NOT_APPLICABLE,
             file_with_features=DIR_WITH_VALIDATORS_TEST_FILES / 'features_OK.csv',
             file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / 'features_listed_values_OK.csv',
             must_throw_error_at_not_applicable_rule_breach=True,
         ).validate()
-
-    assert "breaches of rules for 'not_applicable' value type" in str(e)
 
 
 def test_validate_real_data():

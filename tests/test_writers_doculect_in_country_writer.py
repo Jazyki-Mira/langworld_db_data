@@ -27,7 +27,7 @@ def test_writer():
 
 
 def test__init__raises_exception_with_empty_profiles_dir():
-    with pytest.raises(DoculectInCountryWriterError) as e:
+    with pytest.raises(DoculectInCountryWriterError, match='No sociolinguistic profiles found'):
         DoculectInCountryWriter(
             dir_with_sociolinguistic_profiles=TEST_DIR_FOR_DOCULECT_IN_COUNTRY_WRITER / 'dir_with_no_profiles',
             file_with_countries=TEST_COUNTRIES_FILE,
@@ -36,7 +36,6 @@ def test__init__raises_exception_with_empty_profiles_dir():
             output_file=TEST_OUTPUT_FILE,
             verbose=True,
         )
-    assert 'No sociolinguistic profiles found' in str(e)
 
 
 def test__add_aliases(test_writer):

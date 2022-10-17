@@ -28,10 +28,8 @@ def test_adder():
 
 
 def test__add_to_inventory_of_listed_values_throws_exception_with_invalid_feature_id(test_adder):
-    with pytest.raises(ListedValueAdderError) as e:
+    with pytest.raises(ListedValueAdderError, match='Feature ID X-1 not found'):
         test_adder.add_listed_value('X-1', 'Value', 'значение')
-
-    assert 'Feature ID X-1 not found' in str(e)
 
 
 def test__add_to_inventory_of_listed_values_throws_exception_with_existing_value(test_adder):
@@ -52,9 +50,8 @@ def test__add_to_inventory_of_listed_values_throws_exception_with_existing_value
             'new_value_ru': 'Что-то новое'
         },
     ]:
-        with pytest.raises(ListedValueAdderError) as e:
+        with pytest.raises(ListedValueAdderError, match='already contains value you are trying to add'):
             test_adder.add_listed_value(**bad_args)
-        assert 'already contains value you are trying to add' in str(e)
 
 
 def test__add_to_inventory_of_listed_values_adds_good_value(test_adder):
@@ -118,10 +115,8 @@ def test_add_listed_value_throws_exception_with_empty_args(test_adder):
             'new_value_ru': ''
         },
     ]:
-        with pytest.raises(ListedValueAdderError) as e:
+        with pytest.raises(ListedValueAdderError, match='None of the passed strings can be empty'):
             test_adder.add_listed_value(**bad_set_of_values)
-
-        assert 'None of the passed strings can be empty' in str(e)
 
 
 def test_add_listed_value(test_adder):

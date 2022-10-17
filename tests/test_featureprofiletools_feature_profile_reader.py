@@ -59,10 +59,9 @@ def test_read_feature_profile_as_dict_from_file(test_reader):
 
 
 def test_read_feature_profile_as_dict_from_file_fails_with_bad_file(test_reader):
-    with pytest.raises(ValueError) as e:
+    with pytest.raises(ValueError, match='does not contain feature ID in row 4'):
         test_reader.read_feature_profile_as_dict_from_file(DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES /
                                                            'corsican_bad_no_feature_ID.csv')
-    assert 'does not contain feature ID in row 4' in str(e)
 
 
 @pytest.mark.parametrize('doculect_id, feature_id, expected_output', [
@@ -91,7 +90,5 @@ def test_read_value_for_doculect_and_feature(test_reader, doculect_id, feature_i
 
 
 def test_read_value_for_doculect_and_feature_fails_with_wrong_feature_id(test_reader):
-    with pytest.raises(KeyError) as e:
+    with pytest.raises(KeyError, match="'X-99' not found for doculect_id='catalan'"):
         test_reader.read_value_for_doculect_and_feature('catalan', 'X-99', DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES)
-
-    assert "'X-99' not found for doculect_id='catalan'" in str(e)

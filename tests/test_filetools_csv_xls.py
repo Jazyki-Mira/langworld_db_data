@@ -102,9 +102,8 @@ def test_check_csv_for_malformed_rows_passes_for_good_file():
 
 def test_check_csv_for_malformed_rows_throws_exception_for_malformed_rows():
     file = DIR_WITH_FILETOOLS_TEST_FILES / 'csv_doculects_with_incomplete_rows.csv'
-    with pytest.raises(IndexError) as e:
+    with pytest.raises(IndexError, match='Following rows have abnormal number of columns: 3, 5'):
         check_csv_for_malformed_rows(file)
-    assert 'Following rows have abnormal number of columns: 3, 5' in str(e)
 
 
 def test_check_csv_for_repetitions_in_column_passes_for_good_file():
@@ -114,16 +113,14 @@ def test_check_csv_for_repetitions_in_column_passes_for_good_file():
 
 def test_check_csv_for_repetitions_in_column_throws_exception_with_wrong_column_name():
     file = DIR_WITH_FILETOOLS_TEST_FILES / 'doculects_output_gold_standard.csv'
-    with pytest.raises(KeyError) as e:
+    with pytest.raises(KeyError, match='column <foo> because it does not exist'):
         check_csv_for_repetitions_in_column(path_to_file=file, column_name='foo')
-    assert 'column <foo> because it does not exist' in str(e)
 
 
 def test_check_csv_for_repetitions_in_column_throws_exception_with_repetition_in_column():
     file = DIR_WITH_FILETOOLS_TEST_FILES / 'csv_doculects_with_duplicate_values.csv'
-    with pytest.raises(ValueError) as e:
+    with pytest.raises(ValueError, match='repeating values in column <id>: asturian, catalan'):
         check_csv_for_repetitions_in_column(path_to_file=file, column_name='id')
-    assert 'repeating values in column <id>: asturian, catalan' in str(e)
 
 
 def test_check_csv_for_repetitions_in_column_passes_for_file_with_repetition_in_column_if_different_column_is_checked():
@@ -145,21 +142,17 @@ def test_read_dict_from_2_csv_columns():
     assert dict2['foo2'] == 'bar2!'
     assert dict2['foo3'] == 'bar2!'
 
-    with pytest.raises(ValueError) as e:
-        read_dict_from_2_csv_columns(file, 'col2', 'col2')
-    assert 'same name for both key and value' in str(e.value)
 
-    with pytest.raises(ValueError) as e:
-        read_dict_from_2_csv_columns(file, 'col2', 'col3')
-    assert 'are not unique' in str(e.value)
-
-    with pytest.raises(KeyError) as e:
-        read_dict_from_2_csv_columns(file, 'col5!!', 'col3')
-    assert 'not found in' in str(e.value)
-
-    with pytest.raises(ValueError) as e:
-        read_dict_from_2_csv_columns(file, 'col4!', 'col2')
-    assert 'more than once' in str(e.value)
+@pytest.mark.parametrize(
+    'key_col, val_col, exception_type, error_message',
+    [('col2', 'col2', ValueError, 'same name for both key and value'),
+     ('col2', 'col3', ValueError, 'are not unique'),
+     ('col5!!', 'col3', KeyError, 'not found in'),
+     ('col4!', 'col2', ValueError, 'more than once')])
+def test_read_dict_from_2_csv_columns_throws_exceptions(key_col, val_col, exception_type, error_message):
+    file = DIR_WITH_FILETOOLS_TEST_FILES / 'read_dict_from_2_csv_columns.csv'
+    with pytest.raises(exception_type, match=error_message):
+        read_dict_from_2_csv_columns(file, key_col=key_col, val_col=val_col)
 
 
 def test_read_dicts_from_xls_reads_good_file():

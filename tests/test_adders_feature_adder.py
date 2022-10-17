@@ -58,10 +58,8 @@ def test_add_feature_fails_with_empty_arg(test_feature_adder):
             'listed_values_to_add': []
         },
     ):
-        with pytest.raises(FeatureAdderError) as e:
+        with pytest.raises(FeatureAdderError, match='Some of the values passed are empty'):
             test_feature_adder.add_feature(**incomplete_set_of_args)
-
-        assert 'Some of the values passed are empty' in str(e)
 
 
 def test_add_feature_fails_with_wrong_new_listed_values(test_feature_adder):
@@ -80,25 +78,23 @@ def test_add_feature_fails_with_wrong_new_listed_values(test_feature_adder):
             },
         ]
     }
-    with pytest.raises(FeatureAdderError) as e:
+    with pytest.raises(FeatureAdderError,
+                       match="must have keys 'en' and 'ru'. Your value: {'this': 'should fail', 'en': 'this is fine'}"):
         test_feature_adder.add_feature(**args)
-
-    assert "must have keys 'en' and 'ru'. Your value: {'this': 'should fail', 'en': 'this is fine'}" in str(e)
 
 
 def test_add_feature_fails_with_wrong_category_id(test_feature_adder):
-    with pytest.raises(FeatureAdderError) as e:
+    with pytest.raises(FeatureAdderError,
+                       match=f'Category ID <X> not found in file {test_feature_adder.file_with_categories.name}'):
         test_feature_adder.add_feature(category_id='X',
                                        feature_ru='имя',
                                        feature_en='name',
                                        listed_values_to_add=dummy_values_to_add)
 
-    assert f'Category ID <X> not found in file {test_feature_adder.file_with_categories.name}' in str(e)
-
 
 def test_add_feature_fails_with_existing_feature_name(test_feature_adder):
     for en, ru in (('Stress character ', 'Новый признак'), ('New  feature', 'Типы фонации')):
-        with pytest.raises(FeatureAdderError) as e:
+        with pytest.raises(FeatureAdderError, match='English or Russian feature name is already'):
             test_feature_adder.add_feature(
                 category_id='A',
                 feature_en=en,
@@ -106,12 +102,10 @@ def test_add_feature_fails_with_existing_feature_name(test_feature_adder):
                 listed_values_to_add=dummy_values_to_add,
             )
 
-        assert 'English or Russian feature name is already' in str(e)
-
 
 def test_add_feature_fails_with_non_existent_index_of_feature_to_insert_after(test_feature_adder):
     for number in [0, 22, 250]:
-        with pytest.raises(FeatureAdderError) as e:
+        with pytest.raises(FeatureAdderError, match=f'Cannot add feature after A-{number}'):
             test_feature_adder.add_feature(
                 category_id='A',
                 feature_en='Foo',
@@ -120,21 +114,15 @@ def test_add_feature_fails_with_non_existent_index_of_feature_to_insert_after(te
                 insert_after_index=number,
             )
 
-        assert f'Cannot add feature after A-{number}' in str(e)
-
 
 def test__build_feature_id_fails_with_existing_index(test_feature_adder):
-    with pytest.raises(FeatureAdderError) as e:
+    with pytest.raises(FeatureAdderError, match='Feature index 211 already in use in category A'):
         test_feature_adder._generate_feature_id(category_id='A', custom_index_of_new_feature=211)
-
-    assert 'Feature index 211 already in use in category A' in str(e)
 
 
 def test__build_feature_id_fails_with_small_index(test_feature_adder):
-    with pytest.raises(FeatureAdderError) as e:
+    with pytest.raises(FeatureAdderError, match='must be greater than 100'):
         test_feature_adder._generate_feature_id(category_id='A', custom_index_of_new_feature=99)
-
-    assert 'must be greater than 100 (you gave 99)' in str(e)
 
 
 def test__build_feature_id_works_with_good_custom_index(test_feature_adder):

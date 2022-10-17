@@ -8,32 +8,26 @@ GOOD_FILE_WITH_NAMES = DIR_WITH_VALIDATORS_TEST_FILES / 'genealogy_families_name
 
 
 def test___check_and_get_ids_from_hierarchy_fails_for_malformed_family_id():
-    with pytest.raises(GenealogyValidatorError) as e:
+    with pytest.raises(GenealogyValidatorError, match='can only contain lowercase letters and underscores'):
         GenealogyValidator(file_with_hierarchy=DIR_WITH_VALIDATORS_TEST_FILES /
                            'genealogy_families_hierarchy_bad_malformed_id.yaml',
                            file_with_names=GOOD_FILE_WITH_NAMES)._check_and_get_ids_from_hierarchy()
 
-    assert 'can only contain lowercase letters and underscores' in str(e)
-
 
 def test___check_and_get_ids_from_hierarchy_fails_for_family_id_that_is_not_in_file_with_names():
-    with pytest.raises(GenealogyValidatorError) as e:
+    with pytest.raises(GenealogyValidatorError, match='foobar in hierarchy not found in file with names'):
         GenealogyValidator(
             file_with_hierarchy=(DIR_WITH_VALIDATORS_TEST_FILES /
                                  'genealogy_families_hierarchy_bad_id_not_found_in_file_with_names.yaml'),
             file_with_names=GOOD_FILE_WITH_NAMES)._check_and_get_ids_from_hierarchy()
 
-    assert 'foobar in hierarchy not found in file with names' in str(e)
-
 
 def test___check_and_get_ids_from_hierarchy_fails_for_non_unique_family_id():
-    with pytest.raises(GenealogyValidatorError) as e:
+    with pytest.raises(GenealogyValidatorError, match='Family ID south_east_tung was seen 3 times'):
         GenealogyValidator(
             file_with_hierarchy=(DIR_WITH_VALIDATORS_TEST_FILES /
                                  'genealogy_families_hierarchy_bad_duplicate_id_on_different_levels.yaml'),
             file_with_names=GOOD_FILE_WITH_NAMES)._check_and_get_ids_from_hierarchy()
-
-    assert 'Family ID south_east_tung was seen 3 times' in str(e)
 
 
 def test__check_ids_in_list_of_names_fails_for_file_with_malformed_family_id():
@@ -44,10 +38,8 @@ def test__check_ids_in_list_of_names_fails_for_file_with_malformed_family_id():
     # this is not needed for the test but needed for the method being tested to run
     ids_from_hierarchy = validator._check_and_get_ids_from_hierarchy()
 
-    with pytest.raises(GenealogyValidatorError) as e:
+    with pytest.raises(GenealogyValidatorError, match='only use lowercase'):
         validator._check_ids_in_list_of_names(ids_from_hierarchy)
-
-    assert 'only use lowercase' in str(e)
 
 
 def test__check_ids_in_list_of_names_fails_for_file_with_family_id_that_does_not_match_any_id_in_hierarchy():
@@ -57,10 +49,8 @@ def test__check_ids_in_list_of_names_fails_for_file_with_family_id_that_does_not
 
     ids_from_hierarchy = validator._check_and_get_ids_from_hierarchy()
 
-    with pytest.raises(GenealogyValidatorError) as e:
+    with pytest.raises(GenealogyValidatorError, match='ID foobar not found in file with genealogy hierarchy'):
         validator._check_ids_in_list_of_names(ids_from_hierarchy)
-
-    assert 'ID foobar not found in file with genealogy hierarchy' in str(e)
 
 
 def test_validate_fails_for_bad_files_with_hierarchy():
