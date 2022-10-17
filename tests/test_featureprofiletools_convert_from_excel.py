@@ -9,5 +9,6 @@ def test_convert_from_excel():
     path_to_excel_file = DIR_WITH_CONVERT_TEST_FILES / 'french.xlsm'
     path_to_resulting_csv = convert_from_excel(path_to_excel_file)
 
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=path_to_resulting_csv, gold_standard_file=DIR_WITH_CONVERT_TEST_FILES / 'french_gold_standard.csv')
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(output_file=path_to_resulting_csv,
+                                                                      gold_standard_file=DIR_WITH_CONVERT_TEST_FILES /
+                                                                      'french_gold_standard.csv')
