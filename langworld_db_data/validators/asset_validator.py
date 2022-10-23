@@ -27,10 +27,7 @@ class AssetValidator(Validator):
     def _validate_file_matching_maps_to_doculects(self) -> None:
         print('Checking file mapping encyclopedia maps to doculects')
 
-        rows_as_tuples = [
-            (row[0], row[1])
-            for row in read_plain_rows_from_csv(self.file_matching_maps_to_doculects, remove_1st_row=False)
-        ]
+        rows_as_tuples = [(row[0], row[1]) for row in read_plain_rows_from_csv(self.file_matching_maps_to_doculects)]
 
         counter = Counter(rows_as_tuples)
         for key in counter:

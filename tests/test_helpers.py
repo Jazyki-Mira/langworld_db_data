@@ -35,7 +35,6 @@ def test_check_existence_of_output_csv_file_and_compare_with_gold_standard_unlin
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=dummy_output_file,
         gold_standard_file=dummy_gold_standard_file,
-        unlink_if_successful=True,
     )
 
     assert not dummy_output_file.exists()

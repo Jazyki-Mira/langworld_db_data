@@ -16,8 +16,6 @@ def test_validator():
         file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / 'features_listed_values_OK.csv',
         file_with_rules_for_not_applicable_value_type=(DIR_WITH_VALIDATORS_TEST_FILES /
                                                        'features_not_applicable_rules.yaml'),
-        must_throw_error_at_feature_or_value_name_mismatch=True,
-        must_throw_error_at_not_applicable_rule_breach=False,
     )
 
 
@@ -77,4 +75,4 @@ def test_validate_fails_with_profiles_that_breach_rules_for_not_applicable_with_
 
 
 def test_validate_real_data():
-    FeatureProfileValidator(must_throw_error_at_feature_or_value_name_mismatch=True).validate()
+    FeatureProfileValidator().validate()

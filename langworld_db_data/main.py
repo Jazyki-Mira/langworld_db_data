@@ -32,14 +32,11 @@ def main() -> None:
     DoculectInventoryValidator().validate()
     GenealogyValidator().validate()
     FeatureValueInventoryValidator().validate()
-    # Strict mode triggers exception if value name does not match value name in an inventory for given value ID.
-    # Since value name in feature profile is only there for readability, I could disable strict mode
-    # at later stages of the project (when I am sure that a mismatch can only be caused by planned renaming
-    # of a value  in the inventory).
-    FeatureProfileValidator(
-        must_throw_error_at_feature_or_value_name_mismatch=True,
-        must_throw_error_at_not_applicable_rule_breach=False,  # can set to True when existing profiles are amended
-    ).validate()
+    # By default, exception will be thrown if value name does not match value name in an inventory for given value ID.
+    # Value name in feature profile is only there for readability, so I could disable this behavior,
+    # but for now it seems OK for the exception to be thrown.
+    # Argument `must_throw_error_at_not_applicable_rule_breach` can be set to True at a later stage.
+    FeatureProfileValidator().validate()
 
     print('\nWriting Markdown files')
     CustomValueLister().write_grouped_by_feature()
