@@ -33,7 +33,7 @@ def test__add_to_inventory_of_listed_values_throws_exception_with_invalid_featur
 
 
 def test__add_to_inventory_of_listed_values_throws_exception_with_existing_value(test_adder):
-    for bad_args in [
+    for bad_args in (
         {
             'feature_id': 'A-3',
             'new_value_en': 'Central and back',
@@ -49,7 +49,7 @@ def test__add_to_inventory_of_listed_values_throws_exception_with_existing_value
             'new_value_en': 'Central and back',
             'new_value_ru': 'Что-то новое'
         },
-    ]:
+    ):
         with pytest.raises(ListedValueAdderError, match='already contains value you are trying to add'):
             test_adder.add_listed_value(**bad_args)
 
@@ -98,7 +98,7 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
 
 
 def test_add_listed_value_throws_exception_with_empty_args(test_adder):
-    for bad_set_of_values in [
+    for bad_set_of_values in (
         {
             'feature_id': '',
             'new_value_en': 'Value',
@@ -114,7 +114,7 @@ def test_add_listed_value_throws_exception_with_empty_args(test_adder):
             'new_value_en': 'Value',
             'new_value_ru': ''
         },
-    ]:
+    ):
         with pytest.raises(ListedValueAdderError, match='None of the passed strings can be empty'):
             test_adder.add_listed_value(**bad_set_of_values)
 

@@ -20,7 +20,7 @@ def test_check_yaml_file_fails_with_invalid_data():
 
 def test_read_json_toml_yaml():
     # TOML files are not used yet, they are tested in a different project
-    for file_name in ['json_OK_language_names_to_new_ids.json', 'socio_aromanian_gold_standard.yaml']:
+    for file_name in ('json_OK_language_names_to_new_ids.json', 'socio_aromanian_gold_standard.yaml'):
         data = read_json_toml_yaml(DIR_WITH_FILETOOLS_TEST_FILES / file_name)
         assert isinstance(data, (dict, list))
         assert len(data.keys()) > 0

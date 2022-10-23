@@ -104,7 +104,7 @@ def test_add_feature_fails_with_existing_feature_name(test_feature_adder):
 
 
 def test_add_feature_fails_with_non_existent_index_of_feature_to_insert_after(test_feature_adder):
-    for number in [0, 22, 250]:
+    for number in (0, 22, 250):
         with pytest.raises(FeatureAdderError, match=f'Cannot add feature after A-{number}'):
             test_feature_adder.add_feature(
                 category_id='A',
