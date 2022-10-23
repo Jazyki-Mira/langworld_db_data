@@ -114,7 +114,7 @@ class DoculectInCountryWriter:
         write_csv(
             # Need sorting because otherwise the set will be written differently each time.
             # `str(item)` will have effect equivalent to sorting by two items doculect ID and then by country ID
-            [('doculect_id', 'country_id')] + sorted(rows_to_write, key=lambda tuple_: str(tuple_)),
+            [('doculect_id', 'country_id')] + sorted(rows_to_write, key=str),
             path_to_file=self.output_file,
             overwrite=overwrite,
             delimiter=',')
