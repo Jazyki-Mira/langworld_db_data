@@ -28,7 +28,7 @@ def append_empty_column_to_csv(
     if custom_path_to_output_file is not None and custom_path_to_output_file.exists():
         raise FileExistsError(f'You provided a custom path to output file {custom_path_to_output_file}, '
                               f'but it already exists. To append column in place, do not indicate custom output path.')
-    output_path = custom_path_to_output_file if custom_path_to_output_file else path_to_file
+    output_path = custom_path_to_output_file or path_to_file
 
     rows = read_plain_rows_from_csv(path_to_file=path_to_file, delimiter=delimiter)
     header_row, data_rows = rows[0], rows[1:]
