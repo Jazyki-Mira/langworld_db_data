@@ -31,7 +31,7 @@ def read_non_empty_lines_from_txt_file(path_to_file: Path) -> list[str]:
     encoding = check_encoding_of_file(path_to_file)
 
     with path_to_file.open(encoding=encoding) as fh:
-        return [line.strip() for line in fh.readlines() if line.strip()]
+        return [line.strip() for line in fh if line.strip()]
 
 
 def read_plain_text_from_file(path_to_file: Path) -> str:
@@ -70,7 +70,7 @@ def write_plain_text_to_file(content: Union[str, list, tuple],
         if isinstance(content, str):
             fh.write(content)
             msg = 'characters'
-        elif isinstance(content, list) or isinstance(content, tuple):
+        elif isinstance(content, (list, tuple)):
             fh.writelines(f'{line}{newline_char}' for line in content)
             msg = 'lines'
 
