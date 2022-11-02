@@ -603,11 +603,10 @@
 - Остатки категории рода у одушевленных существительных, выраженных согласованием глагола в 3-м лице ед.числа: [фаризанди](../feature_profiles/farizandi.csv)
 - Пять: [польский](../feature_profiles/polish.csv)
 - Семь: [русский](../feature_profiles/russian.csv)
-- Три в письменно-литературном языке (на базе фламандско-брабандского ареала) и два в устном (на базе голландского ареала): [нидерландский](../feature_profiles/dutch.csv)
 - Четыре или пять: [норвежский](../feature_profiles/norwegian.csv)
 ## F-2: Морфологические способы выражения согласовательных классов
 
-- Артикли и аффиксация в прилагательном: [немецкий](../feature_profiles/german.csv), [швейцарско-немецкий](../feature_profiles/swiss_german.csv)
+- Артикли и аффиксация в прилагательном: [немецкий](../feature_profiles/german.csv)
 - Артикли и перегласовка основы: [окситанский](../feature_profiles/occitan.csv)
 - Артикли, аффиксация и флексии в имени и глаголе: [согдийский](../feature_profiles/sogdian.csv)
 - Аффиксация в глаголе и причастии: [пхалура](../feature_profiles/phalura.csv)
@@ -615,37 +614,26 @@
 - Аффиксация в имени и глаголе и перегласовка основы в глаголе: [ванеци](../feature_profiles/waneci.csv)
 - Аффиксация в системе имени: [шина](../feature_profiles/shina.csv), [галльский](../feature_profiles/gaulish.csv)
 - Аффиксация в системе имени (прилагательном и местоимении): [аланский](../feature_profiles/alanic.csv)
-- Аффиксация в системе имени и глагола: [словенский](../feature_profiles/slovene.csv), [тамильский](../feature_profiles/tamil.csv)
+- Аффиксация в системе имени и глагола: [тамильский](../feature_profiles/tamil.csv)
 - Аффиксация в системе имени,: [мунджанский](../feature_profiles/munji.csv)
 - Аффиксация в системе одушевленных существительных, личных местоимений (3-е л. ед.ч.),  и глагола (3-е л. ед.ч.): [джавшакани](../feature_profiles/jawshakani.csv)
 - Аффиксация и флексии в системе имени: [хотаносакский](../feature_profiles/khotanese.csv)
 - Аффиксация у существительных, прилагательных, числительных и глаголов: [пашто](../feature_profiles/pashto.csv)
-- Мутации анлаута: [корнский](../feature_profiles/cornish.csv)
-- Мутации анлаута, вызываемые артиклем, местоимением или другим примыкающим словом: [бретонский](../feature_profiles/breton.csv)
-- Мутация анлаута (у существительного после артикля/притяжательного местоимения и у прилагательного - после существительного): [ирландский](../feature_profiles/irish_gaelic.csv)
 - Огласовки корня или основы и аффиксация в глаголе: [катаркалаи](../feature_profiles/katarkalai.csv)
 - Отсутствуют: [язгулямский](../feature_profiles/yazghulami.csv)
-- Падежно-числовые аффиксы и аффиксация в глаголе: [серболужицкий](../feature_profiles/sorbian.csv)
-- Падежно-числовые флексии и аффиксация в глаголе: [полабский](../feature_profiles/polabian.csv), [русский](../feature_profiles/russian.csv), [сербохорватский](../feature_profiles/serbocroatian.csv)
 - Падежные окончания существительных: [семнанский](../feature_profiles/semnani.csv)
 - Перегласовка основ и суффиксация: [бартангский](../feature_profiles/bartangi.csv), [рушанский](../feature_profiles/rushani.csv)
-- Перегласовка основы и аффиксация в глаголе: [украинский](../feature_profiles/ukrainian.csv)
 - Перегласовка основы и аффиксация в имени: [шугнанский](../feature_profiles/shughni.csv)
 - Перегласовка основы, аффиксация в имени и глаголе: [торвали](../feature_profiles/torwali.csv)
 - Перегласовка основы, именные суффиксы и аффиксация в глаголе: [рошорвский](../feature_profiles/roshorvi.csv)
 - Противопоставление типов основ и флексий: [древнеперсидский](../feature_profiles/old_persian.csv)
 - Род существительных морфологически не выражен: [сангесари](../feature_profiles/sangesari.csv)
 - Родовая дифференциация отсутствует: [глангали](../feature_profiles/grangali.csv)
-- Склонение в системе имени: [словацкий](../feature_profiles/slovak.csv)
 - Тип основы: [кашмири](../feature_profiles/kashmiri.csv)
 - Употребление уточняющтх основ в составе композитов: [сангличский](../feature_profiles/sanglechi.csv)
-- Флексии в имени и глаголе: [заза](../feature_profiles/zaza.csv)
-- Флексии родовой принадлежности существительных: [древнерусский](../feature_profiles/old_russian.csv)
 - Флексии существительных и прилагательных ж.р., аффиксация в глаголе: [ормури](../feature_profiles/ormuri.csv)
 - Флексии, тип и перегласовка основы: [авесты](../feature_profiles/avestan.csv)
 - Флексия (внутренняя и внешняя), аффиксы и мутация анлаута: [валлийский](../feature_profiles/welsh.csv)
-- Флексия в имени существительном: [болгарский](../feature_profiles/bulgarian.csv)
-- Фузионные падежно-числовые флексии (типы склонения) и аффиксация в глаголе: [польский](../feature_profiles/polish.csv)
 ## F-3: Синтаксические способы выражения согласовательных классов
 
 - Агглютинативные маркеры рода, общие для существительных, местоимений, прилагательных и глаголов: [заза](../feature_profiles/zaza.csv)
@@ -653,7 +641,7 @@
 - В артикле и прилагательном: [немецкий](../feature_profiles/german.csv)
 - В артикле, в изафетном показателе в составе атрибутивного комплекса и в местоимении: [курдский](../feature_profiles/kurdish.csv)
 - В артикле, местоимении и (остаточно) прилагательном: [фризский](../feature_profiles/frisian.csv)
-- В артикле, прилагательном и местоимении: [нидерландский](../feature_profiles/dutch.csv), [исландский](../feature_profiles/icelandic.csv), [люксембургский](../feature_profiles/luxembourgian.csv)
+- В артикле, прилагательном и местоимении: [исландский](../feature_profiles/icelandic.csv), [люксембургский](../feature_profiles/luxembourgian.csv)
 - В артикле, числительном и местоимении: [корнский](../feature_profiles/cornish.csv)
 - В артикле, числительном, местоимении и глаголе: [ванеци](../feature_profiles/waneci.csv)
 - В глаголе, местоимении и причастном имени: [бадага](../feature_profiles/badaga.csv)
@@ -700,11 +688,9 @@
 ## F-5: Атрибутивное согласование по роду
 
 - Атрибутивное согласование по роду отсутствует: [майян](../feature_profiles/mayan.csv)
-- Отсутствует: [персидский](../feature_profiles/persian.csv), [пашаи](../feature_profiles/pashai.csv), [корнский](../feature_profiles/cornish.csv), [английский](../feature_profiles/english.csv)
 - Согласование отсутствует: [сангличский](../feature_profiles/sanglechi.csv)
 - нет данных: [милийский](../feature_profiles/milyan.csv)
 - отстствует: [гафат](../feature_profiles/gafat.csv)
-- отсутствует: [рутульский](../feature_profiles/rutul.csv), [аргобба](../feature_profiles/argobba.csv), [чаха](../feature_profiles/chaha.csv), [харари](../feature_profiles/harari.csv)
 ## F-6: Согласование количественных числительных в роде
 
 - Данных нет: [скифский](../feature_profiles/scythian.csv)
@@ -756,7 +742,6 @@
 ## G-3: Гонорифические формы числа
 
 - Вежливая и почтительная форма обращения к одному лицу или торжественного самоназвания (множественного числа 2 и 1 лица соответственно): [среднеперсидский](../feature_profiles/middle_persian.csv)
-- Множественное величия (pluralis majestatis): [исландский](../feature_profiles/icelandic.csv)
 ## G-5: Форма имен после числительного
 
 - Единственное, двойственное и множественное число: [древнерусский](../feature_profiles/old_russian.csv)
