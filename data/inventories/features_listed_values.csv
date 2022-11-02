@@ -611,6 +611,7 @@ H-2-19,H-2,"Case affixes, subject and object personal pronouns, prepositions, ve
 H-2-20,H-2,"Case and number flections, subject, direct and indirect object personal pronouns, prepositions, and verbal agreement","Падежно-числовые флексии, субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги и глагольное согласование"
 H-2-21,H-2,"Subject, direct and indirect object personal pronouns, verbal agreement and word order","Субъектная, прямо- и косвеннообъектная форма личных местоимений, глагольное согласование и порядок слов"
 H-2-22,H-2,"Subject, direct and indirect object personal pronouns, prepositions, verbal agreement, and word order","Субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги, глагольное согласование и порядок слов"
+H-2-23,H-2,"Subject, direct and indirect object personal pronouns, pronominal reprise, prepositions, verbal agreement, and word order","Субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза, предлоги, глагольное согласование и порядок слов"
 H-3-1,H-3,Absolutive,Абсолютив
 H-3-2,H-3,Genitive,Генитив
 H-3-3,H-3,Oblique,Косвенный падеж
@@ -671,6 +672,11 @@ H-5-28,H-5,"Possessive pronouns, prepositions and particles","Посессивн
 H-5-29,H-5,"Possessive pronouns and adjectives, and prepositions",Посессивные местоимения и прилагательные и предлоги
 H-5-30,H-5,Reflexive pronoun and genitive forms of personal pronouns,Возвратное местоимение и формы генитива личных местоимений
 H-5-31,H-5,"Possessive pronouns and adjectives, and prepositional-nominal constructions",Посессивные местоимения и прилагательные и предложно-падежные конструкции
+H-5-32,H-5,Possessive pronouns and verbs of possession,Посессивные местоимения и глаголы обладания
+H-5-33,H-5,"Possessive pronouns, possessive adjectives, verbs of possession, and prepositions","Посессивные местоимения, посессивные прилагательные, глаголы обладания и предлоги"
+H-5-34,H-5,Possessive and personal pronouns,Посессивные и личные местоимения
+H-5-35,H-5,Possessive pronouns and word order,Посессивные местоимения и порядок слов
+H-5-36,H-5,"Possessive pronouns, possessive adjectives, and verbs of possession","Посессивные местоимения, посессивные прилагательные и глаголы обладания"
 H-6-1,H-6,Noun affixes,Именные аффиксы
 H-6-2,H-6,Preverbs,Превербы
 H-6-3,H-6,Verbal affixes,Глагольные аффиксы

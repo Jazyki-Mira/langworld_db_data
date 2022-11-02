@@ -252,7 +252,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 251,afrikaans,G-6,Decimal,G-6-1,,,Десятичная,
 252,afrikaans,G-7,Same,G-7-2,,,Совпадают,
 253,afrikaans,H-1,No case,H-1-6,,,Категория падежа отсутствует,
-254,afrikaans,H-2,,,,,"Порядок слов, предлоги, грамматикализованные частицы и личные местоимения",Личные местоимения ед. ч. остаточно сохраняют формы субъектного и объектного падежей.
+254,afrikaans,H-2,"Subject and object personal pronouns, prepositions, and word order",H-2-14,,,"Субъектная и объектная форма личных местоимений, предлоги и порядок слов",Личные местоимения сохраняют формы субъектного и объектного падежей только в ед.числе.
 255,afrikaans,H-5,"Possessive pronouns, prepositions and particles",H-5-28,,,"Посессивные местоимения, предлоги и частицы",
 256,afrikaans,H-6,,,,,"Местоимения, местоименные наречия, предлоги, приглагольные наречные элементы в составе глагольных словокомплексов",
 257,afrikaans,I-1,,,,,Вспомогательный глагол + причастие прошедшего времени,
@@ -841,7 +841,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 840,aragonese,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 841,aragonese,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 842,aragonese,G-6,Decimal,G-6-1,,,Десятичная,
-843,aragonese,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, приглагольные местоимения, местоименная реприза, предлоги и порядок слов",Порядок следования местоименных энклитик может быть обратным испанскому.
+843,aragonese,H-2,"Subject, direct and indirect object personal pronouns, pronominal reprise, prepositions, verbal agreement, and word order",H-2-23,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза, предлоги, глагольное согласование и порядок слов",Порядок следования местоименных энклитик может быть обратным испанскому.
 844,aragonese,H-5,Possessive pronouns,H-5-4,,,Посессивные местоимения,"Посессивы имеют только полные ударные формы и употребляются с артиклем как в пре-, так и в постпозиции к существительному."
 845,aragonese,H-6,"Adverbs, pronominal adverbs, and prepositions",H-6-39,,,"Наречия, местоименные наречия и предлоги","Особенностью А.я./д. является наличие местоименных наречий, аналогичных каталанским и французским."
 846,aragonese,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
@@ -2447,7 +2447,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2446,bulgarian,G-6,Decimal,G-6-1,,,Десятичная,
 2447,bulgarian,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 2448,bulgarian,H-1,One-two,H-1-1,,,Один-два,
-2449,bulgarian,H-2,,,,,"Глагольное согласование, падежные формы субстантивных местоимений, местоименная реприза и порядок слов",
+2449,bulgarian,H-2,"Subject, direct and indirect object personal pronouns, pronominal reprise, prepositions, verbal agreement, and word order",H-2-23,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза, предлоги, глагольное согласование и порядок слов",
 2450,bulgarian,H-3,,,,,Именительный или творительный падеж местоимения,
 2451,bulgarian,H-5,,,,,"Притяжательные местоимения и прилагательные, конструкции с предлогом и энклитическая форма дательного падежа личного местоимения",
 2452,bulgarian,H-6,,,,,Наречия и предложные сочетания,
@@ -3565,7 +3565,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3564,czech,H-1,Three-seven,H-1-2,,,Три-семь,
 3565,czech,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
 3566,czech,H-4,Genitive or dative,H-4-11,,,Генитив или датив,
-3567,czech,H-5,"Possessive pronouns and adjectives, and prepositional-nominal constructions",H-5-31,,,Посессивные местоимения и прилагательные и предложно-падежные конструкции,
+3567,czech,H-5,"Possessive pronouns, possessive adjectives, verbs of possession, and prepositions",H-5-33,,,"Посессивные местоимения, посессивные прилагательные, глаголы обладания и предлоги",
 3568,czech,H-6,"Pronouns, adverbs, and prepositions",H-6-34,,,"Местоимения, наречия и предлоги",
 3569,czech,H-7,Marked,H-7-1,,,Маркированное,
 3570,czech,H-8,Different,H-8-2,,,Различное,
@@ -5067,7 +5067,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5066,frisian,H-1,One-two,H-1-1,,,Один-два,
 5067,frisian,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений и предлоги",
 5068,frisian,H-3,,,,,Общий (субъектно-объектный) падеж,
-5069,frisian,H-4,,,,,Притяжательный падеж,Реликтовые формы сильного и слабого генитива.
+5069,frisian,H-4,Possessive,H-4-8,,,Посессив,Реликтовые формы сильного и слабого генитива.
 5070,frisian,H-5,Possessive pronouns and prepositions,H-5-19,,,Посессивные местоимения и предлоги,..
 5071,frisian,H-6,,,,,"Наречия места, местоименные наречия, приглагольные наречные элементы и предлоги",
 5072,frisian,H-7,Marked,H-7-1,,,Маркированное,
@@ -5951,7 +5951,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5950,german,H-2,,,,,"Глагольное согласование, падежные аффиксы, субъектные и объектные формы личных местоимений, артикль, предлоги и порядок слов",
 5951,german,H-3,Nominative,H-3-4,,,Номинатив,
 5952,german,H-4,Genitive,H-4-3,,,Генитив,
-5953,german,H-5,,,,,Притяжательные местоимения и синтаксические конструкции с глаголами принадлежности и обладания,
+5953,german,H-5,Possessive pronouns and verbs of possession,H-5-32,,,Посессивные местоимения и глаголы обладания,
 5954,german,H-6,,,,,"Местоимения, наречия места, предложно-наречные композиты и предлоги",
 5955,german,H-7,Marked,H-7-1,,,Маркированное,
 5956,german,H-8,Same,H-8-1,,,Одинаковое,
@@ -6319,7 +6319,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6318,gothic,H-1,Three-seven,H-1-2,,,Три-семь,
 6319,gothic,H-2,,,,,"Глагольное согласование, падежные аффиксы, субъектная и объектная форма личных местоимений и предлоги",
 6320,gothic,H-4,Genitive,H-4-3,,,Генитив,
-6321,gothic,H-5,,,,,Личное местоимение в родтельном падеже (в пре- или постпозиции к имени обладаемого) и притяжательное местоимение,
+6321,gothic,H-5,Possessive and personal pronouns,H-5-34,,,Посессивные и личные местоимения,Личные местоимения в родительном падеже в пре- или постпозиции к имени обладаемого.
 6322,gothic,H-6,,,,,"Указательные местоимения, местоименные и пространственные наречия, превербы и предлоги",
 6323,gothic,H-8,Different,H-8-2,,,Различное,
 6324,gothic,H-9,Absent,H-9-2,,,Отсутствуют,
@@ -18119,7 +18119,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18118,slovak,H-2,"Object pronouns, function words, case affixes, and verbal agreement",H-2-11,,,"Объектная форма местоимений, служебные слова, падежные аффиксы и глагольное согласование",
 18119,slovak,H-3,,,,,Именительный или творительный падеж,
 18120,slovak,H-4,,,,,"Родительный, дательный или местный падеж",
-18121,slovak,H-5,Possessive pronouns and possessive adjectives,H-5-21,,,Посессивные местоимения и прилагательные,
+18121,slovak,H-5,"Possessive pronouns, possessive adjectives, and verbs of possession",H-5-36,,,"Посессивные местоимения, посессивные прилагательные и глаголы обладания",
 18122,slovak,H-6,,,,,Наречия места (местоименные и неместоименные) и предложно-именные конструкции,
 18123,slovak,H-7,Marked,H-7-1,,,Маркированное,
 18124,slovak,H-8,Different,H-8-2,,,Различное,
@@ -19180,7 +19180,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19179,swedish,G-6,Decimal,G-6-1,,,Десятичная,
 19180,swedish,G-7,Same,G-7-2,,,Совпадают,Неопределенный артикль отличается от числительного отсутствием ударения.
 19181,swedish,H-1,One-two,H-1-1,,,Один-два,
-19182,swedish,H-2,,,,,"Порядок слов, субъектные и объектные формы личных местоимений и предлоги",
+19182,swedish,H-2,"Subject and object personal pronouns, prepositions, and word order",H-2-14,,,"Субъектная и объектная форма личных местоимений, предлоги и порядок слов",
 19183,swedish,H-3,Caseless form,H-3-14,,,Общий падеж,
 19184,swedish,H-4,Genitive,H-4-3,,,Генитив,"Подвижный показатель генитива при оформлении атрибутивной группы (""групповой"" генитив)."
 19185,swedish,H-5,Possessive pronouns,H-5-4,,,Посессивные местоимения,
@@ -22053,7 +22053,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22052,welsh,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 22053,welsh,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 22054,welsh,H-2,,,,,"Глагольное согласование, морфонологические средства (мутации начальных согласных) и порядок слов",
-22055,welsh,H-5,,,,,Притяжательные местоимения и порядок слов,
+22055,welsh,H-5,Possessive pronouns and word order,H-5-35,,,Посессивные местоимения и порядок слов,
 22056,welsh,H-6,,,,,Местоименные предлоги и наречия места,
 22057,welsh,I-1,,,,,"Вспомогательный глагол, аффиксы и безличная форма глагола с пассивным значением",
 22058,welsh,I-5,,,,,Настояще-будущее и прошедшее,
