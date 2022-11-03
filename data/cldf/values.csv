@@ -17038,7 +17038,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17037,sardinian,J-5,Absent,J-5-1,,,Отсутствует,
 17038,sardinian,J-6,Articles,J-6-1,,,Артикли,
 17039,sardinian,J-7,,,,,"В глагольной группе, местоимениях и в отрицательном наречии",
-17040,sardinian,J-8,Negative particles and pronouns,J-8-18,,,Отрицательные частицы и местоимения,
+17040,sardinian,J-8,Negative pronouns and negative particles,J-8-6,,,Отрицательные местоимения и частицы,
 17041,sardinian,J-9,Preposition,J-9-3,,,Препозиция,Правила употребления единичного или двойного отрицания как в итальянском языке.
 17042,sardinian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
 17043,sardinian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
