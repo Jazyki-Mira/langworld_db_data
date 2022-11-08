@@ -4691,7 +4691,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4690,faroese,E-2,Phonetically unconditioned stem alternations and cumulative affixes,E-2-7,,,Фонетически необусловленные изменения в основе и кумулятивность аффиксов,
 4691,faroese,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 4692,faroese,F-1,Three,F-1-3,,,Три,
-4693,faroese,F-2,Articles,F-2-1,,,Артикли,
+4693,faroese,F-2,Nominal flections and articles,F-2-6,,,Артикли и флексии в имени,
 4694,faroese,F-3,"Adjectives, pronouns, participles, and articles",F-3-15,,,"В прилагательном, местоимении, причастии и артикле",
 4695,faroese,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
 4696,faroese,F-7,Absent,F-7-1,,,Отсутствуют,
@@ -5065,7 +5065,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5064,frisian,G-6,Decimal,G-6-1,,,Десятичная,
 5065,frisian,G-7,Same,G-7-2,,,Совпадают,
 5066,frisian,H-1,One-two,H-1-1,,,Один-два,
-5067,frisian,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений и предлоги",
+5067,frisian,H-2,"Subject and object personal pronouns, prepositions, and verbal agreement",H-2-17,,,"Субъектная и объектная форма личных местоимений, предлоги и глагольное согласование",Субъектные и объектные личные местоимения имеют ударную и безударную форму.
 5068,frisian,H-3,,,,,Общий (субъектно-объектный) падеж,
 5069,frisian,H-4,Possessive,H-4-8,,,Посессив,Реликтовые формы сильного и слабого генитива.
 5070,frisian,H-5,Possessive pronouns and prepositions,H-5-19,,,Посессивные местоимения и предлоги,..
@@ -5131,7 +5131,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5130,friulian,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 5131,friulian,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 5132,friulian,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-5133,friulian,A-15,,,,,"Дентальные, альвеолярные (дорсальные и апико-альвеолярные) и передненебные",Подсистемы сибилянтов в разных говорах значительно различаются.
+5133,friulian,A-15,"Dental, alveolar, and front-palatal",A-15-31,,,"Дентальные, альвеолярные и передненебные",Альвеолярные включают в себя дорсальные и апико-альвеолярные. Подсистемы сибилянтов в разных говорах значительно различаются.
 5134,friulian,A-16,Prevelar (postpalatal) and velar,A-16-8,,,Превелярные (постпалатальные) и велярные,
 5135,friulian,A-18,By palatalization,A-18-4,,,По палатализации,
 5136,friulian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /j/ традиционно определяются как полусогласные.
@@ -5363,7 +5363,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5362,galician,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 5363,galician,A-13,"Labial, coronal and guttural",A-13-1,,,"Лабиальные, переднеязычные и заднеязычные",
 5364,galician,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-5365,galician,A-15,,,,,"Дентальные, интердентальные, альвеолярные (апико-альвеолярные) и передненебные",
+5365,galician,A-15,"Dental, interdental, alveolar, and front-palatal",A-15-32,,,"Дентальные, интердентальные, альвеолярные и передненебные",Альвеолярные представлены апико-альвеолярными.
 5366,galician,A-16,Velar,A-16-1,,,Велярные,
 5367,galician,A-18,Absent,A-18-1,,,Отсутствуют,
 5368,galician,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /j/ традиционно определяются как полусогласные.
@@ -8020,7 +8020,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8019,judeo_spanish,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
 8020,judeo_spanish,A-13,"Labial, coronal, dorsal and guttural",A-13-3,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 8021,judeo_spanish,A-14,Bilabial and labiodental,A-14-2,,,Билабиальные и лабиодентальные,
-8022,judeo_spanish,A-15,,,,,"Дентальные, альвеолярные (апикальные и предорсальные) и передненебные",
+8022,judeo_spanish,A-15,"Dental, alveolar, and front-palatal",A-15-31,,,"Дентальные, альвеолярные и передненебные",Альвеолярные включают в себя апикальные и предорсальные.
 8023,judeo_spanish,A-16,Velar,A-16-1,,,Велярные,Фонема /h/ реализуется в заимствованиях как глухой гортанный звук.
 8024,judeo_spanish,A-18,Absent,A-18-1,,,Отсутствуют,
 8025,judeo_spanish,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
@@ -11690,8 +11690,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11689,macedonian,B-13,,,,,"Регрессивная ассимиляция, палатализация и упрощение групп согласных, выпадение согласных в интервокальной позиции и устранение зияния",
 11690,macedonian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 11691,macedonian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
-11692,macedonian,D-1,,,,,Ограничения на последовательность согласных,
-11693,macedonian,D-2,,,,,Ограничения на последовательность согласных,
+11692,macedonian,D-1,Limitations on consonant sequences,D-1-13,,,Ограничения на последовательность согласных,
+11693,macedonian,D-2,Limitations on consonant sequences,D-2-13,,,Ограничения на последовательность согласных,
 11694,macedonian,D-4,Differences in phonetic structure,D-4-2,,,Различия в фонетическом составе,
 11695,macedonian,D-5,Differences in accentuation,D-5-3,,,Акцентные различия,
 11696,macedonian,D-6,No differences,D-6-1,,,Отсутствуют,Других данных нет.
@@ -17256,7 +17256,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17255,scottish_gaelic,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 17256,scottish_gaelic,A-20,"Labial, coronal and guttural",A-20-16,,,"Лабиальные, переднеязычные и заднеязычные",
 17257,scottish_gaelic,A-21,By palatalization,A-21-3,,,По палатализации,
-17258,scottish_gaelic,B-2,,,,,Сильно-динамическое,
+17258,scottish_gaelic,B-2,Weak dynamic,B-2-5,,,Слабо-динамическое,
 17259,scottish_gaelic,B-3,Syllable,B-3-1,,,Слог,
 17260,scottish_gaelic,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
 17261,scottish_gaelic,B-5,First syllable of word,B-5-1,,,Начальный слог,За исключением английских заимствований.

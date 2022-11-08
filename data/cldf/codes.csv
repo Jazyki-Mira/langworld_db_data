@@ -373,6 +373,7 @@ D-1-9,D-1,"Limited set of consonants possible, no consonant clusters",,Огра�
 D-1-10,D-1,"Limited set of consonants, no consonant clusters",,"Ограниченный набор гласных и согласных, запрет на стечения согласных"
 D-1-11,D-1,Limited set of vowels,,Ограниченный набор гласных
 D-1-12,D-1,"Limited set of vowels and consonants, no consonant clusters or long vowels",,"Ограниченный набор гласных и согласных, запрет на стечение согласных и на долгие согласные"
+D-1-13,D-1,Limitations on consonant sequences,,Ограничения на последовательность согласных
 D-2-1,D-2,No restrictions,,Отсутствуют
 D-2-2,D-2,Only vowels possible,,Только гласные
 D-2-3,D-2,Only consonants possible,,Только согласные
@@ -385,6 +386,7 @@ D-2-9,D-2,No vowel clusters and no consonant clusters,,Запрет на люб�
 D-2-10,D-2,"Limited set of consonants possible, no vowel clusters",,Ограниченный набор согласных и запрет на любые стечения гласных
 D-2-11,D-2,"Limited set of consonants possible, no consonant clusters",,Ограниченный набор согласных и запрет на стечения согласных
 D-2-12,D-2,No clusters of more than two consonants,,Запрет на стечение более двух согласных
+D-2-13,D-2,Limitations on consonant sequences,,Ограничения на последовательность согласных
 D-3-1,D-3,Only monosyllabic words,,Только односложные слова
 D-3-2,D-3,Only polysyllabic words,,Только неодносложные слова
 D-3-3,D-3,Mainly monosyllabic words,,Преимущественно односложные слова
