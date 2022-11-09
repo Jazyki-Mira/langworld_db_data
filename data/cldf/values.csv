@@ -2647,7 +2647,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2646,catalan,G-6,Decimal,G-6-1,,,Десятичная,
 2647,catalan,G-7,Same,G-7-2,,,Совпадают,
 2648,catalan,H-2,"Subject, direct and indirect object personal pronouns, verbal agreement and word order",H-2-21,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, глагольное согласование и порядок слов",
-2649,catalan,H-5,Possessive pronouns and possessive adjectives,H-5-21,,,Посессивные местоимения и прилагательные,
+2649,catalan,H-5,Possessive pronouns and possessive adjectives,H-5-21,,,Посессивные местоимения и посессивные прилагательные,
 2650,catalan,H-6,Spatial adverbs and prepositions,H-6-38,,,Наречия места и предлоги,К.я. обнаруживает отличия от иберо-романских языков и сходства с итальянским и французским языками.
 2651,catalan,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,Формы пассивного залога малоупотребительны. Аналитический пассив характерен для письменного языка.
 2652,catalan,I-2,Present,I-2-1,,,Присутствует,
@@ -3727,7 +3727,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3726,dalmatian,G-6,Decimal,G-6-1,,,Десятичная,
 3727,dalmatian,G-7,Same,G-7-2,,,Совпадают,
 3728,dalmatian,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза, приглагольные местоимения, предлоги и порядок слов",
-3729,dalmatian,H-5,"Possessive pronouns and adjectives, and prepositions",H-5-29,,,Посессивные местоимения и прилагательные и предлоги,
+3729,dalmatian,H-5,"Possessive pronouns, possessive adjectives, and prepositions",H-5-29,,,"Посессивные местоимения, посессивные прилагательные и предлоги",
 3730,dalmatian,H-6,Spatial adverbs and prepositions,H-6-38,,,Наречия места и предлоги,
 3731,dalmatian,I-1,,,,,Вспомогательный глагол + причастие и местоименные глаголы,
 3732,dalmatian,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
@@ -13919,7 +13919,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13918,occitan,G-7,Same,G-7-2,,,Совпадают,
 13919,occitan,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 13920,occitan,H-2,"Subject, direct and indirect object personal pronouns, prepositions, verbal agreement, and word order",H-2-22,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",
-13921,occitan,H-5,"Possessive pronouns and adjectives, personal pronouns, and prepositions",H-5-24,,,"Посессивные местоимения и прилагательные, личные местоимения и предлоги",
+13921,occitan,H-5,"Possessive pronouns, posessive adjectives, personal pronouns, and prepositions",H-5-24,,,"Посессивные местоимения, посессивные прилагательные, личные местоимения и предлоги",
 13922,occitan,H-6,"Demonstrative pronouns, adverbs, and prepositions",H-6-40,,,"Указательные местоимения, наречия и предлоги",
 13923,occitan,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,
 13924,occitan,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
@@ -14429,7 +14429,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14428,old_novgorod,H-1,Three-seven,H-1-2,,,Три-семь,
 14429,old_novgorod,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,При сказуемом-инфинитиве название объекта ставилось в именительном падеже.
 14430,old_novgorod,H-4,Genitive,H-4-3,,,Генитив,
-14431,old_novgorod,H-5,Possessive pronouns and possessive adjectives,H-5-21,,,Посессивные местоимения и прилагательные,Существовали притяжательные прилагательные от имен собственных.
+14431,old_novgorod,H-5,Possessive pronouns and possessive adjectives,H-5-21,,,Посессивные местоимения и посессивные прилагательные,Существовали притяжательные прилагательные от имен собственных.
 14432,old_novgorod,H-6,,,,,"Местоимения, предлоги и пространственные падежи",
 14433,old_novgorod,H-7,Marked,H-7-1,,,Маркированное,
 14434,old_novgorod,H-8,Different,H-8-2,,,Различное,
@@ -14592,7 +14592,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14591,old_russian,H-1,Three-seven,H-1-2,,,Три-семь,
 14592,old_russian,H-2,,,,,"Глагольное согласование, падежно-числовые флексии и энклитические формы личных местоимений",
 14593,old_russian,H-4,Genitive or dative,H-4-11,,,Генитив или датив,
-14594,old_russian,H-5,Possessive pronouns and possessive adjectives,H-5-21,,,Посессивные местоимения и прилагательные,
+14594,old_russian,H-5,Possessive pronouns and possessive adjectives,H-5-21,,,Посессивные местоимения и посессивные прилагательные,
 14595,old_russian,H-6,"Locative cases, pronouns, adverbs, and prepositions",H-6-46,,,"Пространственные падежи, местоимения, наречия и предлоги",
 14596,old_russian,H-7,Marked,H-7-1,,,Маркированное,
 14597,old_russian,H-8,Different,H-8-2,,,Различное,
@@ -16037,7 +16037,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16036,portuguese,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 16037,portuguese,G-7,Same,G-7-2,,,Совпадают,
 16038,portuguese,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза, приглагольные местоимения, предлоги и порядок слов",Субъектные местоимения не различают автономных и неавтономных форм.
-16039,portuguese,H-5,"Possessive pronouns and adjectives, personal pronouns, and prepositions",H-5-24,,,"Посессивные местоимения и прилагательные, личные местоимения и предлоги","Посессивы имеют одну форму, которая употребляется как прилагательное и как местоимение."
+16039,portuguese,H-5,"Possessive pronouns, posessive adjectives, personal pronouns, and prepositions",H-5-24,,,"Посессивные местоимения, посессивные прилагательные, личные местоимения и предлоги","Посессивы имеют одну форму, которая употребляется как прилагательное и как местоимение."
 16040,portuguese,H-6,"Pronouns, pronoun adverbs, and prepositions",H-6-37,,,"Местоимения, местоименные наречия и предлоги",
 16041,portuguese,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,
 16042,portuguese,I-2,Absent,I-2-2,,,Отсутствует,
@@ -16297,7 +16297,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16296,romanian,H-1,One-two,H-1-1,,,Один-два,
 16297,romanian,H-2,,,,,"Глагольное согласование, субъектные и объектные (ударные и неударные) формы личных местоимений, местоименная реприза, приглагольные местоимения и предлоги",
 16298,romanian,H-4,Genitive or dative,H-4-11,,,Генитив или датив,
-16299,romanian,H-5,"Possessive pronouns and adjectives, personal pronouns, prepositions, and possessive article",H-5-25,,,"Посессивные местоимения и прилагательные, личные местоимения, предлоги и посессивный артикль",
+16299,romanian,H-5,"Possessive pronouns, posessive adjectives, personal pronouns, prepositions, and possessive article",H-5-25,,,"Посессивные местоимения, посессивные прилагательные, личные местоимения, предлоги и посессивный артикль",
 16300,romanian,H-6,"Pronouns, pronoun adverbs, and prepositions",H-6-37,,,"Местоимения, местоименные наречия и предлоги",
 16301,romanian,H-8,Different,H-8-2,,,Различное,
 16302,romanian,H-9,Absent,H-9-2,,,Отсутствуют,
@@ -17021,7 +17021,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17020,sardinian,G-6,Decimal,G-6-1,,,Десятичная,
 17021,sardinian,G-7,Same,G-7-2,,,Совпадают,
 17022,sardinian,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, приглагольные местоимения, местоименная реприза и предлоги",Есть особые ударные объектные формы личных местоимений 1-го и 2-го лица ед. числа с предлогами.
-17023,sardinian,H-5,"Possessive pronouns and adjectives, and prepositions",H-5-29,,,Посессивные местоимения и прилагательные и предлоги,Притяжательные местоимения находятся в постпозиции к существительному с артиклем.
+17023,sardinian,H-5,"Possessive pronouns, possessive adjectives, and prepositions",H-5-29,,,"Посессивные местоимения, посессивные прилагательные и предлоги",Притяжательные местоимения находятся в постпозиции к существительному с артиклем.
 17024,sardinian,H-6,"Pronouns, adverbs, and prepositions",H-6-34,,,"Местоимения, наречия и предлоги",
 17025,sardinian,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,
 17026,sardinian,I-4,Passive and reflexive,I-4-4,,,Пассив и рефлексив,
@@ -18559,7 +18559,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18558,sorbian,H-2,,,,,"Субъектная и объектная форма местоимений, местоименные клитики, падежные аффиксы и глагольное согласование",
 18559,sorbian,H-3,Nominative,H-3-4,,,Номинатив,
 18560,sorbian,H-4,Genitive,H-4-3,,,Генитив,
-18561,sorbian,H-5,"Possessive pronouns, adjectives and affixes",H-5-17,,,"Посессивные местоимения, прилагательные и аффиксы",
+18561,sorbian,H-5,"Possessive pronouns, posessive adjectives, and affixes",H-5-17,,,"Посессивные местоимения, посессивные прилагательные и аффиксы",
 18562,sorbian,H-6,,,,,"Местоимения, местоименные наречия, пространственные падежи, предлоги и частицы",
 18563,sorbian,H-7,Marked,H-7-1,,,Маркированное,
 18564,sorbian,H-8,Different,H-8-2,,,Различное,
@@ -18661,7 +18661,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18660,spanish,G-6,Decimal,G-6-1,,,Десятичная,
 18661,spanish,G-7,Same,G-7-2,,,Совпадают,
 18662,spanish,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений, местоименная реприза, приглагольные местоимения, предлоги и порядок слов",
-18663,spanish,H-5,"Possessive pronouns and adjectives, personal pronouns, and prepositions",H-5-24,,,"Посессивные местоимения и прилагательные, личные местоимения и предлоги",
+18663,spanish,H-5,"Possessive pronouns, posessive adjectives, personal pronouns, and prepositions",H-5-24,,,"Посессивные местоимения, посессивные прилагательные, личные местоимения и предлоги",
 18664,spanish,H-6,"Demonstrative pronouns, spatial adverbs, and prepositions",H-6-42,,,"Указательные местоимения, наречия места и предлоги",
 18665,spanish,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,
 18666,spanish,I-2,Present,I-2-1,,,Присутствует,
@@ -21310,7 +21310,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21309,ukrainian,H-1,Three-seven,H-1-2,,,Три-семь,
 21310,ukrainian,H-2,,,,,"Субъектная и объектная форма местоимений, падежные аффиксы и глагольное согласование",
 21311,ukrainian,H-4,Genitive or dative,H-4-11,,,Генитив или датив,
-21312,ukrainian,H-5,"Possessive pronouns, adjectives and affixes",H-5-17,,,"Посессивные местоимения, прилагательные и аффиксы",
+21312,ukrainian,H-5,"Possessive pronouns, posessive adjectives, and affixes",H-5-17,,,"Посессивные местоимения, посессивные прилагательные и аффиксы",
 21313,ukrainian,H-6,"Locative cases, pronouns, adverbs, and prepositions",H-6-46,,,"Пространственные падежи, местоимения, наречия и предлоги",
 21314,ukrainian,H-7,Marked,H-7-1,,,Маркированное,
 21315,ukrainian,H-8,Different,H-8-2,,,Различное,
