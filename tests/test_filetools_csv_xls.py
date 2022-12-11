@@ -179,7 +179,7 @@ def test_write_csv_throws_exception_when_file_exists_and_overwrite_is_false():
 
 def test_write_csv_throws_exception_when_rows_are_of_different_types():
     rows = [['foo', 'bar'], {'bar': 'baz'}]
-    with pytest.raises(TypeError) as e:
+    with pytest.raises(TypeError, match='Cannot write items of different types') as e:
         write_csv(rows, PATH_TO_TEST_OUTPUT_CSV_FILE, overwrite=False, delimiter=',')
 
     print('TEST: exception raised:', e)
@@ -187,7 +187,7 @@ def test_write_csv_throws_exception_when_rows_are_of_different_types():
 
 def test_write_csv_throws_exception_when_rows_are_of_wrong_type():
     rows = [1, 2]
-    with pytest.raises(TypeError) as e:
+    with pytest.raises(TypeError, match='Supported types are list, tuple, dict, NamedTuple') as e:
         write_csv(rows, PATH_TO_TEST_OUTPUT_CSV_FILE, overwrite=False, delimiter=',')
 
     print('TEST: exception raised:', e)
