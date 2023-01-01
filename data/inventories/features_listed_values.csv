@@ -75,26 +75,27 @@ A-10-2,A-10,Falling (descending),Нисходящие
 A-10-3,A-10,Rising (ascending) and falling (descending),Восходящие и нисходящие
 A-10-4,A-10,Falling (descending) diphtongs and diphtongs with vocalized consonants (vocoids),Нисходящие дифтонги и дифтонги с вокализованными согласными (вокоидами)
 A-10-5,A-10,Even and falling (descending),Равновесные и нисходящие
-A-11-1,A-11,Opposition by presence and absence of voice,Есть противопоставления по звонкости/глухости
-A-11-2,A-11,Opposition by aspiration,Есть противопоставления по аспирации
-A-11-3,A-11,Ejectives present,Есть глоттализованные согласные
-A-11-4,A-11,Clicks present,Есть щелкающие согласные
-A-11-5,A-11,Geminated consonants present,Есть геминированные согласные
-A-11-6,A-11,Opposition by voice presence/absence and by aspiration,Есть противопоставления по звонкости/глухости и по аспирации
-A-11-7,A-11,"Opposition by voice presence/absence, ejectives present","Есть противопоставления по звонкости/глухости, есть глоттализованные согласные"
-A-11-8,A-11,Ejective consonants present,Есть абруптивные согласные
-A-11-9,A-11,Opposition by voice presence/absence and softness,Есть противопоставление по звонкости/глухости и твердости/мягкости
-A-11-10,A-11,Strong and weak consonants present,Есть сильные и слабые согласные
-A-11-11,A-11,Emphatic consonants present,Есть эмфатические согласные
-A-11-12,A-11,Opposition by strain,Есть противопоставление по напряженности и ненапряженности
-A-11-13,A-11,"Opposition by voice presence/absence, emphatic consonants present",Есть противопоставление по звонкости/глухости и эмфатические согласные
-A-11-14,A-11,Opposition by voice presence/absence and strain,Есть противопоставление по звонкости/глухости и напряженности/ненапряженности
-A-11-15,A-11,Opposition by voice presence/absence and labialization,Есть противопоставления по звонкости/глухости и лабиализации
-A-11-16,A-11,Opposition by voice presence/absence and palatalization,Есть противопоставления по звонкости/глухости и наличию/отсутствию палатализации
-A-11-17,A-11,Opposition by voice presence/absence and intensity,Есть противопоставления по звонкости/глухости и интенсивности
-A-11-18,A-11,"Strong (voiceless), weak (voiced) and geminate consonants present","Есть сильные (глухие), слабые (звонкие) и геминированные согласные"
-A-11-19,A-11,Emphatic and implosive consonants present,Есть эмфатические и имплозивные согласные
-A-11-20,A-11,Ejective and preruptive consonants present,Есть абруптивные и преруптивные согласные
+A-10-6,A-10,Even,Равновесные
+A-11-1,A-11,Opposition by presence and absence of voice,Противопоставление по звонкости/глухости
+A-11-2,A-11,Opposition by aspiration,Противопоставление по аспирации
+A-11-3,A-11,Ejectives present,Глоттализованные согласные
+A-11-4,A-11,Clicks present,Щелкающие согласные
+A-11-5,A-11,Geminated consonants present,Геминированные согласные
+A-11-6,A-11,Opposition by voice presence/absence and by aspiration,Противопоставления по звонкости/глухости и по аспирации
+A-11-7,A-11,"Opposition by voice presence/absence, ejectives present","Противопоставление по звонкости/глухости, глоттализованные согласные"
+A-11-8,A-11,Ejective consonants present,Абруптивные согласные
+A-11-9,A-11,Opposition by voice presence/absence and softness,Противопоставления по звонкости/глухости и твердости/мягкости
+A-11-10,A-11,Strong and weak consonants present,Сильные и слабые согласные
+A-11-11,A-11,Emphatic consonants present,Эмфатические согласные
+A-11-12,A-11,Opposition by strain,Противопоставление по напряженности и ненапряженности
+A-11-13,A-11,"Opposition by voice presence/absence, emphatic consonants present",Противопоставление по звонкости/глухости и эмфатические согласные
+A-11-14,A-11,Opposition by voice presence/absence and strain,Противопоставления по звонкости/глухости и напряженности/ненапряженности
+A-11-15,A-11,Opposition by voice presence/absence and labialization,Противопоставления по звонкости/глухости и лабиализации
+A-11-16,A-11,Opposition by voice presence/absence and palatalization,Противопоставления по звонкости/глухости и наличию/отсутствию палатализации
+A-11-17,A-11,Opposition by voice presence/absence and intensity,Противопоставления по звонкости/глухости и интенсивности
+A-11-18,A-11,"Strong (voiceless), weak (voiced) and geminate consonants present","Сильные (глухие), слабые (звонкие) и геминированные согласные"
+A-11-19,A-11,Emphatic and implosive consonants present,Эмфатические и имплозивные согласные
+A-11-20,A-11,Ejective and preruptive consonants present,Абруптивные и преруптивные согласные
 A-12-1,A-12,Plosives and fricatives,Взрывные и фрикативные
 A-12-2,A-12,Plosives and affricates,Взрывные и аффрикаты
 A-12-3,A-12,"Plosives, fricatives and affricates","Взрывные, фрикативные и аффрикаты"
