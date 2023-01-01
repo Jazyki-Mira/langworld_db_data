@@ -955,7 +955,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 954,aromanian,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 955,aromanian,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
 956,aromanian,A-21,Absent,A-21-1,,,Отсутствуют,
-957,aromanian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+957,aromanian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 958,aromanian,B-2,Dynamic,B-2-1,,,Динамическое,
 959,aromanian,B-3,Syllable,B-3-1,,,Слог,
 960,aromanian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -2417,7 +2417,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2416,bulgarian,B-9,Non-phonological,B-9-2,,,Нефонологическая,
 2417,bulgarian,B-10,Phoneme,B-10-1,,,Фонема,Приспособление гласного постпозитивного определенного артикля к финальному гласному общей формы существительного.
 2418,bulgarian,B-11,Backness and height,B-11-6,,,Ряд и подъем,
-2419,bulgarian,B-12,"Final syllable vowel, or first vowel of word, or stressed syllable of stem",B-12-7,,,"Гласный финального слога, первый гласный слова, или ударный гласный основы",Финальный гласный общей формы существительного (независимо от рода)
+2419,bulgarian,B-12,"Final syllable vowel, or first vowel of word, or stressed syllable of stem",B-12-7,,,"Гласный финального слога, первый гласный слова или ударный гласный основы",Финальный гласный общей формы существительного (независимо от рода)
 2420,bulgarian,B-13,,,,,"Озвончение, оглушение, отвердение палатализованных согласных, веляризация и спирантизация переднеязычного носового сонанта",
 2421,bulgarian,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 2422,bulgarian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -5465,7 +5465,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5464,garwi,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 5465,garwi,A-20,,,,,"Лабиальные, переднеязычные (нецеребральные и церебральные), среднеязычные и заднеязычные",
 5466,garwi,A-21,By palatalization,A-21-3,,,По палатализации,
-5467,garwi,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+5467,garwi,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 5468,garwi,B-2,Dynamic,B-2-1,,,Динамическое,
 5469,garwi,B-3,Syllable,B-3-1,,,Слог,
 5470,garwi,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -6088,7 +6088,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6087,ginukh,A-17,Both pharyngeal and glottal,A-17-3,,,Фарингальные и глоттальные,
 6088,ginukh,A-18,Absent,A-18-1,,,Отсутствуют,
 6089,ginukh,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
-6090,ginukh,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+6090,ginukh,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 6091,ginukh,B-2,Dynamic,B-2-1,,,Динамическое,
 6092,ginukh,B-3,Syllable,B-3-1,,,Слог,
 6093,ginukh,B-9,Phonological and non-phonological,B-9-4,,,Фонологическая и нефонологическая,
@@ -6458,7 +6458,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6457,gurani,A-17,Both pharyngeal and glottal,A-17-3,,,Фарингальные и глоттальные,
 6458,gurani,A-19,,,,,"Срединные, боковые, носовые и дрожащие",
 6459,gurani,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
-6460,gurani,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+6460,gurani,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 6461,gurani,B-2,Dynamic,B-2-1,,,Динамическое,
 6462,gurani,B-3,Syllable,B-3-1,,,Слог,
 6463,gurani,B-4,Not fixed,B-4-2,,,Нефиксированное,
@@ -7173,7 +7173,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7172,irish_gaelic,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 7173,irish_gaelic,A-20,"Labial, coronal and guttural",A-20-16,,,"Лабиальные, переднеязычные и заднеязычные",
 7174,irish_gaelic,A-21,By palatalization and intensity,A-21-12,,,По палатализации и интенсивности,"Дрожащие имеют широкий диапазон реализаций в зависимости от диалекта. В северном и, частично, западном диалектах есть долгие (сильные) сонанты."
-7175,irish_gaelic,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,Фонологический статус ударения варьирует по диалектам.
+7175,irish_gaelic,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,Фонологический статус ударения варьирует по диалектам.
 7176,irish_gaelic,B-2,Dynamic,B-2-1,,,Динамическое,
 7177,irish_gaelic,B-3,Mora,B-3-2,,,Мора,"Ударение связано с типом фонации, долготой и редукцией гласных."
 7178,irish_gaelic,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,Место ударения зависит от состава ритмической группы в предложении.
@@ -7429,7 +7429,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7428,istriot,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды определяются как полусогласные [w] и [j] или полугласные [u?] и [i?].
 7429,istriot,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
 7430,istriot,A-21,Absent,A-21-1,,,Отсутствуют,
-7431,istriot,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+7431,istriot,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 7432,istriot,B-2,Dynamic,B-2-1,,,Динамическое,
 7433,istriot,B-3,Syllable,B-3-1,,,Слог,
 7434,istriot,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -7510,7 +7510,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7509,istro_romanian,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 7510,istro_romanian,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
 7511,istro_romanian,A-21,Absent,A-21-1,,,Отсутствуют,
-7512,istro_romanian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+7512,istro_romanian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 7513,istro_romanian,B-2,Dynamic,B-2-1,,,Динамическое,
 7514,istro_romanian,B-3,Syllable,B-3-1,,,Слог,
 7515,istro_romanian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -9495,7 +9495,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9494,khotanese,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды определяются как полугласные.
 9495,khotanese,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 9496,khotanese,A-21,By palatalization,A-21-3,,,По палатализации,
-9497,khotanese,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+9497,khotanese,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 9498,khotanese,B-2,Dynamic,B-2-1,,,Динамическое,
 9499,khotanese,B-3,Syllable,B-3-1,,,Слог,
 9500,khotanese,B-5,Penult or antepenult,B-5-14,,,Пенультима или антепенультима,
@@ -9807,7 +9807,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9806,khwaresmian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 9807,khwaresmian,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
 9808,khwaresmian,A-21,Absent,A-21-1,,,Отсутствуют,Других данных нет.
-9809,khwaresmian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+9809,khwaresmian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 9810,khwaresmian,B-2,Dynamic,B-2-1,,,Динамическое,
 9811,khwaresmian,B-3,Syllable,B-3-1,,,Слог,
 9812,khwaresmian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -10496,7 +10496,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10495,kurdish,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 10496,kurdish,A-20,Labial and coronal,A-20-7,,,Лабиальные и переднеязычные,
 10497,kurdish,A-21,By aspiration,A-21-19,,,По аспирации,
-10498,kurdish,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+10498,kurdish,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 10499,kurdish,B-2,Dynamic,B-2-1,,,Динамическое,
 10500,kurdish,B-3,Syllable,B-3-1,,,Слог,
 10501,kurdish,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -11680,7 +11680,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11679,macedonian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 11680,macedonian,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
 11681,macedonian,A-21,By palatalization,A-21-3,,,По палатализации,
-11682,macedonian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,Тип ударения различается в западной и восточной диалектной группах.
+11682,macedonian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,Тип ударения различается в западной и восточной диалектной группах.
 11683,macedonian,B-2,Dynamic,B-2-1,,,Динамическое,
 11684,macedonian,B-3,Syllable,B-3-1,,,Слог,
 11685,macedonian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -12835,7 +12835,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12834,modern_hebrew,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 12835,modern_hebrew,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 12836,modern_hebrew,A-21,Absent,A-21-1,,,Отсутствуют,
-12837,modern_hebrew,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+12837,modern_hebrew,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 12838,modern_hebrew,B-2,Dynamic,B-2-1,,,Динамическое,
 12839,modern_hebrew,B-3,Syllable,B-3-1,,,Слог,
 12840,modern_hebrew,B-9,Non-phonological,B-9-2,,,Нефонологическая,
@@ -13505,7 +13505,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13504,nenets,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 13505,nenets,A-20,"Labial, coronal and guttural",A-20-16,,,"Лабиальные, переднеязычные и заднеязычные",
 13506,nenets,A-21,By palatalization,A-21-3,,,По палатализации,
-13507,nenets,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+13507,nenets,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 13508,nenets,B-3,Syllable,B-3-1,,,Слог,
 13509,nenets,B-4,Not fixed,B-4-2,,,Нефиксированное,
 13510,nenets,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -13714,7 +13714,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13713,nogai,A-16,Velar and uvular,A-16-5,,,Велярные и увулярные,
 13714,nogai,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 13715,nogai,A-20,"Labial, coronal and guttural",A-20-16,,,"Лабиальные, переднеязычные и заднеязычные",
-13716,nogai,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+13716,nogai,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 13717,nogai,B-2,Dynamic,B-2-1,,,Динамическое,
 13718,nogai,B-3,Syllable,B-3-1,,,Слог,
 13719,nogai,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
@@ -13778,7 +13778,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13777,norwegian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайд /j/ определяется как полугласный. Переднеязычные назальные и плавные включают в себя какуминальные.
 13778,norwegian,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",Переднеязычные назальные и плавные включают в себя альвеолярные и постальвеолярные.
 13779,norwegian,A-21,By length,A-21-7,,,По долготе,
-13780,norwegian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+13780,norwegian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 13781,norwegian,B-2,Mixed,B-2-4,,,Смешанное,"Динамическое (главное, второстепенное и нулевое) и тоническое, связанное с долготой."
 13782,norwegian,B-3,Syllable,B-3-1,,,Слог,
 13783,norwegian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -14749,7 +14749,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14748,ormuri,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 14749,ormuri,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
 14750,ormuri,A-21,Absent,A-21-1,,,Отсутствуют,
-14751,ormuri,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+14751,ormuri,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 14752,ormuri,B-2,Dynamic,B-2-1,,,Динамическое,
 14753,ormuri,B-3,Syllable,B-3-1,,,Слог,
 14754,ormuri,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -14931,7 +14931,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14930,ossetian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды","Глайды /у/ и /й/ определяются как срединные щелевые, /л/ - как боковой щелевой, /м/ и /н/ - как сонанты в составе смычных, /р/ - как дрожащий в виде отдельной группы."
 14931,ossetian,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
 14932,ossetian,A-21,Absent,A-21-1,,,Отсутствуют,
-14933,ossetian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+14933,ossetian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 14934,ossetian,B-2,Dynamic,B-2-1,,,Динамическое,
 14935,ossetian,B-3,Syllable,B-3-1,,,Слог,Ударение характеризуется как фразовое.
 14936,ossetian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -15395,7 +15395,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15394,pashto,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,
 15395,pashto,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 15396,pashto,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
-15397,pashto,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+15397,pashto,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 15398,pashto,B-2,Dynamic,B-2-1,,,Динамическое,
 15399,pashto,B-3,Syllable,B-3-1,,,Слог,
 15400,pashto,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -16983,7 +16983,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16982,sardinian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /j/ традиционно определяются как полусогласные.
 16983,sardinian,A-20,"Labial, alveolar, front-palatal, and mid-palatal",A-20-20,,,"Лабиальные, альвеолярные, передненебные и средненебные",
 16984,sardinian,A-21,Absent,A-21-1,,,Отсутствуют,
-16985,sardinian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+16985,sardinian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 16986,sardinian,B-2,Dynamic,B-2-1,,,Динамическое,
 16987,sardinian,B-3,Syllable,B-3-1,,,Слог,
 16988,sardinian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -17813,7 +17813,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17812,shughni,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,Определяются как нижнефарингальные (подтип ларингальных).
 17813,shughni,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",Переднеязычные /l/ и /n/ терминологически определяются как смычно-переходные (боковые и носовые).
 17814,shughni,A-20,Labial and coronal,A-20-7,,,Лабиальные и переднеязычные,
-17815,shughni,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+17815,shughni,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 17816,shughni,B-2,Dynamic,B-2-1,,,Динамическое,
 17817,shughni,B-3,Syllable,B-3-1,,,Слог,
 17818,shughni,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -18182,7 +18182,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18181,slovene,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",Глайд /j/ интерпретируется как средненебный звонкий фрикативный.
 18182,slovene,A-20,,,,,"Лабиальные, дентальные, передненебные и средненебные",
 18183,slovene,A-21,Absent,A-21-1,,,Отсутствуют,
-18184,slovene,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+18184,slovene,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 18185,slovene,B-2,,,,,Динамическое и (поли)тоническое,
 18186,slovene,B-3,Syllable,B-3-1,,,Слог,
 18187,slovene,B-4,Movable non-fixed,B-4-5,,,Разноместное нефиксированное,
@@ -18813,7 +18813,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18812,standard_western_armenian,A-19,"Nasal, liquid and lateral",A-19-10,,,"Назальные, плавные и латеральные",
 18813,standard_western_armenian,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
 18814,standard_western_armenian,A-21,Absent,A-21-1,,,Отсутствуют,
-18815,standard_western_armenian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+18815,standard_western_armenian,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 18816,standard_western_armenian,B-2,Mixed,B-2-4,,,Смешанное,
 18817,standard_western_armenian,B-3,Syllable,B-3-1,,,Слог,
 18818,standard_western_armenian,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,но есть исключения
@@ -19488,7 +19488,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19487,tajrishi,A-18,Absent,A-18-1,,,Отсутствуют,
 19488,tajrishi,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 19489,tajrishi,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
-19490,tajrishi,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+19490,tajrishi,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 19491,tajrishi,B-2,Dynamic,B-2-1,,,Динамическое,
 19492,tajrishi,B-3,Syllable,B-3-1,,,Слог,
 19493,tajrishi,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
@@ -19569,7 +19569,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19568,talysh,A-19,,,,,"Срединные, носовые, боковые и дрожащие",
 19569,talysh,A-20,"Labial, coronal and dorsal",A-20-14,,,"Лабиальные, переднеязычные и среднеязычные",
 19570,talysh,A-21,Absent,A-21-1,,,Отсутствуют,
-19571,talysh,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/ нефонологическое,
+19571,talysh,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 19572,talysh,B-2,Dynamic,B-2-1,,,Динамическое,
 19573,talysh,B-3,Syllable,B-3-1,,,Слог,
 19574,talysh,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
