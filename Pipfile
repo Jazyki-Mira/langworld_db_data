@@ -6,9 +6,11 @@ name = "pypi"
 [packages]
 toml = "*"
 pyyaml = "*"
-openpyxl = "*"
+openpyxl = "~=3.0.10"
 pycldf = "==1.27.0"
-pyperclip = "*"
+pyperclip = "~=1.8.2"
+setuptools = "~= 66.1.1"
+certifi = "~=2022.12.7"
 
 [dev-packages]
 pytest = "*"
