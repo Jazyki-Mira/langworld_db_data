@@ -64,20 +64,22 @@ class GenealogyValidator(Validator):
             if not match:
                 raise GenealogyValidatorError(
                     f"Family ID in line {line} is incorrectly formed. "
-                    f"It can only contain lowercase letters and underscores"
+                    "It can only contain lowercase letters and underscores"
                 )
 
             family_id = match.group("id")
 
             if family_id not in self.family_ids_from_file_with_names:
                 raise GenealogyValidatorError(
-                    f"Family ID {family_id} in hierarchy not found in file with names of families"
+                    f"Family ID {family_id} in hierarchy not found in file with names"
+                    " of families"
                 )
 
             family_ids.append(family_id)
 
         print(
-            "OK: All family IDs in the hierarchy are formed correctly and match IDs in list of families"
+            "OK: All family IDs in the hierarchy are formed correctly and match IDs in"
+            " list of families"
         )
 
         counter = Counter(family_ids)
@@ -85,7 +87,8 @@ class GenealogyValidator(Validator):
         for key in counter:
             if counter[key] > 1:
                 raise GenealogyValidatorError(
-                    f"Family ID {key} was seen {counter[key]} times in the genealogy hierarchy. It must be unique."
+                    f"Family ID {key} was seen {counter[key]} times in the genealogy"
+                    " hierarchy. It must be unique."
                 )
         print("OK: All family IDs in genealogy hierarchy are unique")
 
@@ -104,12 +107,14 @@ class GenealogyValidator(Validator):
         for family_id in self.family_ids_from_file_with_names:
             if not pattern.match(family_id):
                 raise GenealogyValidatorError(
-                    f"File with names of families: invalid ID {family_id} (only use lowercase letters and underscore)"
+                    f"File with names of families: invalid ID {family_id} (only use"
+                    " lowercase letters and underscore)"
                 )
 
             if family_id not in ids_from_hierarchy:
                 raise GenealogyValidatorError(
-                    f"File with names of families: ID {family_id} not found in file with genealogy hierarchy"
+                    f"File with names of families: ID {family_id} not found in file"
+                    " with genealogy hierarchy"
                 )
 
         print(

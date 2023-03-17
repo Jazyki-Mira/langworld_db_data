@@ -68,11 +68,12 @@ class DoculectInventoryValidator(Validator):
         for doculect in self.doculects:
             if doculect["family_id"] not in self.genealogy_family_ids:
                 raise DoculectInventoryValidatorError(
-                    f"{doculect['id'].capitalize()}: genealogy family ID {doculect['family_id']} "
-                    f"not found in genealogy inventory"
+                    f"{doculect['id'].capitalize()}: genealogy family ID"
+                    f" {doculect['family_id']} not found in genealogy inventory"
                 )
         print(
-            "OK: ID of language family for each doculect is present in genealogy inventory"
+            "OK: ID of language family for each doculect is present in genealogy"
+            " inventory"
         )
 
     def _check_uniqueness_of_coordinates(self) -> None:
@@ -118,7 +119,8 @@ class DoculectInventoryValidator(Validator):
                     f'Doculect {doculect["id"]} has no file with feature profile.'
                 )
         print(
-            "OK: Every doculect that is marked as having a feature profile has a matching .csv file."
+            "OK: Every doculect that is marked as having a feature profile has a"
+            " matching .csv file."
         )
 
     def _match_files_to_doculects(self) -> None:
@@ -135,10 +137,12 @@ class DoculectInventoryValidator(Validator):
                 )
             if self.has_feature_profile_for_doculect_id[name] != "1":
                 raise DoculectInventoryValidatorError(
-                    f'Feature profile {name} is not marked with "1" in file with doculects.'
+                    f'Feature profile {name} is not marked with "1" in file with'
+                    " doculects."
                 )
         print(
-            "OK: Every feature profile is marked correspondingly in file with doculects."
+            "OK: Every feature profile is marked correspondingly in file with"
+            " doculects."
         )
 
 

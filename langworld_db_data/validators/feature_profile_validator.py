@@ -90,8 +90,9 @@ class FeatureProfileValidator(Validator):
             if data_row.value_type == "custom":
                 if data_row.value_id:
                     raise FeatureProfileValidatorError(
-                        f"File {file.stem} must not contain value ID {data_row.value_id} "
-                        f'in row {i + 1} or value type must be "listed"'
+                        f"File {file.stem} must not contain value ID"
+                        f" {data_row.value_id} in row {i + 1} or value type must be"
+                        ' "listed"'
                     )
                 if not data_row.value_ru:
                     raise FeatureProfileValidatorError(
@@ -105,14 +106,15 @@ class FeatureProfileValidator(Validator):
             ):
                 if data_row.value_id or data_row.value_ru:
                     raise FeatureProfileValidatorError(
-                        f"File {file.stem} must not contain value ID or value text in row {i + 1} "
-                        f"or value type must be different"
+                        f"File {file.stem} must not contain value ID or value text in"
+                        f" row {i + 1} or value type must be different"
                     )
 
             elif data_row.value_type == "listed":
                 if not re.match(rf"{feature_id}-\d+", data_row.value_id):
                     raise FeatureProfileValidatorError(
-                        f"File {file.stem} contains invalid value ID {data_row.value_id} in row {i + 1}"
+                        f"File {file.stem} contains invalid value ID"
+                        f" {data_row.value_id} in row {i + 1}"
                     )
 
                 # Validation of whether value name (here) and feature name (later on) in feature profile
@@ -122,9 +124,11 @@ class FeatureProfileValidator(Validator):
                 # This is why I allow to skip throwing exception in case of mismatch (but prefer throwing it anyway).
                 if data_row.value_ru != self.value_ru_for_value_id[data_row.value_id]:
                     message = (
-                        f"File {file.stem}, row {i + 1}: value {data_row.value_ru} for value ID {data_row.value_id} "
-                        f"in row {i + 1} does not match name of this value in inventory "
-                        f"(value ID {data_row.value_id} should be {self.value_ru_for_value_id[data_row.value_id]})"
+                        f"File {file.stem}, row {i + 1}: value {data_row.value_ru} for"
+                        f" value ID {data_row.value_id} in row {i + 1} does not match"
+                        " name of this value in inventory (value ID"
+                        f" {data_row.value_id} should be"
+                        f" {self.value_ru_for_value_id[data_row.value_id]})"
                     )
                     if self.must_throw_error_at_feature_or_value_name_mismatch:
                         raise FeatureProfileValidatorError(message)
@@ -133,9 +137,10 @@ class FeatureProfileValidator(Validator):
 
             if data_row.feature_name_ru != self.feature_ru_for_feature_id[feature_id]:
                 message = (
-                    f"File {file.stem}, row {i + 1}: feature name {data_row.feature_name_ru} "
-                    f"in row {i + 1} does not match name of this feature in inventory "
-                    f"({self.feature_ru_for_feature_id[feature_id]})"
+                    f"File {file.stem}, row {i + 1}: feature name"
+                    f" {data_row.feature_name_ru} in row {i + 1} does not match name of"
+                    " this feature in inventory"
+                    f" ({self.feature_ru_for_feature_id[feature_id]})"
                 )
                 if self.must_throw_error_at_feature_or_value_name_mismatch:
                     raise FeatureProfileValidatorError(message)
@@ -160,12 +165,15 @@ class FeatureProfileValidator(Validator):
                     ):
                         error_message = (
                             f"{file.stem.capitalize()}: Feature {feature_id} "
-                            f'"{data_from_profile[feature_id].feature_name_ru}" has value ID '
+                            f'"{data_from_profile[feature_id].feature_name_ru}" has'
+                            " value ID "
                             f"{data_from_profile[feature_id].value_id} "
                             f'"{data_from_profile[feature_id].value_ru}" => feature ID '
-                            f"{id_of_feature_that_must_be_not_applicable} must have value type 'not_applicable'. "
-                            f"Instead, it has value "
-                            f'"{data_from_profile[id_of_feature_that_must_be_not_applicable].value_ru}" (value type'
+                            f"{id_of_feature_that_must_be_not_applicable} must have"
+                            " value type 'not_applicable'. "
+                            "Instead, it has value "
+                            f'"{data_from_profile[id_of_feature_that_must_be_not_applicable].value_ru}"'
+                            " (value type"
                             f": {data_from_profile[id_of_feature_that_must_be_not_applicable].value_type})"
                         )
                         print(error_message)
@@ -176,8 +184,9 @@ class FeatureProfileValidator(Validator):
             and self.must_throw_error_at_not_applicable_rule_breach
         ):
             raise FeatureProfileValidatorError(
-                f"File {file.name}: found {len(breaches_of_rules_for_not_applicable)} breaches of rules "
-                f"for 'not_applicable' value type."
+                f"File {file.name}: found"
+                f" {len(breaches_of_rules_for_not_applicable)} breaches of rules for"
+                " 'not_applicable' value type."
             )
 
 

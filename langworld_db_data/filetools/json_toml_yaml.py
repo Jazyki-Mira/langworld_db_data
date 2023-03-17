@@ -37,7 +37,8 @@ def check_yaml_file(path_to_file: Path, verbose: bool = True) -> None:
     for key in counter:
         if counter[key] > 1:
             raise ParserError(
-                f"File {path_to_file} contains more than one dictionary key <{key}> at the top level"
+                f"File {path_to_file} contains more than one dictionary key <{key}> at"
+                " the top level"
             )
 
     try:

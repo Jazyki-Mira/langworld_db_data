@@ -63,8 +63,8 @@ class ListedValueLister(AbstractValueLister):
         )
 
         content = (
-            f"# Значения типа `{self.value_type}`\n"
-            "Оглавление файла открывается кнопкой сверху слева рядом с индикатором количества строк."
+            f"# Значения типа `{self.value_type}`\nОглавление файла открывается кнопкой"
+            " сверху слева рядом с индикатором количества строк."
         )
 
         for feature_id in feature_name_for_feature_id:
@@ -74,8 +74,9 @@ class ListedValueLister(AbstractValueLister):
 
             for value_id in feature_to_value_to_doculects[feature_id]:
                 content += (
-                    f"\n- **{value_name_for_value_id[value_id]}** ({value_id}): "
-                    f"кол-во языков — **{len(feature_to_value_to_doculects[feature_id][value_id])}**"
+                    f"\n- **{value_name_for_value_id[value_id]}** ({value_id}): кол-во"
+                    " языков —"
+                    f" **{len(feature_to_value_to_doculects[feature_id][value_id])}**"
                 )
 
                 # # This is good but leads to a very large file being generated. GitHub refuses to show its content.

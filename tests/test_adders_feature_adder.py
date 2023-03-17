@@ -76,7 +76,10 @@ def test_add_feature_fails_with_wrong_new_listed_values(test_feature_adder):
     }
     with pytest.raises(
         FeatureAdderError,
-        match="must have keys 'en' and 'ru'. Your value: {'this': 'should fail', 'en': 'this is fine'}",
+        match=(
+            "must have keys 'en' and 'ru'. Your value: {'this': 'should fail', 'en':"
+            " 'this is fine'}"
+        ),
     ):
         test_feature_adder.add_feature(**args)
 
@@ -84,7 +87,10 @@ def test_add_feature_fails_with_wrong_new_listed_values(test_feature_adder):
 def test_add_feature_fails_with_wrong_category_id(test_feature_adder):
     with pytest.raises(
         FeatureAdderError,
-        match=f"Category ID <X> not found in file {test_feature_adder.file_with_categories.name}",
+        match=(
+            "Category ID <X> not found in file"
+            f" {test_feature_adder.file_with_categories.name}"
+        ),
     ):
         test_feature_adder.add_feature(
             category_id="X",

@@ -44,9 +44,9 @@ class FeatureProfileReader:
                     f"File {file.stem} does not contain feature ID in row {i + 1}"
                 )
             relevant_columns = {key: row[key] for key in row if key != "feature_id"}
-            feature_id_to_row_dict[
-                row["feature_id"]
-            ] = ValueForFeatureProfileDictionary(**relevant_columns)
+            feature_id_to_row_dict[row["feature_id"]] = (
+                ValueForFeatureProfileDictionary(**relevant_columns)
+            )
 
         return feature_id_to_row_dict
 

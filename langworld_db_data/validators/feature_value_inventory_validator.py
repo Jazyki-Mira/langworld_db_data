@@ -58,11 +58,13 @@ class FeatureValueInventoryValidator(Validator):
         for value_id in feature_id_for_value_id:
             if not value_id.startswith(feature_id_for_value_id[value_id]):
                 raise FeatureValueInventoryValidatorError(
-                    f"Value ID {value_id} does not start with feature ID {feature_id_for_value_id[value_id]}"
+                    f"Value ID {value_id} does not start with feature ID"
+                    f" {feature_id_for_value_id[value_id]}"
                 )
             if not re.match(rf"{feature_id_for_value_id[value_id]}-\d+", value_id):
                 raise FeatureValueInventoryValidatorError(
-                    f"Value ID {value_id} was not formed correctly from feature ID {feature_id_for_value_id[value_id]}"
+                    f"Value ID {value_id} was not formed correctly from feature ID"
+                    f" {feature_id_for_value_id[value_id]}"
                 )
 
         print("OK: all value IDs are derived from feature ID")
@@ -89,7 +91,8 @@ class FeatureValueInventoryValidator(Validator):
 
                 if duplicate_value_names:
                     raise FeatureValueInventoryValidatorError(
-                        f'Duplicate value names found for feature {feature_id}: {", ".join(duplicate_value_names)}'
+                        f"Duplicate value names found for feature {feature_id}:"
+                        f" {', '.join(duplicate_value_names)}"
                     )
 
         print("OK: all values within each feature have unique names")

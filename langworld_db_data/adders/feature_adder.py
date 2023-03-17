@@ -52,7 +52,7 @@ class FeatureAdder(Adder):
 
         if not (cat_id and feat_en and feat_ru and listed_values_to_add):
             raise FeatureAdderError(
-                f"Some of the values passed are empty: "
+                "Some of the values passed are empty: "
                 f"{cat_id=}, {feat_ru=}, {feat_en=}, {listed_values_to_add=}"
             )
 
@@ -66,7 +66,8 @@ class FeatureAdder(Adder):
             path_to_file=self.file_with_categories, column_name="id"
         ):
             raise FeatureAdderError(
-                f"Category ID <{cat_id}> not found in file {self.file_with_categories.name}"
+                f"Category ID <{cat_id}> not found in file"
+                f" {self.file_with_categories.name}"
             )
 
         rows_with_features = read_dicts_from_csv(self.input_file_with_features)
@@ -85,8 +86,9 @@ class FeatureAdder(Adder):
 
             if feature_id_to_add_after not in [row["id"] for row in rows_with_features]:
                 raise FeatureAdderError(
-                    f"Cannot add feature after {cat_id}{SEPARATOR}{insert_after_index}: "
-                    f"There is no feature with index {index_of_new_feature} in category {cat_id}."
+                    f"Cannot add feature after {cat_id}{SEPARATOR}{insert_after_index}:"
+                    f" There is no feature with index {index_of_new_feature} in"
+                    f" category {cat_id}."
                 )
 
         id_of_new_feature = self._generate_feature_id(
@@ -95,7 +97,10 @@ class FeatureAdder(Adder):
         )
 
         print(
-            f"\nAdding feature {id_of_new_feature} ({feature_en} / {feature_ru}) to list of features",
+            (
+                f"\nAdding feature {id_of_new_feature} ({feature_en} / {feature_ru}) to"
+                " list of features"
+            ),
             end=" ",
         )
 
@@ -164,7 +169,8 @@ class FeatureAdder(Adder):
         )
 
         print(
-            f"\nAdding feature {id_of_new_feature} to feature profiles with value type 'not_stated'"
+            f"\nAdding feature {id_of_new_feature} to feature profiles with value type"
+            " 'not_stated'"
         )
 
         for file in self.input_feature_profiles:
@@ -208,8 +214,9 @@ class FeatureAdder(Adder):
             and custom_index_of_new_feature < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
         ):
             raise FeatureAdderError(
-                f"For clarity, manual feature indices must be greater than {INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS} "
-                f"(you gave {custom_index_of_new_feature})."
+                "For clarity, manual feature indices must be greater than"
+                f" {INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS} (you gave"
+                f" {custom_index_of_new_feature})."
             )
 
         rows_with_features = read_dicts_from_csv(self.input_file_with_features)
@@ -232,7 +239,8 @@ class FeatureAdder(Adder):
 
         if f"{category_id}{SEPARATOR}{custom_index_str}" in feature_ids_in_category:
             raise FeatureAdderError(
-                f"Feature index {custom_index_str} already in use in category {category_id}"
+                f"Feature index {custom_index_str} already in use in category"
+                f" {category_id}"
             )
         else:
             return f"{category_id}{SEPARATOR}{custom_index_str}"

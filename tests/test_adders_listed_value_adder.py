@@ -101,7 +101,10 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
     for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
         assert (
             OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / f"{stem}.csv"
-        ).exists(), f"File {stem}.csv was not created. It means that no changes were made while there should have been changes"
+        ).exists(), (
+            f"File {stem}.csv was not created. It means that no changes were made while"
+            " there should have been changes"
+        )
 
     for file in OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES.glob("*.csv"):
         assert (
@@ -148,7 +151,10 @@ def test_add_listed_value(test_adder):
     for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
         assert (
             OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / f"{stem}.csv"
-        ).exists(), f"File {stem}.csv was not created. It means that no changes were made while there should have been changes"
+        ).exists(), (
+            f"File {stem}.csv was not created. It means that no changes were made while"
+            " there should have been changes"
+        )
 
     for file in OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES.glob("*.csv"):
         assert (

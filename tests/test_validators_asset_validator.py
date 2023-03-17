@@ -34,7 +34,10 @@ def test__validate_file_matching_maps_to_doculects_fails_with_repeating_rows():
 def test__validate_file_matching_maps_to_doculects_fails_with_bad_map_id():
     with pytest.raises(
         AssetValidatorError,
-        match="Row 2 in file encyclopedia_map_to_doculect_bad_map_id.csv: Map ID 99-9 not found",
+        match=(
+            "Row 2 in file encyclopedia_map_to_doculect_bad_map_id.csv: Map ID 99-9 not"
+            " found"
+        ),
     ):
         AssetValidator(
             file_with_doculects=FILE_WITH_DOCULECTS,
@@ -49,7 +52,10 @@ def test__validate_file_matching_maps_to_doculects_fails_with_bad_map_id():
 def test__validate_file_matching_maps_to_doculects_fails_with_bad_doculect_id():
     with pytest.raises(
         AssetValidatorError,
-        match="Row 4 in file encyclopedia_map_to_doculect_bad_doculect_id.csv: Doculect ID foo",
+        match=(
+            "Row 4 in file encyclopedia_map_to_doculect_bad_doculect_id.csv: Doculect"
+            " ID foo"
+        ),
     ):
         AssetValidator(
             file_with_doculects=FILE_WITH_DOCULECTS,

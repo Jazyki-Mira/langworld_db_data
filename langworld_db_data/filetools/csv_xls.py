@@ -29,8 +29,9 @@ def append_empty_column_to_csv(
     """
     if custom_path_to_output_file is not None and custom_path_to_output_file.exists():
         raise FileExistsError(
-            f"You provided a custom path to output file {custom_path_to_output_file}, "
-            f"but it already exists. To append column in place, do not indicate custom output path."
+            f"You provided a custom path to output file {custom_path_to_output_file},"
+            " but it already exists. To append column in place, do not indicate custom"
+            " output path."
         )
     output_path = custom_path_to_output_file or path_to_file
 
@@ -83,7 +84,7 @@ def check_csv_for_malformed_rows(path_to_file: Path) -> None:
 
     raise IndexError(
         f"File {path_to_file.name}: Following rows have abnormal number of columns: "
-        f'{", ".join(indices_of_likely_invalid_rows)}'
+        f"{', '.join(indices_of_likely_invalid_rows)}"
     )
 
 
@@ -93,7 +94,8 @@ def check_csv_for_repetitions_in_column(path_to_file: Path, column_name: str) ->
 
     if column_name not in rows[0]:
         raise KeyError(
-            f"Cannot check uniqueness of value in column <{column_name}> because it does not exist"
+            f"Cannot check uniqueness of value in column <{column_name}> because it"
+            " does not exist"
         )
 
     values_in_column = [row[column_name] for row in rows]
@@ -104,7 +106,8 @@ def check_csv_for_repetitions_in_column(path_to_file: Path, column_name: str) ->
 
     if non_unique_keys:
         raise ValueError(
-            f'File {path_to_file} has repeating values in column <{column_name}>: {", ".join(non_unique_keys)}'
+            f"File {path_to_file} has repeating values in column <{column_name}>:"
+            f" {', '.join(non_unique_keys)}"
         )
 
 
@@ -216,7 +219,7 @@ def read_dict_from_2_csv_columns(
     if len(set(key_column)) < len(key_column):
         raise ValueError(
             f"Values in column {key_col} are not unique. "
-            f"Using them as keys may lead to unpredictable behavior."
+            "Using them as keys may lead to unpredictable behavior."
         )
 
     value_column = [row[val_index] for row in data_rows]
@@ -296,9 +299,9 @@ def write_csv(
     with path_to_file.open(mode="w+", encoding="utf-8", newline="") as fh:
         first_row = rows[0]
         # noinspection PyUnusedLocal, PyProtectedMember, PyUnresolvedReferences
-        writer: Union[
-            csv.DictWriter, _csv._writer, None
-        ] = None  # for mypy typechecking only
+        writer: Union[csv.DictWriter, _csv._writer, None] = (
+            None  # for mypy typechecking only
+        )
         if hasattr(first_row, "_asdict"):
             # NamedTuple cannot be used in `isinstance` statement, so I use `hasattr`.
             # I have to put this check first, because isinstance(item, tuple)

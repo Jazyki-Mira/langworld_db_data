@@ -48,8 +48,10 @@ class DoculectInCountryWriter:
         "совр. Сирия",
         "Kingdom of Van",
         # this is one long string, missing comma after 1st line is intended:
-        "present-day France, Luxembourg, Belgium, most of Switzerland, "
-        "and parts of Northern Italy, Netherlands, and Germany",
+        (
+            "present-day France, Luxembourg, Belgium, most of Switzerland, "
+            "and parts of Northern Italy, Netherlands, and Germany"
+        ),
     )
 
     def __init__(
@@ -84,7 +86,8 @@ class DoculectInCountryWriter:
 
         if not self.sociolinguistic_profiles:
             raise DoculectInCountryWriterError(
-                f"No sociolinguistic profiles found in {dir_with_sociolinguistic_profiles}"
+                "No sociolinguistic profiles found in"
+                f" {dir_with_sociolinguistic_profiles}"
             )
 
         # this is the initial version that will have to be amended by reading the file with aliases

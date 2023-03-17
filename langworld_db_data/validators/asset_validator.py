@@ -41,7 +41,8 @@ class AssetValidator(Validator):
         for key in counter:
             if counter[key] > 1:
                 raise AssetValidatorError(
-                    f"File {self.file_matching_maps_to_doculects.name} has a repeating row: {key} ({counter[key]})"
+                    f"File {self.file_matching_maps_to_doculects.name} has a repeating"
+                    f" row: {key} ({counter[key]})"
                 )
         print("OK: No repeating rows found")
 
@@ -53,13 +54,15 @@ class AssetValidator(Validator):
         ):
             if row["encyclopedia_map_id"] not in map_ids:
                 raise AssetValidatorError(
-                    f"Row {i} in file {self.file_matching_maps_to_doculects.name}: "
-                    f'Map ID {row["encyclopedia_map_id"]} not found in file {self.file_with_encyclopedia_maps.name}'
+                    f"Row {i} in file {self.file_matching_maps_to_doculects.name}: Map"
+                    f" ID {row['encyclopedia_map_id']} not found in file"
+                    f" {self.file_with_encyclopedia_maps.name}"
                 )
             if row["doculect_id"] not in doculect_ids:
                 raise AssetValidatorError(
-                    f"Row {i} in file {self.file_matching_maps_to_doculects.name}: "
-                    f'Doculect ID {row["doculect_id"]} not found in file {self.file_with_doculects.name}'
+                    f"Row {i} in file {self.file_matching_maps_to_doculects.name}:"
+                    f" Doculect ID {row['doculect_id']} not found in file"
+                    f" {self.file_with_doculects.name}"
                 )
         print(
             "OK: IDs of encyclopedia maps and doculects match IDs in respective files"

@@ -24,9 +24,10 @@ def check_existence_of_output_csv_file_and_compare_with_gold_standard(
     gold_standard_lines = read_plain_rows_from_csv(gold_standard_file)
 
     for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
-        assert (
-            output_line == gold_standard_line
-        ), f"Output line {output_line} does not match expected line {gold_standard_line}"
+        assert output_line == gold_standard_line, (
+            f"Output line {output_line} does not match expected line"
+            f" {gold_standard_line}"
+        )
 
     if unlink_if_successful:
         print(f"Deleting test output file {output_file.name}")

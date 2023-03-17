@@ -113,7 +113,7 @@ class ListedValueAdder(Adder):
 
                     print(
                         f"{file.name}: changing row {i + 2} (feature {feature_id}). "
-                        f'Custom value <{row["value_ru"]}> will become listed value '
+                        f"Custom value <{row['value_ru']}> will become listed value "
                         f"<{new_value_ru}> ({new_value_id})"
                     )
                     row["value_type"] = "listed"

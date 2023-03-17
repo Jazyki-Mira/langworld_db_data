@@ -56,9 +56,9 @@ class NotApplicableSetter:
             for feature_id in self.rules:
                 # noinspection PyTypeChecker
                 print(
-                    f"Feature ID {feature_id}, value ID to trigger 'not_applicable' rules for this feature: "
-                    f"{self.rules[feature_id]['trigger']}. "
-                    f"Value in {file.stem}: {data_from_profile[feature_id].value_id}"
+                    f"Feature ID {feature_id}, value ID to trigger 'not_applicable'"
+                    f" rules for this feature: {self.rules[feature_id]['trigger']}."
+                    f" Value in {file.stem}: {data_from_profile[feature_id].value_id}"
                 )
 
                 # noinspection PyTypeChecker
@@ -71,7 +71,8 @@ class NotApplicableSetter:
                         "features_to_get_not_applicable"
                     ]:
                         print(
-                            f'Feature {id_of_feature_to_be_changed} to be set to "not applicable"'
+                            f'Feature {id_of_feature_to_be_changed} to be set to "not'
+                            ' applicable"'
                         )
 
                         # Only changing values that are of 'not_stated' type!
@@ -80,22 +81,22 @@ class NotApplicableSetter:
                             new_data[id_of_feature_to_be_changed].value_type
                             == "not_stated"
                         ):
-                            new_data[
-                                id_of_feature_to_be_changed
-                            ] = ValueForFeatureProfileDictionary(
-                                feature_name_ru=data_from_profile[
-                                    id_of_feature_to_be_changed
-                                ].feature_name_ru,
-                                value_type="not_applicable",
-                                value_ru="",
-                                value_id="",
-                                comment_en=data_from_profile[
-                                    id_of_feature_to_be_changed
-                                ].comment_en,
-                                comment_ru=data_from_profile[
-                                    id_of_feature_to_be_changed
-                                ].comment_ru,
-                                page_numbers="",
+                            new_data[id_of_feature_to_be_changed] = (
+                                ValueForFeatureProfileDictionary(
+                                    feature_name_ru=data_from_profile[
+                                        id_of_feature_to_be_changed
+                                    ].feature_name_ru,
+                                    value_type="not_applicable",
+                                    value_ru="",
+                                    value_id="",
+                                    comment_en=data_from_profile[
+                                        id_of_feature_to_be_changed
+                                    ].comment_en,
+                                    comment_ru=data_from_profile[
+                                        id_of_feature_to_be_changed
+                                    ].comment_ru,
+                                    page_numbers="",
+                                )
                             )
 
             self.writer.write(
