@@ -1,6 +1,8 @@
 from pathlib import Path
 
-from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
+from langworld_db_data.featureprofiletools.data_structures import (
+    ValueForFeatureProfileDictionary,
+)
 from langworld_db_data.filetools.csv_xls import write_csv
 
 
@@ -25,8 +27,10 @@ class FeatureProfileWriterFromDictionary:
         rows_to_write = []
 
         for key in feature_dict:
-            row_dict = {'feature_id': key}
+            row_dict = {"feature_id": key}
             row_dict.update(**feature_dict[key]._asdict())
             rows_to_write.append(row_dict)
 
-        write_csv(rows_to_write, path_to_file=output_path, overwrite=True, delimiter=',')
+        write_csv(
+            rows_to_write, path_to_file=output_path, overwrite=True, delimiter=","
+        )
