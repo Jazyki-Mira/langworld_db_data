@@ -31,8 +31,9 @@ class FeatureAdder(Adder):
         output_file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
         **kwargs,
     ):
-        # I know **kwargs removes argument hinting, but to repeat all arguments will make too many lines.
-        # All arguments are keyword-only, so the wrong/mistyped argument cannot be passed.
+        # I know **kwargs removes argument hinting, but to repeat all arguments will
+        # make too many lines. All arguments are keyword-only, so the wrong/mistyped
+        # argument cannot be passed.
         super().__init__(**kwargs)
         self.file_with_categories = file_with_categories
         self.input_file_with_features = input_file_with_features

@@ -138,7 +138,7 @@ def test_check_csv_for_repetitions_in_column_throws_exception_with_wrong_column_
         check_csv_for_repetitions_in_column(path_to_file=file, column_name="foo")
 
 
-def test_check_csv_for_repetitions_in_column_throws_exception_with_repetition_in_column():
+def test_check_csv_for_repetitions_in_column_throws_error_with_repetition_in_column():
     file = DIR_WITH_FILETOOLS_TEST_FILES / "csv_doculects_with_duplicate_values.csv"
     with pytest.raises(
         ValueError, match="repeating values in column <id>: asturian, catalan"
@@ -146,7 +146,7 @@ def test_check_csv_for_repetitions_in_column_throws_exception_with_repetition_in
         check_csv_for_repetitions_in_column(path_to_file=file, column_name="id")
 
 
-def test_check_csv_for_repetitions_in_column_passes_for_file_with_repetition_in_column_if_different_column_is_checked():
+def test_check_csv_for_repetitions_in_column_passes_for_file_with_repetition_in_column_if_different_column_is_checked():  # noqa E501
     file = DIR_WITH_FILETOOLS_TEST_FILES / "csv_doculects_with_duplicate_values.csv"
     check_csv_for_repetitions_in_column(path_to_file=file, column_name="name_ru")
 

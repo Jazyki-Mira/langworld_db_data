@@ -63,7 +63,7 @@ def test__validate_one_file_fails_with_bad_files(
         test_validator._validate_one_file(DIR_WITH_BAD_PROFILES / f"{file_stem}.csv")
 
 
-def test__validate_one_file_prints_message_with_must_throw_error_at_feature_or_value_name_mismatch_set_to_false(
+def test__validate_one_file_prints_message_with_must_throw_error_at_feature_or_value_name_mismatch_set_to_false(  # noqa E501
     capsys, test_validator
 ):
     test_validator.must_throw_error_at_feature_or_value_name_mismatch = False
@@ -83,7 +83,7 @@ def test_validate_fails_with_bad_data():
         ).validate()
 
 
-def test__validate_one_file_prints_message_for_files_breaching_rules_for_not_applicable_with_flag_set_to_false(
+def test__validate_one_file_prints_message_for_files_breaching_rules_for_not_applicable_with_flag_set_to_false(  # noqa E501
     capsys, test_validator
 ):
     test_validator.must_throw_error_at_not_applicable_rule_breach = False
@@ -96,7 +96,7 @@ def test__validate_one_file_prints_message_for_files_breaching_rules_for_not_app
         assert 'Instead, it has value "Этого тут быть не должно"' in str(stdout)
 
 
-def test_validate_fails_with_profiles_that_breach_rules_for_not_applicable_with_flag_set_to_true():
+def test_validate_fails_with_profiles_that_breach_rules_for_not_applicable_with_flag_set_to_true():  # noqa E501
     with pytest.raises(
         FeatureProfileValidatorError,
         match="breaches of rules for 'not_applicable' value type",

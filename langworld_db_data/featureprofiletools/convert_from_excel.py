@@ -5,7 +5,7 @@ from langworld_db_data.constants.paths import CONFIG_DIR
 from langworld_db_data.featureprofiletools.data_structures import (
     ValueForFeatureProfileDictionary,
 )
-from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (
+from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (  # noqa E501
     FeatureProfileWriterFromDictionary,
 )
 from langworld_db_data.filetools.csv_xls import read_dicts_from_xls
@@ -41,8 +41,9 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
         value_id = _get("value_id")
         value_type = _get("value_type")
 
-        # I could do without this object but this seems better for coding and readability,
-        # especially given that I had already written a method for writing a resulting dict to CSV.
+        # I could do without this object but this seems better for coding and
+        # readability, especially given that I had already written a method for
+        # writing a resulting dict to CSV.
         value_for_feature_id[feature_id] = ValueForFeatureProfileDictionary(
             feature_name_ru=_get("feature_name_ru"),
             value_type=value_type,

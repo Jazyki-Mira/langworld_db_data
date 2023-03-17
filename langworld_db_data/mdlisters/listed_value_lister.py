@@ -79,21 +79,6 @@ class ListedValueLister(AbstractValueLister):
                     f" **{len(feature_to_value_to_doculects[feature_id][value_id])}**"
                 )
 
-                # # This is good but leads to a very large file being generated. GitHub refuses to show its content.
-                # if not feature_to_value_to_doculects[feature_id][value_id]:
-                #     content += '_Нет языков_'
-                #
-                # else:
-                #     for volume_and_doculect_id in feature_to_value_to_doculects[feature_id][value_id]:
-                #         volume, doculect_id = volume_and_doculect_id.split(':')
-                #         content += (
-                #             f'[{self.doculect_ru_for_doculect_id[doculect_id]}]'
-                #             f'(../feature_profiles/{doculect_id}.csv)<sub>{volume}</sub>, '
-                #         )
-                #     content = content[:-2]  # removing last ', '
-
-        # print(content)
-
         with output_file.open(mode="w+", encoding="utf-8") as fh:
             fh.write(content)
 

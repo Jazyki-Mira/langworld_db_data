@@ -29,7 +29,8 @@ def main() -> None:
     print("Checking CSV files for malformed rows")
     for file in DATA_DIR.rglob("*.csv"):
         check_csv_for_malformed_rows(file)
-    # Check for uniqueness in columns cannot be done universally, it depends on a specific file
+    # Check for uniqueness in columns cannot be done universally, it depends on a
+    # specific file
 
     print("OK: General checks passed")
 
@@ -38,10 +39,11 @@ def main() -> None:
     DoculectInventoryValidator().validate()
     GenealogyValidator().validate()
     FeatureValueInventoryValidator().validate()
-    # By default, exception will be thrown if value name does not match value name in an inventory for given value ID.
-    # Value name in feature profile is only there for readability, so I could disable this behavior,
-    # but for now it seems OK for the exception to be thrown.
-    # Argument `must_throw_error_at_not_applicable_rule_breach` can be set to True at a later stage.
+    # By default, exception will be thrown if value name does not match value name in an
+    # inventory for given value ID.  Value name in feature profile is only there for
+    # readability, so I could disable this behavior, but for now it seems OK for the
+    # exception to be thrown.  Argument `must_throw_error_at_not_applicable_rule_breach`
+    # can be set to True at a later stage.
     FeatureProfileValidator().validate()
 
     print("\nWriting Markdown files")

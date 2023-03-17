@@ -13,7 +13,7 @@ from tests.paths import (
 )
 
 
-def test_check_existence_of_output_csv_file_and_compare_with_gold_standard_passes_with_identical_files():
+def test_check_existence_of_output_csv_file_and_compare_with_gold_standard_passes_with_identical_files():  # noqa E501
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=INPUT_FILE_WITH_LISTED_VALUES,
         gold_standard_file=INPUT_FILE_WITH_LISTED_VALUES,
@@ -21,7 +21,7 @@ def test_check_existence_of_output_csv_file_and_compare_with_gold_standard_passe
     )
 
 
-def test_check_existence_of_output_csv_file_and_compare_with_gold_standard_fails_with_different_files():
+def test_check_existence_of_output_csv_file_and_compare_with_gold_standard_fails_with_different_files():  # noqa E501
     with pytest.raises(AssertionError):
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=INPUT_FILE_WITH_LISTED_VALUES,
@@ -30,7 +30,7 @@ def test_check_existence_of_output_csv_file_and_compare_with_gold_standard_fails
         )
 
 
-def test_check_existence_of_output_csv_file_and_compare_with_gold_standard_unlinks_output_file_after_comparison():
+def test_check_existence_of_output_csv_file_and_compare_with_gold_standard_unlinks_output_file_after_comparison():  # noqa E501
     dummy_gold_standard_file = DIR_WITH_TEST_FILES / "helpers_dummy_gold_standard.csv"
     dummy_output_file = DIR_WITH_TEST_FILES / "helpers_dummy_output.csv"
 

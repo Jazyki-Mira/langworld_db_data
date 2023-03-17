@@ -11,7 +11,7 @@ from langworld_db_data.featureprofiletools.data_structures import (
 from langworld_db_data.featureprofiletools.feature_profile_reader import (
     FeatureProfileReader,
 )
-from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (
+from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (  # noqa E501
     FeatureProfileWriterFromDictionary,
 )
 from langworld_db_data.filetools.json_toml_yaml import read_json_toml_yaml
@@ -76,7 +76,8 @@ class NotApplicableSetter:
                         )
 
                         # Only changing values that are of 'not_stated' type!
-                        # All other value types are wrong, but errors must be triggered in a validator, not here
+                        # All other value types are wrong, but errors must be triggered
+                        # in a validator, not here
                         if (
                             new_data[id_of_feature_to_be_changed].value_type
                             == "not_stated"

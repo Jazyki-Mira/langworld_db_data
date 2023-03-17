@@ -98,7 +98,7 @@ class FeatureProfileReader:
                 else:
                     print(f"{key_for_print} is empty")
 
-        # sometimes a custom value can be written in comment while value itself is left empty
+        # sometimes a custom value can be written in comment while value itself is empty
         text_to_copy = data_to_return["value_ru"] or data_to_return["comment_ru"]
         if copy_to_clipboard and text_to_copy:
             pyperclip.copy(text_to_copy)

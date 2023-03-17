@@ -3,7 +3,7 @@ import pytest
 from langworld_db_data.featureprofiletools.data_structures import (
     ValueForFeatureProfileDictionary,
 )
-from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (
+from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (  # noqa E501
     FeatureProfileWriterFromDictionary,
 )
 from tests.helpers import (

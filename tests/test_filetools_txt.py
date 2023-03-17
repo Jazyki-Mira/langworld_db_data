@@ -86,7 +86,7 @@ def test_write_plain_text_to_file_overwrites_content_in_overwrite_mode():
     PATH_TO_TEST_OUTPUT_TXT_FILE.unlink()
 
 
-def test_write_plain_text_to_file_throws_exception_when_file_exists_and_overwrite_is_false():
+def test_write_plain_text_to_file_throws_exception_when_file_exists_and_overwrite_is_false():  # noqa E501
     with PATH_TO_TEST_OUTPUT_TXT_FILE.open(mode="w+", encoding="utf-8") as fh:
         fh.write("")
 

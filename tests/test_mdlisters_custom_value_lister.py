@@ -1,8 +1,8 @@
 from langworld_db_data.mdlisters.custom_value_lister import CustomValueLister
 from tests.paths import DIR_WITH_TEST_FEATURE_PROFILES, DIR_WITH_VALIDATORS_TEST_FILES
 
-# Note that 'agul.csv' does not contain any custom values.  It is just there to make sure
-# there are no errors with files that have no custom values.
+# Note that 'agul.csv' does not contain any custom values.
+# It is there to make sure there are no errors with files that have no custom values.
 cvl = CustomValueLister(dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES)
 
 

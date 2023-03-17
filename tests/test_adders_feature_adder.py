@@ -159,7 +159,8 @@ def test__build_feature_id_generates_auto_index(test_feature_adder):
     feature_id = test_feature_adder._generate_feature_id(
         category_id="A", custom_index_of_new_feature=None
     )
-    # note that there is a feature with ID A-211 in test file with features. Code must ignore this ID.
+    # note that there is a feature with ID A-211 in test file with features.
+    # Code must ignore this ID.
     assert feature_id == "A-22"
 
 
@@ -220,8 +221,8 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
         test_feature_adder.input_feature_profiles = (
             test_feature_adder.output_dir_with_feature_profiles.glob("*.csv")
         )
-        # This is justified in test because in normal use output file is same as input file
-        # and features will be added one by one.
+        # This is justified in test because in normal use output file is same as input
+        # file and features will be added one by one.
 
     assert test_feature_adder.output_file_with_features.exists()
     assert test_feature_adder.input_file_with_listed_values.exists()

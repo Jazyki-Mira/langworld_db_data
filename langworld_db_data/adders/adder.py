@@ -17,7 +17,8 @@ class Adder:
         input_file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
         input_dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
         # This is mainly for testing: there should be an option to give different paths.
-        # In a default scenario, these paths will be the same, meaning the file will be updated in place.
+        # In a default scenario, these paths will be the same, meaning the file will be
+        # updated in place.
         output_file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
         output_dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
     ):

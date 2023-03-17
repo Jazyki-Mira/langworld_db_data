@@ -114,7 +114,8 @@ class CustomValueLister(AbstractValueLister):
                 current_value = value
             else:
                 content += (
-                    f", [{self.doculect_ru_for_doculect_id[row[0]]}](../feature_profiles/{row[0]}.csv)"
+                    f", [{self.doculect_ru_for_doculect_id[row[0]]}]"
+                    f"(../feature_profiles/{row[0]}.csv)"
                 )
 
         # print(content)

@@ -10,7 +10,7 @@ from tests.paths import DIR_WITH_FILETOOLS_TEST_FILES
 
 def test_check_yaml_file_passes_with_valid_data():
     for file in DIR_WITH_FILETOOLS_TEST_FILES.glob("yaml_OK*.yaml"):
-        # no assert needed because exception will be thrown in function if something is wrong
+        # no assert needed because exception will be thrown if something is wrong
         check_yaml_file(file)
 
 

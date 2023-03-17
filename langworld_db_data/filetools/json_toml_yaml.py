@@ -21,10 +21,10 @@ def check_yaml_file(path_to_file: Path, verbose: bool = True) -> None:
     with path_to_file.open(encoding="utf-8") as yaml_file:
         data = yaml_file.read()
 
-    # YAML parser does not catch duplicate dict keys, it keeps the value of the last key it sees.
-    # For my purposes, a check of only top-level keys will be enough:
+    # YAML parser does not catch duplicate dict keys, it keeps the value of the last key
+    # it sees. For my purposes, a check of only top-level keys will be enough:
     # an optional hyphen, a colon after the key.
-    # The key can be anything but a space or a hyphen (to avoid catching lower-level keys).
+    # The key can be anything but a space or hyphen (to avoid catching lower-level keys)
     pattern_for_top_level_dict_keys = re.compile(r"^(- )?(?P<key>[^\s-]+)\s?:.*")
 
     top_level_dict_keys = [
@@ -46,7 +46,7 @@ def check_yaml_file(path_to_file: Path, verbose: bool = True) -> None:
     except ParserError as e:
         print(
             e
-        )  # to make sure it's printed nicely and shows the user where the problem in file is
+        )  # make sure it's printed nicely and shows user where the problem in file is
         raise ParserError(f"Error reading YAML from file {path_to_file}")
 
     assert isinstance(yaml_loaded, (list, dict))

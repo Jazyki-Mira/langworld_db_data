@@ -103,7 +103,8 @@ class CLDFDatasetWriter:
                         "ID": value_table_row_id,
                         "Language_ID": language_id,
                         "Parameter_ID": relevant_row["feature_id"],
-                        # English value will be empty for values that are not yet in the inventory
+                        # English value will be empty for values that are not yet in the
+                        # inventory
                         "Value": self.value_en_for_value_id.get(
                             relevant_row["value_id"], ""
                         ),

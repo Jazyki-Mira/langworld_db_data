@@ -26,7 +26,7 @@ def test___check_and_get_ids_from_hierarchy_fails_for_malformed_family_id():
         )._check_and_get_ids_from_hierarchy()
 
 
-def test___check_and_get_ids_from_hierarchy_fails_for_family_id_that_is_not_in_file_with_names():
+def test___check_and_get_ids_from_hierarchy_fails_for_family_id_that_is_not_in_file_with_names():  # noqa E501
     with pytest.raises(
         GenealogyValidatorError,
         match="foobar in hierarchy not found in file with names",
@@ -34,7 +34,7 @@ def test___check_and_get_ids_from_hierarchy_fails_for_family_id_that_is_not_in_f
         GenealogyValidator(
             file_with_hierarchy=(
                 DIR_WITH_VALIDATORS_TEST_FILES
-                / "genealogy_families_hierarchy_bad_id_not_found_in_file_with_names.yaml"
+                / "genealogy_families_hierarchy_bad_id_not_found_in_file_with_names.yaml"  # noqa E501
             ),
             file_with_names=GOOD_FILE_WITH_NAMES,
         )._check_and_get_ids_from_hierarchy()
@@ -47,7 +47,7 @@ def test___check_and_get_ids_from_hierarchy_fails_for_non_unique_family_id():
         GenealogyValidator(
             file_with_hierarchy=(
                 DIR_WITH_VALIDATORS_TEST_FILES
-                / "genealogy_families_hierarchy_bad_duplicate_id_on_different_levels.yaml"
+                / "genealogy_families_hierarchy_bad_duplicate_id_on_different_levels.yaml"  # noqa E501
             ),
             file_with_names=GOOD_FILE_WITH_NAMES,
         )._check_and_get_ids_from_hierarchy()
@@ -67,7 +67,7 @@ def test__check_ids_in_list_of_names_fails_for_file_with_malformed_family_id():
         validator._check_ids_in_list_of_names(ids_from_hierarchy)
 
 
-def test__check_ids_in_list_of_names_fails_for_file_with_family_id_that_does_not_match_any_id_in_hierarchy():
+def test__check_ids_in_list_of_names_fails_for_file_with_family_id_that_does_not_match_any_id_in_hierarchy():  # noqa E501
     validator = GenealogyValidator(
         file_with_names=DIR_WITH_VALIDATORS_TEST_FILES
         / "genealogy_families_names_bad_id_is_not_found_in_hierarchy.csv",

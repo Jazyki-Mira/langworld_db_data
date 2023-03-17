@@ -90,7 +90,8 @@ class DoculectInCountryWriter:
                 f" {dir_with_sociolinguistic_profiles}"
             )
 
-        # this is the initial version that will have to be amended by reading the file with aliases
+        # this is the initial version that will have to be amended by reading the file
+        # with aliases
         self.doculect_id_to_countries: dict[str, set[str]] = {
             row["id"]: {row["main_country_id"]} for row in doculect_rows
         }
@@ -129,8 +130,9 @@ class DoculectInCountryWriter:
                 rows_to_write.append((doculect_id, country_id))
 
         write_csv(
-            # Need sorting because otherwise the set will be written differently each time.
-            # `str(item)` will have effect equivalent to sorting by two items doculect ID and then by country ID
+            # Need sorting because otherwise set will be written differently each time.
+            # `str(item)` will have effect equivalent to sorting by two items
+            # doculect ID and then by country ID
             [("doculect_id", "country_id")] + sorted(rows_to_write, key=str),
             path_to_file=self.output_file,
             overwrite=overwrite,

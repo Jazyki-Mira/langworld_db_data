@@ -59,8 +59,8 @@ class ListedValueAdder(Adder):
                     f"Row {row} already contains value you are trying to add"
                 )
 
-            # Keep updating those with each row.
-            # This means that at the last row of the feature they will reach the required values.
+            # Keep updating those with each row. This means that at the last row of the
+            # feature they will reach the required values.
             index_of_last_row_for_given_feature = i
             last_digit_of_value_id = int(row["id"].split(SEPARATOR)[-1])
             id_of_new_value = feature_id + SEPARATOR + str(last_digit_of_value_id + 1)

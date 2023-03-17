@@ -65,17 +65,19 @@ def check_csv_for_malformed_rows(path_to_file: Path) -> None:
     if len(row_count_for_number_of_columns) == 1:
         return
 
-    # See what count is least frequent.  It is most likely that the least frequent number of columns
-    # indicates a mistake. Although it is theoretically possible that there are so many wrong rows
-    # in a file that the wrong number becomes more frequent, it is very unlikely.
+    # See what count is least frequent.  It is most likely that the least frequent
+    # number of columns indicates a mistake. Although it is theoretically possible that
+    # there are so many wrong rows in a file that the wrong number becomes more
+    # frequent, it is very unlikely.
     least_frequent_numbers_of_columns = [
         item
         for item in row_count_for_number_of_columns
         if row_count_for_number_of_columns[item]
         == sorted(row_count_for_number_of_columns.values())[0]
     ]
-    # I made it a list because it is theoretically possible that one row has one wrong number of columns
-    # and one more row has one more wrong number of columns (also wrong, but different)
+    # I made it a list because it is theoretically possible that one row has one wrong
+    # number of columns and one more row has one more wrong number of columns
+    # (also wrong, but different)
 
     indices_of_likely_invalid_rows = []
     for i, row in enumerate(rows, start=1):
@@ -188,7 +190,7 @@ def read_dicts_from_csv(
 def read_dict_from_2_csv_columns(
     path_to_file: Path, key_col: str, val_col: str, delimiter: CSVDelimiter = ","
 ) -> dict[str, str]:
-    """Reads CSV file, returns data of two columns: one as keys, the other one as values."""
+    """Reads CSV file, returns data of two columns: one as keys, the other as values."""
     if key_col == val_col:
         raise ValueError(
             f"You passed same name for both key and value columns ({key_col})"
@@ -281,10 +283,10 @@ def write_csv(
 
     types_of_rows = set([type(row) for row in rows])
     if len(types_of_rows) > 1:
-        # Strictly speaking, I should be able to write list of lists combined with tuples
-        # or list of dicts combined with NamedTuples, but this is overcomplicating
-        # and potentially unpredictable. I should not be doing these things in calling code.
-        # So for sake of simplicity, this is justified.
+        # Strictly speaking, I should be able to write list of lists combined with
+        # tuples or list of dicts combined with NamedTuples, but this is
+        # overcomplicating and potentially unpredictable. I should not be doing these
+        # things in calling code. So for sake of simplicity, this is justified.
         raise TypeError(
             f"Cannot write items of different types ({types_of_rows}) "
             "in the same set of rows. "

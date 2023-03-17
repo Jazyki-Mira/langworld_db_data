@@ -31,7 +31,7 @@ class FeatureProfileValidator(Validator):
         dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
         file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
         file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
-        file_with_rules_for_not_applicable_value_type: Path = FILE_WITH_NOT_APPLICABLE_RULES,
+        file_with_rules_for_not_applicable_value_type: Path = FILE_WITH_NOT_APPLICABLE_RULES,  # noqa E501
         file_with_value_types: Path = FILE_WITH_VALUE_TYPES,
         must_throw_error_at_feature_or_value_name_mismatch: bool = True,
         must_throw_error_at_not_applicable_rule_breach: bool = False,
@@ -79,7 +79,8 @@ class FeatureProfileValidator(Validator):
             if feature_id == AUX_ROW_MARKER:
                 continue
 
-            # possible absence of feature ID in file is caught when reading data_from_profile
+            # possible absence of feature ID in file is caught when reading
+            # data_from_profile
             data_row = data_from_profile[feature_id]
 
             if data_row.value_type not in self.valid_value_types:
@@ -117,11 +118,13 @@ class FeatureProfileValidator(Validator):
                         f" {data_row.value_id} in row {i + 1}"
                     )
 
-                # Validation of whether value name (here) and feature name (later on) in feature profile
-                # match the names in inventories of features and values respectively is only done for the purpose
-                # of clarity and readability.  Russian names of features and values from feature profiles
+                # Validation of whether value name (here) and feature name (later on) in
+                # feature profile match the names in inventories of features and values
+                # respectively is only done for the purpose of clarity and readability.
+                # Russian names of features and values from feature profiles
                 # are not supposed to be used in code. Only IDs really matter.
-                # This is why I allow to skip throwing exception in case of mismatch (but prefer throwing it anyway).
+                # This is why I allow to skip throwing exception in case of mismatch
+                # (but prefer throwing it anyway).
                 if data_row.value_ru != self.value_ru_for_value_id[data_row.value_id]:
                     message = (
                         f"File {file.stem}, row {i + 1}: value {data_row.value_ru} for"
@@ -172,9 +175,9 @@ class FeatureProfileValidator(Validator):
                             f"{id_of_feature_that_must_be_not_applicable} must have"
                             " value type 'not_applicable'. "
                             "Instead, it has value "
-                            f'"{data_from_profile[id_of_feature_that_must_be_not_applicable].value_ru}"'
+                            f'"{data_from_profile[id_of_feature_that_must_be_not_applicable].value_ru}"'  # noqa E501
                             " (value type"
-                            f": {data_from_profile[id_of_feature_that_must_be_not_applicable].value_type})"
+                            f": {data_from_profile[id_of_feature_that_must_be_not_applicable].value_type})"  # noqa E501
                         )
                         print(error_message)
                         breaches_of_rules_for_not_applicable.append(error_message)
