@@ -20,6 +20,8 @@ mypy = "*"
 pytest = "*"
 pytest-cov = "*"
 ruff = "*"
+isort = "*"
+pre-commit = "*"
 
 [requires]
 python_version = "3.9"
