@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import pyperclip
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR

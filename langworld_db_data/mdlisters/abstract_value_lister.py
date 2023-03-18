@@ -7,8 +7,8 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_NAMES_OF_FEATURES,
 )
 from langworld_db_data.filetools.csv_xls import (
-    read_dicts_from_csv,
     read_dict_from_2_csv_columns,
+    read_dicts_from_csv,
 )
 
 

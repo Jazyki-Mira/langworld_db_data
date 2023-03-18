@@ -8,8 +8,8 @@ from tests.helpers import (
     check_existence_of_output_csv_file_and_compare_with_gold_standard,
 )
 from tests.paths import (
-    DIR_WITH_ADDERS_TEST_FILES,
     DIR_WITH_ADDERS_FEATURE_PROFILES,
+    DIR_WITH_ADDERS_TEST_FILES,
     INPUT_FILE_WITH_LISTED_VALUES,
     OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES,
 )

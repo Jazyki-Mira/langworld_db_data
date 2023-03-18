@@ -1,11 +1,11 @@
-from pathlib import Path
 import re
+from pathlib import Path
 
 from langworld_db_data.constants.literals import AUX_ROW_MARKER
 from langworld_db_data.constants.paths import (
     FEATURE_PROFILES_DIR,
-    FILE_WITH_NAMES_OF_FEATURES,
     FILE_WITH_LISTED_VALUES,
+    FILE_WITH_NAMES_OF_FEATURES,
     FILE_WITH_NOT_APPLICABLE_RULES,
     FILE_WITH_VALUE_TYPES,
 )

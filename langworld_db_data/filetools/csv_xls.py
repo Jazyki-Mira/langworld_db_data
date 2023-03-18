@@ -1,16 +1,16 @@
+import csv
 from collections import Counter
 from collections.abc import Generator
 from contextlib import contextmanager
-import _csv  # for typing only
-import csv
 from pathlib import Path
 from typing import Iterable, Literal, Optional, Union
 
-from openpyxl import load_workbook
+import _csv  # for typing only
 
 # for typing:
 import openpyxl.cell
 import openpyxl.worksheet.worksheet
+from openpyxl import load_workbook
 
 CSVDelimiter = Literal[",", ";"]
 

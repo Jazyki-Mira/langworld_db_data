@@ -1,4 +1,5 @@
 import pytest
+
 from langworld_db_data.validators.doculect_inventory_validator import (
     DoculectInventoryValidator,
     DoculectInventoryValidatorError,

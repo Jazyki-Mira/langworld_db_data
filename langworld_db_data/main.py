@@ -1,9 +1,9 @@
 from pycldf import Dataset
 
 from langworld_db_data.cldfwriters.cldf_dataset_writer import CLDFDatasetWriter
+from langworld_db_data.constants.paths import DATA_DIR, FILE_WITH_CLDF_DATASET_METADATA
 from langworld_db_data.filetools.csv_xls import check_csv_for_malformed_rows
 from langworld_db_data.filetools.json_toml_yaml import check_yaml_file
-from langworld_db_data.constants.paths import DATA_DIR, FILE_WITH_CLDF_DATASET_METADATA
 from langworld_db_data.mdlisters.custom_value_lister import CustomValueLister
 from langworld_db_data.mdlisters.listed_value_lister import ListedValueLister
 from langworld_db_data.validators.asset_validator import AssetValidator

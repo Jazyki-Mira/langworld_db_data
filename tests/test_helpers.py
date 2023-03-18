@@ -7,9 +7,9 @@ from tests.helpers import (
 
 # selecting these files/dirs for no specific reason, can be anything that is CSV:
 from tests.paths import (
-    INPUT_FILE_WITH_LISTED_VALUES,
     DIR_WITH_ADDERS_TEST_FILES,
     DIR_WITH_TEST_FILES,
+    INPUT_FILE_WITH_LISTED_VALUES,
 )
 
 

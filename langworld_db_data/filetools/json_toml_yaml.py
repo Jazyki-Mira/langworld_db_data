@@ -1,7 +1,7 @@
 import json
+import re
 from collections import Counter
 from pathlib import Path
-import re
 from typing import Union
 
 import toml

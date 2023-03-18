@@ -1,6 +1,6 @@
+import re
 from collections import Counter
 from pathlib import Path
-import re
 
 from langworld_db_data.constants.paths import (
     FILE_WITH_GENEALOGY_HIERARCHY,
