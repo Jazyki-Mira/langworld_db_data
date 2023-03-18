@@ -8,14 +8,14 @@ def check_encoding_of_file(file: Path) -> str:
     or ANSI (older ones). This function checks only these two
     alternatives.
     """
-    encoding = 'utf-8-sig'
+    encoding = "utf-8-sig"
     try:
-        fh = file.open(encoding='utf-8')
+        fh = file.open(encoding="utf-8")
         fh.read()
     except UnicodeDecodeError:
-        fh = file.open(encoding='cp1251')
+        fh = file.open(encoding="cp1251")
         fh.read()
-        encoding = 'cp1251'
+        encoding = "cp1251"
     fh.close()
 
     return encoding
@@ -26,7 +26,7 @@ def read_non_empty_lines_from_txt_file(path_to_file: Path) -> list[str]:
     correct encoding.
     """
     if not path_to_file.exists():
-        raise FileNotFoundError(f'Файл {path_to_file} не найден')
+        raise FileNotFoundError(f"Файл {path_to_file} не найден")
 
     encoding = check_encoding_of_file(path_to_file)
 
@@ -36,11 +36,11 @@ def read_non_empty_lines_from_txt_file(path_to_file: Path) -> list[str]:
 
 def read_plain_text_from_file(path_to_file: Path) -> str:
     try:
-        with path_to_file.open(encoding='utf-8-sig') as fh:
+        with path_to_file.open(encoding="utf-8-sig") as fh:
             content = fh.read()
     except UnicodeDecodeError:
-        print(f'Note: file {path_to_file.name} has ANSI encoding')
-        with path_to_file.open(encoding='cp1251') as fh:
+        print(f"Note: file {path_to_file.name} has ANSI encoding")
+        with path_to_file.open(encoding="cp1251") as fh:
             content = fh.read()
 
     return content
@@ -50,28 +50,30 @@ def remove_extra_space(str_: str) -> str:
     """Removes leading and trailing space,
     replaces multiple spaces within string with one.
     """
-    return re.sub(r'\s+', ' ', str_.strip())
+    return re.sub(r"\s+", " ", str_.strip())
 
 
-def write_plain_text_to_file(content: Union[str, list, tuple],
-                             file: Path,
-                             overwrite: bool,
-                             newline_char: str = '\n') -> None:
+def write_plain_text_to_file(
+    content: Union[str, list[str], tuple[str]],
+    file: Path,
+    overwrite: bool,
+    newline_char: str = "\n",
+) -> None:
     """Writes plain text to text file in UTF-8. If content is a list or a tuple,
     adds newline character at the end of each line automatically.
     """
     if not overwrite and file.exists():
-        raise FileExistsError(f'File {file} already exists')
+        raise FileExistsError(f"File {file} already exists")
 
     if not isinstance(content, (str, list, tuple)):
-        raise TypeError(f'Content of type {type(content)} not supported')
+        raise TypeError(f"Content of type {type(content)} not supported")
 
-    with file.open(mode='w+', encoding='utf-8') as fh:
+    with file.open(mode="w+", encoding="utf-8") as fh:
         if isinstance(content, str):
             fh.write(content)
-            msg = 'characters'
+            msg = "characters"
         elif isinstance(content, (list, tuple)):
-            fh.writelines(f'{line}{newline_char}' for line in content)
-            msg = 'lines'
+            fh.writelines(f"{line}{newline_char}" for line in content)
+            msg = "lines"
 
-        print(f'Written {len(content)} {msg} into file {file}.')
+        print(f"Written {len(content)} {msg} into file {file}.")

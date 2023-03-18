@@ -1,24 +1,26 @@
+import csv
 from collections import Counter
 from collections.abc import Generator
 from contextlib import contextmanager
-import _csv  # for typing only
-import csv
 from pathlib import Path
-from typing import Iterable, Literal, Optional, Union
+from typing import Any, Iterable, Literal, NamedTuple, Optional, Union
 
-from openpyxl import load_workbook
+import _csv  # for typing only
+
 # for typing:
 import openpyxl.cell
 import openpyxl.worksheet.worksheet
+from openpyxl import load_workbook
 
-CSVDelimiter = Literal[',', ';']
+CSVDelimiter = Literal[",", ";"]
 
 
 def append_empty_column_to_csv(
-        path_to_file: Path,
-        name_of_new_column: str,
-        delimiter: CSVDelimiter = ',',
-        custom_path_to_output_file: Optional[Path] = None) -> None:
+    path_to_file: Path,
+    name_of_new_column: str,
+    delimiter: CSVDelimiter = ",",
+    custom_path_to_output_file: Optional[Path] = None,
+) -> None:
     """Adds empty column (as last column) to CSV file. **Overwrites file**,
     but optional output path can be specified to create a new file.
 
@@ -26,20 +28,30 @@ def append_empty_column_to_csv(
     :raises FileExistsError if custom output file is specified and already exists.
     """
     if custom_path_to_output_file is not None and custom_path_to_output_file.exists():
-        raise FileExistsError(f'You provided a custom path to output file {custom_path_to_output_file}, '
-                              f'but it already exists. To append column in place, do not indicate custom output path.')
+        raise FileExistsError(
+            f"You provided a custom path to output file {custom_path_to_output_file},"
+            " but it already exists. To append column in place, do not indicate custom"
+            " output path."
+        )
     output_path = custom_path_to_output_file or path_to_file
 
     rows = read_plain_rows_from_csv(path_to_file=path_to_file, delimiter=delimiter)
     header_row, data_rows = rows[0], rows[1:]
 
     if name_of_new_column in header_row:
-        raise ValueError(f'Column {name_of_new_column} already exists in {path_to_file.name}')
+        raise ValueError(
+            f"Column {name_of_new_column} already exists in {path_to_file.name}"
+        )
 
     new_header_row: list[str] = header_row + [name_of_new_column]
-    new_data_rows = [row + [''] for row in data_rows]
+    new_data_rows = [row + [""] for row in data_rows]
 
-    write_csv([new_header_row] + new_data_rows, path_to_file=output_path, overwrite=True, delimiter=delimiter)
+    write_csv(
+        [new_header_row] + new_data_rows,
+        path_to_file=output_path,
+        overwrite=True,
+        delimiter=delimiter,
+    )
 
 
 def check_csv_for_malformed_rows(path_to_file: Path) -> None:
@@ -53,32 +65,40 @@ def check_csv_for_malformed_rows(path_to_file: Path) -> None:
     if len(row_count_for_number_of_columns) == 1:
         return
 
-    # See what count is least frequent.  It is most likely that the least frequent number of columns
-    # indicates a mistake. Although it is theoretically possible that there are so many wrong rows
-    # in a file that the wrong number becomes more frequent, it is very unlikely.
+    # See what count is least frequent.  It is most likely that the least frequent
+    # number of columns indicates a mistake. Although it is theoretically possible that
+    # there are so many wrong rows in a file that the wrong number becomes more
+    # frequent, it is very unlikely.
     least_frequent_numbers_of_columns = [
-        item for item in row_count_for_number_of_columns
-        if row_count_for_number_of_columns[item] == sorted(row_count_for_number_of_columns.values())[0]
+        item
+        for item in row_count_for_number_of_columns
+        if row_count_for_number_of_columns[item]
+        == sorted(row_count_for_number_of_columns.values())[0]
     ]
-    # I made it a list because it is theoretically possible that one row has one wrong number of columns
-    # and one more row has one more wrong number of columns (also wrong, but different)
+    # I made it a list because it is theoretically possible that one row has one wrong
+    # number of columns and one more row has one more wrong number of columns
+    # (also wrong, but different)
 
     indices_of_likely_invalid_rows = []
     for i, row in enumerate(rows, start=1):
         if len(row) in least_frequent_numbers_of_columns:
             indices_of_likely_invalid_rows.append(str(i))
 
-    raise IndexError(f'File {path_to_file.name}: Following rows have abnormal number of columns: '
-                     f'{", ".join(indices_of_likely_invalid_rows)}')
+    raise IndexError(
+        f"File {path_to_file.name}: Following rows have abnormal number of columns: "
+        f"{', '.join(indices_of_likely_invalid_rows)}"
+    )
 
 
 def check_csv_for_repetitions_in_column(path_to_file: Path, column_name: str) -> None:
-    """Throws ValueError if there are repetitions in given column of given file.
-    """
+    """Throws ValueError if there are repetitions in given column of given file."""
     rows = read_dicts_from_csv(path_to_file)
 
     if column_name not in rows[0]:
-        raise KeyError(f'Cannot check uniqueness of value in column <{column_name}> because it does not exist')
+        raise KeyError(
+            f"Cannot check uniqueness of value in column <{column_name}> because it"
+            " does not exist"
+        )
 
     values_in_column = [row[column_name] for row in rows]
 
@@ -88,20 +108,24 @@ def check_csv_for_repetitions_in_column(path_to_file: Path, column_name: str) ->
 
     if non_unique_keys:
         raise ValueError(
-            f'File {path_to_file} has repeating values in column <{column_name}>: {", ".join(non_unique_keys)}')
+            f"File {path_to_file} has repeating values in column <{column_name}>:"
+            f" {', '.join(non_unique_keys)}"
+        )
 
 
 def convert_xls_to_csv(
     path_to_input_excel_file: Path,
     sheet_name: str,
     path_to_output_csv_file: Path,
-    delimiter: CSVDelimiter = ',',
+    delimiter: CSVDelimiter = ",",
     overwrite: bool = True,
 ) -> None:
     if not overwrite and path_to_output_csv_file.exists():
-        raise FileExistsError(f'File {path_to_output_csv_file} already exists')
+        raise FileExistsError(f"File {path_to_output_csv_file} already exists")
 
-    with _load_worksheet(path_to_workbook=path_to_input_excel_file, sheet_name=sheet_name) as ws:
+    with _load_worksheet(
+        path_to_workbook=path_to_input_excel_file, sheet_name=sheet_name
+    ) as ws:
         rows_to_write = [_get_cell_values(row) for row in ws.iter_rows()]
 
         write_csv(
@@ -124,7 +148,7 @@ def _get_cell_values(row: Iterable[openpyxl.cell.Cell]) -> list[str]:
 
     for cell in row:
         if cell.value is None:
-            cell_values.append('')
+            cell_values.append("")
         else:
             cell_values.append(cell.value)
 
@@ -132,8 +156,9 @@ def _get_cell_values(row: Iterable[openpyxl.cell.Cell]) -> list[str]:
 
 
 @contextmanager
-def _load_worksheet(path_to_workbook: Path, sheet_name: str
-                    ) -> Generator[openpyxl.worksheet.worksheet.Worksheet, None, None]:
+def _load_worksheet(
+    path_to_workbook: Path, sheet_name: str
+) -> Generator[openpyxl.worksheet.worksheet.Worksheet, None, None]:
     """Opens Excel workbook, returns worksheet,
     closes the workbook after operation is done.
     """
@@ -151,23 +176,25 @@ def read_column_from_csv(path_to_file: Path, column_name: str) -> list[str]:
     return [row[column_name] for row in read_dicts_from_csv(path_to_file)]
 
 
-def read_dicts_from_csv(path_to_file: Path, delimiter: CSVDelimiter = ',') -> list[dict[str, str]]:
+def read_dicts_from_csv(
+    path_to_file: Path, delimiter: CSVDelimiter = ","
+) -> list[dict[str, str]]:
     """Opens CSV file and reads it as or list of dictionaries
     (top row is considered row with keys, each row is a dictionary
     with keys taken from top row).
     """
-    with path_to_file.open(encoding='utf-8-sig', newline='') as fh:
+    with path_to_file.open(encoding="utf-8-sig", newline="") as fh:
         return list(csv.DictReader(fh, delimiter=delimiter))
 
 
-def read_dict_from_2_csv_columns(path_to_file: Path,
-                                 key_col: str,
-                                 val_col: str,
-                                 delimiter: CSVDelimiter = ',') -> dict[str, str]:
-    """Reads CSV file, returns data of two columns: one as keys, the other one as values.
-    """
+def read_dict_from_2_csv_columns(
+    path_to_file: Path, key_col: str, val_col: str, delimiter: CSVDelimiter = ","
+) -> dict[str, str]:
+    """Reads CSV file, returns data of two columns: one as keys, the other as values."""
     if key_col == val_col:
-        raise ValueError(f'You passed same name for both key and value columns ({key_col})')
+        raise ValueError(
+            f"You passed same name for both key and value columns ({key_col})"
+        )
 
     rows = read_plain_rows_from_csv(path_to_file, delimiter=delimiter)
 
@@ -178,20 +205,24 @@ def read_dict_from_2_csv_columns(path_to_file: Path,
         raise TypeError
 
     if not (key_col in header_row and val_col in header_row):
-        raise KeyError(f'Name of {key_col=} or {val_col=} not found in {header_row=}')
+        raise KeyError(f"Name of {key_col=} or {val_col=} not found in {header_row=}")
 
     counter = Counter(header_row)
 
     if counter[key_col] > 1 or counter[val_col] > 1:
-        raise ValueError(f'One of columns ({key_col=} or {val_col=}) was encountered '
-                         f'more than once in {header_row=}')
+        raise ValueError(
+            f"One of columns ({key_col=} or {val_col=}) was encountered "
+            f"more than once in {header_row=}"
+        )
 
     key_index, val_index = header_row.index(key_col), header_row.index(val_col)
 
     key_column = [row[key_index] for row in data_rows]
     if len(set(key_column)) < len(key_column):
-        raise ValueError(f'Values in column {key_col} are not unique. '
-                         f'Using them as keys may lead to unpredictable behavior.')
+        raise ValueError(
+            f"Values in column {key_col} are not unique. "
+            "Using them as keys may lead to unpredictable behavior."
+        )
 
     value_column = [row[val_index] for row in data_rows]
 
@@ -221,11 +252,11 @@ def read_dicts_from_xls(path_to_file: Path, sheet_name: str) -> list[dict[str, s
         return dicts
 
 
-def read_plain_rows_from_csv(path_to_file: Path,
-                             delimiter: CSVDelimiter = ',',
-                             remove_1st_row: bool = False) -> list[list[str]]:
+def read_plain_rows_from_csv(
+    path_to_file: Path, delimiter: CSVDelimiter = ",", remove_1st_row: bool = False
+) -> list[list[str]]:
     """Opens CSV file and reads it as plain rows (list of lists)."""
-    with path_to_file.open(encoding='utf-8-sig', newline='') as fh:
+    with path_to_file.open(encoding="utf-8-sig", newline="") as fh:
         reader = csv.reader(fh, delimiter=delimiter)
         rows = list(reader)
 
@@ -234,7 +265,24 @@ def read_plain_rows_from_csv(path_to_file: Path,
     return rows
 
 
-def write_csv(rows: Union[list, tuple], path_to_file: Path, overwrite: bool, delimiter: CSVDelimiter) -> None:
+def write_csv(
+    # can't use Iterable because mypy says it's not indexable
+    rows: Union[
+        list[list[str]],
+        list[tuple[str, str]],
+        list[tuple[str, ...]],
+        tuple[list[str], ...],
+        tuple[tuple[str, ...], ...],
+        tuple[tuple[str, str], ...],
+        list[dict[str, str]],
+        tuple[dict[str, str], ...],
+        tuple[NamedTuple, ...],
+        list[NamedTuple],
+    ],
+    path_to_file: Path,
+    overwrite: bool,
+    delimiter: CSVDelimiter,
+) -> None:
     """Writes rows to CSV file. All rows (items of main list) must be
     of same type (all lists, all tuples, all dicts or all NamedTuples).
 
@@ -243,47 +291,57 @@ def write_csv(rows: Union[list, tuple], path_to_file: Path, overwrite: bool, del
     """
 
     if not overwrite and path_to_file.exists():
-        raise FileExistsError(f'File {path_to_file} already exists')
+        raise FileExistsError(f"File {path_to_file} already exists")
 
     types_of_rows = set([type(row) for row in rows])
     if len(types_of_rows) > 1:
-        # Strictly speaking, I should be able to write list of lists combined with tuples
-        # or list of dicts combined with NamedTuples, but this is overcomplicating
-        # and potentially unpredictable. I should not be doing these things in calling code.
-        # So for sake of simplicity, this is justified.
-        raise TypeError(f'Cannot write items of different types ({types_of_rows}) '
-                        'in the same set of rows. '
-                        'All items have to be either lists, dicts or NamedTuples')
+        # Strictly speaking, I should be able to write list of lists combined with
+        # tuples or list of dicts combined with NamedTuples, but this is
+        # overcomplicating and potentially unpredictable. I should not be doing these
+        # things in calling code. So for sake of simplicity, this is justified.
+        raise TypeError(
+            f"Cannot write items of different types ({types_of_rows}) "
+            "in the same set of rows. "
+            "All items have to be either lists, dicts or NamedTuples"
+        )
 
     # it is bad practice to change input data structure, so making a copy
     rows_to_write = rows[:]
 
-    print(f'Writing CSV to file {path_to_file}')
+    print(f"Writing CSV to file {path_to_file}")
 
-    with path_to_file.open(mode='w+', encoding='utf-8', newline='') as fh:
+    with path_to_file.open(mode="w+", encoding="utf-8", newline="") as fh:
         first_row = rows[0]
         # noinspection PyUnusedLocal, PyProtectedMember, PyUnresolvedReferences
-        writer: Union[csv.DictWriter, _csv._writer, None] = None  # for mypy typechecking only
-        if hasattr(first_row, '_asdict'):
+        writer: Union[csv.DictWriter[Any], _csv._writer, None] = None
+        if hasattr(first_row, "_asdict"):
             # NamedTuple cannot be used in `isinstance` statement, so I use `hasattr`.
             # I have to put this check first, because isinstance(item, tuple)
             # will evaluate to True for NamedTuple, which will lead to wrong behavior
             # (absence of header row)
             # noinspection PyProtectedMember
-            writer = csv.DictWriter(fh, fieldnames=list(first_row._asdict().keys()), delimiter=delimiter)
+            writer = csv.DictWriter(
+                fh,
+                fieldnames=list(first_row._asdict().keys()),
+                delimiter=delimiter,
+            )
             # noinspection PyProtectedMember
-            rows_to_write = [row._asdict() for row in rows]
+            rows_to_write = [row._asdict() for row in rows]  # type: ignore
         elif isinstance(first_row, dict):
-            writer = csv.DictWriter(fh, fieldnames=list(first_row.keys()), delimiter=delimiter)
+            writer = csv.DictWriter(
+                fh, fieldnames=list(first_row.keys()), delimiter=delimiter
+            )
         elif isinstance(first_row, (list, tuple)):
             writer = csv.writer(fh, delimiter=delimiter)
         else:
-            raise TypeError(f'Each item of the list of rows is of type {type(first_row)}. '
-                            'Supported types are list, tuple, dict, NamedTuple.')
+            raise TypeError(
+                f"Each item of the list of rows is of type {type(first_row)}. "
+                "Supported types are list, tuple, dict, NamedTuple."
+            )
 
         if isinstance(writer, csv.DictWriter):
-            print('Writing header')
+            print("Writing header")
             writer.writeheader()
 
-        writer.writerows(rows_to_write)
-        print(f'Written {len(rows_to_write)} rows')
+        writer.writerows(rows_to_write)  # type: ignore
+        print(f"Written {len(rows_to_write)} rows")

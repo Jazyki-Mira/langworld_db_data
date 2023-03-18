@@ -1,13 +1,15 @@
 from pathlib import Path
+
 import pyperclip
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
-from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
+from langworld_db_data.featureprofiletools.data_structures import (
+    ValueForFeatureProfileDictionary,
+)
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv
 
 
 class FeatureProfileReader:
-
     def read_feature_profile_as_dict_from_doculect_id(
         self,
         doculect_id: str,
@@ -20,10 +22,14 @@ class FeatureProfileReader:
         Keys are feature IDs, values are `ValueForFeatureProfileDictionary` objects
         with the rest of the columns for the respective row.
         """
-        return self.read_feature_profile_as_dict_from_file(dir_with_feature_profiles / f'{doculect_id}.csv')
+        return self.read_feature_profile_as_dict_from_file(
+            dir_with_feature_profiles / f"{doculect_id}.csv"
+        )
 
     @staticmethod
-    def read_feature_profile_as_dict_from_file(file: Path, ) -> dict[str, ValueForFeatureProfileDictionary]:
+    def read_feature_profile_as_dict_from_file(
+        file: Path,
+    ) -> dict[str, ValueForFeatureProfileDictionary]:
         """
         Accepts path to feature profile.
 
@@ -34,19 +40,25 @@ class FeatureProfileReader:
         feature_id_to_row_dict = {}
 
         for i, row in enumerate(read_dicts_from_csv(file), start=1):
-            if not row['feature_id']:
-                raise ValueError(f'File {file.stem} does not contain feature ID in row {i + 1}')
-            relevant_columns = {key: row[key] for key in row if key != 'feature_id'}
-            feature_id_to_row_dict[row['feature_id']] = ValueForFeatureProfileDictionary(**relevant_columns)
+            if not row["feature_id"]:
+                raise ValueError(
+                    f"File {file.stem} does not contain feature ID in row {i + 1}"
+                )
+            relevant_columns = {key: row[key] for key in row if key != "feature_id"}
+            feature_id_to_row_dict[row["feature_id"]] = (
+                ValueForFeatureProfileDictionary(**relevant_columns)
+            )
 
         return feature_id_to_row_dict
 
-    def read_value_for_doculect_and_feature(self,
-                                            doculect_id: str,
-                                            feature_id: str,
-                                            dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
-                                            copy_to_clipboard: bool = True,
-                                            verbose: bool = True) -> dict:
+    def read_value_for_doculect_and_feature(
+        self,
+        doculect_id: str,
+        feature_id: str,
+        dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
+        copy_to_clipboard: bool = True,
+        verbose: bool = True,
+    ) -> dict[str, str]:
         """A helper function to get value for given feature in given doculect.
         Prints and returns found value type, ID, value text, and comment.
         **Copies value text to clipboard** (by default).
@@ -59,31 +71,38 @@ class FeatureProfileReader:
         """
 
         try:
-            loaded_data_for_feature = self.read_feature_profile_as_dict_from_doculect_id(
-                doculect_id=doculect_id,
-                dir_with_feature_profiles=dir_with_feature_profiles,
-            )[feature_id]
+            loaded_data_for_feature = (
+                self.read_feature_profile_as_dict_from_doculect_id(
+                    doculect_id=doculect_id,
+                    dir_with_feature_profiles=dir_with_feature_profiles,
+                )[feature_id]
+            )
         except KeyError:
-            raise KeyError(f'{feature_id=} not found for {doculect_id=}')
+            raise KeyError(f"{feature_id=} not found for {doculect_id=}")
 
         data_to_return = {
             key: getattr(loaded_data_for_feature, key)
-            for key in ('value_type', 'value_id', 'value_ru', 'comment_ru')
+            for key in ("value_type", "value_id", "value_ru", "comment_ru")
         }
 
         if verbose:
-            print(f'{doculect_id=}, {feature_id=}\n')
+            print(f"{doculect_id=}, {feature_id=}\n")
             for key in data_to_return.keys():
-                key_for_print = key.replace("_ru", "").replace("_", " ").capitalize().replace('id', 'ID')
+                key_for_print = (
+                    key.replace("_ru", "")
+                    .replace("_", " ")
+                    .capitalize()
+                    .replace("id", "ID")
+                )
                 if data_to_return[key]:
-                    print(f'{key_for_print}: {data_to_return[key]}')
+                    print(f"{key_for_print}: {data_to_return[key]}")
                 else:
-                    print(f'{key_for_print} is empty')
+                    print(f"{key_for_print} is empty")
 
-        # sometimes a custom value can be written in comment while value itself is left empty
-        text_to_copy = data_to_return['value_ru'] or data_to_return['comment_ru']
+        # sometimes a custom value can be written in comment while value itself is empty
+        text_to_copy = data_to_return["value_ru"] or data_to_return["comment_ru"]
         if copy_to_clipboard and text_to_copy:
             pyperclip.copy(text_to_copy)
-            print('\nValue (or comment for empty value) copied to clipboard')
+            print("\nValue (or comment for empty value) copied to clipboard")
 
         return data_to_return

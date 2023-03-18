@@ -1,1 +1,1 @@
-LOCALES = ('en', 'ru')
+LOCALES = ("en", "ru")

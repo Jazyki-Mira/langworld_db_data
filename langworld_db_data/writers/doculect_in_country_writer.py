@@ -25,18 +25,18 @@ class DoculectInCountryWriter:
     """
 
     NOTES_TO_DELETE = (
-        'госуд., ист.',
+        "госуд., ист.",
         "госуд.",
         "ист.",
-        'state',
-        'state language',
-        'госуд.,ист.',
-        'hist.',
-        'state, hist.',
-        'я.п.м.',
-        'official',
+        "state",
+        "state language",
+        "госуд.,ист.",
+        "hist.",
+        "state, hist.",
+        "я.п.м.",
+        "official",
         "Côte d'Ivoire",
-        'государственный',
+        "государственный",
         "modern Syria",
         "совр. Турция",
         "modern-day Iraq",
@@ -48,42 +48,53 @@ class DoculectInCountryWriter:
         "совр. Сирия",
         "Kingdom of Van",
         # this is one long string, missing comma after 1st line is intended:
-        "present-day France, Luxembourg, Belgium, most of Switzerland, "
-        "and parts of Northern Italy, Netherlands, and Germany",
+        (
+            "present-day France, Luxembourg, Belgium, most of Switzerland, "
+            "and parts of Northern Italy, Netherlands, and Germany"
+        ),
     )
 
-    def __init__(self,
-                 dir_with_sociolinguistic_profiles: Path = SOCIOLINGUISTIC_PROFILES_DIR,
-                 file_with_countries: Path = FILE_WITH_COUNTRIES,
-                 file_with_country_aliases: Path = FILE_WITH_COUNTRY_ALIASES,
-                 file_with_doculects: Path = FILE_WITH_DOCULECTS,
-                 output_file: Path = FILE_WITH_DOCULECTS_MATCHED_TO_COUNTRIES,
-                 verbose: bool = False):
+    def __init__(
+        self,
+        dir_with_sociolinguistic_profiles: Path = SOCIOLINGUISTIC_PROFILES_DIR,
+        file_with_countries: Path = FILE_WITH_COUNTRIES,
+        file_with_country_aliases: Path = FILE_WITH_COUNTRY_ALIASES,
+        file_with_doculects: Path = FILE_WITH_DOCULECTS,
+        output_file: Path = FILE_WITH_DOCULECTS_MATCHED_TO_COUNTRIES,
+        verbose: bool = False,
+    ):
         self.output_file = output_file
         self.verbose = verbose
 
         doculect_rows = read_dicts_from_csv(file_with_doculects)
 
-        self.doculect_ids = [row['id'] for row in doculect_rows]
+        self.doculect_ids = [row["id"] for row in doculect_rows]
 
         self.doculect_id_to_locale_to_file = {}
 
         for doculect_id in self.doculect_ids:
             for locale in LOCALES:
-                file = dir_with_sociolinguistic_profiles / f'{doculect_id}_{locale}.yaml'
+                file = (
+                    dir_with_sociolinguistic_profiles / f"{doculect_id}_{locale}.yaml"
+                )
                 if file.exists():
                     self.doculect_id_to_locale_to_file[(doculect_id, locale)] = file
 
-        self.sociolinguistic_profiles = sorted(list(dir_with_sociolinguistic_profiles.glob('*.yaml')))
+        self.sociolinguistic_profiles = sorted(
+            list(dir_with_sociolinguistic_profiles.glob("*.yaml"))
+        )
 
         if not self.sociolinguistic_profiles:
             raise DoculectInCountryWriterError(
-                f'No sociolinguistic profiles found in {dir_with_sociolinguistic_profiles}')
+                "No sociolinguistic profiles found in"
+                f" {dir_with_sociolinguistic_profiles}"
+            )
 
-        # this is the initial version that will have to be amended by reading the file with aliases
-        self.doculect_id_to_countries: dict[str,
-                                            set[str]] = {row['id']: {row['main_country_id']}
-                                                         for row in doculect_rows}
+        # this is the initial version that will have to be amended by reading the file
+        # with aliases
+        self.doculect_id_to_countries: dict[str, set[str]] = {
+            row["id"]: {row["main_country_id"]} for row in doculect_rows
+        }
 
         if self.verbose:
             print("Doculect ID to countries:", self.doculect_id_to_countries)
@@ -93,15 +104,22 @@ class DoculectInCountryWriter:
         for row in read_dicts_from_csv(file_with_countries):
             for locale in LOCALES:
                 # (row[locale], locale) gives a dictionary key like (Russia, en):
-                self.country_name_and_locale_to_country_id[(row[locale], locale)] = row['id']
+                self.country_name_and_locale_to_country_id[(row[locale], locale)] = row[
+                    "id"
+                ]
 
         for row in read_dicts_from_csv(file_with_country_aliases):
-            tuple_key = (row['alias'], row['locale'])
+            tuple_key = (row["alias"], row["locale"])
             if tuple_key not in self.country_name_and_locale_to_country_id:
-                self.country_name_and_locale_to_country_id[tuple_key] = row['country_id']
+                self.country_name_and_locale_to_country_id[tuple_key] = row[
+                    "country_id"
+                ]
 
         if self.verbose:
-            print('Country name and locale to country ID:', self.country_name_and_locale_to_country_id)
+            print(
+                "Country name and locale to country ID:",
+                self.country_name_and_locale_to_country_id,
+            )
 
     def write(self, overwrite: bool = True) -> None:
         self._add_aliases()
@@ -111,13 +129,18 @@ class DoculectInCountryWriter:
             for country_id in self.doculect_id_to_countries[doculect_id]:
                 rows_to_write.append((doculect_id, country_id))
 
+        rows_with_header = [("doculect_id", "country_id")] + sorted(
+            rows_to_write, key=str
+        )
         write_csv(
-            # Need sorting because otherwise the set will be written differently each time.
-            # `str(item)` will have effect equivalent to sorting by two items doculect ID and then by country ID
-            [('doculect_id', 'country_id')] + sorted(rows_to_write, key=str),
+            # Need sorting because otherwise set will be written differently each time.
+            # `str(item)` will have effect equivalent to sorting by two items
+            # doculect ID and then by country ID
+            rows_with_header,
             path_to_file=self.output_file,
             overwrite=overwrite,
-            delimiter=',')
+            delimiter=",",
+        )
 
     def _add_aliases(self) -> None:
         """Adds entries with country aliases to the dictionary
@@ -130,7 +153,11 @@ class DoculectInCountryWriter:
 
         for doculect_id_and_locale, file in self.doculect_id_to_locale_to_file.items():
             doculect_id, locale = doculect_id_and_locale
-            country_section = read_json_toml_yaml(file)['1.1.3']
+            data = read_json_toml_yaml(file)
+            if not isinstance(data, dict):
+                raise TypeError(f"Data loaded from {file} is of wrong type")
+
+            country_section = data["1.1.3"]
 
             for item in country_section:
                 if isinstance(item, str):
@@ -140,22 +167,30 @@ class DoculectInCountryWriter:
                 else:
                     raise TypeError
 
-                if clean_item in ('число говорящих', 'number of speakers', 'NUMBER OF SPEAKERS'):
+                if clean_item in (
+                    "число говорящих",
+                    "number of speakers",
+                    "NUMBER OF SPEAKERS",
+                ):
                     continue
 
                 try:
                     self.doculect_id_to_countries[doculect_id].add(
-                        self.country_name_and_locale_to_country_id[(clean_item, locale)])
+                        self.country_name_and_locale_to_country_id[(clean_item, locale)]
+                    )
                 except KeyError:
                     unrecognized_countries.add(clean_item)
 
         if self.verbose:
             print("Doculect ID to countries:", self.doculect_id_to_countries)
-            print("Unrecognized countries:\n", "\n".join(sorted(list(unrecognized_countries))))
+            print(
+                "Unrecognized countries:\n",
+                "\n".join(sorted(list(unrecognized_countries))),
+            )
 
     def cleans_item(self, str_: str) -> str:
         clean_str = str_
         for note in self.NOTES_TO_DELETE:
-            clean_str = clean_str.replace(f'({note})', '')
+            clean_str = clean_str.replace(f"({note})", "")
 
         return clean_str.strip()

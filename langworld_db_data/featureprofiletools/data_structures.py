@@ -5,6 +5,7 @@ class ValueForFeatureProfileDictionary(NamedTuple):
     """Class for a data structure that represents a value
     in a dictionary for reading/writing feature profiles.
     """
+
     feature_name_ru: str
     value_type: str
     value_id: str

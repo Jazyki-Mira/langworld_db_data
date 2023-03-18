@@ -9,9 +9,8 @@ class ValidatorError(ValueError):
 
 
 class Validator(ABC):
-
     @abstractmethod
-    def validate(self):
+    def validate(self) -> None:
         pass
 
     @staticmethod
@@ -19,4 +18,4 @@ class Validator(ABC):
         """A helper method for a common operation:
         reads CSV file and returns values of 'id' column.
         """
-        return read_column_from_csv(path_to_file=path_to_file, column_name='id')
+        return read_column_from_csv(path_to_file=path_to_file, column_name="id")
