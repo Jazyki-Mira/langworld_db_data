@@ -22,7 +22,7 @@ class FeatureAdderError(AdderError):
 
 
 class FeatureAdder(Adder):
-    def __init__(
+    def __init__(  # type: ignore
         self,
         *,
         file_with_categories: Path = FILE_WITH_CATEGORIES,
@@ -44,7 +44,7 @@ class FeatureAdder(Adder):
         category_id: str,
         feature_en: str,
         feature_ru: str,
-        listed_values_to_add: list[dict],
+        listed_values_to_add: list[dict[str, str]],
         index_of_new_feature: Optional[int] = None,
         insert_after_index: Optional[int] = None,
     ) -> None:

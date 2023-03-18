@@ -35,7 +35,7 @@ class ListedValueLister(AbstractValueLister):
             path_to_file=self.file_with_features, column_name="id"
         )
 
-        feature_to_value_to_doculects: dict[str, list] = {
+        feature_to_value_to_doculects: dict[str, dict[str, list[str]]] = {
             feature_id: {
                 row["id"]: []
                 for row in read_dicts_from_csv(self.file_with_listed_values)

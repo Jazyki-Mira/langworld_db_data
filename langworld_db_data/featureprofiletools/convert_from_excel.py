@@ -23,20 +23,33 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
 
     # It is important to always use the current YAML file in conversion,
     # so I did not include path to it into parameters to allow overriding it in tests
-    names = read_json_toml_yaml(CONFIG_DIR / "excel_sheet_and_column_names.yaml")
+    file_with_names = CONFIG_DIR / "excel_sheet_and_column_names.yaml"
+    sheet_or_column_name_for_id = read_json_toml_yaml(file_with_names)
+    # for mypy
+    if not isinstance(sheet_or_column_name_for_id, dict):
+        raise TypeError(
+            f"File with names of Excel sheet and columns {file_with_names} was supposed"
+            " to be read as a dictionary. Please check the file."
+        )
+
     rows = read_dicts_from_xls(
-        path_to_file=path_to_input_excel, sheet_name=names["sheet_name"]
+        path_to_file=path_to_input_excel,
+        sheet_name=sheet_or_column_name_for_id["sheet_name"],
     )
 
-    def _get_value_from_row(attr: str, row_: dict[str, str]) -> str:
+    def _get_value_from_row(
+        column_id: str, row_: dict[str, str], name_for_id: dict[str, str]
+    ) -> str:
         """Returns value from column with relevant name.
         Name of column is looked up by `attr` in YAML file."""
-        return row_[names[attr]]
+        return row_[name_for_id[column_id]]
 
     value_for_feature_id = {}
 
     for row in rows:
-        _get = partial(_get_value_from_row, row_=row)
+        _get = partial(
+            _get_value_from_row, row_=row, name_for_id=sheet_or_column_name_for_id
+        )
         feature_id = _get("feature_id")
         value_id = _get("value_id")
         value_type = _get("value_type")

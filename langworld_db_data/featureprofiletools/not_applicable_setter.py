@@ -47,6 +47,10 @@ class NotApplicableSetter:
     def replace_not_stated_with_not_applicable_in_all_profiles_according_to_rules(
         self,
     ) -> None:
+        # for mypy and PyCharm
+        if not isinstance(self.rules, dict):
+            raise TypeError("Rules for not_applicable are not a dictionary.")
+
         for file in self.feature_profiles:
             print(f"\nReading file {file.name}")
 
@@ -54,19 +58,16 @@ class NotApplicableSetter:
             new_data = copy(data_from_profile)
 
             for feature_id in self.rules:
-                # noinspection PyTypeChecker
                 print(
                     f"Feature ID {feature_id}, value ID to trigger 'not_applicable'"
                     f" rules for this feature: {self.rules[feature_id]['trigger']}."
                     f" Value in {file.stem}: {data_from_profile[feature_id].value_id}"
                 )
 
-                # noinspection PyTypeChecker
                 if (
                     data_from_profile[feature_id].value_id
                     == self.rules[feature_id]["trigger"]
                 ):
-                    # noinspection PyTypeChecker
                     for id_of_feature_to_be_changed in self.rules[feature_id][
                         "features_to_get_not_applicable"
                     ]:

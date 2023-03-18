@@ -10,7 +10,7 @@ class ValidatorError(ValueError):
 
 class Validator(ABC):
     @abstractmethod
-    def validate(self):
+    def validate(self) -> None:
         pass
 
     @staticmethod

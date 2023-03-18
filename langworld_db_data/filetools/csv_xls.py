@@ -3,7 +3,7 @@ from collections import Counter
 from collections.abc import Generator
 from contextlib import contextmanager
 from pathlib import Path
-from typing import Iterable, Literal, Optional, Union
+from typing import Any, Iterable, Literal, NamedTuple, Optional, Union
 
 import _csv  # for typing only
 
@@ -266,7 +266,19 @@ def read_plain_rows_from_csv(
 
 
 def write_csv(
-    rows: Union[list, tuple],
+    # can't use Iterable because mypy says it's not indexable
+    rows: Union[
+        list[list[str]],
+        list[tuple[str, str]],
+        list[tuple[str, ...]],
+        tuple[list[str], ...],
+        tuple[tuple[str, ...], ...],
+        tuple[tuple[str, str], ...],
+        list[dict[str, str]],
+        tuple[dict[str, str], ...],
+        tuple[NamedTuple, ...],
+        list[NamedTuple],
+    ],
     path_to_file: Path,
     overwrite: bool,
     delimiter: CSVDelimiter,
@@ -301,9 +313,7 @@ def write_csv(
     with path_to_file.open(mode="w+", encoding="utf-8", newline="") as fh:
         first_row = rows[0]
         # noinspection PyUnusedLocal, PyProtectedMember, PyUnresolvedReferences
-        writer: Union[csv.DictWriter, _csv._writer, None] = (
-            None  # for mypy typechecking only
-        )
+        writer: Union[csv.DictWriter[Any], _csv._writer, None] = None
         if hasattr(first_row, "_asdict"):
             # NamedTuple cannot be used in `isinstance` statement, so I use `hasattr`.
             # I have to put this check first, because isinstance(item, tuple)
@@ -311,10 +321,12 @@ def write_csv(
             # (absence of header row)
             # noinspection PyProtectedMember
             writer = csv.DictWriter(
-                fh, fieldnames=list(first_row._asdict().keys()), delimiter=delimiter
+                fh,
+                fieldnames=list(first_row._asdict().keys()),
+                delimiter=delimiter,
             )
             # noinspection PyProtectedMember
-            rows_to_write = [row._asdict() for row in rows]
+            rows_to_write = [row._asdict() for row in rows]  # type: ignore
         elif isinstance(first_row, dict):
             writer = csv.DictWriter(
                 fh, fieldnames=list(first_row.keys()), delimiter=delimiter
@@ -331,5 +343,5 @@ def write_csv(
             print("Writing header")
             writer.writeheader()
 
-        writer.writerows(rows_to_write)
+        writer.writerows(rows_to_write)  # type: ignore
         print(f"Written {len(rows_to_write)} rows")

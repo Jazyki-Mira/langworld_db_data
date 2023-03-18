@@ -105,9 +105,15 @@ class ListedValueAdder(Adder):
                     value_ru = row["value_ru"].strip()
                     value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
 
-                    new_value_with_variants: list[str] = [
-                        v.lower() for v in [new_value_ru] + custom_values_to_rename
+                    new_value_with_variants: list[str] = (
+                        [new_value_ru] + custom_values_to_rename
+                        if custom_values_to_rename
+                        else [new_value_ru]
+                    )
+                    new_value_with_variants = [
+                        v.lower() for v in new_value_with_variants
                     ]
+
                     if value_ru.lower() not in new_value_with_variants:
                         break
 

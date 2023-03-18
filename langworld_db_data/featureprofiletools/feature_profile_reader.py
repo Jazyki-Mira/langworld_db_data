@@ -58,7 +58,7 @@ class FeatureProfileReader:
         dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
         copy_to_clipboard: bool = True,
         verbose: bool = True,
-    ) -> dict:
+    ) -> dict[str, str]:
         """A helper function to get value for given feature in given doculect.
         Prints and returns found value type, ID, value text, and comment.
         **Copies value text to clipboard** (by default).

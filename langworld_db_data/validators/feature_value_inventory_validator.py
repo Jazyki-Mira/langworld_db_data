@@ -70,7 +70,7 @@ class FeatureValueInventoryValidator(Validator):
         print("OK: all value IDs are derived from feature ID")
 
         # Check uniqueness of Russian and English value names within one feature
-        names_of_listed_values_for_feature_id: dict[str, list] = {
+        names_of_listed_values_for_feature_id: dict[str, list[str]] = {
             feature_id: [] for feature_id in self.feature_ids
         }
 

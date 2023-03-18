@@ -38,7 +38,7 @@ class DoculectInventoryValidator(Validator):
         except ValueError as e:
             raise DoculectInventoryValidatorError(str(e))
 
-        self.doculects: list[dict] = read_dicts_from_csv(file_with_doculects)
+        self.doculects = read_dicts_from_csv(file_with_doculects)
         self.doculect_ids = {d["id"] for d in self.doculects}
 
         self.genealogy_family_ids = set(self._read_ids(file_with_genealogy_names))

@@ -39,9 +39,16 @@ class FeatureProfileValidator(Validator):
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob("*.csv")))
         self.reader = FeatureProfileReader()
 
-        self.rules_for_not_applicable_value_type: dict = read_json_toml_yaml(
+        self.rules_for_not_applicable_value_type = read_json_toml_yaml(
             file_with_rules_for_not_applicable_value_type
         )
+        # for mypy (the function returns multiple types)
+        if not isinstance(self.rules_for_not_applicable_value_type, dict):
+            raise TypeError(
+                "Rules for not_applicable type in file "
+                f"{file_with_rules_for_not_applicable_value_type} are supposed to be"
+                "read as a dictionary. Please check the file."
+            )
 
         self.valid_value_types = self._read_ids(file_with_value_types)
 
@@ -153,10 +160,12 @@ class FeatureProfileValidator(Validator):
         breaches_of_rules_for_not_applicable = []
 
         rules = self.rules_for_not_applicable_value_type
+
+        if not isinstance(rules, dict):
+            raise TypeError("Rules for not_applicable are supposed to be a dict")
+
         for feature_id in rules:
-            # noinspection PyTypeChecker
             if data_from_profile[feature_id].value_id == rules[feature_id]["trigger"]:
-                # noinspection PyTypeChecker
                 for id_of_feature_that_must_be_not_applicable in rules[feature_id][
                     "features_to_get_not_applicable"
                 ]:

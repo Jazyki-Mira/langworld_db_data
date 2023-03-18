@@ -129,11 +129,14 @@ class DoculectInCountryWriter:
             for country_id in self.doculect_id_to_countries[doculect_id]:
                 rows_to_write.append((doculect_id, country_id))
 
+        rows_with_header = [("doculect_id", "country_id")] + sorted(
+            rows_to_write, key=str
+        )
         write_csv(
             # Need sorting because otherwise set will be written differently each time.
             # `str(item)` will have effect equivalent to sorting by two items
             # doculect ID and then by country ID
-            [("doculect_id", "country_id")] + sorted(rows_to_write, key=str),
+            rows_with_header,
             path_to_file=self.output_file,
             overwrite=overwrite,
             delimiter=",",
@@ -150,7 +153,11 @@ class DoculectInCountryWriter:
 
         for doculect_id_and_locale, file in self.doculect_id_to_locale_to_file.items():
             doculect_id, locale = doculect_id_and_locale
-            country_section = read_json_toml_yaml(file)["1.1.3"]
+            data = read_json_toml_yaml(file)
+            if not isinstance(data, dict):
+                raise TypeError(f"Data loaded from {file} is of wrong type")
+
+            country_section = data["1.1.3"]
 
             for item in country_section:
                 if isinstance(item, str):
