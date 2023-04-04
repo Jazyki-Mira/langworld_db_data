@@ -125,33 +125,14 @@ class FeatureProfileValidator(Validator):
                 if self.feature_is_multiselect_for_feature_id[feature_id] == "1":
                     print(f"Skipping multi-select feature {feature_id} for now")
                     print(data_row.value_id.split("&"))
-                    continue  # TODO
-
-                if not re.match(rf"{feature_id}-\d+", data_row.value_id):
-                    raise FeatureProfileValidatorError(
-                        f"File {file.stem} contains invalid value ID"
-                        f" {data_row.value_id} in row {i + 1}"
+                else:
+                    self._validate_listed_value(
+                        feature_id=feature_id,
+                        value_id=data_row.value_id,
+                        value_ru=data_row.value_ru,
+                        file_name_for_error_msg=file.stem,
+                        row_idx_for_error_msg=i + 1,
                     )
-
-                # Validation of whether value name (here) and feature name (later on) in
-                # feature profile match the names in inventories of features and values
-                # respectively is only done for the purpose of clarity and readability.
-                # Russian names of features and values from feature profiles
-                # are not supposed to be used in code. Only IDs really matter.
-                # This is why I allow to skip throwing exception in case of mismatch
-                # (but prefer throwing it anyway).
-                if data_row.value_ru != self.value_ru_for_value_id[data_row.value_id]:
-                    message = (
-                        f"File {file.stem}, row {i + 1}: value {data_row.value_ru} for"
-                        f" value ID {data_row.value_id} in row {i + 1} does not match"
-                        " name of this value in inventory (value ID"
-                        f" {data_row.value_id} should be"
-                        f" {self.value_ru_for_value_id[data_row.value_id]})"
-                    )
-                    if self.must_throw_error_at_feature_or_value_name_mismatch:
-                        raise FeatureProfileValidatorError(message)
-                    else:
-                        print(message)
 
             if data_row.feature_name_ru != self.feature_ru_for_feature_id[feature_id]:
                 message = (
@@ -208,6 +189,39 @@ class FeatureProfileValidator(Validator):
                 f" {len(breaches_of_rules_for_not_applicable)} breaches of rules for"
                 " 'not_applicable' value type."
             )
+
+    def _validate_listed_value(
+        self,
+        feature_id: str,
+        value_id: str,
+        value_ru: str,
+        file_name_for_error_msg: str,
+        row_idx_for_error_msg: int,
+    ) -> None:
+        if not re.match(rf"{feature_id}-\d+", value_id):
+            raise FeatureProfileValidatorError(
+                f"File {file_name_for_error_msg} contains invalid value ID"
+                f" {value_id} in row {row_idx_for_error_msg}"
+            )
+
+        # Validation of whether value name (here) and feature name (later on) in
+        # feature profile match the names in inventories of features and values
+        # respectively is only done for the purpose of clarity and readability.
+        # Russian names of features and values from feature profiles
+        # are not supposed to be used in code. Only IDs really matter.
+        # This is why I allow to skip throwing exception in case of mismatch
+        # (but prefer throwing it anyway).
+        if value_ru != self.value_ru_for_value_id[value_id]:
+            message = (
+                f"File {file_name_for_error_msg}, row {row_idx_for_error_msg}: value "
+                f"{value_ru} for value ID {value_id} in row {row_idx_for_error_msg} "
+                f"does not match name of this value in inventory (value ID {value_id} "
+                f"should be {self.value_ru_for_value_id[value_id]})"
+            )
+            if self.must_throw_error_at_feature_or_value_name_mismatch:
+                raise FeatureProfileValidatorError(message)
+            else:
+                print(message)
 
 
 if __name__ == "__main__":
