@@ -128,14 +128,13 @@ class FeatureProfileValidator(Validator):
                 if self.feature_is_multiselect_for_feature_id[feature_id] == "1":
                     print(f"Skipping multi-select feature {feature_id} for now")
                     print(data_row.value_id.split("&"))
-                    continue  # TODO
-
-                self._validate_one_listed_value(
-                    data_row=data_row,
-                    feature_id=feature_id,
-                    file=file,
-                    row_idx=i,
-                )
+                else:
+                    self._validate_one_listed_value(
+                        data_row=data_row,
+                        feature_id=feature_id,
+                        file=file,
+                        row_idx=i,
+                    )
 
             if data_row.feature_name_ru != self.feature_ru_for_feature_id[feature_id]:
                 message = (
