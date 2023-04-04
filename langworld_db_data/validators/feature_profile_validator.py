@@ -9,9 +9,6 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_NOT_APPLICABLE_RULES,
     FILE_WITH_VALUE_TYPES,
 )
-from langworld_db_data.featureprofiletools.data_structures import (
-    ValueForFeatureProfileDictionary,
-)
 from langworld_db_data.featureprofiletools.feature_profile_reader import (
     FeatureProfileReader,
 )
@@ -128,13 +125,33 @@ class FeatureProfileValidator(Validator):
                 if self.feature_is_multiselect_for_feature_id[feature_id] == "1":
                     print(f"Skipping multi-select feature {feature_id} for now")
                     print(data_row.value_id.split("&"))
-                else:
-                    self._validate_one_listed_value(
-                        data_row=data_row,
-                        feature_id=feature_id,
-                        file=file,
-                        row_idx=i,
+                    continue  # TODO
+
+                if not re.match(rf"{feature_id}-\d+", data_row.value_id):
+                    raise FeatureProfileValidatorError(
+                        f"File {file.stem} contains invalid value ID"
+                        f" {data_row.value_id} in row {i + 1}"
                     )
+
+                # Validation of whether value name (here) and feature name (later on) in
+                # feature profile match the names in inventories of features and values
+                # respectively is only done for the purpose of clarity and readability.
+                # Russian names of features and values from feature profiles
+                # are not supposed to be used in code. Only IDs really matter.
+                # This is why I allow to skip throwing exception in case of mismatch
+                # (but prefer throwing it anyway).
+                if data_row.value_ru != self.value_ru_for_value_id[data_row.value_id]:
+                    message = (
+                        f"File {file.stem}, row {i + 1}: value {data_row.value_ru} for"
+                        f" value ID {data_row.value_id} in row {i + 1} does not match"
+                        " name of this value in inventory (value ID"
+                        f" {data_row.value_id} should be"
+                        f" {self.value_ru_for_value_id[data_row.value_id]})"
+                    )
+                    if self.must_throw_error_at_feature_or_value_name_mismatch:
+                        raise FeatureProfileValidatorError(message)
+                    else:
+                        print(message)
 
             if data_row.feature_name_ru != self.feature_ru_for_feature_id[feature_id]:
                 message = (
@@ -191,39 +208,6 @@ class FeatureProfileValidator(Validator):
                 f" {len(breaches_of_rules_for_not_applicable)} breaches of rules for"
                 " 'not_applicable' value type."
             )
-
-    def _validate_one_listed_value(
-        self,
-        data_row: ValueForFeatureProfileDictionary,
-        feature_id: str,
-        file: Path,
-        row_idx: int,
-    ) -> None:
-        if not re.match(rf"{feature_id}-\d+", data_row.value_id):
-            raise FeatureProfileValidatorError(
-                f"File {file.stem} contains invalid value ID"
-                f" {data_row.value_id} in row {row_idx + 1}"
-            )
-
-        # Validation of whether value name (here) and feature name (later on) in
-        # feature profile match the names in inventories of features and values
-        # respectively is only done for the purpose of clarity and readability.
-        # Russian names of features and values from feature profiles
-        # are not supposed to be used in code. Only IDs really matter.
-        # This is why I allow to skip throwing exception in case of mismatch
-        # (but prefer throwing it anyway).
-        if data_row.value_ru != self.value_ru_for_value_id[data_row.value_id]:
-            message = (
-                f"File {file.stem}, row {row_idx + 1}: value {data_row.value_ru} for"
-                f" value ID {data_row.value_id} in row {row_idx + 1} does not match"
-                " name of this value in inventory (value ID"
-                f" {data_row.value_id} should be"
-                f" {self.value_ru_for_value_id[data_row.value_id]})"
-            )
-            if self.must_throw_error_at_feature_or_value_name_mismatch:
-                raise FeatureProfileValidatorError(message)
-            else:
-                print(message)
 
 
 if __name__ == "__main__":
