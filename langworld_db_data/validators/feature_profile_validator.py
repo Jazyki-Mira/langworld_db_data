@@ -60,6 +60,9 @@ class FeatureProfileValidator(Validator):
         self.feature_ru_for_feature_id = read_dict_from_2_csv_columns(
             file_with_features, key_col="id", val_col="ru"
         )
+        self.feature_is_multiselect_for_feature_id = read_dict_from_2_csv_columns(
+            file_with_features, key_col="id", val_col="is_multiselect"
+        )
         self.value_ru_for_value_id = read_dict_from_2_csv_columns(
             file_with_listed_values, key_col="id", val_col="ru"
         )
@@ -119,6 +122,11 @@ class FeatureProfileValidator(Validator):
                     )
 
             elif data_row.value_type == "listed":
+                if self.feature_is_multiselect_for_feature_id[feature_id] == "1":
+                    print(f"Skipping multi-select feature {feature_id} for now")
+                    print(data_row.value_id.split("&"))
+                    continue  # TODO
+
                 if not re.match(rf"{feature_id}-\d+", data_row.value_id):
                     raise FeatureProfileValidatorError(
                         f"File {file.stem} contains invalid value ID"
