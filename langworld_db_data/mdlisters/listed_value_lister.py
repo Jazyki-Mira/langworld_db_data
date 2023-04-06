@@ -44,13 +44,25 @@ class ListedValueLister(AbstractValueLister):
             for feature_id in feature_ids
         }
 
+        feature_is_multiselect_for_feature_id = read_dict_from_2_csv_columns(
+            self.file_with_features,
+            key_col="id",
+            val_col="is_multiselect",
+        )
+
         for volume_and_doculect_id in self.filtered_rows_for_volume_doculect_id:
             for row in self.filtered_rows_for_volume_doculect_id[
                 volume_and_doculect_id
             ]:
-                feature_to_value_to_doculects[row["feature_id"]][
-                    row["value_id"]
-                ].append(volume_and_doculect_id)
+                if feature_is_multiselect_for_feature_id[row["feature_id"]] == "1":
+                    for value_id in row["value_id"].split("&"):
+                        feature_to_value_to_doculects[row["feature_id"]][
+                            value_id
+                        ].append(volume_and_doculect_id)
+                else:
+                    feature_to_value_to_doculects[row["feature_id"]][
+                        row["value_id"]
+                    ].append(volume_and_doculect_id)
 
         feature_name_for_feature_id = read_dict_from_2_csv_columns(
             self.file_with_features,
