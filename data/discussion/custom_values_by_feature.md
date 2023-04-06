@@ -1531,7 +1531,6 @@
 ## K-14: Типы атрибутивного согласования
 
 - По личности/неличности, роду, числу и падежу: [кашубский](../feature_profiles/kashubian.csv)
-- По роду, (не)личности, числу и падежу: [польский](../feature_profiles/polish.csv)
 - По роду, числу, исчисляемости/неисчисляемости (только в постпозиции): [астурийский](../feature_profiles/asturian.csv)
 - По роду, числу, падежу и одушевленности/неодушевленности: [сербохорватский](../feature_profiles/serbocroatian.csv), [словенский](../feature_profiles/slovene.csv)
 - По роду, числу, падежу и определенности: [исландский](../feature_profiles/icelandic.csv), [старославянский](../feature_profiles/old_church_slavonic.csv)

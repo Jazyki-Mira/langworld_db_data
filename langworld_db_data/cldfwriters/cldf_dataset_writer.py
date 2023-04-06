@@ -30,6 +30,9 @@ class CLDFDatasetWriter:
 
         self.doculects = read_dicts_from_csv(file_with_doculects)
         self.features = read_dicts_from_csv(file_with_features)
+        self.is_multiselect_for_feature_id = read_dict_from_2_csv_columns(
+            file_with_features, key_col="id", val_col="is_multiselect"
+        )
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob("*.csv")))
 
     def write(self) -> None:
@@ -98,24 +101,50 @@ class CLDFDatasetWriter:
             ]
 
             for relevant_row in relevant_rows:
-                value_table_rows.append(
-                    {
-                        "ID": value_table_row_id,
-                        "Language_ID": language_id,
-                        "Parameter_ID": relevant_row["feature_id"],
-                        # English value will be empty for values that are not yet in the
-                        # inventory
-                        "Value": self.value_en_for_value_id.get(
-                            relevant_row["value_id"], ""
-                        ),
-                        "Value_RU": relevant_row["value_ru"],
-                        "Code_ID": relevant_row["value_id"],
-                        "Comment": relevant_row["comment_en"],
-                        "Comment_RU": relevant_row["comment_ru"],
-                        "Source": "",
-                    }
-                )
-                value_table_row_id += 1
+                # handling multiselect listed values
+                if (
+                    relevant_row["value_type"] == "listed"
+                    and self.is_multiselect_for_feature_id[relevant_row["feature_id"]]
+                    == "1"
+                ):
+                    for value_id, value_ru in zip(
+                        relevant_row["value_id"].split("&"),
+                        relevant_row["value_ru"].split("&"),
+                    ):
+                        value_table_rows.append(
+                            {
+                                "ID": value_table_row_id,
+                                "Language_ID": language_id,
+                                "Parameter_ID": relevant_row["feature_id"],
+                                "Value": self.value_en_for_value_id[value_id],
+                                "Value_RU": value_ru,
+                                "Code_ID": value_id,
+                                "Comment": relevant_row["comment_en"],
+                                "Comment_RU": relevant_row["comment_ru"],
+                                "Source": "",
+                            }
+                        )
+                        value_table_row_id += 1
+                # handling other values
+                else:
+                    value_table_rows.append(
+                        {
+                            "ID": value_table_row_id,
+                            "Language_ID": language_id,
+                            "Parameter_ID": relevant_row["feature_id"],
+                            # English value will be empty for values that are not yet
+                            # in the inventory
+                            "Value": self.value_en_for_value_id.get(
+                                relevant_row["value_id"], ""
+                            ),
+                            "Value_RU": relevant_row["value_ru"],
+                            "Code_ID": relevant_row["value_id"],
+                            "Comment": relevant_row["comment_en"],
+                            "Comment_RU": relevant_row["comment_ru"],
+                            "Source": "",
+                        }
+                    )
+                    value_table_row_id += 1
 
         dataset.write(
             ValueTable=value_table_rows,
