@@ -1112,28 +1112,12 @@ K-14-2,K-14,In class,По классу
 K-14-3,K-14,In person,По лицу
 K-14-4,K-14,In gender,По роду
 K-14-5,K-14,In number,По числу
-K-14-6,K-14,In (in)definiteness and gender,По (не)определенности и роду
-K-14-7,K-14,In person and number,По лицу и числу
-K-14-8,K-14,In case ans number,По падежу и числу
-K-14-9,K-14,In gender and number,По роду и числу
-K-14-10,K-14,In class and number,По классу и числу
-K-14-11,K-14,"In case, gender and number","По падежу, роду и числу"
-K-14-12,K-14,"In person, gender and number","По лицу, роду и числу"
-K-14-13,K-14,"In person, case and number","По лицу, падежу и числу"
-K-14-14,K-14,"In person, case and gender","По лицу, падежу и роду"
-K-14-15,K-14,"In gender, number and case","По роду, числу и падежу"
-K-14-16,K-14,"In (in)definiteness, gender and number","По (не)определенности, роду и числу"
-K-14-17,K-14,"In humanness, person and number","По (не)личности, лицу и числу"
-K-14-18,K-14,"In gender, state and number","По роду, состоянию и числу"
-K-14-19,K-14,"In class, type of stem and number","По классу, типу основы и числу"
-K-14-20,K-14,"In person, case, gender and number","По лицу, падежу, роду и числу"
-K-14-21,K-14,"In person, case, gender, and (in)definiteness","По лицу, падежу, роду и (не)определенности"
-K-14-22,K-14,"In case, number, gender, (in)definiteness, and (in)animacy","По падежу, числу, роду, (не)определенности, (не)одушевленность."
-K-14-23,K-14,"In gender, number, case, and humanness","По роду, числу, падежу и (не)личности"
-K-14-24,K-14,"In class, number and case","По классу, числу и падежу"
-K-14-25,K-14,"In (in)definiteness, gender, number and case","По (не)определенности, роду, числу и падежу"
-K-14-26,K-14,In (in)definiteness and case,По (не)определенности и падежу
-K-14-27,K-14,"In gender, number, case, and (in)animacy","По роду, числу, падежу и (не)одушевленности"
+K-14-6,K-14,In case,По падежу
+K-14-7,K-14,In (in)definiteness,По (не)определенности
+K-14-8,K-14,In (in)animacy,По (не)одушевленности
+K-14-9,K-14,In (in)humanness,По (не)личности
+K-14-10,K-14,In state,По состоянию
+K-14-11,K-14,In (un)countability,По (не)исчисляемости
 K-15-1,K-15,Absent,Отсутствуют
 K-15-2,K-15,Case,Падеж
 K-15-3,K-15,(In)definiteness,Определенность/ неопределенность

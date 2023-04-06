@@ -54,6 +54,10 @@ def test__init(test_validator):
             "corsican_non_matching_listed_value",
             "value Передний и задний for value ID A-3-4 in row 4 does not match",
         ),
+        (
+            "ukrainian_invalid_value_ID_in_multiselect",
+            "contains invalid value ID K-143 in row 108",
+        ),
     ],
 )
 def test__validate_one_file_fails_with_bad_files(
@@ -77,6 +81,8 @@ def test__validate_one_file_prints_message_with_must_throw_error_at_feature_or_v
 
 
 def test_validate_fails_with_bad_data():
+    # this test is very general and will pass even if just one error is caught,
+    # not all of them
     with pytest.raises(FeatureProfileValidatorError):
         FeatureProfileValidator(
             dir_with_feature_profiles=DIR_WITH_BAD_PROFILES
