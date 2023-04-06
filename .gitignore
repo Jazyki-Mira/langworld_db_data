@@ -135,3 +135,6 @@ dmypy.json
 /langworld_db_data/add_listed_value.py
 /langworld_db_data/get_value.py
 /langworld_db_data/add_feature.py
+
+# one-off scripts
+temp_*.py
