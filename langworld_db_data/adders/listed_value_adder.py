@@ -110,9 +110,7 @@ class ListedValueAdder(Adder):
                         if custom_values_to_rename
                         else [new_value_ru]
                     )
-                    new_value_with_variants = [
-                        v.lower() for v in new_value_with_variants
-                    ]
+                    new_value_with_variants = [v.lower() for v in new_value_with_variants]
 
                     if value_ru.lower() not in new_value_with_variants:
                         break

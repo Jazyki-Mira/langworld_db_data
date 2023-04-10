@@ -45,9 +45,7 @@ def check_yaml_file(path_to_file: Path, verbose: bool = True) -> None:
     try:
         yaml_loaded = yaml.load(data, Loader=yaml.Loader)
     except ParserError as e:
-        print(
-            e
-        )  # make sure it's printed nicely and shows user where the problem in file is
+        print(e)  # make sure it's printed nicely and shows user where the problem in file is
         raise ParserError(f"Error reading YAML from file {path_to_file}")
 
     assert isinstance(yaml_loaded, (list, dict))
@@ -84,8 +82,6 @@ def read_json_toml_yaml(path_to_file: Path) -> Union[dict[str, Any], list[str]]:
             raise TypeError(f"File {path_to_file.name} cannot be converted")
 
     if not isinstance(data, (dict, list)):
-        raise ParserError(
-            f"Could not convert file {path_to_file} because of malformed data"
-        )
+        raise ParserError(f"Could not convert file {path_to_file} because of malformed data")
 
     return data

@@ -18,8 +18,7 @@ def test_validator():
     return FeatureProfileValidator(
         dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
         file_with_features=DIR_WITH_VALIDATORS_TEST_FILES / "features_OK.csv",
-        file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES
-        / "features_listed_values_OK.csv",
+        file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / "features_listed_values_OK.csv",
         file_with_rules_for_not_applicable_value_type=(
             DIR_WITH_VALIDATORS_TEST_FILES / "features_not_applicable_rules.yaml"
         ),
@@ -75,18 +74,14 @@ def test__validate_one_file_prints_message_with_must_throw_error_at_feature_or_v
         DIR_WITH_BAD_PROFILES / "corsican_non_matching_listed_value.csv"
     )
     stdout = capsys.readouterr()
-    assert "value Передний и задний for value ID A-3-4 in row 4 does not match" in str(
-        stdout
-    )
+    assert "value Передний и задний for value ID A-3-4 in row 4 does not match" in str(stdout)
 
 
 def test_validate_fails_with_bad_data():
     # this test is very general and will pass even if just one error is caught,
     # not all of them
     with pytest.raises(FeatureProfileValidatorError):
-        FeatureProfileValidator(
-            dir_with_feature_profiles=DIR_WITH_BAD_PROFILES
-        ).validate()
+        FeatureProfileValidator(dir_with_feature_profiles=DIR_WITH_BAD_PROFILES).validate()
 
 
 def test__validate_one_file_prints_message_for_files_breaching_rules_for_not_applicable_with_flag_set_to_false(  # noqa E501

@@ -25,8 +25,7 @@ def check_existence_of_output_csv_file_and_compare_with_gold_standard(
 
     for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
         assert output_line == gold_standard_line, (
-            f"Output line {output_line} does not match expected line"
-            f" {gold_standard_line}"
+            f"Output line {output_line} does not match expected line" f" {gold_standard_line}"
         )
 
     if unlink_if_successful:

@@ -11,9 +11,7 @@ DISCUSSION_DIR = DATA_DIR / "discussion"
 DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT = (
     DISCUSSION_DIR / "custom_values_by_volume_and_doculect.md"
 )
-DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_FEATURE = (
-    DISCUSSION_DIR / "custom_values_by_feature.md"
-)
+DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_FEATURE = DISCUSSION_DIR / "custom_values_by_feature.md"
 DISCUSSION_FILE_WITH_LISTED_VALUES = DISCUSSION_DIR / "listed_values_by_feature.md"
 
 ASSETS_DIR = DATA_DIR / "assets"
@@ -36,9 +34,5 @@ FEATURE_PROFILES_DIR = DATA_DIR / "feature_profiles"
 
 SOCIOLINGUISTIC_DIR = DATA_DIR / "sociolinguistics"
 SOCIOLINGUISTIC_PROFILES_DIR = SOCIOLINGUISTIC_DIR / "sociolinguistic_profiles"
-FILE_WITH_COUNTRY_ALIASES = (
-    SOCIOLINGUISTIC_DIR / "country_aliases_for_profile_parsing.csv"
-)
-FILE_WITH_DOCULECTS_MATCHED_TO_COUNTRIES = (
-    SOCIOLINGUISTIC_DIR / "doculects_to_countries.csv"
-)
+FILE_WITH_COUNTRY_ALIASES = SOCIOLINGUISTIC_DIR / "country_aliases_for_profile_parsing.csv"
+FILE_WITH_DOCULECTS_MATCHED_TO_COUNTRIES = SOCIOLINGUISTIC_DIR / "doculects_to_countries.csv"

@@ -39,9 +39,7 @@ def append_empty_column_to_csv(
     header_row, data_rows = rows[0], rows[1:]
 
     if name_of_new_column in header_row:
-        raise ValueError(
-            f"Column {name_of_new_column} already exists in {path_to_file.name}"
-        )
+        raise ValueError(f"Column {name_of_new_column} already exists in {path_to_file.name}")
 
     new_header_row: list[str] = header_row + [name_of_new_column]
     new_data_rows = [row + [""] for row in data_rows]
@@ -123,9 +121,7 @@ def convert_xls_to_csv(
     if not overwrite and path_to_output_csv_file.exists():
         raise FileExistsError(f"File {path_to_output_csv_file} already exists")
 
-    with _load_worksheet(
-        path_to_workbook=path_to_input_excel_file, sheet_name=sheet_name
-    ) as ws:
+    with _load_worksheet(path_to_workbook=path_to_input_excel_file, sheet_name=sheet_name) as ws:
         rows_to_write = [_get_cell_values(row) for row in ws.iter_rows()]
 
         write_csv(
@@ -176,9 +172,7 @@ def read_column_from_csv(path_to_file: Path, column_name: str) -> list[str]:
     return [row[column_name] for row in read_dicts_from_csv(path_to_file)]
 
 
-def read_dicts_from_csv(
-    path_to_file: Path, delimiter: CSVDelimiter = ","
-) -> list[dict[str, str]]:
+def read_dicts_from_csv(path_to_file: Path, delimiter: CSVDelimiter = ",") -> list[dict[str, str]]:
     """Opens CSV file and reads it as or list of dictionaries
     (top row is considered row with keys, each row is a dictionary
     with keys taken from top row).
@@ -192,9 +186,7 @@ def read_dict_from_2_csv_columns(
 ) -> dict[str, str]:
     """Reads CSV file, returns data of two columns: one as keys, the other as values."""
     if key_col == val_col:
-        raise ValueError(
-            f"You passed same name for both key and value columns ({key_col})"
-        )
+        raise ValueError(f"You passed same name for both key and value columns ({key_col})")
 
     rows = read_plain_rows_from_csv(path_to_file, delimiter=delimiter)
 
@@ -328,9 +320,7 @@ def write_csv(
             # noinspection PyProtectedMember
             rows_to_write = [row._asdict() for row in rows]  # type: ignore
         elif isinstance(first_row, dict):
-            writer = csv.DictWriter(
-                fh, fieldnames=list(first_row.keys()), delimiter=delimiter
-            )
+            writer = csv.DictWriter(fh, fieldnames=list(first_row.keys()), delimiter=delimiter)
         elif isinstance(first_row, (list, tuple)):
             writer = csv.writer(fh, delimiter=delimiter)
         else:

@@ -6,12 +6,8 @@ from langworld_db_data.validators.genealogy_validator import (
 )
 from tests.paths import DIR_WITH_VALIDATORS_TEST_FILES
 
-GOOD_FILE_WITH_HIERARCHY = (
-    DIR_WITH_VALIDATORS_TEST_FILES / "genealogy_families_hierarchy_OK.yaml"
-)
-GOOD_FILE_WITH_NAMES = (
-    DIR_WITH_VALIDATORS_TEST_FILES / "genealogy_families_names_OK.csv"
-)
+GOOD_FILE_WITH_HIERARCHY = DIR_WITH_VALIDATORS_TEST_FILES / "genealogy_families_hierarchy_OK.yaml"
+GOOD_FILE_WITH_NAMES = DIR_WITH_VALIDATORS_TEST_FILES / "genealogy_families_names_OK.csv"
 
 
 def test___check_and_get_ids_from_hierarchy_fails_for_malformed_family_id():
@@ -84,9 +80,7 @@ def test__check_ids_in_list_of_names_fails_for_file_with_family_id_that_does_not
 
 
 def test_validate_fails_for_bad_files_with_hierarchy():
-    for file in DIR_WITH_VALIDATORS_TEST_FILES.glob(
-        "genealogy_families_hierarchy_bad_*.yaml"
-    ):
+    for file in DIR_WITH_VALIDATORS_TEST_FILES.glob("genealogy_families_hierarchy_bad_*.yaml"):
         print(f"TEST: file {file.name}")
         with pytest.raises(GenealogyValidatorError):
             GenealogyValidator(
@@ -96,9 +90,7 @@ def test_validate_fails_for_bad_files_with_hierarchy():
 
 
 def test_validate_fails_for_bad_files_with_names_of_families():
-    for file in DIR_WITH_VALIDATORS_TEST_FILES.glob(
-        "genealogy_families_names_bad_*.csv"
-    ):
+    for file in DIR_WITH_VALIDATORS_TEST_FILES.glob("genealogy_families_names_bad_*.csv"):
         print(f"TEST: file {file.name}")
         with pytest.raises(GenealogyValidatorError):
             GenealogyValidator(

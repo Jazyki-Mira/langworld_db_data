@@ -1,9 +1,7 @@
 import pytest
 
 from langworld_db_data.filetools.csv_xls import write_csv
-from tests.helpers import (
-    check_existence_of_output_csv_file_and_compare_with_gold_standard,
-)
+from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 
 # selecting these files/dirs for no specific reason, can be anything that is CSV:
 from tests.paths import (

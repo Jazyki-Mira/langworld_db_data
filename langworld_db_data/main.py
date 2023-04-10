@@ -7,12 +7,8 @@ from langworld_db_data.filetools.json_toml_yaml import check_yaml_file
 from langworld_db_data.mdlisters.custom_value_lister import CustomValueLister
 from langworld_db_data.mdlisters.listed_value_lister import ListedValueLister
 from langworld_db_data.validators.asset_validator import AssetValidator
-from langworld_db_data.validators.doculect_inventory_validator import (
-    DoculectInventoryValidator,
-)
-from langworld_db_data.validators.feature_profile_validator import (
-    FeatureProfileValidator,
-)
+from langworld_db_data.validators.doculect_inventory_validator import DoculectInventoryValidator
+from langworld_db_data.validators.feature_profile_validator import FeatureProfileValidator
 from langworld_db_data.validators.feature_value_inventory_validator import (
     FeatureValueInventoryValidator,
 )

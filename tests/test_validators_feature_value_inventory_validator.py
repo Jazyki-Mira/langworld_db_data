@@ -7,9 +7,7 @@ from langworld_db_data.validators.feature_value_inventory_validator import (
 from tests.paths import DIR_WITH_VALIDATORS_TEST_FILES
 
 GOOD_FEATURES_FILE = DIR_WITH_VALIDATORS_TEST_FILES / "features_OK.csv"
-GOOD_LISTED_VALUES_FILE = (
-    DIR_WITH_VALIDATORS_TEST_FILES / "features_listed_values_OK.csv"
-)
+GOOD_LISTED_VALUES_FILE = DIR_WITH_VALIDATORS_TEST_FILES / "features_listed_values_OK.csv"
 
 
 @pytest.mark.parametrize(
@@ -32,14 +30,11 @@ def test__init__fails_for_non_unique_feature_ids(file_name, expected_error_messa
 
 def test___validate_feature_ids_fails_for_malformed_feature_ids():
     validator = FeatureValueInventoryValidator(
-        file_with_features=DIR_WITH_VALIDATORS_TEST_FILES
-        / "features_bad_malformed_ids.csv",
+        file_with_features=DIR_WITH_VALIDATORS_TEST_FILES / "features_bad_malformed_ids.csv",
         file_with_listed_values=GOOD_LISTED_VALUES_FILE,
     )
 
-    with pytest.raises(
-        FeatureValueInventoryValidatorError, match="Invalid feature ID foo"
-    ):
+    with pytest.raises(FeatureValueInventoryValidatorError, match="Invalid feature ID foo"):
         validator.validate()
 
 

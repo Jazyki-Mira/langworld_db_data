@@ -2,9 +2,7 @@ from functools import partial
 from pathlib import Path
 
 from langworld_db_data.constants.paths import CONFIG_DIR
-from langworld_db_data.featureprofiletools.data_structures import (
-    ValueForFeatureProfileDictionary,
-)
+from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
 from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (  # noqa E501
     FeatureProfileWriterFromDictionary,
 )
@@ -47,9 +45,7 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
     value_for_feature_id = {}
 
     for row in rows:
-        _get = partial(
-            _get_value_from_row, row_=row, name_for_id=sheet_or_column_name_for_id
-        )
+        _get = partial(_get_value_from_row, row_=row, name_for_id=sheet_or_column_name_for_id)
         feature_id = _get("feature_id")
         value_id = _get("value_id")
         value_type = _get("value_type")

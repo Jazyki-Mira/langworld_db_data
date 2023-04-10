@@ -9,10 +9,7 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NAMES_OF_FEATURES,
 )
-from langworld_db_data.filetools.csv_xls import (
-    read_dict_from_2_csv_columns,
-    read_dicts_from_csv,
-)
+from langworld_db_data.filetools.csv_xls import read_dict_from_2_csv_columns, read_dicts_from_csv
 
 
 class CLDFDatasetWriter:
@@ -104,8 +101,7 @@ class CLDFDatasetWriter:
                 # handling multiselect listed values
                 if (
                     relevant_row["value_type"] == "listed"
-                    and self.is_multiselect_for_feature_id[relevant_row["feature_id"]]
-                    == "1"
+                    and self.is_multiselect_for_feature_id[relevant_row["feature_id"]] == "1"
                 ):
                     for value_id, value_ru in zip(
                         relevant_row["value_id"].split("&"),
@@ -134,9 +130,7 @@ class CLDFDatasetWriter:
                             "Parameter_ID": relevant_row["feature_id"],
                             # English value will be empty for values that are not yet
                             # in the inventory
-                            "Value": self.value_en_for_value_id.get(
-                                relevant_row["value_id"], ""
-                            ),
+                            "Value": self.value_en_for_value_id.get(relevant_row["value_id"], ""),
                             "Value_RU": relevant_row["value_ru"],
                             "Code_ID": relevant_row["value_id"],
                             "Comment": relevant_row["comment_en"],

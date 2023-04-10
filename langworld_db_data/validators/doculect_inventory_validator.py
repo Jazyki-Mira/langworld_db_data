@@ -25,12 +25,8 @@ class DoculectInventoryValidator(Validator):
         file_with_doculects: Path = FILE_WITH_DOCULECTS,
         file_with_genealogy_names: Path = FILE_WITH_GENEALOGY_NAMES,
     ):
-        self.feature_profiles: list[Path] = sorted(
-            list(dir_with_feature_profiles.glob("*.csv"))
-        )
-        self.names_of_feature_profiles: set[str] = {
-            f.stem for f in self.feature_profiles
-        }
+        self.feature_profiles: list[Path] = sorted(list(dir_with_feature_profiles.glob("*.csv")))
+        self.names_of_feature_profiles: set[str] = {f.stem for f in self.feature_profiles}
 
         check_csv_for_malformed_rows(file_with_doculects)
         try:
@@ -71,10 +67,7 @@ class DoculectInventoryValidator(Validator):
                     f"{doculect['id'].capitalize()}: genealogy family ID"
                     f" {doculect['family_id']} not found in genealogy inventory"
                 )
-        print(
-            "OK: ID of language family for each doculect is present in genealogy"
-            " inventory"
-        )
+        print("OK: ID of language family for each doculect is present in genealogy" " inventory")
 
     def _check_uniqueness_of_coordinates(self) -> None:
         """Checks that all pairs of coordinates are unique.
@@ -83,23 +76,19 @@ class DoculectInventoryValidator(Validator):
         """
         coords_to_doculect_ids: dict[tuple[str, str], list[str]] = defaultdict(list)
         for doculect in self.doculects:
-            coords_to_doculect_ids[
-                (doculect["latitude"], doculect["longitude"])
-            ].append(f"{doculect['id']} ({doculect['glottocode']})")
+            coords_to_doculect_ids[(doculect["latitude"], doculect["longitude"])].append(
+                f"{doculect['id']} ({doculect['glottocode']})"
+            )
 
         coords_with_more_than_one_doculect = [
-            pair
-            for pair in coords_to_doculect_ids
-            if len(coords_to_doculect_ids[pair]) > 1
+            pair for pair in coords_to_doculect_ids if len(coords_to_doculect_ids[pair]) > 1
         ]
 
         if coords_with_more_than_one_doculect:
             print("\nFound doculects with identical coordinates:")
             for pair in coords_with_more_than_one_doculect:
                 print(", ".join(coords_to_doculect_ids[pair]), ": ", pair, sep="")
-            raise DoculectInventoryValidatorError(
-                "Some doculects have identical coordinates"
-            )
+            raise DoculectInventoryValidatorError("Some doculects have identical coordinates")
 
         print("OK: All pairs of coordinates are unique")
 
@@ -137,13 +126,9 @@ class DoculectInventoryValidator(Validator):
                 )
             if self.has_feature_profile_for_doculect_id[name] != "1":
                 raise DoculectInventoryValidatorError(
-                    f'Feature profile {name} is not marked with "1" in file with'
-                    " doculects."
+                    f'Feature profile {name} is not marked with "1" in file with' " doculects."
                 )
-        print(
-            "OK: Every feature profile is marked correspondingly in file with"
-            " doculects."
-        )
+        print("OK: Every feature profile is marked correspondingly in file with" " doculects.")
 
 
 if __name__ == "__main__":

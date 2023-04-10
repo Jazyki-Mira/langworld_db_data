@@ -9,9 +9,7 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_NOT_APPLICABLE_RULES,
     FILE_WITH_VALUE_TYPES,
 )
-from langworld_db_data.featureprofiletools.feature_profile_reader import (
-    FeatureProfileReader,
-)
+from langworld_db_data.featureprofiletools.feature_profile_reader import FeatureProfileReader
 from langworld_db_data.filetools.csv_xls import (
     check_csv_for_malformed_rows,
     check_csv_for_repetitions_in_column,
@@ -168,9 +166,7 @@ class FeatureProfileValidator(Validator):
                     "features_to_get_not_applicable"
                 ]:
                     if (
-                        data_from_profile[
-                            id_of_feature_that_must_be_not_applicable
-                        ].value_type
+                        data_from_profile[id_of_feature_that_must_be_not_applicable].value_type
                         != "not_applicable"
                     ):
                         error_message = (

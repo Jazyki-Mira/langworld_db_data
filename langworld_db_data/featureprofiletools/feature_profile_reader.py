@@ -3,9 +3,7 @@ from pathlib import Path
 import pyperclip
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
-from langworld_db_data.featureprofiletools.data_structures import (
-    ValueForFeatureProfileDictionary,
-)
+from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv
 
 
@@ -41,12 +39,10 @@ class FeatureProfileReader:
 
         for i, row in enumerate(read_dicts_from_csv(file), start=1):
             if not row["feature_id"]:
-                raise ValueError(
-                    f"File {file.stem} does not contain feature ID in row {i + 1}"
-                )
+                raise ValueError(f"File {file.stem} does not contain feature ID in row {i + 1}")
             relevant_columns = {key: row[key] for key in row if key != "feature_id"}
-            feature_id_to_row_dict[row["feature_id"]] = (
-                ValueForFeatureProfileDictionary(**relevant_columns)
+            feature_id_to_row_dict[row["feature_id"]] = ValueForFeatureProfileDictionary(
+                **relevant_columns
             )
 
         return feature_id_to_row_dict
@@ -71,12 +67,10 @@ class FeatureProfileReader:
         """
 
         try:
-            loaded_data_for_feature = (
-                self.read_feature_profile_as_dict_from_doculect_id(
-                    doculect_id=doculect_id,
-                    dir_with_feature_profiles=dir_with_feature_profiles,
-                )[feature_id]
-            )
+            loaded_data_for_feature = self.read_feature_profile_as_dict_from_doculect_id(
+                doculect_id=doculect_id,
+                dir_with_feature_profiles=dir_with_feature_profiles,
+            )[feature_id]
         except KeyError:
             raise KeyError(f"{feature_id=} not found for {doculect_id=}")
 
@@ -89,10 +83,7 @@ class FeatureProfileReader:
             print(f"{doculect_id=}, {feature_id=}\n")
             for key in data_to_return.keys():
                 key_for_print = (
-                    key.replace("_ru", "")
-                    .replace("_", " ")
-                    .capitalize()
-                    .replace("id", "ID")
+                    key.replace("_ru", "").replace("_", " ").capitalize().replace("id", "ID")
                 )
                 if data_to_return[key]:
                     print(f"{key_for_print}: {data_to_return[key]}")

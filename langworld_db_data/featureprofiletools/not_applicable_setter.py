@@ -1,16 +1,9 @@
 from copy import copy
 from pathlib import Path
 
-from langworld_db_data.constants.paths import (
-    FEATURE_PROFILES_DIR,
-    FILE_WITH_NOT_APPLICABLE_RULES,
-)
-from langworld_db_data.featureprofiletools.data_structures import (
-    ValueForFeatureProfileDictionary,
-)
-from langworld_db_data.featureprofiletools.feature_profile_reader import (
-    FeatureProfileReader,
-)
+from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_NOT_APPLICABLE_RULES
+from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
+from langworld_db_data.featureprofiletools.feature_profile_reader import FeatureProfileReader
 from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (  # noqa E501
     FeatureProfileWriterFromDictionary,
 )
@@ -64,10 +57,7 @@ class NotApplicableSetter:
                     f" Value in {file.stem}: {data_from_profile[feature_id].value_id}"
                 )
 
-                if (
-                    data_from_profile[feature_id].value_id
-                    == self.rules[feature_id]["trigger"]
-                ):
+                if data_from_profile[feature_id].value_id == self.rules[feature_id]["trigger"]:
                     for id_of_feature_to_be_changed in self.rules[feature_id][
                         "features_to_get_not_applicable"
                     ]:
@@ -79,31 +69,26 @@ class NotApplicableSetter:
                         # Only changing values that are of 'not_stated' type!
                         # All other value types are wrong, but errors must be triggered
                         # in a validator, not here
-                        if (
-                            new_data[id_of_feature_to_be_changed].value_type
-                            == "not_stated"
-                        ):
-                            new_data[id_of_feature_to_be_changed] = (
-                                ValueForFeatureProfileDictionary(
-                                    feature_name_ru=data_from_profile[
-                                        id_of_feature_to_be_changed
-                                    ].feature_name_ru,
-                                    value_type="not_applicable",
-                                    value_ru="",
-                                    value_id="",
-                                    comment_en=data_from_profile[
-                                        id_of_feature_to_be_changed
-                                    ].comment_en,
-                                    comment_ru=data_from_profile[
-                                        id_of_feature_to_be_changed
-                                    ].comment_ru,
-                                    page_numbers="",
-                                )
+                        if new_data[id_of_feature_to_be_changed].value_type == "not_stated":
+                            new_data[
+                                id_of_feature_to_be_changed
+                            ] = ValueForFeatureProfileDictionary(
+                                feature_name_ru=data_from_profile[
+                                    id_of_feature_to_be_changed
+                                ].feature_name_ru,
+                                value_type="not_applicable",
+                                value_ru="",
+                                value_id="",
+                                comment_en=data_from_profile[
+                                    id_of_feature_to_be_changed
+                                ].comment_en,
+                                comment_ru=data_from_profile[
+                                    id_of_feature_to_be_changed
+                                ].comment_ru,
+                                page_numbers="",
                             )
 
-            self.writer.write(
-                feature_dict=new_data, output_path=self.output_dir / file.name
-            )
+            self.writer.write(feature_dict=new_data, output_path=self.output_dir / file.name)
 
 
 if __name__ == "__main__":

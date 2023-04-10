@@ -31,9 +31,7 @@ class ListedValueLister(AbstractValueLister):
     def write_grouped_by_feature(
         self, output_file: Path = DISCUSSION_FILE_WITH_LISTED_VALUES
     ) -> None:
-        feature_ids = read_column_from_csv(
-            path_to_file=self.file_with_features, column_name="id"
-        )
+        feature_ids = read_column_from_csv(path_to_file=self.file_with_features, column_name="id")
 
         feature_to_value_to_doculects: dict[str, dict[str, list[str]]] = {
             feature_id: {
@@ -51,18 +49,16 @@ class ListedValueLister(AbstractValueLister):
         )
 
         for volume_and_doculect_id in self.filtered_rows_for_volume_doculect_id:
-            for row in self.filtered_rows_for_volume_doculect_id[
-                volume_and_doculect_id
-            ]:
+            for row in self.filtered_rows_for_volume_doculect_id[volume_and_doculect_id]:
                 if feature_is_multiselect_for_feature_id[row["feature_id"]] == "1":
                     for value_id in row["value_id"].split("&"):
-                        feature_to_value_to_doculects[row["feature_id"]][
-                            value_id
-                        ].append(volume_and_doculect_id)
+                        feature_to_value_to_doculects[row["feature_id"]][value_id].append(
+                            volume_and_doculect_id
+                        )
                 else:
-                    feature_to_value_to_doculects[row["feature_id"]][
-                        row["value_id"]
-                    ].append(volume_and_doculect_id)
+                    feature_to_value_to_doculects[row["feature_id"]][row["value_id"]].append(
+                        volume_and_doculect_id
+                    )
 
         feature_name_for_feature_id = read_dict_from_2_csv_columns(
             self.file_with_features,
@@ -80,9 +76,7 @@ class ListedValueLister(AbstractValueLister):
         )
 
         for feature_id in feature_name_for_feature_id:
-            content += (
-                f"\n\n## {feature_id} — {feature_name_for_feature_id[feature_id]}\n"
-            )
+            content += f"\n\n## {feature_id} — {feature_name_for_feature_id[feature_id]}\n"
 
             for value_id in feature_to_value_to_doculects[feature_id]:
                 content += (

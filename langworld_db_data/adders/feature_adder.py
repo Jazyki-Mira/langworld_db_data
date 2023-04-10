@@ -3,10 +3,7 @@ from typing import Optional
 
 from langworld_db_data.adders.adder import Adder, AdderError
 from langworld_db_data.constants.literals import AUX_ROW_MARKER, SEPARATOR
-from langworld_db_data.constants.paths import (
-    FILE_WITH_CATEGORIES,
-    FILE_WITH_NAMES_OF_FEATURES,
-)
+from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.filetools.csv_xls import (
     read_column_from_csv,
     read_dicts_from_csv,
@@ -67,8 +64,7 @@ class FeatureAdder(Adder):
             path_to_file=self.file_with_categories, column_name="id"
         ):
             raise FeatureAdderError(
-                f"Category ID <{cat_id}> not found in file"
-                f" {self.file_with_categories.name}"
+                f"Category ID <{cat_id}> not found in file" f" {self.file_with_categories.name}"
             )
 
         rows_with_features = read_dicts_from_csv(self.input_file_with_features)
@@ -110,17 +106,9 @@ class FeatureAdder(Adder):
         if insert_after_index is None:
             print(f"after the last feature in category {cat_id}")
             rows_to_write = (
-                [
-                    row
-                    for row in rows_with_features
-                    if row["id"].split(SEPARATOR)[0] <= cat_id
-                ]
+                [row for row in rows_with_features if row["id"].split(SEPARATOR)[0] <= cat_id]
                 + [row_to_add]
-                + [
-                    row
-                    for row in rows_with_features
-                    if row["id"].split(SEPARATOR)[0] > cat_id
-                ]
+                + [row for row in rows_with_features if row["id"].split(SEPARATOR)[0] > cat_id]
             )
         else:
             print(f"after feature {feature_id_to_add_after}")
@@ -154,9 +142,7 @@ class FeatureAdder(Adder):
             )
 
         value_rows_with_new_values_inserted = self.insert_rows(
-            rows_before_insertion=read_dicts_from_csv(
-                self.input_file_with_listed_values
-            ),
+            rows_before_insertion=read_dicts_from_csv(self.input_file_with_listed_values),
             rows_to_add=rows_to_add_to_file_with_listed_values,
             category_id=cat_id,
             feature_id_to_add_after=feature_id_to_add_after,
@@ -231,8 +217,7 @@ class FeatureAdder(Adder):
             largest_index_under_100 = max(
                 int(feature_id.split(SEPARATOR)[1])
                 for feature_id in feature_ids_in_category
-                if int(feature_id.split(SEPARATOR)[1])
-                < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
+                if int(feature_id.split(SEPARATOR)[1]) < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
             )
             return f"{category_id}{SEPARATOR}{largest_index_under_100 + 1}"
 
@@ -240,8 +225,7 @@ class FeatureAdder(Adder):
 
         if f"{category_id}{SEPARATOR}{custom_index_str}" in feature_ids_in_category:
             raise FeatureAdderError(
-                f"Feature index {custom_index_str} already in use in category"
-                f" {category_id}"
+                f"Feature index {custom_index_str} already in use in category" f" {category_id}"
             )
         else:
             return f"{category_id}{SEPARATOR}{custom_index_str}"
@@ -267,16 +251,10 @@ class FeatureAdder(Adder):
         else:
             found_feature_to_add_after = False
             for row_index, row in enumerate(rows):
-                if (
-                    row["feature_id"] == feature_id_to_add_after
-                    and not found_feature_to_add_after
-                ):
+                if row["feature_id"] == feature_id_to_add_after and not found_feature_to_add_after:
                     # found beginning of block of values for relevant feature
                     found_feature_to_add_after = True
-                elif (
-                    row["feature_id"] != feature_id_to_add_after
-                    and found_feature_to_add_after
-                ):
+                elif row["feature_id"] != feature_id_to_add_after and found_feature_to_add_after:
                     # found end of block
                     return rows[:row_index] + rows_to_add + rows[row_index:]
             else:

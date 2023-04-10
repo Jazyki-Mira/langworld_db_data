@@ -4,9 +4,7 @@ from langworld_db_data.writers.doculect_in_country_writer import (
     DoculectInCountryWriter,
     DoculectInCountryWriterError,
 )
-from tests.helpers import (
-    check_existence_of_output_csv_file_and_compare_with_gold_standard,
-)
+from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import DIR_WITH_WRITERS_TEST_FILES
 
 TEST_DIR_FOR_DOCULECT_IN_COUNTRY_WRITER = (
@@ -36,9 +34,7 @@ def test_writer():
 
 
 def test__init__raises_exception_with_empty_profiles_dir():
-    with pytest.raises(
-        DoculectInCountryWriterError, match="No sociolinguistic profiles found"
-    ):
+    with pytest.raises(DoculectInCountryWriterError, match="No sociolinguistic profiles found"):
         DoculectInCountryWriter(
             dir_with_sociolinguistic_profiles=TEST_DIR_FOR_DOCULECT_IN_COUNTRY_WRITER
             / "dir_with_no_profiles",
@@ -59,6 +55,5 @@ def test_write(test_writer):
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=TEST_OUTPUT_FILE,
-        gold_standard_file=TEST_DIR_FOR_DOCULECT_IN_COUNTRY_WRITER
-        / "output_benchmark.csv",
+        gold_standard_file=TEST_DIR_FOR_DOCULECT_IN_COUNTRY_WRITER / "output_benchmark.csv",
     )

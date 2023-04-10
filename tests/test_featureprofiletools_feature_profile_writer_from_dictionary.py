@@ -1,14 +1,10 @@
 import pytest
 
-from langworld_db_data.featureprofiletools.data_structures import (
-    ValueForFeatureProfileDictionary,
-)
+from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
 from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (  # noqa E501
     FeatureProfileWriterFromDictionary,
 )
-from tests.helpers import (
-    check_existence_of_output_csv_file_and_compare_with_gold_standard,
-)
+from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 
 
@@ -18,9 +14,7 @@ def test_writer():
 
 
 def test_write(test_writer):
-    output_file = (
-        DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / "catalan_short_writer_output.csv"
-    )
+    output_file = DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / "catalan_short_writer_output.csv"
 
     test_writer.write(
         feature_dict={

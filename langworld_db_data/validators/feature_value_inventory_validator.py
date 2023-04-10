@@ -2,10 +2,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
-from langworld_db_data.constants.paths import (
-    FILE_WITH_LISTED_VALUES,
-    FILE_WITH_NAMES_OF_FEATURES,
-)
+from langworld_db_data.constants.paths import FILE_WITH_LISTED_VALUES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.filetools.csv_xls import (
     check_csv_for_malformed_rows,
     check_csv_for_repetitions_in_column,
@@ -44,9 +41,7 @@ class FeatureValueInventoryValidator(Validator):
 
         for feature_id in self.feature_ids:
             if not re.match(r"[A-Z]-\d+", feature_id):
-                raise FeatureValueInventoryValidatorError(
-                    f"Invalid feature ID {feature_id}"
-                )
+                raise FeatureValueInventoryValidatorError(f"Invalid feature ID {feature_id}")
 
         print("Feature IDs OK")
 
@@ -85,9 +80,7 @@ class FeatureValueInventoryValidator(Validator):
             for feature_id in names_of_listed_values_for_feature_id:
                 counter = Counter(names_of_listed_values_for_feature_id[feature_id])
 
-                duplicate_value_names = [
-                    value for value in counter if counter[value] > 1
-                ]
+                duplicate_value_names = [value for value in counter if counter[value] > 1]
 
                 if duplicate_value_names:
                     raise FeatureValueInventoryValidatorError(

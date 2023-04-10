@@ -74,9 +74,7 @@ class DoculectInCountryWriter:
 
         for doculect_id in self.doculect_ids:
             for locale in LOCALES:
-                file = (
-                    dir_with_sociolinguistic_profiles / f"{doculect_id}_{locale}.yaml"
-                )
+                file = dir_with_sociolinguistic_profiles / f"{doculect_id}_{locale}.yaml"
                 if file.exists():
                     self.doculect_id_to_locale_to_file[(doculect_id, locale)] = file
 
@@ -86,8 +84,7 @@ class DoculectInCountryWriter:
 
         if not self.sociolinguistic_profiles:
             raise DoculectInCountryWriterError(
-                "No sociolinguistic profiles found in"
-                f" {dir_with_sociolinguistic_profiles}"
+                "No sociolinguistic profiles found in" f" {dir_with_sociolinguistic_profiles}"
             )
 
         # this is the initial version that will have to be amended by reading the file
@@ -104,16 +101,12 @@ class DoculectInCountryWriter:
         for row in read_dicts_from_csv(file_with_countries):
             for locale in LOCALES:
                 # (row[locale], locale) gives a dictionary key like (Russia, en):
-                self.country_name_and_locale_to_country_id[(row[locale], locale)] = row[
-                    "id"
-                ]
+                self.country_name_and_locale_to_country_id[(row[locale], locale)] = row["id"]
 
         for row in read_dicts_from_csv(file_with_country_aliases):
             tuple_key = (row["alias"], row["locale"])
             if tuple_key not in self.country_name_and_locale_to_country_id:
-                self.country_name_and_locale_to_country_id[tuple_key] = row[
-                    "country_id"
-                ]
+                self.country_name_and_locale_to_country_id[tuple_key] = row["country_id"]
 
         if self.verbose:
             print(
@@ -129,9 +122,7 @@ class DoculectInCountryWriter:
             for country_id in self.doculect_id_to_countries[doculect_id]:
                 rows_to_write.append((doculect_id, country_id))
 
-        rows_with_header = [("doculect_id", "country_id")] + sorted(
-            rows_to_write, key=str
-        )
+        rows_with_header = [("doculect_id", "country_id")] + sorted(rows_to_write, key=str)
         write_csv(
             # Need sorting because otherwise set will be written differently each time.
             # `str(item)` will have effect equivalent to sorting by two items

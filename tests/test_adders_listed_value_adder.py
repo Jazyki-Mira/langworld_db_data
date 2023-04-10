@@ -1,12 +1,7 @@
 import pytest
 
-from langworld_db_data.adders.listed_value_adder import (
-    ListedValueAdder,
-    ListedValueAdderError,
-)
-from tests.helpers import (
-    check_existence_of_output_csv_file_and_compare_with_gold_standard,
-)
+from langworld_db_data.adders.listed_value_adder import ListedValueAdder, ListedValueAdderError
+from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
     DIR_WITH_ADDERS_FEATURE_PROFILES,
     DIR_WITH_ADDERS_TEST_FILES,
@@ -15,8 +10,7 @@ from tests.paths import (
 )
 
 GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION = (
-    DIR_WITH_ADDERS_TEST_FILES
-    / "features_listed_values_gold_standard_for_listed_value_adder.csv"
+    DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_listed_value_adder.csv"
 )
 GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION = (
     OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / "gold_standard"
@@ -99,9 +93,7 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
     )
 
     for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
-        assert (
-            OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / f"{stem}.csv"
-        ).exists(), (
+        assert (OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / f"{stem}.csv").exists(), (
             f"File {stem}.csv was not created. It means that no changes were made while"
             " there should have been changes"
         )
@@ -125,9 +117,7 @@ def test_add_listed_value_throws_exception_with_empty_args(test_adder):
         {"feature_id": "A-1", "new_value_en": "", "new_value_ru": "Значение"},
         {"feature_id": "A-1", "new_value_en": "Value", "new_value_ru": ""},
     ):
-        with pytest.raises(
-            ListedValueAdderError, match="None of the passed strings can be empty"
-        ):
+        with pytest.raises(ListedValueAdderError, match="None of the passed strings can be empty"):
             test_adder.add_listed_value(**bad_set_of_values)
 
 
@@ -149,9 +139,7 @@ def test_add_listed_value(test_adder):
     )
 
     for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
-        assert (
-            OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / f"{stem}.csv"
-        ).exists(), (
+        assert (OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / f"{stem}.csv").exists(), (
             f"File {stem}.csv was not created. It means that no changes were made while"
             " there should have been changes"
         )

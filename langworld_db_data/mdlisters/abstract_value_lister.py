@@ -2,14 +2,8 @@ from abc import ABC, abstractmethod
 from pathlib import Path
 
 from langworld_db_data.constants.literals import ValueType
-from langworld_db_data.constants.paths import (
-    FILE_WITH_DOCULECTS,
-    FILE_WITH_NAMES_OF_FEATURES,
-)
-from langworld_db_data.filetools.csv_xls import (
-    read_dict_from_2_csv_columns,
-    read_dicts_from_csv,
-)
+from langworld_db_data.constants.paths import FILE_WITH_DOCULECTS, FILE_WITH_NAMES_OF_FEATURES
+from langworld_db_data.filetools.csv_xls import read_dict_from_2_csv_columns, read_dicts_from_csv
 
 
 class AbstractValueLister(ABC):

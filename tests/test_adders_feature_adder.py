@@ -1,9 +1,7 @@
 import pytest
 
 from langworld_db_data.adders.feature_adder import FeatureAdder, FeatureAdderError
-from tests.helpers import (
-    check_existence_of_output_csv_file_and_compare_with_gold_standard,
-)
+from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
     DIR_WITH_ADDERS_FEATURE_PROFILES,
     DIR_WITH_ADDERS_TEST_FILES,
@@ -58,9 +56,7 @@ def test_add_feature_fails_with_empty_arg(test_feature_adder):
             "listed_values_to_add": [],
         },
     ):
-        with pytest.raises(
-            FeatureAdderError, match="Some of the values passed are empty"
-        ):
+        with pytest.raises(FeatureAdderError, match="Some of the values passed are empty"):
             test_feature_adder.add_feature(**incomplete_set_of_args)
 
 
@@ -88,8 +84,7 @@ def test_add_feature_fails_with_wrong_category_id(test_feature_adder):
     with pytest.raises(
         FeatureAdderError,
         match=(
-            "Category ID <X> not found in file"
-            f" {test_feature_adder.file_with_categories.name}"
+            "Category ID <X> not found in file" f" {test_feature_adder.file_with_categories.name}"
         ),
     ):
         test_feature_adder.add_feature(
@@ -105,9 +100,7 @@ def test_add_feature_fails_with_existing_feature_name(test_feature_adder):
         ("Stress character ", "Новый признак"),
         ("New  feature", "Типы фонации"),
     ):
-        with pytest.raises(
-            FeatureAdderError, match="English or Russian feature name is already"
-        ):
+        with pytest.raises(FeatureAdderError, match="English or Russian feature name is already"):
             test_feature_adder.add_feature(
                 category_id="A",
                 feature_en=en,
@@ -120,9 +113,7 @@ def test_add_feature_fails_with_non_existent_index_of_feature_to_insert_after(
     test_feature_adder,
 ):
     for number in (0, 22, 250):
-        with pytest.raises(
-            FeatureAdderError, match=f"Cannot add feature after A-{number}"
-        ):
+        with pytest.raises(FeatureAdderError, match=f"Cannot add feature after A-{number}"):
             test_feature_adder.add_feature(
                 category_id="A",
                 feature_en="Foo",
@@ -133,19 +124,13 @@ def test_add_feature_fails_with_non_existent_index_of_feature_to_insert_after(
 
 
 def test__build_feature_id_fails_with_existing_index(test_feature_adder):
-    with pytest.raises(
-        FeatureAdderError, match="Feature index 211 already in use in category A"
-    ):
-        test_feature_adder._generate_feature_id(
-            category_id="A", custom_index_of_new_feature=211
-        )
+    with pytest.raises(FeatureAdderError, match="Feature index 211 already in use in category A"):
+        test_feature_adder._generate_feature_id(category_id="A", custom_index_of_new_feature=211)
 
 
 def test__build_feature_id_fails_with_small_index(test_feature_adder):
     with pytest.raises(FeatureAdderError, match="must be greater than 100"):
-        test_feature_adder._generate_feature_id(
-            category_id="A", custom_index_of_new_feature=99
-        )
+        test_feature_adder._generate_feature_id(category_id="A", custom_index_of_new_feature=99)
 
 
 def test__build_feature_id_works_with_good_custom_index(test_feature_adder):
@@ -205,16 +190,12 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
     )
 
     for kwargs in features_to_add:
-        test_feature_adder.add_feature(
-            **kwargs, listed_values_to_add=dummy_values_to_add
-        )
+        test_feature_adder.add_feature(**kwargs, listed_values_to_add=dummy_values_to_add)
 
         # Re-wire output to input after addition of first feature,
         # otherwise the adder will just take the input file again
         # and only last feature will be added in the end:
-        test_feature_adder.input_file_with_features = (
-            test_feature_adder.output_file_with_features
-        )
+        test_feature_adder.input_file_with_features = test_feature_adder.output_file_with_features
         test_feature_adder.input_file_with_listed_values = (
             test_feature_adder.output_file_with_listed_values
         )
@@ -244,9 +225,7 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
     )
 
     for file in gold_standard_feature_profiles:
-        test_output_file = (
-            test_feature_adder.output_dir_with_feature_profiles / file.name
-        )
+        test_output_file = test_feature_adder.output_dir_with_feature_profiles / file.name
 
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=test_output_file,

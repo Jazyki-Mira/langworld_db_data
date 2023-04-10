@@ -23,18 +23,12 @@ from tests.paths import (
     PATH_TO_TEST_OUTPUT_CSV_FILE,
     PATH_TO_TEST_OUTPUT_TXT_FILE,
 )
-from tests.test_helpers import (
-    check_existence_of_output_csv_file_and_compare_with_gold_standard,
-)
+from tests.test_helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 
 
 def test_convert_xls_to_csv():
-    path_to_excel_file = (
-        DIR_WITH_FILETOOLS_TEST_FILES / "feature_profile_belarusian.xlsx"
-    )
-    path_to_output_csv_file = (
-        DIR_WITH_FILETOOLS_TEST_FILES / "test_convert_excel_to_csv.csv"
-    )
+    path_to_excel_file = DIR_WITH_FILETOOLS_TEST_FILES / "feature_profile_belarusian.xlsx"
+    path_to_output_csv_file = DIR_WITH_FILETOOLS_TEST_FILES / "test_convert_excel_to_csv.csv"
     path_to_gold_standard_csv_file = (
         DIR_WITH_FILETOOLS_TEST_FILES / "test_convert_excel_to_csv_gold_standard.csv"
     )
@@ -121,9 +115,7 @@ def test_check_csv_for_malformed_rows_passes_for_good_file():
 
 def test_check_csv_for_malformed_rows_throws_exception_for_malformed_rows():
     file = DIR_WITH_FILETOOLS_TEST_FILES / "csv_doculects_with_incomplete_rows.csv"
-    with pytest.raises(
-        IndexError, match="Following rows have abnormal number of columns: 3, 5"
-    ):
+    with pytest.raises(IndexError, match="Following rows have abnormal number of columns: 3, 5"):
         check_csv_for_malformed_rows(file)
 
 
@@ -140,9 +132,7 @@ def test_check_csv_for_repetitions_in_column_throws_exception_with_wrong_column_
 
 def test_check_csv_for_repetitions_in_column_throws_error_with_repetition_in_column():
     file = DIR_WITH_FILETOOLS_TEST_FILES / "csv_doculects_with_duplicate_values.csv"
-    with pytest.raises(
-        ValueError, match="repeating values in column <id>: asturian, catalan"
-    ):
+    with pytest.raises(ValueError, match="repeating values in column <id>: asturian, catalan"):
         check_csv_for_repetitions_in_column(path_to_file=file, column_name="id")
 
 
@@ -223,9 +213,7 @@ def test_write_csv_throws_exception_when_rows_are_of_different_types():
 
 def test_write_csv_throws_exception_when_rows_are_of_wrong_type():
     rows = [1, 2]
-    with pytest.raises(
-        TypeError, match="Supported types are list, tuple, dict, NamedTuple"
-    ) as e:
+    with pytest.raises(TypeError, match="Supported types are list, tuple, dict, NamedTuple") as e:
         write_csv(rows, PATH_TO_TEST_OUTPUT_CSV_FILE, overwrite=False, delimiter=",")
 
     print("TEST: exception raised:", e)
@@ -272,12 +260,9 @@ def test_write_csv(rows, expected_file_content):
 
 def test_append_empty_column_to_csv_adds_new_column():
     input_file = DIR_WITH_FILETOOLS_TEST_FILES / "doculects_output_gold_standard.csv"
-    output_file = (
-        DIR_WITH_FILETOOLS_TEST_FILES / "append_empty_column_doculects_output.csv"
-    )
+    output_file = DIR_WITH_FILETOOLS_TEST_FILES / "append_empty_column_doculects_output.csv"
     gold_standard_file_after_append = (
-        DIR_WITH_FILETOOLS_TEST_FILES
-        / "append_empty_column_doculects_gold_standard.csv"
+        DIR_WITH_FILETOOLS_TEST_FILES / "append_empty_column_doculects_gold_standard.csv"
     )
 
     append_empty_column_to_csv(
@@ -293,8 +278,7 @@ def test_append_empty_column_to_csv_adds_new_column():
 def test_append_empty_column_to_csv_raises_exception_with_existing_custom_output_file():
     input_file = DIR_WITH_FILETOOLS_TEST_FILES / "doculects_output_gold_standard.csv"
     existing_file = (
-        DIR_WITH_FILETOOLS_TEST_FILES
-        / "append_empty_column_doculects_gold_standard.csv"
+        DIR_WITH_FILETOOLS_TEST_FILES / "append_empty_column_doculects_gold_standard.csv"
     )
     with pytest.raises(FileExistsError):
         append_empty_column_to_csv(
@@ -306,9 +290,7 @@ def test_append_empty_column_to_csv_raises_exception_with_existing_custom_output
 
 def test_append_empty_column_to_csv_raises_exception_with_existing_column():
     input_file = DIR_WITH_FILETOOLS_TEST_FILES / "doculects_output_gold_standard.csv"
-    output_file = (
-        DIR_WITH_FILETOOLS_TEST_FILES / "append_empty_column_doculects_output.csv"
-    )
+    output_file = DIR_WITH_FILETOOLS_TEST_FILES / "append_empty_column_doculects_output.csv"
     with pytest.raises(ValueError):
         append_empty_column_to_csv(
             path_to_file=input_file,

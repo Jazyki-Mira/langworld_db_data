@@ -2,10 +2,7 @@ from collections import Counter
 from pathlib import Path
 
 from langworld_db_data.constants.paths import ASSETS_DIR, FILE_WITH_DOCULECTS
-from langworld_db_data.filetools.csv_xls import (
-    read_dicts_from_csv,
-    read_plain_rows_from_csv,
-)
+from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, read_plain_rows_from_csv
 from langworld_db_data.validators.validator import Validator, ValidatorError
 
 
@@ -18,8 +15,7 @@ class AssetValidator(Validator):
         self,
         file_with_doculects: Path = FILE_WITH_DOCULECTS,
         file_with_encyclopedia_maps: Path = ASSETS_DIR / "encyclopedia_maps.csv",
-        file_matching_maps_to_doculects: Path = ASSETS_DIR
-        / "encyclopedia_map_to_doculect.csv",
+        file_matching_maps_to_doculects: Path = ASSETS_DIR / "encyclopedia_map_to_doculect.csv",
     ):
         self.file_with_doculects = file_with_doculects
         self.file_with_encyclopedia_maps = file_with_encyclopedia_maps
@@ -64,9 +60,7 @@ class AssetValidator(Validator):
                     f" Doculect ID {row['doculect_id']} not found in file"
                     f" {self.file_with_doculects.name}"
                 )
-        print(
-            "OK: IDs of encyclopedia maps and doculects match IDs in respective files"
-        )
+        print("OK: IDs of encyclopedia maps and doculects match IDs in respective files")
 
 
 if __name__ == "__main__":

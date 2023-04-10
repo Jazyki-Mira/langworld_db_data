@@ -10,9 +10,7 @@ from langworld_db_data.mdlisters.abstract_value_lister import AbstractValueListe
 
 class CustomValueLister(AbstractValueLister):
     def __init__(self, dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR):
-        super().__init__(
-            value_type="custom", dir_with_feature_profiles=dir_with_feature_profiles
-        )
+        super().__init__(value_type="custom", dir_with_feature_profiles=dir_with_feature_profiles)
 
     def write_grouped_by_volume_and_doculect(
         self, output_file: Path = DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT
@@ -70,9 +68,7 @@ class CustomValueLister(AbstractValueLister):
                         row["value_ru"],
                         row["comment_ru"],
                     ]
-                    for row in self.filtered_rows_for_volume_doculect_id[
-                        volume_doculect_id
-                    ]
+                    for row in self.filtered_rows_for_volume_doculect_id[volume_doculect_id]
                 ]
 
         rows_sorted_by_feature = sorted(
@@ -97,9 +93,7 @@ class CustomValueLister(AbstractValueLister):
         for row in rows_sorted_by_feature:
             feature = row[1]
             if feature != current_feature:
-                content += (
-                    f"\n## {feature}: {self.feature_ru_for_feature_id[feature]}\n"
-                )
+                content += f"\n## {feature}: {self.feature_ru_for_feature_id[feature]}\n"
                 current_feature = feature
                 current_value = ""
 
