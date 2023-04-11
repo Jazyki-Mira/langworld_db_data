@@ -1,3 +1,7 @@
+![GitHub Actions](https://github.com/lemontree210/langworld_db_data/actions/workflows/pytest.yml/badge.svg)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/lemontree210/langworld_db_data/master.svg)](https://results.pre-commit.ci/latest/github/lemontree210/langworld_db_data/master)
+[![codecov](https://codecov.io/gh/lemontree210/langworld_db_data/branch/master/graph/badge.svg?token=MAG06T2QAF)](https://codecov.io/gh/lemontree210/langworld_db_data)
+
 # "Languages of the World": data files
 Data files for Jazyki Mira (Languages of the World) database.
 
