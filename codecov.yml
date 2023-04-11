@@ -1,0 +1,9 @@
+ 15 lines (13 sloc) 264 Bytes
+comment: false
+
+coverage:
+  status:
+    project:
+      default:
+        target: auto
+        threshold: 1%
