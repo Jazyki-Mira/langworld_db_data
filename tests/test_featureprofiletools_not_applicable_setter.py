@@ -36,6 +36,11 @@ def test_replace_not_stated_with_not_applicable_in_all_profiles_according_to_rul
 ):
     test_setter.replace_not_stated_with_not_applicable_in_all_profiles_according_to_rules()
 
+    # for tests in CI
+    output_dir = DIR_WITH_TEST_FEATURE_PROFILES / "output"
+    if not output_dir.exists():
+        output_dir.mkdir()
+
     dir_with_benchmark_files = DIR_WITH_TEST_FEATURE_PROFILES / "output_gold_standard"
 
     for benchmark_file in dir_with_benchmark_files.glob("*.csv"):
