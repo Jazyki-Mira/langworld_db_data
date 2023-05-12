@@ -73,7 +73,7 @@ polovets,language,1,0,Polovets,половецкий,,,,"кыпчакский, п
 salar,language,0,0,Salar,саларский,,,,"салар, салгур",karluk,slr,sala1264,36.2752,102.4584,chn,2,335,1,,
 saryg_yugur,language,0,0,Western Yugur,сарыг-югурский,,,,,khak_turk,ybe,west2402,35.889,119.3554,chn,2,345,1,,
 shor,language,0,0,Shor,шорский,,,,,khak_turk,cjs,shor1247,53.0544,87.7478,rus,2,497,1,,
-tatar,language,0,0,Tatar,татарский,,,,,kipchak_bulgar,tat,tata1255,41.3438,48.6254,aze,2,357,1,,
+tatar,language,0,0,Tatar,татарский,,,,,kipchak_bulgar,tat,tata1255,55.7833,49.1166,rus,2,357,1,,
 tofalar,language,0,0,Tofa,тофаларский,,,"Tofa, Karagas",офский,sayan_turk,kim,kara1462,53.7324,98.2589,rus,2,372,1,,
 turki,language,1,0,Turki,тюрки,,,Chagatai,"среднеазиатско-турецкий, средневековый среднеазиатский тюркский литерат., чагатайский, джагатайский, новочагатайский, староузбекский, новоузбекский, хорезмско-тюркский, кыпчакско-огузский, огузско-кыпчакский, тюркский письменный, старотюркский, урало-поволжский тюркский письм.-литературный, старотатарский литературный, тюрко-татарский",karluk,,,37.7108,68.8311,tjk,2,126,1,,
 turkish,language,0,0,Turkish,турецкий,,,"Istanbul Turkish, Turkey Turkish","османский, османо-турецкий",oghuz_turk,tur,nucl1301,39.8666,32.8666,tur,2,394,1,,
