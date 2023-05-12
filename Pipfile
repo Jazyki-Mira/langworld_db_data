@@ -10,7 +10,7 @@ openpyxl = "~=3.1.2"
 pycldf = "==1.27.0"
 pyperclip = "~=1.8.2"
 setuptools = "~= 67.7.2"
-certifi = "~=2022.12.7"
+certifi = "~=2023.5.7"
 
 [dev-packages]
 black = "*"
