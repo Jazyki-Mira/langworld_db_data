@@ -395,7 +395,7 @@ kpelle,language,0,0,Kpelle,кпелле,,,,,south_west_mande,kpe,kpel1252,7.75,-
 looma,language,0,0,Looma,лоома,,,,,south_west_mande,"lom, tob","loma1260, toba1269",7.92,-10.8,lbr,21,343,1,,
 dan,language,0,0,Dan,дан,,,,,south_mande,dnj,nucl1770,7.27,-8.15,civ,21,469,1,,
 kla_dan,language,0,0,Kla-Dan,кла-дан,,,,,south_mande,lda,klad1234,6.85,-5.3,civ,21,617,1,,
-guro,language,0,0,Guro,гуро,,,,,south_mande,goa,guro1248,7,-6.5,civ,21,766,1,,
+guro,language,0,0,Guro,гуро,,,,,south_mande,goa,guro1248,7,-6.5,civ,21,765,1,,
 lappish,language,0,0,Lappish,саамский,,,"Lopar, Lappish",лопарский,sami,,,68.9099,22.9394,nor,,,0,,
 hill_mari,language,0,0,Hill Mari,горномарийский,,,"Cheremis, Western Mari",черемисский,mari,mrj,west2392,56.3333,46.5666,rus,,,0,,
 mator,language,1,0,Mator,маторский,,,"Motor, Mador, Taigi, Taigin, Caragass, Sayan Highlanders language, Soyot (wrong)","моторский, мадорский, тайгийский, тайгинский, карагасский, саянских горцев язык, сойотский (непр.)",south_samo,mtm,mato1250,54.5666,100.5666,rus,,,0,,
