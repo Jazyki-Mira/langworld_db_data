@@ -375,7 +375,7 @@
 - Нет данных о контурных тонах: [какабе](../feature_profiles/kakabe.csv)
 - Низкий, средний и высокий: [каннада](../feature_profiles/kannada.csv)
 - Нисходящий (акут) и нисходяще-восходящий (гравис): [шведский](../feature_profiles/swedish.csv)
-- Ровный: [бамана](../feature_profiles/bamana.csv), [боко](../feature_profiles/boko.csv), [гоо](../feature_profiles/goo.csv), [лоома](../feature_profiles/looma.csv), [тура](../feature_profiles/tura.csv)
+- Ровный: [бамана](../feature_profiles/bamana.csv), [боко](../feature_profiles/boko.csv), [гоо](../feature_profiles/goo.csv), [кпелле](../feature_profiles/kpelle.csv), [лоома](../feature_profiles/looma.csv), [тура](../feature_profiles/tura.csv)
 - Ровный, восходящий, нисходящий и "скользящий" (в статье понятие не конкретизируется): [бен](../feature_profiles/beng.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
 - ровный: [уан](../feature_profiles/wan.csv)
@@ -531,7 +531,7 @@
 - нет данных: [ликийский](../feature_profiles/lycian.csv), [гоо](../feature_profiles/goo.csv)
 ## D-5: Различия между исконными и заимствованными словами
 
-- Нет данных: [бен](../feature_profiles/beng.csv), [боко](../feature_profiles/boko.csv), [локо](../feature_profiles/loko.csv), [муан](../feature_profiles/mwan.csv), [тура](../feature_profiles/tura.csv), [лувийский](../feature_profiles/luwian.csv), [ликийский](../feature_profiles/lycian.csv), [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv), [палайский](../feature_profiles/palaic.csv), [гоо](../feature_profiles/goo.csv), [яурэ](../feature_profiles/yaoure.csv)
+- Нет данных: [бен](../feature_profiles/beng.csv), [боко](../feature_profiles/boko.csv), [кпелле](../feature_profiles/kpelle.csv), [локо](../feature_profiles/loko.csv), [муан](../feature_profiles/mwan.csv), [тура](../feature_profiles/tura.csv), [лувийский](../feature_profiles/luwian.csv), [ликийский](../feature_profiles/lycian.csv), [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv), [палайский](../feature_profiles/palaic.csv), [гоо](../feature_profiles/goo.csv), [яурэ](../feature_profiles/yaoure.csv)
 ## D-6: Различия между корневыми и аффиксальными морфемами
 
 - Вопрос не изучен: [согдийский](../feature_profiles/sogdian.csv)
@@ -547,6 +547,7 @@
 
 - Вокалические (качественные и количественные), консонантные, чередования комплексов и интонационные (при словоизменении): [сербохорватский](../feature_profiles/serbocroatian.csv)
 - Вокалические, консонантные и просодемные (тоновые и акцентные): [норвежский](../feature_profiles/norwegian.csv)
+- Вокалические, консонантные и тоновые: [кпелле](../feature_profiles/kpelle.csv)
 - Консонантные, вокалические и тоновые: [лоома](../feature_profiles/looma.csv)
 - Консонантные, вокалические, тоновые и чередования комплексов: [гуро](../feature_profiles/guro.csv)
 - Три ступени чередования: слабая ступень, гуна и вриддхи: [авесты](../feature_profiles/avestan.csv)
@@ -719,6 +720,7 @@
 - Автосемантичность/относительность: [гоо](../feature_profiles/goo.csv)
 - Автосемантичность/относительность (по-разному образуют посессивную конструкцию). Возможно, это стоит отметить и для уан и джого, где раньше это отмечено не было: [яурэ](../feature_profiles/yaoure.csv)
 - Автосемантичность/реляционность: [гбан](../feature_profiles/gban.csv), [локо](../feature_profiles/loko.csv), [муан](../feature_profiles/mwan.csv)
+- Автосемантичность/термины родства/названия частей тела: [кпелле](../feature_profiles/kpelle.csv)
 - Единичное/общее или конкретное/неконкретное: [рушанский](../feature_profiles/rushani.csv)
 - Личность/вещь: [осетинский](../feature_profiles/ossetian.csv)
 - Личность/неличность, (не)отчуждаемая принадлежность, единичность/общность, определенность/неопроеделенность: [шугнанский](../feature_profiles/shughni.csv)
@@ -937,6 +939,7 @@
 - Позиция предлога в предложении: [рушанский](../feature_profiles/rushani.csv)
 - Посессивные аффиксы и тоновые чередования на вершинном имени: [сонинке](../feature_profiles/soninke.csv)
 - Посессивные аффиксы и энклитические формы личных местоимений: [бактрийский](../feature_profiles/bactrian.csv)
+- Посессивные местоимения, послелоги и соположение: [кпелле](../feature_profiles/kpelle.csv)
 - Послелог принадлежности (в диалекте каньявали - изменяемые показатели рода, трактуемые как флексии генитива): [майян](../feature_profiles/mayan.csv)
 - Послелоги: [хорезмийский](../feature_profiles/khwaresmian.csv), [ванеци](../feature_profiles/waneci.csv), [язгулямский](../feature_profiles/yazghulami.csv), [пхалура](../feature_profiles/phalura.csv)
 - Послелоги (в сочетании с прямым падежом существительных в ед. числе): [торвали](../feature_profiles/torwali.csv)
@@ -1135,6 +1138,7 @@
 - Совпадают переходный и непереходный глаголы (лабильность): [сусу](../feature_profiles/susu.csv)
 ## I-5: Основные временные противопоставления
 
+- Есть отдельная конструкция для будущего времени: [кпелле](../feature_profiles/kpelle.csv)
 - Есть отдельные конструкции с семантикой будущего времени: [локо](../feature_profiles/loko.csv)
 - Есть отдельные формы претерита и футурума: [бен](../feature_profiles/beng.csv)
 - Настояще-будущее и прошедшее: [валлийский](../feature_profiles/welsh.csv)
