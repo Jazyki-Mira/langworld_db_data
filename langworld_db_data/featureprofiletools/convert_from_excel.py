@@ -73,3 +73,11 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
         feature_dict=value_for_feature_id, output_path=output_path
     )
     return output_path
+
+    # FIXME multiple lines get overwritten
+
+
+if __name__ == '__main__':
+    for file in (Path(__file__).parent.resolve() / "input").glob("*.xlsm"):
+        print(f"Converting {file.name}")
+        convert_from_excel(file)

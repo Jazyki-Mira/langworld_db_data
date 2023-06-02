@@ -344,17 +344,18 @@ domaaki,Domaaki,,34.9842,75.1101,doma1260,dmk,домааки
 bangani,Bangani,,30.5,78.5,garh1243,gbm,бангани
 nepali,Nepali,,27.7114,85.3087,east1436,nep,непальский
 bote,Bote,,27.9208,83.5082,bote1238,bmj,боте
-danwar,Danwar,,26.9661,86.3223,koch1253,dhw,данувар
+danuwar,Danuwar,,26.9661,86.3223,koch1253,dhw,данувар
 darai,Darai,,27.9264,84.331,dara1250,dry,дараи
 kumal,Kumal,,27.788,84.548,kumh1238,kra,кумал
 tharu,Tharu,,30.33,78.06,dang1260; kath1250; rana1246; chit1274; koch1247; buks1238; sonh1238,thl; tkt; thr; the; thq; tkb; soi,тхару
 maithili,Maithili,,25.37,85.13,mait1250,mai,майтхили
 bhojpuri,Bhojpuri,,28.1667,84.25,bhoj1244,bho,бходжпури
 magahi,Magahi,,25.6,85.1,maga1260,mag,магахи
-sadani,Sadani,,23.66,85.1,sadr1248; orao1237,sck; sdr,садани/садри
+sadani_sadri,Sadani/Sadri,,23.66,85.1,sadr1248; orao1237,sck; sdr,садани/садри
 assamese,Assamese,,26.15,91.77,assa1263,asm,ассамский
 bengali,Bengali,,24.3666,88.6,beng1280,ben,бенгальский
-rajbanshi_nepal,Rajbanshi (Nepal),,23.2167,72.6833,rang1265,rkt,раджбанши/камта (Непал)
+rajbanshi_kamta,Rajbanshi/Kamta (in India and Bangladesh),,23.2167,72.6833,rang1265,rkt,Раджбанши/камта (в Индии и Бангладеш)
+rajbanshi_nepal,Rajbanshi (Nepal),,26.521945,88.038582,rajb1243,rjs,раджбанши (Непал)
 oriya,Oriya,,20.27,85.84,,ori,ория
 punjabi,Punjabi,,31.5497,74.3436,panj1256; west2386,pan; pnb,панджаби
 pothohari,Pot(h)ohari,,31,72,paha1251,phr,потхорари
@@ -366,7 +367,8 @@ saurashtra,Saurashtra,,13.09,80.27,saur1248,saz,саураштра
 marathi,Marathi,,18.97,72.82,mara1378,mar,маратхи
 konkani,Konkani,,28.6139,77.2089,,kok,конкани
 sinhala,Sinhala,,6.9,79.9164,sinh1246,sin,сингальский
-maldivian,Maldivian,,4.1753,73.5089,dhiv1236,div,мальдивский/дивехи
+maldivian_dhivehi,Maldivian/Dhivehi,,4.1753,73.5089,dhiv1236,div,мальдивский/дивехи
+romani,Romani,,41.01746,28.94053,roma1329,rom,цыганский
 domari,Domari,,32.2128,35.2908,doma1258,rmt,домари
 lomavren,Lomavren,,40.1833,44.5167,loma1235,rmi,ломаврен
 hittite,Hittite,,40.0197,34.6152,hitt1242,oht,хеттский
