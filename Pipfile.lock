@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a6ae120c6d4e5ca04a97059c605a483b9a0f1905b314ad2561609230d01778b5"
+            "sha256": "ffa9bd9ad820aef5dee217ac3e17093d17292fb8a02c18e3994b4c609b48e6e9"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -145,6 +145,14 @@
             "markers": "python_version >= '3.6'",
             "version": "==6.7.0"
         },
+        "commonnexus": {
+            "hashes": [
+                "sha256:6079c26716b6cae9b158fb8394eebc4d30ae1b13e41e65e86a169a5ce285ccd7",
+                "sha256:b06098c3277fe5ff9c0bac8c590617ac0518536ec98a3bd55aaa3dd840227743"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==1.5.0"
+        },
         "csvw": {
             "hashes": [
                 "sha256:0ced874b139ab5bbb2d1ce7070386dc2623c4953dc3c0f984c01987107fb8955",
@@ -183,6 +191,14 @@
                 "sha256:48c5881de7e8b0a0d648cb024c8062dc84e7b840ed81e864c7614fd3c127bde9"
             ],
             "version": "==0.6.1"
+        },
+        "jmespath": {
+            "hashes": [
+                "sha256:02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980",
+                "sha256:90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==1.0.1"
         },
         "jsonschema": {
             "hashes": [
@@ -377,6 +393,14 @@
             "markers": "python_version >= '3.7'",
             "version": "==2.1.3"
         },
+        "newick": {
+            "hashes": [
+                "sha256:25c262ca88a7752b5d759ff5bce7c85d50289ac2b06b13bb340e0a599c05bd02",
+                "sha256:9f81be96ec86aefca74d920fc0d6962d89a3156547003ca6915c2e6e31ad3ddf"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==1.9.0"
+        },
         "openpyxl": {
             "hashes": [
                 "sha256:a6f5977418eff3b2d5500d54d9db50c8277a368436f4e4f8ddb1be3422870184",
@@ -395,11 +419,11 @@
         },
         "pycldf": {
             "hashes": [
-                "sha256:3b56c7edf5edf897f0f10e5341df1ef44237f51136bf0643b7be50784752b0ef",
-                "sha256:a43513feeff018f0daa57155357587e11a8beaa85713a87843486afdc9eabb1b"
+                "sha256:4b01a20edf4a3846d2c268f4c574a8053481a29d44d9290af3d15b081a9f88b8",
+                "sha256:fcaf7ac68022af4c5347181278da947c2f533cd69193fa51c05bcfa653b032a1"
             ],
             "index": "pypi",
-            "version": "==1.27.0"
+            "version": "==1.35.0"
         },
         "pylatexenc": {
             "hashes": [
@@ -429,6 +453,13 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==2.8.2"
+        },
+        "python-frontmatter": {
+            "hashes": [
+                "sha256:766ae75f1b301ffc5fe3494339147e0fd80bc3deff3d7590a93991978b579b08",
+                "sha256:e98152e977225ddafea6f01f40b4b0f1de175766322004c826ca99842d19a7cd"
+            ],
+            "version": "==1.0.0"
         },
         "pyyaml": {
             "hashes": [
@@ -633,6 +664,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==0.9.0"
+        },
+        "termcolor": {
+            "hashes": [
+                "sha256:3afb05607b89aed0ffe25202399ee0867ad4d3cb4180d98aaf8eefa6a5f7d475",
+                "sha256:b5b08f68937f138fe92f6c089b99f1e2da0ae56c52b78bf7075fd95420fd9a5a"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==2.3.0"
         },
         "toml": {
             "hashes": [
@@ -847,7 +886,7 @@
                 "sha256:7243800bce2f58404ed41b7c002e53d4d22bcf3ae1b7900c2d7aefd95394bf7f",
                 "sha256:c22a8ead0d4ca11f1edd6c9418c3220669b3b7533ada0a0ffa6cc0ef85cf9b54"
             ],
-            "markers": "python_full_version >= '3.8.0'",
+            "markers": "python_version >= '3.8'",
             "version": "==2.5.26"
         },
         "iniconfig": {
