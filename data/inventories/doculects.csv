@@ -327,10 +327,12 @@ shumashti,language,0,0,Shumashti,шумашти,,,Shumasht,,dard,sts,shum1235,34
 katarkalai,language,1,0,Katarkalai,катаркалаи,,,Votapuri,вотапури,dard,wsv,wota1240,34.4166,70.3333,afg,8,89,1,,
 gawar,language,0,0,Gawar,гавар,,,"Narsati, Aranduyiwar","гавар-бати, нарсат",dard,gou,gava1241,35.3272,71.5847,pak,8,91,1,,
 dameli,language,0,0,Dameli,дамели,,,,дамельский,dard,dml,dame1241,35.578,71.8684,pak,8,95,1,,
-kati,language,0,0,Kati,кати,,,"Kamkata-Vari, Bashgali",башгали,nurist,bsh,kati1270,35.3845,71.3177,afg,,,0,,
-waigali,language,0,0,Waigali,вайгали,,,Kalasha-ala,"вайгели, вайгальский",nurist,wbk,waig1243,35.1895,71.1941,afg,,,0,,
-ashkun,language,0,0,Ashkun,ашкун,,,,ашкуну,nurist,ask,ashk1246,34.9973,71.0746,afg,,,0,,
-prasun,language,0,0,Prasun,прасун,,,"Wasi-wari, Vasi-vari, Wasi-weri",,nurist,prn,pras1239,33.9391,67.7099,afg,,,0,,
+kati,language,0,0,Kati,кати,,,"Kamkata-Vari, Bashgali",башгали,nurist,bsh,kati1270,35.3845,71.3177,afg,8,101,1,,
+waigali,language,0,0,Waigali,вайгали,,,Kalasha-ala,"вайгели, вайгальский",nurist,wbk,waig1243,35.1895,71.1941,afg,8,118,1,,
+zemiaki,language/dialect,0,0,Zemiaki,земиаки,,,,,nurist,,zemi1238,34.89,70.75,afg,8,123,1,,для точки на карте взяты координаты Glottolog
+tregami,language/dialect,0,0,Tregami,трегами,,,Gambiri,гамбири,nurist,trm,treg1243,35.00,71.10,afg,8,125,1,,для точки на карте взяты координаты Glottolog
+ashkun,language,0,0,Ashkun,ашкун,,,,ашкуну,nurist,ask,ashk1246,34.9973,71.0746,afg,8,126,1,,
+prasun,language,0,0,Prasun,прасун,,,"Wasi-wari, Vasi-vari, Wasi-weri",,nurist,prn,pras1239,33.9391,67.7099,afg,8,132,1,,
 vedic,language,1,0,Vedic,ведийский,,,Vedic Sanskrit,ведийский санскрит,indo_aryan,vsn,,31,74,ind,12,16,0,,
 sanskrit,language,0,0,Sanskrit,санскрит,,,,,indo_aryan,san,sans1269,28.6913,77.2548,ind,12,25,0,,
 pali,language,1,0,Pali,пали,,,Magadhan,,indo_aryan,pli,pali1273,6.9,79.9,lka,12,73,0,,
