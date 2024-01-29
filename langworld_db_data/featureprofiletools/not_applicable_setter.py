@@ -70,22 +70,22 @@ class NotApplicableSetter:
                         # All other value types are wrong, but errors must be triggered
                         # in a validator, not here
                         if new_data[id_of_feature_to_be_changed].value_type == "not_stated":
-                            new_data[
-                                id_of_feature_to_be_changed
-                            ] = ValueForFeatureProfileDictionary(
-                                feature_name_ru=data_from_profile[
-                                    id_of_feature_to_be_changed
-                                ].feature_name_ru,
-                                value_type="not_applicable",
-                                value_ru="",
-                                value_id="",
-                                comment_en=data_from_profile[
-                                    id_of_feature_to_be_changed
-                                ].comment_en,
-                                comment_ru=data_from_profile[
-                                    id_of_feature_to_be_changed
-                                ].comment_ru,
-                                page_numbers="",
+                            new_data[id_of_feature_to_be_changed] = (
+                                ValueForFeatureProfileDictionary(
+                                    feature_name_ru=data_from_profile[
+                                        id_of_feature_to_be_changed
+                                    ].feature_name_ru,
+                                    value_type="not_applicable",
+                                    value_ru="",
+                                    value_id="",
+                                    comment_en=data_from_profile[
+                                        id_of_feature_to_be_changed
+                                    ].comment_en,
+                                    comment_ru=data_from_profile[
+                                        id_of_feature_to_be_changed
+                                    ].comment_ru,
+                                    page_numbers="",
+                                )
                             )
 
             self.writer.write(feature_dict=new_data, output_path=self.output_dir / file.name)
