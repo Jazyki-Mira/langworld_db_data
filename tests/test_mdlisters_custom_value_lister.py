@@ -7,7 +7,7 @@ cvl = CustomValueLister(dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES
 
 
 def test_write_grouped_by_volume_and_doculect():
-    output_file = DIR_WITH_VALIDATORS_TEST_FILES / "custom_values_by_volume_and_doculect.md"
+    output_file = DIR_WITH_VALIDATORS_TEST_FILES / "custom_values_by_volume_and_doculect_sample.md"
     gold_standard_file = (
         DIR_WITH_VALIDATORS_TEST_FILES / "custom_values_by_volume_and_doculect_sample.md"
     )

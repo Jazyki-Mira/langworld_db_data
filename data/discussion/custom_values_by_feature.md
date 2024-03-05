@@ -958,7 +958,7 @@
 - Прямой падеж: [рушанский](../feature_profiles/rushani.csv), [сангличский](../feature_profiles/sanglechi.csv), [кашмири](../feature_profiles/kashmiri.csv), [кати](../feature_profiles/kati.csv), [банджари](../feature_profiles/banjari.csv)
 - Творительный падеж: [русский](../feature_profiles/russian.csv)
 - нет данных: [ликийский](../feature_profiles/lycian.csv)
-## H-4: Падежное оформление посессивного отношения
+## H-4: Падежное оформление посессивного отношения в именной группе
 
 - Генитив или аккузатив: [цыганский](../feature_profiles/romani.csv)
 - Генитив или локатив: [сингальский](../feature_profiles/sinhala.csv)
@@ -1118,12 +1118,12 @@
 - Указательные местоимения, предлоги послелоги: [бартангский](../feature_profiles/bartangi.csv)
 - Упрелоги.казательные местоимения, местоимения-наречия и: [рошорвский](../feature_profiles/roshorvi.csv)
 - именные аффиксы и специальный подкласс адвербиальных слов, предлоги и послелоги: [ительменский](../feature_profiles/itelmen.csv)
-## H-7: Маркирование зависимого имени в генитивной конструкции
+## H-7: Локус маркирования в посессивной конструкции
 
 - Генитив отсутствует: [гавар](../feature_profiles/gawar.csv), [кашмири](../feature_profiles/kashmiri.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [кати](../feature_profiles/kati.csv), [кховар](../feature_profiles/khowar.csv), [майян](../feature_profiles/mayan.csv), [прасун](../feature_profiles/prasun.csv), [шина](../feature_profiles/shina.csv), [тирахи](../feature_profiles/tirahi.csv), [торвали](../feature_profiles/torwali.csv)
 - Маркированное и немаркированное: [дан](../feature_profiles/dan.csv), [яурэ](../feature_profiles/yaoure.csv)
 - Маркированное/немаркированное: [тода](../feature_profiles/toda.csv)
-## H-8: Падежное оформление одушевленных и неодушевленных имен
+## H-8: Падежное оформление одушевленных и неодушевленных имен существительных
 
 - иногда различное: [корейский](../feature_profiles/korean.csv)
 ## I-1: Способ выражения залоговых форм в глаголе
