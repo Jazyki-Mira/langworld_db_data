@@ -629,18 +629,18 @@ H-3-12,H-3,Nominative or instrumental,Номинатив или инструме
 H-3-13,H-3,Translative or essive,Транслатив или эссив,,
 H-3-14,H-3,Caseless form,Общий падеж,,
 H-3-15,H-3,Nominative or ergative,Номинатив или эргатив,,
-H-4-1,H-4,Ablative,Аблатив,,
+H-4-1,H-4,Ablative,Аблатив,,"Обладатель оформляется  аблативом."
 H-4-2,H-4,Illative,Иллатив,,
-H-4-3,H-4,Genitive,Генитив,,
-H-4-4,H-4,Dative,Датив,,
+H-4-3,H-4,Genitive,Генитив,,"Обладатель оформляется генитивом."
+H-4-4,H-4,Dative,Датив,,"Обладатель оформляется дативом."
 H-4-5,H-4,Comitative,Комитатив,,
 H-4-6,H-4,Oblique,Косвенный,,
 H-4-7,H-4,Locative,Локатив,,
 H-4-8,H-4,Possessive,Посессив,,
 H-4-9,H-4,Ergative,Эргатив,,
 H-4-10,H-4,Locative or dative,Локатив или датив,,
-H-4-11,H-4,Genitive or dative,Генитив или датив,,
-H-4-12,H-4,Nominative or genitive,Номинатив или генитив,,
+H-4-11,H-4,Genitive or dative,Генитив или датив,,"Обладатель оформляется генитивом или дативом."
+H-4-12,H-4,Nominative or genitive,Номинатив или генитив,,"Обладатель оформляется номинативом или генитивом."
 H-4-13,H-4,Genitive or ablative,Генитив или аблатив,,
 H-4-14,H-4,Genitive-accusative,Генитив-аккузатив,,
 H-5-1,H-5,Verbs of possession,Глаголы обладания,,
