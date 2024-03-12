@@ -9071,7 +9071,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9070,itelmen,E-4,Analytic,E-4-2,,,Аналитический,
 9071,itelmen,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 9072,itelmen,F-9,Lexical and morphological,F-9-6,,,Лексический и морфологический,
-9073,itelmen,G-1,"Singular, plural and common",G-1-8,,,"Единственное, множественное и общее",
+9073,itelmen,G-1,Singular and plural,G-1-1,,,Единственное и множественное,В статье также отмечено общее число.
 9074,itelmen,G-6,Decimal,G-6-1,,,Десятичная,сейчас счетные слова сохранились до 4
 9075,itelmen,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 9076,itelmen,H-1,Eight-twelve,H-1-3,,,Восемь-двенадцать,
@@ -24791,7 +24791,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24788,velatru,J-5,Absent,J-5-1,,,Отсутствует,
 24789,velatru,J-6,"Articles, pronouns and numerals",J-6-21,,,"Артикли, местоимения и числительные",
 24790,velatru,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,Приводимые парадигмы не являются полными.
-24791,velatru,K-2,,,,,"Неопределенный артикль и числительное ""один"" в функции неопределенного артикля, указательные местоимения в функции определенного артикля",
+24791,velatru,K-2,,,,,"Неопределенный артикль и числительное «один» в функции неопределенного артикля, указательные местоимения в функции определенного артикля",
 24792,velatru,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 24793,velatru,K-5,Definiteness,K-5-2,,,Определенность,Других данных нет.
 24794,velatru,K-7,Subject,K-7-2,,,Субъектное,
