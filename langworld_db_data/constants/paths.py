@@ -9,7 +9,7 @@ FILE_WITH_CLDF_DATASET_METADATA = CLDF_DIR / "StructureDataset-metadata.json"
 
 DISCUSSION_DIR = DATA_DIR / "discussion"
 DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT = (
-    DISCUSSION_DIR / "custom_values_by_volume_and_doculect_sample.md"
+    DISCUSSION_DIR / "custom_values_by_volume_and_doculect.md"
 )
 DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_FEATURE = DISCUSSION_DIR / "custom_values_by_feature.md"
 DISCUSSION_FILE_WITH_LISTED_VALUES = DISCUSSION_DIR / "listed_values_by_feature.md"
