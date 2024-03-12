@@ -32,7 +32,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 31,abaza,G-2,Marked,G-2-1,,,Маркированное,
 32,abaza,G-3,Absent,G-3-1,,,Отсутствуют,
 33,abaza,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
-34,abaza,G-6,Vigesimal with elements of decimal,G-6-5,,,Двадцатеричная с элементами десятичной,
+34,abaza,G-6,Vigesimal with elements of decimal,G-6-4,,,Двадцатеричная с элементами десятичной,
 35,abaza,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 36,abaza,H-1,One-two,H-1-1,,,Один-два,
 37,abaza,H-4,,,,,отсутствует,
@@ -431,7 +431,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 430,akhvakh,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 431,akhvakh,G-2,Unmarked,G-2-2,,,Немаркированное,
 432,akhvakh,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
-433,akhvakh,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+433,akhvakh,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 434,akhvakh,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 435,akhvakh,H-1,Eight-twelve,H-1-3,,,Восемь-двенадцать,
 436,akhvakh,H-4,Genitive,H-4-3,,,Генитив,
@@ -1080,7 +1080,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1079,ashkun,G-2,Unmarked,G-2-2,,,Немаркированное,
 1080,ashkun,G-4,Predicative,G-4-2,,,Предикативное,
 1081,ashkun,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,Число морфологически выражается в имени существительном в форме косвенного падежа.
-1082,ashkun,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+1082,ashkun,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 1083,ashkun,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,"Функцию неопределенного артикля выполняет числительное ""один""."
 1084,ashkun,H-1,Three-seven,H-1-2,,,Три-семь,
 1085,ashkun,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, послелоги, глагольное согласование и порядок слов",
@@ -1439,7 +1439,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1438,avar,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 1439,avar,G-2,Unmarked,G-2-2,,,Немаркированное,
 1440,avar,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
-1441,avar,G-6,Vigesimal with elements of decimal,G-6-5,,,Двадцатеричная с элементами десятичной,
+1441,avar,G-6,Vigesimal with elements of decimal,G-6-4,,,Двадцатеричная с элементами десятичной,
 1442,avar,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 1443,avar,H-1,Over twenty,H-1-5,,,Больше 20,
 1444,avar,I-5,"Present, past and future",I-5-7,,,"Настоящее, прошедшее и будущее",
@@ -2260,7 +2260,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2259,bats,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 2260,bats,G-2,Unmarked,G-2-2,,,Немаркированное,
 2261,bats,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
-2262,bats,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+2262,bats,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 2263,bats,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 2264,bats,H-1,Eight-twelve,H-1-3,,,Восемь-двенадцать,
 2265,bats,H-4,Genitive,H-4-3,,,Генитив,
@@ -2424,7 +2424,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2423,beng,G-3,Absent,G-3-1,,,Отсутствуют,
 2424,beng,G-4,No agreement in number,G-4-1,,,Отсутствует,
 2425,beng,G-5,Singular,G-5-1,,,Единственное число,
-2426,beng,G-6,Vigesimal with elements of quinary,G-6-6,,,Двадцатеричная с элементами пятеричной,
+2426,beng,G-6,Vigesimal with elements of quinary,G-6-5,,,Двадцатеричная с элементами пятеричной,
 2427,beng,G-7,Same,G-7-2,,,Совпадают,
 2428,beng,H-1,One-two,H-1-1,,,Один-два,
 2429,beng,H-2,Function words,H-2-4,,,Служебные слова,
@@ -2973,7 +2973,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2972,breton,G-2,Unmarked,G-2-2,,,Немаркированное,
 2973,breton,G-4,Predicative,G-4-2,,,Предикативное,
 2974,breton,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-2975,breton,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+2975,breton,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 2976,breton,G-7,Different,G-7-3,,,Не совпадают,"Числительное unan 'один' с существительными не употребляется, и число выражается артиклем eun."
 2977,breton,H-1,No case,H-1-6,,,Категория падежа отсутствует,Падежные значения выражаются аналитическими средствами.
 2978,breton,H-2,,,,,"Глагольное согласование, субъектные и объектные формы личных местоимений и порядок слов",
@@ -3644,7 +3644,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3643,chukchi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 3644,chukchi,G-2,Marked,G-2-1,,,Маркированное,
 3645,chukchi,G-4,Predicative,G-4-2,,,Предикативное,
-3646,chukchi,G-6,Vigesimal with elements of decimal,G-6-5,,,Двадцатеричная с элементами десятичной,
+3646,chukchi,G-6,Vigesimal with elements of decimal,G-6-4,,,Двадцатеричная с элементами десятичной,
 3647,chukchi,H-1,Eight-twelve,H-1-3,,,Восемь-двенадцать,некоторые исследователи выделяют 7
 3648,chukchi,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
 3649,chukchi,H-6,"Noun affixes, adverbs of place, and postpositions",H-6-17,,,"Именные аффиксы, наречия места и послелоги",
@@ -4467,7 +4467,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4466,dameli,G-2,Unmarked,G-2-2,,,Немаркированное,
 4467,dameli,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями.
 4468,dameli,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-4469,dameli,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+4469,dameli,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 4470,dameli,H-1,One-two,H-1-1,,,Один-два,
 4471,dameli,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов",
 4472,dameli,H-4,Possessive,H-4-8,,,Посессив,
@@ -4638,7 +4638,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4637,danish,G-3,Absent,G-3-1,,,Отсутствуют,
 4638,danish,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 4639,danish,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-4640,danish,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,Десятичная от одного до 40 и сложная на двадцатеричной основе от 50 до 90.
+4640,danish,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,Десятичная от одного до 40 и сложная на двадцатеричной основе от 50 до 90.
 4641,danish,G-7,Same,G-7-2,,,Совпадают,
 4642,danish,H-1,One-two,H-1-1,,,Один-два,
 4643,danish,H-2,,,,,Порядок слов и субъектная и объектная форма личных местоимений,
@@ -4926,7 +4926,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4925,domaaki,G-3,Absent,G-3-1,,,Отсутствуют,
 4926,domaaki,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 4927,domaaki,G-5,Singular and plural,G-5-3,"Singular forms only with the numeral ""one""",,Единственное и множественное число,"Единственное - только у числительного ""один"""
-4928,domaaki,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+4928,domaaki,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 4929,domaaki,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 4930,domaaki,H-1,Three-seven,H-1-2,,,Три-семь,
 4931,domaaki,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
@@ -5306,7 +5306,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5305,english,G-3,Absent,G-3-1,,,Отсутствуют,
 5306,english,G-4,Predicative,G-4-2,,,Предикативное,
 5307,english,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-5308,english,G-6,Decimal with elements of duodecimal,G-6-3,,,Десятичная с элементами двенадцатеричной,
+5308,english,G-6,Decimal with elements of duodecimal,G-6-2,,,Десятичная с элементами двенадцатеричной,
 5309,english,G-7,Different,G-7-3,,,Не совпадают,
 5310,english,H-1,One-two,H-1-1,,,Один-два,
 5311,english,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений и порядок слов",
@@ -5877,7 +5877,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5876,franco_provencal,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 5877,franco_provencal,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 5878,franco_provencal,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-5879,franco_provencal,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,
+5879,franco_provencal,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,
 5880,franco_provencal,G-7,Same,G-7-2,,,Совпадают,
 5881,franco_provencal,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 5882,franco_provencal,H-2,,,,,"Глагольное согласование, субъектная и прямообъектная форма сущ. м.р. ед.ч. (реликты), субъектная и объектная форма личных местоимений и приглагольные местоимения",
@@ -6504,7 +6504,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6503,garwi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 6504,garwi,G-4,Attributive,G-4-3,,,Атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями.
 6505,garwi,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-6506,garwi,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+6506,garwi,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 6507,garwi,H-1,Three-seven,H-1-2,,,Три-семь,
 6508,garwi,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, послелоги и порядок слов",
 6509,garwi,H-4,Genitive,H-4-3,,,Генитив,
@@ -6719,7 +6719,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6718,gawar,G-2,Unmarked,G-2-2,,,Немаркированное,
 6719,gawar,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями.
 6720,gawar,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,Форму мн. числа имеют одушевленные и некоторые заимствованные существительные.
-6721,gawar,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+6721,gawar,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 6722,gawar,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует," Функцию неопределенного артикля выполняет числительное ""один""."
 6723,gawar,H-1,Three-seven,H-1-2,,,Три-семь,
 6724,gawar,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, послелоги, глагольное согласование и порядок слов",
@@ -6942,7 +6942,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6941,georgian,G-2,Unmarked,G-2-2,,,Немаркированное,
 6942,georgian,G-4,Predicative,G-4-2,,,Предикативное,
 6943,georgian,G-5,Singular,G-5-1,,,Единственное число,
-6944,georgian,G-6,Vigesimal with elements of decimal,G-6-5,,,Двадцатеричная с элементами десятичной,
+6944,georgian,G-6,Vigesimal with elements of decimal,G-6-4,,,Двадцатеричная с элементами десятичной,
 6945,georgian,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 6946,georgian,H-1,Eight-twelve,H-1-3,,,Восемь-двенадцать,
 6947,georgian,H-4,Genitive,H-4-3,,,Генитив,
@@ -7496,7 +7496,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7495,grangali,G-2,Unmarked,G-2-2,,,Немаркированное,
 7496,grangali,G-4,Predicative,G-4-2,,,Предикативное,
 7497,grangali,G-5,Singular,G-5-1,,,Единственное число,После количественных числительных существительные употребляются в номинативе единственного числа. 
-7498,grangali,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+7498,grangali,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 7499,grangali,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,"Функцию неопределенного артикля выполняет числительное ""один""."
 7500,grangali,H-1,Three-seven,H-1-2,,,Три-семь,Падежных форм множественного числа существительных не зафиксировано.
 7501,grangali,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов",
@@ -7892,7 +7892,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7891,hazaragi,G-2,Unmarked,G-2-2,,,Немаркированное,
 7892,hazaragi,G-4,Predicative,G-4-2,,,Предикативное,
 7893,hazaragi,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-7894,hazaragi,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,
+7894,hazaragi,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,
 7895,hazaragi,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 7896,hazaragi,H-2,,,,,"Служебные слова (предлоги, послелоги, союзы), изафетная конструкция, порядок слов, интонация и логическое ударение",
 7897,hazaragi,H-5,,,,,"Предлоги и послелоги в составе атрибутивных комплексов, изафетный показатель, личные местоимения в препозиции, местоименные энклитики в постпозиции к определяемому",
@@ -8471,7 +8471,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8470,ingush,F-7,,,,,классы (?),
 8471,ingush,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 8472,ingush,G-2,Unmarked,G-2-2,,,Немаркированное,
-8473,ingush,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+8473,ingush,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 8474,ingush,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 8475,ingush,H-1,Thirteen-twenty,H-1-4,,,Тринадцать-двадцать,
 8476,ingush,H-4,Genitive,H-4-3,,,Генитив,
@@ -8549,7 +8549,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8548,irish_gaelic,G-2,Unmarked,G-2-2,,,Немаркированное,
 8549,irish_gaelic,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 8550,irish_gaelic,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,"При перечислении употребление форм множественного числа начинается с числительного ""три""."
-8551,irish_gaelic,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,Имеются синонимичные и взаимозаменяемые  десятеричные и вигезимальные формы числительных.
+8551,irish_gaelic,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,Имеются синонимичные и взаимозаменяемые  десятеричные и вигезимальные формы числительных.
 8552,irish_gaelic,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 8553,irish_gaelic,H-1,Three-seven,H-1-2,,,Три-семь,
 8554,irish_gaelic,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личного местоимения 3 л. ед.ч., местоименные предлоги и порядок слов",
@@ -9627,7 +9627,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9626,kalasha,G-2,Unmarked,G-2-2,,,Немаркированное,
 9627,kalasha,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями.
 9628,kalasha,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-9629,kalasha,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+9629,kalasha,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 9630,kalasha,H-1,Three-seven,H-1-2,,,Три-семь,
 9631,kalasha,H-2,,,,,"Субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов",
 9632,kalasha,H-4,Genitive,H-4-3,,,Генитив,Генитив есть в парадигме склонения имени существительного и указательных местоимений.
@@ -10475,7 +10475,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10474,katarkalai,G-2,Unmarked,G-2-2,,,Немаркированное,
 10475,katarkalai,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями.
 10476,katarkalai,G-5,"Singular, dual, and plural",G-5-4,,,"Единственное, двойственное и множественное",
-10477,katarkalai,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+10477,katarkalai,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 10478,katarkalai,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 10479,katarkalai,H-1,Three-seven,H-1-2,,,Три-семь,
 10480,katarkalai,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, послелоги, глагольное согласование и порядок слов",
@@ -10557,7 +10557,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10556,kati,G-2,Unmarked,G-2-2,,,Немаркированное,
 10557,kati,G-4,Predicative,G-4-2,,,Предикативное,
 10558,kati,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,Число морфологически выражается в имени существительном и субстантивированных местоимениях только в форме косвенного падежа.
-10559,kati,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+10559,kati,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 10560,kati,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,"Функцию неопределенного артикля выполняет числительное ""один""."
 10561,kati,H-1,One-two,H-1-1,,,Один-два,
 10562,kati,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений и глагольное согласование",
@@ -11044,7 +11044,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11043,khowar,G-2,Unmarked,G-2-2,,,Немаркированное,
 11044,khowar,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями.
 11045,khowar,G-5,Singular,G-5-1,,,Единственное число,
-11046,khowar,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+11046,khowar,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 11047,khowar,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,"Функцию неопределенного артикля выполняет числительное ""один""."
 11048,khowar,H-1,Three-seven,H-1-2,,,Три-семь,
 11049,khowar,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, послелоги, глагольное согласование и порядок слов",
@@ -11206,7 +11206,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11205,khvarshi,F-6,Absent,F-6-1,,,Отсутствует,
 11206,khvarshi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 11207,khvarshi,G-2,Unmarked,G-2-2,,,Немаркированное,
-11208,khvarshi,G-6,Vigesimal with elements of decimal,G-6-5,,,Двадцатеричная с элементами десятичной,
+11208,khvarshi,G-6,Vigesimal with elements of decimal,G-6-4,,,Двадцатеричная с элементами десятичной,
 11209,khvarshi,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 11210,khvarshi,H-1,Eight-twelve,H-1-3,,,Восемь-двенадцать,
 11211,khvarshi,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
@@ -12698,7 +12698,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12697,lezgian,G-3,Absent,G-3-1,,,Отсутствуют,
 12698,lezgian,G-4,No agreement in number,G-4-1,,,Отсутствует,
 12699,lezgian,G-5,Singular,G-5-1,,,Единственное число,
-12700,lezgian,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+12700,lezgian,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 12701,lezgian,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 12702,lezgian,H-1,Thirteen-twenty,H-1-4,,,Тринадцать-двадцать,
 12703,lezgian,H-4,Genitive,H-4-3,,,Генитив,
@@ -13899,7 +13899,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13898,maldivian_dhivehi,G-2,Unmarked,G-2-2,,,Немаркированное,
 13899,maldivian_dhivehi,G-3,Absent,G-3-1,,,Отсутствуют,
 13900,maldivian_dhivehi,G-4,No agreement in number,G-4-1,,,Отсутствует,
-13901,maldivian_dhivehi,G-6,Decimal with elements of duodecimal,G-6-3,,,Десятичная с элементами двенадцатеричной,
+13901,maldivian_dhivehi,G-6,Decimal with elements of duodecimal,G-6-2,,,Десятичная с элементами двенадцатеричной,
 13902,maldivian_dhivehi,G-7,Different,G-7-3,,,Не совпадают,
 13903,maldivian_dhivehi,H-1,Three-seven,H-1-2,,,Три-семь,
 13904,maldivian_dhivehi,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
@@ -14497,7 +14497,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14496,mayan,G-2,Unmarked,G-2-2,,,Немаркированное,
 14497,mayan,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу существует у указательных местоимений и причастий. Данных об изменении по числу прилагательных нет.
 14498,mayan,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,Часть существительных не имеет категории числа.
-14499,mayan,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+14499,mayan,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 14500,mayan,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 14501,mayan,H-1,One-two,H-1-1,,,Один-два,Количество падежей различается по диалектам.
 14502,mayan,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, послелоги, глагольное согласование и порядок слов",
@@ -16492,7 +16492,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16491,old_french,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 16492,old_french,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 16493,old_french,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-16494,old_french,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,
+16494,old_french,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,
 16495,old_french,G-7,Same,G-7-2,,,Совпадают,
 16496,old_french,H-1,One-two,H-1-1,,,Один-два,"Двухпадежная система склонения существительных, прилагательных и артиклей."
 16497,old_french,H-2,"Case and number flections, subject, direct and indirect object personal pronouns, prepositions, and verbal agreement",H-2-20,,,"Падежно-числовые флексии, субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги и глагольное согласование",
@@ -16989,7 +16989,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16988,orkhon_yenisei_inscriptions,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 16989,orkhon_yenisei_inscriptions,G-2,Marked,G-2-1,,,Маркированное,
 16990,orkhon_yenisei_inscriptions,G-3,Absent,G-3-1,,,Отсутствуют,
-16991,orkhon_yenisei_inscriptions,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,
+16991,orkhon_yenisei_inscriptions,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,
 16992,orkhon_yenisei_inscriptions,H-1,Three-seven,H-1-2,,,Три-семь,
 16993,orkhon_yenisei_inscriptions,H-3,Nominative,H-3-4,,,Номинатив,
 16994,orkhon_yenisei_inscriptions,H-4,Genitive,H-4-3,,,Генитив,
@@ -17063,7 +17063,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17062,ormuri,G-2,Marked,G-2-1,,,Маркированное,
 17063,ormuri,G-4,Predicative,G-4-2,,,Предикативное,Других данных нет.
 17064,ormuri,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-17065,ormuri,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,
+17065,ormuri,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,
 17066,ormuri,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 17067,ormuri,H-2,,,,,"Объектная форма личных местоимений, предлоги, послелоги и объектные частицы, порядок слов, интонация и логическое ударение",
 17068,ormuri,H-5,,,,,"Предлоги, изафетная конструкция, энклитические местоимения",
@@ -17469,7 +17469,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17468,parachi,G-2,Marked and unmarked,G-2-3,,,Маркированное и немаркированное,
 17469,parachi,G-4,Predicative,G-4-2,,,Предикативное,
 17470,parachi,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-17471,parachi,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,
+17471,parachi,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,
 17472,parachi,H-1,,,,,Три падежа у существительных и от двух до четырех падежных форм в системе личных местоимений,
 17473,parachi,H-2,,,,,"Глагольное согласование, порядок слов, комбинирование падежных форм с предлогами и послелогами",
 17474,parachi,H-4,,,,,Поссесивный падеж личных имен и местоимений,
@@ -17597,7 +17597,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17596,parya,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 17597,parya,F-9,Morphological,F-9-2,,,Морфологический,
 17598,parya,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
-17599,parya,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+17599,parya,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 17600,parya,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 17601,parya,H-5,Verbs of possession,H-5-1,,,Глаголы обладания,
 17602,parya,H-6,Noun affixes and postpositions,H-6-11,,,Именные аффиксы и послелоги,
@@ -17659,7 +17659,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17658,pashai,G-2,Unmarked,G-2-2,,,Немаркированное,
 17659,pashai,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями. Категория числа у прилагательного не описана.
 17660,pashai,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-17661,pashai,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+17661,pashai,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 17662,pashai,G-7,Different,G-7-3,,,Не совпадают,
 17663,pashai,H-1,Three-seven,H-1-2,,,Три-семь,
 17664,pashai,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов",
@@ -18098,7 +18098,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18097,polabian,G-2,Unmarked,G-2-2,,,Немаркированное,
 18098,polabian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 18099,polabian,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-18100,polabian,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,
+18100,polabian,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,
 18101,polabian,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 18102,polabian,H-1,Three-seven,H-1-2,,,Три-семь,
 18103,polabian,H-2,,,,,"Субъектные и объектные формы личных местоимений. энклитические местоимения, падежные аффиксы и глагольное согласование",
@@ -18513,7 +18513,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18512,prasun,G-2,Unmarked,G-2-2,,,Немаркированное,
 18513,prasun,G-4,Predicative,G-4-2,,,Предикативное,
 18514,prasun,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,Число морфологически выражается в имени существительном в форме косвенного падежа.
-18515,prasun,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+18515,prasun,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 18516,prasun,G-7,Different,G-7-3,,,Не совпадают,
 18517,prasun,H-1,One-two,H-1-1,,,Один-два,
 18518,prasun,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов",
@@ -19734,7 +19734,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19732,sanglechi,G-2,Unmarked,G-2-2,,,Немаркированное,
 19733,sanglechi,G-4,Predicative,G-4-2,,,Предикативное,
 19734,sanglechi,G-5,Singular,G-5-1,,,Единственное число,
-19735,sanglechi,G-6,Decimal with elements of duodecimal,G-6-3,,,Десятичная с элементами двенадцатеричной,
+19735,sanglechi,G-6,Decimal with elements of duodecimal,G-6-2,,,Десятичная с элементами двенадцатеричной,
 19736,sanglechi,G-7,Same,G-7-2,,,Совпадают,
 19737,sanglechi,H-1,Three-seven,H-1-2,,,Три-семь,
 19738,sanglechi,H-2,,,,,"Глагльное согласование, субъектная и объектная форма личных местоимений, падежные аффиксы, предлоги и послелоги",
@@ -20197,7 +20197,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20195,sawi,G-2,Unmarked,G-2-2,,,Немаркированное,
 20196,sawi,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями.
 20197,sawi,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-20198,sawi,G-6,Vigesimal,G-6-7,,,Двадцатеричная,Система счисления определяется предположительно.
+20198,sawi,G-6,Vigesimal,G-6-6,,,Двадцатеричная,Система счисления определяется предположительно.
 20199,sawi,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 20200,sawi,H-1,Three-seven,H-1-2,,,Три-семь,Большинство существительных различают прямой и косвенный падежи. Одушевленные существительные предположительно имеют также генитив. 
 20201,sawi,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов.",
@@ -20644,7 +20644,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20642,shina,G-2,Unmarked,G-2-2,,,Немаркированное,
 20643,shina,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 20644,shina,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-20645,shina,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+20645,shina,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 20646,shina,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 20647,shina,H-1,One-two,H-1-1,,,Один-два,
 20648,shina,H-2,,,,,"Падежные флексии, послелоги, глагольное согласование и порядок слов",
@@ -23432,7 +23432,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23430,tirahi,G-2,Unmarked,G-2-2,,,Немаркированное,
 23431,tirahi,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Существование атрибутивного согласования прилагательных по числу предполагается.
 23432,tirahi,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-23433,tirahi,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+23433,tirahi,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 23434,tirahi,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 23435,tirahi,H-1,One-two,H-1-1,,,Один-два,
 23436,tirahi,H-2,,,,,"Падежные флексии, глагольное согласование и послелоги",
@@ -23801,7 +23801,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23798,torwali,G-2,Unmarked,G-2-2,,,Немаркированное,
 23799,torwali,G-4,Predicative,G-4-2,,,Предикативное,
 23800,torwali,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-23801,torwali,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+23801,torwali,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 23802,torwali,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,"Функцию неопределенного артикля выполняет числительное ""один""."
 23803,torwali,H-1,Three-seven,H-1-2,,,Три-семь,"Имя имеет три падежа  (прямой, косвенный и аблатив) в ед. числе и два (прямой и косвенный) во мн. числе."
 23804,torwali,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов",
@@ -23864,7 +23864,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23861,tsez,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 23862,tsez,G-2,Unmarked,G-2-2,,,Немаркированное,
 23863,tsez,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
-23864,tsez,G-6,Vigesimal with elements of decimal,G-6-5,,,Двадцатеричная с элементами десятичной,
+23864,tsez,G-6,Vigesimal with elements of decimal,G-6-4,,,Двадцатеричная с элементами десятичной,
 23865,tsez,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 23866,tsez,H-4,Genitive,H-4-3,,,Генитив,
 23867,tsez,I-9,Absent,I-9-1,,,Отсутствует,
@@ -25045,7 +25045,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25042,waigali,G-2,Unmarked,G-2-2,,,Немаркированное,
 25043,waigali,G-4,Predicative,G-4-2,,,Предикативное,
 25044,waigali,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,Число морфологически выражается в существительном в форме косвенного падежа.
-25045,waigali,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+25045,waigali,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 25046,waigali,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 25047,waigali,H-1,One-two,H-1-1,,,Один-два,
 25048,waigali,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений и глагольное согласование",
@@ -25127,7 +25127,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25124,wakhi,G-2,Unmarked,G-2-2,,,Немаркированное,
 25125,wakhi,G-4,Predicative,G-4-2,,,Предикативное,
 25126,wakhi,G-5,Singular and plural,G-5-3,,,Единственное и множественное число,
-25127,wakhi,G-6,Decimal with elements of duodecimal,G-6-3,,,Десятичная с элементами двенадцатеричной,
+25127,wakhi,G-6,Decimal with elements of duodecimal,G-6-2,,,Десятичная с элементами двенадцатеричной,
 25128,wakhi,G-7,Same,G-7-2,,,Совпадают,
 25129,wakhi,H-1,One-two,H-1-1,,,Один-два,Падежные формы в системе имени существительного различаются только во множественном числе.
 25130,wakhi,H-2,,,,,"Глагольное согласование, падежные аффиксы, суффиксальные служебные элементы, предлоги, послелоги и их сочетания",
@@ -25214,7 +25214,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25211,wan,G-3,Absent,G-3-1,,,Отсутствуют,
 25212,wan,G-4,No agreement in number,G-4-1,,,Отсутствует,
 25213,wan,G-5,Singular,G-5-1,,,Единственное число,
-25214,wan,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,
+25214,wan,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,
 25215,wan,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 25216,wan,H-3,Nominative,H-3-4,,,Номинатив,
 25217,wan,H-5,Apposition,H-5-7,,,Соположение,
@@ -25371,7 +25371,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25368,welsh,G-2,Unmarked,G-2-2,,,Немаркированное,
 25369,welsh,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 25370,welsh,G-5,Singular,G-5-1,,,Единственное число,
-25371,welsh,G-6,Decimal with elements of vigesimal,G-6-4,,,Десятичная с элементами двадцатеричной,
+25371,welsh,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,
 25372,welsh,G-7,No indefinite article,G-7-1,,,Неопределенный артикль отсутствует,
 25373,welsh,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 25374,welsh,H-2,,,,,"Глагольное согласование, морфонологические средства (мутации начальных согласных) и порядок слов",
@@ -26267,7 +26267,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26264,zemiaki,G-2,Unmarked,G-2-2,,,Немаркированное,
 26265,zemiaki,G-4,Predicative,G-4-2,,,Предикативное,
 26266,zemiaki,G-5,,,,,Категория числа у имени отсутствует,
-26267,zemiaki,G-6,Vigesimal,G-6-7,,,Двадцатеричная,
+26267,zemiaki,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 26268,zemiaki,H-1,One-two,H-1-1,,,Один-два,"В списке падежей указан генитив, который представляет собой форму косвенного падежа с посессивным послелогом."
 26269,zemiaki,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений и глагольное согласование",
 26270,zemiaki,H-4,Oblique,H-4-6,,,Косвенный,
