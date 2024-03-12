@@ -571,16 +571,15 @@ G-5-2,G-5,Plural,,Множественное число
 G-5-3,G-5,Singular and plural,,Единственное и множественное число
 G-5-4,G-5,"Singular, dual, and plural",,"Единственное, двойственное и множественное"
 G-6-1,G-6,Decimal,,Десятичная
-G-6-2,G-6,Quinary,,Пятеричная
-G-6-3,G-6,Decimal with elements of duodecimal,,Десятичная с элементами двенадцатеричной
-G-6-4,G-6,Decimal with elements of vigesimal,,Десятичная с элементами двадцатеричной
-G-6-5,G-6,Vigesimal with elements of decimal,,Двадцатеричная с элементами десятичной
-G-6-6,G-6,Vigesimal with elements of quinary,,Двадцатеричная с элементами пятеричной
-G-6-7,G-6,Vigesimal,,Двадцатеричная
-G-6-8,G-6,"Mixed, with elements of quinary, decimal, pentadecimal, and vigesimal",,"Смешанная с элементами пятеричной, десятичной, пятнадцатеричной и двадцатеричной"
-G-6-9,G-6,Decimal with elements of quinary,,Десятичная с элементами пятеричной
-G-6-10,G-6,"Mixed, with elements of quinary, decimal, and vigesimal",,"Смешанная с элементами пятеричной, десятичной и двадцатеричной"
-G-6-11,G-6,Decimal with elements of duodecimal and vigesimal,,Десятичная с элементами двенадцатеричной и двадцатеричной
+G-6-2,G-6,Decimal with elements of duodecimal,,Десятичная с элементами двенадцатеричной
+G-6-3,G-6,Decimal with elements of vigesimal,,Десятичная с элементами двадцатеричной
+G-6-4,G-6,Vigesimal with elements of decimal,,Двадцатеричная с элементами десятичной
+G-6-5,G-6,Vigesimal with elements of quinary,,Двадцатеричная с элементами пятеричной
+G-6-6,G-6,Vigesimal,,Двадцатеричная
+G-6-7,G-6,"Mixed, with elements of quinary, decimal, pentadecimal, and vigesimal",,"Смешанная с элементами пятеричной, десятичной, пятнадцатеричной и двадцатеричной"
+G-6-8,G-6,Decimal with elements of quinary,,Десятичная с элементами пятеричной
+G-6-9,G-6,"Mixed, with elements of quinary, decimal, and vigesimal",,"Смешанная с элементами пятеричной, десятичной и двадцатеричной"
+G-6-10,G-6,Decimal with elements of duodecimal and vigesimal,,Десятичная с элементами двенадцатеричной и двадцатеричной
 G-7-1,G-7,No indefinite article,,Неопределенный артикль отсутствует
 G-7-2,G-7,Same,,Совпадают
 G-7-3,G-7,Different,,Не совпадают
