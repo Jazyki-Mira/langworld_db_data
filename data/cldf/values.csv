@@ -74,7 +74,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 73,abdui,H-2,,,,,Падежные отношения передаются предлогами и позицией слова в словосочетании и предложении. Редко - послелог для обозначения прямого объекта,
 74,abdui,H-5,,,,,"Соположение, местоименный оборот, предикативная связка + имя/местоимение, посессивные энклитические местоимения",
 75,abdui,H-6,,,,,"Предлоги, наречия места",
-76,abdui,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,Других данных нет.
+76,abdui,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,Других данных нет.
 77,abdui,I-6,Syncretic,I-6-2,,,Синкретическое,
 78,abdui,I-7,Affixes and function words,I-7-4,,,Аффиксы и служебные слова,
 79,abdui,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
@@ -1486,7 +1486,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1485,avestan,H-6,"Noun affixes, pronominal adverbs and adpositional constructions",H-6-16,,,"Именные аффиксы, местоименные наречия и предложно/послеложно-именные конструкции",
 1486,avestan,H-8,Different,H-8-2,,,Есть различия,
 1487,avestan,I-1,Affixes,I-1-4,,,Аффиксы,
-1488,avestan,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,
+1488,avestan,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,
 1489,avestan,I-6,Syncretic,I-6-2,,,Синкретическое,
 1490,avestan,I-7,,,,,Тип основы и аффиксы,
 1491,avestan,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
@@ -3942,7 +3942,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3941,cornish,I-1,Affixes,I-1-4,,,Аффиксы,Других данных нет.
 3942,cornish,I-2,Absent,I-2-2,,,Отсутствует,
 3943,cornish,I-4,Absent,I-4-1,,,Отсутствует,Категория включает формы активного и безлично-пассивного залогов.
-3944,cornish,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,
+3944,cornish,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,
 3945,cornish,I-6,Syncretic,I-6-2,,,Синкретическое,
 3946,cornish,I-7,"Auxiliary verbs, affixes and function words",I-7-5,,,"Вспомогательный глагол, аффиксы и служебные слова","Характерной чертой К.я. является изобилие глагольных частиц (утвердительных, отрицательных, относительных, перфективных и др.)."
 3947,cornish,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
@@ -4983,7 +4983,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4982,domari,H-8,Same,H-8-1,,,Нет различий,
 4983,domari,H-9,Present,H-9-1,,,Имеются,
 4984,domari,I-1,Affixes,I-1-4,,,Аффиксы,
-4985,domari,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,
+4985,domari,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,
 4986,domari,I-6,Syncretic,I-6-2,,,Синкретическое,
 4987,domari,I-7,Affixes,I-7-1,,,Аффиксы,
 4988,domari,I-8,"Person, number, gender, aspect, tense, and modality",I-8-11,,,"Лицо, число, род, вид, время и модальность",
@@ -6609,7 +6609,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6608,gaulish,H-7,Marked,H-7-1,,,Маркированное,
 6609,gaulish,H-9,Absent,H-9-2,,,Отсутствуют,
 6610,gaulish,I-1,Affixes,I-1-4,,,Аффиксы,Ввиду фрагментарности сохранившихся текстов подробное описание морфологии системы глагола невозможно.
-6611,gaulish,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,Отмечены формы презенса и претерита. Других данных нет.
+6611,gaulish,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,Отмечены формы презенса и претерита. Других данных нет.
 6612,gaulish,I-7,Affixes,I-7-1,,,Аффиксы,Других данных нет.
 6613,gaulish,I-8,"Person, number and gender/ aspect and tense",I-8-9,,,"Лицо, число и род/ вид и время","Надежно идентифицируются категории времени, залога, лица и числа."
 6614,gaulish,J-2,Demonstrative pronouns,J-2-1,,,Указательные местоимения,Других данных нет.
@@ -6759,7 +6759,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6758,gban,H-9,Absent,H-9-2,,,Отсутствуют,
 6759,gban,I-1,Affixes,I-1-4,,,Аффиксы,
 6760,gban,I-2,,,,,Нет данных,
-6761,gban,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,
+6761,gban,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,
 6762,gban,I-6,Syncretic,I-6-2,,,Синкретическое,
 6763,gban,I-7,Tone alternations,I-7-6,,,Тоновые чередования,
 6764,gban,I-8,Aspect and tense,I-8-2,,,Вид и время,
@@ -7599,7 +7599,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7598,gurani,H-1,One-two,H-1-1,,,Один-два,
 7599,gurani,H-2,,,,,"Глагольное согласование, энклитические местоимения, объектная форма местоимений и падежные аффиксы",
 7600,gurani,I-1,Affixes,I-1-4,,,Аффиксы,
-7601,gurani,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,
+7601,gurani,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,
 7602,gurani,I-6,Syncretic,I-6-2,,,Синкретическое,
 7603,gurani,I-7,,,,,"Разные типы основ, серии личных окончаний, энклитические местоимения, приставки и эргативная конструкция",
 7604,gurani,I-8,"Person, number and gender/ aspect and tense",I-8-9,,,"Лицо, число и род/ вид и время",
@@ -7902,7 +7902,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7901,hindko,H-1,Three-seven,H-1-2,,,Три-семь,Морфологические падежи только у местоимений
 7902,hindko,H-2,Verbal agreement and function words,H-2-6,,,Глагольное согласование и служебные слова,
 7903,hindko,H-6,Postpositions,H-6-5,,,Послелоги,
-7904,hindko,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,Нет данных о будущем
+7904,hindko,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,Нет данных о будущем
 7905,hindko,I-6,Separate,I-6-1,,,Раздельное,
 7906,hindko,I-7,Auxiliary verbs and affixes,I-7-3,,,Вспомогательный глагол и аффиксы,
 7907,hindko,I-9,In singular and plural,I-9-3,,,В единственном и множественном числе,
@@ -10886,7 +10886,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10885,khotanese,H-8,Different,H-8-2,,,Есть различия,Других данных нет.
 10886,khotanese,H-9,Absent,H-9-2,,,Отсутствуют,
 10887,khotanese,I-1,,,,,Глагольные флексии,
-10888,khotanese,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,
+10888,khotanese,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,
 10889,khotanese,I-6,Syncretic,I-6-2,,,Синкретическое,
 10890,khotanese,I-7,,,,,"Тип основы, вспомогательный глагол и флексии",
 10891,khotanese,I-8,,,,,"Лицо, число, вид, время, залог и модальность (наклонение)",
@@ -17408,7 +17408,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17407,parthian,H-6,Adpositions,H-6-12,,,Предлоги и послелоги,
 17408,parthian,H-8,Same,H-8-1,,,Нет различий,Других данных нет.
 17409,parthian,I-1,,,,,Описательный пассивный оборот причастие + вспомогательный глагол и морфологические формы каузатива (суффиксы и внутренняя флексия),Система залоговых отношений исследована недостаточно.
-17410,parthian,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,Оппозиция настоящее/прошедшее связана с оппозицией переходность/непереходность.
+17410,parthian,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,Оппозиция настоящее/прошедшее связана с оппозицией переходность/непереходность.
 17411,parthian,I-6,,,,,Категории вида нет,
 17412,parthian,I-7,Affixes,I-7-1,,,Аффиксы,
 17413,parthian,I-8,,,,,"Лицо, число, время и модальность (наклонение)",
@@ -17878,7 +17878,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17877,phrygian,H-7,Marked,H-7-1,,,Маркированное,
 17878,phrygian,H-9,Absent,H-9-2,,,Отсутствуют,
 17879,phrygian,I-1,Affixes,I-1-4,,,Аффиксы,
-17880,phrygian,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,
+17880,phrygian,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,
 17881,phrygian,I-7,Affixes,I-7-1,,,Аффиксы,
 17882,phrygian,I-8,"Tense, person and number",I-8-8,,,"Время, лицо, число",
 17883,phrygian,I-9,In singular and plural,I-9-3,,,В единственном и множественном числе,
@@ -22309,7 +22309,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22307,swiss_german,H-8,Same,H-8-1,,,Нет различий,Других данных нет.
 22308,swiss_german,H-9,Absent,H-9-2,,,Отсутствуют,
 22309,swiss_german,I-1,,,,,Вспомогательный глагол + причастие прошедшего времени и возвратное местоимение,
-22310,swiss_german,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,Для выражения значения будущего времени используется презенс.
+22310,swiss_german,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,Для выражения значения будущего времени используется презенс.
 22311,swiss_german,I-6,Syncretic,I-6-2,,,Синкретическое,
 22312,swiss_german,I-7,Auxiliary verbs and affixes,I-7-3,,,Вспомогательный глагол и аффиксы,
 22313,swiss_german,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
@@ -23207,7 +23207,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23205,tindi,H-4,Genitive,H-4-3,,,Генитив,
 23206,tindi,H-6,Pronouns and locative cases,H-6-15,,,Местоимения и пространственные падежи,
 23207,tindi,H-8,Same,H-8-1,,,Нет различий,
-23208,tindi,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,
+23208,tindi,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,
 23209,tindi,I-7,Auxiliary verbs and affixes,I-7-3,,,Вспомогательный глагол и аффиксы,
 23210,tindi,I-9,Absent,I-9-1,,,Отсутствует,
 23211,tindi,J-8,Negative affixes,J-8-1,,,Отрицательные аффиксы,
@@ -25630,7 +25630,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25627,yazdi_and_kermani,H-5,,,,,"Личные местоимения в составе изафетной конструкции, местоименные энклитики, возвратное местоимение (обычно с энклитическими местоимениями)",
 25628,yazdi_and_kermani,H-6,,,,,"Указательные местоимения, местоименные наречия, в том числе опрощенные сложения с местоимениями, предлоги",
 25629,yazdi_and_kermani,I-1,,,,,"Редко в значении пассива - причастие прошедшего времени + личная форма глагола ''быть"" (калька с персидского)",Залоговые отношения системно не выражены.
-25630,yazdi_and_kermani,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,Оппозиция настоящее/прошедшее тесно связана с оппозицией переходность/непереходность.
+25630,yazdi_and_kermani,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,Оппозиция настоящее/прошедшее тесно связана с оппозицией переходность/непереходность.
 25631,yazdi_and_kermani,I-6,Syncretic,I-6-2,,,Синкретическое,
 25632,yazdi_and_kermani,I-7,,,,,"Тип основы, аффиксы, вспомогательный глагол, причастие, личные окончания",
 25633,yazdi_and_kermani,I-8,,,,,"Лицо, число, вид, время, переходность/непереходность и наклонение",
@@ -25929,7 +25929,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25926,zaza,H-1,One-two,H-1-1,,,Один-два,
 25927,zaza,H-2,,,,,"Объектная форма личных местоимений, глагольное согласование и падежные аффиксы",
 25928,zaza,I-1,Affixes,I-1-4,,,Аффиксы,
-25929,zaza,I-5,Present and past,I-5-5,,,Настоящее и прошедшее,Других данных нет.
+25929,zaza,I-5,Present and past,I-5-4,,,Настоящее и прошедшее,Других данных нет.
 25930,zaza,I-6,Syncretic,I-6-2,,,Синкретическое,
 25931,zaza,I-7,Auxiliary verbs and affixes,I-7-3,,,Вспомогательный глагол и аффиксы,
 25932,zaza,I-8,"Person, number, gender, tense, aspect, and modality (mood)",I-8-19,,,"Лицо, число, род, время, вид и модальность (наклонение)",
