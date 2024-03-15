@@ -580,8 +580,8 @@ G-6-7,G-6,"Mixed, with elements of quinary, decimal, pentadecimal, and vigesimal
 G-6-8,G-6,Decimal with elements of quinary,,Десятичная с элементами пятеричной
 G-6-9,G-6,"Mixed, with elements of quinary, decimal, and vigesimal",,"Смешанная с элементами пятеричной, десятичной и двадцатеричной"
 G-6-10,G-6,Decimal with elements of duodecimal and vigesimal,,Десятичная с элементами двенадцатеричной и двадцатеричной
-G-7-2,G-7,Same,,Совпадают
-G-7-3,G-7,Different,,Не совпадают
+G-7-1,G-7,Same,,Совпадают
+G-7-2,G-7,Different,,Не совпадают
 H-1-1,H-1,One-two,,Один-два
 H-1-2,H-1,Three-seven,,Три-семь
 H-1-3,H-1,Eight-twelve,,Восемь-двенадцать
@@ -724,9 +724,9 @@ H-6-45,H-6,"Pronouns, adverbs, prepositions, and particles",,"Местоимен
 H-6-46,H-6,"Locative cases, pronouns, adverbs, and prepositions",,"Пространственные падежи, местоимения, наречия и предлоги"
 H-7-1,H-7,Marked,,Маркированное
 H-7-2,H-7,Unmarked,,Немаркированное
-H-8-1,H-8,Same,,Одинаковое
-H-8-2,H-8,Different,,Различное
-H-9-1,H-9,Present,,Присутствуют
+H-8-1,H-8,Same,,Нет различий
+H-8-2,H-8,Different,,Есть различия
+H-9-1,H-9,Present,,Имеются
 H-9-2,H-9,Absent,,Отсутствуют
 I-1-1,I-1,Category of voice is absent,,Категория залога отсутствует
 I-1-2,I-1,Auxiliary verb,,Вспомогательный глагол
