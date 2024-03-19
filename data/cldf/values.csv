@@ -1204,7 +1204,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1203,assamese,G-4,Predicative and attributive,G-4-4,Attributive agreement only with several adjectives,,Предикативное и атрибутивное,Атрибутивное согласование только у некоторых прилагательных
 1204,assamese,H-1,Three-seven,H-1-2,,,Три-семь,
 1205,assamese,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
-1206,assamese,H-4,Possessive,H-4-8,,,Посессив,
+1206,assamese,H-4,Possessive,H-4-4,,,Посессив,
 1207,assamese,H-5,Possessive affixes,H-5-3,Only with kinship terms,,Посессивные аффиксы,Присоединяются только к именам родства
 1208,assamese,H-6,Noun affixes and postpositions,H-6-11,,,Именные аффиксы и послелоги,
 1209,assamese,H-7,Marked,H-7-1,,,Маркированное,
@@ -2038,7 +2038,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2037,banjari,H-1,Three-seven,H-1-2,,,Три-семь,
 2038,banjari,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
 2039,banjari,H-3,,,,,Прямой падеж,
-2040,banjari,H-4,Oblique,H-4-6,,,Косвенный,
+2040,banjari,H-4,Oblique,H-4-5,,,Косвенный,
 2041,banjari,H-5,,,,,Послелоги,
 2042,banjari,H-7,Marked,H-7-1,,,Маркированное,
 2043,banjari,H-8,Different,H-8-2,,,Есть различия,
@@ -2497,7 +2497,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2496,bengali,G-3,"Neutral, polite, and impolite",G-3-3,,,"Нейтральная, вежливая и невежливая",
 2497,bengali,H-1,Three-seven,H-1-2,,,Три-семь,
 2498,bengali,H-2,Case affixes,H-2-3,,,Падежные аффиксы,
-2499,bengali,H-4,Possessive,H-4-8,,,Посессив,
+2499,bengali,H-4,Possessive,H-4-4,,,Посессив,
 2500,bengali,H-6,Noun affixes and postpositions,H-6-11,,,Именные аффиксы и послелоги,
 2501,bengali,H-7,Marked,H-7-1,,,Маркированное,
 2502,bengali,H-8,Different,H-8-2,,,Есть различия,
@@ -4428,7 +4428,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4427,dameli,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 4428,dameli,H-1,One-two,H-1-1,,,Один-два,
 4429,dameli,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов",
-4430,dameli,H-4,Possessive,H-4-8,,,Посессив,
+4430,dameli,H-4,Possessive,H-4-4,,,Посессив,
 4431,dameli,H-6,,,,,Указательные местоимения,
 4432,dameli,H-9,Absent,H-9-2,,,Отсутствуют,
 4433,dameli,I-5,"Present, past and present-future",I-5-7,,,"Настоящее, прошедшее и настоящее-будущее",
@@ -6031,7 +6031,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6030,frisian,H-1,One-two,H-1-1,,,Один-два,
 6031,frisian,H-2,"Subject and object personal pronouns, prepositions, and verbal agreement",H-2-17,,,"Субъектная и объектная форма личных местоимений, предлоги и глагольное согласование",Субъектные и объектные личные местоимения имеют ударную и безударную форму.
 6032,frisian,H-3,,,,,Общий (субъектно-объектный) падеж,
-6033,frisian,H-4,Possessive,H-4-8,,,Посессив,Реликтовые формы сильного и слабого генитива.
+6033,frisian,H-4,Possessive,H-4-4,,,Посессив,Реликтовые формы сильного и слабого генитива.
 6034,frisian,H-5,Possessive pronouns and prepositions,H-5-19,,,Посессивные местоимения и предлоги,..
 6035,frisian,H-6,,,,,"Наречия места, местоименные наречия, приглагольные наречные элементы и предлоги",
 6036,frisian,H-7,Marked,H-7-1,,,Маркированное,
@@ -6671,7 +6671,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6670,gawar,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 6671,gawar,H-1,Three-seven,H-1-2,,,Три-семь,
 6672,gawar,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, послелоги, глагольное согласование и порядок слов",
-6673,gawar,H-4,Possessive,H-4-8,,,Посессив,Посессив есть только в парадигме личных и указательных местоимений.
+6673,gawar,H-4,Possessive,H-4-4,,,Посессив,Посессив есть только в парадигме личных и указательных местоимений.
 6674,gawar,H-5,,,,,Посессивные местоименные энклитики ,У посессивных местоименных энклитик не зафиксировано формы множественного числа.
 6675,gawar,H-6,,,,,Указательные местоимения,
 6676,gawar,H-7,,,,,Генитив отсутствует,
@@ -9007,7 +9007,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9006,itelmen,H-1,Eight-twelve,H-1-3,,,Восемь-двенадцать,
 9007,itelmen,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
 9008,itelmen,H-3,Absolutive,H-3-1,,,Абсолютив,
-9009,itelmen,H-4,Possessive,H-4-8,,,Посессив,
+9009,itelmen,H-4,Possessive,H-4-4,,,Посессив,
 9010,itelmen,H-5,Possessive pronouns,H-5-4,,,Посессивные местоимения,
 9011,itelmen,H-6,,,,,"именные аффиксы и специальный подкласс адвербиальных слов, предлоги и послелоги",
 9012,itelmen,H-8,Different,H-8-2,,,Есть различия,
@@ -10204,7 +10204,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10203,kashmiri,H-1,Three-seven,H-1-2,,,Три-семь,"В ед. числе существительные мужского рода имеют четыре падежа, существительные женского рода — два падежа. Во мн. числе все существительные имеют трехпадежную парадигму."
 10204,kashmiri,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, энклитические местоимения, глагольное согласование и порядок слов",
 10205,kashmiri,H-3,,,,,Прямой падеж,
-10206,kashmiri,H-4,Oblique,H-4-6,,,Косвенный,Косвенный падеж выражает посессивность в сочетании с послелогами принадлежности.
+10206,kashmiri,H-4,Oblique,H-4-5,,,Косвенный,Косвенный падеж выражает посессивность в сочетании с послелогами принадлежности.
 10207,kashmiri,H-5,,,,,"Притяжательные местоимения, посессивные аффиксы и послелоги",
 10208,kashmiri,H-6,,,,,"Падежные флексии, местоимения, наречия и послелоги",
 10209,kashmiri,H-7,,,,,Генитив отсутствует,
@@ -10476,7 +10476,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10475,kati,H-1,One-two,H-1-1,,,Один-два,
 10476,kati,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений и глагольное согласование",
 10477,kati,H-3,,,,,Прямой падеж,
-10478,kati,H-4,Oblique,H-4-6,,,Косвенный,В поссесивной конструкции маркируется зависимое слово.
+10478,kati,H-4,Oblique,H-4-5,,,Косвенный,В поссесивной конструкции маркируется зависимое слово.
 10479,kati,H-5,,,,,"Соположение, поссесивные аффиксы и местоименные энклитики ",С помощью посессивных аффиксов от личных и указательных местоимений образуются притяжательные. С помощью посессивных энклитик образуются конструкции изафетного типа.
 10480,kati,H-6,,,,,"Именные флексии, местоимения, наречия, предлоги и послелоги","Наряду с наречиями существуют серии превербов, адвербов и адъективов, образованных от одной основы."
 10481,kati,H-7,,,,,Генитив отсутствует,
@@ -16364,7 +16364,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16363,old_french,H-1,One-two,H-1-1,,,Один-два,"Двухпадежная система склонения существительных, прилагательных и артиклей."
 16364,old_french,H-2,"Case and number flections, subject, direct and indirect object personal pronouns, prepositions, and verbal agreement",H-2-20,,,"Падежно-числовые флексии, субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги и глагольное согласование",
 16365,old_french,H-3,Nominative,H-3-4,,,Номинатив,
-16366,old_french,H-4,Oblique,H-4-6,,,Косвенный,
+16366,old_french,H-4,Oblique,H-4-5,,,Косвенный,
 16367,old_french,H-5,Possessive pronouns and prepositions,H-5-19,,,Посессивные местоимения и предлоги,
 16368,old_french,H-6,"Pronouns, adverbs, and prepositions",H-6-34,,,"Местоимения, наречия и предлоги",
 16369,old_french,H-8,Same,H-8-1,,,Нет различий,
@@ -20488,7 +20488,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20486,shina,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 20487,shina,H-1,One-two,H-1-1,,,Один-два,
 20488,shina,H-2,,,,,"Падежные флексии, послелоги, глагольное согласование и порядок слов",
-20489,shina,H-4,Oblique,H-4-6,,,Косвенный,
+20489,shina,H-4,Oblique,H-4-5,,,Косвенный,
 20490,shina,H-5,,,,,Личные и притяжательные местоимения и послелоги,
 20491,shina,H-6,,,,,"Падежные флексии, указательные местоимения и послелоги ",Пространственные отношения выражаются послелогами в сочетании с формой косвенного падежа существительного.
 20492,shina,H-7,,,,,Генитив отсутствует,
@@ -20608,7 +20608,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20606,shor,G-4,Predicative,G-4-2,,,Предикативное,
 20607,shor,H-1,Three-seven,H-1-2,,,Три-семь,
 20608,shor,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
-20609,shor,H-4,Possessive,H-4-8,,,Посессив,
+20609,shor,H-4,Possessive,H-4-4,,,Посессив,
 20610,shor,H-5,Possessive affixes,H-5-3,,,Посессивные аффиксы,
 20611,shor,I-1,Affixes,I-1-4,,,Аффиксы,
 20612,shor,I-5,"Present, past and future",I-5-6,,,"Настоящее, прошедшее и будущее",
@@ -22051,7 +22051,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22049,susu,G-6,Decimal,G-6-1,,,Десятичная,
 22050,susu,H-2,,,,,порядок слов,
 22051,susu,H-3,Nominative,H-3-4,,,Номинатив,
-22052,susu,H-4,Possessive,H-4-8,,,Посессив,
+22052,susu,H-4,Possessive,H-4-4,,,Посессив,
 22053,susu,H-5,Apposition,H-5-7,,,Соположение,
 22054,susu,H-6,Postpositions,H-6-5,,,Послелоги,
 22055,susu,H-8,Same,H-8-1,,,Нет различий,
@@ -24935,7 +24935,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24932,wakhi,G-7,Same,G-7-1,,,Совпадают,
 24933,wakhi,H-1,One-two,H-1-1,,,Один-два,Падежные формы в системе имени существительного различаются только во множественном числе.
 24934,wakhi,H-2,,,,,"Глагольное согласование, падежные аффиксы, суффиксальные служебные элементы, предлоги, послелоги и их сочетания",
-24935,wakhi,H-4,Oblique,H-4-6,,,Косвенный,
+24935,wakhi,H-4,Oblique,H-4-5,,,Косвенный,
 24936,wakhi,H-5,,,,,"Суффиксальные элементы, предлоги и послелоги",
 24937,wakhi,H-6,,,,,"Местоимения, падежные аффиксы, предлоги и послелоги",
 24938,wakhi,I-1,Category of voice is absent,I-1-1,,,Категория залога отсутствует,
@@ -25338,7 +25338,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25335,yaghnobi,H-1,One-two,H-1-1,,,Один-два,
 25336,yaghnobi,H-2,"Object pronouns, function words, case affixes, and verbal agreement",H-2-11,,,"Объектная форма местоимений, служебные слова, падежные аффиксы и глагольное согласование",
 25337,yaghnobi,H-3,Nominative,H-3-4,,,Номинатив,
-25338,yaghnobi,H-4,Oblique,H-4-6,,,Косвенный,
+25338,yaghnobi,H-4,Oblique,H-4-5,,,Косвенный,
 25339,yaghnobi,H-5,"Apposition, possessive pronouns, possessive adjectives and possessive affixes",H-5-14,,,"Соположение, притяжательное местоимение, притяжательные прилагательные и притяжательные аффиксы",
 25340,yaghnobi,H-6,Noun affixes and adpositions,H-6-21,,,"Именные аффиксы, предлоги и послелоги",
 25341,yaghnobi,H-8,Different,H-8-2,,,Есть различия,
@@ -26068,7 +26068,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26065,zemiaki,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 26066,zemiaki,H-1,One-two,H-1-1,,,Один-два,"В списке падежей указан генитив, который представляет собой форму косвенного падежа с посессивным послелогом."
 26067,zemiaki,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений и глагольное согласование",
-26068,zemiaki,H-4,Oblique,H-4-6,,,Косвенный,
+26068,zemiaki,H-4,Oblique,H-4-5,,,Косвенный,
 26069,zemiaki,H-5,,,,,Посессивные энклитики и послелоги,
 26070,zemiaki,H-6,,,,,Указательные местоимения и послелоги,"В составе частей речи названы наречия и предлоги, но их разряды не указаны."
 26071,zemiaki,H-7,Marked,H-7-1,,,Маркированное,Зависимое имя в притяжательной конструкции имеет форму косвенного падежа с послелогом.

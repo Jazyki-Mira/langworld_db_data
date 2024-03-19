@@ -624,8 +624,8 @@ H-3-15,H-3,Nominative or ergative,,Номинатив или эргатив
 H-4-1,H-4,Genitive,,Генитив
 H-4-2,H-4,Dative,,Датив
 H-4-3,H-4,Ablative,,Аблатив
-H-4-6,H-4,Oblique,,Косвенный
-H-4-8,H-4,Possessive,,Посессив
+H-4-4,H-4,Possessive,,Посессив
+H-4-5,H-4,Oblique,,Косвенный
 H-4-11,H-4,Genitive or dative,,Генитив или датив
 H-4-12,H-4,Nominative or genitive,,Номинатив или генитив
 H-5-1,H-5,Verbs of possession,,Глаголы обладания
