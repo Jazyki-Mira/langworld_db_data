@@ -19495,7 +19495,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19493,sangesari,G-2,Marked and unmarked,G-2-3,,,Маркированное и немаркированное,
 19494,sangesari,G-4,Predicative,G-4-2,,,Предикативное,
 19495,sangesari,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-19496,sangesari,G-7,,,,,"Числительное ""один"" в функции неопределенного артикля",
+19496,sangesari,G-7,Same,G-7-1,,,Совпадают,
 19497,sangesari,H-1,One-two,H-1-1,,,Один-два,
 19498,sangesari,H-2,,,,,"Глагольное согласование, падежные аффиксы и послелоги",
 19499,sangesari,H-4,,,,,Косвенный падеж существительных и субстантивных местоимений,
