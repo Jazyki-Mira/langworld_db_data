@@ -279,12 +279,6 @@
                         "name": "Description"
                     },
                     {
-                        "datatype": "json",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#columnSpec",
-                        "required": false,
-                        "name": "ColumnSpec"
-                    },
-                    {
                         "datatype": "string",
                         "name": "Name_RU"
                     }
