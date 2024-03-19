@@ -14979,7 +14979,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14978,moghol,G-4,Predicative,G-4-2,,,Предикативное,
 14979,moghol,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 14980,moghol,H-1,Three-seven,H-1-2,,,Три-семь,
-14981,moghol,H-4,Genitive-accusative,H-4-14,,,Генитив-аккузатив,
+14981,moghol,H-4,Genitive,H-4-3,,,Генитив,Генитив совпадает с аккузативом.
 14982,moghol,I-1,Affixes,I-1-4,,,Аффиксы,
 14983,moghol,I-8,Person and number,I-8-4,,,Лицо и число,
 14984,moghol,J-8,Negative particles and negative verbs,J-8-7,,,Отрицательные частицы и глаголы,
