@@ -815,7 +815,6 @@
 ## G-6: Система счисления
 
 - Других данных нет: [меймеи](../feature_profiles/meimei.csv)
-- двадцатиричная: [абхазский](../feature_profiles/abkhaz.csv)
 - нет данных: [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv)
 - пятеричная-десятичная: [корякский](../feature_profiles/koryak.csv)
 ## G-7: Неопределенный артикль и числительное «один»

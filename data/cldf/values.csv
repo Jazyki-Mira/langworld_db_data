@@ -134,7 +134,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 133,abkhaz,G-2,Unmarked,G-2-2,,,Немаркированное,
 134,abkhaz,G-3,Absent,G-3-1,,,Отсутствуют,
 135,abkhaz,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
-136,abkhaz,G-6,,,,,двадцатиричная,
+136,abkhaz,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
 137,abkhaz,H-1,One-two,H-1-1,,,Один-два,
 138,abkhaz,H-2,Verbal agreement and function words,H-2-6,,,Глагольное согласование и служебные слова,
 139,abkhaz,H-4,,,,,отсутсвует,
