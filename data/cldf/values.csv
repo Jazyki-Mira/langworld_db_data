@@ -12974,7 +12974,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12973,looma,G-3,Absent,G-3-1,,,Отсутствуют,
 12974,looma,G-4,No agreement in number,G-4-1,,,Отсутствует,
 12975,looma,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-12976,looma,G-6,,,,,Десятичная с элементами пятеричной,
+12976,looma,G-6,Decimal with elements of quinary,G-6-8,,,Десятичная с элементами пятеричной,
 12977,looma,G-7,Different,G-7-2,,,Не совпадают,
 12978,looma,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 12979,looma,H-2,,,,,"Порядок слов, адлоги и тональные согласовательные морфемы ",
