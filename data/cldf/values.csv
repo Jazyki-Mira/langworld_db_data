@@ -7067,7 +7067,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7066,gilaki,F-8,Lexical,F-8-1,,,Лексическое,
 7067,gilaki,G-4,Predicative,G-4-2,,,Предикативное,
 7068,gilaki,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-7069,gilaki,G-7,,,,,"В качестве неопределенного артикля выступает числительное ""один""",
+7069,gilaki,G-7,Same,G-7-1,,,Совпадают,
 7070,gilaki,H-1,Three-seven,H-1-2,,,Три-семь,
 7071,gilaki,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
 7072,gilaki,H-4,Genitive,H-4-1,,,Генитив,
