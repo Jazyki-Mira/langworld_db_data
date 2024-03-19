@@ -4976,7 +4976,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4975,domari,G-7,Different,G-7-2,"Indefinite article is diacronically related to the numeral ""one""",,Не совпадают,"Неопределенный показатель диахронически связан с числительным ""один"""
 4976,domari,H-1,Eight-twelve,H-1-3,,,Восемь-двенадцать,
 4977,domari,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
-4978,domari,H-4,Ablative,H-4-2,,,Аблатив,
+4978,domari,H-4,Ablative,H-4-3,,,Аблатив,
 4979,domari,H-5,Possessive affixes,H-5-3,,,Посессивные аффиксы,
 4980,domari,H-6,Noun affixes,H-6-1,,,Именные аффиксы,
 4981,domari,H-7,Marked,H-7-1,,,Маркированное,
@@ -22304,7 +22304,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22302,swiss_german,G-7,Same,G-7-1,,,Совпадают,
 22303,swiss_german,H-1,One-two,H-1-1,,,Один-два,
 22304,swiss_german,H-2,,,,,"Глагольное согласование, падежные аффиксы, субъектная и объектная формы личных местоимения, предлоги и порядок слов",
-22305,swiss_german,H-4,Dative,H-4-4,,,Датив,"""Дательный притяжательный"" в сочетании с артиклем и притяжательным местоимением. Генитив сохраняется в горноалеманнской разновидности."
+22305,swiss_german,H-4,Dative,H-4-2,,,Датив,"""Дательный притяжательный"" в сочетании с артиклем и притяжательным местоимением. Генитив сохраняется в горноалеманнской разновидности."
 22306,swiss_german,H-5,Possessive pronouns and prepositions,H-5-19,,,Посессивные местоимения и предлоги,
 22307,swiss_german,H-8,Same,H-8-1,,,Нет различий,Других данных нет.
 22308,swiss_german,H-9,Absent,H-9-2,,,Отсутствуют,
