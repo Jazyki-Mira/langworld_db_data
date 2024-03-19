@@ -2691,7 +2691,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2690,biyabuneki,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 2691,biyabuneki,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 2692,biyabuneki,G-6,Decimal,G-6-1,,,Десятичная,
-2693,biyabuneki,G-7,,,,,"Неопределенность/единичность выражается числительным ""один"" в функции неопределенного артикля",
+2693,biyabuneki,G-7,Same,G-7-1,,,Совпадают,
 2694,biyabuneki,H-1,One-two,H-1-1,,,Один-два,
 2695,biyabuneki,H-2,,,,,Глагольное согласование и косвенная форма личных местоимений,
 2696,biyabuneki,H-6,,,,,Указательные местоимения и наречия,
