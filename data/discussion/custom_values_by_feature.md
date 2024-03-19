@@ -815,7 +815,6 @@
 ## G-6: Система счисления
 
 - Других данных нет: [меймеи](../feature_profiles/meimei.csv)
-- Смешанная с элементами пятеричной, десятеричной и двадцатеричной: [гуро](../feature_profiles/guro.csv), [кла-дан](../feature_profiles/kla_dan.csv)
 - двадцатиричная: [абхазский](../feature_profiles/abkhaz.csv)
 - нет данных: [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv)
 - пятеричная-десятичная: [корякский](../feature_profiles/koryak.csv)

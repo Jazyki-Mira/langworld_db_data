@@ -7670,7 +7670,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7669,guro,G-3,Absent,G-3-1,,,Отсутствуют,
 7670,guro,G-4,No agreement in number,G-4-1,,,Отсутствует,
 7671,guro,G-5,Singular,G-5-1,,,Единственное,
-7672,guro,G-6,,,,,"Смешанная с элементами пятеричной, десятеричной и двадцатеричной",
+7672,guro,G-6,"Mixed, with elements of quinary, decimal, and vigesimal",G-6-9,,,"Смешанная с элементами пятеричной, десятичной и двадцатеричной",
 7673,guro,G-7,Same,G-7-1,,,Совпадают,
 7674,guro,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 7675,guro,H-2,,,,,"Служебные слова, порядок слов и падежные формы местоимений",
@@ -11305,7 +11305,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11304,kla_dan,G-2,Unmarked,G-2-2,,,Немаркированное,
 11305,kla_dan,G-3,Absent,G-3-1,,,Отсутствуют,
 11306,kla_dan,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,В некоторых диалектах есть атрибутивное согласование
-11307,kla_dan,G-6,,,,,"Смешанная с элементами пятеричной, десятеричной и двадцатеричной",
+11307,kla_dan,G-6,"Mixed, with elements of quinary, decimal, and vigesimal",G-6-9,,,"Смешанная с элементами пятеричной, десятичной и двадцатеричной",
 11308,kla_dan,G-7,Same,G-7-1,,,Совпадают,
 11309,kla_dan,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 11310,kla_dan,H-2,,,,,Служебные слова и порядок слов,
