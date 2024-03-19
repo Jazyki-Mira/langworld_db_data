@@ -17755,7 +17755,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17754,phalura,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 17755,phalura,H-1,Three-seven,H-1-2,,,Три-семь,
 17756,phalura,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений и глагольное согласование ",
-17757,phalura,H-4,Genitive or ablative,H-4-13,,,Генитив или аблатив,Падежные значения генитива и аблатива выражает единая падежная форма.
+17757,phalura,H-4,Genitive,H-4-3,,,Генитив,Падежные значения генитива и аблатива выражает единая падежная форма.
 17758,phalura,H-6,Pronouns and locative cases,H-6-15,,,Местоимения и пространственные падежи,
 17759,phalura,H-7,Marked,H-7-1,,,Маркированное,
 17760,phalura,H-9,Absent,H-9-2,,,Отсутствуют,
@@ -24158,7 +24158,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24155,udmurt,G-4,Predicative,G-4-2,,,Предикативное,
 24156,udmurt,H-1,Thirteen-twenty,H-1-4,,,Тринадцать-двадцать,
 24157,udmurt,H-2,"Verbal agreement, case affixes and function words",H-2-8,,,"Глагольное согласование, падежные аффиксы и служебные слова",
-24158,udmurt,H-4,Genitive or ablative,H-4-13,,,Генитив или аблатив,
+24158,udmurt,H-4,Genitive,H-4-3,,,Генитив,В факультативных усилительных местоимениях встречается аблатив.
 24159,udmurt,H-5,Possessive affixes,H-5-3,,,Посессивные аффиксы,
 24160,udmurt,H-7,Marked,H-7-1,,,Маркированное,
 24161,udmurt,H-9,Absent,H-9-2,,,Отсутствуют,
