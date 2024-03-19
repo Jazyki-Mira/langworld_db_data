@@ -951,7 +951,6 @@
 
 - Генитив или аккузатив: [цыганский](../feature_profiles/romani.csv)
 - Генитив или локатив: [сингальский](../feature_profiles/sinhala.csv)
-- Косвенный падеж: [бактрийский](../feature_profiles/bactrian.csv)
 - Косвенный падеж в функции родительного принадлежности или родительного отношения: [талышский](../feature_profiles/talysh.csv)
 - Косвенный падеж с предлогами: [пашто](../feature_profiles/pashto.csv)
 - Косвенный падеж существительных и субстантивных местоимений: [сангесари](../feature_profiles/sangesari.csv)
