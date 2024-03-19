@@ -561,9 +561,9 @@ G-4-1,G-4,No agreement in number,,Отсутствует
 G-4-2,G-4,Predicative,,Предикативное
 G-4-3,G-4,Attributive,,Атрибутивное
 G-4-4,G-4,Predicative and attributive,,Предикативное и атрибутивное
-G-5-1,G-5,Singular,,Единственное число
-G-5-2,G-5,Plural,,Множественное число
-G-5-3,G-5,Singular and plural,,Единственное и множественное число
+G-5-1,G-5,Singular,,Единственное
+G-5-2,G-5,Plural,,Множественное
+G-5-3,G-5,Singular and plural,,Единственное и множественное
 G-5-4,G-5,"Singular, dual, and plural",,"Единственное, двойственное и множественное"
 G-6-1,G-6,Decimal,,Десятичная
 G-6-2,G-6,Decimal with elements of duodecimal,,Десятичная с элементами двенадцатеричной
