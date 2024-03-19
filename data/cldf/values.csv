@@ -12097,7 +12097,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12096,kurdish,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 12097,kurdish,H-1,Three-seven,H-1-2,,,Три-семь,
 12098,kurdish,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
-12099,kurdish,H-4,,,,,Косвенный падеж,
+12099,kurdish,H-4,Oblique,H-4-5,,,Косвенный,
 12100,kurdish,H-5,,,,,Изафетный атрибутивный комплекс,
 12101,kurdish,H-6,Adpositional constructions,H-6-7,,,Предложно/послеложно-именные конструкции,
 12102,kurdish,I-1,,,,,Аналитическая конструкция (вспомогательный глагол + масдар знаменательного глагола) и описательная предложно-именная конструкция,
