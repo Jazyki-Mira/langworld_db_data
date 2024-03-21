@@ -5265,7 +5265,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5264,english,H-1,One-two,H-1-1,,,Один-два,
 5265,english,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений и порядок слов",
 5266,english,H-3,Nominative,H-3-4,,,Номинатив,
-5267,english,H-4,,,,,"Притяжательный падеж, в том числе ""групповой притяжательный падеж""",
+5267,english,H-4,Possessive,H-4-4,,,Посессив,"Притяжательный падеж, в том числе ""групповой притяжательный падеж"""
 5268,english,H-5,Apposition and prepositions,H-5-11,,,Соположение и предлоги,
 5269,english,H-6,"Pronouns, pronoun adverbs, adverbs, and prepositions",H-6-44,,,"Местоимения, местоименные наречия, наречия и предлоги",
 5270,english,H-7,Marked,H-7-1,,,Маркированное,
