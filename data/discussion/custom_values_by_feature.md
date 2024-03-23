@@ -1104,7 +1104,7 @@
 - Указательные местоимения, предлоги послелоги: [бартангский](../feature_profiles/bartangi.csv)
 - Упрелоги.казательные местоимения, местоимения-наречия и: [рошорвский](../feature_profiles/roshorvi.csv)
 - именные аффиксы и специальный подкласс адвербиальных слов, предлоги и послелоги: [ительменский](../feature_profiles/itelmen.csv)
-## H-7: Локус маркирования в посессивной конструкции
+## H-7: Маркирование в посессивной конструкции
 
 - Генитив отсутствует: [гавар](../feature_profiles/gawar.csv), [кашмири](../feature_profiles/kashmiri.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [кати](../feature_profiles/kati.csv), [кховар](../feature_profiles/khowar.csv), [майян](../feature_profiles/mayan.csv), [прасун](../feature_profiles/prasun.csv), [шина](../feature_profiles/shina.csv), [тирахи](../feature_profiles/tirahi.csv), [торвали](../feature_profiles/torwali.csv)
 - Маркированное и немаркированное: [дан](../feature_profiles/dan.csv), [яурэ](../feature_profiles/yaoure.csv)
