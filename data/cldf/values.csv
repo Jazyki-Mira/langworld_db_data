@@ -4718,7 +4718,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4717,danish,J-9,Postposition,J-9-4,,,Постпозиция,
 4718,danish,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
 4719,danish,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
-4720,danish,K-3,,,,,Препозиция (неопределенный и свободностоящий определенный) и постпозиция (суффигированный определенный),
+4720,danish,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,Препозиция (неопределенный и свободностоящий определенный) и постпозиция (суффигированный определенный)
 4721,danish,K-4,,,,,Собственный артикль при каждом члене именной группы,
 4722,danish,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",
 4723,danish,K-6,Four types of conjugation,K-6-4,,,Четыре типа спряжения,
@@ -8441,7 +8441,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8440,icelandic,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,"Постпозиция относительно глагола, препозиция относительно существительного, прилагательного, наречия и местоимения."
 8441,icelandic,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
 8442,icelandic,K-2,Only definite,K-2-3,,,Только определенный,
-8443,icelandic,K-3,,,,,Суффигированный и препозитивный свободностоящий,
+8443,icelandic,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,Суффигированный и препозитивный свободностоящий
 8444,icelandic,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 8445,icelandic,K-5,"Definiteness, case, gender and number",K-5-11,,,"Определенность, падеж, род и число",
 8446,icelandic,K-6,Three types of conjugation,K-6-3,,,Три типа спряжения,
