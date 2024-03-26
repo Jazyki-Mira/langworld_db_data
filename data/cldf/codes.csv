@@ -555,8 +555,8 @@ G-2-2,G-2,Unmarked,,Немаркированное
 G-2-3,G-2,Marked and unmarked,,Маркированное и немаркированное
 G-3-1,G-3,Absent,,Отсутствуют
 G-3-2,G-3,Neutral and polite,,Нейтральная и вежливая
-G-3-3,G-3,"Neutral, polite, and impolite",,"Нейтральная, вежливая и невежливая"
-G-3-4,G-3,Pluralis majestatis,,Множественное величия (pluralis majestatis)
+G-3-3,G-3,"Neutral, polite, and impolite",,"Нейтральная, вежливая и фамильярная"
+G-3-4,G-3,Pluralis majestatis,,"Нейтральная, вежливая и почтительная"
 G-4-1,G-4,No agreement in number,,Отсутствует
 G-4-2,G-4,Predicative,,Предикативное
 G-4-3,G-4,Attributive,,Атрибутивное
