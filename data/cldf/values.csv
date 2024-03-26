@@ -18426,7 +18426,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18425,polish,K-14,In gender,K-14-4,,,По роду,
 18426,polish,K-14,In number,K-14-2,,,По числу,
 18427,polish,K-14,In case,K-14-3,,,По падежу,
-18428,polish,K-14,In (in)humanness,K-14-9,,,По (не)личности,
+18428,polish,K-14,In (in)humanness,K-14-9,,,По (не)лично-мужской форме,
 18429,polish,K-15,Number and case,K-15-7,,,Число и падеж,
 18430,polish,K-16,,,,,"Род, число, падеж и одушевленность/неодушевленность и личность/неличность для существительных мужского рода",
 18431,polish,K-17,Affixes,K-17-2,,,Аффиксы,
