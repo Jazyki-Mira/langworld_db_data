@@ -1089,9 +1089,9 @@ K-13-4,K-13,Optional,,Факультативно
 K-13-5,K-13,Only in postposition,,Только в постпозиции
 K-14-1,K-14,No attributive agreement,,Атрибутивное согласование отсутствует
 K-14-2,K-14,In number,,По числу
-K-14-5,K-14,In class,,По классу
-K-14-3,K-14,In person,,По лицу
+K-14-3,K-14,In person,,По посессивности
 K-14-4,K-14,In gender,,По роду
+K-14-5,K-14,In class,,По классу
 K-14-6,K-14,In case,,По падежу
 K-14-7,K-14,In (in)definiteness,,По (не)определенности
 K-14-8,K-14,In (in)animacy,,По (не)одушевленности
