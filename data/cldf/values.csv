@@ -90,7 +90,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 89,abdui,J-8,Negative particles,J-8-3,,,Отрицательные частицы,Других данных нет.
 90,abdui,J-9,Postposition,J-9-4,,,Постпозиция,Других данных нет.
 91,abdui,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-92,abdui,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+92,abdui,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 93,abdui,K-3,Postposition,K-3-2,,,Постпозиция,
 94,abdui,K-4,,,,,В изафетной конструкции артикль может оформлять определение-прилагательное,
 95,abdui,K-6,Two types of conjugation,K-6-2,,,Два типа спряжения,
@@ -275,7 +275,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 274,afrikaans,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",Характерной чертой А.я. является двойное отрицание.
 275,afrikaans,J-9,,,,,Одновременно препозиция и постпозиция по отношению ко всему предложению или к одному из его членов,
 276,afrikaans,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-277,afrikaans,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+277,afrikaans,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 278,afrikaans,K-3,Preposition,K-3-1,,,Препозиция,
 279,afrikaans,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 280,afrikaans,K-5,,,,,Определенность/неопределенность,
@@ -1028,7 +1028,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1027,aromanian,J-8,Negative pronouns and negative particles,J-8-6,,,Отрицательные местоимения и частицы,
 1028,aromanian,J-9,Preposition,J-9-3,,,Препозиция,
 1029,aromanian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-1030,aromanian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+1030,aromanian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 1031,aromanian,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 1032,aromanian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 1033,aromanian,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",
@@ -1250,7 +1250,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1249,assamese,J-8,,,,,Отрицательные глаголы и аффиксы,
 1250,assamese,J-9,Preposition,J-9-3,,,Препозиция,
 1251,assamese,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-1252,assamese,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+1252,assamese,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 1253,assamese,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 1254,assamese,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 1255,assamese,K-5,Definiteness,K-5-2,,,Определенность,
@@ -1400,7 +1400,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1399,asturian,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",
 1400,asturian,J-9,Preposition,J-9-3,,,Препозиция,
 1401,asturian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-1402,asturian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+1402,asturian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 1403,asturian,K-3,Preposition,K-3-1,,,Препозиция,
 1404,asturian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 1405,asturian,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль имеет формы множественного числа мужского и женского рода.
@@ -1745,7 +1745,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1744,bactrian,J-8,Negative particles,J-8-3,,,Отрицательные частицы,Других данных нет.
 1745,bactrian,J-9,Preposition,J-9-3,,,Препозиция,
 1746,bactrian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-1747,bactrian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+1747,bactrian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 1748,bactrian,K-3,Preposition,K-3-1,,,Препозиция,Других данных нет.
 1749,bactrian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 1750,bactrian,K-5,Definiteness and gender,K-5-6,,,Определенность и род,Других данных нет.
@@ -2010,7 +2010,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2009,bamana,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 2010,bamana,J-9,Preposition,J-9-3,,,Препозиция,
 2011,bamana,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-2012,bamana,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+2012,bamana,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 2013,bamana,K-3,Postposition,K-3-2,,,Постпозиция,
 2014,bamana,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 2015,bamana,K-5,Definiteness,K-5-2,,,Определенность,
@@ -2178,7 +2178,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2177,bartangi,J-6,"Articles, pronouns and numerals",J-6-21,,,"Артикли, местоимения и числительные",
 2178,bartangi,J-8,Prohibitive and negative particles,J-8-8,,,Запретительные и отрицательные частицы,
 2179,bartangi,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-2180,bartangi,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+2180,bartangi,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 2181,bartangi,K-3,Preposition,K-3-1,,,Препозиция,
 2182,bartangi,K-5,,,,,Определенность/неопределенность,Других данных нет.
 2183,bartangi,K-6,Two types of conjugation,K-6-2,,,Два типа спряжения,
@@ -2476,7 +2476,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2475,beng,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 2476,beng,J-9,Postposition,J-9-4,,,Постпозиция,
 2477,beng,K-1,Pronouns are not inflected,K-1-1,,,Местоимения не склоняются,
-2478,beng,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+2478,beng,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 2479,beng,K-3,Postposition,K-3-2,,,Постпозиция,
 2480,beng,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 2481,beng,K-5,Definiteness,K-5-2,,,Определенность,
@@ -3030,7 +3030,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3029,breton,J-8,"Negative particles, pronouns, adverbs, and negative form of infinitive",J-8-32,,,"Отрицательные частицы, местоимения, наречия и отрицательная форма инфинитива",
 3030,breton,J-9,Framing and postposition,J-9-8,,,Обрамление или постпозиция,
 3031,breton,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-3032,breton,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+3032,breton,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 3033,breton,K-3,Preposition,K-3-1,,,Препозиция,
 3034,breton,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 3035,breton,K-5,Definiteness,K-5-2,,,Определенность,
@@ -3357,7 +3357,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3356,catalan,J-8,"Negative particles, affixes, pronouns, and adverbs",J-8-28,,,"Отрицательные частицы, аффиксы, местоимения и наречия",Существует двойное отрицание.
 3357,catalan,J-9,Framing and preposition,J-9-7,,,Обрамление или препозиция,
 3358,catalan,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-3359,catalan,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,Существует также региональный личный артикль перед именами и фамилиями.
+3359,catalan,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,Существует также региональный личный артикль перед именами и фамилиями.
 3360,catalan,K-3,Preposition,K-3-1,,,Препозиция,
 3361,catalan,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 3362,catalan,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль имеет формы множественного числа мужского и женского рода.
@@ -4120,7 +4120,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4119,corsican,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 4120,corsican,J-9,Preposition,J-9-3,,,Препозиция,
 4121,corsican,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-4122,corsican,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+4122,corsican,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 4123,corsican,K-3,Preposition,K-3-1,,,Препозиция,
 4124,corsican,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 4125,corsican,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль не имеет форм множественного числа.
@@ -4457,7 +4457,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4456,dalmatian,J-8,Negative adverbs and particles,J-8-34,,,Отрицательные наречия и частицы,
 4457,dalmatian,J-9,Preposition,J-9-3,,,Препозиция,
 4458,dalmatian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-4459,dalmatian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+4459,dalmatian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 4460,dalmatian,K-3,Preposition,K-3-1,,,Препозиция,
 4461,dalmatian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 4462,dalmatian,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль имеет формы только единственного числа.
@@ -4717,7 +4717,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4716,danish,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",Д.я. относится к числу мононегативных.
 4717,danish,J-9,Postposition,J-9-4,,,Постпозиция,
 4718,danish,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-4719,danish,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+4719,danish,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 4720,danish,K-3,,,,,Препозиция (неопределенный и свободностоящий определенный) и постпозиция (суффигированный определенный),
 4721,danish,K-4,,,,,Собственный артикль при каждом члене именной группы,
 4722,danish,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",
@@ -5199,7 +5199,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5198,dutch,J-8,"Negative particles, affixes, pronouns, and adverbs",J-8-28,,,"Отрицательные частицы, аффиксы, местоимения и наречия",
 5199,dutch,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,
 5200,dutch,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-5201,dutch,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+5201,dutch,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 5202,dutch,K-3,Preposition,K-3-1,,,Препозиция,
 5203,dutch,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 5204,dutch,K-5,"Definiteness, case, gender and number",K-5-11,,,"Определенность, падеж, род и число",Неопределенный артикль не имеет форм рода и мн. числа. Определенный артикль ед. числа сохраняет рудиментарные формы родительного падежа.
@@ -5395,7 +5395,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5394,english,J-8,"Negative particles, affixes, pronouns, and adverbs",J-8-28,,,"Отрицательные частицы, аффиксы, местоимения и наречия",
 5395,english,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,
 5396,english,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-5397,english,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+5397,english,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 5398,english,K-3,Preposition,K-3-1,,,Препозиция,
 5399,english,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 5400,english,K-5,,,,,Определенность/неопределенность,
@@ -5967,7 +5967,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5966,franco_provencal,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",
 5967,franco_provencal,J-9,"Framing, preposition and postposition",J-9-11,,,"Обрамление, препозиция или постпозиция",
 5968,franco_provencal,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-5969,franco_provencal,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+5969,franco_provencal,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 5970,franco_provencal,K-3,Preposition,K-3-1,,,Препозиция,
 5971,franco_provencal,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 5972,franco_provencal,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",
@@ -6176,7 +6176,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6175,frisian,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",
 6176,frisian,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,
 6177,frisian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-6178,frisian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+6178,frisian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 6179,frisian,K-3,Preposition,K-3-1,,,Препозиция,
 6180,frisian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 6181,frisian,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Определенный артикль не различает род во множественном числе; неопределенный артикль имеет только форму единственного числа.
@@ -6281,7 +6281,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6280,friulian,J-8,Negative pronouns and negative particles,J-8-6,,,Отрицательные местоимения и частицы,Совпадают с соответствующими итальянскими формами.
 6281,friulian,J-9,Preposition,J-9-3,,,Препозиция,
 6282,friulian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-6283,friulian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+6283,friulian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 6284,friulian,K-3,Preposition,K-3-1,,,Препозиция,
 6285,friulian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 6286,friulian,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Формы множественного числа неопределенного артикля в современном языке не употребляются.
@@ -6519,7 +6519,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6518,galician,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",
 6519,galician,J-9,Preposition,J-9-3,,,Препозиция,
 6520,galician,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-6521,galician,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+6521,galician,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 6522,galician,K-3,Preposition,K-3-1,,,Препозиция,
 6523,galician,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 6524,galician,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль имеет формы множественного числа мужского и женского рода.
@@ -6677,7 +6677,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6676,gascon,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 6677,gascon,J-9,Preposition,J-9-3,,,Препозиция,
 6678,gascon,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-6679,gascon,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+6679,gascon,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 6680,gascon,K-3,Preposition,K-3-1,,,Препозиция,
 6681,gascon,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 6682,gascon,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль не имеет форм множественного числа.
@@ -7141,7 +7141,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7140,german,J-8,,,,,"Отрицательные местоимения, наречия, (парные) союзы, частицы, предлоги и отрицательный артикль",
 7141,german,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,
 7142,german,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-7143,german,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,Неопределенный артикль имеет также отрицательную форму.
+7143,german,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,Неопределенный артикль имеет также отрицательную форму.
 7144,german,K-3,Preposition,K-3-1,,,Препозиция,
 7145,german,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 7146,german,K-5,"Definiteness, case, gender and number",K-5-11,,,"Определенность, падеж, род и число",Неопределенный артикль не имеет форм множественного числа. Отрицательный артикль имеет формы множественного числа.
@@ -7839,7 +7839,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7838,guro,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 7839,guro,J-9,Framing,J-9-2,,,Обрамление,
 7840,guro,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-7841,guro,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+7841,guro,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 7842,guro,K-3,Postposition,K-3-2,,,Постпозиция,
 7843,guro,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 7844,guro,K-5,Definiteness,K-5-2,,,Определенность,
@@ -8233,7 +8233,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8232,hungarian,J-8,Negative pronouns and negative particles,J-8-6,,,Отрицательные местоимения и частицы,
 8233,hungarian,J-9,Preposition,J-9-3,,,Препозиция,
 8234,hungarian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-8235,hungarian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+8235,hungarian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 8236,hungarian,K-3,Preposition,K-3-1,,,Препозиция,
 8237,hungarian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 8238,hungarian,K-5,Definiteness,K-5-2,,,Определенность,
@@ -8918,7 +8918,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8917,istriot,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 8918,istriot,J-9,Preposition,J-9-3,,,Препозиция,
 8919,istriot,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,Структура личных местоимений аналогична итальянской (с фонетическими отличиями).
-8920,istriot,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,Структура артиклей аналогична итальянской (с фонетическими отличиями).
+8920,istriot,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,Структура артиклей аналогична итальянской (с фонетическими отличиями).
 8921,istriot,K-3,Preposition,K-3-1,,,Препозиция,
 8922,istriot,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 8923,istriot,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",
@@ -9010,7 +9010,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9009,istro_romanian,J-8,,,,,Отрицательные частицы и наречия,
 9010,istro_romanian,J-9,Preposition,J-9-3,,,Препозиция,
 9011,istro_romanian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-9012,istro_romanian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+9012,istro_romanian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 9013,istro_romanian,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 9014,istro_romanian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 9015,istro_romanian,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",
@@ -9535,7 +9535,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9534,judeo_spanish,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",Имеется обязательное двойное отрицание.
 9535,judeo_spanish,J-9,Preposition,J-9-3,,,Препозиция,
 9536,judeo_spanish,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-9537,judeo_spanish,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+9537,judeo_spanish,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 9538,judeo_spanish,K-3,Preposition,K-3-1,,,Препозиция,
 9539,judeo_spanish,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 9540,judeo_spanish,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",
@@ -11256,7 +11256,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11255,khufi,J-8,Prohibitive and negative particles,J-8-8,,,Запретительные и отрицательные частицы,
 11256,khufi,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,
 11257,khufi,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-11258,khufi,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+11258,khufi,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 11259,khufi,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 11260,khufi,K-5,"Definiteness, case and gender",K-5-8,,,"Определенность, падеж и род",
 11261,khufi,K-6,Two types of conjugation,K-6-2,,,Два типа спряжения,
@@ -12345,7 +12345,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12344,kurdish,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 12345,kurdish,J-9,,,,,Постпозиция или инкорпорация,
 12346,kurdish,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-12347,kurdish,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+12347,kurdish,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 12348,kurdish,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 12349,kurdish,K-5,"Definiteness, case, gender and number",K-5-11,,,"Определенность, падеж, род и число",
 12350,kurdish,K-7,Subject,K-7-2,,,Субъектное,
@@ -12520,7 +12520,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12519,ladin,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",
 12520,ladin,J-9,Framing and preposition,J-9-7,,,Обрамление или препозиция,Препозиция и/или рамочное отрицание (в том числе двойное и частичное) различаются по диалектам.
 12521,ladin,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-12522,ladin,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+12522,ladin,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 12523,ladin,K-3,Preposition,K-3-1,,,Препозиция,
 12524,ladin,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 12525,ladin,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Категория рода выражается определенным и неопределенным артиклями. Непределенный артикль не имеет форм множественного числа.
@@ -13156,7 +13156,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13155,lomavren,J-3,Prepositions,J-3-3,,,Предлоги,
 13156,lomavren,J-5,Noun affixes,J-5-2,,,Именные аффиксы,
 13157,lomavren,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-13158,lomavren,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+13158,lomavren,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 13159,lomavren,K-3,Postposition,K-3-2,,,Постпозиция,
 13160,lomavren,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 13161,lomavren,K-5,Definiteness,K-5-2,,,Определенность,
@@ -13236,7 +13236,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13235,looma,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 13236,looma,J-9,Preposition,J-9-3,,,Препозиция,
 13237,looma,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-13238,looma,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+13238,looma,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 13239,looma,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 13240,looma,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 13241,looma,K-5,Definiteness,K-5-2,,,Определенность,
@@ -13420,7 +13420,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13419,luxembourgian,J-5,Absent,J-5-1,,,Отсутствует,
 13420,luxembourgian,J-6,Articles,J-6-1,,,Артикли,
 13421,luxembourgian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-13422,luxembourgian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+13422,luxembourgian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 13423,luxembourgian,K-3,Preposition,K-3-1,,,Препозиция,
 13424,luxembourgian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 13425,luxembourgian,K-5,"Definiteness, case, gender and number",K-5-11,,,"Определенность, падеж, род и число",Неопределенный артикль не имеет форм множественного числа.
@@ -14365,7 +14365,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14364,mansi,J-4,Pronouns and adverbs,J-4-6,,,Местоимения и наречия,
 14365,mansi,J-8,Negative particles and negative verbs,J-8-7,,,Отрицательные частицы и глаголы,
 14366,mansi,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-14367,mansi,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+14367,mansi,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 14368,mansi,K-5,Definiteness,K-5-2,,,Определенность,
 14369,mansi,K-6,Single type of conjugation,K-6-1,,,Единый тип спряжения,
 14370,mansi,K-7,Subject and subject-object,K-7-4,,,Субъектное и субъектно-объектное,
@@ -14836,7 +14836,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14835,megleno_romanian,J-8,Negative particles,J-8-3,,,Отрицательные частицы,Других данных нет.
 14836,megleno_romanian,J-9,Preposition,J-9-3,,,Препозиция,
 14837,megleno_romanian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-14838,megleno_romanian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+14838,megleno_romanian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 14839,megleno_romanian,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 14840,megleno_romanian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 14841,megleno_romanian,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",
@@ -16178,7 +16178,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16177,norwegian,J-8,"Negative particles, affixes, pronouns, adverbs, and conjunctions",J-8-30,,,"Отрицательные частицы, аффиксы, местоимения, наречия и союзы",Существует двойное отрицание.
 16178,norwegian,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,
 16179,norwegian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-16180,norwegian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+16180,norwegian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 16181,norwegian,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,Возможно одновременное употребление свободностоящего и суффигированного артиклей (двойной артикль).
 16182,norwegian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,В случае неопределенного артикля.
 16183,norwegian,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль не имеет форм множественного числа.
@@ -16277,7 +16277,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16276,occitan,J-8,Negative pronouns and negative particles,J-8-6,,,Отрицательные местоимения и частицы,
 16277,occitan,J-9,"Framing, preposition and postposition",J-9-11,,,"Обрамление, препозиция или постпозиция",
 16278,occitan,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-16279,occitan,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+16279,occitan,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 16280,occitan,K-3,Preposition,K-3-1,,,Препозиция,
 16281,occitan,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 16282,occitan,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",
@@ -16682,7 +16682,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16681,old_french,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",
 16682,old_french,J-9,Preposition,J-9-3,,,Препозиция,
 16683,old_french,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-16684,old_french,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+16684,old_french,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 16685,old_french,K-3,Preposition,K-3-1,,,Препозиция,
 16686,old_french,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 16687,old_french,K-5,"Definiteness, case, gender and number",K-5-11,,,"Определенность, падеж, род и число",
@@ -17104,7 +17104,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17103,oriya,J-8,Negative verbs,J-8-4,,,Отрицательные глаголы,
 17104,oriya,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,
 17105,oriya,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-17106,oriya,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+17106,oriya,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 17107,oriya,K-3,Postposition,K-3-2,,,Постпозиция,
 17108,oriya,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 17109,oriya,K-5,Definiteness,K-5-2,,,Определенность,
@@ -17254,7 +17254,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17253,ormuri,J-8,Prohibitive and negative particles,J-8-8,,,Запретительные и отрицательные частицы,
 17254,ormuri,J-9,Preposition,J-9-3,,,Препозиция,
 17255,ormuri,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-17256,ormuri,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+17256,ormuri,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 17257,ormuri,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 17258,ormuri,K-5,,,,,Определенность/неопределенность,
 17259,ormuri,K-6,Two types of conjugation,K-6-2,,,Два типа спряжения,
@@ -17737,7 +17737,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17736,parthian,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 17737,parthian,J-9,Incorporation and preposition,J-9-6,,,Инкорпорация или препозиция,
 17738,parthian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-17739,parthian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+17739,parthian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 17740,parthian,K-3,Preposition,K-3-1,,,Препозиция,Неопределенный артикль может отделяться от имени другим словом (в т.ч. глаголом).
 17741,parthian,K-5,Definiteness and number,K-5-5,,,Определенность и число,
 17742,parthian,K-6,Two types of conjugation,K-6-2,,,Два типа спряжения,Других данных нет.
@@ -18571,7 +18571,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18570,portuguese,J-8,"Negative particles, affixes, and pronouns",J-8-17,,,"Отрицательные частицы, аффиксы и местоимения",
 18571,portuguese,J-9,Preposition,J-9-3,,,Препозиция,
 18572,portuguese,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-18573,portuguese,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+18573,portuguese,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 18574,portuguese,K-3,Preposition,K-3-1,,,Препозиция,
 18575,portuguese,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 18576,portuguese,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль не имеет форм множественного числа.
@@ -19112,7 +19112,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19110,rhaeto_romance,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",
 19111,rhaeto_romance,J-9,"Framing, preposition and postposition",J-9-11,,,"Обрамление, препозиция или постпозиция",
 19112,rhaeto_romance,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-19113,rhaeto_romance,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+19113,rhaeto_romance,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 19114,rhaeto_romance,K-3,Preposition,K-3-1,,,Препозиция,
 19115,rhaeto_romance,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 19116,rhaeto_romance,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль не имеет форм множественного числа.
@@ -19215,7 +19215,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19213,romani,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 19214,romani,J-9,Preposition and postposition,J-9-9,Depending on a dialect,,Препозиция или постпозиция,В зависимости от диалекта
 19215,romani,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-19216,romani,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+19216,romani,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 19217,romani,K-3,Preposition,K-3-1,,,Препозиция,
 19218,romani,K-4,Articles preceding each word,K-4-2,Only definite articles,,Собственный артикль перед каждым словом,У определенных арктиклей
 19219,romani,K-5,"Definiteness, case, gender and number",K-5-11,,,"Определенность, падеж, род и число",
@@ -19406,7 +19406,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19404,roshorvi,J-8,Prohibitive and negative particles,J-8-8,,,Запретительные и отрицательные частицы,
 19405,roshorvi,J-9,Preposition,J-9-3,,,Препозиция,
 19406,roshorvi,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-19407,roshorvi,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+19407,roshorvi,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 19408,roshorvi,K-3,Preposition,K-3-1,,,Препозиция,Других данных нет.
 19409,roshorvi,K-5,Definiteness,K-5-2,,,Определенность,Других данных нет.
 19410,roshorvi,K-6,Three types of conjugation,K-6-3,,,Три типа спряжения,
@@ -19491,7 +19491,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19489,rushani,J-5,Different cases for definite and indefinite objects,J-5-10,,,Различное падежное оформление определенного и неопределенного объекта,
 19490,rushani,J-6,"Articles, pronouns and numerals",J-6-21,,,"Артикли, местоимения и числительные",
 19491,rushani,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-19492,rushani,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+19492,rushani,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 19493,rushani,K-3,Preposition,K-3-1,,,Препозиция,
 19494,rushani,K-5,"Case, gender and number",K-5-10,,,"Падеж, род и число",
 19495,rushani,K-6,Two types of conjugation,K-6-2,,,Два типа спряжения,
@@ -20138,7 +20138,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20136,sardinian,J-8,Negative pronouns and negative particles,J-8-6,,,Отрицательные местоимения и частицы,
 20137,sardinian,J-9,Preposition,J-9-3,,,Препозиция,Правила употребления единичного или двойного отрицания как в итальянском языке.
 20138,sardinian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-20139,sardinian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+20139,sardinian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 20140,sardinian,K-3,Preposition,K-3-1,,,Препозиция,
 20141,sardinian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 20142,sardinian,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль не имеет форм множественного числа.
@@ -20211,7 +20211,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20209,sariqoli,J-8,Prohibitive and negative particles,J-8-8,,,Запретительные и отрицательные частицы,
 20210,sariqoli,J-9,Preposition,J-9-3,,,Препозиция,
 20211,sariqoli,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-20212,sariqoli,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+20212,sariqoli,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 20213,sariqoli,K-5,Definiteness,K-5-2,,,Определенность,Других данных нет.
 20214,sariqoli,K-6,Three types of conjugation,K-6-3,,,Три типа спряжения,
 20215,sariqoli,K-7,Subject,K-7-2,,,Субъектное,
@@ -20800,7 +20800,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20798,shamerzadi,J-5,Different case affixes for definite and indefinite objects,J-5-9,,,Различное оформление падежа у определенного и неопределенного объекта,
 20799,shamerzadi,J-6,"Articles, pronouns and numerals",J-6-21,,,"Артикли, местоимения и числительные",
 20800,shamerzadi,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-20801,shamerzadi,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+20801,shamerzadi,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 20802,shamerzadi,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 20803,shamerzadi,K-5,Definiteness,K-5-2,,,Определенность,Других данных нет.
 20804,shamerzadi,K-6,Three types of conjugation,K-6-3,,,Три типа спряжения,
@@ -21083,7 +21083,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21081,shughni,J-8,Prohibitive and negative particles,J-8-8,,,Запретительные и отрицательные частицы,
 21082,shughni,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,
 21083,shughni,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-21084,shughni,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+21084,shughni,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 21085,shughni,K-5,,,,,"Определенность, род и падеж",
 21086,shughni,K-7,Subject,K-7-2,,,Субъектное,Глагол согласуется с главным членом определительного словосочетания.
 21087,shughni,K-8,Gender,K-8-4,,,Род,
@@ -21448,7 +21448,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21446,sivandi,J-8,Negative pronouns and negative particles,J-8-6,,,Отрицательные местоимения и частицы,
 21447,sivandi,J-9,Preposition,J-9-3,,,Препозиция,
 21448,sivandi,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-21449,sivandi,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,"Указательные местоимения в функции определенного и числительное ""один""  в функции неопределенного артиклей."
+21449,sivandi,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,"Указательные местоимения в функции определенного и числительное ""один""  в функции неопределенного артиклей."
 21450,sivandi,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 21451,sivandi,K-5,,,,,Определенность и неопределенность/единичность,
 21452,sivandi,K-7,Subject and object,K-7-3,,,Субъектное и объектное,
@@ -21745,7 +21745,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21743,sogdian,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 21744,sogdian,J-9,Preposition,J-9-3,,,Препозиция,
 21745,sogdian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-21746,sogdian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,"В буддийских текстах отмечено использование числительного ""один"" в функции неопределенного артикля."
+21746,sogdian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,"В буддийских текстах отмечено использование числительного ""один"" в функции неопределенного артикля."
 21747,sogdian,K-3,Preposition,K-3-1,,,Препозиция,
 21748,sogdian,K-5,"Definiteness, case, gender and number",K-5-11,,,"Определенность, падеж, род и число",
 21749,sogdian,K-6,Two types of conjugation,K-6-2,,,Два типа спряжения,
@@ -22092,7 +22092,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22090,spanish,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",
 22091,spanish,J-9,Preposition,J-9-3,,,Препозиция,
 22092,spanish,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-22093,spanish,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+22093,spanish,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 22094,spanish,K-3,Preposition,K-3-1,,,Препозиция,
 22095,spanish,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 22096,spanish,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль не имеет форм множественного числа.
@@ -22187,7 +22187,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22185,standard_eastern_armenian,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 22186,standard_eastern_armenian,J-9,Preposition,J-9-3,,,Препозиция,
 22187,standard_eastern_armenian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-22188,standard_eastern_armenian,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+22188,standard_eastern_armenian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 22189,standard_eastern_armenian,K-3,Postposition,K-3-2,,,Постпозиция,
 22190,standard_eastern_armenian,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 22191,standard_eastern_armenian,K-5,Definiteness,K-5-2,,,Определенность,
@@ -22621,7 +22621,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22619,swedish,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",
 22620,swedish,J-9,Preposition,J-9-3,,,Препозиция,
 22621,swedish,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-22622,swedish,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+22622,swedish,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 22623,swedish,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 22624,swedish,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 22625,swedish,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",Неопределенный артикль не имеет форм множественного числа.
@@ -22729,7 +22729,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22727,swiss_german,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",
 22728,swiss_german,J-9,Preposition,J-9-3,,,Препозиция,
 22729,swiss_german,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-22730,swiss_german,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+22730,swiss_german,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 22731,swiss_german,K-3,Preposition,K-3-1,,,Препозиция,
 22732,swiss_german,K-4,Single article preceding the phrase,K-4-1,,,Единый артикль для всей именной группы,
 22733,swiss_german,K-5,"Definiteness, gender and number",K-5-9,,,"Определенность, род и число",
@@ -25415,7 +25415,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25412,wakhi,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 25413,wakhi,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,
 25414,wakhi,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-25415,wakhi,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+25415,wakhi,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 25416,wakhi,K-3,Preposition,K-3-1,,,Препозиция,
 25417,wakhi,K-5,Definiteness,K-5-2,,,Определенность,
 25418,wakhi,K-6,Three types of conjugation,K-6-3,,,Три типа спряжения,
@@ -25824,7 +25824,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25821,yaghnobi,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 25822,yaghnobi,J-9,Preposition,J-9-3,,,Препозиция,
 25823,yaghnobi,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-25824,yaghnobi,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+25824,yaghnobi,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 25825,yaghnobi,K-3,Preposition,K-3-1,,,Препозиция,
 25826,yaghnobi,K-5,Definiteness,K-5-2,,,Определенность,Других данных нет.
 25827,yaghnobi,K-6,Single type of conjugation,K-6-1,,,Единый тип спряжения,
@@ -26050,7 +26050,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26047,yarandi,J-5,Noun affixes,J-5-2,,,Именные аффиксы,
 26048,yarandi,J-6,"Articles, pronouns and numerals",J-6-21,,,"Артикли, местоимения и числительные",
 26049,yarandi,J-8,,,,,"Отрицательные местоимения, частицы и аффиксы",
-26050,yarandi,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+26050,yarandi,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 26051,yarandi,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 26052,yarandi,K-5,,,,,Определенность/неопределенность,Других данных нет.
 26053,yarandi,K-6,Two types of conjugation,K-6-2,,,Два типа спряжения,
@@ -26114,7 +26114,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26111,yazdi_and_kermani,J-8,,,,,"Отрицательный префикс, отрицательная связка в аналитических формах перфекта, запретительная частица ""ma""",
 26112,yazdi_and_kermani,J-9,"Incorporation, postpostion and preposition",J-9-10,,,"Инкорпорация, постпозиция или препозиция",
 26113,yazdi_and_kermani,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-26114,yazdi_and_kermani,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+26114,yazdi_and_kermani,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 26115,yazdi_and_kermani,K-3,Preposition and postposition,K-3-3,,,Препозиция и постпозиция,
 26116,yazdi_and_kermani,K-5,Definiteness,K-5-2,,,Определенность,
 26117,yazdi_and_kermani,K-6,Two types of conjugation,K-6-2,,,Два типа спряжения,
@@ -26204,7 +26204,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26201,yazghulami,J-8,Negative particles,J-8-3,,,Отрицательные частицы,
 26202,yazghulami,J-9,Preposition,J-9-3,,,Препозиция,
 26203,yazghulami,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-26204,yazghulami,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+26204,yazghulami,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 26205,yazghulami,K-3,Preposition,K-3-1,,,Препозиция,
 26206,yazghulami,K-5,Definiteness,K-5-2,,,Определенность,
 26207,yazghulami,K-6,Two types of conjugation,K-6-2,,,Два типа спряжения,
@@ -26295,7 +26295,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26292,yiddish,J-8,"Negative particles, pronouns and adverbs",J-8-15,,,"Отрицательные частицы, местоимения и наречия",
 26293,yiddish,J-9,Postposition,J-9-4,,,Постпозиция,Постпозиция относительно финитной формы глагола. Существует двойное отрицание.
 26294,yiddish,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-26295,yiddish,K-2,Definite and indefinite,K-2-4,,,Определенные и неопределенные,
+26295,yiddish,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 26296,yiddish,K-3,Preposition,K-3-1,,,Препозиция,
 26297,yiddish,K-4,,,,,Собственный неопределенный артикль перед каждым членом группы и единый определенный артикль для всей именной группы,
 26298,yiddish,K-5,"Definiteness, case, gender and number",K-5-11,,,"Определенность, падеж, род и число","Неопределенный артикль по роду, числу и падежу не изменяется."
