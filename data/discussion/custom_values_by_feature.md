@@ -1201,7 +1201,6 @@
 - Настоящее и будущее: [гуджарати](../feature_profiles/gujarati.csv), [саураштра](../feature_profiles/saurashtra.csv)
 - Настоящее, настоящее-будущее и прошедшее: [калаша](../feature_profiles/kalasha.csv), [кховар](../feature_profiles/khowar.csv)
 - Настоящее, прошедшее и общее: [домааки](../feature_profiles/domaaki.csv)
-- Прошедшее, непрошедшее и будущее: [кота](../feature_profiles/kota.csv)
 - Что делать с языками, в которых нет никаких времен? В яурэ, например, отмечено только недавнее прошедшее, но это не означает, что в языке есть настоящее и будущее: [яурэ](../feature_profiles/yaoure.csv)
 - нет данных: [джого](../feature_profiles/jogo.csv)
 ## I-6: Выражение вида и времени
