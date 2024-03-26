@@ -38,6 +38,7 @@ def test__init(test_validator):
     [
         ("corsican_no_feature_ID", "does not contain feature ID in row 4"),
         ("corsican_invalid_value_type", "contains invalid value type in row 4"),
+        ("corsican_empty_value_type", "contains empty value type in row 4"),
         ("corsican_custom_and_value_ID", "must not contain value ID A-3-4 in row 4"),
         ("corsican_custom_no_text", "does not contain value text in row 4"),
         (
