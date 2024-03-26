@@ -57,6 +57,10 @@ def test__init(test_validator):
             "ukrainian_invalid_value_ID_in_multiselect",
             "contains invalid value ID K-143 in row 108",
         ),
+        (
+            "ukrainian_no_correspondence_in_multiselect",
+            "value По лицу for value ID K-14-2 in row 108 does not match",
+        ),
     ],
 )
 def test__validate_one_file_fails_with_bad_files(
