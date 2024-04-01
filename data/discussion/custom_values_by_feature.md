@@ -1676,7 +1676,7 @@
 - Числа и падежа: [гарви](../feature_profiles/garwi.csv)
 - Числа, лица посессора и определенности: [афтари](../feature_profiles/aftari.csv)
 - Число и неопределенность/единичность (спорадически): [хазара](../feature_profiles/hazaragi.csv)
-## K-17: Средства словоизменения
+## K-18: Средства словоизменения
 
 - Афииксы, личные окончания и частицы: [парачи](../feature_profiles/parachi.csv)
 - Аффиксация и тоновые чередования: [дан](../feature_profiles/dan.csv), [кла-дан](../feature_profiles/kla_dan.csv)
