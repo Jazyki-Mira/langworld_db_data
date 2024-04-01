@@ -849,14 +849,14 @@ K-7-1,K-7,No verb agreement,Глагольное согласование отс
 K-7-2,K-7,Subject,Субъектное
 K-7-3,K-7,Subject and object,Субъектное и объектное
 K-7-4,K-7,Subject and subject-object,Субъектное и субъектно-объектное
-K-8-1,K-8,Absent,Отсутствуют
-K-8-2,K-8,Case,Падеж
-K-8-3,K-8,Augmentation,Порода
-K-8-4,K-8,Gender,Род
-K-8-5,K-8,Number,Число
-K-8-6,K-8,Gender and number,Род и число
-K-8-7,K-8,"Gender, number and case","Род, число и падеж"
-K-8-8,K-8,Number and case,Число и падеж
+K-9-1,K-9,Absent,Отсутствуют
+K-9-2,K-9,Case,Падеж
+K-9-3,K-9,Augmentation,Порода
+K-9-4,K-9,Gender,Род
+K-9-5,K-9,Number,Число
+K-9-6,K-9,Gender and number,Род и число
+K-9-7,K-9,"Gender, number and case","Род, число и падеж"
+K-9-8,K-9,Number and case,Число и падеж
 K-10-1,K-10,Present-past,Настоящее-прошедшее
 K-10-2,K-10,Future,Будущее
 K-10-3,K-10,Present,Настоящее
