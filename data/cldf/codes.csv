@@ -575,8 +575,6 @@ G-6-7,G-6,"Mixed, with elements of quinary, decimal, pentadecimal, and vigesimal
 G-6-8,G-6,Decimal with elements of quinary,,Десятичная с элементами пятеричной
 G-6-9,G-6,"Mixed, with elements of quinary, decimal, and vigesimal",,"Смешанная с элементами пятеричной, десятичной и двадцатеричной"
 G-6-10,G-6,Decimal with elements of duodecimal and vigesimal,,Десятичная с элементами двенадцатеричной и двадцатеричной
-G-7-1,G-7,Same,,Совпадают
-G-7-2,G-7,Different,,Не совпадают
 H-1-1,H-1,One-two,,Один-два
 H-1-2,H-1,Three-seven,,Три-семь
 H-1-3,H-1,Eight-twelve,,Восемь-двенадцать
@@ -996,159 +994,161 @@ K-2-2,K-2,Only indefinite,,Только неопределенный
 K-2-3,K-2,Only definite,,Только определенный
 K-2-4,K-2,Definite and indefinite,,Определенный и неопределенный
 K-2-5,K-2,"Definite, indefinite and partitive",,"Определенный, неопределенный и партитивный"
-K-3-1,K-3,Preposition,,Препозиция
-K-3-2,K-3,Postposition,,Постпозиция
-K-3-3,K-3,Preposition and postposition,,Препозиция и постпозиция
-K-4-1,K-4,Single article preceding the phrase,,Единый артикль для всей именной группы
-K-4-2,K-4,Articles preceding each word,,Собственный артикль перед каждым словом
-K-5-1,K-5,Animacy,,Одушевленность
-K-5-2,K-5,Definiteness,,Определенность
-K-5-3,K-5,Animacy and gender,,Одушевленность и род
-K-5-4,K-5,Definiteness and case,,Определенность и падеж
-K-5-5,K-5,Definiteness and number,,Определенность и число
-K-5-6,K-5,Definiteness and gender,,Определенность и род
-K-5-7,K-5,"Animacy, case and number",,"Одушевленность, падеж и число"
-K-5-8,K-5,"Definiteness, case and gender",,"Определенность, падеж и род"
-K-5-9,K-5,"Definiteness, gender and number",,"Определенность, род и число"
-K-5-10,K-5,"Case, gender and number",,"Падеж, род и число"
-K-5-11,K-5,"Definiteness, case, gender and number",,"Определенность, падеж, род и число"
-K-5-12,K-5,"Definiteness, possessivity, case, gender and number",,"Определенность, посессивность, падеж, род и число"
-K-6-1,K-6,Single type of conjugation,,Единый тип спряжения
-K-6-2,K-6,Two types of conjugation,,Два типа спряжения
-K-6-3,K-6,Three types of conjugation,,Три типа спряжения
-K-6-4,K-6,Four types of conjugation,,Четыре типа спряжения
-K-6-5,K-6,Six types of conjugation,,Шесть типов спряжения
-K-6-6,K-6,Forteen types of conjugation,,Четырнадцать типов спряжения
-K-6-7,K-6,Nine types of conjugation,,Девять типов спряжения
-K-6-8,K-6,Ten types of conjugation,,Десять типов спряжения
-K-7-1,K-7,No verb agreement,,Глагольное согласование отсутствует
-K-7-2,K-7,Subject,,Субъектное
-K-7-3,K-7,Subject and object,,Субъектное и объектное
-K-7-4,K-7,Subject and subject-object,,Субъектное и субъектно-объектное
-K-8-1,K-8,Absent,,Отсутствуют
-K-8-2,K-8,Case,,Падеж
-K-8-3,K-8,Augmentation,,Порода
-K-8-4,K-8,Gender,,Род
-K-8-5,K-8,Number,,Число
-K-8-6,K-8,Gender and number,,Род и число
-K-8-7,K-8,"Gender, number and case",,"Род, число и падеж"
-K-8-8,K-8,Number and case,,Число и падеж
-K-8-9,K-8,"Gender, number and definiteness",,"Род, число и определенность"
-K-9-1,K-9,Present-past,,Настоящее-прошедшее
-K-9-2,K-9,Future,,Будущее
-K-9-3,K-9,Present,,Настоящее
-K-9-4,K-9,Past,,Прошедшее
-K-9-5,K-9,Present-future,,Настоящее-будущее
-K-9-6,K-9,Present and past,,Настоящее и прошедшее
-K-9-7,K-9,Past and future,,Прошедшее и будущее
-K-9-8,K-9,Present-future and past,,Настоящее-будущее и прошедшее
-K-9-9,K-9,Present-past and future,,Настоящее-прошедшее и будущее
-K-9-10,K-9,"Present, past and future",,"Настоящее, прошедшее и будущее"
-K-9-11,K-9,"Present-past, past and future",,"Настоящее-прошедшее, прошедшее и будущее"
-K-9-12,K-9,"Present, present-future, future and past",,"Настоящее, настоящее-будущее, будущее и прошедшее"
-K-10-1,K-10,Absent,,Отсутствуют
-K-10-2,K-10,Degrees of comparison,,Степени сравнения
+K-3-1,K-3,Same,,Совпадают
+K-3-2,K-3,Different,,Не совпадают
+K-4-1,K-4,Preposition,,Препозиция
+K-4-2,K-4,Postposition,,Постпозиция
+K-4-3,K-4,Preposition and postposition,,Препозиция и постпозиция
+K-5-1,K-5,Single article preceding the phrase,,Единый артикль для всей именной группы
+K-5-2,K-5,Articles preceding each word,,Собственный артикль перед каждым словом
+K-6-1,K-6,Animacy,,Одушевленность
+K-6-2,K-6,Definiteness,,Определенность
+K-6-3,K-6,Animacy and gender,,Одушевленность и род
+K-6-4,K-6,Definiteness and case,,Определенность и падеж
+K-6-5,K-6,Definiteness and number,,Определенность и число
+K-6-6,K-6,Definiteness and gender,,Определенность и род
+K-6-7,K-6,"Animacy, case and number",,"Одушевленность, падеж и число"
+K-6-8,K-6,"Definiteness, case and gender",,"Определенность, падеж и род"
+K-6-9,K-6,"Definiteness, gender and number",,"Определенность, род и число"
+K-6-10,K-6,"Case, gender and number",,"Падеж, род и число"
+K-6-11,K-6,"Definiteness, case, gender and number",,"Определенность, падеж, род и число"
+K-6-12,K-6,"Definiteness, possessivity, case, gender and number",,"Определенность, посессивность, падеж, род и число"
+K-7-1,K-7,Single type of conjugation,,Единый тип спряжения
+K-7-2,K-7,Two types of conjugation,,Два типа спряжения
+K-7-3,K-7,Three types of conjugation,,Три типа спряжения
+K-7-4,K-7,Four types of conjugation,,Четыре типа спряжения
+K-7-5,K-7,Six types of conjugation,,Шесть типов спряжения
+K-7-6,K-7,Forteen types of conjugation,,Четырнадцать типов спряжения
+K-7-7,K-7,Nine types of conjugation,,Девять типов спряжения
+K-7-8,K-7,Ten types of conjugation,,Десять типов спряжения
+K-8-1,K-8,No verb agreement,,Глагольное согласование отсутствует
+K-8-2,K-8,Subject,,Субъектное
+K-8-3,K-8,Subject and object,,Субъектное и объектное
+K-8-4,K-8,Subject and subject-object,,Субъектное и субъектно-объектное
+K-9-1,K-9,Absent,,Отсутствуют
+K-9-2,K-9,Case,,Падеж
+K-9-3,K-9,Augmentation,,Порода
+K-9-4,K-9,Gender,,Род
+K-9-5,K-9,Number,,Число
+K-9-6,K-9,Gender and number,,Род и число
+K-9-7,K-9,"Gender, number and case",,"Род, число и падеж"
+K-9-8,K-9,Number and case,,Число и падеж
+K-9-9,K-9,"Gender, number and definiteness",,"Род, число и определенность"
+K-10-1,K-10,Present-past,,Настоящее-прошедшее
+K-10-2,K-10,Future,,Будущее
+K-10-3,K-10,Present,,Настоящее
+K-10-4,K-10,Past,,Прошедшее
+K-10-5,K-10,Present-future,,Настоящее-будущее
+K-10-6,K-10,Present and past,,Настоящее и прошедшее
+K-10-7,K-10,Past and future,,Прошедшее и будущее
+K-10-8,K-10,Present-future and past,,Настоящее-будущее и прошедшее
+K-10-9,K-10,Present-past and future,,Настоящее-прошедшее и будущее
+K-10-10,K-10,"Present, past and future",,"Настоящее, прошедшее и будущее"
+K-10-11,K-10,"Present-past, past and future",,"Настоящее-прошедшее, прошедшее и будущее"
+K-10-12,K-10,"Present, present-future, future and past",,"Настоящее, настоящее-будущее, будущее и прошедшее"
 K-11-1,K-11,Absent,,Отсутствуют
-K-11-2,K-11,Person,,Лицо
-K-11-3,K-11,Animacy,,Одушевленность
-K-11-4,K-11,Case,,Падеж
-K-11-5,K-11,Gender,,Род
-K-11-6,K-11,Number,,Число
-K-11-7,K-11,Gender and number,,Род и число
-K-11-8,K-11,Number and case,,Число и падеж
-K-11-9,K-11,"Animacy, person and case",,"Одушевленность, лицо и падеж"
-K-11-10,K-11,"Gender, number and case",,"Род, число и падеж"
-K-11-11,K-11,"Gender, number and definiteness",,"Род, число и определенность"
-K-11-12,K-11,"Gender, number and state",,"Род, число и состояние"
-K-11-13,K-11,"Person, case, number and gender",,"Лицо, падеж, число и род"
-K-11-14,K-11,"Gender, number, case and definiteness",,"Род, число, падеж и определенность"
-K-11-15,K-11,"Animacy, person, case and number",,"Одушевленность, лицо, падеж и число"
-K-11-16,K-11,"Animacy, person, case, number and gender",,"Одушевленность, лицо, падеж, число и род"
-K-11-17,K-11,"Animacy, definiteness, case, number and gender",,"Одушевленность, определенность, падеж, число и род"
-K-11-18,K-11,"Animacy, person, case, number, gender and possessivity",,"Одушевленность, лицо, падеж, число, род и посессивность"
-K-11-19,K-11,"Agreement class, number, and case",,"Согласовательный класс, число и падеж"
-K-11-20,K-11,Agreement class and number,,Согласовательный класс и число
-K-11-21,K-11,"Gender, animacy, number, and case",,"Род, одушевленность, число и падеж"
-K-11-22,K-11,Person and number,,Лицо и число
-K-11-23,K-11,Definiteness and case,,Определенность и падеж
-K-12-1,K-12,Absent,,Отсутствует
-K-12-2,K-12,Person and number,,Лица и числа
-K-12-3,K-12,Agreement class and case,,Согласовательного класса и падежа
-K-12-4,K-12,Number and case,,Числа и падежа
-K-12-5,K-12,Gender and number,,Рода и числа
-K-12-6,K-12,Number and agreement class,,Числа и согласовательного класса
-K-12-7,K-12,"Gender, number and case",,"Рода, числа и падежа"
-K-12-8,K-12,"Agreement class, number and case",,"Согласовательного класса, числа и падежа"
-K-12-9,K-12,Agreement class and state,,Согласовательного класса и состояния
-K-12-10,K-12,"Gender, number, case, animacy, and person",,"Рода, числа, падежа, одушевленности и личности"
-K-12-11,K-12,Gender and definiteness,,Рода и определенности
-K-13-1,K-13,Always present,,Всегда присутствует
-K-13-2,K-13,Absent,,Отсутствует
-K-13-3,K-13,Only in preposition,,Только в препозиции
-K-13-4,K-13,Optional,,Факультативно
-K-13-5,K-13,Only in postposition,,Только в постпозиции
-K-14-1,K-14,No attributive agreement,,Атрибутивное согласование отсутствует
-K-14-2,K-14,In number,,По числу
-K-14-3,K-14,In case,,По падежу
-K-14-4,K-14,In gender,,По роду
-K-14-5,K-14,In class,,По классу
-K-14-6,K-14,In (in)humanness,,По лично-мужской/нелично-мужской форме
-K-14-7,K-14,In (in)animacy,,По одушевлённости/неодушевлённости
-K-14-8,K-14,In person,,По посессивности
-K-14-9,K-14,In (in)definiteness,,По определённости/неопределённости
-K-14-10,K-14,In state,,По состоянию
-K-14-11,K-14,In (un)countability,,По исчисляемости/неисчисляемости
-K-15-1,K-15,Absent,,Отсутствуют
-K-15-2,K-15,Case,,Падеж
-K-15-3,K-15,(In)definiteness,,Определенность/ неопределенность
-K-15-4,K-15,Number,,Число
-K-15-5,K-15,Possessivity,,Посессивность
-K-15-6,K-15,Honorific/neutral forms,,Гонорифическая и нейтральная формы
-K-15-7,K-15,Number and case,,Число и падеж
-K-15-8,K-15,(In)definiteness and number,,Определенность и число
-K-15-9,K-15,Number and state,,Число и состояние
-K-15-10,K-15,Possessivity and honorific/neutral forms,,Посессивность и гонорифическая/нейтральная формы
-K-15-11,K-15,"Case, possessivity and number",,"Падеж, посессивность и число"
-K-15-12,K-15,"(In)definiteness, number and state",,"Определенность, число и состояние"
-K-15-13,K-15,"Possessivity, (in)definiteness, and number",,"Посессивность, определенность, число"
-K-15-14,K-15,"Number, case, and (in)definiteness",,"Число, падеж и определенность/неопределенность"
-K-15-15,K-15,"Person, number, and case",,"Лицо, число и падеж"
-K-15-16,K-15,"(In)definiteness, number and izafat",,"Определенность, число и изафет"
-K-16-1,K-16,Absent,,Отсутствует
-K-16-2,K-16,Person and number,,Лица и числа
-K-16-3,K-16,Person and number of the possessee,,Лица и числа обладаемого
-K-16-4,K-16,Case and definiteness,,Падежа и определенности
-K-16-5,K-16,Case and gender / agreement class,,Падежа и рода / согласовательного класса
-K-16-6,K-16,Number and case,,Числа и падежа
-K-16-7,K-16,Number and gender / agreement class,,Числа и рода / согласовательного класса
-K-16-8,K-16,Case and person of possessor,,Падежа и лица посессора
-K-16-9,K-16,Person and number of possessor,,Лица посессора и числа посессора
-K-16-10,K-16,"Person, number and possessivity",,"Лица, числа и посессивности"
-K-16-11,K-16,"Gender / agreement class, number and case",,"Рода / согласовательного класса, числа и падежа"
-K-16-12,K-16,"Gender / agreement class, number and state",,"Рода / согласовательного класса, числа и состояния"
-K-16-13,K-16,"Person, number and case",,"Лица, числа и падежа"
-K-16-14,K-16,"Gender / agreement class, number, case and definiteness",,"Рода / согласовательного класса, числа, падежа и определенности"
-K-16-15,K-16,"Number, case, person and number of possessor",,"Числа, падежа, лица посессора и числа посессора"
-K-16-16,K-16,"Gender / agreement class, number, case and animateness",,"Рода / согласовательного класса, числа, падежа и одушевленности"
-K-16-17,K-16,Number and definiteness,,Числа и определённости
-K-16-18,K-16,Definiteness and gender / agreement class,,Определенности и рода / согласовательного класса
-K-17-1,K-17,Internal flection,,Внутренняя флексия
-K-17-2,K-17,Affixes,,Аффиксы
-K-17-3,K-17,Stem truncation and augmentation,,Наращение/ усечение основы
-K-17-4,K-17,Reduplication,,Редупликация
-K-17-5,K-17,Internal flection and affixes,,Внутренняя флексия и аффиксы
-K-17-6,K-17,Reduplication and affixes,,Редупликация и аффиксы
-K-17-7,K-17,Reduplication and internal flection,,Редупликация и внутренняя флексия
-K-17-8,K-17,Stem truncation/augmentation and affixes,,Наращение/ усечение основы и аффиксы
-K-17-9,K-17,Internal flection and stem truncation/augmentation,,Внутренняя флексия и наращение/ усечение основы
-K-17-10,K-17,"Internal flection, stem truncation/augmentation and affixes",,"Внутренняя флексия, наращение/ усечение основы и аффиксы"
-K-17-11,K-17,"Reduplication, internal flection and affixes",,"Редупликация, внутренняя флексия и аффиксы"
-K-17-12,K-17,Internal flection and tonal alternation,,Внутренняя флексия и тоновые чередования
-K-17-13,K-17,Internal and external flection and affixes,,Внутренняя и внешняя флексия и аффиксы
-K-18-1,K-18,Prefixal-suffixal,,Префиксально-суффиксальная
-K-18-2,K-18,Mainly or only infixal,,Преимущественно или только инфиксальная
-K-18-3,K-18,Mainly or only prefixal,,Преимущественно или только префиксальная
-K-18-4,K-18,Mainly or only suffixal,,Преимущественно или только суффиксальная
+K-11-2,K-11,Degrees of comparison,,Степени сравнения
+K-12-1,K-12,Absent,,Отсутствуют
+K-12-2,K-12,Person,,Лицо
+K-12-3,K-12,Animacy,,Одушевленность
+K-12-4,K-12,Case,,Падеж
+K-12-5,K-12,Gender,,Род
+K-12-6,K-12,Number,,Число
+K-12-7,K-12,Gender and number,,Род и число
+K-12-8,K-12,Number and case,,Число и падеж
+K-12-9,K-12,"Animacy, person and case",,"Одушевленность, лицо и падеж"
+K-12-10,K-12,"Gender, number and case",,"Род, число и падеж"
+K-12-11,K-12,"Gender, number and definiteness",,"Род, число и определенность"
+K-12-12,K-12,"Gender, number and state",,"Род, число и состояние"
+K-12-13,K-12,"Person, case, number and gender",,"Лицо, падеж, число и род"
+K-12-14,K-12,"Gender, number, case and definiteness",,"Род, число, падеж и определенность"
+K-12-15,K-12,"Animacy, person, case and number",,"Одушевленность, лицо, падеж и число"
+K-12-16,K-12,"Animacy, person, case, number and gender",,"Одушевленность, лицо, падеж, число и род"
+K-12-17,K-12,"Animacy, definiteness, case, number and gender",,"Одушевленность, определенность, падеж, число и род"
+K-12-18,K-12,"Animacy, person, case, number, gender and possessivity",,"Одушевленность, лицо, падеж, число, род и посессивность"
+K-12-19,K-12,"Agreement class, number, and case",,"Согласовательный класс, число и падеж"
+K-12-20,K-12,Agreement class and number,,Согласовательный класс и число
+K-12-21,K-12,"Gender, animacy, number, and case",,"Род, одушевленность, число и падеж"
+K-12-22,K-12,Person and number,,Лицо и число
+K-12-23,K-12,Definiteness and case,,Определенность и падеж
+K-13-1,K-13,Absent,,Отсутствует
+K-13-2,K-13,Person and number,,Лица и числа
+K-13-3,K-13,Agreement class and case,,Согласовательного класса и падежа
+K-13-4,K-13,Number and case,,Числа и падежа
+K-13-5,K-13,Gender and number,,Рода и числа
+K-13-6,K-13,Number and agreement class,,Числа и согласовательного класса
+K-13-7,K-13,"Gender, number and case",,"Рода, числа и падежа"
+K-13-8,K-13,"Agreement class, number and case",,"Согласовательного класса, числа и падежа"
+K-13-9,K-13,Agreement class and state,,Согласовательного класса и состояния
+K-13-10,K-13,"Gender, number, case, animacy, and person",,"Рода, числа, падежа, одушевленности и личности"
+K-13-11,K-13,Gender and definiteness,,Рода и определенности
+K-14-1,K-14,Always present,,Всегда присутствует
+K-14-2,K-14,Absent,,Отсутствует
+K-14-3,K-14,Only in preposition,,Только в препозиции
+K-14-4,K-14,Optional,,Факультативно
+K-14-5,K-14,Only in postposition,,Только в постпозиции
+K-15-1,K-15,No attributive agreement,,Атрибутивное согласование отсутствует
+K-15-2,K-15,In number,,По числу
+K-15-3,K-15,In case,,По падежу
+K-15-4,K-15,In gender,,По роду
+K-15-5,K-15,In class,,По классу
+K-15-6,K-15,In (in)humanness,,По лично-мужской/нелично-мужской форме
+K-15-7,K-15,In (in)animacy,,По одушевлённости/неодушевлённости
+K-15-8,K-15,In person,,По посессивности
+K-15-9,K-15,In (in)definiteness,,По определённости/неопределённости
+K-15-10,K-15,In state,,По состоянию
+K-15-11,K-15,In (un)countability,,По исчисляемости/неисчисляемости
+K-16-1,K-16,Absent,,Отсутствуют
+K-16-2,K-16,Case,,Падеж
+K-16-3,K-16,(In)definiteness,,Определенность/ неопределенность
+K-16-4,K-16,Number,,Число
+K-16-5,K-16,Possessivity,,Посессивность
+K-16-6,K-16,Honorific/neutral forms,,Гонорифическая и нейтральная формы
+K-16-7,K-16,Number and case,,Число и падеж
+K-16-8,K-16,(In)definiteness and number,,Определенность и число
+K-16-9,K-16,Number and state,,Число и состояние
+K-16-10,K-16,Possessivity and honorific/neutral forms,,Посессивность и гонорифическая/нейтральная формы
+K-16-11,K-16,"Case, possessivity and number",,"Падеж, посессивность и число"
+K-16-12,K-16,"(In)definiteness, number and state",,"Определенность, число и состояние"
+K-16-13,K-16,"Possessivity, (in)definiteness, and number",,"Посессивность, определенность, число"
+K-16-14,K-16,"Number, case, and (in)definiteness",,"Число, падеж и определенность/неопределенность"
+K-16-15,K-16,"Person, number, and case",,"Лицо, число и падеж"
+K-16-16,K-16,"(In)definiteness, number and izafat",,"Определенность, число и изафет"
+K-17-1,K-17,Absent,,Отсутствует
+K-17-2,K-17,Person and number,,Лица и числа
+K-17-3,K-17,Person and number of the possessee,,Лица и числа обладаемого
+K-17-4,K-17,Case and definiteness,,Падежа и определенности
+K-17-5,K-17,Case and gender / agreement class,,Падежа и рода / согласовательного класса
+K-17-6,K-17,Number and case,,Числа и падежа
+K-17-7,K-17,Number and gender / agreement class,,Числа и рода / согласовательного класса
+K-17-8,K-17,Case and person of possessor,,Падежа и лица посессора
+K-17-9,K-17,Person and number of possessor,,Лица посессора и числа посессора
+K-17-10,K-17,"Person, number and possessivity",,"Лица, числа и посессивности"
+K-17-11,K-17,"Gender / agreement class, number and case",,"Рода / согласовательного класса, числа и падежа"
+K-17-12,K-17,"Gender / agreement class, number and state",,"Рода / согласовательного класса, числа и состояния"
+K-17-13,K-17,"Person, number and case",,"Лица, числа и падежа"
+K-17-14,K-17,"Gender / agreement class, number, case and definiteness",,"Рода / согласовательного класса, числа, падежа и определенности"
+K-17-15,K-17,"Number, case, person and number of possessor",,"Числа, падежа, лица посессора и числа посессора"
+K-17-16,K-17,"Gender / agreement class, number, case and animateness",,"Рода / согласовательного класса, числа, падежа и одушевленности"
+K-17-17,K-17,Number and definiteness,,Числа и определённости
+K-17-18,K-17,Definiteness and gender / agreement class,,Определенности и рода / согласовательного класса
+K-18-1,K-18,Internal flection,,Внутренняя флексия
+K-18-2,K-18,Affixes,,Аффиксы
+K-18-3,K-18,Stem truncation and augmentation,,Наращение/ усечение основы
+K-18-4,K-18,Reduplication,,Редупликация
+K-18-5,K-18,Internal flection and affixes,,Внутренняя флексия и аффиксы
+K-18-6,K-18,Reduplication and affixes,,Редупликация и аффиксы
+K-18-7,K-18,Reduplication and internal flection,,Редупликация и внутренняя флексия
+K-18-8,K-18,Stem truncation/augmentation and affixes,,Наращение/ усечение основы и аффиксы
+K-18-9,K-18,Internal flection and stem truncation/augmentation,,Внутренняя флексия и наращение/ усечение основы
+K-18-10,K-18,"Internal flection, stem truncation/augmentation and affixes",,"Внутренняя флексия, наращение/ усечение основы и аффиксы"
+K-18-11,K-18,"Reduplication, internal flection and affixes",,"Редупликация, внутренняя флексия и аффиксы"
+K-18-12,K-18,Internal flection and tonal alternation,,Внутренняя флексия и тоновые чередования
+K-18-13,K-18,Internal and external flection and affixes,,Внутренняя и внешняя флексия и аффиксы
+K-19-1,K-19,Prefixal-suffixal,,Префиксально-суффиксальная
+K-19-2,K-19,Mainly or only infixal,,Преимущественно или только инфиксальная
+K-19-3,K-19,Mainly or only prefixal,,Преимущественно или только префиксальная
+K-19-4,K-19,Mainly or only suffixal,,Преимущественно или только суффиксальная
 L-1-1,L-1,Conversion,,Конверсия
 L-1-2,L-1,Suffix truncation,,Деаффиксация
 L-1-3,L-1,Reduplication,,Редупликация
