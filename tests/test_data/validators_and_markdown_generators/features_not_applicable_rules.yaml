@@ -49,7 +49,7 @@ I-5:
 K-2:
   trigger: K-2-1
   features_to_get_not_applicable:
-    - K-3
+    - K-4
     - K-5
     - K-6
 K-14:
