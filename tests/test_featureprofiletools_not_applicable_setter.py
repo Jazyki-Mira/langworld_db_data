@@ -23,7 +23,7 @@ def test_setter():
 
 def test__init__(test_setter):
     print(f"\nTEST rules from YAML: {test_setter.rules}")
-    assert "A-9" in test_setter.rules and "K-14" in test_setter.rules
+    assert "A-9" in test_setter.rules and "K-13" in test_setter.rules
 
     print(f"\nTEST feature profiles: {test_setter.feature_profiles}")
     assert len(test_setter.feature_profiles) == len(
