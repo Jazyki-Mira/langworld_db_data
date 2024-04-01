@@ -1048,29 +1048,29 @@ K-9-11,K-9,"Present-past, past and future",,"Настоящее-прошедше
 K-9-12,K-9,"Present, present-future, future and past",,"Настоящее, настоящее-будущее, будущее и прошедшее"
 K-10-1,K-10,Absent,,Отсутствуют
 K-10-2,K-10,Degrees of comparison,,Степени сравнения
-K-11-1,K-11,Absent,,Отсутствуют
-K-11-2,K-11,Person,,Лицо
-K-11-3,K-11,Animacy,,Одушевленность
-K-11-4,K-11,Case,,Падеж
-K-11-5,K-11,Gender,,Род
-K-11-6,K-11,Number,,Число
-K-11-7,K-11,Gender and number,,Род и число
-K-11-8,K-11,Number and case,,Число и падеж
-K-11-9,K-11,"Animacy, person and case",,"Одушевленность, лицо и падеж"
-K-11-10,K-11,"Gender, number and case",,"Род, число и падеж"
-K-11-11,K-11,"Gender, number and definiteness",,"Род, число и определенность"
-K-11-12,K-11,"Gender, number and state",,"Род, число и состояние"
-K-11-13,K-11,"Person, case, number and gender",,"Лицо, падеж, число и род"
-K-11-14,K-11,"Gender, number, case and definiteness",,"Род, число, падеж и определенность"
-K-11-15,K-11,"Animacy, person, case and number",,"Одушевленность, лицо, падеж и число"
-K-11-16,K-11,"Animacy, person, case, number and gender",,"Одушевленность, лицо, падеж, число и род"
-K-11-17,K-11,"Animacy, definiteness, case, number and gender",,"Одушевленность, определенность, падеж, число и род"
-K-11-18,K-11,"Animacy, person, case, number, gender and possessivity",,"Одушевленность, лицо, падеж, число, род и посессивность"
-K-11-19,K-11,"Agreement class, number, and case",,"Согласовательный класс, число и падеж"
-K-11-20,K-11,Agreement class and number,,Согласовательный класс и число
-K-11-21,K-11,"Gender, animacy, number, and case",,"Род, одушевленность, число и падеж"
-K-11-22,K-11,Person and number,,Лицо и число
-K-11-23,K-11,Definiteness and case,,Определенность и падеж
+K-12-1,K-12,Absent,,Отсутствуют
+K-12-2,K-12,Person,,Лицо
+K-12-3,K-12,Animacy,,Одушевленность
+K-12-4,K-12,Case,,Падеж
+K-12-5,K-12,Gender,,Род
+K-12-6,K-12,Number,,Число
+K-12-7,K-12,Gender and number,,Род и число
+K-12-8,K-12,Number and case,,Число и падеж
+K-12-9,K-12,"Animacy, person and case",,"Одушевленность, лицо и падеж"
+K-12-10,K-12,"Gender, number and case",,"Род, число и падеж"
+K-12-11,K-12,"Gender, number and definiteness",,"Род, число и определенность"
+K-12-12,K-12,"Gender, number and state",,"Род, число и состояние"
+K-12-13,K-12,"Person, case, number and gender",,"Лицо, падеж, число и род"
+K-12-14,K-12,"Gender, number, case and definiteness",,"Род, число, падеж и определенность"
+K-12-15,K-12,"Animacy, person, case and number",,"Одушевленность, лицо, падеж и число"
+K-12-16,K-12,"Animacy, person, case, number and gender",,"Одушевленность, лицо, падеж, число и род"
+K-12-17,K-12,"Animacy, definiteness, case, number and gender",,"Одушевленность, определенность, падеж, число и род"
+K-12-18,K-12,"Animacy, person, case, number, gender and possessivity",,"Одушевленность, лицо, падеж, число, род и посессивность"
+K-12-19,K-12,"Agreement class, number, and case",,"Согласовательный класс, число и падеж"
+K-12-20,K-12,Agreement class and number,,Согласовательный класс и число
+K-12-21,K-12,"Gender, animacy, number, and case",,"Род, одушевленность, число и падеж"
+K-12-22,K-12,Person and number,,Лицо и число
+K-12-23,K-12,Definiteness and case,,Определенность и падеж
 K-13-1,K-13,Absent,,Отсутствует
 K-13-2,K-13,Person and number,,Лица и числа
 K-13-3,K-13,Agreement class and case,,Согласовательного класса и падежа

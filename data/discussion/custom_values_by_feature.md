@@ -1585,7 +1585,7 @@
 
 - Наречие отсутствует: [дамели](../feature_profiles/dameli.csv), [гавар](../feature_profiles/gawar.csv), [калаша](../feature_profiles/kalasha.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [майян](../feature_profiles/mayan.csv), [пашаи](../feature_profiles/pashai.csv), [прасун](../feature_profiles/prasun.csv), [сави](../feature_profiles/sawi.csv)
 - нет данных: [ликийский](../feature_profiles/lycian.csv), [лидийский](../feature_profiles/lydian.csv), [палайский](../feature_profiles/palaic.csv)
-## K-11: Согласовательные категории, выражаемые прилагательным
+## K-12: Согласовательные категории, выражаемые прилагательным
 
 - Класс и число: [хваршинский](../feature_profiles/khvarshi.csv)
 - Личность/неличность, род, число и падеж: [кашубский](../feature_profiles/kashubian.csv)
