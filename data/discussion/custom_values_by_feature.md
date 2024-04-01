@@ -1554,7 +1554,7 @@
 - Определенность, референтность и число: [локо](../feature_profiles/loko.csv)
 - Определенность, род и падеж: [шугнанский](../feature_profiles/shughni.csv)
 - Определенность/неопределенность: [ормури](../feature_profiles/ormuri.csv), [яран(д)и](../feature_profiles/yarandi.csv), [бартангский](../feature_profiles/bartangi.csv), [пашаи](../feature_profiles/pashai.csv), [африкаанс](../feature_profiles/afrikaans.csv), [английский](../feature_profiles/english.csv)
-## K-6: Количество типов спряжения глаголов
+## K-7: Количество типов спряжения глаголов
 
 - Четырнадцать типов спряжения в зависимости от суффикса основы инфинитива: [словацкий](../feature_profiles/slovak.csv)
 ## K-8: Типы глагольного согласования
