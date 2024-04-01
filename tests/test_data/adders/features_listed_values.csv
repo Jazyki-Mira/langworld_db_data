@@ -851,18 +851,18 @@ K-8-5,K-8,Number,Число
 K-8-6,K-8,Gender and number,Род и число
 K-8-7,K-8,"Gender, number and case","Род, число и падеж"
 K-8-8,K-8,Number and case,Число и падеж
-K-9-1,K-9,Present-past,Настоящее-прошедшее
-K-9-2,K-9,Future,Будущее
-K-9-3,K-9,Present,Настоящее
-K-9-4,K-9,Past,Прошедшее
-K-9-5,K-9,Present-future,Настоящее-будущее
-K-9-6,K-9,Present and past,Настоящее и прошедшее
-K-9-7,K-9,Past and future,Прошедшее и будущее
-K-9-8,K-9,Present-future and past,Настоящее-будущее и прошедшее
-K-9-9,K-9,Present-past and future,Настоящее-прошедшее и будущее
-K-9-10,K-9,"Present, past and future","Настоящее, прошедшее и будущее"
-K-9-11,K-9,"Present-past, past and future","Настоящее-прошедшее, прошедшее и будущее"
-K-9-12,K-9,"Present, present-future, future and past","Настоящее, настоящее-будущее, будущее и прошедшее"
+K-10-1,K-10,Present-past,Настоящее-прошедшее
+K-10-2,K-10,Future,Будущее
+K-10-3,K-10,Present,Настоящее
+K-10-4,K-10,Past,Прошедшее
+K-10-5,K-10,Present-future,Настоящее-будущее
+K-10-6,K-10,Present and past,Настоящее и прошедшее
+K-10-7,K-10,Past and future,Прошедшее и будущее
+K-10-8,K-10,Present-future and past,Настоящее-будущее и прошедшее
+K-10-9,K-10,Present-past and future,Настоящее-прошедшее и будущее
+K-10-10,K-10,"Present, past and future","Настоящее, прошедшее и будущее"
+K-10-11,K-10,"Present-past, past and future","Настоящее-прошедшее, прошедшее и будущее"
+K-10-12,K-10,"Present, present-future, future and past","Настоящее, настоящее-будущее, будущее и прошедшее"
 K-11-1,K-11,Absent,Отсутствуют
 K-11-2,K-11,Degrees of comparison,Степень сравнения
 K-12-1,K-12,Absent,Отсутствуют

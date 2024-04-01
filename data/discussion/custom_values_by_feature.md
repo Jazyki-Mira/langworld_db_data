@@ -1573,7 +1573,7 @@
 - Причастие отсутствует: [ашкун](../feature_profiles/ashkun.csv), [дамели](../feature_profiles/dameli.csv), [сави](../feature_profiles/sawi.csv), [шумашти](../feature_profiles/shumashti.csv), [земиаки](../feature_profiles/zemiaki.csv)
 - Причастие отсутствует : [глангали](../feature_profiles/grangali.csv)
 - нет данных: [милийский](../feature_profiles/milyan.csv)
-## K-9: Время, выражаемое причастием
+## K-10: Время, выражаемое причастием
 
 - Нет данных: [боко](../feature_profiles/boko.csv), [гбан](../feature_profiles/gban.csv), [какабе](../feature_profiles/kakabe.csv), [локо](../feature_profiles/loko.csv), [мано](../feature_profiles/mano.csv)
 - Причастие не выражает времени: [ория](../feature_profiles/oriya.csv)
