@@ -252,7 +252,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 251,afrikaans,G-4,No agreement in number,G-4-1,,,Отсутствует,
 252,afrikaans,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 253,afrikaans,G-6,Decimal,G-6-1,,,Десятичная,
-254,afrikaans,G-7,Same,G-7-1,,,Совпадают,
+254,afrikaans,K-3,Same,K-3-1,,,Совпадают,
 255,afrikaans,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 256,afrikaans,H-2,"Subject and object personal pronouns, prepositions, and word order",H-2-14,,,"Субъектная и объектная форма личных местоимений, предлоги и порядок слов",Личные местоимения сохраняют формы субъектного и объектного падежей только в ед.числе.
 257,afrikaans,H-5,"Possessive pronouns, prepositions and particles",H-5-28,,,"Посессивные местоимения, предлоги и частицы",
@@ -1002,7 +1002,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1001,aromanian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 1002,aromanian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 1003,aromanian,G-6,Decimal,G-6-1,,,Десятичная,
-1004,aromanian,G-7,Same,G-7-1,,,Совпадают,
+1004,aromanian,K-3,Same,K-3-1,,,Совпадают,
 1005,aromanian,H-1,One-two,H-1-1,,,Один-два,
 1006,aromanian,H-2,,,,,"Глагольное согласование, падежные аффиксы, субъектные и объектные (ударные и безударные) формы личных местоимений, местоименная реприза, предлоги и порядок слов",
 1007,aromanian,H-4,Genitive or dative,H-4-6,,,Генитив или датив,
@@ -1378,7 +1378,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1377,asturian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 1378,asturian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 1379,asturian,G-6,Decimal,G-6-1,,,Десятичная,Других данных нет.
-1380,asturian,G-7,Same,G-7-1,,,Совпадают,
+1380,asturian,K-3,Same,K-3-1,,,Совпадают,
 1381,asturian,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений и приглагольные местоимения",
 1382,asturian,H-5,,,,,Притяжательные местоимения и личные местоимения с предлогом,Притяжательные местоимения употребляются с определенным артиклем в одинаковой форме в приименной и независимой позициях.
 1383,asturian,H-6,"Pronouns, pronoun adverbs, and prepositions",H-6-37,,,"Местоимения, местоименные наречия и предлоги",
@@ -1989,7 +1989,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1988,bamana,G-4,No agreement in number,G-4-1,,,Отсутствует,
 1989,bamana,G-5,Singular,G-5-1,,,Единственное,
 1990,bamana,G-6,"Mixed, with elements of quinary, decimal, and vigesimal",G-6-9,,,"Смешанная с элементами пятеричной, десятичной и двадцатеричной",
-1991,bamana,G-7,Different,G-7-2,,,Не совпадают,"Артикль восходит к числительному ""один"""
+1991,bamana,K-3,Different,K-3-2,,,Не совпадают,"Артикль восходит к числительному ""один"""
 1992,bamana,H-1,Three-seven,H-1-2,,,Три-семь,
 1993,bamana,H-2,,,,,Служебные слова и порядок слов,
 1994,bamana,H-5,Apposition,H-5-7,,,Соположение,
@@ -2160,7 +2160,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2159,bartangi,G-4,Predicative,G-4-2,,,Предикативное,
 2160,bartangi,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 2161,bartangi,G-6,Decimal,G-6-1,,,Десятичная,
-2162,bartangi,G-7,Same,G-7-1,,,Совпадают,"Числительное ""один"" в функции артикля выступает в усеченной форме."
+2162,bartangi,K-3,Same,K-3-1,,,Совпадают,"Числительное ""один"" в функции артикля выступает в усеченной форме."
 2163,bartangi,H-1,One-two,H-1-1,,,Один-два,
 2164,bartangi,H-2,,,,,"Глагольное согласование, субъектные и объектные форы личеых и указательных местоимений, предлоги и послелоги",
 2165,bartangi,H-5,Adpositions,H-5-5,,,Послелоги и предлоги,
@@ -2456,7 +2456,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2455,beng,G-4,No agreement in number,G-4-1,,,Отсутствует,
 2456,beng,G-5,Singular,G-5-1,,,Единственное,
 2457,beng,G-6,Vigesimal with elements of quinary,G-6-5,,,Двадцатеричная с элементами пятеричной,
-2458,beng,G-7,Same,G-7-1,,,Совпадают,
+2458,beng,K-3,Same,K-3-1,,,Совпадают,
 2459,beng,H-1,One-two,H-1-1,,,Один-два,
 2460,beng,H-2,Function words,H-2-4,,,Служебные слова,
 2461,beng,H-3,Nominative,H-3-4,,,Номинатив,
@@ -2751,7 +2751,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2750,biyabuneki,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 2751,biyabuneki,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 2752,biyabuneki,G-6,Decimal,G-6-1,,,Десятичная,
-2753,biyabuneki,G-7,Same,G-7-1,,,Совпадают,
+2753,biyabuneki,K-3,Same,K-3-1,,,Совпадают,
 2754,biyabuneki,H-1,One-two,H-1-1,,,Один-два,
 2755,biyabuneki,H-2,,,,,Глагольное согласование и косвенная форма личных местоимений,
 2756,biyabuneki,H-6,,,,,Указательные местоимения и наречия,
@@ -3008,7 +3008,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3007,breton,G-4,Predicative,G-4-2,,,Предикативное,
 3008,breton,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 3009,breton,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
-3010,breton,G-7,Different,G-7-2,,,Не совпадают,"Числительное unan 'один' с существительными не употребляется, и число выражается артиклем eun."
+3010,breton,K-3,Different,K-3-2,,,Не совпадают,"Числительное unan 'один' с существительными не употребляется, и число выражается артиклем eun."
 3011,breton,H-1,No case,H-1-6,,,Категория падежа отсутствует,Падежные значения выражаются аналитическими средствами.
 3012,breton,H-2,,,,,"Глагольное согласование, субъектные и объектные формы личных местоимений и порядок слов",
 3013,breton,H-5,,,,,"Глаголы обладания, притяжательные местоимения, суффигированные личные местоимения и спрягаемые предлоги",
@@ -3335,7 +3335,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3334,catalan,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 3335,catalan,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 3336,catalan,G-6,Decimal,G-6-1,,,Десятичная,
-3337,catalan,G-7,Same,G-7-1,,,Совпадают,
+3337,catalan,K-3,Same,K-3-1,,,Совпадают,
 3338,catalan,H-2,"Subject, direct and indirect object personal pronouns, verbal agreement and word order",H-2-21,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, глагольное согласование и порядок слов",
 3339,catalan,H-5,Possessive pronouns and possessive adjectives,H-5-21,,,Посессивные местоимения и посессивные прилагательные,
 3340,catalan,H-6,Spatial adverbs and prepositions,H-6-38,,,Наречия места и предлоги,К.я. обнаруживает отличия от иберо-романских языков и сходства с итальянским и французским языками.
@@ -4100,7 +4100,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4099,corsican,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 4100,corsican,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 4101,corsican,G-6,Decimal,G-6-1,,,Десятичная,
-4102,corsican,G-7,Same,G-7-1,,,Совпадают,
+4102,corsican,K-3,Same,K-3-1,,,Совпадают,
 4103,corsican,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 4104,corsican,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза и предлоги",
 4105,corsican,H-5,Possessive pronouns,H-5-4,,,Посессивные местоимения,Других данных нет.
@@ -4438,7 +4438,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4437,dalmatian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 4438,dalmatian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 4439,dalmatian,G-6,Decimal,G-6-1,,,Десятичная,
-4440,dalmatian,G-7,Same,G-7-1,,,Совпадают,
+4440,dalmatian,K-3,Same,K-3-1,,,Совпадают,
 4441,dalmatian,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза, приглагольные местоимения, предлоги и порядок слов",
 4442,dalmatian,H-5,"Possessive pronouns, possessive adjectives, and prepositions",H-5-29,,,"Посессивные местоимения, посессивные прилагательные и предлоги",
 4443,dalmatian,H-6,Spatial adverbs and prepositions,H-6-38,,,Наречия места и предлоги,
@@ -4690,7 +4690,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4689,danish,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 4690,danish,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 4691,danish,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,Десятичная от одного до 40 и сложная на двадцатеричной основе от 50 до 90.
-4692,danish,G-7,Same,G-7-1,,,Совпадают,
+4692,danish,K-3,Same,K-3-1,,,Совпадают,
 4693,danish,H-1,One-two,H-1-1,,,Один-два,
 4694,danish,H-2,,,,,Порядок слов и субъектная и объектная форма личных местоимений,
 4695,danish,H-4,Genitive,H-4-1,,,Генитив,
@@ -4843,7 +4843,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4842,dari,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 4843,dari,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 4844,dari,G-6,Decimal,G-6-1,,,Десятичная,
-4845,dari,G-7,,,,,"В качестве неопределенного артикля могут выступать: постпозитивный артикль единичности  и/или числительное ""один""",В разговорной речи часто совместное употребление обеих форм.
+4845,dari,K-3,,,,,"В качестве неопределенного артикля могут выступать: постпозитивный артикль единичности  и/или числительное ""один""",В разговорной речи часто совместное употребление обеих форм.
 4846,dari,H-1,One-two,H-1-1,,,Один-два,
 4847,dari,H-2,,,,,"Глагольное согласование, существительные и местоимения в сочетании с предлогами и послелогами",
 4848,dari,H-5,,,,,"Притяжательные местоимения, послелог при глаголах бытия, изафетная конструкция с постпозитивными энклитическими показателями",
@@ -5076,7 +5076,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5075,domari,G-2,Marked and unmarked,G-2-3,Singular and plural forms are equally complex,,Маркированное и немаркированное,Единственное и множественное число одинаково сложны морфологически
 5076,domari,G-3,Absent,G-3-1,,,Отсутствуют,
 5077,domari,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
-5078,domari,G-7,Different,G-7-2,"Indefinite article is diacronically related to the numeral ""one""",,Не совпадают,"Неопределенный показатель диахронически связан с числительным ""один"""
+5078,domari,K-3,Different,K-3-2,"Indefinite article is diacronically related to the numeral ""one""",,Не совпадают,"Неопределенный показатель диахронически связан с числительным ""один"""
 5079,domari,H-1,Eight-twelve,H-1-3,,,Восемь-двенадцать,
 5080,domari,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
 5081,domari,H-4,Ablative,H-4-3,,,Аблатив,
@@ -5175,7 +5175,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5174,dutch,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование только с именами среднего рода с неопределенным артиклем.
 5175,dutch,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 5176,dutch,G-6,Decimal,G-6-1,,,Десятичная,
-5177,dutch,G-7,Same,G-7-1,,,Совпадают,
+5177,dutch,K-3,Same,K-3-1,,,Совпадают,
 5178,dutch,H-1,One-two,H-1-1,,,Один-два,
 5179,dutch,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений и порядок слов",
 5180,dutch,H-4,,,,,Притяжательный падеж и рудиментарная форма родительного падежа определенного артикля,
@@ -5370,7 +5370,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5369,english,G-4,Predicative,G-4-2,,,Предикативное,
 5370,english,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 5371,english,G-6,Decimal with elements of duodecimal,G-6-2,,,Десятичная с элементами двенадцатеричной,
-5372,english,G-7,Different,G-7-2,,,Не совпадают,
+5372,english,K-3,Different,K-3-2,,,Не совпадают,
 5373,english,H-1,One-two,H-1-1,,,Один-два,
 5374,english,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений и порядок слов",
 5375,english,H-3,Nominative,H-3-4,,,Номинатив,
@@ -5700,7 +5700,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5699,farizandi,G-4,Predicative,G-4-2,,,Предикативное,
 5700,farizandi,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 5701,farizandi,G-6,Decimal,G-6-1,,,Десятичная,
-5702,farizandi,G-7,Same,G-7-1,,,Совпадают,
+5702,farizandi,K-3,Same,K-3-1,,,Совпадают,
 5703,farizandi,H-2,,,,,"Глагольное согласование, порядок слов, изафетная конструкция, предлоги и послелоги",
 5704,farizandi,H-5,,,,,"Соположение, изафетная конструкция и/или их сочетание",
 5705,farizandi,H-6,,,,,"Указательные местоимения, наречия места, предлоги и послелоги",
@@ -5949,7 +5949,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5948,franco_provencal,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 5949,franco_provencal,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 5950,franco_provencal,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,
-5951,franco_provencal,G-7,Same,G-7-1,,,Совпадают,
+5951,franco_provencal,K-3,Same,K-3-1,,,Совпадают,
 5952,franco_provencal,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 5953,franco_provencal,H-2,,,,,"Глагольное согласование, субъектная и прямообъектная форма сущ. м.р. ед.ч. (реликты), субъектная и объектная форма личных местоимений и приглагольные местоимения",
 5954,franco_provencal,H-5,Possessive pronouns and prepositions,H-5-19,,,Посессивные местоимения и предлоги,
@@ -6045,7 +6045,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6044,french,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 6045,french,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 6046,french,G-6,Decimal with elements of duodecimal and vigesimal,G-6-10,,,Десятичная с элементами двенадцатеричной и двадцатеричной,
-6047,french,G-7,Same,G-7-1,,,Совпадают,
+6047,french,K-3,Same,K-3-1,,,Совпадают,
 6048,french,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 6049,french,H-2,"Subject, direct and indirect object personal pronouns, prepositions, verbal agreement, and word order",H-2-22,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",
 6050,french,H-5,,,,,"Притяжательные местоимения, предлоги и стяженные формы предлога и определенного артикля",
@@ -6151,7 +6151,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6150,frisian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование только у имен среднего рода с неопределенным артиклем.
 6151,frisian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 6152,frisian,G-6,Decimal,G-6-1,,,Десятичная,
-6153,frisian,G-7,Same,G-7-1,,,Совпадают,
+6153,frisian,K-3,Same,K-3-1,,,Совпадают,
 6154,frisian,H-1,One-two,H-1-1,,,Один-два,
 6155,frisian,H-2,"Subject and object personal pronouns, prepositions, and verbal agreement",H-2-17,,,"Субъектная и объектная форма личных местоимений, предлоги и глагольное согласование",Субъектные и объектные личные местоимения имеют ударную и безударную форму.
 6156,frisian,H-3,,,,,Общий (субъектно-объектный) падеж,
@@ -6261,7 +6261,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6260,friulian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 6261,friulian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 6262,friulian,G-6,Decimal,G-6-1,,,Десятичная,
-6263,friulian,G-7,Same,G-7-1,,,Совпадают,
+6263,friulian,K-3,Same,K-3-1,,,Совпадают,
 6264,friulian,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 6265,friulian,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза и приглагольные местоимения",
 6266,friulian,H-5,Possessive pronouns,H-5-4,,,Посессивные местоимения,Притяжательные местоимения имеют одинаковую форму в присубстантивном и независимом употреблении и сопровождаются определенным артиклем.
@@ -6500,7 +6500,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6499,galician,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 6500,galician,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 6501,galician,G-6,Decimal,G-6-1,,,Десятичная,
-6502,galician,G-7,Same,G-7-1,,,Совпадают,
+6502,galician,K-3,Same,K-3-1,,,Совпадают,
 6503,galician,H-2,"Subject, direct and indirect object personal pronouns, prepositions, verbal agreement, and word order",H-2-22,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",
 6504,galician,H-5,,,,,"Притяжательные местоименные прилагательные (в приименной позиции с определенным артиклем), предлоги и относительные прилагательные",
 6505,galician,H-6,"Demonstrative pronouns, spatial adverbs, and prepositions",H-6-42,,,"Указательные местоимения, наречия места и предлоги",
@@ -6660,7 +6660,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6659,gascon,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 6660,gascon,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 6661,gascon,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-6662,gascon,G-7,Same,G-7-1,,,Совпадают,
+6662,gascon,K-3,Same,K-3-1,,,Совпадают,
 6663,gascon,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 6664,gascon,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений, местоименные энклитики и предлоги",
 6665,gascon,H-5,Possessive pronouns and prepositions,H-5-19,,,Посессивные местоимения и предлоги,
@@ -7115,7 +7115,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7114,german,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 7115,german,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 7116,german,G-6,Decimal,G-6-1,,,Десятичная,
-7117,german,G-7,Different,G-7-2,,,Не совпадают,
+7117,german,K-3,Different,K-3-2,,,Не совпадают,
 7118,german,H-1,Three-seven,H-1-2,,,Три-семь,
 7119,german,H-2,,,,,"Глагольное согласование, падежные аффиксы, субъектные и объектные формы личных местоимений, артикль, предлоги и порядок слов",
 7120,german,H-3,Nominative,H-3-4,,,Номинатив,
@@ -7208,7 +7208,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7207,gilaki,F-8,Lexical,F-8-1,,,Лексическое,
 7208,gilaki,G-4,Predicative,G-4-2,,,Предикативное,
 7209,gilaki,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-7210,gilaki,G-7,Same,G-7-1,,,Совпадают,
+7210,gilaki,K-3,Same,K-3-1,,,Совпадают,
 7211,gilaki,H-1,Three-seven,H-1-2,,,Три-семь,
 7212,gilaki,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
 7213,gilaki,H-4,Genitive,H-4-1,,,Генитив,
@@ -7823,7 +7823,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7822,guro,G-4,No agreement in number,G-4-1,,,Отсутствует,
 7823,guro,G-5,Singular,G-5-1,,,Единственное,
 7824,guro,G-6,"Mixed, with elements of quinary, decimal, and vigesimal",G-6-9,,,"Смешанная с элементами пятеричной, десятичной и двадцатеричной",
-7825,guro,G-7,Same,G-7-1,,,Совпадают,
+7825,guro,K-3,Same,K-3-1,,,Совпадают,
 7826,guro,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 7827,guro,H-2,,,,,"Служебные слова, порядок слов и падежные формы местоимений",
 7828,guro,H-5,Apposition,H-5-7,,,Соположение,
@@ -8219,7 +8219,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8218,hungarian,G-3,Absent,G-3-1,,,Отсутствуют,
 8219,hungarian,G-4,Predicative,G-4-2,,,Предикативное,
 8220,hungarian,G-5,Singular,G-5-1,,,Единственное,
-8221,hungarian,G-7,Same,G-7-1,,,Совпадают,
+8221,hungarian,K-3,Same,K-3-1,,,Совпадают,
 8222,hungarian,H-1,Over twenty,H-1-5,,,Больше 20,
 8223,hungarian,H-5,Possessive affixes and possessive pronouns,H-5-9,,,Посессивные аффиксы и посессивные местоимения,
 8224,hungarian,H-8,Same,H-8-1,,,Нет различий,
@@ -8905,7 +8905,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8904,istriot,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 8905,istriot,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 8906,istriot,G-6,Decimal,G-6-1,,,Десятичная,Других данных нет.
-8907,istriot,G-7,Same,G-7-1,,,Совпадают,Структура числительных и артиклей аналогична итальянской (с фонетическими отличиями).
+8907,istriot,K-3,Same,K-3-1,,,Совпадают,Структура числительных и артиклей аналогична итальянской (с фонетическими отличиями).
 8908,istriot,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 8909,istriot,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений, местоименные клитики, предлоги и порядок слов",
 8910,istriot,H-5,,,,,Притяжательные местоимения и местоименные клитики,Артикль перед посессивами может опускаться.
@@ -8993,7 +8993,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8992,istro_romanian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 8993,istro_romanian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 8994,istro_romanian,G-6,Decimal,G-6-1,,,Десятичная,
-8995,istro_romanian,G-7,Same,G-7-1,,,Совпадают,
+8995,istro_romanian,K-3,Same,K-3-1,,,Совпадают,
 8996,istro_romanian,H-1,One-two,H-1-1,,,Один-два,
 8997,istro_romanian,H-2,,,,,"Глагольное согласование, субъектные и объектные (ударные и неударные) формы личных местоимений, предлоги и частицы",
 8998,istro_romanian,H-4,,,,,Родительно-дательный падеж,
@@ -9093,7 +9093,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9092,italian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 9093,italian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 9094,italian,G-6,Decimal,G-6-1,,,Десятичная,
-9095,italian,G-7,Same,G-7-1,,,Совпадают,
+9095,italian,K-3,Same,K-3-1,,,Совпадают,
 9096,italian,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 9097,italian,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений, местоименная реприза, приглагольные местоимения, предлоги и порядок слов",
 9098,italian,H-5,Possessive pronouns and prepositions,H-5-19,,,Посессивные местоимения и предлоги,
@@ -9289,7 +9289,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9288,jawshakani,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 9289,jawshakani,G-4,Predicative,G-4-2,,,Предикативное,
 9290,jawshakani,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-9291,jawshakani,G-7,Same,G-7-1,,,Совпадают,
+9291,jawshakani,K-3,Same,K-3-1,,,Совпадают,
 9292,jawshakani,H-2,,,,,"Глагольное согласование, позиция слова в предложении, предлоги, послелоги и их сочетания",
 9293,jawshakani,H-5,,,,,Соположение и изафетная конструкция,Других данных нет.
 9294,jawshakani,H-6,,,,,"Указательные местоимения, наречия и предлоги (в том числе изафетные), послелоги и их сочетания",
@@ -9519,7 +9519,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9518,judeo_spanish,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,"Для выражения порядковости имеется аналитическая конструкция ""определенный артикль + предлог + количественное числительное""."
 9519,judeo_spanish,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 9520,judeo_spanish,G-6,Decimal,G-6-1,,,Десятичная,
-9521,judeo_spanish,G-7,Same,G-7-1,,,Совпадают,Других данных нет.
+9521,judeo_spanish,K-3,Same,K-3-1,,,Совпадают,Других данных нет.
 9522,judeo_spanish,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, приглагольные местоимения и предлоги",
 9523,judeo_spanish,H-5,Possessive pronouns,H-5-4,,,Посессивные местоимения,
 9524,judeo_spanish,I-1,Auxiliary verb + participle and pronominal verb form,I-1-17,,,Вспомогательный глагол + причастие и местоименная форма глагола,
@@ -10891,7 +10891,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10890,keshei,G-4,Predicative,G-4-2,,,Предикативное,
 10891,keshei,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 10892,keshei,G-6,Decimal,G-6-1,,,Десятичная,
-10893,keshei,G-7,Same,G-7-1,,,Совпадают,
+10893,keshei,K-3,Same,K-3-1,,,Совпадают,
 10894,keshei,H-2,,,,,"Глагольное согласование, позиция слова в предложении, предлоги и послелоги",
 10895,keshei,H-5,,,,,"Изафетная конструкция, соположение и местоименные энклитики",
 10896,keshei,H-6,,,,,"Указательные местоимения, наречия места, предлоги и послелоги",
@@ -11248,7 +11248,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11247,khufi,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 11248,khufi,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 11249,khufi,G-6,Decimal,G-6-1,,,Десятичная,
-11250,khufi,G-7,Same,G-7-1,,,Совпадают,
+11250,khufi,K-3,Same,K-3-1,,,Совпадают,
 11251,khufi,H-1,One-two,H-1-1,,,Один-два,Функции падежей единообразны в К.я. и рушанском языке.
 11252,khufi,H-2,,,,,"Глагольное согласование, прямая и косвенная форма местоимений, предлоги, послелоги и отделяемые показатели",
 11253,khufi,H-5,,,,,Предлоги и порядок слов,
@@ -11539,7 +11539,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11538,kla_dan,G-3,Absent,G-3-1,,,Отсутствуют,
 11539,kla_dan,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,В некоторых диалектах есть атрибутивное согласование
 11540,kla_dan,G-6,"Mixed, with elements of quinary, decimal, and vigesimal",G-6-9,,,"Смешанная с элементами пятеричной, десятичной и двадцатеричной",
-11541,kla_dan,G-7,Same,G-7-1,,,Совпадают,
+11541,kla_dan,K-3,Same,K-3-1,,,Совпадают,
 11542,kla_dan,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 11543,kla_dan,H-2,,,,,Служебные слова и порядок слов,
 11544,kla_dan,H-5,Apposition,H-5-7,,,Соположение,
@@ -11698,7 +11698,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11697,kohrudi,G-4,Predicative,G-4-2,,,Предикативное,
 11698,kohrudi,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 11699,kohrudi,G-6,Decimal,G-6-1,,,Десятичная,
-11700,kohrudi,G-7,Same,G-7-1,,,Совпадают,
+11700,kohrudi,K-3,Same,K-3-1,,,Совпадают,
 11701,kohrudi,H-2,,,,,"Глагольное согласование, предлоги, послелоги и порядок слов",
 11702,kohrudi,H-5,,,,,"Соположение, изафетная конструкция и энклитические личные местоимения",
 11703,kohrudi,H-6,,,,,"Указательные местоимения, наречия места, предлоги и послелоги",
@@ -11925,7 +11925,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11924,konkani,G-2,Marked and unmarked,G-2-3,Singular and plural forms are equally complex,,Маркированное и немаркированное,Единственное и множественное число одинаково сложны морфологически
 11925,konkani,G-3,Neutral and polite,G-3-2,,,Нейтральная и вежливая,
 11926,konkani,G-4,Attributive,G-4-3,No data on predicate agreement,,Атрибутивное,Нет данных о предикативном согласовании
-11927,konkani,G-7,Same,G-7-1,"The numeral ""one"" is used to express non-definiteness",,Совпадают,"Числительное ""один"" выражает неопределенность"
+11927,konkani,K-3,Same,K-3-1,"The numeral ""one"" is used to express non-definiteness",,Совпадают,"Числительное ""один"" выражает неопределенность"
 11928,konkani,H-1,Three-seven,H-1-2,,,Три-семь,
 11929,konkani,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
 11930,konkani,H-3,Nominative,H-3-4,,,Номинатив,
@@ -12516,7 +12516,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12515,ladin,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 12516,ladin,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 12517,ladin,G-6,Decimal,G-6-1,,,Десятичная,
-12518,ladin,G-7,Same,G-7-1,,,Совпадают,За исключением бадиотского и гарденского диалектов.
+12518,ladin,K-3,Same,K-3-1,,,Совпадают,За исключением бадиотского и гарденского диалектов.
 12519,ladin,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 12520,ladin,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза и предлоги",
 12521,ladin,H-5,Possessive pronouns,H-5-4,,,Посессивные местоимения,Особенность Л.я. - отсутствие определенного артикля перед притяжательными местоимениями в присубстантивном употреблении.
@@ -12636,7 +12636,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12635,lasgerdi,G-4,Predicative,G-4-2,,,Предикативное,
 12636,lasgerdi,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 12637,lasgerdi,G-6,Decimal,G-6-1,,,Десятичная,Других данных нет.
-12638,lasgerdi,G-7,Same,G-7-1,,,Совпадают,
+12638,lasgerdi,K-3,Same,K-3-1,,,Совпадают,
 12639,lasgerdi,H-1,One-two,H-1-1,,,Один-два,
 12640,lasgerdi,H-2,,,,,"Порядок слов, глагольное согласование и объектная форма личных местоимений",
 12641,lasgerdi,H-6,,,,,"Указательные местоимения, наречия, предлоги и послелоги",
@@ -13158,7 +13158,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13157,lomavren,G-2,Unmarked,G-2-2,,,Немаркированное,
 13158,lomavren,G-3,Absent,G-3-1,,,Отсутствуют,
 13159,lomavren,G-4,No agreement in number,G-4-1,,,Отсутствует,
-13160,lomavren,G-7,Different,G-7-2,,,Не совпадают,
+13160,lomavren,K-3,Different,K-3-2,,,Не совпадают,
 13161,lomavren,H-1,Three-seven,H-1-2,,,Три-семь,
 13162,lomavren,H-2,Case affixes,H-2-3,,,Падежные аффиксы,
 13163,lomavren,H-6,Noun affixes and postpositions,H-6-11,,,Именные аффиксы и послелоги,
@@ -13237,7 +13237,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13236,looma,G-4,No agreement in number,G-4-1,,,Отсутствует,
 13237,looma,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 13238,looma,G-6,Decimal with elements of quinary,G-6-8,,,Десятичная с элементами пятеричной,
-13239,looma,G-7,Different,G-7-2,,,Не совпадают,
+13239,looma,K-3,Different,K-3-2,,,Не совпадают,
 13240,looma,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 13241,looma,H-2,,,,,"Порядок слов, адлоги и тональные согласовательные морфемы ",
 13242,looma,H-5,Apposition,H-5-7,,,Соположение,
@@ -13418,7 +13418,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13417,luxembourgian,G-2,Unmarked,G-2-2,,,Немаркированное,
 13418,luxembourgian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 13419,luxembourgian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-13420,luxembourgian,G-7,Same,G-7-1,,,Совпадают,
+13420,luxembourgian,K-3,Same,K-3-1,,,Совпадают,
 13421,luxembourgian,H-1,Three-seven,H-1-2,,,Три-семь,"Винительный (совмещает функции именительного и винительного), дательный и реликтовая форма флективного родительного."
 13422,luxembourgian,H-2,,,,,"Порядок слов, субъектная и объектная форма личных местоимений, падежные формы артикля и глагольное согласование",
 13423,luxembourgian,H-4,Genitive or dative,H-4-6,,,Генитив или датив,
@@ -14061,7 +14061,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14060,maldivian_dhivehi,G-3,Absent,G-3-1,,,Отсутствуют,
 14061,maldivian_dhivehi,G-4,No agreement in number,G-4-1,,,Отсутствует,
 14062,maldivian_dhivehi,G-6,Decimal with elements of duodecimal,G-6-2,,,Десятичная с элементами двенадцатеричной,
-14063,maldivian_dhivehi,G-7,Different,G-7-2,,,Не совпадают,
+14063,maldivian_dhivehi,K-3,Different,K-3-2,,,Не совпадают,
 14064,maldivian_dhivehi,H-1,Three-seven,H-1-2,,,Три-семь,
 14065,maldivian_dhivehi,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
 14066,maldivian_dhivehi,H-4,Genitive,H-4-1,,,Генитив,
@@ -14367,7 +14367,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14366,mansi,G-3,Absent,G-3-1,,,Отсутствуют,
 14367,mansi,G-4,Predicative,G-4-2,,,Предикативное,
 14368,mansi,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-14369,mansi,G-7,Same,G-7-1,,,Совпадают,
+14369,mansi,K-3,Same,K-3-1,,,Совпадают,
 14370,mansi,H-1,Three-seven,H-1-2,,,Три-семь,
 14371,mansi,H-2,"Object pronouns, function words, case affixes, and verbal agreement",H-2-11,,,"Объектная форма местоимений, служебные слова, падежные аффиксы и глагольное согласование",
 14372,mansi,H-8,Same,H-8-1,,,Нет различий,
@@ -14830,7 +14830,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14829,megleno_romanian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 14830,megleno_romanian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 14831,megleno_romanian,G-6,Decimal,G-6-1,,,Десятичная,
-14832,megleno_romanian,G-7,Same,G-7-1,,,Совпадают,
+14832,megleno_romanian,K-3,Same,K-3-1,,,Совпадают,
 14833,megleno_romanian,H-1,Three-seven,H-1-2,,,Три-семь,
 14834,megleno_romanian,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений, местоименная реприза, предлоги и порядок слов",
 14835,megleno_romanian,H-4,Genitive,H-4-1,,,Генитив,
@@ -14905,7 +14905,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14904,meimei,G-4,Predicative,G-4-2,,,Предикативное,
 14905,meimei,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 14906,meimei,G-6,,,,,Других данных нет,Предположительно используются персидские числительные.
-14907,meimei,G-7,,,,,"Постопозитивный показатель неопределенности/единичности и числительное ""один"" в функции неопределенного артикля",
+14907,meimei,K-3,,,,,"Постопозитивный показатель неопределенности/единичности и числительное ""один"" в функции неопределенного артикля",
 14908,meimei,H-2,Verbal agreement,H-2-1,,,Глагольное согласование,
 14909,meimei,H-5,,,,,Изафетная конструкция,
 14910,meimei,H-6,,,,,"Указательные местоимения, наречия места и предлоги, в том числе вторичные и отыменные",
@@ -14963,7 +14963,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14962,middle_persian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 14963,middle_persian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 14964,middle_persian,G-6,Decimal,G-6-1,,,Десятичная,
-14965,middle_persian,G-7,Same,G-7-1,,,Совпадают,
+14965,middle_persian,K-3,Same,K-3-1,,,Совпадают,
 14966,middle_persian,H-2,,,,,Служебные слова и порядок слов в предложении (SOV),
 14967,middle_persian,H-5,"Apposition, pronouns and pronominal enclitics",H-5-13,,,"Соположение, местоимения и местоименные энклитики",
 14968,middle_persian,H-6,Adpositions,H-6-12,,,Предлоги и послелоги,
@@ -15990,7 +15990,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15989,neo_mandaic,G-3,Absent,G-3-1,,,Отсутствуют,
 15990,neo_mandaic,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 15991,neo_mandaic,G-5,Singular,G-5-1,,,Единственное,
-15992,neo_mandaic,G-7,Different,G-7-2,,,Не совпадают,
+15992,neo_mandaic,K-3,Different,K-3-2,,,Не совпадают,
 15993,neo_mandaic,I-6,Syncretic,I-6-2,,,Синкретическое,
 15994,neo_mandaic,I-8,Aspect and tense,I-8-2,,,Вид и время,
 15995,neo_mandaic,J-6,Articles and numerals,J-6-15,,,Артикли и числительные,
@@ -16168,7 +16168,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16167,norwegian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 16168,norwegian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 16169,norwegian,G-6,Decimal,G-6-1,,,Десятичная,
-16170,norwegian,G-7,Same,G-7-1,,,Совпадают,
+16170,norwegian,K-3,Same,K-3-1,,,Совпадают,
 16171,norwegian,H-1,One-two,H-1-1,,,Один-два,
 16172,norwegian,H-2,,,,,"Глагольное согласование, субъектные и объектные формы личных местоимений, предлоги и порядок слов",
 16173,norwegian,H-4,Genitive,H-4-1,,,Генитив,
@@ -16273,7 +16273,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16272,occitan,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 16273,occitan,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 16274,occitan,G-6,Decimal,G-6-1,,,Десятичная,
-16275,occitan,G-7,Same,G-7-1,,,Совпадают,
+16275,occitan,K-3,Same,K-3-1,,,Совпадают,
 16276,occitan,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 16277,occitan,H-2,"Subject, direct and indirect object personal pronouns, prepositions, verbal agreement, and word order",H-2-22,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",
 16278,occitan,H-5,"Possessive pronouns, possessive adjectives, personal pronouns, and prepositions",H-5-24,,,"Посессивные местоимения, посессивные прилагательные, личные местоимения и предлоги",
@@ -16675,7 +16675,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16674,old_french,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 16675,old_french,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 16676,old_french,G-6,Decimal with elements of vigesimal,G-6-3,,,Десятичная с элементами двадцатеричной,
-16677,old_french,G-7,Same,G-7-1,,,Совпадают,
+16677,old_french,K-3,Same,K-3-1,,,Совпадают,
 16678,old_french,H-1,One-two,H-1-1,,,Один-два,"Двухпадежная система склонения существительных, прилагательных и артиклей."
 16679,old_french,H-2,"Case and number flections, subject, direct and indirect object personal pronouns, prepositions, and verbal agreement",H-2-20,,,"Падежно-числовые флексии, субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги и глагольное согласование",
 16680,old_french,H-3,Nominative,H-3-4,,,Номинатив,
@@ -17105,7 +17105,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17104,oriya,G-2,Unmarked,G-2-2,,,Немаркированное,
 17105,oriya,G-3,Absent,G-3-1,,,Отсутствуют,
 17106,oriya,G-4,No agreement in number,G-4-1,,,Отсутствует,
-17107,oriya,G-7,Different,G-7-2,,,Не совпадают,
+17107,oriya,K-3,Different,K-3-2,,,Не совпадают,
 17108,oriya,H-1,Three-seven,H-1-2,,,Три-семь,
 17109,oriya,H-2,Case affixes,H-2-3,,,Падежные аффиксы,
 17110,oriya,H-8,Same,H-8-1,,,Нет различий,
@@ -17736,7 +17736,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17735,parthian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,У прилагательных форма множественного числа нерегулярна.
 17736,parthian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 17737,parthian,G-6,Decimal,G-6-1,,,Десятичная,
-17738,parthian,G-7,Same,G-7-1,,,Совпадают,
+17738,parthian,K-3,Same,K-3-1,,,Совпадают,
 17739,parthian,H-1,No case,H-1-6,,,Категория падежа отсутствует,
 17740,parthian,H-2,,,,,"Глагольное согласование, предлоги и послелоги, относительные частицы, позиция имени в словосочетании и порядок слов в предложеннии",
 17741,parthian,H-5,,,,,"Определение по принадлежности, личные (автономные и энклитические), возвратно-питяжательные местоимения и специфическая форма притяжательных местоимений",
@@ -17857,7 +17857,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17856,pashai,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями. Категория числа у прилагательного не описана.
 17857,pashai,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 17858,pashai,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
-17859,pashai,G-7,Different,G-7-2,,,Не совпадают,
+17859,pashai,K-3,Different,K-3-2,,,Не совпадают,
 17860,pashai,H-1,Three-seven,H-1-2,,,Три-семь,
 17861,pashai,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов",
 17862,pashai,H-4,Genitive,H-4-1,,,Генитив,
@@ -18568,7 +18568,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18567,portuguese,G-3,Neutral and polite,G-3-2,,,Нейтральная и вежливая,
 18568,portuguese,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 18569,portuguese,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-18570,portuguese,G-7,Same,G-7-1,,,Совпадают,
+18570,portuguese,K-3,Same,K-3-1,,,Совпадают,
 18571,portuguese,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, местоименная реприза, приглагольные местоимения, предлоги и порядок слов",Субъектные местоимения не различают автономных и неавтономных форм.
 18572,portuguese,H-5,"Possessive pronouns, possessive adjectives, personal pronouns, and prepositions",H-5-24,,,"Посессивные местоимения, посессивные прилагательные, личные местоимения и предлоги","Посессивы имеют одну форму, которая употребляется как прилагательное и как местоимение."
 18573,portuguese,H-6,"Pronouns, pronoun adverbs, and prepositions",H-6-37,,,"Местоимения, местоименные наречия и предлоги",
@@ -18723,7 +18723,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18722,prasun,G-4,Predicative,G-4-2,,,Предикативное,
 18723,prasun,G-5,Singular and plural,G-5-3,,,Единственное и множественное,Число морфологически выражается в имени существительном в форме косвенного падежа.
 18724,prasun,G-6,Vigesimal,G-6-6,,,Двадцатеричная,
-18725,prasun,G-7,Different,G-7-2,,,Не совпадают,
+18725,prasun,K-3,Different,K-3-2,,,Не совпадают,
 18726,prasun,H-1,One-two,H-1-1,,,Один-два,
 18727,prasun,H-2,,,,,"Падежные флексии, субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов",
 18728,prasun,H-4,,,,,Прямой,
@@ -19108,7 +19108,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19106,rhaeto_romance,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 19107,rhaeto_romance,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 19108,rhaeto_romance,G-6,Decimal,G-6-1,,,Десятичная,
-19109,rhaeto_romance,G-7,Same,G-7-1,,,Совпадают,
+19109,rhaeto_romance,K-3,Same,K-3-1,,,Совпадают,
 19110,rhaeto_romance,H-1,No case,H-1-6,,,Категория падежа отсутствует,Сохраняются реликтовые формы номинатива и аккузатива (остатки латинского склонения).
 19111,rhaeto_romance,H-2,"Subject, direct and indirect object personal pronouns, prepositions, verbal agreement, and word order",H-2-22,,,"Субъектная, прямо- и косвеннообъектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",
 19112,rhaeto_romance,H-3,Nominative,H-3-4,,,Номинатив,
@@ -19212,7 +19212,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19210,romani,G-2,Marked and unmarked,G-2-3,Singular and plural forms are equally complex,,Маркированное и немаркированное,Единственное и множественное число одинаково сложны морфологически
 19211,romani,G-3,Absent,G-3-1,,,Отсутствуют,
 19212,romani,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
-19213,romani,G-7,Same,G-7-1,,,Совпадают,
+19213,romani,K-3,Same,K-3-1,,,Совпадают,
 19214,romani,H-1,Eight-twelve,H-1-3,,,Восемь-двенадцать,
 19215,romani,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,
 19216,romani,H-3,,,Depending on a dialect,,"Номинатив, датив или инструменталис",В зависимости от диалекта
@@ -19319,7 +19319,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19317,romanian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 19318,romanian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 19319,romanian,G-6,Decimal,G-6-1,,,Десятичная,
-19320,romanian,G-7,Same,G-7-1,,,Совпадают,
+19320,romanian,K-3,Same,K-3-1,,,Совпадают,
 19321,romanian,H-1,One-two,H-1-1,,,Один-два,
 19322,romanian,H-2,,,,,"Глагольное согласование, субъектные и объектные (ударные и неударные) формы личных местоимений, местоименная реприза, приглагольные местоимения и предлоги",
 19323,romanian,H-4,Genitive or dative,H-4-6,,,Генитив или датив,
@@ -19879,7 +19879,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19877,sangesari,G-2,Marked and unmarked,G-2-3,,,Маркированное и немаркированное,
 19878,sangesari,G-4,Predicative,G-4-2,,,Предикативное,
 19879,sangesari,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-19880,sangesari,G-7,Same,G-7-1,,,Совпадают,
+19880,sangesari,K-3,Same,K-3-1,,,Совпадают,
 19881,sangesari,H-1,One-two,H-1-1,,,Один-два,
 19882,sangesari,H-2,,,,,"Глагольное согласование, падежные аффиксы и послелоги",
 19883,sangesari,H-4,Oblique,H-4-5,,,Косвенный,Косвенный падеж существительных и субстантивных местоимений
@@ -19965,7 +19965,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19963,sanglechi,G-4,Predicative,G-4-2,,,Предикативное,
 19964,sanglechi,G-5,Singular,G-5-1,,,Единственное,
 19965,sanglechi,G-6,Decimal with elements of duodecimal,G-6-2,,,Десятичная с элементами двенадцатеричной,
-19966,sanglechi,G-7,Same,G-7-1,,,Совпадают,
+19966,sanglechi,K-3,Same,K-3-1,,,Совпадают,
 19967,sanglechi,H-1,Three-seven,H-1-2,,,Три-семь,
 19968,sanglechi,H-2,,,,,"Глагльное согласование, субъектная и объектная форма личных местоимений, падежные аффиксы, предлоги и послелоги",
 19969,sanglechi,H-3,,,,,Прямой падеж,
@@ -20136,7 +20136,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20134,sardinian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,При атрибутивном согласовании маркер множественного числа часто присутствует только в прилагательном.
 20135,sardinian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 20136,sardinian,G-6,Decimal,G-6-1,,,Десятичная,
-20137,sardinian,G-7,Same,G-7-1,,,Совпадают,
+20137,sardinian,K-3,Same,K-3-1,,,Совпадают,
 20138,sardinian,H-2,,,,,"Глагольное согласование, субъектная, прямо- и косвеннообъектная форма личных местоимений, приглагольные местоимения, местоименная реприза и предлоги",Есть особые ударные объектные формы личных местоимений 1-го и 2-го лица ед. числа с предлогами.
 20139,sardinian,H-5,"Possessive pronouns, possessive adjectives, and prepositions",H-5-29,,,"Посессивные местоимения, посессивные прилагательные и предлоги",Притяжательные местоимения находятся в постпозиции к существительному с артиклем.
 20140,sardinian,H-6,"Pronouns, adverbs, and prepositions",H-6-34,,,"Местоимения, наречия и предлоги",
@@ -20212,7 +20212,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20210,sariqoli,G-4,Predicative,G-4-2,,,Предикативное,
 20211,sariqoli,G-5,Singular,G-5-1,,,Единственное,
 20212,sariqoli,G-6,Decimal,G-6-1,,,Десятичная,
-20213,sariqoli,G-7,Same,G-7-1,,,Совпадают,"Числительное ""один"" в усеченной фрме."
+20213,sariqoli,K-3,Same,K-3-1,,,Совпадают,"Числительное ""один"" в усеченной фрме."
 20214,sariqoli,H-1,One-two,H-1-1,,,Один-два,
 20215,sariqoli,H-2,,,,,"Глагольное согласование, субъектная и объектная форма местоимений, предлоги и послелоги",
 20216,sariqoli,H-6,,,,,"Указательные местоимения, наречия, предлоги и послелоги",
@@ -21086,7 +21086,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21084,shughni,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 21085,shughni,G-5,Singular,G-5-1,,,Единственное,
 21086,shughni,G-6,Decimal,G-6-1,,,Десятичная,
-21087,shughni,G-7,Same,G-7-1,,,Совпадают,"Неопределенный артикль имеет усеченную форму числительного ""один''."
+21087,shughni,K-3,Same,K-3-1,,,Совпадают,"Неопределенный артикль имеет усеченную форму числительного ""один''."
 21088,shughni,H-1,One-two,H-1-1,,,Один-два,"Определенные имена имеют косвенный падеж, неопределенные - беспадежны."
 21089,shughni,H-2,"Verbal agreement, case affixes and function words",H-2-8,,,"Глагольное согласование, падежные аффиксы и служебные слова",
 21090,shughni,H-3,Nominative,H-3-4,,,Номинатив,
@@ -21278,7 +21278,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21276,sindhi,G-2,Marked,G-2-1,Singular and plural forms are equally complex,,Маркированное,Единственное и множественное число одинаково сложны морфологически
 21277,sindhi,G-3,Absent,G-3-1,,,Отсутствуют,
 21278,sindhi,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
-21279,sindhi,G-7,Same,G-7-1,The numeral functions as an article,,Совпадают,Числительное выполняет функцию артикля
+21279,sindhi,K-3,Same,K-3-1,The numeral functions as an article,,Совпадают,Числительное выполняет функцию артикля
 21280,sindhi,H-1,Three-seven,H-1-2,,,Три-семь,
 21281,sindhi,H-2,,,,,Падежные аффиксы и местоименные энклитики,
 21282,sindhi,H-6,"Locative cases, prepositions, and pronouns",H-6-26,,,"Пространственные падежи, предлоги и местоимения",
@@ -21453,7 +21453,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21451,sivandi,G-4,Predicative,G-4-2,,,Предикативное,
 21452,sivandi,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 21453,sivandi,G-6,Decimal,G-6-1,,,Десятичная,Других данных нет.
-21454,sivandi,G-7,Same,G-7-1,,,Совпадают,
+21454,sivandi,K-3,Same,K-3-1,,,Совпадают,
 21455,sivandi,H-2,Verbal agreement,H-2-1,,,Глагольное согласование,
 21456,sivandi,H-5,,,,,"Возвратно-притяжательные, личные, энклитические местоимения (в составе изафетной конструкции) и  оборот ini + личное местоимение (+ связка)",
 21457,sivandi,H-6,,,,,"Укаазательные местоимения, местоименные наречия, наречия места, предлоги (простые и отыменные) и послелоги",
@@ -21747,7 +21747,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21745,sogdian,G-2,Unmarked,G-2-2,,,Немаркированное,
 21746,sogdian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 21747,sogdian,G-6,Decimal,G-6-1,,,Десятичная,
-21748,sogdian,G-7,,,,,"В буддийских текстах отмечено использование числительного ""один"" в функции неопределенного артикля",
+21748,sogdian,K-3,,,,,"В буддийских текстах отмечено использование числительного ""один"" в функции неопределенного артикля",
 21749,sogdian,H-1,Three-seven,H-1-2,,,Три-семь,
 21750,sogdian,H-2,"Verbal agreement, case affixes and function words",H-2-8,,,"Глагольное согласование, падежные аффиксы и служебные слова",
 21751,sogdian,H-3,Nominative,H-3-4,,,Номинатив,
@@ -22100,7 +22100,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22098,spanish,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 22099,spanish,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 22100,spanish,G-6,Decimal,G-6-1,,,Десятичная,
-22101,spanish,G-7,Same,G-7-1,,,Совпадают,
+22101,spanish,K-3,Same,K-3-1,,,Совпадают,
 22102,spanish,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений, местоименная реприза, приглагольные местоимения, предлоги и порядок слов",
 22103,spanish,H-5,"Possessive pronouns, possessive adjectives, personal pronouns, and prepositions",H-5-24,,,"Посессивные местоимения, посессивные прилагательные, личные местоимения и предлоги",
 22104,spanish,H-6,"Demonstrative pronouns, spatial adverbs, and prepositions",H-6-42,,,"Указательные местоимения, наречия места и предлоги",
@@ -22408,7 +22408,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22406,surkhei,G-2,Unmarked,G-2-2,,,Немаркированное,
 22407,surkhei,G-4,Predicative,G-4-2,,,Предикативное,
 22408,surkhei,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-22409,surkhei,G-7,,,,,"Единичность-неопределенность выражается: числительным ""один"", постпозитивным показателем  -i или их одновременным употреблением",
+22409,surkhei,K-3,,,,,"Единичность-неопределенность выражается: числительным ""один"", постпозитивным показателем  -i или их одновременным употреблением",
 22410,surkhei,H-1,,,,,Имена существительные не имеют падежных форм. Личные местоимения имеют двухпадежное супплетивное склонение,
 22411,surkhei,H-2,,,,,"Порядок слов, глагольное согласование (в числе), предлоги и послелоги",
 22412,surkhei,H-6,,,,,"Указательные местоимения, наречия, предлоги и послелоги",
@@ -22624,7 +22624,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22622,swedish,G-4,Attributive,G-4-3,,,Атрибутивное,
 22623,swedish,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 22624,swedish,G-6,Decimal,G-6-1,,,Десятичная,
-22625,swedish,G-7,Same,G-7-1,,,Совпадают,Неопределенный артикль отличается от числительного отсутствием ударения.
+22625,swedish,K-3,Same,K-3-1,,,Совпадают,Неопределенный артикль отличается от числительного отсутствием ударения.
 22626,swedish,H-1,One-two,H-1-1,,,Один-два,
 22627,swedish,H-2,"Subject and object personal pronouns, prepositions, and word order",H-2-14,,,"Субъектная и объектная форма личных местоимений, предлоги и порядок слов",
 22628,swedish,H-3,Caseless form,H-3-14,,,Общий падеж,
@@ -22737,7 +22737,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22735,swiss_german,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 22736,swiss_german,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 22737,swiss_german,G-6,Decimal,G-6-1,,,Десятичная,
-22738,swiss_german,G-7,Same,G-7-1,,,Совпадают,
+22738,swiss_german,K-3,Same,K-3-1,,,Совпадают,
 22739,swiss_german,H-1,One-two,H-1-1,,,Один-два,
 22740,swiss_german,H-2,,,,,"Глагольное согласование, падежные аффиксы, субъектная и объектная формы личных местоимения, предлоги и порядок слов",
 22741,swiss_german,H-4,Dative,H-4-2,,,Датив,"""Дательный притяжательный"" в сочетании с артиклем и притяжательным местоимением. Генитив сохраняется в горноалеманнской разновидности."
@@ -22970,7 +22970,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22968,tajrishi,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 22969,tajrishi,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 22970,tajrishi,G-6,Decimal,G-6-1,,,Десятичная,
-22971,tajrishi,G-7,Same,G-7-1,,,Совпадают,
+22971,tajrishi,K-3,Same,K-3-1,,,Совпадают,
 22972,tajrishi,H-2,,,,,"Глагольное согласование, объектная форма личных местоимений и порядок слов",
 22973,tajrishi,H-5,,,,,"Поссесивные энклитические местоимения, изафетная конструкция и порядок слов",
 22974,tajrishi,H-6,,,,,Указательные местоимения и предлоги,
@@ -23051,7 +23051,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23049,talysh,G-2,Unmarked,G-2-2,,,Немаркированное,
 23050,talysh,G-4,Predicative,G-4-2,,,Предикативное,Наблюдается отсутствие согласования главных членов предложения по числу.
 23051,talysh,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-23052,talysh,G-7,Same,G-7-1,,,Совпадают,
+23052,talysh,K-3,Same,K-3-1,,,Совпадают,
 23053,talysh,H-1,One-two,H-1-1,,,Один-два,
 23054,talysh,H-2,,,,,"Глагольное согласование (номинативные и эргативные конструкции), аналитические падежные формы с аффиксами и предлогами",
 23055,talysh,H-4,,,,,Косвенный падеж в функции родительного принадлежности или родительного отношения,
@@ -25064,7 +25064,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25061,velatru,G-2,Unmarked,G-2-2,,,Немаркированное,
 25062,velatru,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 25063,velatru,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-25064,velatru,G-7,Same,G-7-1,,,Совпадают,
+25064,velatru,K-3,Same,K-3-1,,,Совпадают,
 25065,velatru,H-1,Three-seven,H-1-2,,,Три-семь,
 25066,velatru,H-2,,,,,"Глагольное согласование, падежные аффиксы, объектная форма личных и субстантивных местоимений и послелоги",
 25067,velatru,H-4,Genitive,H-4-1,,,Генитив,
@@ -25199,7 +25199,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25196,vonishuni,G-4,Predicative,G-4-2,,,Предикативное,
 25197,vonishuni,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 25198,vonishuni,G-6,Decimal,G-6-1,,,Десятичная,Других данных нет.
-25199,vonishuni,G-7,,,,,"Препозитвный неопределенный артикль, выраженный числительным ""один"" и постпозитивный энклитический показатель непределенности/единичности",
+25199,vonishuni,K-3,,,,,"Препозитвный неопределенный артикль, выраженный числительным ""один"" и постпозитивный энклитический показатель непределенности/единичности",
 25200,vonishuni,H-2,,,,,"Глагольное согласование, позиция слова в предложении, предлоги и послелоги",
 25201,vonishuni,H-5,,,,,"Изафетная конструкция, местоименные энклитики и порядок слов",
 25202,vonishuni,H-6,,,,,"Указательные местоимения, наречия места, предлоги, в том числе изафетные и вторичные/отыменные, и полелоги",
@@ -25426,7 +25426,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25423,wakhi,G-4,Predicative,G-4-2,,,Предикативное,
 25424,wakhi,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 25425,wakhi,G-6,Decimal with elements of duodecimal,G-6-2,,,Десятичная с элементами двенадцатеричной,
-25426,wakhi,G-7,Same,G-7-1,,,Совпадают,
+25426,wakhi,K-3,Same,K-3-1,,,Совпадают,
 25427,wakhi,H-1,One-two,H-1-1,,,Один-два,Падежные формы в системе имени существительного различаются только во множественном числе.
 25428,wakhi,H-2,,,,,"Глагольное согласование, падежные аффиксы, суффиксальные служебные элементы, предлоги, послелоги и их сочетания",
 25429,wakhi,H-4,Oblique,H-4-5,,,Косвенный,
@@ -25578,7 +25578,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25575,waneci,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 25576,waneci,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 25577,waneci,G-6,Decimal,G-6-1,,,Десятичная,Других данных нет.
-25578,waneci,G-7,Same,G-7-1,,,Совпадают,
+25578,waneci,K-3,Same,K-3-1,,,Совпадают,
 25579,waneci,H-1,One-two,H-1-1,,,Один-два,
 25580,waneci,H-2,,,,,"Глагольное согласование, субъектная и объектная форма личных местоимений, падежные аффиксы, предлоги и послелоги",
 25581,waneci,H-5,,,,,Послелоги,Других данных нет.
@@ -26065,7 +26065,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26062,yarandi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 26063,yarandi,G-4,Predicative,G-4-2,,,Предикативное,
 26064,yarandi,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-26065,yarandi,G-7,Same,G-7-1,,,Совпадают,
+26065,yarandi,K-3,Same,K-3-1,,,Совпадают,
 26066,yarandi,H-2,,,,,"Порядок слов, глагольное согласование, предлоги и послелоги",
 26067,yarandi,H-5,,,,,"Возвратно-определительные местоимения в функции притяжательных, изафетная конструкция и/или порядок слов",
 26068,yarandi,H-6,,,,,"Указательные местоимения, наречия места, адвербиализованные существительные и прилагательные, предлоги и послелоги",
@@ -26127,7 +26127,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26124,yazdi_and_kermani,G-3,Neutral and polite,G-3-2,,,Нейтральная и вежливая,
 26125,yazdi_and_kermani,G-4,Predicative,G-4-2,,,Предикативное,
 26126,yazdi_and_kermani,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-26127,yazdi_and_kermani,G-7,Same,G-7-1,,,Совпадают,
+26127,yazdi_and_kermani,K-3,Same,K-3-1,,,Совпадают,
 26128,yazdi_and_kermani,H-2,,,,,"Глагольное согласование, клитические местоимения, предлоги и послелоги",
 26129,yazdi_and_kermani,H-5,,,,,"Личные местоимения в составе изафетной конструкции, местоименные энклитики, возвратное местоимение (обычно с энклитическими местоимениями)",
 26130,yazdi_and_kermani,H-6,,,,,"Указательные местоимения, местоименные наречия, в том числе опрощенные сложения с местоимениями, предлоги",
@@ -26300,7 +26300,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26297,yiddish,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 26298,yiddish,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 26299,yiddish,G-6,Decimal,G-6-1,,,Десятичная,
-26300,yiddish,G-7,Different,G-7-2,,,Не совпадают,
+26300,yiddish,K-3,Different,K-3-2,,,Не совпадают,
 26301,yiddish,H-1,Three-seven,H-1-2,,,Три-семь,Категория падежа различается только в ед. числе имени существительного.
 26302,yiddish,H-2,,,,,"Глагольное согласование, падежные аффиксы, субъектная и объектная форма личных местоимений, предлоги и порядок слов",
 26303,yiddish,H-4,Genitive or dative,H-4-6,,,Генитив или датив,
@@ -26501,7 +26501,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26498,zefrei,G-4,Predicative,G-4-2,,,Предикативное,
 26499,zefrei,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
 26500,zefrei,G-6,Decimal,G-6-1,,,Десятичная,Других данных нет.
-26501,zefrei,G-7,,,,,Числительное один в функции неопределенного артикля и постпозитивный неопределенных артикль,
+26501,zefrei,K-3,,,,,Числительное один в функции неопределенного артикля и постпозитивный неопределенных артикль,
 26502,zefrei,H-2,,,,,"Глагольное согласование, позиция слова в прдложении, предлоги и послелоги",
 26503,zefrei,H-5,,,,,"Изафетная конструкция, порядок слов, предлоги и энклитические и возвратно-определительные местоимения",
 26504,zefrei,H-6,,,,,"Указательные местоимения, наречия места, предлоги и послелоги",
