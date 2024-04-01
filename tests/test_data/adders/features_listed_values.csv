@@ -821,18 +821,18 @@ K-3-2,K-3,Postposition,Постпозиция
 K-3-3,K-3,Preposition and postposition,Препозиция и постпозиция
 K-4-1,K-4,Single article preceding the phrase,Единый артикль для всей именной группы
 K-4-2,K-4,Articles preceding each word,Собственный артикль перед каждым словом
-K-5-1,K-5,Animacy,Одушевленность
-K-5-2,K-5,Definiteness,Определенность
-K-5-3,K-5,Animacy and gender,Одушевленность и род
-K-5-4,K-5,Definiteness and case,Определенность и падеж
-K-5-5,K-5,Definiteness and number,Определенность и число
-K-5-6,K-5,Definiteness and gender,Определенность и род
-K-5-7,K-5,"Animacy, case and number","Одушевленность, падеж и число"
-K-5-8,K-5,"Definiteness, case and gender","Определенность, падеж и род"
-K-5-9,K-5,"Definiteness, gender and number","Определенность, род и число"
-K-5-10,K-5,"Case, gender and number","Падеж, род и число"
-K-5-11,K-5,"Definiteness, case, gender and number","Определенность, падеж, род и число"
-K-5-12,K-5,"Definiteness, possessivity, case, gender and number","Определенность, посессивность, падеж, род и число"
+K-6-1,K-6,Animacy,Одушевленность
+K-6-2,K-6,Definiteness,Определенность
+K-6-3,K-6,Animacy and gender,Одушевленность и род
+K-6-4,K-6,Definiteness and case,Определенность и падеж
+K-6-5,K-6,Definiteness and number,Определенность и число
+K-6-6,K-6,Definiteness and gender,Определенность и род
+K-6-7,K-6,"Animacy, case and number","Одушевленность, падеж и число"
+K-6-8,K-6,"Definiteness, case and gender","Определенность, падеж и род"
+K-6-9,K-6,"Definiteness, gender and number","Определенность, род и число"
+K-6-10,K-6,"Case, gender and number","Падеж, род и число"
+K-6-11,K-6,"Definiteness, case, gender and number","Определенность, падеж, род и число"
+K-6-12,K-6,"Definiteness, possessivity, case, gender and number","Определенность, посессивность, падеж, род и число"
 K-7-1,K-7,Single type of conjugation,Единый тип спряжения
 K-7-2,K-7,Two types of conjugation,Два типа спряжения
 K-7-3,K-7,Three types of conjugation,Три типа спряжения
