@@ -897,10 +897,10 @@ K-12-7,K-12,"Gender, number and case","Рода, числа и падежа"
 K-12-8,K-12,"Agreement class, number and case","Согласовательного класса, числа и падежа"
 K-12-9,K-12,Agreement class and state,Согласовательного класса и состояния
 K-12-10,K-12,"Gender, number, case, animacy, and person","Рода, числа , падежа, одушевленности и личности"
-K-13-1,K-13,Always present,Всегда присутствует
-K-13-2,K-13,Absent,Отсутствует
-K-13-3,K-13,Only in preposition,Только в препозиции
-K-13-4,K-13,Optional,Факультативно
+K-14-1,K-14,Always present,Всегда присутствует
+K-14-2,K-14,Absent,Отсутствует
+K-14-3,K-14,Only in preposition,Только в препозиции
+K-14-4,K-14,Optional,Факультативно
 K-15-1,K-15,No attributive agreement,Атрибутивное согласование отсутствует
 K-15-2,K-15,In class,По классу
 K-15-3,K-15,In person,По лицу
