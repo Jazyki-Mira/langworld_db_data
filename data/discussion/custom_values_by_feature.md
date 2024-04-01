@@ -1581,7 +1581,7 @@
 - Прошедшее и непрошедшее: [ирула](../feature_profiles/irula.csv), [кодагу](../feature_profiles/kodagu.csv)
 - Прошедшее, настоящее, настоящее определенное, настояще-будущее, будущее: [таджикский](../feature_profiles/tajik.csv)
 - нет данных: [лидийский](../feature_profiles/lydian.csv)
-## K-10: Грамматические категории, выражаемые наречием
+## K-11: Грамматические категории, выражаемые наречием
 
 - Наречие отсутствует: [дамели](../feature_profiles/dameli.csv), [гавар](../feature_profiles/gawar.csv), [калаша](../feature_profiles/kalasha.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [майян](../feature_profiles/mayan.csv), [пашаи](../feature_profiles/pashai.csv), [прасун](../feature_profiles/prasun.csv), [сави](../feature_profiles/sawi.csv)
 - нет данных: [ликийский](../feature_profiles/lycian.csv), [лидийский](../feature_profiles/lydian.csv), [палайский](../feature_profiles/palaic.csv)
