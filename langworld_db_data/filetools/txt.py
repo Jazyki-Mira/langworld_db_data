@@ -82,16 +82,26 @@ def write_plain_text_to_file(
 def move_line(
     file: Path,
     line_number_to_cut: int,
-    line_number_to_insert_before: int | Literal["end"],
+    line_number_to_insert_before: int | Literal["END"],
     output_file: Path | None = None
 ) -> None:
     """Cut one line and insert it before the other."""
 
     with file.open(encoding="utf8") as fh:
         lines = fh.readlines()
-        new_lines = ["line 0\n", "line 1\n", "line 2\n", "line 3\n", "line 4\n", "last line\n"]
+        if line_number_to_insert_before == "END":
+            line_number_to_insert_before = len(lines)
+        lines.insert(line_number_to_insert_before, lines[line_number_to_cut])
+        # После этого у нас есть lines с двумя одинаковыми строчками;
+        # теперь если позиция вставки больше, чем исходная, то нужно удалить исходную,
+        # а если позиция вставки меньше, то нужно удалить исходную + 1.
+        # А если равна, то не имеет значения.
+        if line_number_to_insert_before > line_number_to_cut:
+            lines.pop(line_number_to_cut)
+        else:
+            lines.pop(line_number_to_cut+1)
 
     file_to_write = output_file or file
 
     with file_to_write.open(mode="w+", encoding="utf8") as fh:
-        fh.writelines(new_lines)
+        fh.writelines(lines)
