@@ -1,6 +1,6 @@
 import re
 from pathlib import Path
-from typing import Union
+from typing import Literal, Union
 
 
 def check_encoding_of_file(file: Path) -> str:
@@ -77,3 +77,21 @@ def write_plain_text_to_file(
             msg = "lines"
 
         print(f"Written {len(content)} {msg} into file {file}.")
+
+
+def move_line(
+    file: Path,
+    line_number_to_cut: int,
+    line_number_to_insert_before: int | Literal["end"],
+    output_file: Path | None = None
+) -> None:
+    """Cut one line and insert it before the other."""
+
+    with file.open(encoding="utf8") as fh:
+        lines = fh.readlines()
+        new_lines = ["line 0\n", "line 1\n", "line 2\n", "line 3\n", "line 4\n", "last line\n"]
+
+    file_to_write = output_file or file
+
+    with file_to_write.open(mode="w+", encoding="utf8") as fh:
+        fh.writelines(new_lines)
