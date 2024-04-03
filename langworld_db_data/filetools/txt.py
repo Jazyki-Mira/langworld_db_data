@@ -92,10 +92,6 @@ def move_line(
         if line_number_to_insert_before == "END":
             line_number_to_insert_before = len(lines)
         lines.insert(line_number_to_insert_before, lines[line_number_to_cut])
-        # После этого у нас есть lines с двумя одинаковыми строчками;
-        # теперь если позиция вставки больше, чем исходная, то нужно удалить исходную,
-        # а если позиция вставки меньше, то нужно удалить исходную + 1.
-        # А если равна, то не имеет значения.
         if line_number_to_insert_before > line_number_to_cut:
             lines.pop(line_number_to_cut)
         else:

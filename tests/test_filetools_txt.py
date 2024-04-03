@@ -21,18 +21,18 @@ def test_check_encoding_of_file():
         PATH_TO_TEST_OUTPUT_TXT_FILE.unlink()
 
 @pytest.mark.parametrize(
-    "file_stem, line_number_to_cut, line_number_to_insert_before",  # Аргументы (строка)
+    "file_stem, line_number_to_cut, line_number_to_insert_before",
     [
-        ("tc1-2", 1, 2),  # Кортежи, в каждом набор значений, который надо подставить в тест
+        ("tc1-2", 1, 2),
         ("tc1-2", 2, 2),
         ("tc3-4", 3, 2),
         ("tc3-4", 2, 4),
-        ("tc5-6", 2, 5),
-        ("tc5-6", 4, 2),
+        ("tc5", 1, 5),
+        ("tc6", 4, 1),
         ("tc7", 3, "END"),
         ("tc8", 3, 0),
-        ("tc9-10", 0, "END"),
-        ("tc9-10", 5, 0),
+        ("tc9", 0, "END"),
+        ("tc10", 5, 0),
     ],
 )
 def test_move_line(file_stem, line_number_to_cut, line_number_to_insert_before):
@@ -47,7 +47,7 @@ def test_move_line(file_stem, line_number_to_cut, line_number_to_insert_before):
     check_existence_of_output_txt_file_and_compare_with_benchmark(
         output_file=tmp_output_file,
         benchmark_file=dir_with_test_files / "benchmark.txt"
-    )  # assert Производится в check_existence_of_output_txt_file_and_compare_with_benchmark, там же лежит текст для ошибки
+    )
 
 
 def test_read_non_empty_lines_from_txt_file():
