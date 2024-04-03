@@ -1,6 +1,6 @@
 import re
 from pathlib import Path
-from typing import Literal, Union
+from typing import Literal, Union, cast
 
 
 def check_encoding_of_file(file: Path) -> str:
@@ -89,9 +89,22 @@ def move_line(
 
     with file.open(encoding="utf8") as fh:
         lines = fh.readlines()
+
         if line_number_to_insert_before == "END":
             line_number_to_insert_before = len(lines)
-        lines.insert(line_number_to_insert_before, lines[line_number_to_cut])
+        elif not isinstance(line_number_to_insert_before, int):
+            raise TypeError(
+                f"{line_number_to_insert_before} is not an accepted argument. "
+                'Please pass an integer or the string "END".'
+            )
+
+        lines.insert(
+            # our checks above ensured that line_number_to_insert_before is integer,
+            # so we can tell mypy that it shouldn't complain about type of argument
+            cast(int, line_number_to_insert_before),
+            lines[line_number_to_cut]
+        )
+
         if line_number_to_insert_before > line_number_to_cut:
             lines.pop(line_number_to_cut)
         else:
