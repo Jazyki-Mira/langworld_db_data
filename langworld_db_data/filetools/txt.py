@@ -83,7 +83,7 @@ def move_line(
     file: Path,
     line_number_to_cut: int,
     line_number_to_insert_before: Union[int, Literal["END"]],
-    output_file: Path | None = None
+    output_file: Union[Path, None] = None
 ) -> None:
     """Cut one line and insert it before the other."""
 
