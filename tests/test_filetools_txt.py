@@ -31,8 +31,10 @@ def test_check_encoding_of_file():
         ("tc6", 4, 1),
         ("tc7", 3, "END"),
         ("tc8", 3, 0),
-        ("tc9", 0, "END"),
-        ("tc10", 5, 0),
+        ("tc9-11", 0, "END"),
+        ("tc9-11", 0, "end"),
+        ("tc9-11", 0, "FINISH"),
+        ("tc12", 5, 0),
     ],
 )
 def test_move_line(file_stem, line_number_to_cut, line_number_to_insert_before):

@@ -90,7 +90,7 @@ def move_line(
     with file.open(encoding="utf8") as fh:
         lines = fh.readlines()
 
-        if line_number_to_insert_before == "END":
+        if type(line_number_to_insert_before) == str and line_number_to_insert_before in ("end", "END"):
             line_number_to_insert_before = len(lines)
         elif not isinstance(line_number_to_insert_before, int):
             raise TypeError(
