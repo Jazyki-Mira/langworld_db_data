@@ -33,7 +33,6 @@ def test_check_encoding_of_file():
         ("tc8", 3, 0),
         ("tc9-11", 0, "END"),
         ("tc9-11", 0, "end"),
-        ("tc9-11", 0, "FINISH"),
         ("tc12", 5, 0),
     ],
 )
@@ -50,6 +49,11 @@ def test_move_line(file_stem, line_number_to_cut, line_number_to_insert_before):
         output_file=tmp_output_file,
         benchmark_file=dir_with_test_files / "benchmark.txt"
     )
+
+
+def test_move_line_throws_exception_with_wrong_string():
+    with pytest.raises(TypeError):  # In the tutorial, they also recommended to check the error message, but I didn't manage to implement it because the message may change depending on the wrong argument
+        move_line(DIR_WITH_FILETOOLS_TEST_FILES / "move_line" / "tc9-11.txt", 0, "FINISH")
 
 
 def test_read_non_empty_lines_from_txt_file():
