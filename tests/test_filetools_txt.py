@@ -2,11 +2,13 @@ import pytest
 
 from langworld_db_data.filetools.txt import (
     check_encoding_of_file,
+    move_line,
     read_non_empty_lines_from_txt_file,
     read_plain_text_from_file,
     remove_extra_space,
     write_plain_text_to_file,
 )
+from tests.helpers import check_existence_of_output_txt_file_and_compare_with_benchmark
 from tests.paths import DIR_WITH_FILETOOLS_TEST_FILES, PATH_TO_TEST_OUTPUT_TXT_FILE
 
 
@@ -17,6 +19,45 @@ def test_check_encoding_of_file():
 
         assert check_encoding_of_file(PATH_TO_TEST_OUTPUT_TXT_FILE) == encoding
         PATH_TO_TEST_OUTPUT_TXT_FILE.unlink()
+
+@pytest.mark.parametrize(
+    "file_stem, line_number_to_cut, line_number_to_insert_before",
+    [
+        ("tc1-2", 1, 2),
+        ("tc1-2", 2, 2),
+        ("tc3-4", 3, 2),
+        ("tc3-4", 2, 4),
+        ("tc5", 1, 5),
+        ("tc6", 4, 1),
+        ("tc7", 3, "END"),
+        ("tc8", 3, 0),
+        ("tc9-11", 0, "END"),
+        ("tc9-11", 0, "end"),
+        ("tc12", 5, 0),
+    ],
+)
+def test_move_line(file_stem, line_number_to_cut, line_number_to_insert_before):
+    dir_with_test_files = DIR_WITH_FILETOOLS_TEST_FILES / "move_line"
+    tmp_output_file = dir_with_test_files / "output_tmp.txt"
+    move_line(
+        file=dir_with_test_files / f"{file_stem}.txt",
+        line_number_to_cut=line_number_to_cut,
+        line_number_to_insert_before=line_number_to_insert_before,
+        output_file=tmp_output_file,
+    )
+    check_existence_of_output_txt_file_and_compare_with_benchmark(
+        output_file=tmp_output_file,
+        benchmark_file=dir_with_test_files / "benchmark.txt"
+    )
+
+
+def test_move_line_throws_exception_with_wrong_string():
+    with pytest.raises(TypeError, match='Please pass an integer or the string "END"'):
+        move_line(
+            file=DIR_WITH_FILETOOLS_TEST_FILES / "move_line" / "tc9-11.txt",
+            line_number_to_cut=0,
+            line_number_to_insert_before="FINISH",  # noqa
+        )
 
 
 def test_read_non_empty_lines_from_txt_file():
