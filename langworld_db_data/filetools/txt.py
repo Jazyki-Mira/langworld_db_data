@@ -83,14 +83,17 @@ def move_line(
     file: Path,
     line_number_to_cut: int,
     line_number_to_insert_before: Union[int, Literal["END"]],
-    output_file: Union[Path, None] = None
+    output_file: Union[Path, None] = None,
 ) -> None:
     """Cut one line and insert it before the other."""
 
     with file.open(encoding="utf8") as fh:
         lines = fh.readlines()
 
-        if type(line_number_to_insert_before) == str and line_number_to_insert_before in ("end", "END"):
+        if type(line_number_to_insert_before) == str and line_number_to_insert_before in (
+            "end",
+            "END",
+        ):
             line_number_to_insert_before = len(lines)
         elif not isinstance(line_number_to_insert_before, int):
             raise TypeError(
@@ -102,13 +105,13 @@ def move_line(
             # our checks above ensured that line_number_to_insert_before is integer,
             # so we can tell mypy that it shouldn't complain about type of argument
             cast(int, line_number_to_insert_before),
-            lines[line_number_to_cut]
+            lines[line_number_to_cut],
         )
 
         if line_number_to_insert_before > line_number_to_cut:
             lines.pop(line_number_to_cut)
         else:
-            lines.pop(line_number_to_cut+1)
+            lines.pop(line_number_to_cut + 1)
 
     file_to_write = output_file or file
 
