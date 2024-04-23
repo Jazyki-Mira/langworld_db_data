@@ -1,8 +1,9 @@
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
 
 
-def rename_value(value_id: str, new_value_name: str,
-                 feature_profiles_dir, file_with_listed_values: str):
+def rename_value(
+    value_id: str, new_value_name: str, feature_profiles_dir, file_with_listed_values: str
+):
     """
     Replaces all the instances of a given value name in profiles and features_listed_values on a given value.
     Works with both singular and combined values.
