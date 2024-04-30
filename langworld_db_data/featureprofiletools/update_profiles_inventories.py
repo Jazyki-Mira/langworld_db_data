@@ -13,13 +13,14 @@ def rename_value(value_to_rename_id: str, new_value_name: str,
     files_list = list(feature_profiles_dir.iterdir())
     files_list.append(file_with_listed_values)
     for file in files_list:
-        with open(file, "r") as f:
+        with open(file, "r", encoding="utf-8") as f:
             data_from_file = []
             for line in f:
                 data_from_file.append(line)
-        with open(file, "w") as f:
+        with open(file, "w", encoding="utf-8") as f:
             for line in data_from_file:
-                line = line.split()
+                line = line.split(",")
+                print(line)
                 if value_to_rename_id in line[4]:
                     if line[4] == value_to_rename_id:
                         line[4] = new_value_name
