@@ -1,12 +1,14 @@
 from pathlib import Path
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
-
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv
 
 
 def rename_value(
-    value_to_rename_id: str, new_value_name: str, feature_profiles_dir: Path, file_with_listed_values: Path
+    value_to_rename_id: str,
+    new_value_name: str,
+    feature_profiles_dir: Path,
+    file_with_listed_values: Path,
 ):
     """
     Replaces all the instances of a given value name in profiles and features_listed_values on a given value.
@@ -47,8 +49,7 @@ def rename_value(
             number_of_replacements += 1
     with open(file_with_listed_values, "w", encoding="utf-8") as f:
         for line in data_from_file:
-            f.write(",".join([line["id"], line["feature_id"],
-                              line["en"], line["ru"]]))
+            f.write(",".join([line["id"], line["feature_id"], line["en"], line["ru"]]))
     print("Replacements made:" + str(number_of_replacements))
     if number_of_replacements == 0:
         print("Nothing has been replaced. Maybe you entered a wrong value_to_rename_id.")
