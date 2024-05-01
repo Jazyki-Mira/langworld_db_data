@@ -20,6 +20,7 @@ def test_check_encoding_of_file():
         assert check_encoding_of_file(PATH_TO_TEST_OUTPUT_TXT_FILE) == encoding
         PATH_TO_TEST_OUTPUT_TXT_FILE.unlink()
 
+
 @pytest.mark.parametrize(
     "file_stem, line_number_to_cut, line_number_to_insert_before",
     [
@@ -46,8 +47,7 @@ def test_move_line(file_stem, line_number_to_cut, line_number_to_insert_before):
         output_file=tmp_output_file,
     )
     check_existence_of_output_txt_file_and_compare_with_benchmark(
-        output_file=tmp_output_file,
-        benchmark_file=dir_with_test_files / "benchmark.txt"
+        output_file=tmp_output_file, benchmark_file=dir_with_test_files / "benchmark.txt"
     )
 
 
