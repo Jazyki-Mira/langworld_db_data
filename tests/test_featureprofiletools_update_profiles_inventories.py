@@ -39,6 +39,7 @@ def test_rename_value():
     filenames_list = DIR_WITH_DEFAULT_FEATURE_PROFILES.glob('*.csv')
     file_lines = []
     for filename in filenames_list:
+        print(filename)
         with open(DIR_WITH_DEFAULT_FEATURE_PROFILES / filename, "r", encoding="utf-8") as f:
             for line in f:
                 file_lines.append(line)
