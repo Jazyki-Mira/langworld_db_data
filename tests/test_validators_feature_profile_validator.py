@@ -19,9 +19,6 @@ def test_validator():
         dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
         file_with_features=DIR_WITH_VALIDATORS_TEST_FILES / "features_OK.csv",
         file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / "features_listed_values_OK.csv",
-        file_with_rules_for_not_applicable_value_type=(
-            DIR_WITH_VALIDATORS_TEST_FILES / "features_not_applicable_rules.yaml"
-        ),
     )
 
 
@@ -88,24 +85,24 @@ def test_validate_fails_with_bad_data():
         FeatureProfileValidator(dir_with_feature_profiles=DIR_WITH_BAD_PROFILES).validate()
 
 
+@pytest.mark.parametrize(
+    "file_name, error_msg",
+    [("agul", '"Этого тут быть не должно" of type `custom`'), ("catalan", "of type `not_stated`")],
+)
 def test__validate_one_file_prints_message_for_files_breaching_rules_for_not_applicable_with_flag_set_to_false(  # noqa E501
-    capsys, test_validator
+    capsys, test_validator, file_name, error_msg
 ):
     test_validator.must_throw_error_at_not_applicable_rule_breach = False
 
-    for file_name in ("agul", "catalan"):
-        test_validator._validate_one_file(
-            DIR_WITH_PROFILES_BREACHING_RULES_FOR_NOT_APPLICABLE / f"{file_name}.csv"
-        )
-        stdout = capsys.readouterr()
-        assert 'Instead, it has value "Этого тут быть не должно"' in str(stdout)
+    test_validator._validate_one_file(
+        DIR_WITH_PROFILES_BREACHING_RULES_FOR_NOT_APPLICABLE / f"{file_name}.csv"
+    )
+    stdout = capsys.readouterr()
+    assert error_msg in str(stdout)
 
 
 def test_validate_fails_with_profiles_that_breach_rules_for_not_applicable_with_flag_set_to_true():  # noqa E501
-    with pytest.raises(
-        FeatureProfileValidatorError,
-        match="breaches of rules for 'not_applicable' value type",
-    ):
+    with pytest.raises(FeatureProfileValidatorError, match="However, "):
         FeatureProfileValidator(
             dir_with_feature_profiles=DIR_WITH_PROFILES_BREACHING_RULES_FOR_NOT_APPLICABLE,
             file_with_features=DIR_WITH_VALIDATORS_TEST_FILES / "features_OK.csv",

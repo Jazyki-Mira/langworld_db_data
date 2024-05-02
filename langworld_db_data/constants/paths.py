@@ -27,7 +27,6 @@ FILE_WITH_GENEALOGY_HIERARCHY = INVENTORIES_DIR / "genealogy_families_hierarchy.
 FILE_WITH_GENEALOGY_NAMES = INVENTORIES_DIR / "genealogy_families_names.csv"
 FILE_WITH_LISTED_VALUES = INVENTORIES_DIR / "features_listed_values.csv"
 FILE_WITH_NAMES_OF_FEATURES = INVENTORIES_DIR / "features.csv"
-FILE_WITH_NOT_APPLICABLE_RULES = INVENTORIES_DIR / "features_not_applicable_rules.yaml"
 FILE_WITH_VALUE_TYPES = INVENTORIES_DIR / "feature_value_types.csv"
 
 FEATURE_PROFILES_DIR = DATA_DIR / "feature_profiles"

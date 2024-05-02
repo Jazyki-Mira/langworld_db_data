@@ -1,12 +1,11 @@
 import re
 from pathlib import Path
 
-from langworld_db_data.constants.literals import AUX_ROW_MARKER
+from langworld_db_data.constants.literals import AUX_ROW_MARKER, SEPARATOR
 from langworld_db_data.constants.paths import (
     FEATURE_PROFILES_DIR,
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NAMES_OF_FEATURES,
-    FILE_WITH_NOT_APPLICABLE_RULES,
     FILE_WITH_VALUE_TYPES,
 )
 from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
@@ -16,11 +15,30 @@ from langworld_db_data.filetools.csv_xls import (
     check_csv_for_repetitions_in_column,
     read_dict_from_2_csv_columns,
 )
-from langworld_db_data.filetools.json_toml_yaml import read_json_toml_yaml
 from langworld_db_data.validators.validator import Validator, ValidatorError
 
 
 class FeatureProfileValidatorError(ValidatorError):
+    pass
+
+
+class ValueTypeValidationError(FeatureProfileValidatorError):
+    pass
+
+
+class CustomInsteadOfNotApplicableError(ValueTypeValidationError):
+    pass
+
+
+class ExplicitGapInsteadOfNotApplicableError(ValueTypeValidationError):
+    pass
+
+
+class ListedInsteadOfNotApplicableError(ValueTypeValidationError):
+    pass
+
+
+class NotStatedInsteadOfNotApplicableError(ValueTypeValidationError):
     pass
 
 
@@ -30,26 +48,14 @@ class FeatureProfileValidator(Validator):
         dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
         file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
         file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
-        file_with_rules_for_not_applicable_value_type: Path = FILE_WITH_NOT_APPLICABLE_RULES,  # noqa E501
         file_with_value_types: Path = FILE_WITH_VALUE_TYPES,
         must_throw_error_at_feature_or_value_name_mismatch: bool = True,
         must_throw_error_at_not_applicable_rule_breach: bool = False,
     ):
-        self.feature_profiles = sorted(list(dir_with_feature_profiles.glob("*.csv")))
         self.reader = FeatureProfileReader()
-
-        self.rules_for_not_applicable_value_type = read_json_toml_yaml(
-            file_with_rules_for_not_applicable_value_type
-        )
-        # for mypy (the function returns multiple types)
-        if not isinstance(self.rules_for_not_applicable_value_type, dict):
-            raise TypeError(
-                "Rules for not_applicable type in file "
-                f"{file_with_rules_for_not_applicable_value_type} are supposed to be"
-                "read as a dictionary. Please check the file."
-            )
-
         self.valid_value_types = self._read_ids(file_with_value_types)
+
+        self.feature_profiles = sorted(list(dir_with_feature_profiles.glob("*.csv")))
 
         for file in self.feature_profiles:
             check_csv_for_malformed_rows(file)
@@ -62,6 +68,13 @@ class FeatureProfileValidator(Validator):
         self.feature_is_multiselect_for_feature_id = read_dict_from_2_csv_columns(
             file_with_features, key_col="id", val_col="is_multiselect"
         )
+        self.not_applicable_trigger_values_for_feature_id: dict[str, list[str]] = {
+            feature_id: trigger_values.split(", ")
+            for feature_id, trigger_values in read_dict_from_2_csv_columns(
+                file_with_features, key_col="id", val_col="not_applicable_if"
+            ).items()
+            if trigger_values  # we don't need features that don't depend on other features
+        }
         self.value_ru_for_value_id = read_dict_from_2_csv_columns(
             file_with_listed_values, key_col="id", val_col="ru"
         )
@@ -91,10 +104,16 @@ class FeatureProfileValidator(Validator):
             file_name_for_error_msg=file_name_for_error_msg,
         )
 
-        self._check_dependencies_between_rows(
-            data_from_profile=data_from_profile,
-            file_name_for_error_msg=file_name_for_error_msg,
-        )
+        try:
+            self._check_features_that_may_need_not_applicable_type(
+                profile=data_from_profile,
+                file_name_for_error_msg=file_name_for_error_msg,
+            )
+        except ValueTypeValidationError as e:
+            if self.must_throw_error_at_not_applicable_rule_breach:
+                raise FeatureProfileValidatorError(e)
+            else:
+                print(e)
 
     def _check_consistency_of_each_row(
         self,
@@ -174,6 +193,64 @@ class FeatureProfileValidator(Validator):
                 else:
                     print(message)
 
+    def _check_features_that_may_need_not_applicable_type(
+        self,
+        profile: dict[str, ValueForFeatureProfileDictionary],
+        file_name_for_error_msg: str,
+    ) -> None:
+        """
+        Check that features are `not_applicable` if there are corresponding
+        "trigger" values in feature(s) they depend on.
+        """
+        for feature_id_to_check in self.not_applicable_trigger_values_for_feature_id:
+
+            value_being_inspected = profile[feature_id_to_check]
+            value_type = value_being_inspected.value_type
+
+            if value_type == "not_applicable":
+                # No further checks needed if value type is already `not_applicable`
+                # TODO BTW we should also check profiles for having `not_applicable`
+                #  where it can't be `not_applicable` (i.e. the other way round)
+                continue
+
+            # Get value(s) of other feature(s) that would trigger `not_applicable`
+            # in feature being currently inspected (the list will be empty if this feature
+            # does not depend on any other feature)
+            for n_a_trigger_value_id in self.not_applicable_trigger_values_for_feature_id[
+                feature_id_to_check
+            ]:
+
+                # get ID of feature that may contain a trigger value for feature being inspected
+                # (produce "A-1" from "A-1-1")
+                trigger_feature_id = SEPARATOR.join(n_a_trigger_value_id.split(SEPARATOR)[:-1])
+                value_of_trigger_feature = profile[trigger_feature_id]
+
+                if value_of_trigger_feature.value_id == n_a_trigger_value_id:
+
+                    error_message = (
+                        f"{file_name_for_error_msg}: Error in feature {feature_id_to_check} "
+                        f'"{value_being_inspected.feature_name_ru}". '
+                        f"It must be `not_applicable` because feature {trigger_feature_id} "
+                        f'"{value_of_trigger_feature.feature_name_ru}" has value '
+                        f"{value_of_trigger_feature.value_id} {value_of_trigger_feature.value_ru}."
+                        f" However, feature {feature_id_to_check} has value "
+                        f'{value_being_inspected.value_id} "{value_being_inspected.value_ru}" '
+                        f"of type `{value_being_inspected.value_type}`."
+                    )
+
+                    # throw fine-grained exceptions for each type of value
+                    if value_type == "custom":
+                        raise CustomInsteadOfNotApplicableError(error_message)
+
+                    if value_type == "explicit_gap":
+                        raise ExplicitGapInsteadOfNotApplicableError(error_message)
+
+                    if value_type == "listed":
+                        raise ListedInsteadOfNotApplicableError(error_message)
+
+                    if value_type == "not_stated":
+                        raise NotStatedInsteadOfNotApplicableError(error_message)
+
     def _check_listed_value_id_is_valid_and_matches_value_name(
         self,
         feature_id: str,
@@ -206,53 +283,6 @@ class FeatureProfileValidator(Validator):
                 raise FeatureProfileValidatorError(message)
             else:
                 print(message)
-
-    def _check_dependencies_between_rows(
-        self,
-        data_from_profile: dict[str, ValueForFeatureProfileDictionary],
-        file_name_for_error_msg: str,
-    ) -> None:
-        breaches_of_rules_for_not_applicable = []
-
-        rules = self.rules_for_not_applicable_value_type
-
-        if not isinstance(rules, dict):
-            raise TypeError("Rules for not_applicable are supposed to be a dict")
-
-        for feature_id in rules:
-            if data_from_profile[feature_id].value_id == rules[feature_id]["trigger"]:
-                for id_of_feature_that_must_be_not_applicable in rules[feature_id][
-                    "features_to_get_not_applicable"
-                ]:
-                    if (
-                        data_from_profile[id_of_feature_that_must_be_not_applicable].value_type
-                        != "not_applicable"
-                    ):
-                        error_message = (
-                            f"{file_name_for_error_msg.capitalize()}: Feature {feature_id} "
-                            f'"{data_from_profile[feature_id].feature_name_ru}" has'
-                            " value ID "
-                            f"{data_from_profile[feature_id].value_id} "
-                            f'"{data_from_profile[feature_id].value_ru}" => feature ID '
-                            f"{id_of_feature_that_must_be_not_applicable} must have"
-                            " value type 'not_applicable'. "
-                            "Instead, it has value "
-                            f'"{data_from_profile[id_of_feature_that_must_be_not_applicable].value_ru}"'  # noqa E501
-                            " (value type"
-                            f": {data_from_profile[id_of_feature_that_must_be_not_applicable].value_type})"  # noqa E501
-                        )
-                        print(error_message)
-                        breaches_of_rules_for_not_applicable.append(error_message)
-
-        if (
-            breaches_of_rules_for_not_applicable
-            and self.must_throw_error_at_not_applicable_rule_breach
-        ):
-            raise FeatureProfileValidatorError(
-                f"{file_name_for_error_msg}: found"
-                f" {len(breaches_of_rules_for_not_applicable)} breaches of rules for"
-                " 'not_applicable' value type."
-            )
 
 
 if __name__ == "__main__":
