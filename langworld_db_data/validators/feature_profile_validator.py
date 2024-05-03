@@ -212,16 +212,17 @@ class FeatureProfileValidator(Validator):
 
             self.check_one_feature_that_may_need_not_applicable_type(
                 profile=profile,
-                feature_id_to_check=feature_id_to_check,
+                feature_id=feature_id_to_check,
                 file_name_for_error_msg=file_name_for_error_msg,
             )
 
     def check_one_feature_that_may_need_not_applicable_type(
         self,
         profile: dict[str, ValueForFeatureProfileDictionary],
-        feature_id_to_check: str,
+        feature_id: str,
         file_name_for_error_msg: str,
     ):
+        feature_id_to_check = feature_id  # for better understanding of code below
         value_being_inspected = profile[feature_id_to_check]
         value_type = value_being_inspected.value_type
 
