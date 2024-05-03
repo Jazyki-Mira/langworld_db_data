@@ -64,14 +64,14 @@ def test__validate_one_file_fails_with_bad_files(
     test_validator, file_stem, expected_error_message
 ):
     with pytest.raises(FeatureProfileValidatorError, match=expected_error_message):
-        test_validator._validate_one_file(DIR_WITH_BAD_PROFILES / f"{file_stem}.csv")
+        test_validator.validate_one_file(DIR_WITH_BAD_PROFILES / f"{file_stem}.csv")
 
 
 def test__validate_one_file_prints_message_with_must_throw_error_at_feature_or_value_name_mismatch_set_to_false(  # noqa E501
     capsys, test_validator
 ):
     test_validator.must_throw_error_at_feature_or_value_name_mismatch = False
-    test_validator._validate_one_file(
+    test_validator.validate_one_file(
         DIR_WITH_BAD_PROFILES / "corsican_non_matching_listed_value.csv"
     )
     stdout = capsys.readouterr()
@@ -94,7 +94,7 @@ def test__validate_one_file_prints_message_for_files_breaching_rules_for_not_app
 ):
     test_validator.must_throw_error_at_not_applicable_rule_breach = False
 
-    test_validator._validate_one_file(
+    test_validator.validate_one_file(
         DIR_WITH_PROFILES_BREACHING_RULES_FOR_NOT_APPLICABLE / f"{file_name}.csv"
     )
     stdout = capsys.readouterr()

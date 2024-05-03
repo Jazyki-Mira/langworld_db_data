@@ -89,9 +89,9 @@ class FeatureProfileValidator(Validator):
     def validate(self) -> None:
         print(f"\nChecking feature profiles ({len(self.feature_profiles)} files)")
         for feature_profile in self.feature_profiles:
-            self._validate_one_file(feature_profile)
+            self.validate_one_file(feature_profile)
 
-    def _validate_one_file(self, file: Path) -> None:
+    def validate_one_file(self, file: Path) -> None:
         try:
             data_from_profile = self.reader.read_feature_profile_as_dict_from_file(file)
         except ValueError as e:
@@ -105,7 +105,7 @@ class FeatureProfileValidator(Validator):
         )
 
         try:
-            self._check_features_that_may_need_not_applicable_type(
+            self.check_all_features_that_may_need_not_applicable_type(
                 profile=data_from_profile,
                 file_name_for_error_msg=file_name_for_error_msg,
             )
@@ -193,7 +193,7 @@ class FeatureProfileValidator(Validator):
                 else:
                     print(message)
 
-    def _check_features_that_may_need_not_applicable_type(
+    def check_all_features_that_may_need_not_applicable_type(
         self,
         profile: dict[str, ValueForFeatureProfileDictionary],
         file_name_for_error_msg: str,
@@ -204,52 +204,63 @@ class FeatureProfileValidator(Validator):
         """
         for feature_id_to_check in self.not_applicable_trigger_values_for_feature_id:
 
-            value_being_inspected = profile[feature_id_to_check]
-            value_type = value_being_inspected.value_type
-
-            if value_type == "not_applicable":
+            if profile[feature_id_to_check].value_type == "not_applicable":
                 # No further checks needed if value type is already `not_applicable`
                 # TODO BTW we should also check profiles for having `not_applicable`
                 #  where it can't be `not_applicable` (i.e. the other way round)
                 continue
 
-            # Get value(s) of other feature(s) that would trigger `not_applicable`
-            # in feature being currently inspected (the list will be empty if this feature
-            # does not depend on any other feature)
-            for n_a_trigger_value_id in self.not_applicable_trigger_values_for_feature_id[
-                feature_id_to_check
-            ]:
+            self.check_one_feature_that_may_need_not_applicable_type(
+                profile=profile,
+                feature_id_to_check=feature_id_to_check,
+                file_name_for_error_msg=file_name_for_error_msg,
+            )
 
-                # get ID of feature that may contain a trigger value for feature being inspected
-                # (produce "A-1" from "A-1-1")
-                trigger_feature_id = SEPARATOR.join(n_a_trigger_value_id.split(SEPARATOR)[:-1])
-                value_of_trigger_feature = profile[trigger_feature_id]
+    def check_one_feature_that_may_need_not_applicable_type(
+        self,
+        profile: dict[str, ValueForFeatureProfileDictionary],
+        feature_id_to_check: str,
+        file_name_for_error_msg: str,
+    ):
+        value_being_inspected = profile[feature_id_to_check]
+        value_type = value_being_inspected.value_type
 
-                if value_of_trigger_feature.value_id == n_a_trigger_value_id:
+        # Get value(s) of other feature(s) that would trigger `not_applicable`
+        # in feature being currently inspected (the list will be empty if this feature
+        # does not depend on any other feature)
+        for n_a_trigger_value_id in self.not_applicable_trigger_values_for_feature_id[
+            feature_id_to_check
+        ]:
+            # get ID of feature that may contain a trigger value for feature being inspected
+            # (produce "A-1" from "A-1-1")
+            trigger_feature_id = SEPARATOR.join(n_a_trigger_value_id.split(SEPARATOR)[:-1])
+            value_of_trigger_feature = profile[trigger_feature_id]
 
-                    error_message = (
-                        f"{file_name_for_error_msg}: Error in feature {feature_id_to_check} "
-                        f'"{value_being_inspected.feature_name_ru}". '
-                        f"It must be `not_applicable` because feature {trigger_feature_id} "
-                        f'"{value_of_trigger_feature.feature_name_ru}" has value '
-                        f"{value_of_trigger_feature.value_id} {value_of_trigger_feature.value_ru}."
-                        f" However, feature {feature_id_to_check} has value "
-                        f'{value_being_inspected.value_id} "{value_being_inspected.value_ru}" '
-                        f"of type `{value_being_inspected.value_type}`."
-                    )
+            if value_of_trigger_feature.value_id == n_a_trigger_value_id:
 
-                    # throw fine-grained exceptions for each type of value
-                    if value_type == "custom":
-                        raise CustomInsteadOfNotApplicableError(error_message)
+                error_message = (
+                    f"{file_name_for_error_msg}: Error in feature {feature_id_to_check} "
+                    f'"{value_being_inspected.feature_name_ru}". '
+                    f"It must be `not_applicable` because feature {trigger_feature_id} "
+                    f'"{value_of_trigger_feature.feature_name_ru}" has value '
+                    f"{value_of_trigger_feature.value_id} {value_of_trigger_feature.value_ru}."
+                    f" However, feature {feature_id_to_check} has value "
+                    f'{value_being_inspected.value_id} "{value_being_inspected.value_ru}" '
+                    f"of type `{value_type}`."
+                )
 
-                    if value_type == "explicit_gap":
-                        raise ExplicitGapInsteadOfNotApplicableError(error_message)
+                # throw fine-grained exceptions for each type of value
+                if value_type == "custom":
+                    raise CustomInsteadOfNotApplicableError(error_message)
 
-                    if value_type == "listed":
-                        raise ListedInsteadOfNotApplicableError(error_message)
+                if value_type == "explicit_gap":
+                    raise ExplicitGapInsteadOfNotApplicableError(error_message)
 
-                    if value_type == "not_stated":
-                        raise NotStatedInsteadOfNotApplicableError(error_message)
+                if value_type == "listed":
+                    raise ListedInsteadOfNotApplicableError(error_message)
+
+                if value_type == "not_stated":
+                    raise NotStatedInsteadOfNotApplicableError(error_message)
 
     def _check_listed_value_id_is_valid_and_matches_value_name(
         self,
