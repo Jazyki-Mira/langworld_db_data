@@ -51,6 +51,8 @@ class NotApplicableSetter:
         print("\nLooking for values of type `not_stated` that should be `not_applicable`")
 
         for file in self.feature_profiles:
+            changes_made = False
+
             print(f"\n{file.name}")
 
             profile = self.reader.read_feature_profile_as_dict_from_file(file)
@@ -73,12 +75,14 @@ class NotApplicableSetter:
                 except NotStatedInsteadOfNotApplicableError:
                     print(f"{feature_id}: replacing `not_stated` with 'not_applicable'")
                     amended_profile[feature_id].value_type = "not_applicable"
+                    changes_made = True
                 except ValueTypeValidationError as e:
                     print(f"Error cannot be fixed automatically. {e}")
 
-            self.writer.write(
-                feature_dict=amended_profile, output_path=self.output_dir / file.name
-            )
+            if changes_made:
+                self.writer.write(
+                    feature_dict=amended_profile, output_path=self.output_dir / file.name
+                )
 
 
 if __name__ == "__main__":
