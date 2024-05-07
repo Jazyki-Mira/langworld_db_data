@@ -40,7 +40,7 @@ def rename_value(
                             number_of_replacements += 1
                     line_to_write["value_ru"] = "&".join(combined_value_names)
                     print("Changed " + line["value_ru"] + " to " + line_to_write["value_ru"])
-                    data_to_write.append(line_to_write)
+                data_to_write.append(line_to_write)
             else:
                 data_to_write.append(line)
         print("Replacements made:" + str(number_of_replacements))
