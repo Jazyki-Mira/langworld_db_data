@@ -29,21 +29,6 @@ DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES = DIR_WITH_OUTPUT_GOLD_STANDARD_FILES 
 
 def test_rename_value():
     # First change files in tmp up to their default variants
-    filepaths_list = DIR_WITH_INPUT_FILES.glob("*.csv")
-
-    file_lines = []
-    for filepath in filepaths_list:
-        print("Opening " + filepath.name)
-        with open(DIR_WITH_INPUT_FILES / filepath.name, "r", encoding="utf-8") as f:
-            for line in f:
-                file_lines.append(line)
-        with open(
-            DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filepath.name, "w", encoding="utf-8"
-        ) as f:
-            for line in file_lines:
-                f.write(line)
-    print("Successfully put files into their default versions")
-
     rename_value(
         value_to_rename_id="A-9-2",
         new_value_name="Представлены исключительно дифтонги",
