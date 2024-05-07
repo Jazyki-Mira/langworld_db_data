@@ -1,20 +1,22 @@
 from pathlib import Path
 
-from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
+from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, INVENTORIES_DIR
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
 
 def rename_value(
     value_to_rename_id: str,
     new_value_name: str,
-    feature_profiles_dir=FEATURE_PROFILES_DIR,
-    file_with_listed_values=FILE_WITH_LISTED_VALUES,
+    input_feature_profiles_dir=FEATURE_PROFILES_DIR,
+    output_feature_profiles_dir=FEATURE_PROFILES_DIR,
+    input_inventories_dir=INVENTORIES_DIR,
+    output_inventories_dir=INVENTORIES_DIR,
 ):
     """
     Replaces all the instances of a given value name in profiles and features_listed_values on a given value.
     Works with both singular and combined values.
     """
-    files_list = list(feature_profiles_dir.glob("*.csv"))
+    files_list = list(input_feature_profiles_dir.glob("*.csv"))
     for file in files_list:
         number_of_replacements = 0
         print("Opening " + file.name)
@@ -45,5 +47,5 @@ def rename_value(
         if number_of_replacements > 0:
             for line in data_to_write:
                 print(line)
-        write_csv(data_from_file, file, overwrite=True, delimiter=",")
+        write_csv(data_to_write, output_feature_profiles_dir / file.name, overwrite=True, delimiter=",")
         print("Successfully written into csv-file")

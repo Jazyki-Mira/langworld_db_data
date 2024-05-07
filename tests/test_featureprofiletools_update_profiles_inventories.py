@@ -8,8 +8,24 @@ DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES = (
 
 DIR_WITH_INPUT_FILES = DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "input"
 
+DIR_WITH_INPUT_FEATURE_PROFILES = (
+    DIR_WITH_INPUT_FILES / "feature_profiles"
+)
+
+DIR_WITH_INPUT_INVENTORIES = (
+    DIR_WITH_INPUT_FILES / "inventories"
+)
+
 DIR_WITH_OUTPUT_GOLD_STANDARD_FILES = (
     DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "output_gold_standard"
+)
+
+DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES = (
+    DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / "feature_profiles"
+)
+
+DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES = (
+    DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / "inventories"
 )
 
 
@@ -37,19 +53,20 @@ def test_rename_value():
     rename_value(
         value_to_rename_id="A-9-2",
         new_value_name="Представлены исключительно дифтонги",
-        feature_profiles_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
-        file_with_listed_values=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES
-        / "features_listed_values.csv",
+        input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
+        output_feature_profiles_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
+        input_inventories_dir=DIR_WITH_INPUT_INVENTORIES,
+        output_inventories_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
     )
 
     output_filenames_list = DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES.glob("*.csv")
     file_lines_in_result = []  # How the function changed files
     file_lines_reference = []  # How files should have been changed
     for filename in output_filenames_list:
-        with open(DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filename, "r", encoding="utf-8"):
+        with open(DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filename, "r", encoding="utf-8") as f:
             for line in f:
                 file_lines_in_result.append(line)
-        with open(DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / filename, "r", encoding="utf-8"):
+        with open(DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / filename, "r", encoding="utf-8") as f:
             for line in f:
                 file_lines_reference.append(line)
     assert file_lines_in_result == file_lines_reference
