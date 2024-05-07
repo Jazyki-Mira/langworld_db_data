@@ -7,6 +7,7 @@ from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
 def rename_value(
     value_to_rename_id: str, new_value_name: str, feature_profiles_dir=FEATURE_PROFILES_DIR,
+        file_with_listed_values=FILE_WITH_LISTED_VALUES
 ):
     """
     Replaces all the instances of a given value name in profiles and features_listed_values on a given value.
@@ -41,7 +42,7 @@ def rename_value(
                 data_to_write.append(line)
         print("Replacements made:" + str(number_of_replacements))
         if number_of_replacements > 0:
-            for line in data_from_file:
+            for line in data_to_write:
                 print(line)
         write_csv(data_from_file, file, overwrite=True, delimiter=",")
         print("Successfully written into csv-file")
