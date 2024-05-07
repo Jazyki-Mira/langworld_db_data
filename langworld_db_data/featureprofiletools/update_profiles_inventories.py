@@ -1,13 +1,14 @@
 from pathlib import Path
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
-
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
 
 def rename_value(
-    value_to_rename_id: str, new_value_name: str, feature_profiles_dir=FEATURE_PROFILES_DIR,
-        file_with_listed_values=FILE_WITH_LISTED_VALUES
+    value_to_rename_id: str,
+    new_value_name: str,
+    feature_profiles_dir=FEATURE_PROFILES_DIR,
+    file_with_listed_values=FILE_WITH_LISTED_VALUES,
 ):
     """
     Replaces all the instances of a given value name in profiles and features_listed_values on a given value.
