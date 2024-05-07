@@ -8,13 +8,9 @@ DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES = (
 
 DIR_WITH_INPUT_FILES = DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "input"
 
-DIR_WITH_INPUT_FEATURE_PROFILES = (
-    DIR_WITH_INPUT_FILES / "feature_profiles"
-)
+DIR_WITH_INPUT_FEATURE_PROFILES = DIR_WITH_INPUT_FILES / "feature_profiles"
 
-DIR_WITH_INPUT_INVENTORIES = (
-    DIR_WITH_INPUT_FILES / "inventories"
-)
+DIR_WITH_INPUT_INVENTORIES = DIR_WITH_INPUT_FILES / "inventories"
 
 DIR_WITH_OUTPUT_GOLD_STANDARD_FILES = (
     DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "output_gold_standard"
@@ -24,9 +20,7 @@ DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES = (
     DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / "feature_profiles"
 )
 
-DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES = (
-    DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / "inventories"
-)
+DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES = DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / "inventories"
 
 
 # Currently I am working with values only, but I put features_listed_values.csv in this folder where features.csv will
@@ -63,7 +57,9 @@ def test_rename_value():
     file_lines_in_result = []  # How the function changed files
     file_lines_reference = []  # How files should have been changed
     for filename in output_filenames_list:
-        with open(DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filename, "r", encoding="utf-8") as f:
+        with open(
+            DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filename, "r", encoding="utf-8"
+        ) as f:
             for line in f:
                 file_lines_in_result.append(line)
         with open(DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / filename, "r", encoding="utf-8") as f:

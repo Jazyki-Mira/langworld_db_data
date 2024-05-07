@@ -47,5 +47,7 @@ def rename_value(
         if number_of_replacements > 0:
             for line in data_to_write:
                 print(line)
-        write_csv(data_to_write, output_feature_profiles_dir / file.name, overwrite=True, delimiter=",")
+        write_csv(
+            data_to_write, output_feature_profiles_dir / file.name, overwrite=True, delimiter=","
+        )
         print("Successfully written into csv-file")
