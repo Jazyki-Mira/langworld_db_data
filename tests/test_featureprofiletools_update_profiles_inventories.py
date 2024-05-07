@@ -41,6 +41,6 @@ def test_rename_value():
     output_filenames_list = DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES.glob("*.csv")
     for filename in output_filenames_list:
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
-            DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES/filename.name,
-            DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES/filename.name
+            DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filename.name,
+            DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES / filename.name,
         )
