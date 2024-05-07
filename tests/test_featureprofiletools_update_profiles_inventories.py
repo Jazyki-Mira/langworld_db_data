@@ -1,4 +1,4 @@
-from langworld_db_data.featureprofiletools.update_profiles_inventories import rename_value
+from langworld_db_data.featureprofiletools.update_profiles_inventories import rename_value_in_profiles_and_inventories
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 from tests.test_helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 
@@ -27,9 +27,9 @@ DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES = DIR_WITH_OUTPUT_GOLD_STANDARD_FILES 
 # be added later.
 
 
-def test_rename_value():
+def test_rename_value_in_profiles_and_inventories():
     # First change files in tmp up to their default variants
-    rename_value(
+    rename_value_in_profiles_and_inventories(
         value_to_rename_id="A-9-2",
         new_value_name="Представлены исключительно дифтонги",
         input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
