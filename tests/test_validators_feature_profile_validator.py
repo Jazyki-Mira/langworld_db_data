@@ -87,7 +87,11 @@ def test_validate_fails_with_bad_data():
 
 @pytest.mark.parametrize(
     "file_name, error_msg",
-    [("agul", '"Этого тут быть не должно" of type `custom`'), ("catalan", "of type `not_stated`")],
+    [
+        ("agul", '"Этого тут быть не должно" of type `custom`'),
+        ("catalan", "of type `not_stated`"),
+        ("catalan_explicit_gap", "of type `explicit_gap`"),
+    ],
 )
 def test__validate_one_file_prints_message_for_files_breaching_rules_for_not_applicable_with_flag_set_to_false(  # noqa E501
     capsys, test_validator, file_name, error_msg
