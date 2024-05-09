@@ -298,4 +298,4 @@ class FeatureProfileValidator(Validator):
 
 
 if __name__ == "__main__":
-    FeatureProfileValidator().validate()
+    FeatureProfileValidator().validate()  # pragma: no cover
