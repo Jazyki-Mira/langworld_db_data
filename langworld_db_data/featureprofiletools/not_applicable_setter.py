@@ -31,6 +31,7 @@ class NotApplicableSetter:
         self,
         dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
         output_dir: Path = FEATURE_PROFILES_DIR,
+        write_even_if_no_changes: bool = False,
     ):
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob("*.csv")))
         self.output_dir = output_dir
@@ -38,6 +39,8 @@ class NotApplicableSetter:
         self.reader = FeatureProfileReader
         self.validator = FeatureProfileValidator()
         self.writer = FeatureProfileWriterFromDictionary
+
+        self.write_even_if_no_changes = write_even_if_no_changes
 
     def replace_not_stated_with_not_applicable_in_all_profiles_according_to_rules(
         self,
@@ -63,9 +66,6 @@ class NotApplicableSetter:
                 if feature_id not in self.validator.not_applicable_trigger_values_for_feature_id:
                     continue
 
-                if value.value_type != "not_stated":
-                    continue
-
                 try:
                     self.validator.check_one_feature_that_may_need_not_applicable_type(
                         profile=profile,
@@ -77,9 +77,9 @@ class NotApplicableSetter:
                     amended_profile[feature_id].value_type = "not_applicable"
                     changes_made = True
                 except ValueTypeValidationError as e:
-                    print(f"Error cannot be fixed automatically. {e}")
+                    print(f"Type mismatch cannot be fixed automatically. {e}")
 
-            if changes_made:
+            if changes_made or self.write_even_if_no_changes:
                 self.writer.write(
                     feature_dict=amended_profile, output_path=self.output_dir / file.name
                 )

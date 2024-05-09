@@ -21,6 +21,7 @@ def test_setter():
         file_with_features=DIR_WITH_VALIDATORS_TEST_FILES / "features_OK.csv",
         file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / "features_listed_values_OK.csv",
     )
+    setter.write_even_if_no_changes = True
     return setter
 
 
