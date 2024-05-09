@@ -61,10 +61,13 @@ class NotApplicableSetter:
             profile = self.reader.read_feature_profile_as_dict_from_file(file)
             amended_profile = copy(profile)
 
-            for feature_id, value in profile.items():
+            relevant_feature_id_and_value_pairs = (
+                (feature_id, value)
+                for (feature_id, value) in profile.items()
+                if feature_id in self.validator.not_applicable_trigger_values_for_feature_id
+            )
 
-                if feature_id not in self.validator.not_applicable_trigger_values_for_feature_id:
-                    continue
+            for feature_id, value in relevant_feature_id_and_value_pairs:
 
                 try:
                     self.validator.check_one_feature_that_may_need_not_applicable_type(
