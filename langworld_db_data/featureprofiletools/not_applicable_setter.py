@@ -86,4 +86,4 @@ class NotApplicableSetter:
 
 
 if __name__ == "__main__":
-    NotApplicableSetter().replace_not_stated_with_not_applicable_in_all_profiles_according_to_rules()
+    NotApplicableSetter().replace_not_stated_with_not_applicable_in_all_profiles_according_to_rules()  # pragma: no cover
