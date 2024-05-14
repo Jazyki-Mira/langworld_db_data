@@ -32,7 +32,7 @@ DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES = DIR_WITH_OUTPUT_GOLD_STANDARD_FILES 
 def test_rename_value_in_profiles_and_inventories():
     # First change files in tmp up to their default variants
     rename_value_in_profiles_and_inventories(
-        value_to_rename_id="A-9-2",
+        id_of_value_to_rename="A-9-2",
         new_value_name="Представлены исключительно дифтонги",
         input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
         output_feature_profiles_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
@@ -43,14 +43,14 @@ def test_rename_value_in_profiles_and_inventories():
     output_filenames_list = DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES.glob("*.csv")
     for filename in output_filenames_list:
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
-            DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filename.name,
-            DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES / filename.name,
+            output_file=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filename.name,
+            gold_standard_file=DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES / filename.name,
             unlink_if_successful=False,
         )
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
-            DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES
+            output_file=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES
             / "inventories"
             / "features_listed_values.csv",
-            DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES / "features_listed_values.csv",
+            gold_standard_file=DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES / "features_listed_values.csv",
             unlink_if_successful=False,
         )

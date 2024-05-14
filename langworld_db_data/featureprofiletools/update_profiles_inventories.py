@@ -5,64 +5,65 @@ from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
 
 def rename_value_in_profiles_and_inventories(
-    value_to_rename_id: str,
+    id_of_value_to_rename: str,
     new_value_name: str,
+    output_feature_profiles_dir,
+    output_inventories_dir,
     input_feature_profiles_dir=FEATURE_PROFILES_DIR,
-    output_feature_profiles_dir=FEATURE_PROFILES_DIR,
     input_inventories_dir=INVENTORIES_DIR,
-    output_inventories_dir=INVENTORIES_DIR,
 ) -> None:
     """
     Renames value with given ID in all feature profiles and inventory of listed values.
     Also works with elementary values in multiselect features.
     """
     files = list(input_feature_profiles_dir.glob("*.csv"))
-    for file in files_list:
+    for file in files:
         print(f"Processing {file.name}")
-        data_to_write = process_one_feature_profile(
-            value_to_rename_id,
-            new_value_name,
-            file,
+        update_one_feature_profile(
+            id_of_value_to_rename=id_of_value_to_rename,
+            new_value_name=new_value_name,
+            input_filepath=file,
+            output_dir=output_feature_profiles_dir
         )
-        output_file = output_feature_profiles_dir / file.name
-        write_csv(data_to_write, output_file, overwrite=True, delimiter=",")
-        print(f"Successfully written to {output_file}")
-    data_to_write = process_and_save_features_listed_values(
-        value_to_rename_id, new_value_name, input_inventories_dir / "features_listed_values.csv"
-    )
+    data_to_write = update_features_listed_values(
+        id_of_value_to_rename=id_of_value_to_rename,
+        new_value_name=new_value_name,
+        filepath=input_inventories_dir / "features_listed_values.csv"
+        )
     if not output_inventories_dir.exists():
         output_inventories_dir.mkdir(parents=True, exist_ok=True)
     write_csv(
-        data_to_write,
-        output_inventories_dir / "features_listed_values.csv",
+        rows=data_to_write,
+        path_to_file=output_inventories_dir / "features_listed_values.csv",
         overwrite=True,
         delimiter=",",
     )
 
 
-def process_one_feature_profile(
+def update_one_feature_profile(
     id_of_value_to_rename: str,
     new_value_name: str,
-    filepath: Path,
-) -> list[dict[str, str]]:
+    input_filepath: Path,
+    output_dir: Path,
+) -> None:
 
     number_of_replacements = 0
-    data_from_file = read_dicts_from_csv(filepath)
+    data_from_file = read_dicts_from_csv(input_filepath)
     data_to_write = []
     for line in data_from_file:
-        if value_to_rename_id in line["value_id"]:
-            line_to_write = line
-            if line["value_id"] == value_to_rename_id:
-                print(f"Found exact match in {filepath.name}")
+        if id_of_value_to_rename in line["value_id"]:
+            line_to_write = line.copy()
+            if line["value_id"] == id_of_value_to_rename:
+                print(f"Found exact match in {input_filepath.name}")
                 print("Changed " + line["value_ru"] + " to " + new_value_name)
                 line_to_write["value_ru"] = new_value_name
                 number_of_replacements += 1
             elif "&" in line["value_id"]:
-                print("Found match in combined value in " + filepath.name)
+                print("Found match in combined value in " + input_filepath.name)
                 combined_value_ids = line["value_id"].split("&")
                 combined_value_names = line["value_ru"].split("&")
                 for i in range(len(combined_value_ids)):
-                    if combined_value_ids[i] == value_to_rename_id:
+                    if combined_value_ids[i] == id_of_value_to_rename:
                         combined_value_names[i] = new_value_name
                         number_of_replacements += 1
                 line_to_write["value_ru"] = "&".join(combined_value_names)
@@ -71,11 +72,18 @@ def process_one_feature_profile(
         else:
             data_to_write.append(line)
     print("Replacements made in this file:" + str(number_of_replacements))
-    return data_to_write
+    output_file = output_dir / input_filepath.name
+    write_csv(
+        rows=data_to_write,
+        path_to_file=output_file,
+        overwrite=True,
+        delimiter=","
+              )
+    print(f"Successfully written to {output_file}")
 
 
-def process_and_save_features_listed_values(
-    value_to_rename_id: str,
+def update_features_listed_values(
+    id_of_value_to_rename: str,
     new_value_name: str,
     filepath: Path,
 ):
@@ -83,9 +91,9 @@ def process_and_save_features_listed_values(
     data_from_file = read_dicts_from_csv(filepath)
     data_to_write = []
     for line in data_from_file:
-        if value_to_rename_id in line["id"]:
-            line_to_write = line
-            if line["id"] == value_to_rename_id:
+        if id_of_value_to_rename in line["id"]:
+            line_to_write = line.copy()
+            if line["id"] == id_of_value_to_rename:
                 print("Found exact match in " + filepath.name)
                 print("Changed " + line["ru"] + " to " + new_value_name)
                 line_to_write["ru"] = new_value_name
