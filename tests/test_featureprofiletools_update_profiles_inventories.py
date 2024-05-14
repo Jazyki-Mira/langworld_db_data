@@ -35,7 +35,7 @@ def test_rename_value_in_profiles_and_inventories():
         input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
         output_feature_profiles_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
         input_inventories_dir=DIR_WITH_INPUT_INVENTORIES,
-        output_inventories_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
+        output_inventories_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "inventories",
     )
 
     output_filenames_list = DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES.glob("*.csv")
@@ -43,5 +43,10 @@ def test_rename_value_in_profiles_and_inventories():
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filename.name,
             DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES / filename.name,
+            unlink_if_successful=False,
+        )
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "inventories" / "features_listed_values.csv",
+            DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES / "features_listed_values.csv",
             unlink_if_successful=False,
         )
