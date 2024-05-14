@@ -1,4 +1,6 @@
-from langworld_db_data.featureprofiletools.update_profiles_inventories import rename_value_in_profiles_and_inventories
+from langworld_db_data.featureprofiletools.update_profiles_inventories import (
+    rename_value_in_profiles_and_inventories,
+)
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 from tests.test_helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 
