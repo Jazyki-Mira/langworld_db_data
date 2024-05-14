@@ -18,7 +18,7 @@ def rename_value_in_profiles_and_inventories(
     """
     files_list = list(input_feature_profiles_dir.glob("*.csv"))
     for file in files_list:
-        print("Opening " + file.name)
+        print(f"Processing {file.name}")
         data_to_write = process_one_feature_profile(
             value_to_rename_id,
             new_value_name,
