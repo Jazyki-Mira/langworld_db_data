@@ -25,9 +25,7 @@ def rename_value_in_profiles_and_inventories(
             file,
         )
         output_file = output_feature_profiles_dir / file.name
-        write_csv(
-            data_to_write, output_file, overwrite=True, delimiter=","
-        )
+        write_csv(data_to_write, output_file, overwrite=True, delimiter=",")
         print(f"Successfully written to {output_file}")
     data_to_write = process_and_save_features_listed_values(
         value_to_rename_id, new_value_name, input_inventories_dir / "features_listed_values.csv"
