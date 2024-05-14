@@ -25,16 +25,11 @@ def rename_value_in_profiles_and_inventories(
             file,
         )
         write_csv(
-            data_to_write,
-            output_feature_profiles_dir / file.name,
-            overwrite=True,
-            delimiter=","
+            data_to_write, output_feature_profiles_dir / file.name, overwrite=True, delimiter=","
         )
         print("Successfully written into csv-file")
     data_to_write = process_and_save_features_listed_values(
-        value_to_rename_id,
-        new_value_name,
-        input_inventories_dir / "features_listed_values.csv"
+        value_to_rename_id, new_value_name, input_inventories_dir / "features_listed_values.csv"
     )
     if not output_inventories_dir.exists():
         output_inventories_dir.mkdir(parents=True, exist_ok=True)
@@ -42,7 +37,7 @@ def rename_value_in_profiles_and_inventories(
         data_to_write,
         output_inventories_dir / "features_listed_values.csv",
         overwrite=True,
-        delimiter=","
+        delimiter=",",
     )
 
 

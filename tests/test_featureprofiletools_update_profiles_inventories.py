@@ -48,7 +48,9 @@ def test_rename_value_in_profiles_and_inventories():
             unlink_if_successful=False,
         )
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
-            DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "inventories" / "features_listed_values.csv",
+            DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES
+            / "inventories"
+            / "features_listed_values.csv",
             DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES / "features_listed_values.csv",
             unlink_if_successful=False,
         )
