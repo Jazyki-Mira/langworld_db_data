@@ -42,7 +42,7 @@ def rename_value_in_profiles_and_inventories(
 
 
 def process_one_feature_profile(
-    value_to_rename_id: str,
+    id_of_value_to_rename: str,
     new_value_name: str,
     filepath: Path,
 ) -> list[dict[str, str]]:
