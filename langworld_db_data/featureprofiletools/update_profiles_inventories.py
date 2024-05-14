@@ -14,7 +14,7 @@ def rename_value_in_profiles_and_inventories(
 ) -> None:
     """
     Renames value with given ID in all feature profiles and inventory of listed values.
-    Works with both singular and combined values.
+    Also works with elementary values in multiselect features.
     """
     files_list = list(input_feature_profiles_dir.glob("*.csv"))
     for file in files_list:
