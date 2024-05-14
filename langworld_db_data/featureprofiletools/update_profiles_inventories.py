@@ -54,7 +54,7 @@ def process_one_feature_profile(
         if value_to_rename_id in line["value_id"]:
             line_to_write = line
             if line["value_id"] == value_to_rename_id:
-                print("Found exact match in " + filepath.name)
+                print(f"Found exact match in {filepath.name}")
                 print("Changed " + line["value_ru"] + " to " + new_value_name)
                 line_to_write["value_ru"] = new_value_name
                 number_of_replacements += 1
