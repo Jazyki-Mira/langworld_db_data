@@ -16,7 +16,7 @@ def rename_value_in_profiles_and_inventories(
     Renames value with given ID in all feature profiles and inventory of listed values.
     Also works with elementary values in multiselect features.
     """
-    files_list = list(input_feature_profiles_dir.glob("*.csv"))
+    files = list(input_feature_profiles_dir.glob("*.csv"))
     for file in files_list:
         print(f"Processing {file.name}")
         data_to_write = process_one_feature_profile(
