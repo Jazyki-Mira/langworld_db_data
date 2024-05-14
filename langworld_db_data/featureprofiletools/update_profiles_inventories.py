@@ -13,7 +13,7 @@ def rename_value_in_profiles_and_inventories(
     output_inventories_dir=INVENTORIES_DIR,
 ) -> None:
     """
-    Replaces all the instances of a given value name in profiles and features_listed_values on a given value.
+    Renames value with given ID in all feature profiles and inventory of listed values.
     Works with both singular and combined values.
     """
     files_list = list(input_feature_profiles_dir.glob("*.csv"))
