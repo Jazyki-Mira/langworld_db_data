@@ -25,19 +25,15 @@ def rename_value_in_profiles_and_inventories(
             input_filepath=file,
             output_dir=output_feature_profiles_dir
         )
-    data_to_write = update_features_listed_values(
-        id_of_value_to_rename=id_of_value_to_rename,
-        new_value_name=new_value_name,
-        filepath=input_inventories_dir / "features_listed_values.csv"
-        )
+
     if not output_inventories_dir.exists():
         output_inventories_dir.mkdir(parents=True, exist_ok=True)
-    write_csv(
-        rows=data_to_write,
-        path_to_file=output_inventories_dir / "features_listed_values.csv",
-        overwrite=True,
-        delimiter=",",
-    )
+    update_features_listed_values(
+        id_of_value_to_rename=id_of_value_to_rename,
+        new_value_name=new_value_name,
+        input_filepath=input_inventories_dir / "features_listed_values.csv",
+        output_filepath=output_inventories_dir / "features_listed_values.csv"
+        )
 
 
 def update_one_feature_profile(
@@ -85,19 +81,25 @@ def update_one_feature_profile(
 def update_features_listed_values(
     id_of_value_to_rename: str,
     new_value_name: str,
-    filepath: Path,
-):
+    input_filepath: Path,
+    output_filepath: Path
+) -> None:
 
-    data_from_file = read_dicts_from_csv(filepath)
+    data_from_file = read_dicts_from_csv(input_filepath)
     data_to_write = []
     for line in data_from_file:
         if id_of_value_to_rename in line["id"]:
             line_to_write = line.copy()
             if line["id"] == id_of_value_to_rename:
-                print("Found exact match in " + filepath.name)
+                print("Found exact match in " + input_filepath.name)
                 print("Changed " + line["ru"] + " to " + new_value_name)
                 line_to_write["ru"] = new_value_name
             data_to_write.append(line_to_write)
         else:
             data_to_write.append(line)
-    return data_to_write
+    write_csv(
+        rows=data_to_write,
+        path_to_file=output_filepath,
+        overwrite=True,
+        delimiter=",",
+    )
