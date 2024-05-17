@@ -1,30 +1,31 @@
 import pytest
 
 from langworld_db_data.featureprofiletools.not_applicable_setter import NotApplicableSetter
+from langworld_db_data.validators.feature_profile_validator import FeatureProfileValidator
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
-from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
+from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES, DIR_WITH_VALIDATORS_TEST_FILES
 
 DIR_WITH_TEST_FEATURE_PROFILES = (
     DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / "feature_profiles_for_not_applicable_setter"
-)
-TEST_FILE_WITH_RULES = (
-    DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / "features_not_applicable_rules.yaml"
 )
 
 
 @pytest.fixture(scope="function")
 def test_setter():
-    return NotApplicableSetter(
+    setter = NotApplicableSetter(
         dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
-        file_with_rules=TEST_FILE_WITH_RULES,
         output_dir=DIR_WITH_TEST_FEATURE_PROFILES / "output",
     )
+    setter.validator = FeatureProfileValidator(
+        dir_with_feature_profiles=DIR_WITH_TEST_FEATURE_PROFILES,
+        file_with_features=DIR_WITH_VALIDATORS_TEST_FILES / "features_OK.csv",
+        file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES / "features_listed_values_OK.csv",
+    )
+    setter.write_even_if_no_changes = True
+    return setter
 
 
 def test__init__(test_setter):
-    print(f"\nTEST rules from YAML: {test_setter.rules}")
-    assert "A-9" in test_setter.rules and "K-13" in test_setter.rules
-
     print(f"\nTEST feature profiles: {test_setter.feature_profiles}")
     assert len(test_setter.feature_profiles) == len(
         list(DIR_WITH_TEST_FEATURE_PROFILES.glob("*.csv"))

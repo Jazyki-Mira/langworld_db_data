@@ -1,7 +1,8 @@
-from typing import NamedTuple
+from dataclasses import dataclass
 
 
-class ValueForFeatureProfileDictionary(NamedTuple):
+@dataclass
+class ValueForFeatureProfileDictionary:
     """Class for a data structure that represents a value
     in a dictionary for reading/writing feature profiles.
     """

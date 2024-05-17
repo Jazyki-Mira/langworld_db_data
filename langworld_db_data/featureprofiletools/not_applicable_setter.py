@@ -1,13 +1,16 @@
 from copy import copy
 from pathlib import Path
 
-from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_NOT_APPLICABLE_RULES
-from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
+from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
 from langworld_db_data.featureprofiletools.feature_profile_reader import FeatureProfileReader
 from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (  # noqa E501
     FeatureProfileWriterFromDictionary,
 )
-from langworld_db_data.filetools.json_toml_yaml import read_json_toml_yaml
+from langworld_db_data.validators.feature_profile_validator import (
+    FeatureProfileValidator,
+    NotStatedInsteadOfNotApplicableError,
+    ValueTypeValidationError,
+)
 
 
 class NotApplicableSetter:
@@ -27,69 +30,63 @@ class NotApplicableSetter:
     def __init__(
         self,
         dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
-        file_with_rules: Path = FILE_WITH_NOT_APPLICABLE_RULES,
         output_dir: Path = FEATURE_PROFILES_DIR,
+        write_even_if_no_changes: bool = False,
     ):
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob("*.csv")))
-        self.rules = read_json_toml_yaml(file_with_rules)
         self.output_dir = output_dir
 
         self.reader = FeatureProfileReader
+        self.validator = FeatureProfileValidator()
         self.writer = FeatureProfileWriterFromDictionary
+
+        self.write_even_if_no_changes = write_even_if_no_changes
 
     def replace_not_stated_with_not_applicable_in_all_profiles_according_to_rules(
         self,
     ) -> None:
-        # for mypy and PyCharm
-        if not isinstance(self.rules, dict):
-            raise TypeError("Rules for not_applicable are not a dictionary.")
+        # Setting the boolean attributes here, so that a validator with different paths
+        # could be connected and it would still have the necessary settings
+        self.validator.must_throw_error_at_not_applicable_rule_breach = True
+        # this is not the subject of this function, so setting to False:
+        self.validator.must_throw_error_at_feature_or_value_name_mismatch = False
+
+        print("\nLooking for values of type `not_stated` that should be `not_applicable`")
 
         for file in self.feature_profiles:
-            print(f"\nReading file {file.name}")
+            changes_made = False
 
-            data_from_profile = self.reader.read_feature_profile_as_dict_from_file(file)
-            new_data = copy(data_from_profile)
+            print(f"\n{file.name}")
 
-            for feature_id in self.rules:
-                print(
-                    f"Feature ID {feature_id}, value ID to trigger 'not_applicable'"
-                    f" rules for this feature: {self.rules[feature_id]['trigger']}."
-                    f" Value in {file.stem}: {data_from_profile[feature_id].value_id}"
+            profile = self.reader.read_feature_profile_as_dict_from_file(file)
+            amended_profile = copy(profile)
+
+            relevant_feature_id_and_value_pairs = (
+                (feature_id, value)
+                for (feature_id, value) in profile.items()
+                if feature_id in self.validator.not_applicable_trigger_values_for_feature_id
+            )
+
+            for feature_id, value in relevant_feature_id_and_value_pairs:
+
+                try:
+                    self.validator.check_one_feature_that_may_need_not_applicable_type(
+                        profile=profile,
+                        feature_id=feature_id,
+                        file_name_for_error_msg=file.name,
+                    )
+                except NotStatedInsteadOfNotApplicableError:
+                    print(f"{feature_id}: replacing `not_stated` with 'not_applicable'")
+                    amended_profile[feature_id].value_type = "not_applicable"
+                    changes_made = True
+                except ValueTypeValidationError as e:
+                    print(f"Type mismatch cannot be fixed automatically. {e}")
+
+            if changes_made or self.write_even_if_no_changes:
+                self.writer.write(
+                    feature_dict=amended_profile, output_path=self.output_dir / file.name
                 )
-
-                if data_from_profile[feature_id].value_id == self.rules[feature_id]["trigger"]:
-                    for id_of_feature_to_be_changed in self.rules[feature_id][
-                        "features_to_get_not_applicable"
-                    ]:
-                        print(
-                            f'Feature {id_of_feature_to_be_changed} to be set to "not'
-                            ' applicable"'
-                        )
-
-                        # Only changing values that are of 'not_stated' type!
-                        # All other value types are wrong, but errors must be triggered
-                        # in a validator, not here
-                        if new_data[id_of_feature_to_be_changed].value_type == "not_stated":
-                            new_data[id_of_feature_to_be_changed] = (
-                                ValueForFeatureProfileDictionary(
-                                    feature_name_ru=data_from_profile[
-                                        id_of_feature_to_be_changed
-                                    ].feature_name_ru,
-                                    value_type="not_applicable",
-                                    value_ru="",
-                                    value_id="",
-                                    comment_en=data_from_profile[
-                                        id_of_feature_to_be_changed
-                                    ].comment_en,
-                                    comment_ru=data_from_profile[
-                                        id_of_feature_to_be_changed
-                                    ].comment_ru,
-                                    page_numbers="",
-                                )
-                            )
-
-            self.writer.write(feature_dict=new_data, output_path=self.output_dir / file.name)
 
 
 if __name__ == "__main__":
-    NotApplicableSetter().replace_not_stated_with_not_applicable_in_all_profiles_according_to_rules()
+    NotApplicableSetter().replace_not_stated_with_not_applicable_in_all_profiles_according_to_rules()  # pragma: no cover
