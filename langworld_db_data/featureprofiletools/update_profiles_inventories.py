@@ -47,26 +47,28 @@ def update_one_feature_profile(
     data_from_file = read_dicts_from_csv(input_filepath)
     data_to_write = []
     for line in data_from_file:
-        if id_of_value_to_rename in line["value_id"]:
-            line_to_write = line.copy()
-            if line["value_id"] == id_of_value_to_rename:
-                print(f"Found exact match in {input_filepath.name}")
-                print("Changed " + line["value_ru"] + " to " + new_value_name)
-                line_to_write["value_ru"] = new_value_name
-                number_of_replacements += 1
-            elif "&" in line["value_id"]:
-                print("Found match in combined value in " + input_filepath.name)
-                combined_value_ids = line["value_id"].split("&")
-                combined_value_names = line["value_ru"].split("&")
-                for i in range(len(combined_value_ids)):
-                    if combined_value_ids[i] == id_of_value_to_rename:
-                        combined_value_names[i] = new_value_name
-                        number_of_replacements += 1
-                line_to_write["value_ru"] = "&".join(combined_value_names)
-                print("Changed " + line["value_ru"] + " to " + line_to_write["value_ru"])
-            data_to_write.append(line_to_write)
-        else:
+        if id_of_value_to_rename not in line["value_id"]:
             data_to_write.append(line)
+            continue
+        line_to_write = line.copy()
+        # After this clause, only lines with the target value are considered (they may contain other values too)
+        if "&" in line["value_id"]:
+            print("Found match in combined value in " + input_filepath.name)
+            combined_value_ids = line["value_id"].split("&")
+            combined_value_names = line["value_ru"].split("&")
+            for i in range(len(combined_value_ids)):
+                if combined_value_ids[i] == id_of_value_to_rename:
+                    combined_value_names[i] = new_value_name
+                    number_of_replacements += 1
+            line_to_write["value_ru"] = "&".join(combined_value_names)
+            print("Changed " + line["value_ru"] + " to " + line_to_write["value_ru"])
+            continue
+        # After this clause, only those lines are considered which contain the target value only
+        print(f"Found exact match in {input_filepath.name}")
+        line_to_write["value_ru"] = new_value_name
+        number_of_replacements += 1
+        data_to_write.append(line_to_write)
+        print("Changed " + line["value_ru"] + " to " + new_value_name)
     print("Replacements made in this file:" + str(number_of_replacements))
     output_file = output_dir / input_filepath.name
     write_csv(
