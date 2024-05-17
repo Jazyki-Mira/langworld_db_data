@@ -55,11 +55,10 @@ def update_one_feature_profile(
         if "&" in line["value_id"]:
             print("Found match in combined value in " + input_filepath.name)
             combined_value_ids = line["value_id"].split("&")
+            target_value_index = combined_value_ids.index(id_of_value_to_rename)
             combined_value_names = line["value_ru"].split("&")
-            for i in range(len(combined_value_ids)):
-                if combined_value_ids[i] == id_of_value_to_rename:
-                    combined_value_names[i] = new_value_name
-                    number_of_replacements += 1
+            combined_value_names.pop(target_value_index)
+            combined_value_names.insert(target_value_index, new_value_name)
             line_to_write["value_ru"] = "&".join(combined_value_names)
             data_to_write.append(line_to_write)
             print("Changed " + line["value_ru"] + " to " + line_to_write["value_ru"])
