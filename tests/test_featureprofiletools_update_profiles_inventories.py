@@ -45,13 +45,13 @@ def test_rename_value_in_profiles_and_inventories():
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filename.name,
             gold_standard_file=DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES / filename.name,
-            unlink_if_successful=False,
-        )
-        check_existence_of_output_csv_file_and_compare_with_gold_standard(
-            output_file=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES
-            / "inventories"
-            / "features_listed_values.csv",
-            gold_standard_file=DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES
-            / "features_listed_values.csv",
             unlink_if_successful=True,
         )
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES
+        / "inventories"
+        / "features_listed_values.csv",
+        gold_standard_file=DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES
+        / "features_listed_values.csv",
+        unlink_if_successful=True,
+    )
