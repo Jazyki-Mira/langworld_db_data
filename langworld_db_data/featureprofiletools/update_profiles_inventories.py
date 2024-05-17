@@ -7,8 +7,8 @@ from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 def rename_value_in_profiles_and_inventories(
     id_of_value_to_rename: str,
     new_value_name: str,
-    output_feature_profiles_dir,
-    output_inventories_dir,
+    output_feature_profiles_dir=FEATURE_PROFILES_DIR,
+    output_inventories_dir=INVENTORIES_DIR,
     input_feature_profiles_dir=FEATURE_PROFILES_DIR,
     input_inventories_dir=INVENTORIES_DIR,
 ) -> None:
