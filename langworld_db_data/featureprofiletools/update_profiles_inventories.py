@@ -23,7 +23,7 @@ def rename_value_in_profiles_and_inventories(
             id_of_value_to_rename=id_of_value_to_rename,
             new_value_name=new_value_name,
             input_filepath=file,
-            output_dir=output_feature_profiles_dir
+            output_dir=output_feature_profiles_dir,
         )
 
     if not output_inventories_dir.exists():
@@ -32,8 +32,8 @@ def rename_value_in_profiles_and_inventories(
         id_of_value_to_rename=id_of_value_to_rename,
         new_value_name=new_value_name,
         input_filepath=input_inventories_dir / "features_listed_values.csv",
-        output_filepath=output_inventories_dir / "features_listed_values.csv"
-        )
+        output_filepath=output_inventories_dir / "features_listed_values.csv",
+    )
 
 
 def update_one_feature_profile(
@@ -71,20 +71,12 @@ def update_one_feature_profile(
         print("Changed " + line["value_ru"] + " to " + new_value_name)
     print("Replacements made in this file:" + str(number_of_replacements))
     output_file = output_dir / input_filepath.name
-    write_csv(
-        rows=data_to_write,
-        path_to_file=output_file,
-        overwrite=True,
-        delimiter=","
-              )
+    write_csv(rows=data_to_write, path_to_file=output_file, overwrite=True, delimiter=",")
     print(f"Successfully written to {output_file}")
 
 
 def update_features_listed_values(
-    id_of_value_to_rename: str,
-    new_value_name: str,
-    input_filepath: Path,
-    output_filepath: Path
+    id_of_value_to_rename: str, new_value_name: str, input_filepath: Path, output_filepath: Path
 ) -> None:
 
     data_from_file = read_dicts_from_csv(input_filepath)
