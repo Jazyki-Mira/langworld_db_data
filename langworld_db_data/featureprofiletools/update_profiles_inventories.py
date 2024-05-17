@@ -82,15 +82,14 @@ def update_features_listed_values(
     data_from_file = read_dicts_from_csv(input_filepath)
     data_to_write = []
     for line in data_from_file:
-        if id_of_value_to_rename in line["id"]:
-            line_to_write = line.copy()
-            if line["id"] == id_of_value_to_rename:
-                print("Found exact match in " + input_filepath.name)
-                print("Changed " + line["ru"] + " to " + new_value_name)
-                line_to_write["ru"] = new_value_name
-            data_to_write.append(line_to_write)
-        else:
+        if id_of_value_to_rename not in line["id"]:
             data_to_write.append(line)
+            continue
+        line_to_write = line.copy()
+        print("Found exact match in " + input_filepath.name)
+        print("Changed " + line["ru"] + " to " + new_value_name)
+        line_to_write["ru"] = new_value_name
+        data_to_write.append(line_to_write)
     write_csv(
         rows=data_to_write,
         path_to_file=output_filepath,
