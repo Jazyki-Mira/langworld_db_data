@@ -701,7 +701,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 700,amharic,K-15,In gender,K-15-4,,,По роду,
 701,amharic,K-15,In number,K-15-2,,,По числу,
 702,amharic,K-15,In case,K-15-3,,,По падежу,
-703,amharic,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+703,amharic,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 704,amharic,K-16,"Number, case, and (in)definiteness",K-16-14,,,"Число, падеж и определенность/неопределенность",
 705,amharic,M-3,SOV,M-3-2,,,SOV,
 706,amharic,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
@@ -754,7 +754,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 753,ancient_hebrew,K-14,Always present,K-14-1,,,Всегда присутствует,
 754,ancient_hebrew,K-15,In gender,K-15-4,,,По роду,
 755,ancient_hebrew,K-15,In number,K-15-2,,,По числу,
-756,ancient_hebrew,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+756,ancient_hebrew,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 757,ancient_hebrew,K-16,(In)definiteness and number,K-16-8,,,Определенность и число,
 758,ancient_hebrew,K-17,Number and gender / agreement class,K-17-7,,,Числа и рода / согласовательного класса,
 759,ancient_hebrew,K-18,Internal flection and affixes,K-18-5,,,Внутренняя флексия и аффиксы,
@@ -1413,7 +1413,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1412,asturian,K-14,Always present,K-14-1,,,Всегда присутствует,
 1413,asturian,K-15,In number,K-15-2,,,По числу,"По роду, числу, исчисляемости/неисчисляемости (только в постпозиции)"
 1414,asturian,K-15,In gender,K-15-4,,,По роду,"По роду, числу, исчисляемости/неисчисляемости (только в постпозиции)"
-1415,asturian,K-15,In (un)countability,K-15-11,,,По исчисляемости/неисчисляемости,"По роду, числу, исчисляемости/неисчисляемости (только в постпозиции)"
+1415,asturian,K-15,In (un)countability,K-15-10,,,По исчисляемости/неисчисляемости,"По роду, числу, исчисляемости/неисчисляемости (только в постпозиции)"
 1416,asturian,K-16,Number,K-16-4,,,Число,
 1417,asturian,K-17,Absent,K-17-1,,,Отсутствует,
 1418,asturian,K-18,Internal flection and affixes,K-18-5,,,Внутренняя флексия и аффиксы,
@@ -2112,7 +2112,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2111,banjari,K-12,Gender,K-12-5,,,Род,
 2112,banjari,K-13,"Gender, number and case",K-13-7,,,"Рода, числа и падежа",
 2113,banjari,K-14,Optional,K-14-4,There are inflected and non-inflected adjectives,,Факультативно,Есть изменяемые и неизменяемые прилагательные
-2114,banjari,K-15,In person,K-15-8,,,По посессивности,
+2114,banjari,K-15,In person,K-15-7,,,По посессивности,
 2115,banjari,K-15,In number,K-15-2,,,По числу,
 2116,banjari,K-15,In case,K-15-3,,,По падежу,
 2117,banjari,K-16,Number and case,K-16-7,,,Число и падеж,
@@ -2945,7 +2945,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2944,braj,K-12,"Gender, number and case",K-12-10,,,"Род, число и падеж",
 2945,braj,K-13,"Gender, number and case",K-13-7,,,"Рода, числа и падежа",
 2946,braj,K-14,Always present,K-14-1,,,Всегда присутствует,
-2947,braj,K-15,In person,K-15-8,,,По посессивности,
+2947,braj,K-15,In person,K-15-7,,,По посессивности,
 2948,braj,K-15,In number,K-15-2,,,По числу,
 2949,braj,K-15,In case,K-15-3,,,По падежу,
 2950,braj,K-16,Number and case,K-16-7,,,Число и падеж,
@@ -3170,7 +3170,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3169,bulgarian,K-14,Only in preposition,K-14-3,,,Только в препозиции,
 3170,bulgarian,K-15,In gender,K-15-4,,,По роду,
 3171,bulgarian,K-15,In number,K-15-2,,,По числу,
-3172,bulgarian,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+3172,bulgarian,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 3173,bulgarian,K-16,,,,,"Падеж, число и определенность",
 3174,bulgarian,K-17,"Gender / agreement class, number and case",K-17-11,,,"Рода / согласовательного класса, числа и падежа",
 3175,bulgarian,K-18,,,,,Аффиксы и флексии,
@@ -3913,7 +3913,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3912,classical_mandaic,K-14,Always present,K-14-1,,,Всегда присутствует,
 3913,classical_mandaic,K-15,In gender,K-15-4,,,По роду,
 3914,classical_mandaic,K-15,In number,K-15-2,,,По числу,
-3915,classical_mandaic,K-15,In state,K-15-10,,,По состоянию,
+3915,classical_mandaic,K-15,In state,K-15-9,,,По состоянию,
 3916,classical_mandaic,K-16,Number and state,K-16-9,,,Число и состояние,
 3917,classical_mandaic,K-19,Prefixal-suffixal,K-19-1,,,Префиксально-суффиксальная,
 3918,classical_mandaic,L-1,Derivation and internal flection,L-1-13,,,Аффиксация и внутренняя флексия,
@@ -3969,7 +3969,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3968,classical_syriac,K-14,Always present,K-14-1,,,Всегда присутствует,
 3969,classical_syriac,K-15,In gender,K-15-4,,,По роду,
 3970,classical_syriac,K-15,In number,K-15-2,,,По числу,
-3971,classical_syriac,K-15,In state,K-15-10,,,По состоянию,
+3971,classical_syriac,K-15,In state,K-15-9,,,По состоянию,
 3972,classical_syriac,K-16,Number and state,K-16-9,,,Число и состояние,
 3973,classical_syriac,K-18,Affixes,K-18-2,,,Аффиксы,
 3974,classical_syriac,K-19,Prefixal-suffixal,K-19-1,,,Префиксально-суффиксальная,
@@ -4731,7 +4731,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4730,danish,K-14,Always present,K-14-1,,,Всегда присутствует,
 4731,danish,K-15,In gender,K-15-4,,,По роду,
 4732,danish,K-15,In number,K-15-2,,,По числу,
-4733,danish,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+4733,danish,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 4734,danish,K-16,"Number, case, and (in)definiteness",K-16-14,,,"Число, падеж и определенность/неопределенность",
 4735,danish,K-17,"Gender / agreement class, number, case and definiteness",K-17-14,,,"Рода / согласовательного класса, числа, падежа и определенности",
 4736,danish,K-18,,,,,"Внутренняя флексия (количественные, качественные и просодические чередования в корне) и аффиксы",
@@ -5819,7 +5819,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5818,faroese,K-15,In gender,K-15-4,,,По роду,"Неопределенная форма соответствует германскому сильному, а определенная - слабому склонению."
 5819,faroese,K-15,In number,K-15-2,,,По числу,"Неопределенная форма соответствует германскому сильному, а определенная - слабому склонению."
 5820,faroese,K-15,In case,K-15-3,,,По падежу,"Неопределенная форма соответствует германскому сильному, а определенная - слабому склонению."
-5821,faroese,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,"Неопределенная форма соответствует германскому сильному, а определенная - слабому склонению."
+5821,faroese,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,"Неопределенная форма соответствует германскому сильному, а определенная - слабому склонению."
 5822,faroese,K-16,,,,,"Определенность, падеж и число",
 5823,faroese,K-17,"Gender / agreement class, number, case and definiteness",K-17-14,,,"Рода / согласовательного класса, числа, падежа и определенности",
 5824,faroese,K-18,,,,,Флексия (внутренняя и внешняя),
@@ -6193,7 +6193,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6192,frisian,K-14,,,,,Ограниченно присутствует при определенных условиях,
 6193,frisian,K-15,In gender,K-15-4,,,По роду,
 6194,frisian,K-15,In number,K-15-2,,,По числу,
-6195,frisian,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+6195,frisian,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 6196,frisian,K-16,Number and case,K-16-7,,,Число и падеж,
 6197,frisian,K-17,Absent,K-17-1,,,Отсутствует,
 6198,frisian,K-18,Internal flection and affixes,K-18-5,,,Внутренняя флексия и аффиксы,
@@ -6357,7 +6357,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6356,gafat,K-13,Absent,K-13-1,,,Отсутствует,
 6357,gafat,K-14,Always present,K-14-1,,,Всегда присутствует,
 6358,gafat,K-15,In case,K-15-3,,,По падежу,
-6359,gafat,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+6359,gafat,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 6360,gafat,K-16,,,,,"определенность, число и падеж",
 6361,gafat,M-3,SOV,M-3-2,,,SOV,
 6362,gafat,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
@@ -8459,7 +8459,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8458,icelandic,K-15,In number,K-15-2,,,По числу,
 8459,icelandic,K-15,In case,K-15-3,,,По падежу,
 8460,icelandic,K-15,In gender,K-15-4,,,По роду,
-8461,icelandic,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+8461,icelandic,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 8462,icelandic,K-16,Number and case,K-16-7,,,Число и падеж,
 8463,icelandic,K-17,"Gender / agreement class, number, case and definiteness",K-17-14,,,"Рода / согласовательного класса, числа, падежа и определенности",
 8464,icelandic,K-18,Internal and external flection and affixes,K-18-13,,,Внутренняя и внешняя флексия и аффиксы,
@@ -9371,7 +9371,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9370,jewish_palestinian_aramaic,K-14,Always present,K-14-1,,,Всегда присутствует,
 9371,jewish_palestinian_aramaic,K-15,In gender,K-15-4,,,По роду,
 9372,jewish_palestinian_aramaic,K-15,In number,K-15-2,,,По числу,
-9373,jewish_palestinian_aramaic,K-15,In state,K-15-10,,,По состоянию,
+9373,jewish_palestinian_aramaic,K-15,In state,K-15-9,,,По состоянию,
 9374,jewish_palestinian_aramaic,K-16,"(In)definiteness, number and state",K-16-12,,,"Определенность, число и состояние",
 9375,jewish_palestinian_aramaic,K-18,Internal flection and affixes,K-18-5,,,Внутренняя флексия и аффиксы,
 9376,jewish_palestinian_aramaic,K-19,Prefixal-suffixal,K-19-1,,,Префиксально-суффиксальная,
@@ -11308,7 +11308,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11307,khunsari,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
 11308,khunsari,K-12,,,,,Число и определенность/неопределенность,
 11309,khunsari,K-15,In number,K-15-2,,,По числу,
-11310,khunsari,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+11310,khunsari,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 11311,khunsari,K-16,,,,,Число и определенность/неопределенность,
 11312,khvarshi,A-1,Three,A-1-2,,,Три,
 11313,khvarshi,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
@@ -12306,7 +12306,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12305,kumzari,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
 12306,kumzari,K-12,,,,,Число и определенность/неопределенность,
 12307,kumzari,K-15,In number,K-15-2,,,По числу,
-12308,kumzari,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+12308,kumzari,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 12309,kumzari,K-16,,,,,Число и определенность/неопределенность,
 12310,kurdish,A-1,,,,,"Фонемный состав литературного Л.я. представлен фонемами: a, e, u, o, y, o, ь, ... и айнизированный ...",Терминологическая интепретация отсутствует.
 12311,kurdish,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,
@@ -13745,7 +13745,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13744,macedonian,K-14,Only in preposition,K-14-3,,,Только в препозиции,
 13745,macedonian,K-15,In gender,K-15-4,,,По роду,Согласование по роду происходит только в единственном числе.
 13746,macedonian,K-15,In number,K-15-2,,,По числу,Согласование по роду происходит только в единственном числе.
-13747,macedonian,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,Согласование по роду происходит только в единственном числе.
+13747,macedonian,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,Согласование по роду происходит только в единственном числе.
 13748,macedonian,K-16,(In)definiteness and number,K-16-8,,,Определенность и число,
 13749,macedonian,K-17,,,,,"Рода, числа и определенности",
 13750,macedonian,K-18,Affixes,K-18-2,,,Аффиксы,
@@ -15225,7 +15225,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15224,modern_hebrew,K-14,Always present,K-14-1,,,Всегда присутствует,
 15225,modern_hebrew,K-15,In gender,K-15-4,,,По роду,
 15226,modern_hebrew,K-15,In number,K-15-2,,,По числу,
-15227,modern_hebrew,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+15227,modern_hebrew,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 15228,modern_hebrew,K-16,(In)definiteness and number,K-16-8,,,Определенность и число,
 15229,modern_hebrew,K-18,Affixes,K-18-2,,,Аффиксы,
 15230,modern_hebrew,K-19,Prefixal-suffixal,K-19-1,,,Префиксально-суффиксальная,
@@ -16210,7 +16210,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16209,norwegian,K-14,Always present,K-14-1,,,Всегда присутствует,
 16210,norwegian,K-15,In gender,K-15-4,,,По роду,Согласование по роду только в единственном числе.
 16211,norwegian,K-15,In number,K-15-2,,,По числу,Согласование по роду только в единственном числе.
-16212,norwegian,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,Согласование по роду только в единственном числе.
+16212,norwegian,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,Согласование по роду только в единственном числе.
 16213,norwegian,K-16,Number and case,K-16-7,,,Число и падеж,
 16214,norwegian,K-17,Absent,K-17-1,,,Отсутствует,
 16215,norwegian,K-18,Internal and external flection and affixes,K-18-13,,,Внутренняя и внешняя флексия и аффиксы,
@@ -16360,7 +16360,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16359,official_aramaic,K-14,Always present,K-14-1,,,Всегда присутствует,
 16360,official_aramaic,K-15,In gender,K-15-4,,,По роду,
 16361,official_aramaic,K-15,In number,K-15-2,,,По числу,
-16362,official_aramaic,K-15,In state,K-15-10,,,По состоянию,
+16362,official_aramaic,K-15,In state,K-15-9,,,По состоянию,
 16363,official_aramaic,K-16,(In)definiteness and number,K-16-8,,,Определенность и число,
 16364,official_aramaic,K-18,Affixes,K-18-2,,,Аффиксы,
 16365,official_aramaic,K-19,Prefixal-suffixal,K-19-1,,,Префиксально-суффиксальная,
@@ -16614,7 +16614,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16613,old_church_slavonic,K-15,In number,K-15-2,,,По числу,
 16614,old_church_slavonic,K-15,In case,K-15-3,,,По падежу,
 16615,old_church_slavonic,K-15,In gender,K-15-4,,,По роду,
-16616,old_church_slavonic,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+16616,old_church_slavonic,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 16617,old_church_slavonic,K-16,Number and case,K-16-7,,,Число и падеж,
 16618,old_church_slavonic,K-17,"Gender / agreement class, number and case",K-17-11,,,"Рода / согласовательного класса, числа и падежа",
 16619,old_church_slavonic,K-18,Affixes,K-18-2,,,Аффиксы,
@@ -22029,7 +22029,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22027,sorbian,K-15,In case,K-15-3,,,По падежу,Личность выражается только  в верхнелужицком языке.
 22028,sorbian,K-15,In gender,K-15-4,,,По роду,Личность выражается только  в верхнелужицком языке.
 22029,sorbian,K-15,In (in)humanness,K-15-6,,,По лично-мужской/нелично-мужской форме,Личность выражается только  в верхнелужицком языке.
-22030,sorbian,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,Личность выражается только  в верхнелужицком языке.
+22030,sorbian,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,Личность выражается только  в верхнелужицком языке.
 22031,sorbian,K-16,Number and case,K-16-7,,,Число и падеж,
 22032,sorbian,K-17,"Gender / agreement class, number and case",K-17-11,,,"Рода / согласовательного класса, числа и падежа",
 22033,sorbian,K-18,Affixes,K-18-2,,,Аффиксы,"Корню могут предшествовать адвербиальные префиксы, близкие немецким отделяемым приставкам."
@@ -22664,7 +22664,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22662,swedish,K-14,Always present,K-14-1,,,Всегда присутствует,
 22663,swedish,K-15,In gender,K-15-4,,,По роду,
 22664,swedish,K-15,In number,K-15-2,,,По числу,
-22665,swedish,K-15,In (in)definiteness,K-15-9,,,По определённости/неопределённости,
+22665,swedish,K-15,In (in)definiteness,K-15-8,,,По определённости/неопределённости,
 22666,swedish,K-16,"Number, case, and (in)definiteness",K-16-14,,,"Число, падеж и определенность/неопределенность",
 22667,swedish,K-17,Number and gender / agreement class,K-17-7,,,Числа и рода / согласовательного класса,
 22668,swedish,K-18,Internal and external flection and affixes,K-18-13,,,Внутренняя и внешняя флексия и аффиксы,Аффиксы могут быть отделяемыми.
