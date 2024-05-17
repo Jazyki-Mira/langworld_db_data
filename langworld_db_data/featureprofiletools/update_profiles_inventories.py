@@ -71,11 +71,7 @@ def update_one_feature_profile(
         print("Changed " + line["value_ru"] + " to " + new_value_name)
     print("Replacements made in this file:" + str(number_of_replacements))
     output_file = output_dir / input_filepath.name
-    write_csv(rows=data_to_write,
-              path_to_file=output_file,
-              overwrite=True,
-              delimiter=","
-              )
+    write_csv(rows=data_to_write, path_to_file=output_file, overwrite=True, delimiter=",")
     print(f"Successfully written to {output_file}")
 
 
