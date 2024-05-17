@@ -61,6 +61,7 @@ def update_one_feature_profile(
                     combined_value_names[i] = new_value_name
                     number_of_replacements += 1
             line_to_write["value_ru"] = "&".join(combined_value_names)
+            data_to_write.append(line_to_write)
             print("Changed " + line["value_ru"] + " to " + line_to_write["value_ru"])
             continue
         # After this clause, only those lines are considered which contain the target value only
