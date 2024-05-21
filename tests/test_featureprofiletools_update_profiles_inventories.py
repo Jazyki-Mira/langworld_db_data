@@ -7,26 +7,16 @@ from tests.test_helpers import check_existence_of_output_csv_file_and_compare_wi
 DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES = (
     DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / "update_profiles_inventories"
 )
-
 DIR_WITH_INPUT_FILES = DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "input"
-
 DIR_WITH_INPUT_FEATURE_PROFILES = DIR_WITH_INPUT_FILES / "feature_profiles"
-
 DIR_WITH_INPUT_INVENTORIES = DIR_WITH_INPUT_FILES / "inventories"
-
 DIR_WITH_OUTPUT_GOLD_STANDARD_FILES = (
     DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "output_gold_standard"
 )
-
 DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES = (
     DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / "feature_profiles"
 )
-
 DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES = DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / "inventories"
-
-
-# Currently I am working with values only, but I put features_listed_values.csv in this folder where features.csv will
-# be added later.
 
 
 def test_rename_value_in_profiles_and_inventories():
