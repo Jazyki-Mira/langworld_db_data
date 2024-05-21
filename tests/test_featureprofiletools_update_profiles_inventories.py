@@ -40,8 +40,8 @@ def test_rename_value_in_profiles_and_inventories():
         output_inventories_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "inventories",
     )
 
-    output_filenames_list = DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES.glob("*.csv")
-    for filename in output_filenames_list:
+    output_filenames = DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES.glob("*.csv")
+    for filename in output_filenames:
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filename.name,
             gold_standard_file=DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES / filename.name,
