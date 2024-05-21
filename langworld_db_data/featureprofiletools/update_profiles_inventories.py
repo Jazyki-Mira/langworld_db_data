@@ -77,10 +77,7 @@ def update_one_feature_profile(
 
 
 def update_features_listed_values(
-    id_of_value_to_rename: str,
-    new_value_name: str,
-    input_file: Path,
-    output_filepath: Path
+    id_of_value_to_rename: str, new_value_name: str, input_file: Path, output_filepath: Path
 ) -> None:
 
     data_from_file = read_dicts_from_csv(input_file)
