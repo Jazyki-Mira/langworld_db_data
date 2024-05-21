@@ -6,11 +6,11 @@ from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
 class ValueRenamer:
     def __init__(
-            self,
-            input_feature_profiles_dir: Path = FEATURE_PROFILES_DIR,
-            input_inventories_dir: Path = INVENTORIES_DIR,
-            output_feature_profiles_dir: Path = FEATURE_PROFILES_DIR,
-            output_inventories_dir: Path = INVENTORIES_DIR,
+        self,
+        input_feature_profiles_dir: Path = FEATURE_PROFILES_DIR,
+        input_inventories_dir: Path = INVENTORIES_DIR,
+        output_feature_profiles_dir: Path = FEATURE_PROFILES_DIR,
+        output_inventories_dir: Path = INVENTORIES_DIR,
     ) -> None:
         self.input_feature_profiles_dir = input_feature_profiles_dir
         self.input_inventories_dir = input_inventories_dir
@@ -87,10 +87,7 @@ class ValueRenamer:
 
     @staticmethod
     def _update_features_listed_values(
-        id_of_value_to_rename: str,
-        new_value_name: str,
-        input_file: Path,
-        output_filepath: Path
+        id_of_value_to_rename: str, new_value_name: str, input_file: Path, output_filepath: Path
     ) -> None:
 
         data_from_file = read_dicts_from_csv(input_file)
