@@ -38,8 +38,7 @@ class ValueRenamer:
         if not self._value_id_exists(id_of_value_to_rename):
             raise ValueRenamerError(f"{id_of_value_to_rename} does not exist")
         if self._current_value_name_is_equal_to_new_value_name(
-            id_of_value_to_rename=id_of_value_to_rename,
-            new_value_name=new_value_name
+            id_of_value_to_rename=id_of_value_to_rename, new_value_name=new_value_name
         ):
             raise ValueRenamerError(f"'{new_value_name}' coincides with the current value name")
         if not self.output_inventories_dir.exists():
@@ -64,7 +63,9 @@ class ValueRenamer:
         self,
         id_of_value_to_rename: str,
     ) -> bool:
-        data_from_file = read_dicts_from_csv(self.input_inventories_dir / "features_listed_values.csv")
+        data_from_file = read_dicts_from_csv(
+            self.input_inventories_dir / "features_listed_values.csv"
+        )
         for line in data_from_file:
             if line["id"] == id_of_value_to_rename:
                 return True
@@ -75,7 +76,9 @@ class ValueRenamer:
         id_of_value_to_rename: str,
         new_value_name: str,
     ):
-        data_from_file = read_dicts_from_csv(self.input_inventories_dir / "features_listed_values.csv")
+        data_from_file = read_dicts_from_csv(
+            self.input_inventories_dir / "features_listed_values.csv"
+        )
         for line in data_from_file:
             if line["id"] != id_of_value_to_rename:
                 continue
