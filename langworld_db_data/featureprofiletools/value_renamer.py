@@ -70,7 +70,7 @@ class ValueRenamer:
             line_to_write = line.copy()
             # After this clause, only lines with the target value are considered (they may contain other values too)
             if ATOMIC_VALUE_SEPARATOR in line["value_id"]:
-                print("Found match in combined value in " + input_file.name)
+                print(f"Found match in combined value in {input_file.name}")
                 combined_value_ids = line["value_id"].split(ATOMIC_VALUE_SEPARATOR)
                 target_value_index = combined_value_ids.index(id_of_value_to_rename)
                 combined_value_names = line["value_ru"].split(ATOMIC_VALUE_SEPARATOR)
@@ -79,14 +79,14 @@ class ValueRenamer:
                 line_to_write["value_ru"] = ATOMIC_VALUE_SEPARATOR.join(combined_value_names)
                 number_of_replacements += 1
                 data_to_write.append(line_to_write)
-                print("Changed " + line["value_ru"] + " to " + line_to_write["value_ru"])
+                print(f"Changed {line['value_ru']} to {line_to_write['value_ru']}")
                 continue
             # After this clause, only those lines are considered which contain the target value only
             print(f"Found exact match in {input_file.name}")
             line_to_write["value_ru"] = new_value_name
             number_of_replacements += 1
             data_to_write.append(line_to_write)
-            print(f"Changed " + line["value_ru"] + " to " + new_value_name)
+            print(f"Changed {line['value_ru']} to {new_value_name}")
         print(f"Replacements made in this file: {number_of_replacements}")
         output_file = output_dir / input_file.name
         write_csv(rows=data_to_write, path_to_file=output_file, overwrite=True, delimiter=",")
@@ -94,7 +94,10 @@ class ValueRenamer:
 
     @staticmethod
     def _update_features_listed_values(
-        id_of_value_to_rename: str, new_value_name: str, input_file: Path, output_file: Path
+        id_of_value_to_rename: str,
+        new_value_name: str,
+        input_file: Path,
+        output_file: Path
     ) -> None:
 
         data_from_file = read_dicts_from_csv(input_file)
@@ -104,8 +107,8 @@ class ValueRenamer:
                 data_to_write.append(line)
                 continue
             line_to_write = line.copy()
-            print("Found exact match in " + input_file.name)
-            print("Changed " + line["ru"] + " to " + new_value_name)
+            print(f"Found exact match in {input_file.name}")
+            print(f"Changed {line['ru']} to {new_value_name}")
             line_to_write["ru"] = new_value_name
             data_to_write.append(line_to_write)
         write_csv(
