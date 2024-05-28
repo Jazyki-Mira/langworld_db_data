@@ -148,26 +148,3 @@ class ValueRenamer:
         output_file = output_dir / input_file.name
         write_csv(rows=data_to_write, path_to_file=output_file, overwrite=True, delimiter=",")
         print(f"Successfully written to {output_file}")
-
-    @staticmethod
-    def _update_features_listed_values(
-        id_of_value_to_rename: str, new_value_name: str, input_file: Path, output_file: Path
-    ) -> None:
-
-        data_from_file = read_dicts_from_csv(input_file)
-        data_to_write = []
-        for line in data_from_file:
-            if id_of_value_to_rename not in line["id"]:
-                data_to_write.append(line)
-                continue
-            line_to_write = line.copy()
-            print(f"Found exact match in {input_file.name}")
-            print(f"Changed {line['ru']} to {new_value_name}")
-            line_to_write["ru"] = new_value_name
-            data_to_write.append(line_to_write)
-        write_csv(
-            rows=data_to_write,
-            path_to_file=output_file,
-            overwrite=True,
-            delimiter=",",
-        )
