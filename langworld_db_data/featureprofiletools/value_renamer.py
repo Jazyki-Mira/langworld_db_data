@@ -68,7 +68,7 @@ class ValueRenamer:
             line_to_write = line.copy()
             # After this clause, only lines with the target value are considered (they may contain other values too)
             if SEPARATOR in line["value_id"]:
-                print("Found match in combined value in " + input_file.name)
+                print(f"Found match in combined value in {input_file.name}")
                 combined_value_ids = line["value_id"].split(SEPARATOR)
                 target_value_index = combined_value_ids.index(id_of_value_to_rename)
                 combined_value_names = line["value_ru"].split(SEPARATOR)
