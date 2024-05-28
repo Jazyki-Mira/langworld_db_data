@@ -3,7 +3,6 @@ from pathlib import Path
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, INVENTORIES_DIR
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
-
 ATOMIC_VALUE_SEPARATOR = "&"
 
 
