@@ -117,7 +117,9 @@ def test_rename_value_whose_id_does_not_exist(create_value_renamer):
 def test_current_value_name_is_equal_to_new_value_name(create_value_renamer):
     value_renamer = create_value_renamer
     new_value_name = "Только дифтонги"
-    with pytest.raises(ValueRenamerError, match=f"'{new_value_name}' coincides with the current value name"):
+    with pytest.raises(
+        ValueRenamerError, match=f"'{new_value_name}' coincides with the current value name"
+    ):
         value_renamer.rename_value_in_profiles_and_inventories(
             id_of_value_to_rename="A-9-2",
             new_value_name=new_value_name,
