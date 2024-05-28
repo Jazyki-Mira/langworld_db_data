@@ -4,6 +4,10 @@ from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, INVENTORIES_
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
 
+class ValueRenamerError(Exception):
+    pass
+
+
 class ValueRenamer:
     def __init__(
             self,

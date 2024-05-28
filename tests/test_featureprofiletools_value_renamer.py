@@ -1,4 +1,4 @@
-from langworld_db_data.featureprofiletools.update_profiles_inventories import ValueRenamer
+from langworld_db_data.featureprofiletools.value_renamer import ValueRenamer, ValueRenamerError
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 from tests.test_helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 
@@ -47,3 +47,11 @@ def test_rename_value_in_profiles_and_inventories():
         / "features_listed_values.csv",
         unlink_if_successful=True,
     )
+
+
+def test_update_one_feature_profile():
+    pass
+
+
+def test_update_features_listed_values():
+    pass
