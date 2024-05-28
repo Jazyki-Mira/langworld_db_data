@@ -53,34 +53,25 @@ def test_rename_value_in_profiles_and_inventories():
     )
 
 
-@pytest.mark.parametrize(
-    "input_file",
-    [
-        DIR_WITH_INPUT_FEATURE_PROFILES / "corsican.csv",
-        DIR_WITH_INPUT_FEATURE_PROFILES / "pashto.csv",
-        DIR_WITH_INPUT_FEATURE_PROFILES / "susu.csv",
-    ]
-)
-def test_update_one_feature_profile(
-        input_file: Path
-):
+def test_update_one_feature_profile():
     value_renamer = ValueRenamer(
         input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
         output_feature_profiles_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
         input_inventories_dir=DIR_WITH_INPUT_INVENTORIES,
         output_inventories_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "inventories",
     )
-    value_renamer._update_one_feature_profile(
-        id_of_value_to_rename="A-9-2",
-        new_value_name="Представлены исключительно дифтонги",
-        input_file=input_file,
-        output_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
-    )
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / input_file.name,
-        gold_standard_file=DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES / input_file.name,
-        unlink_if_successful=True,
-    )
+    for filestem in ["corsican", "pashto", "susu"]:
+        value_renamer._update_one_feature_profile(
+            id_of_value_to_rename="A-9-2",
+            new_value_name="Представлены исключительно дифтонги",
+            input_file=DIR_WITH_INPUT_FEATURE_PROFILES / f"{filestem}.csv",
+            output_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
+        )
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / f"{filestem}.csv",
+            gold_standard_file=DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES / f"{filestem}.csv",
+            unlink_if_successful=True,
+        )
 
 
 def test_update_features_listed_values():
