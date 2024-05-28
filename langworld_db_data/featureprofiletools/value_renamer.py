@@ -46,7 +46,7 @@ class ValueRenamer:
             id_of_value_to_rename=id_of_value_to_rename,
             new_value_name=new_value_name,
             input_file=self.input_inventories_dir / "features_listed_values.csv",
-            output_filepath=self.output_inventories_dir / "features_listed_values.csv",
+            output_file=self.output_inventories_dir / "features_listed_values.csv",
         )
 
     @staticmethod
@@ -91,7 +91,10 @@ class ValueRenamer:
 
     @staticmethod
     def _update_features_listed_values(
-        id_of_value_to_rename: str, new_value_name: str, input_file: Path, output_filepath: Path
+        id_of_value_to_rename: str,
+        new_value_name: str,
+        input_file: Path,
+        output_file: Path
     ) -> None:
 
         data_from_file = read_dicts_from_csv(input_file)
@@ -107,7 +110,7 @@ class ValueRenamer:
             data_to_write.append(line_to_write)
         write_csv(
             rows=data_to_write,
-            path_to_file=output_filepath,
+            path_to_file=output_file,
             overwrite=True,
             delimiter=",",
         )
