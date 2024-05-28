@@ -84,8 +84,8 @@ class ValueRenamer:
             line_to_write["value_ru"] = new_value_name
             number_of_replacements += 1
             data_to_write.append(line_to_write)
-            print("Changed " + line["value_ru"] + " to " + new_value_name)
-        print("Replacements made in this file:" + str(number_of_replacements))
+            print(f"Changed " + line["value_ru"] + " to " + new_value_name)
+        print(f"Replacements made in this file: {number_of_replacements}")
         output_file = output_dir / input_file.name
         write_csv(rows=data_to_write, path_to_file=output_file, overwrite=True, delimiter=",")
         print(f"Successfully written to {output_file}")
