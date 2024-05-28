@@ -1,6 +1,6 @@
-import pytest
-
 from pathlib import Path
+
+import pytest
 
 from langworld_db_data.featureprofiletools.value_renamer import ValueRenamer, ValueRenamerError
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
