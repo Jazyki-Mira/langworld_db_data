@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from langworld_db_data.constants.literals import SEPARATOR
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, INVENTORIES_DIR
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
@@ -66,14 +67,14 @@ class ValueRenamer:
                 continue
             line_to_write = line.copy()
             # After this clause, only lines with the target value are considered (they may contain other values too)
-            if "&" in line["value_id"]:
+            if SEPARATOR in line["value_id"]:
                 print("Found match in combined value in " + input_file.name)
-                combined_value_ids = line["value_id"].split("&")
+                combined_value_ids = line["value_id"].split(SEPARATOR)
                 target_value_index = combined_value_ids.index(id_of_value_to_rename)
-                combined_value_names = line["value_ru"].split("&")
+                combined_value_names = line["value_ru"].split(SEPARATOR)
                 combined_value_names.pop(target_value_index)
                 combined_value_names.insert(target_value_index, new_value_name)
-                line_to_write["value_ru"] = "&".join(combined_value_names)
+                line_to_write["value_ru"] = SEPARATOR.join(combined_value_names)
                 number_of_replacements += 1
                 data_to_write.append(line_to_write)
                 print("Changed " + line["value_ru"] + " to " + line_to_write["value_ru"])
