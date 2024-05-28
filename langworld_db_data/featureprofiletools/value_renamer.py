@@ -68,7 +68,7 @@ class ValueRenamer:
         for line in data_from_file:
             if line["id"] == id_of_value_to_rename:
                 return True
-        return False  # TODO: make test for this method
+        return False
 
     def _current_value_name_is_equal_to_new_value_name(
         self,
@@ -81,7 +81,7 @@ class ValueRenamer:
                 continue
             if line["ru"] == new_value_name:
                 return True
-            return False  # TODO: make test for this method
+            return False
 
     @staticmethod
     def _update_features_listed_values(
