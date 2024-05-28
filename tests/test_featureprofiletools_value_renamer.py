@@ -1,6 +1,6 @@
-import pytest
-
 from pathlib import Path
+
+import pytest
 
 from langworld_db_data.featureprofiletools.value_renamer import ValueRenamer, ValueRenamerError
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
@@ -59,11 +59,9 @@ def test_rename_value_in_profiles_and_inventories():
         DIR_WITH_INPUT_FEATURE_PROFILES / "corsican.csv",
         DIR_WITH_INPUT_FEATURE_PROFILES / "pashto.csv",
         DIR_WITH_INPUT_FEATURE_PROFILES / "susu.csv",
-    ]
+    ],
 )
-def test_update_one_feature_profile(
-        input_file: Path
-):
+def test_update_one_feature_profile(input_file: Path):
     value_renamer = ValueRenamer(
         input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
         output_feature_profiles_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
