@@ -22,7 +22,6 @@ DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES = DIR_WITH_OUTPUT_GOLD_STANDARD_FILES 
 
 
 def test_rename_value_in_profiles_and_inventories():
-    # First change files in tmp up to their default variants
     value_renamer = ValueRenamer(
         input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
         output_feature_profiles_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
