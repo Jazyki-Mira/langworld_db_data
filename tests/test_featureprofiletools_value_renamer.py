@@ -94,3 +94,29 @@ def test_update_features_listed_values(new_value_renamer):
         / "features_listed_values.csv",
         unlink_if_successful=True,
     )
+
+
+def replace_value_whose_id_does_not_exist(new_value_renamer):
+    value_renamer = new_value_renamer
+    value_renamer.rename_value_in_profiles_and_inventories(
+        id_of_value_to_rename="A-39-2",
+        new_value_name="Представлены исключительно дифтонги",
+    )
+
+    output_filenames = DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES.glob("*.csv")
+    for filename in output_filenames:
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / filename.name,
+            gold_standard_file=DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES / filename.name,
+            unlink_if_successful=True,
+        )
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=(
+            DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES
+            / "inventories"
+            / "features_listed_values.csv"
+        ),
+        gold_standard_file=DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES
+        / "features_listed_values.csv",
+        unlink_if_successful=True,
+    )
