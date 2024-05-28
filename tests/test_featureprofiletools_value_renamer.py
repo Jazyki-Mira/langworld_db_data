@@ -21,13 +21,19 @@ DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES = (
 DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES = DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / "inventories"
 
 
-def test_rename_value_in_profiles_and_inventories():
+@pytest.fixture
+def new_value_renamer():
     value_renamer = ValueRenamer(
         input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
         output_feature_profiles_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
         input_inventories_dir=DIR_WITH_INPUT_INVENTORIES,
         output_inventories_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "inventories",
     )
+    return value_renamer
+
+
+def test_rename_value_in_profiles_and_inventories(new_value_renamer):
+    value_renamer = new_value_renamer
     value_renamer.rename_value_in_profiles_and_inventories(
         id_of_value_to_rename="A-9-2",
         new_value_name="Представлены исключительно дифтонги",
@@ -52,13 +58,8 @@ def test_rename_value_in_profiles_and_inventories():
     )
 
 
-def test_update_one_feature_profile():
-    value_renamer = ValueRenamer(
-        input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
-        output_feature_profiles_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
-        input_inventories_dir=DIR_WITH_INPUT_INVENTORIES,
-        output_inventories_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "inventories",
-    )
+def test_update_one_feature_profile(new_value_renamer):
+    value_renamer = new_value_renamer
     for filestem in ["corsican", "pashto", "susu"]:
         value_renamer._update_one_feature_profile(
             id_of_value_to_rename="A-9-2",
@@ -73,13 +74,8 @@ def test_update_one_feature_profile():
         )
 
 
-def test_update_features_listed_values():
-    value_renamer = ValueRenamer(
-        input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
-        output_feature_profiles_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
-        input_inventories_dir=DIR_WITH_INPUT_INVENTORIES,
-        output_inventories_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "inventories",
-    )
+def test_update_features_listed_values(new_value_renamer):
+    value_renamer = new_value_renamer
     value_renamer._update_features_listed_values(
         id_of_value_to_rename="A-9-2",
         new_value_name="Представлены исключительно дифтонги",
