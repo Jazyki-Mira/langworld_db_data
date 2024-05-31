@@ -23,6 +23,9 @@ class ValueRenamer:
         self.input_inventories_dir = input_inventories_dir
         self.output_feature_profiles_dir = output_feature_profiles_dir
         self.output_inventories_dir = output_inventories_dir
+        self.inventory_of_listed_values = read_dicts_from_csv(
+            self.input_inventories_dir / "features_listed_values.csv"
+        )
 
     def rename_value_in_profiles_and_inventories(
         self,
@@ -40,7 +43,7 @@ class ValueRenamer:
         if self._current_value_name_is_equal_to_new_value_name(
             id_of_value_to_rename=id_of_value_to_rename, new_value_name=new_value_name
         ):
-            raise ValueRenamerError(f"'Value is already called {new_value_name}'")
+            raise ValueRenamerError(f"Value is already called '{new_value_name}'")
         if not self.output_inventories_dir.exists():
             self.output_inventories_dir.mkdir(parents=True, exist_ok=True)
         self._update_features_listed_values(
@@ -63,10 +66,7 @@ class ValueRenamer:
         self,
         id_of_value_to_rename: str,
     ) -> bool:
-        data_from_file = read_dicts_from_csv(
-            self.input_inventories_dir / "features_listed_values.csv"
-        )
-        for line in data_from_file:
+        for line in self.inventory_of_listed_values:
             if line["id"] == id_of_value_to_rename:
                 return True
         return False
@@ -76,27 +76,23 @@ class ValueRenamer:
         id_of_value_to_rename: str,
         new_value_name: str,
     ):
-        data_from_file = read_dicts_from_csv(
-            self.input_inventories_dir / "features_listed_values.csv"
-        )
-        for line in data_from_file:
+        for line in self.inventory_of_listed_values:
             if line["id"] != id_of_value_to_rename:
                 continue
             if line["ru"] == new_value_name:
                 return True
             return False
 
-    @staticmethod
     def _update_features_listed_values(
+        self,
         id_of_value_to_rename: str,
         new_value_name: str,
         input_file: Path,
         output_file: Path,
     ) -> None:
 
-        data_from_file = read_dicts_from_csv(input_file)
         data_to_write = []
-        for line in data_from_file:
+        for line in self.inventory_of_listed_values:
             if id_of_value_to_rename not in line["id"]:
                 data_to_write.append(line)
                 continue
