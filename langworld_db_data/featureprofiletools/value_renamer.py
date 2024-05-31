@@ -40,7 +40,7 @@ class ValueRenamer:
         if self._current_value_name_is_equal_to_new_value_name(
             id_of_value_to_rename=id_of_value_to_rename, new_value_name=new_value_name
         ):
-            raise ValueRenamerError(f"'{new_value_name}' coincides with the current value name")
+            raise ValueRenamerError(f"'Value is already called {new_value_name}'")
         if not self.output_inventories_dir.exists():
             self.output_inventories_dir.mkdir(parents=True, exist_ok=True)
         self._update_features_listed_values(
