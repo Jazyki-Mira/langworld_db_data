@@ -30,8 +30,8 @@ def value_renamer():
     return value_renamer
 
 
-def test_rename_value_in_profiles_and_inventories(create_value_renamer):
-    value_renamer = create_value_renamer
+def test_rename_value_in_profiles_and_inventories(value_renamer):
+    value_renamer = value_renamer
     value_renamer.rename_value_in_profiles_and_inventories(
         id_of_value_to_rename="A-9-2",
         new_value_name="Представлены исключительно дифтонги",
@@ -56,8 +56,8 @@ def test_rename_value_in_profiles_and_inventories(create_value_renamer):
     )
 
 
-def test_update_one_feature_profile(create_value_renamer):
-    value_renamer = create_value_renamer
+def test_update_one_feature_profile(value_renamer):
+    value_renamer = value_renamer
     for filestem in ["corsican", "pashto", "susu"]:
         value_renamer._update_one_feature_profile(
             id_of_value_to_rename="A-9-2",
@@ -72,8 +72,8 @@ def test_update_one_feature_profile(create_value_renamer):
         )
 
 
-def test_update_features_listed_values(create_value_renamer):
-    value_renamer = create_value_renamer
+def test_update_features_listed_values(value_renamer):
+    value_renamer = value_renamer
     value_renamer._update_features_listed_values(
         id_of_value_to_rename="A-9-2",
         new_value_name="Представлены исключительно дифтонги",
@@ -94,8 +94,8 @@ def test_update_features_listed_values(create_value_renamer):
     )
 
 
-def test_set_empty_name_for_value(create_value_renamer):
-    value_renamer = create_value_renamer
+def test_set_empty_name_for_value(value_renamer):
+    value_renamer = value_renamer
 
     with pytest.raises(ValueRenamerError, match="a null string passed as new value name"):
         value_renamer.rename_value_in_profiles_and_inventories(
@@ -104,8 +104,8 @@ def test_set_empty_name_for_value(create_value_renamer):
         )
 
 
-def test_rename_value_whose_id_does_not_exist(create_value_renamer):
-    value_renamer = create_value_renamer
+def test_rename_value_whose_id_does_not_exist(value_renamer):
+    value_renamer = value_renamer
     id_of_value_to_rename = "A-99-2"
     with pytest.raises(ValueRenamerError, match=f"{id_of_value_to_rename} does not exist"):
         value_renamer.rename_value_in_profiles_and_inventories(
@@ -114,11 +114,11 @@ def test_rename_value_whose_id_does_not_exist(create_value_renamer):
         )
 
 
-def test_current_value_name_is_equal_to_new_value_name(create_value_renamer):
-    value_renamer = create_value_renamer
+def test_current_value_name_is_equal_to_new_value_name(value_renamer):
+    value_renamer = value_renamer
     new_value_name = "Только дифтонги"
     with pytest.raises(
-        ValueRenamerError, match=f"'{new_value_name}' coincides with the current value name"
+        ValueRenamerError, match=f"Value is already called '{new_value_name}'"
     ):
         value_renamer.rename_value_in_profiles_and_inventories(
             id_of_value_to_rename="A-9-2",
