@@ -19,7 +19,7 @@ DIR_WITH_OUTPUT_GOLD_STANDARD_FEATURE_PROFILES = (
 DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES = DIR_WITH_OUTPUT_GOLD_STANDARD_FILES / "inventories"
 
 
-@pytest.fixture
+@pytest.fixture(scope="class")
 def value_renamer():
     return ValueRenamer(
         input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
