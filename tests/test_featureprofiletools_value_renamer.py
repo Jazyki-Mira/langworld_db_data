@@ -27,7 +27,6 @@ def value_renamer():
         input_inventories_dir=DIR_WITH_INPUT_INVENTORIES,
         output_inventories_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES / "inventories",
     )
-    return value_renamer
 
 
 def test_rename_value_in_profiles_and_inventories(value_renamer):
