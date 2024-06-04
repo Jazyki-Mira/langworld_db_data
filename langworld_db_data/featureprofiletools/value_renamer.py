@@ -149,7 +149,7 @@ class ValueRenamer:
         print(f"Successfully written to {output_file}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ValueRenamer().rename_value_in_profiles_and_inventories(
         id_of_value_to_rename="",
         new_value_name="",
