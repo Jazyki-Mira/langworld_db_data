@@ -35,13 +35,6 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
         sheet_name=sheet_or_column_name_for_id["sheet_name"],
     )
 
-    def _get_value_from_row(
-        column_id: str, row_: dict[str, str], name_for_id: dict[str, str]
-    ) -> str:
-        """Returns value from column with relevant name.
-        Name of column is looked up by `attr` in YAML file."""
-        return row_[name_for_id[column_id]]
-
     value_for_feature_id = {}
 
     for row in rows:
@@ -75,6 +68,12 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
     return output_path
 
     # FIXME multiple lines get overwritten
+
+
+def _get_value_from_row(column_id: str, row_: dict[str, str], name_for_id: dict[str, str]) -> str:
+    """Returns value from column with relevant name.
+    Name of column is looked up by `attr` in YAML file."""
+    return row_[name_for_id[column_id]]
 
 
 if __name__ == "__main__":
