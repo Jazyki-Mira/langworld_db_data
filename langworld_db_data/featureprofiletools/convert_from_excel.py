@@ -80,8 +80,6 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
     )
     return output_path
 
-    # FIXME multiple lines get overwritten
-
 
 def _get_value_from_row(column_id: str, row_: dict[str, str], name_for_id: dict[str, str]) -> str:
     """Returns value from column with relevant name.
