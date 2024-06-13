@@ -38,7 +38,8 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
     value_for_feature_id = {}
 
     # Keep track of feature IDs already processed.
-    # This way we can add another value ID and name for a multiselect feature
+    # This way we can add another value ID and value name if we encounter
+    # more than one row for the same [multiselect] feature.
     processed_feature_ids = set()
 
     for row in rows:
