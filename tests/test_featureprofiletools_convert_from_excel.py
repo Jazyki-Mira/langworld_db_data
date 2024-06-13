@@ -6,10 +6,10 @@ DIR_WITH_CONVERT_TEST_FILES = DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES / "conve
 
 
 def test_convert_from_excel():
-    path_to_excel_file = DIR_WITH_CONVERT_TEST_FILES / "french.xlsm"
-    path_to_resulting_csv = convert_from_excel(path_to_excel_file)
+    for file in DIR_WITH_CONVERT_TEST_FILES.glob("*.xlsm"):
+        path_to_resulting_csv = convert_from_excel(file)
 
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=path_to_resulting_csv,
-        gold_standard_file=DIR_WITH_CONVERT_TEST_FILES / "french_benchmark.csv",
-    )
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=path_to_resulting_csv,
+            gold_standard_file=DIR_WITH_CONVERT_TEST_FILES / f"{file.stem}_benchmark.csv",
+        )
