@@ -37,28 +37,41 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
 
     value_for_feature_id = {}
 
+    # Keep track of feature IDs already processed.
+    # This way we can add another value ID and name for a multiselect feature
+    processed_feature_ids = set()
+
     for row in rows:
         _get = partial(_get_value_from_row, row_=row, name_for_id=sheet_or_column_name_for_id)
-        feature_id = _get("feature_id")
-        value_id = _get("value_id")
-        value_type = _get("value_type")
 
-        # I could do without this object but this seems better for coding and
-        # readability, especially given that I had already written a method for
-        # writing a resulting dict to CSV.
-        value_for_feature_id[feature_id] = ValueForFeatureProfileDictionary(
-            feature_name_ru=_get("feature_name_ru"),
-            value_type=value_type,
-            value_id=value_id,
-            value_ru=(
-                _get("listed_value_ru").removeprefix(f"{value_id}: ")
-                if value_type == "listed"
-                else _get("custom_value_ru")
-            ),
-            comment_ru=_get("comment_ru"),
-            comment_en=_get("comment_en"),
-            page_numbers=_get("page_numbers"),
+        feature_id = _get("feature_id")
+        value_type = _get("value_type")
+        value_id = _get("value_id")
+        value_ru = (
+            _get("listed_value_ru").removeprefix(f"{value_id}: ")
+            if value_type == "listed"
+            else _get("custom_value_ru")
         )
+
+        # if this is a new feature ID, just write the value
+        if feature_id not in processed_feature_ids:
+            # I could do without this object but this seems better for coding and
+            # readability, especially given that I had already written a method for
+            # writing a resulting dict to CSV.
+            value_for_feature_id[feature_id] = ValueForFeatureProfileDictionary(
+                feature_name_ru=_get("feature_name_ru"),
+                value_type=value_type,
+                value_id=value_id,
+                value_ru=value_ru,
+                comment_ru=_get("comment_ru"),
+                comment_en=_get("comment_en"),
+                page_numbers=_get("page_numbers"),
+            )
+            processed_feature_ids.add(feature_id)
+        else:
+            # otherwise add the value to the existing dictionary entry
+            value_for_feature_id[feature_id].value_id += f"&{value_id}"
+            value_for_feature_id[feature_id].value_ru += f"&{value_ru}"
 
     output_path = path_to_input_excel.parent / f"{path_to_input_excel.stem}.csv"
     print(f"Saving converted Excel file as {output_path}")
