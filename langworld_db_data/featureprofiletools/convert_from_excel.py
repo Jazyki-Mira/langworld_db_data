@@ -35,12 +35,12 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
         sheet_name=sheet_or_column_name_for_id["sheet_name"],
     )
 
-    value_for_feature_id = {}
+    value_for_feature_id: dict[str, ValueForFeatureProfileDictionary] = {}
 
     # Keep track of feature IDs already processed.
     # This way we can add another value ID and value name if we encounter
     # more than one row for the same [multiselect] feature.
-    processed_feature_ids = set()
+    processed_feature_ids: set[str] = set()
 
     for row in rows:
         _get = partial(_get_value_from_row, row_=row, name_for_id=sheet_or_column_name_for_id)
