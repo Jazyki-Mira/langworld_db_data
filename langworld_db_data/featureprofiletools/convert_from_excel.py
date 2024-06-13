@@ -35,12 +35,14 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
         sheet_name=sheet_or_column_name_for_id["sheet_name"],
     )
 
+    # We could do without using custom class here, but it improves readability,
+    # plus FeatureProfileWriterFromDictionary has a method for writing such dict to CSV.
     value_for_feature_id: dict[str, ValueForFeatureProfileDictionary] = {}
 
-    # Keep track of feature IDs already processed.
-    # This way we can add another value ID and value name if we encounter
-    # more than one row for the same [multiselect] feature.
     processed_feature_ids: set[str] = set()
+    """A set for keeping track of feature IDs already processed.
+    Allows to add another value ID and value name if we encounter more than one row for a multiselect feature.
+    """
 
     for row in rows:
         _get = partial(_get_value_from_row, row_=row, name_for_id=sheet_or_column_name_for_id)
@@ -56,9 +58,6 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
 
         # if this is a new feature ID, just write the value
         if feature_id not in processed_feature_ids:
-            # I could do without this object but this seems better for coding and
-            # readability, especially given that I had already written a method for
-            # writing a resulting dict to CSV.
             value_for_feature_id[feature_id] = ValueForFeatureProfileDictionary(
                 feature_name_ru=_get("feature_name_ru"),
                 value_type=value_type,
