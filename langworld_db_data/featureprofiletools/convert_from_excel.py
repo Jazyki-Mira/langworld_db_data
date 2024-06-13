@@ -14,9 +14,14 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
     """Converts Excel "questionnaire" file (which researchers produce)
     into feature profile in CSV. Returns output path for convenience.
 
-    The most notable difference between input Excel and output CSV
-    is that Excel questionnaire has two columns for value name
+    The most notable differences between input Excel and output CSV:
+
+    1. Excel questionnaire has two columns for value name
     (one for 'listed' and one for 'custom'), whereas a CSV file has only one.
+
+    2. In multiselect features, Excel file has multiple lines
+    for each elementary value (because of dropdown fields) while CSV file
+    has one line with all elementary values joined together.
     """
 
     # It is important to always use the current YAML file in conversion,
