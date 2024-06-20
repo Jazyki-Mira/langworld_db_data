@@ -158,6 +158,7 @@ tajik,language,0,0,Tajik,таджикский,,,"Tajiki, Tajiki Persian",,south_
 dari,language,0,0,Dari,дари,,,"Dari Persian, Farsi, Afghan Persian","персидско-кабульский (фарси-кабули), кабули, афганско-персидский, кабульско-персидский, кабульско-таджикский, фарси-кабули",south_west_iran,prs,dari1249,31.8402,54.1625,irn,5,121,1,,
 tati,language,0,0,Tati,татский,,,"Tati, Tat/Tati Persian",тати,south_west_iran,ttt,musl1236,41.425062,46.645589,aze,5,141,1,,
 hazaragi,language,0,0,Hazaragi,хазара,,,,"хазараги, хазарийский диалект языка дари",south_west_iran,haz,haza1239,34.8166,67.8166,afg,5,154,1,,
+fars_dialects,dialect,0,1,Fars dialects,Фарса диалекты,Fars dialects,Фарса диалекты,,"сомгуни, папуни, бурингуни, масарми",south_west_iran,fay,sout2645,29.610000,52.542500,irn,5,177,1,,
 kumzari,language/dialect,0,0,Kumzari,кумзари,,,,,south_west_iran,zum,kumz1235,26.16,56.42,omn,5,191,1,,
 kurdshuli,language/dialect,0,0,Kurdshuli,курдшули,,,,,south_west_iran,,,30.65308656467516,52.672619742742995,irn,5,193,1,,
 bashkardi,dialect,0,1,Bashkardi,башкарди,Bashkardi dialects,башкарди группа диалектов,,,south_west_iran,bsg,bash1263,32,53,irn,5,194,1,,
