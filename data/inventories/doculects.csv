@@ -158,6 +158,8 @@ tajik,language,0,0,Tajik,таджикский,,,"Tajiki, Tajiki Persian",,south_
 dari,language,0,0,Dari,дари,,,"Dari Persian, Farsi, Afghan Persian","персидско-кабульский (фарси-кабули), кабули, афганско-персидский, кабульско-персидский, кабульско-таджикский, фарси-кабули",south_west_iran,prs,dari1249,31.8402,54.1625,irn,5,121,1,,
 tati,language,0,0,Tati,татский,,,"Tati, Tat/Tati Persian",тати,south_west_iran,ttt,musl1236,41.425062,46.645589,aze,5,141,1,,
 hazaragi,language,0,0,Hazaragi,хазара,,,,"хазараги, хазарийский диалект языка дари",south_west_iran,haz,haza1239,34.8166,67.8166,afg,5,154,1,,
+luri_bakhtiari_dialects,dialect,0,1,Luri and Bakhtiari,лурская и бахтиярская группа диалектов,Luri and Bakhtiari group of dialects,лурская и бахтиярская группа диалектов,,,south_west_iran,,luri1252,33.466670,48.35,irn,5,166,1,,
+larestani_dialects,dialect,0,1,Larestani,ларская группа диалектов,Larestani dialects,ларская группа диалектов,Lari,,south_west_iran,lrl,lari1253,27.64,54.63,irn,5,174,1,,
 fars_dialects,dialect,0,1,Fars dialects,Фарса диалекты,Fars dialects,Фарса диалекты,,"сомгуни, папуни, бурингуни, масарми",south_west_iran,fay,sout2645,29.610000,52.542500,irn,5,177,1,,
 kumzari,language/dialect,0,0,Kumzari,кумзари,,,,,south_west_iran,zum,kumz1235,26.16,56.42,omn,5,191,1,,
 kurdshuli,language/dialect,0,0,Kurdshuli,курдшули,,,,,south_west_iran,,,30.65308656467516,52.672619742742995,irn,5,193,1,,
