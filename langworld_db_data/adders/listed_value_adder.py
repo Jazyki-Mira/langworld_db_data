@@ -60,10 +60,12 @@ class ListedValueAdder(Adder):
         index_of_last_row_for_given_feature = 0
         last_digit_of_value_id = 0
         id_of_new_value = ""
+        values_diapason = []
 
+        # MASH: here we will be receiving the diapason of values of the given feature
         for i, row in enumerate(rows):
             if (
-                row["feature_id"] != feature_id
+                    row["feature_id"] != feature_id
             ):  # MASH: throws away everything beyond the given feature ID
                 continue
 
@@ -74,20 +76,39 @@ class ListedValueAdder(Adder):
 
             # Keep updating those with each row. This means that at the last row of the
             # feature they will reach the required values.
-            index_of_last_row_for_given_feature = i
+            # index_of_last_row_for_given_feature = i
 
             last_digit_of_value_id = int(
                 row["id"].split(SEPARATOR)[-1]
             )  # MASH: bites off the last number in value id
-            id_of_new_value = feature_id + SEPARATOR + str(last_digit_of_value_id + 1)
+            values_diapason.append([last_digit_of_value_id, i])
             # MASH: so initially this one is refreshed several times before the final variant
         
-        print(index_to_insert_after)
+        print(values_diapason)
+
         if (type(index_to_insert_after) is int and
                 index_to_insert_after > last_digit_of_value_id):
             raise ListedValueAdderError(
                 f"The given ID {feature_id + str(index_to_insert_after)} exceeds the maximal ID {id_of_new_value}"
             )
+
+        index_of_new_value = values_diapason[-1][0]
+        row_for_new_value = values_diapason[-1][1]
+        # MASH: values_diapason lacks opacity
+
+        if index_to_insert_after != "last":
+            for index_row in values_diapason:
+                if index_row[0] != index_to_insert_after:
+                    continue
+                if index_row[0] > index_to_insert_after:
+                    index_row[0] += 1
+                    index_row[1] += 1
+                row_for_new_value = index_row[0]
+                index_of_new_value = index_row[1]
+            print(row_for_new_value)
+            print(index_of_new_value)
+
+        id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
 
         row_with_new_value = [
             {
@@ -100,9 +121,9 @@ class ListedValueAdder(Adder):
         # the former listed values list
 
         rows_with_new_value_inserted = (
-            rows[: index_of_last_row_for_given_feature + 1]
+            rows[: row_for_new_value + 1]
             + row_with_new_value
-            + rows[index_of_last_row_for_given_feature + 1 :]
+            + rows[row_for_new_value+ 1 :]
         )
 
         # MASH: and finally the new listed values list is written into the output file
