@@ -56,7 +56,9 @@ class ListedValueAdder(Adder):
         id_of_new_value = ""
 
         for i, row in enumerate(rows):
-            if row["feature_id"] != feature_id:  # MASH: throws away everything beyond the given feature ID
+            if (
+                row["feature_id"] != feature_id
+            ):  # MASH: throws away everything beyond the given feature ID
                 continue
 
             if row["en"] == new_value_en or row["ru"] == new_value_ru:
@@ -67,7 +69,9 @@ class ListedValueAdder(Adder):
             # Keep updating those with each row. This means that at the last row of the
             # feature they will reach the required values.
             index_of_last_row_for_given_feature = i
-            last_digit_of_value_id = int(row["id"].split(SEPARATOR)[-1])  # MASH: bites off the last number in value id
+            last_digit_of_value_id = int(
+                row["id"].split(SEPARATOR)[-1]
+            )  # MASH: bites off the last number in value id
             id_of_new_value = feature_id + SEPARATOR + str(last_digit_of_value_id + 1)
 
         row_with_new_value = [
@@ -109,8 +113,12 @@ class ListedValueAdder(Adder):
 
             for i, row in enumerate(rows):
                 if row["feature_id"] == feature_id and row["value_type"] == "custom":
-                    value_ru = row["value_ru"].strip()  # MASH: cut extra whitespaces in the beginning and in the end
-                    value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru  # MASH: drop period if exists
+                    value_ru = row[
+                        "value_ru"
+                    ].strip()  # MASH: cut extra whitespaces in the beginning and in the end
+                    value_ru = (
+                        value_ru[:-1] if value_ru.endswith(".") else value_ru
+                    )  # MASH: drop period if exists
 
                     new_value_with_variants: list[str] = (
                         [new_value_ru] + custom_values_to_rename
