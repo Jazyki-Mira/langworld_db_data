@@ -33,7 +33,9 @@ class ListedValueAdder(Adder):
         # MASH: this one creates an ID for the new value and add it to FLV (always at the end of its feature)
         # TODO: add possibility to insert new value after a given value
         id_of_new_value = self._add_to_inventory_of_listed_values(
-            feature_id=feature_id, new_value_en=new_value_en, new_value_ru=new_value_ru,
+            feature_id=feature_id,
+            new_value_en=new_value_en,
+            new_value_ru=new_value_ru,
             index_to_insert_after=index_to_insert_after,
         )
         # MASH: this one replaces custom values (if any were given) with the new listed one
@@ -65,7 +67,7 @@ class ListedValueAdder(Adder):
         # MASH: here we will be receiving the diapason of values of the given feature
         for i, row in enumerate(rows):
             if (
-                    row["feature_id"] != feature_id
+                row["feature_id"] != feature_id
             ):  # MASH: throws away everything beyond the given feature ID
                 continue
 
@@ -83,11 +85,10 @@ class ListedValueAdder(Adder):
             )  # MASH: bites off the last number in value id
             values_diapason.append([last_digit_of_value_id, i])
             # MASH: so initially this one is refreshed several times before the final variant
-        
+
         print(values_diapason)
 
-        if (type(index_to_insert_after) is int and
-                index_to_insert_after > last_digit_of_value_id):
+        if type(index_to_insert_after) is int and index_to_insert_after > last_digit_of_value_id:
             raise ListedValueAdderError(
                 f"The given ID {feature_id + str(index_to_insert_after)} exceeds the maximal ID {id_of_new_value}"
             )
@@ -121,9 +122,7 @@ class ListedValueAdder(Adder):
         # the former listed values list
 
         rows_with_new_value_inserted = (
-            rows[: row_for_new_value + 1]
-            + row_with_new_value
-            + rows[row_for_new_value+ 1 :]
+            rows[: row_for_new_value + 1] + row_with_new_value + rows[row_for_new_value + 1 :]
         )
 
         # MASH: and finally the new listed values list is written into the output file
