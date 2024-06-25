@@ -154,3 +154,17 @@ def test_add_listed_value(test_adder):
             output_file=file,
             gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION / file.name,
         )
+
+
+def test__add_after_a_value_that_exceeds_maximum(
+    test_adder
+):
+    with pytest.raises(
+            ListedValueAdderError, match="exceeds the maximal ID"
+    ):
+        test_adder.add_listed_value(
+            feature_id="A-2",
+            new_value_en="something",
+            new_value_ru="что-нибудь",
+            index_to_insert_after=16,
+        )

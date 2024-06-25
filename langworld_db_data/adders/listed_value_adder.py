@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 
 from langworld_db_data.adders.adder import Adder, AdderError
 from langworld_db_data.constants.literals import SEPARATOR
@@ -16,12 +16,15 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
+        index_to_insert_after: Union[int, str] = "last",
     ) -> None:
         """Adds listed value to the inventory and marks matching custom value
         in feature profiles as listed.  If one or more custom values
         in feature profiles were formulated differently but now
         have to be renamed to be the new `listed` value, these custom values
         can be passed as a list.
+        If no id to insert after is given, the new value will be put after
+        the last present value, else the new value will be put right after the given one.
         """
         # MASH: all new value properties must be given
         if not (feature_id and new_value_en and new_value_ru):
@@ -30,7 +33,8 @@ class ListedValueAdder(Adder):
         # MASH: this one creates an ID for the new value and add it to FLV (always at the end of its feature)
         # TODO: add possibility to insert new value after a given value
         id_of_new_value = self._add_to_inventory_of_listed_values(
-            feature_id=feature_id, new_value_en=new_value_en, new_value_ru=new_value_ru
+            feature_id=feature_id, new_value_en=new_value_en, new_value_ru=new_value_ru,
+            index_to_insert_after=index_to_insert_after,
         )
         # MASH: this one replaces custom values (if any were given) with the new listed one
         self._mark_value_as_listed_in_feature_profiles(
@@ -45,6 +49,7 @@ class ListedValueAdder(Adder):
         feature_id: str,
         new_value_en: str,
         new_value_ru: str,
+        index_to_insert_after: Union[int, str] = "last",
     ) -> str:
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
@@ -53,6 +58,7 @@ class ListedValueAdder(Adder):
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
         index_of_last_row_for_given_feature = 0
+        last_digit_of_value_id = 0
         id_of_new_value = ""
 
         for i, row in enumerate(rows):
@@ -69,10 +75,19 @@ class ListedValueAdder(Adder):
             # Keep updating those with each row. This means that at the last row of the
             # feature they will reach the required values.
             index_of_last_row_for_given_feature = i
+
             last_digit_of_value_id = int(
                 row["id"].split(SEPARATOR)[-1]
             )  # MASH: bites off the last number in value id
             id_of_new_value = feature_id + SEPARATOR + str(last_digit_of_value_id + 1)
+            # MASH: so initially this one is refreshed several times before the final variant
+        
+        print(index_to_insert_after)
+        if (type(index_to_insert_after) is int and
+                index_to_insert_after > last_digit_of_value_id):
+            raise ListedValueAdderError(
+                f"The given ID {feature_id + str(index_to_insert_after)} exceeds the maximal ID {id_of_new_value}"
+            )
 
         row_with_new_value = [
             {
