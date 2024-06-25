@@ -23,12 +23,16 @@ class ListedValueAdder(Adder):
         have to be renamed to be the new `listed` value, these custom values
         can be passed as a list.
         """
+        # MASH: all new value properties must be given
         if not (feature_id and new_value_en and new_value_ru):
             raise ListedValueAdderError("None of the passed strings can be empty")
 
+        # MASH: this one creates an ID for the new value and add it to FLV (always at the end of its feature)
+        # TODO: add possibility to insert new value after a given value
         id_of_new_value = self._add_to_inventory_of_listed_values(
             feature_id=feature_id, new_value_en=new_value_en, new_value_ru=new_value_ru
         )
+        # MASH: this one replaces custom values (if any were given) with the new listed one
         self._mark_value_as_listed_in_feature_profiles(
             feature_id=feature_id,
             new_value_id=id_of_new_value,
@@ -44,6 +48,7 @@ class ListedValueAdder(Adder):
     ) -> str:
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
+        # MASH: check if feature ID exists
         if not [r for r in rows if r["feature_id"] == feature_id]:
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
@@ -51,18 +56,18 @@ class ListedValueAdder(Adder):
         id_of_new_value = ""
 
         for i, row in enumerate(rows):
-            if row["feature_id"] != feature_id:
+            if row["feature_id"] != feature_id:  # MASH: throws away everything beyond the given feature ID
                 continue
 
             if row["en"] == new_value_en or row["ru"] == new_value_ru:
                 raise ListedValueAdderError(
                     f"Row {row} already contains value you are trying to add"
-                )
+                )  # MASH: this one appears if some existing value names are passed
 
             # Keep updating those with each row. This means that at the last row of the
             # feature they will reach the required values.
             index_of_last_row_for_given_feature = i
-            last_digit_of_value_id = int(row["id"].split(SEPARATOR)[-1])
+            last_digit_of_value_id = int(row["id"].split(SEPARATOR)[-1])  # MASH: bites off the last number in value id
             id_of_new_value = feature_id + SEPARATOR + str(last_digit_of_value_id + 1)
 
         row_with_new_value = [
@@ -72,7 +77,8 @@ class ListedValueAdder(Adder):
                 "en": new_value_en[0].upper() + new_value_en[1:],
                 "ru": new_value_ru[0].upper() + new_value_ru[1:],
             }
-        ]
+        ]  # MASH: this dict is wrapped into list because in the next block it is concatenated with slices of
+        # the former listed values list
 
         rows_with_new_value_inserted = (
             rows[: index_of_last_row_for_given_feature + 1]
@@ -80,6 +86,7 @@ class ListedValueAdder(Adder):
             + rows[index_of_last_row_for_given_feature + 1 :]
         )
 
+        # MASH: and finally the new listed values list is written into the output file
         write_csv(
             rows_with_new_value_inserted,
             path_to_file=self.output_file_with_listed_values,
@@ -96,14 +103,14 @@ class ListedValueAdder(Adder):
         new_value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
     ) -> None:
-        for file in self.input_feature_profiles:
+        for file in self.input_feature_profiles:  # MASH: for every Path in the list
             is_changed = False
-            rows = read_dicts_from_csv(file)
+            rows = read_dicts_from_csv(file)  # MASH: here we get info from the Path
 
             for i, row in enumerate(rows):
                 if row["feature_id"] == feature_id and row["value_type"] == "custom":
-                    value_ru = row["value_ru"].strip()
-                    value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
+                    value_ru = row["value_ru"].strip()  # MASH: cut extra whitespaces in the beginning and in the end
+                    value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru  # MASH: drop period if exists
 
                     new_value_with_variants: list[str] = (
                         [new_value_ru] + custom_values_to_rename
@@ -133,3 +140,5 @@ class ListedValueAdder(Adder):
                     overwrite=True,
                     delimiter=",",
                 )
+
+    # TODO: so now I should write a method that updates IDs of values in profiles after a new value was added to FLV
