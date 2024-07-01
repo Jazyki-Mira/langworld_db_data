@@ -54,9 +54,9 @@ class ListedValueAdder(Adder):
         index_to_insert_after: Union[int, Literal["put as first", "last"]] = "last",
     ) -> str:
         """
-            If a value index to insert after is given, the new value will be put after it.
-            To append the new value to the end of the given feature, leave index_to_insert_after as default.
-            To insert the new value at the beginning, make index_to_insert_after = 'put as first'.
+        If a value index to insert after is given, the new value will be put after it.
+        To append the new value to the end of the given feature, leave index_to_insert_after as default.
+        To insert the new value at the beginning, make index_to_insert_after = 'put as first'.
         """
 
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
