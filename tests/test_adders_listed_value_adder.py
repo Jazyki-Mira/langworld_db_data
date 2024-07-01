@@ -9,11 +9,14 @@ from tests.paths import (
     OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES,
 )
 
-GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION_TO_THE_END_OF_VALUE = (
+GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_listed_value_adder.csv"
 )
-GS_FILE_WITH_LISTED_VALUES_AFTER_INSERTION_AFTER_NON_FINAL_VALUE = (
+GS_FILE_WITH_LISTED_VALUES_INSERTION_AFTER_NON_FINAL_VALUE = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_after_non_final_value.csv"
+)
+GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_FIRST = (
+    DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_as_first.csv"
 )
 GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION = (
     OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / "gold_standard"
@@ -99,7 +102,7 @@ def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION_TO_THE_END_OF_VALUE,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
     )
 
 
@@ -117,7 +120,7 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_custom_values(tes
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION_TO_THE_END_OF_VALUE,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
     )
 
     for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
@@ -148,7 +151,21 @@ def test__test__add_to_inventory_of_listed_values_insert_after_non_final_value(t
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_AFTER_INSERTION_AFTER_NON_FINAL_VALUE,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_INSERTION_AFTER_NON_FINAL_VALUE,
+    )
+
+
+def test__test__add_to_inventory_of_listed_values_put_as_first(test_adder):
+    test_adder.add_listed_value(
+        feature_id="A-3",
+        new_value_en="Central, mid-back and back",
+        new_value_ru="Средний, задне-средний и задний",
+        index_to_insert_after="put as first",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_FIRST,
     )
 
 
