@@ -61,7 +61,6 @@ class ListedValueAdder(Adder):
 
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
-        # MASH: check if feature ID exists
         if not [r for r in rows if r["feature_id"] == feature_id]:
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
@@ -69,24 +68,20 @@ class ListedValueAdder(Adder):
         id_of_new_value = ""
         values_diapason = []
 
-        # MASH: here we will be receiving the diapason of values of the given feature
         for i, row in enumerate(rows):
             if (
                 row["feature_id"] != feature_id
-            ):  # MASH: throws away everything beyond the given feature ID
+            ):
                 continue
 
             if row["en"] == new_value_en or row["ru"] == new_value_ru:
                 raise ListedValueAdderError(
                     f"Row {row} already contains value you are trying to add"
-                )  # MASH: this one appears if some existing value names are passed
-
-            # Keep updating those with each row. This means that at the last row of the
-            # feature they will reach the required values.
+                )
 
             last_digit_of_value_id = int(
                 row["id"].split(SEPARATOR)[-1]
-            )  # MASH: bites off the last number in value id
+            )
             values_diapason.append([last_digit_of_value_id, i])
 
         if type(index_to_insert_after) is int and index_to_insert_after > last_digit_of_value_id:
@@ -94,28 +89,12 @@ class ListedValueAdder(Adder):
                 f"The given ID {feature_id + str(index_to_insert_after)} exceeds the maximal ID {id_of_new_value}"
             )
 
-        index_of_new_value = values_diapason[-1][0]
-        row_of_new_value = values_diapason[-1][1]
+        index_of_new_value = 0
+        row_of_new_value = 0
+        id_of_new_value = ""
         rows_to_enhance_value_id = []
-        id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
 
-        if index_to_insert_after == "put as first":
-            index_to_insert_after = 0
-            index_of_new_value = 1
-            row_of_new_value = values_diapason[0][1] - 1
-            for index_row in values_diapason:
-                if index_row[0] < index_to_insert_after:
-                    continue
-                if index_row[0] > index_to_insert_after:
-                    index_row[0] += 1
-                    index_row[1] += 1
-                    continue
-            print(values_diapason)
-            print(index_of_new_value)
-            id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value)
-            print(id_of_new_value)
-
-        if index_to_insert_after not in [0, "last"]:
+        if type(index_to_insert_after) is int:
             for index_row in values_diapason:
                 if index_row[0] < index_to_insert_after:
                     continue
@@ -128,13 +107,38 @@ class ListedValueAdder(Adder):
 
             id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
 
-        if type(index_to_insert_after) is int:
-            for index_row in values_diapason:
-                if index_row[0] <= index_to_insert_after:
-                    continue
-                rows_to_enhance_value_id.append(index_row[1])
+            index_to_insert_after = int(index_to_insert_after)
+            # Without this line, the next function gives warning about variable type which is Union here
+            # but can only be int in the inner function
+            rows_to_enhance_value_id = self._get_list_of_rows_where_value_ids_must_be_enhanced(
+                values_diapason=values_diapason,
+                index_to_insert_after=index_to_insert_after,
+            )
 
-            print(rows_to_enhance_value_id)
+        elif index_to_insert_after == "put as first":
+            index_of_new_value = 1
+            row_of_new_value = values_diapason[0][1] - 1
+            index_to_insert_after = 0
+            for index_row in values_diapason:
+                if index_row[0] < index_to_insert_after:
+                    continue
+                if index_row[0] > index_to_insert_after:
+                    index_row[0] += 1
+                    index_row[1] += 1
+                    continue
+
+            id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value)
+
+            rows_to_enhance_value_id = self._get_list_of_rows_where_value_ids_must_be_enhanced(
+                values_diapason=values_diapason,
+                index_to_insert_after=index_to_insert_after,
+            )
+
+        elif index_to_insert_after == "last":
+            index_of_new_value = values_diapason[-1][0]
+            row_of_new_value = values_diapason[-1][1]
+            id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
+            rows_to_enhance_value_id = []
 
         for i, item in enumerate(values_diapason):
             value_name = ""
@@ -150,8 +154,7 @@ class ListedValueAdder(Adder):
                 "en": new_value_en[0].upper() + new_value_en[1:],
                 "ru": new_value_ru[0].upper() + new_value_ru[1:],
             }
-        ]  # MASH: this dict is wrapped into list because in the next block it is concatenated with slices of
-        # the former listed values list
+        ]
         print(row_with_new_value)
 
         for i, row in enumerate(rows):
@@ -168,7 +171,6 @@ class ListedValueAdder(Adder):
             rows[: row_of_new_value + 1] + row_with_new_value + rows[row_of_new_value + 1 :]
         )
 
-        # MASH: and finally the new listed values list is written into the output file
         write_csv(
             rows_with_new_value_inserted,
             path_to_file=self.output_file_with_listed_values,
@@ -177,6 +179,18 @@ class ListedValueAdder(Adder):
         )
 
         return id_of_new_value
+
+    @staticmethod
+    def _get_list_of_rows_where_value_ids_must_be_enhanced(
+        values_diapason: list,
+        index_to_insert_after: int,
+    ):
+        rows_to_enhance_value_id = []
+        for index_row in values_diapason:
+            if index_row[0] <= index_to_insert_after:
+                continue
+            rows_to_enhance_value_id.append(index_row[1])
+        return rows_to_enhance_value_id
 
     def _mark_value_as_listed_in_feature_profiles(
         self,
