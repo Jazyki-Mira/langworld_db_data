@@ -59,7 +59,6 @@ class ListedValueAdder(Adder):
         if not [r for r in rows if r["feature_id"] == feature_id]:
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
-        index_of_last_row_for_given_feature = 0
         last_digit_of_value_id = 0
         id_of_new_value = ""
         values_diapason = []
@@ -78,15 +77,11 @@ class ListedValueAdder(Adder):
 
             # Keep updating those with each row. This means that at the last row of the
             # feature they will reach the required values.
-            # index_of_last_row_for_given_feature = i
 
             last_digit_of_value_id = int(
                 row["id"].split(SEPARATOR)[-1]
             )  # MASH: bites off the last number in value id
             values_diapason.append([last_digit_of_value_id, i])
-            # MASH: so initially this one is refreshed several times before the final variant
-
-        print(values_diapason)
 
         if type(index_to_insert_after) is int and index_to_insert_after > last_digit_of_value_id:
             raise ListedValueAdderError(
@@ -94,20 +89,35 @@ class ListedValueAdder(Adder):
             )
 
         index_of_new_value = values_diapason[-1][0]
-        row_for_new_value = values_diapason[-1][1]
-        # MASH: values_diapason lacks opacity
+        row_of_new_value = values_diapason[-1][1]
+        rows_to_enhance_value_id = []
 
         if index_to_insert_after != "last":
             for index_row in values_diapason:
-                if index_row[0] != index_to_insert_after:
+                if index_row[0] < index_to_insert_after:
                     continue
                 if index_row[0] > index_to_insert_after:
                     index_row[0] += 1
                     index_row[1] += 1
-                row_for_new_value = index_row[0]
-                index_of_new_value = index_row[1]
-            print(row_for_new_value)
-            print(index_of_new_value)
+                    continue
+                index_of_new_value = index_row[0]
+                row_of_new_value = index_row[1]
+
+            for index_row in values_diapason:
+                if index_row[0] <= index_to_insert_after:
+                    continue
+                rows_to_enhance_value_id.append(index_row[1])
+
+            print(rows_to_enhance_value_id)
+
+        for i, item in enumerate(values_diapason):
+            value_name = ""
+            for j in range(len(rows)):
+                if j + 1 == item[1]:
+                    value_name = rows[j]["ru"]
+            print(f"{item[0]}, {value_name}, {item[1]}")
+        print("New value:")
+        print(f"{index_of_new_value + 1}, {new_value_ru}, {row_of_new_value + 1}")
 
         id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
 
@@ -120,9 +130,20 @@ class ListedValueAdder(Adder):
             }
         ]  # MASH: this dict is wrapped into list because in the next block it is concatenated with slices of
         # the former listed values list
+        print(row_with_new_value)
+
+        for i, row in enumerate(rows):
+            if i + 1 not in rows_to_enhance_value_id:
+                continue
+            value_id_to_enhance = row["id"]
+            value_id_to_enhance_split = value_id_to_enhance.split("-")
+            row["id"] = (
+                f"{value_id_to_enhance_split[0]}-{value_id_to_enhance_split[1]}"
+                f"-{int(value_id_to_enhance_split[2]) + 1}"
+            )
 
         rows_with_new_value_inserted = (
-            rows[: row_for_new_value + 1] + row_with_new_value + rows[row_for_new_value + 1 :]
+            rows[: row_of_new_value + 1] + row_with_new_value + rows[row_of_new_value + 1 :]
         )
 
         # MASH: and finally the new listed values list is written into the output file
@@ -184,4 +205,4 @@ class ListedValueAdder(Adder):
                     delimiter=",",
                 )
 
-    # TODO: so now I should write a method that updates IDs of values in profiles after a new value was added to FLV
+    # TODO: so now a method must be written that updates IDs of values in profiles after a new value was added to FLV
