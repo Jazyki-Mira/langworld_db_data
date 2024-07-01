@@ -13,7 +13,8 @@ GS_FILE_WITH_LISTED_VALUES_AFTER_ADDITION_TO_THE_END_OF_VALUE = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_listed_value_adder.csv"
 )
 GS_FILE_WITH_LISTED_VALUES_AFTER_INSERTION_AFTER_NON_FINAL_VALUE = (
-    DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_after_non_final_value.csv"
+    DIR_WITH_ADDERS_TEST_FILES
+    / "features_listed_values_gold_standard_for_insertion_after_non_final_value.csv"
 )
 GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION = (
     OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / "gold_standard"
