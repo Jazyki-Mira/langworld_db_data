@@ -100,21 +100,16 @@ class ListedValueAdder(Adder):
         rows_to_enhance_value_id = []
 
         if type(index_to_insert_after) is int:
-            for item in values_diapason:
-                if item["index"] < index_to_insert_after:
-                    continue
-                if item["index"] > index_to_insert_after:
-                    item["index"] += 1
-                    item["row"] += 1
-                    continue
-                index_of_new_value = item["index"]
-                row_of_new_value = item["row"]
+            index_to_insert_after = int(index_to_insert_after)
+            # Without this line, the next functions give warning about variable type which is Union in this function
+            # but can only be int in the inner functions
+            values_diapason, index_of_new_value, row_of_new_value = self._update_values_diapason(
+                values_diapason=values_diapason,
+                index_to_insert_after=index_to_insert_after,
+            )
 
             id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
 
-            index_to_insert_after = int(index_to_insert_after)
-            # Without this line, the next function gives warning about variable type which is Union here
-            # but can only be int in the inner function
             rows_to_enhance_value_id = self._get_list_of_rows_where_value_ids_must_be_enhanced(
                 values_diapason=values_diapason,
                 index_to_insert_after=index_to_insert_after,
@@ -124,13 +119,10 @@ class ListedValueAdder(Adder):
             index_of_new_value = 1
             row_of_new_value = values_diapason[0]["row"] - 1
             index_to_insert_after = 0
-            for item in values_diapason:
-                if item["index"] < index_to_insert_after:
-                    continue
-                if item["index"] > index_to_insert_after:
-                    item["index"] += 1
-                    item["row"] += 1
-                    continue
+            values_diapason, _, _ = self._update_values_diapason(
+                values_diapason=values_diapason,
+                index_to_insert_after=index_to_insert_after,
+            )
 
             id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value)
 
@@ -176,6 +168,24 @@ class ListedValueAdder(Adder):
         )
 
         return id_of_new_value
+
+    @staticmethod
+    def _update_values_diapason(
+        values_diapason: list,
+        index_to_insert_after: int,
+    ) -> tuple[list, int, int]:
+        index_of_new_value = 0
+        row_of_new_value = 0
+        for item in values_diapason:
+            if item["index"] < index_to_insert_after:
+                continue
+            if item["index"] > index_to_insert_after:
+                item["index"] += 1
+                item["row"] += 1
+                continue
+            index_of_new_value = item["index"]
+            row_of_new_value = item["row"]
+        return values_diapason, index_of_new_value, row_of_new_value
 
     @staticmethod
     def _get_list_of_rows_where_value_ids_must_be_enhanced(
