@@ -69,9 +69,7 @@ class ListedValueAdder(Adder):
         values_diapason = []
 
         for i, row in enumerate(rows):
-            if (
-                row["feature_id"] != feature_id
-            ):
+            if row["feature_id"] != feature_id:
                 continue
 
             if row["en"] == new_value_en or row["ru"] == new_value_ru:
@@ -79,9 +77,7 @@ class ListedValueAdder(Adder):
                     f"Row {row} already contains value you are trying to add"
                 )
 
-            last_digit_of_value_id = int(
-                row["id"].split(SEPARATOR)[-1]
-            )
+            last_digit_of_value_id = int(row["id"].split(SEPARATOR)[-1])
             values_diapason.append(
                 {
                     "index": last_digit_of_value_id,
