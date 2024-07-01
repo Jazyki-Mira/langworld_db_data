@@ -1,4 +1,4 @@
-from typing import Optional, Union
+from typing import Literal, Optional, Union
 
 from langworld_db_data.adders.adder import Adder, AdderError
 from langworld_db_data.constants.literals import SEPARATOR
@@ -23,7 +23,7 @@ class ListedValueAdder(Adder):
         in feature profiles were formulated differently but now
         have to be renamed to be the new `listed` value, these custom values
         can be passed as a list.
-        If no id to insert after is given, the new value will be put after
+        If no id to insert after is given, the new value will be appended after
         the last present value, else the new value will be put right after the given one.
         """
         # MASH: all new value properties must be given
@@ -51,8 +51,14 @@ class ListedValueAdder(Adder):
         feature_id: str,
         new_value_en: str,
         new_value_ru: str,
-        index_to_insert_after: Union[int, str] = "last",
+        index_to_insert_after: Union[int, Literal["put as first", "last"]] = "last",
     ) -> str:
+        """
+            If a value index to insert after is given, the new value will be put after it.
+            To append the new value to the end of the given feature, leave index_to_insert_after as default.
+            To insert the new value at the beginning, make index_to_insert_after = 'put as first'.
+        """
+
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
         # MASH: check if feature ID exists
@@ -91,8 +97,25 @@ class ListedValueAdder(Adder):
         index_of_new_value = values_diapason[-1][0]
         row_of_new_value = values_diapason[-1][1]
         rows_to_enhance_value_id = []
+        id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
 
-        if index_to_insert_after != "last":
+        if index_to_insert_after == "put as first":
+            index_to_insert_after = 0
+            index_of_new_value = 1
+            row_of_new_value = values_diapason[0][1] - 1
+            for index_row in values_diapason:
+                if index_row[0] < index_to_insert_after:
+                    continue
+                if index_row[0] > index_to_insert_after:
+                    index_row[0] += 1
+                    index_row[1] += 1
+                    continue
+            print(values_diapason)
+            print(index_of_new_value)
+            id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value)
+            print(id_of_new_value)
+
+        if index_to_insert_after not in [0, "last"]:
             for index_row in values_diapason:
                 if index_row[0] < index_to_insert_after:
                     continue
@@ -103,6 +126,9 @@ class ListedValueAdder(Adder):
                 index_of_new_value = index_row[0]
                 row_of_new_value = index_row[1]
 
+            id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
+
+        if type(index_to_insert_after) is int:
             for index_row in values_diapason:
                 if index_row[0] <= index_to_insert_after:
                     continue
@@ -116,10 +142,6 @@ class ListedValueAdder(Adder):
                 if j + 1 == item[1]:
                     value_name = rows[j]["ru"]
             print(f"{item[0]}, {value_name}, {item[1]}")
-        print("New value:")
-        print(f"{index_of_new_value + 1}, {new_value_ru}, {row_of_new_value + 1}")
-
-        id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
 
         row_with_new_value = [
             {
