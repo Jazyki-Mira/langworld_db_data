@@ -156,7 +156,7 @@ def test__test__add_to_inventory_of_listed_values_insert_after_non_final_value(t
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
         gold_standard_file=GS_FILE_WITH_LISTED_VALUES_INSERTION_AFTER_NON_FINAL_VALUE,
-        unlink_if_successful=False
+        unlink_if_successful=False,
     )
 
 
