@@ -82,7 +82,12 @@ class ListedValueAdder(Adder):
             last_digit_of_value_id = int(
                 row["id"].split(SEPARATOR)[-1]
             )
-            values_diapason.append([last_digit_of_value_id, i])
+            values_diapason.append(
+                {
+                    "index": last_digit_of_value_id,
+                    "row": i,
+                }
+            )
 
         if type(index_to_insert_after) is int and index_to_insert_after > last_digit_of_value_id:
             raise ListedValueAdderError(
@@ -95,15 +100,15 @@ class ListedValueAdder(Adder):
         rows_to_enhance_value_id = []
 
         if type(index_to_insert_after) is int:
-            for index_row in values_diapason:
-                if index_row[0] < index_to_insert_after:
+            for item in values_diapason:
+                if item["index"] < index_to_insert_after:
                     continue
-                if index_row[0] > index_to_insert_after:
-                    index_row[0] += 1
-                    index_row[1] += 1
+                if item["index"] > index_to_insert_after:
+                    item["index"] += 1
+                    item["row"] += 1
                     continue
-                index_of_new_value = index_row[0]
-                row_of_new_value = index_row[1]
+                index_of_new_value = item["index"]
+                row_of_new_value = item["row"]
 
             id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
 
@@ -117,14 +122,14 @@ class ListedValueAdder(Adder):
 
         elif index_to_insert_after == "put as first":
             index_of_new_value = 1
-            row_of_new_value = values_diapason[0][1] - 1
+            row_of_new_value = values_diapason[0]["row"] - 1
             index_to_insert_after = 0
-            for index_row in values_diapason:
-                if index_row[0] < index_to_insert_after:
+            for item in values_diapason:
+                if item["index"] < index_to_insert_after:
                     continue
-                if index_row[0] > index_to_insert_after:
-                    index_row[0] += 1
-                    index_row[1] += 1
+                if item["index"] > index_to_insert_after:
+                    item["index"] += 1
+                    item["row"] += 1
                     continue
 
             id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value)
@@ -135,17 +140,10 @@ class ListedValueAdder(Adder):
             )
 
         elif index_to_insert_after == "last":
-            index_of_new_value = values_diapason[-1][0]
-            row_of_new_value = values_diapason[-1][1]
+            index_of_new_value = values_diapason[-1]["index"]
+            row_of_new_value = values_diapason[-1]["row"]
             id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
             rows_to_enhance_value_id = []
-
-        for i, item in enumerate(values_diapason):
-            value_name = ""
-            for j in range(len(rows)):
-                if j + 1 == item[1]:
-                    value_name = rows[j]["ru"]
-            print(f"{item[0]}, {value_name}, {item[1]}")
 
         row_with_new_value = [
             {
@@ -155,7 +153,6 @@ class ListedValueAdder(Adder):
                 "ru": new_value_ru[0].upper() + new_value_ru[1:],
             }
         ]
-        print(row_with_new_value)
 
         for i, row in enumerate(rows):
             if i + 1 not in rows_to_enhance_value_id:
@@ -186,10 +183,10 @@ class ListedValueAdder(Adder):
         index_to_insert_after: int,
     ):
         rows_to_enhance_value_id = []
-        for index_row in values_diapason:
-            if index_row[0] <= index_to_insert_after:
+        for item in values_diapason:
+            if item["index"] <= index_to_insert_after:
                 continue
-            rows_to_enhance_value_id.append(index_row[1])
+            rows_to_enhance_value_id.append(item["row"])
         return rows_to_enhance_value_id
 
     def _mark_value_as_listed_in_feature_profiles(
