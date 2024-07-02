@@ -87,7 +87,7 @@ def test__add_after_value_that_exceeds_maximum(test_adder):
             feature_id="A-2",
             new_value_en="something",
             new_value_ru="что-нибудь",
-            index_to_insert_after=16,
+            index_to_assign=16,
         )
 
 
@@ -147,9 +147,9 @@ def test__test__add_to_inventory_of_listed_values_insert_after_non_final_value(t
         feature_id="A-3",
         new_value_en="Central, mid-back and back",
         new_value_ru="Средний, задне-средний и задний",
-        index_to_insert_after=3,
+        index_to_assign=3,
     )
-    assert new_value_id == "A-3-4"
+    assert new_value_id == "A-3-3"
 
     assert test_adder.output_file_with_listed_values.exists()
 
@@ -165,7 +165,7 @@ def test__test__add_to_inventory_of_listed_values_put_as_first(test_adder):
         feature_id="A-3",
         new_value_en="Central, mid-back and back",
         new_value_ru="Средний, задне-средний и задний",
-        index_to_insert_after="put as first",
+        index_to_assign=0,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
