@@ -104,7 +104,7 @@ class ListedValueAdder(Adder):
                 index_to_insert_after=index_to_insert_after,
             )
 
-            id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
+            id_of_new_value = f"{feature_id}{SEPARATOR}{index_of_new_value + 1}"
 
             rows_to_enhance_value_id = self._get_list_of_rows_where_value_ids_must_be_enhanced(
                 values_diapason=values_diapason,
@@ -120,7 +120,7 @@ class ListedValueAdder(Adder):
                 index_to_insert_after=index_to_insert_after,
             )
 
-            id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value)
+            id_of_new_value = f"{feature_id}{SEPARATOR}{index_of_new_value}"
 
             rows_to_enhance_value_id = self._get_list_of_rows_where_value_ids_must_be_enhanced(
                 values_diapason=values_diapason,
@@ -130,7 +130,7 @@ class ListedValueAdder(Adder):
         elif index_to_insert_after == "last":
             index_of_new_value = values_diapason[-1]["index"]
             row_of_new_value = values_diapason[-1]["row"]
-            id_of_new_value = feature_id + SEPARATOR + str(index_of_new_value + 1)
+            id_of_new_value = f"{feature_id}{SEPARATOR}{index_of_new_value + 1}"
             rows_to_enhance_value_id = []
 
         row_with_new_value = [
@@ -148,8 +148,8 @@ class ListedValueAdder(Adder):
             value_id_to_enhance = row["id"]
             value_id_to_enhance_split = value_id_to_enhance.split("-")
             row["id"] = (
-                f"{value_id_to_enhance_split[0]}-{value_id_to_enhance_split[1]}"
-                f"-{int(value_id_to_enhance_split[2]) + 1}"
+                f"{value_id_to_enhance_split[0]}-{value_id_to_enhance_split[1]}-"
+                f"{int(value_id_to_enhance_split[2]) + 1}"
             )
 
         rows_with_new_value_inserted = (
