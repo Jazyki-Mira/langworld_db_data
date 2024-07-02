@@ -111,9 +111,11 @@ class ListedValueAdder(Adder):
                         index_to_assign=index_to_assign,
                     )
                 )
-                rows_to_increment_value_id = self._get_list_of_rows_where_value_ids_must_be_incremented(
-                    values_diapason=output_values_diapason,
-                    index_to_assign=index_to_assign,
+                rows_to_increment_value_id = (
+                    self._get_list_of_rows_where_value_ids_must_be_incremented(
+                        values_diapason=output_values_diapason,
+                        index_to_assign=index_to_assign,
+                    )
                 )
 
             id_of_new_value = f"{feature_id}{SEPARATOR}{index_of_new_value}"
@@ -123,16 +125,20 @@ class ListedValueAdder(Adder):
             index_of_new_value = 1
             row_of_new_value = input_values_diapason[0]["row"] - 1
             index_to_assign = 0
-            output_values_diapason, _, _ = self.update_values_diapason_and_get_new_value_properties(
-                values_diapason=input_values_diapason,
-                index_to_assign=index_to_assign,
+            output_values_diapason, _, _ = (
+                self.update_values_diapason_and_get_new_value_properties(
+                    values_diapason=input_values_diapason,
+                    index_to_assign=index_to_assign,
+                )
             )
 
             id_of_new_value = f"{feature_id}{SEPARATOR}{index_of_new_value}"
 
-            rows_to_increment_value_id = self._get_list_of_rows_where_value_ids_must_be_incremented(
-                values_diapason=output_values_diapason,
-                index_to_assign=index_to_assign,
+            rows_to_increment_value_id = (
+                self._get_list_of_rows_where_value_ids_must_be_incremented(
+                    values_diapason=output_values_diapason,
+                    index_to_assign=index_to_assign,
+                )
             )
 
         row_with_new_value = [
@@ -155,7 +161,7 @@ class ListedValueAdder(Adder):
             )
 
         rows_with_new_value_inserted = (
-            rows[: row_of_new_value] + row_with_new_value + rows[row_of_new_value :]
+            rows[:row_of_new_value] + row_with_new_value + rows[row_of_new_value:]
         )
 
         write_csv(
