@@ -5,4 +5,6 @@ from typing import Literal
 ValueType = Literal["listed", "custom", "not_stated", "explicit_gap", "not_applicable"]
 
 AUX_ROW_MARKER = "_aux"
+
 SEPARATOR = "-"
+ATOMIC_VALUE_SEPARATOR = "&"
