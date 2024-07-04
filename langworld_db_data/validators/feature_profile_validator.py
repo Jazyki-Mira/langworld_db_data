@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 
-from langworld_db_data.constants.literals import AUX_ROW_MARKER, SEPARATOR
+from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR, AUX_ROW_MARKER, SEPARATOR
 from langworld_db_data.constants.paths import (
     FEATURE_PROFILES_DIR,
     FILE_WITH_LISTED_VALUES,
@@ -163,7 +163,8 @@ class FeatureProfileValidator(Validator):
                 if self.feature_is_multiselect_for_feature_id[feature_id] == "1":
                     # validate each pair of value ID and value name
                     for value_id, value_ru in zip(
-                        data_row.value_id.split("&"), data_row.value_ru.split("&")
+                        data_row.value_id.split(ATOMIC_VALUE_SEPARATOR),
+                        data_row.value_ru.split(ATOMIC_VALUE_SEPARATOR),
                     ):
                         self._check_listed_value_id_is_valid_and_matches_value_name(
                             feature_id=feature_id,
