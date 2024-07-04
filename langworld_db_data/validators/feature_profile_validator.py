@@ -1,7 +1,11 @@
 import re
 from pathlib import Path
 
-from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR, AUX_ROW_MARKER, SEPARATOR
+from langworld_db_data.constants.literals import (
+    ATOMIC_VALUE_SEPARATOR,
+    AUX_ROW_MARKER,
+    ID_SEPARATOR,
+)
 from langworld_db_data.constants.paths import (
     FEATURE_PROFILES_DIR,
     FILE_WITH_LISTED_VALUES,
@@ -235,7 +239,7 @@ class FeatureProfileValidator(Validator):
         ]:
             # get ID of feature that may contain a trigger value for feature being inspected
             # (produce "A-1" from "A-1-1")
-            trigger_feature_id = SEPARATOR.join(n_a_trigger_value_id.split(SEPARATOR)[:-1])
+            trigger_feature_id = ID_SEPARATOR.join(n_a_trigger_value_id.split(ID_SEPARATOR)[:-1])
             value_of_trigger_feature = profile[trigger_feature_id]
 
             if value_of_trigger_feature.value_id == n_a_trigger_value_id:
