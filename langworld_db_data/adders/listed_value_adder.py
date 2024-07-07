@@ -1,7 +1,7 @@
 from typing import Optional
 
 from langworld_db_data.adders.adder import Adder, AdderError
-from langworld_db_data.constants.literals import SEPARATOR
+from langworld_db_data.constants.literals import ID_SEPARATOR
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
 
@@ -62,8 +62,8 @@ class ListedValueAdder(Adder):
             # Keep updating those with each row. This means that at the last row of the
             # feature they will reach the required values.
             index_of_last_row_for_given_feature = i
-            last_digit_of_value_id = int(row["id"].split(SEPARATOR)[-1])
-            id_of_new_value = feature_id + SEPARATOR + str(last_digit_of_value_id + 1)
+            last_digit_of_value_id = int(row["id"].split(ID_SEPARATOR)[-1])
+            id_of_new_value = feature_id + ID_SEPARATOR + str(last_digit_of_value_id + 1)
 
         row_with_new_value = [
             {

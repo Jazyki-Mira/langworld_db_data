@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from langworld_db_data.constants.literals import ID_SEPARATOR
 from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT,
     DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_FEATURE,
@@ -74,8 +75,8 @@ class CustomValueLister(AbstractValueLister):
         rows_sorted_by_feature = sorted(
             rows_with_custom_values,
             key=lambda row: (
-                row[1].split("-")[0],  # feature letter
-                int(row[1].split("-")[1]),  # feature number
+                row[1].split(ID_SEPARATOR)[0],  # feature letter
+                int(row[1].split(ID_SEPARATOR)[1]),  # feature number
                 row[2],
             ),
         )

@@ -2,6 +2,7 @@ from pathlib import Path
 
 from pycldf import StructureDataset
 
+from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR
 from langworld_db_data.constants.paths import (
     CLDF_DIR,
     FEATURE_PROFILES_DIR,
@@ -104,8 +105,8 @@ class CLDFDatasetWriter:
                     and self.is_multiselect_for_feature_id[relevant_row["feature_id"]] == "1"
                 ):
                     for value_id, value_ru in zip(
-                        relevant_row["value_id"].split("&"),
-                        relevant_row["value_ru"].split("&"),
+                        relevant_row["value_id"].split(ATOMIC_VALUE_SEPARATOR),
+                        relevant_row["value_ru"].split(ATOMIC_VALUE_SEPARATOR),
                     ):
                         value_table_rows.append(
                             {
