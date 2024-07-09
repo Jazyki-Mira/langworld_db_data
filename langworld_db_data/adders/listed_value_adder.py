@@ -90,15 +90,11 @@ class ListedValueAdder(Adder):
                 f"The given ID {feature_id + str(index_to_assign)} exceeds the maximal ID {id_of_new_value}"
             )
 
-        index_of_new_value = 0
         row_of_new_value = 0
         id_of_new_value = ""
         rows_to_increment_value_id = []
 
         if type(index_to_assign) is int:
-            index_to_assign = int(index_to_assign)
-            # Without this line, the next functions give warning about variable type which is Union in this function
-            # but can only be int in the inner functions
             if index_to_assign == -1:
                 output_values_diapason = input_values_diapason
                 index_of_new_value = output_values_diapason[-1]["index"] + 1
@@ -106,7 +102,7 @@ class ListedValueAdder(Adder):
                 rows_to_increment_value_id = []
             else:
                 output_values_diapason, index_of_new_value, row_of_new_value = (
-                    self.update_values_diapason_and_get_new_value_properties(
+                    self._update_values_diapason_and_get_new_value_properties(
                         values_diapason=input_values_diapason,
                         index_to_assign=index_to_assign,
                     )
@@ -126,7 +122,7 @@ class ListedValueAdder(Adder):
             row_of_new_value = input_values_diapason[0]["row"] - 1
             index_to_assign = 0
             output_values_diapason, _, _ = (
-                self.update_values_diapason_and_get_new_value_properties(
+                self._update_values_diapason_and_get_new_value_properties(
                     values_diapason=input_values_diapason,
                     index_to_assign=index_to_assign,
                 )
@@ -174,7 +170,7 @@ class ListedValueAdder(Adder):
         return id_of_new_value
 
     @staticmethod
-    def update_values_diapason_and_get_new_value_properties(
+    def _update_values_diapason_and_get_new_value_properties(
         values_diapason: list,
         index_to_assign: int,
     ) -> tuple[list, int, int]:
