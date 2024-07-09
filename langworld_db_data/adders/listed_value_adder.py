@@ -51,7 +51,7 @@ class ListedValueAdder(Adder):
         feature_id: str,
         new_value_en: str,
         new_value_ru: str,
-        index_to_assign: Union[int, Literal["put as first", "last"]] = -1,
+        index_to_assign: int = -1,
     ) -> str:
         """
         If a value index to insert after is given, the new value will be put after it.
@@ -94,30 +94,37 @@ class ListedValueAdder(Adder):
         id_of_new_value = ""
         rows_to_increment_value_id = []
 
-        if type(index_to_assign) is int:
-            if index_to_assign == -1:
-                output_values_diapason = input_values_diapason
-                index_of_new_value = output_values_diapason[-1]["index"] + 1
-                row_of_new_value = output_values_diapason[-1]["row"] + 1
-                rows_to_increment_value_id = []
-            else:
-                output_values_diapason, index_of_new_value, row_of_new_value = (
-                    self._update_values_diapason_and_get_new_value_properties(
-                        values_diapason=input_values_diapason,
-                        index_to_assign=index_to_assign,
-                    )
-                )
-                rows_to_increment_value_id = (
-                    self._get_list_of_rows_where_value_ids_must_be_incremented(
-                        values_diapason=output_values_diapason,
-                        index_to_assign=index_to_assign,
-                    )
-                )
+        if index_to_assign == -1:
+            id_of_new_value = f"{feature_id}{SEPARATOR}{input_values_diapason[-1]['index'] + 1}"
+            row_of_new_value = input_values_diapason[-1]['row'] + 1
+        else:
+            id_of_new_value = f"{feature_id}{SEPARATOR}{index_to_assign}"
+            for index_row in values_diapason:
+                pass
 
-            id_of_new_value = f"{feature_id}{SEPARATOR}{index_of_new_value}"
-            print(id_of_new_value)
+        if index_to_assign == -1:
+            output_values_diapason = input_values_diapason
+            index_of_new_value = output_values_diapason[-1]["index"] + 1
+            row_of_new_value = output_values_diapason[-1]["row"] + 1
+            rows_to_increment_value_id = []
+        else:
+            output_values_diapason, index_of_new_value, row_of_new_value = (
+                self._update_values_diapason_and_get_new_value_properties(
+                    values_diapason=input_values_diapason,
+                    index_to_assign=index_to_assign,
+                )
+            )
+            rows_to_increment_value_id = (
+                self._get_list_of_rows_where_value_ids_must_be_incremented(
+                    values_diapason=output_values_diapason,
+                    index_to_assign=index_to_assign,
+                )
+            )
 
-        elif index_to_assign == "put as first":
+        id_of_new_value = f"{feature_id}{SEPARATOR}{index_of_new_value}"
+        print(id_of_new_value)
+
+        if index_to_assign == "put as first":
             index_of_new_value = 1
             row_of_new_value = input_values_diapason[0]["row"] - 1
             index_to_assign = 0
