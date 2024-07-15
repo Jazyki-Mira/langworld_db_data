@@ -24,12 +24,16 @@ class ListedValueAdder(Adder):
         in feature profiles were formulated differently but now
         have to be renamed to be the new `listed` value, these custom values
         can be passed as a list.
-        If no id to insert after is given, the new value will be appended after
-        the last present value, else the new value will be put right after the given one.
+        If no id to assign is given, the new value will be appended after
+        the last present value, else the new value will receive ID based on the passed index.
         """
 
         if index_to_assign < -1:
             raise ListedValueAdderError(f"index_to_assign cannot be less than -1 ({index_to_assign} is given)")
+
+        if index_to_assign == 0:
+            raise ListedValueAdderError("index_to_assign must not be zero. "
+                                        "To append value to the end of feature, leave index_to_assign as default.")
 
         if not (feature_id and new_value_en and new_value_ru):
             raise ListedValueAdderError("None of the passed strings can be empty")
@@ -57,9 +61,9 @@ class ListedValueAdder(Adder):
     ) -> (str, list):
 
         """
-        If a value index to insert after is given, the new value will be put after it.
-        To append the new value to the end of the given feature, leave index_to_assign as default.
-        To insert the new value at the beginning, make index_to_assign = 0
+        If index_to_assign is given, the new value will receive ID with this index as its last part.
+        index_to_assign must be more than 0.
+        To append the new value to the end of feature, leave index_to_assign as default.
         """
 
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
