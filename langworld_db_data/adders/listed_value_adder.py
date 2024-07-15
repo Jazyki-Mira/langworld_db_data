@@ -28,19 +28,16 @@ class ListedValueAdder(Adder):
         the last present value, else the new value will be put right after the given one.
         """
 
-        # MASH: all new value properties must be given
         if not (feature_id and new_value_en and new_value_ru):
             raise ListedValueAdderError("None of the passed strings can be empty")
 
-        # MASH: this one creates an ID for the new value and add it to FLV (always at the end of its feature)
-        # TODO: add possibility to insert new value after a given value
         id_of_new_value = self._add_to_inventory_of_listed_values(
             feature_id=feature_id,
             new_value_en=new_value_en,
             new_value_ru=new_value_ru,
             index_to_assign=index_to_assign,
         )
-        # MASH: this one replaces custom values (if any were given) with the new listed one
+
         self._mark_value_as_listed_in_feature_profiles(
             feature_id=feature_id,
             new_value_id=id_of_new_value,
