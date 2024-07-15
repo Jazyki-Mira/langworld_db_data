@@ -34,7 +34,7 @@ class ListedValueAdder(Adder):
         if not (feature_id and new_value_en and new_value_ru):
             raise ListedValueAdderError("None of the passed strings can be empty")
 
-        id_of_new_value = self._add_to_inventory_of_listed_values(
+        id_of_new_value, _ = self._add_to_inventory_of_listed_values(
             feature_id=feature_id,
             new_value_en=new_value_en,
             new_value_ru=new_value_ru,
@@ -54,7 +54,7 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
         index_to_assign: int,
-    ) -> str:
+    ) -> (str, list):
 
         """
         If a value index to insert after is given, the new value will be put after it.
@@ -94,7 +94,7 @@ class ListedValueAdder(Adder):
 
         id_of_new_value = f"{feature_id}{SEPARATOR}{values_diapason[-1]['index'] + 1}"
         row_of_new_value = values_diapason[-1]['row'] + 1
-        rows_with_incremented_ids = []
+        rows_with_ids_to_increment = []
 
         if index_to_assign > -1:
             id_of_new_value = f"{feature_id}{SEPARATOR}{index_to_assign}"
@@ -102,12 +102,12 @@ class ListedValueAdder(Adder):
                 if index_row["index"] < index_to_assign:
                     continue
 
-                rows_with_incremented_ids.append(index_row["row"])
+                rows_with_ids_to_increment.append(index_row["row"])
                 if index_row["index"] == index_to_assign:
                     row_of_new_value = index_row["row"]
 
         for i, row in enumerate(rows):
-            if i not in rows_with_incremented_ids:
+            if i not in rows_with_ids_to_increment:
                 continue
 
             value_id_to_increment = row["id"]
@@ -137,7 +137,9 @@ class ListedValueAdder(Adder):
             delimiter=",",
         )
 
-        return id_of_new_value
+        rows_with_incremented_ids = [row + 1 for row in rows_with_ids_to_increment]
+
+        return id_of_new_value, rows_with_incremented_ids
 
     def _mark_value_as_listed_in_feature_profiles(
         self,
