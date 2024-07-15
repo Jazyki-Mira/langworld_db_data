@@ -151,16 +151,21 @@ norwegian,Norwegian,,59.9333,10.6833,norw1258,nor,норвежский
 swedish,Swedish,,60.0986,19.9444,swed1254,swe,шведский
 swiss_german,Swiss German,,47.05,8.46,swis1247,gsw,швейцарско-немецкий
 yiddish,Yiddish,,53.3571,25.2465,yidd1255,yid,идиш
-dari,Dari,,31.8402,54.1625,dari1249,prs,дари
-davani,Davani,,29.702740743759385,51.67466630895686,dava1250,,давани
-hazaragi,Hazaragi,,34.8166,67.8166,haza1239,haz,хазара
-kumzari,Kumzari,,26.16,56.42,kumz1235,zum,кумзари
-kurdshuli,Kurdshuli,,30.65308656467516,52.672619742742995,,,курдшули
-middle_persian,Middle Persian,,29.608,52.5247,pahl1241,pal,среднеперсидский
 old_persian,Old Persian,,29.6081,52.5247,oldp1254,peo,древнеперсидский
+middle_persian,Middle Persian,,29.608,52.5247,pahl1241,pal,среднеперсидский
 persian,Persian,,35.7,51.4166,west2369,fas; pes,персидский
 tajik,Tajik,,38.5677,68.7936,taji1245,tgk,таджикский
+dari,Dari,,31.8402,54.1625,dari1249,prs,дари
 tati,Tati,,41.425062,46.645589,musl1236,ttt,татский
+hazaragi,Hazaragi,,34.8166,67.8166,haza1239,haz,хазара
+luri_bakhtiari_dialects,Luri and Bakhtiari,,33.466670,48.35,luri1252,,лурская и бахтиярская группа диалектов
+larestani_dialects,Larestani,,27.64,54.63,lari1253,lrl,ларская группа диалектов
+fars_dialects,Fars dialects,,29.610000,52.542500,sout2645,fay,Фарса диалекты
+kumzari,Kumzari,,26.16,56.42,kumz1235,zum,кумзари
+kurdshuli,Kurdshuli,,30.65308656467516,52.672619742742995,,,курдшули
+bashkardi,Bashkardi,,32,53,bash1263,bsg,башкарди
+davani,Davani,,29.702740743759385,51.67466630895686,dava1250,,давани
+char_aymak,Char-aymak,,35.28,59.18,aima1241,aiq,чар-аймаки
 abdui,Abdui,,29.599167,51.863056,,,абдуи
 aftari,Aftari,,35.36,53.70,afta1234,,афтари
 balochi,Balochi,,30.36,67.02,east2304; sout2642; west2368,bal,белуджский

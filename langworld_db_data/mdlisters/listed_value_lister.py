@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR
 from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_LISTED_VALUES,
     FEATURE_PROFILES_DIR,
@@ -51,7 +52,7 @@ class ListedValueLister(AbstractValueLister):
         for volume_and_doculect_id in self.filtered_rows_for_volume_doculect_id:
             for row in self.filtered_rows_for_volume_doculect_id[volume_and_doculect_id]:
                 if feature_is_multiselect_for_feature_id[row["feature_id"]] == "1":
-                    for value_id in row["value_id"].split("&"):
+                    for value_id in row["value_id"].split(ATOMIC_VALUE_SEPARATOR):
                         feature_to_value_to_doculects[row["feature_id"]][value_id].append(
                             volume_and_doculect_id
                         )

@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Optional
 
 from langworld_db_data.adders.adder import Adder, AdderError
-from langworld_db_data.constants.literals import AUX_ROW_MARKER, SEPARATOR
+from langworld_db_data.constants.literals import AUX_ROW_MARKER, ID_SEPARATOR
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.filetools.csv_xls import (
     read_column_from_csv,
@@ -79,11 +79,11 @@ class FeatureAdder(Adder):
 
         feature_id_to_add_after = None
         if insert_after_index is not None:
-            feature_id_to_add_after = f"{cat_id}{SEPARATOR}{insert_after_index}"
+            feature_id_to_add_after = f"{cat_id}{ID_SEPARATOR}{insert_after_index}"
 
             if feature_id_to_add_after not in [row["id"] for row in rows_with_features]:
                 raise FeatureAdderError(
-                    f"Cannot add feature after {cat_id}{SEPARATOR}{insert_after_index}:"
+                    f"Cannot add feature after {cat_id}{ID_SEPARATOR}{insert_after_index}:"
                     f" There is no feature with index {index_of_new_feature} in"
                     f" category {cat_id}."
                 )
@@ -106,9 +106,9 @@ class FeatureAdder(Adder):
         if insert_after_index is None:
             print(f"after the last feature in category {cat_id}")
             rows_to_write = (
-                [row for row in rows_with_features if row["id"].split(SEPARATOR)[0] <= cat_id]
+                [row for row in rows_with_features if row["id"].split(ID_SEPARATOR)[0] <= cat_id]
                 + [row_to_add]
-                + [row for row in rows_with_features if row["id"].split(SEPARATOR)[0] > cat_id]
+                + [row for row in rows_with_features if row["id"].split(ID_SEPARATOR)[0] > cat_id]
             )
         else:
             print(f"after feature {feature_id_to_add_after}")
@@ -130,7 +130,7 @@ class FeatureAdder(Adder):
         rows_to_add_to_file_with_listed_values = []
 
         for i, new_listed_value in enumerate(listed_values_to_add, start=1):
-            value_id = f"{id_of_new_feature}{SEPARATOR}{i}"
+            value_id = f"{id_of_new_feature}{ID_SEPARATOR}{i}"
             print(f'Value ID {value_id} - {new_listed_value["ru"]} will be added')
             rows_to_add_to_file_with_listed_values.append(
                 {
@@ -210,25 +210,25 @@ class FeatureAdder(Adder):
         feature_ids_in_category = [
             row["id"]
             for row in rows_with_features
-            if row["id"].startswith(f"{category_id}{SEPARATOR}")
+            if row["id"].startswith(f"{category_id}{ID_SEPARATOR}")
         ]
 
         if custom_index_of_new_feature is None:
             largest_index_under_100 = max(
-                int(feature_id.split(SEPARATOR)[1])
+                int(feature_id.split(ID_SEPARATOR)[1])
                 for feature_id in feature_ids_in_category
-                if int(feature_id.split(SEPARATOR)[1]) < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
+                if int(feature_id.split(ID_SEPARATOR)[1]) < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
             )
-            return f"{category_id}{SEPARATOR}{largest_index_under_100 + 1}"
+            return f"{category_id}{ID_SEPARATOR}{largest_index_under_100 + 1}"
 
         custom_index_str = str(custom_index_of_new_feature)
 
-        if f"{category_id}{SEPARATOR}{custom_index_str}" in feature_ids_in_category:
+        if f"{category_id}{ID_SEPARATOR}{custom_index_str}" in feature_ids_in_category:
             raise FeatureAdderError(
                 f"Feature index {custom_index_str} already in use in category" f" {category_id}"
             )
         else:
-            return f"{category_id}{SEPARATOR}{custom_index_str}"
+            return f"{category_id}{ID_SEPARATOR}{custom_index_str}"
 
     @staticmethod
     def insert_rows(
@@ -242,7 +242,7 @@ class FeatureAdder(Adder):
         if feature_id_to_add_after is None:
             for row_index, row in enumerate(rows):
                 if (
-                    row["feature_id"].split(SEPARATOR)[0] > category_id
+                    row["feature_id"].split(ID_SEPARATOR)[0] > category_id
                     or row["feature_id"] == AUX_ROW_MARKER
                 ):
                     return rows[:row_index] + rows_to_add + rows[row_index:]

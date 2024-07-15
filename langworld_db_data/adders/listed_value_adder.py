@@ -1,7 +1,7 @@
-from typing import Literal, Optional, Union
+from typing import Optional
 
 from langworld_db_data.adders.adder import Adder, AdderError
-from langworld_db_data.constants.literals import SEPARATOR
+from langworld_db_data.constants.literals import ID_SEPARATOR
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
 
@@ -82,7 +82,7 @@ class ListedValueAdder(Adder):
                     f"Row {row} already contains value you are trying to add"
                 )
 
-            last_digit_of_value_id = int(row["id"].split(SEPARATOR)[-1])
+            last_digit_of_value_id = int(row["id"].split(ID_SEPARATOR)[-1])
             values_diapason.append(
                 {
                     "index": last_digit_of_value_id,
@@ -96,12 +96,12 @@ class ListedValueAdder(Adder):
                 f"ID {feature_id + str(index_to_assign)} exceeds the maximal ID {last_index_in_feature}"
             )
 
-        id_of_new_value = f"{feature_id}{SEPARATOR}{values_diapason[-1]['index'] + 1}"
+        id_of_new_value = f"{feature_id}{ID_SEPARATOR}{values_diapason[-1]['index'] + 1}"
         row_of_new_value = values_diapason[-1]['row'] + 1
         rows_with_ids_to_increment = []
 
         if index_to_assign > -1:
-            id_of_new_value = f"{feature_id}{SEPARATOR}{index_to_assign}"
+            id_of_new_value = f"{feature_id}{ID_SEPARATOR}{index_to_assign}"
             for index_row in values_diapason:
                 if index_row["index"] < index_to_assign:
                     continue
