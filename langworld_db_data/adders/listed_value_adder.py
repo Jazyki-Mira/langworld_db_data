@@ -16,8 +16,9 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
-        index_to_assign: Union[int, str] = "last",
+        index_to_assign: int = -1,
     ) -> None:
+
         """Adds listed value to the inventory and marks matching custom value
         in feature profiles as listed.  If one or more custom values
         in feature profiles were formulated differently but now
@@ -26,6 +27,7 @@ class ListedValueAdder(Adder):
         If no id to insert after is given, the new value will be appended after
         the last present value, else the new value will be put right after the given one.
         """
+
         # MASH: all new value properties must be given
         if not (feature_id and new_value_en and new_value_ru):
             raise ListedValueAdderError("None of the passed strings can be empty")
@@ -65,7 +67,7 @@ class ListedValueAdder(Adder):
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
         id_of_new_value = ""
-        input_values_diapason = []
+        values_diapason = []
 
         for i, row in enumerate(rows):
             if row["feature_id"] != feature_id:
@@ -77,71 +79,44 @@ class ListedValueAdder(Adder):
                 )
 
             last_digit_of_value_id = int(row["id"].split(SEPARATOR)[-1])
-            input_values_diapason.append(
+            values_diapason.append(
                 {
                     "index": last_digit_of_value_id,
                     "row": i,
                 }
             )
-        print(input_values_diapason)
+        print(values_diapason)
 
-        if type(index_to_assign) is int and index_to_assign > input_values_diapason[-1]["index"]:
+        # If the new value is non-final, the diapason of changed values must be returned to the main method
+
+        print(index_to_assign)
+        if index_to_assign > values_diapason[-1]["index"]:
             raise ListedValueAdderError(
-                f"The given ID {feature_id + str(index_to_assign)} exceeds the maximal ID {id_of_new_value}"
+                f"ID {feature_id + str(index_to_assign)} exceeds the maximal ID {id_of_new_value}"
             )
 
-        row_of_new_value = 0
-        id_of_new_value = ""
-        rows_to_increment_value_id = []
+        id_of_new_value = f"{feature_id}{SEPARATOR}{values_diapason[-1]['index'] + 1}"
+        row_of_new_value = values_diapason[-1]['row'] + 1
+        rows_with_incremented_ids = []
 
-        if index_to_assign == -1:
-            id_of_new_value = f"{feature_id}{SEPARATOR}{input_values_diapason[-1]['index'] + 1}"
-            row_of_new_value = input_values_diapason[-1]['row'] + 1
-        else:
+        if index_to_assign > -1:
             id_of_new_value = f"{feature_id}{SEPARATOR}{index_to_assign}"
             for index_row in values_diapason:
-                pass
-
-        if index_to_assign == -1:
-            output_values_diapason = input_values_diapason
-            index_of_new_value = output_values_diapason[-1]["index"] + 1
-            row_of_new_value = output_values_diapason[-1]["row"] + 1
-            rows_to_increment_value_id = []
-        else:
-            output_values_diapason, index_of_new_value, row_of_new_value = (
-                self._update_values_diapason_and_get_new_value_properties(
-                    values_diapason=input_values_diapason,
-                    index_to_assign=index_to_assign,
-                )
-            )
-            rows_to_increment_value_id = (
-                self._get_list_of_rows_where_value_ids_must_be_incremented(
-                    values_diapason=output_values_diapason,
-                    index_to_assign=index_to_assign,
-                )
-            )
-
-        id_of_new_value = f"{feature_id}{SEPARATOR}{index_of_new_value}"
-        print(id_of_new_value)
-
-        if index_to_assign == "put as first":
-            index_of_new_value = 1
-            row_of_new_value = input_values_diapason[0]["row"] - 1
-            index_to_assign = 0
-            output_values_diapason, _, _ = (
-                self._update_values_diapason_and_get_new_value_properties(
-                    values_diapason=input_values_diapason,
-                    index_to_assign=index_to_assign,
-                )
-            )
-
-            id_of_new_value = f"{feature_id}{SEPARATOR}{index_of_new_value}"
-
-            rows_to_increment_value_id = (
-                self._get_list_of_rows_where_value_ids_must_be_incremented(
-                    values_diapason=output_values_diapason,
-                    index_to_assign=index_to_assign,
-                )
+                if index_row["index"] >= index_to_assign:
+                    if index_row["index"] == index_to_assign:
+                        row_of_new_value = index_row["row"]
+                    rows_with_incremented_ids.append(index_row["row"])
+                    print(index_row)
+        print(values_diapason)
+        print(rows_with_incremented_ids)
+        for i, row in enumerate(rows):
+            if i not in rows_with_incremented_ids:
+                continue
+            value_id_to_increment = row["id"]
+            value_id_to_increment_split = value_id_to_increment.split("-")
+            row["id"] = (
+                f"{value_id_to_increment_split[0]}-{value_id_to_increment_split[1]}-"
+                f"{int(value_id_to_increment_split[2]) + 1}"
             )
 
         row_with_new_value = [
@@ -152,16 +127,6 @@ class ListedValueAdder(Adder):
                 "ru": new_value_ru[0].upper() + new_value_ru[1:],
             }
         ]
-
-        for i, row in enumerate(rows):
-            if i + 1 not in rows_to_increment_value_id:
-                continue
-            value_id_to_increment = row["id"]
-            value_id_to_increment_split = value_id_to_increment.split("-")
-            row["id"] = (
-                f"{value_id_to_increment_split[0]}-{value_id_to_increment_split[1]}-"
-                f"{int(value_id_to_increment_split[2]) + 1}"
-            )
 
         rows_with_new_value_inserted = (
             rows[:row_of_new_value] + row_with_new_value + rows[row_of_new_value:]
@@ -175,35 +140,6 @@ class ListedValueAdder(Adder):
         )
 
         return id_of_new_value
-
-    @staticmethod
-    def _update_values_diapason_and_get_new_value_properties(
-        values_diapason: list,
-        index_to_assign: int,
-    ) -> tuple[list, int, int]:
-        index_of_new_value = 0
-        row_of_new_value = 0
-        for item in values_diapason:
-            if item["index"] < index_to_assign:
-                continue
-            if item["index"] == index_to_assign:
-                index_of_new_value = item["index"]
-                row_of_new_value = item["row"]
-            item["index"] += 1
-            item["row"] += 1
-        return values_diapason, index_of_new_value, row_of_new_value
-
-    @staticmethod
-    def _get_list_of_rows_where_value_ids_must_be_incremented(
-        values_diapason: list,
-        index_to_assign: int,
-    ):
-        rows_to_increment_value_id = []
-        for item in values_diapason:
-            if item["index"] < index_to_assign:
-                continue
-            rows_to_increment_value_id.append(item["row"])
-        return rows_to_increment_value_id
 
     def _mark_value_as_listed_in_feature_profiles(
         self,

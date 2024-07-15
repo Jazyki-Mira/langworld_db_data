@@ -165,7 +165,7 @@ def test__test__add_to_inventory_of_listed_values_put_as_first(test_adder):
         feature_id="A-3",
         new_value_en="Central, mid-back and back",
         new_value_ru="Средний, задне-средний и задний",
-        index_to_assign=0,
+        index_to_assign=1,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
