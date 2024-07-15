@@ -53,7 +53,7 @@ class ListedValueAdder(Adder):
         feature_id: str,
         new_value_en: str,
         new_value_ru: str,
-        index_to_assign: int = -1,
+        index_to_assign: int,
     ) -> str:
 
         """

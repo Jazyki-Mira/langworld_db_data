@@ -108,6 +108,7 @@ def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_
         feature_id="A-11",
         new_value_en="New value, listed with a comma",
         new_value_ru="Есть первые, вторые и третьи",
+        index_to_assign=-1,
     )
     assert new_value_id == "A-11-15"
 
