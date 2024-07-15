@@ -28,6 +28,9 @@ class ListedValueAdder(Adder):
         the last present value, else the new value will be put right after the given one.
         """
 
+        if index_to_assign < -1:
+            raise ListedValueAdderError(f"index_to_assign cannot be less than -1 ({index_to_assign} is given)")
+
         if not (feature_id and new_value_en and new_value_ru):
             raise ListedValueAdderError("None of the passed strings can be empty")
 
