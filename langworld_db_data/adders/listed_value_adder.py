@@ -55,6 +55,7 @@ class ListedValueAdder(Adder):
         new_value_ru: str,
         index_to_assign: int = -1,
     ) -> str:
+
         """
         If a value index to insert after is given, the new value will be put after it.
         To append the new value to the end of the given feature, leave index_to_assign as default.
@@ -66,7 +67,6 @@ class ListedValueAdder(Adder):
         if not [r for r in rows if r["feature_id"] == feature_id]:
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
-        id_of_new_value = ""
         values_diapason = []
 
         for i, row in enumerate(rows):
@@ -85,14 +85,11 @@ class ListedValueAdder(Adder):
                     "row": i,
                 }
             )
-        print(values_diapason)
 
-        # If the new value is non-final, the diapason of changed values must be returned to the main method
-
-        print(index_to_assign)
-        if index_to_assign > values_diapason[-1]["index"]:
+        last_index_in_feature = values_diapason[-1]["index"]
+        if index_to_assign > last_index_in_feature:
             raise ListedValueAdderError(
-                f"ID {feature_id + str(index_to_assign)} exceeds the maximal ID {id_of_new_value}"
+                f"ID {feature_id + str(index_to_assign)} exceeds the maximal ID {last_index_in_feature}"
             )
 
         id_of_new_value = f"{feature_id}{SEPARATOR}{values_diapason[-1]['index'] + 1}"
@@ -102,21 +99,22 @@ class ListedValueAdder(Adder):
         if index_to_assign > -1:
             id_of_new_value = f"{feature_id}{SEPARATOR}{index_to_assign}"
             for index_row in values_diapason:
-                if index_row["index"] >= index_to_assign:
-                    if index_row["index"] == index_to_assign:
-                        row_of_new_value = index_row["row"]
-                    rows_with_incremented_ids.append(index_row["row"])
-                    print(index_row)
-        print(values_diapason)
-        print(rows_with_incremented_ids)
+                if index_row["index"] < index_to_assign:
+                    continue
+
+                rows_with_incremented_ids.append(index_row["row"])
+                if index_row["index"] == index_to_assign:
+                    row_of_new_value = index_row["row"]
+
         for i, row in enumerate(rows):
             if i not in rows_with_incremented_ids:
                 continue
+
             value_id_to_increment = row["id"]
-            value_id_to_increment_split = value_id_to_increment.split("-")
+            components_of_value_id_to_increment = value_id_to_increment.split("-")
             row["id"] = (
-                f"{value_id_to_increment_split[0]}-{value_id_to_increment_split[1]}-"
-                f"{int(value_id_to_increment_split[2]) + 1}"
+                f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
+                f"{int(components_of_value_id_to_increment[2]) + 1}"
             )
 
         row_with_new_value = [
