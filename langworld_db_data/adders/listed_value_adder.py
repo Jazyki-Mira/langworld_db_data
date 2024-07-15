@@ -110,10 +110,13 @@ class ListedValueAdder(Adder):
                 if index_row["index"] == index_to_assign:
                     row_of_new_value = index_row["row"]
 
+        ids_to_increment_in_profiles = []
+
         for i, row in enumerate(rows):
             if i not in rows_with_ids_to_increment:
                 continue
 
+            ids_to_increment_in_profiles.append(row["id"])
             value_id_to_increment = row["id"]
             components_of_value_id_to_increment = value_id_to_increment.split("-")
             row["id"] = (
@@ -141,9 +144,7 @@ class ListedValueAdder(Adder):
             delimiter=",",
         )
 
-        rows_with_incremented_ids = [row + 1 for row in rows_with_ids_to_increment]
-
-        return id_of_new_value, rows_with_incremented_ids
+        return id_of_new_value, ids_to_increment_in_profiles
 
     def _mark_value_as_listed_in_feature_profiles(
         self,
