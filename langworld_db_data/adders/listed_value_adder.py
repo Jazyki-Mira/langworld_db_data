@@ -18,7 +18,6 @@ class ListedValueAdder(Adder):
         custom_values_to_rename: Optional[list[str]] = None,
         index_to_assign: int = -1,
     ) -> None:
-
         """Adds listed value to the inventory and marks matching custom value
         in feature profiles as listed.  If one or more custom values
         in feature profiles were formulated differently but now
@@ -29,11 +28,15 @@ class ListedValueAdder(Adder):
         """
 
         if index_to_assign < -1:
-            raise ListedValueAdderError(f"index_to_assign cannot be less than -1 ({index_to_assign} is given)")
+            raise ListedValueAdderError(
+                f"index_to_assign cannot be less than -1 ({index_to_assign} is given)"
+            )
 
         if index_to_assign == 0:
-            raise ListedValueAdderError("index_to_assign must not be zero. "
-                                        "To append value to the end of feature, leave index_to_assign as default.")
+            raise ListedValueAdderError(
+                "index_to_assign must not be zero. "
+                "To append value to the end of feature, leave index_to_assign as default."
+            )
 
         if not (feature_id and new_value_en and new_value_ru):
             raise ListedValueAdderError("None of the passed strings can be empty")
@@ -59,7 +62,6 @@ class ListedValueAdder(Adder):
         new_value_ru: str,
         index_to_assign: int,
     ) -> (str, list):
-
         """
         If index_to_assign is given, the new value will receive ID with this index as its last part.
         index_to_assign must be more than 0.
@@ -97,7 +99,7 @@ class ListedValueAdder(Adder):
             )
 
         id_of_new_value = f"{feature_id}{ID_SEPARATOR}{values_diapason[-1]['index'] + 1}"
-        row_of_new_value = values_diapason[-1]['row'] + 1
+        row_of_new_value = values_diapason[-1]["row"] + 1
         rows_with_ids_to_increment = []
 
         if index_to_assign > -1:

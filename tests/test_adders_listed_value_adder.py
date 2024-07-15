@@ -39,26 +39,18 @@ def test_adder():
 
 
 def test__add_to_inventory_of_listed_values_throws_exception_with_index_to_assign_less_than_minus_1(
-        test_adder
+    test_adder,
 ):
     with pytest.raises(ListedValueAdderError, match="-2 is given"):
         test_adder.add_listed_value(
-            feature_id="A-1",
-            new_value_en="Value",
-            new_value_ru="значение",
-            index_to_assign=-2
+            feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=-2
         )
 
 
-def test__add_to_inventory_of_listed_values_throws_exception_with_zero_index_to_assign(
-        test_adder
-):
+def test__add_to_inventory_of_listed_values_throws_exception_with_zero_index_to_assign(test_adder):
     with pytest.raises(ListedValueAdderError, match="index_to_assign must not be zero"):
         test_adder.add_listed_value(
-            feature_id="A-1",
-            new_value_en="Value",
-            new_value_ru="значение",
-            index_to_assign=0
+            feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=0
         )
 
 
