@@ -61,7 +61,10 @@ class ListedValueAdder(Adder):
         if not [r for r in rows if r["feature_id"] == feature_id]:
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
-        values_diapason = []
+        value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
+        """List of dictionaries, each mapping value index (ex. 13 for A-2-13) 
+        to line number in features_listed_values.
+        """
 
         for i, row in enumerate(rows):
             if row["feature_id"] != feature_id:
@@ -73,14 +76,14 @@ class ListedValueAdder(Adder):
                 )
 
             last_digit_of_value_id = int(row["id"].split(ID_SEPARATOR)[-1])
-            values_diapason.append(
+            value_indices_to_inventory_line_numbers.append(
                 {
                     "index": last_digit_of_value_id,
                     "row": i,
                 }
             )
 
-        last_index_in_feature = values_diapason[-1]["index"]
+        last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
         acceptable_indices_to_assign = [-1] + [i for i in range(1, last_index_in_feature)]
         print(acceptable_indices_to_assign)
         if index_to_assign not in acceptable_indices_to_assign:
@@ -89,13 +92,13 @@ class ListedValueAdder(Adder):
                 f"{index_to_assign} was given)"
             )
 
-        id_of_new_value = f"{feature_id}{ID_SEPARATOR}{values_diapason[-1]['index'] + 1}"
-        row_of_new_value = values_diapason[-1]["row"] + 1
+        id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1]['index'] + 1}"
+        row_of_new_value = value_indices_to_inventory_line_numbers[-1]["row"] + 1
         rows_with_ids_to_increment = []
 
         if index_to_assign > -1:
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{index_to_assign}"
-            for index_row in values_diapason:
+            for index_row in value_indices_to_inventory_line_numbers:
                 if index_row["index"] < index_to_assign:
                     continue
 
