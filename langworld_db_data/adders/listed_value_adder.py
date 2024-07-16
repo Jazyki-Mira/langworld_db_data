@@ -92,7 +92,9 @@ class ListedValueAdder(Adder):
                 f"{index_to_assign} was given)"
             )
 
-        id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1]['index'] + 1}"
+        id_of_new_value = (
+            f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1]['index'] + 1}"
+        )
         row_of_new_value = value_indices_to_inventory_line_numbers[-1]["row"] + 1
         rows_with_ids_to_increment = []
 
