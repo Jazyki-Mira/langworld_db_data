@@ -53,7 +53,7 @@ class ListedValueAdder(Adder):
     ) -> (str, list):
         """
         If index_to_assign is given, the new value will receive ID with this index as its last part.
-        index_to_assign must be more than 0.
+        index_to_assign must be greater than 0.
         To append the new value to the end of feature, leave index_to_assign as default.
         """
 
