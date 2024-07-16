@@ -54,7 +54,6 @@ class ListedValueAdder(Adder):
         """
         If index_to_assign is given, the new value will receive ID with this index as its last part.
         index_to_assign must be greater than 0.
-        To append the new value to the end of feature, leave index_to_assign as default.
         """
 
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
