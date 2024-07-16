@@ -27,17 +27,6 @@ class ListedValueAdder(Adder):
         the last present value, else the new value will receive ID based on the passed index.
         """
 
-        if index_to_assign < -1:
-            raise ListedValueAdderError(
-                f"index_to_assign cannot be less than -1 ({index_to_assign} is given)"
-            )
-
-        if index_to_assign == 0:
-            raise ListedValueAdderError(
-                "index_to_assign must not be zero. "
-                "To append value to the end of feature, leave index_to_assign as default."
-            )
-
         if not (feature_id and new_value_en and new_value_ru):
             raise ListedValueAdderError("None of the passed strings can be empty")
 
@@ -93,9 +82,10 @@ class ListedValueAdder(Adder):
             )
 
         last_index_in_feature = values_diapason[-1]["index"]
-        if index_to_assign > last_index_in_feature:
+        if index_to_assign > last_index_in_feature or (index_to_assign != -1 and index_to_assign < 1):
             raise ListedValueAdderError(
-                f"ID {feature_id + str(index_to_assign)} exceeds the maximal ID {last_index_in_feature}"
+                f"Invalid index_to assign (must be between 1 and {last_index_in_feature}, "
+                f"{index_to_assign} was given)"
             )
 
         id_of_new_value = f"{feature_id}{ID_SEPARATOR}{values_diapason[-1]['index'] + 1}"
