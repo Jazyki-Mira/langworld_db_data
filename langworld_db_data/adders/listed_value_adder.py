@@ -82,7 +82,9 @@ class ListedValueAdder(Adder):
             )
 
         last_index_in_feature = values_diapason[-1]["index"]
-        if index_to_assign > last_index_in_feature or (index_to_assign != -1 and index_to_assign < 1):
+        acceptable_indices_to_assign = [-1] + [i for i in range(1, last_index_in_feature)]
+        print(acceptable_indices_to_assign)
+        if index_to_assign not in acceptable_indices_to_assign:
             raise ListedValueAdderError(
                 f"Invalid index_to assign (must be between 1 and {last_index_in_feature}, "
                 f"{index_to_assign} was given)"
