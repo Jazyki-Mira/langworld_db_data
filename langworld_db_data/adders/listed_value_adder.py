@@ -111,7 +111,9 @@ class ListedValueAdder(Adder):
                 if value_index_and_line_number["index"] < index_to_assign:
                     continue
 
-                line_numbers_with_ids_to_increment.append(value_index_and_line_number["line number"])
+                line_numbers_with_ids_to_increment.append(
+                    value_index_and_line_number["line number"]
+                )
                 if value_index_and_line_number["index"] == index_to_assign:
                     line_number_of_new_value = value_index_and_line_number["line number"]
 
@@ -132,7 +134,7 @@ class ListedValueAdder(Adder):
                 f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
                 f"{int(components_of_value_id_to_increment[2]) + 1}"
             )
-        
+
         row_with_new_value = [
             {
                 "id": id_of_new_value,
