@@ -63,9 +63,12 @@ class ListedValueAdder(Adder):
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
-        """List of dictionaries, each mapping value index to line number in features_listed_values.
+        """List of dictionaries, each mapping value index to line number in features_listed_values,
+        ex. [{"index": 1, "row": 4}, {"index": 2, "row": 5}, {"index": 3, "row": 6}].
+        Contains all indices and line numbers of values with given feature_id.
         """
 
+        # Collect all indices and line numbers of given feature into value_indices_to_inventory_line_numbers
         for i, row in enumerate(rows):
             if row["feature_id"] != feature_id:
                 continue
@@ -83,19 +86,22 @@ class ListedValueAdder(Adder):
                 }
             )
 
+        # Check if index_to_assign is -1 or belongs to range of indices in value_indices_to_inventory_line_numbers
         last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
         acceptable_indices_to_assign = [-1] + [i for i in range(1, last_index_in_feature)]
-        print(acceptable_indices_to_assign)
         if index_to_assign not in acceptable_indices_to_assign:
             raise ListedValueAdderError(
                 f"Invalid index_to assign (must be between 1 and {last_index_in_feature}, "
                 f"{index_to_assign} was given)"
             )
 
+        # id_of_new_value and row_of_new_value are assigned for default case and then changed if necessary
         id_of_new_value = (
             f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1]['index'] + 1}"
         )
         row_of_new_value = value_indices_to_inventory_line_numbers[-1]["row"] + 1
+
+        # If value is inserted into range of values, IDs following it must be incremented
         rows_with_ids_to_increment = []
 
         if index_to_assign > -1:
@@ -108,8 +114,12 @@ class ListedValueAdder(Adder):
                 if index_row["index"] == index_to_assign:
                     row_of_new_value = index_row["row"]
 
+        # Empty list or list of ints. Contains indices within given feature and is used to correct language profiles:
+        # if a profile contains a value whose index belongs to this list, the value ID must be incremented by one.
+        # TODO: despite its name, the list now collects indices. Perhaps it should either be renamed or collect IDs
         ids_to_increment_in_profiles = []
 
+        # Increment IDs of values whose line numbers are in rows_with_ids_to_increment
         for i, row in enumerate(rows):
             if i not in rows_with_ids_to_increment:
                 continue
@@ -121,7 +131,7 @@ class ListedValueAdder(Adder):
                 f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
                 f"{int(components_of_value_id_to_increment[2]) + 1}"
             )
-
+        
         row_with_new_value = [
             {
                 "id": id_of_new_value,
