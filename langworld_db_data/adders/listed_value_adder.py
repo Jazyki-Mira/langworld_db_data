@@ -50,8 +50,9 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
         index_to_assign: int,
-    ) -> (str, list):
+    ) -> (str, tuple[int]):
         """
+        Returns ID of new value and tuple of indices that must be incremented in feature profiles.
         index_to_assign means number that must be assigned to the new value within the feature, ex. 13 for A-2-13.
         If no index_to_assign is given, the new value will be added as the last one in the feature.
         index_to_assign must be greater than 0.
@@ -119,7 +120,7 @@ class ListedValueAdder(Adder):
         # TODO: despite its name, the list now collects indices. Perhaps it should either be renamed or collect IDs
         ids_to_increment_in_profiles = []
 
-        # Increment IDs of values whose line numbers are in line_numbers_with_ids_to_increment
+        # Update IDs of values whose line numbers are in line_numbers_with_ids_to_increment
         for i, row in enumerate(rows):
             if i not in line_numbers_with_ids_to_increment:
                 continue
