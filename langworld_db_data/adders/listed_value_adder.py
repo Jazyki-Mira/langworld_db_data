@@ -75,10 +75,10 @@ class ListedValueAdder(Adder):
                     f"Row {row} already contains value you are trying to add"
                 )
 
-            last_digit_of_value_id = int(row["id"].split(ID_SEPARATOR)[-1])
+            value_index = int(row["id"].split(ID_SEPARATOR)[-1])
             value_indices_to_inventory_line_numbers.append(
                 {
-                    "index": last_digit_of_value_id,
+                    "index": value_index,
                     "row": i,
                 }
             )
