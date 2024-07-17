@@ -52,7 +52,8 @@ class ListedValueAdder(Adder):
         index_to_assign: int,
     ) -> (str, list):
         """
-        If index_to_assign is given, the new value will receive ID with this index as its last part.
+        index_to_assign means number that must be assigned to the new value within the feature, ex. 13 for A-2-13.
+        If no index_to_assign is given, the new value will be added as the last one in the feature.
         index_to_assign must be greater than 0.
         """
 
@@ -62,8 +63,7 @@ class ListedValueAdder(Adder):
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
-        """List of dictionaries, each mapping value index (ex. 13 for A-2-13) 
-        to line number in features_listed_values.
+        """List of dictionaries, each mapping value index to line number in features_listed_values.
         """
 
         for i, row in enumerate(rows):
