@@ -64,7 +64,7 @@ class ListedValueAdder(Adder):
 
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
         """List of dictionaries, each mapping value index to line number in features_listed_values,
-        ex. [{"index": 1, "row": 4}, {"index": 2, "row": 5}, {"index": 3, "row": 6}].
+        ex. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5}, {"index": 3, "line number": 6}].
         Contains all indices and line numbers of values with given feature_id.
         """
 
@@ -82,7 +82,7 @@ class ListedValueAdder(Adder):
             value_indices_to_inventory_line_numbers.append(
                 {
                     "index": value_index,
-                    "row": i,
+                    "line number": i,
                 }
             )
 
@@ -95,33 +95,33 @@ class ListedValueAdder(Adder):
                 f"{index_to_assign} was given)"
             )
 
-        # id_of_new_value and row_of_new_value are assigned for default case and then changed if necessary
+        # id_of_new_value and line_number_of_new_value are assigned for default case and then changed if necessary
         id_of_new_value = (
             f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1]['index'] + 1}"
         )
-        row_of_new_value = value_indices_to_inventory_line_numbers[-1]["row"] + 1
+        line_number_of_new_value = value_indices_to_inventory_line_numbers[-1]["line number"] + 1
 
         # If value is inserted into range of values, IDs following it must be incremented
-        rows_with_ids_to_increment = []
+        line_numbers_with_ids_to_increment = []
 
         if index_to_assign > -1:
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{index_to_assign}"
-            for index_row in value_indices_to_inventory_line_numbers:
-                if index_row["index"] < index_to_assign:
+            for value_index_and_line_number in value_indices_to_inventory_line_numbers:
+                if value_index_and_line_number["index"] < index_to_assign:
                     continue
 
-                rows_with_ids_to_increment.append(index_row["row"])
-                if index_row["index"] == index_to_assign:
-                    row_of_new_value = index_row["row"]
+                line_numbers_with_ids_to_increment.append(value_index_and_line_number["line number"])
+                if value_index_and_line_number["index"] == index_to_assign:
+                    line_number_of_new_value = value_index_and_line_number["line number"]
 
         # Empty list or list of ints. Contains indices within given feature and is used to correct language profiles:
         # if a profile contains a value whose index belongs to this list, the value ID must be incremented by one.
         # TODO: despite its name, the list now collects indices. Perhaps it should either be renamed or collect IDs
         ids_to_increment_in_profiles = []
 
-        # Increment IDs of values whose line numbers are in rows_with_ids_to_increment
+        # Increment IDs of values whose line numbers are in line_numbers_with_ids_to_increment
         for i, row in enumerate(rows):
-            if i not in rows_with_ids_to_increment:
+            if i not in line_numbers_with_ids_to_increment:
                 continue
 
             ids_to_increment_in_profiles.append(row["id"])
@@ -142,7 +142,7 @@ class ListedValueAdder(Adder):
         ]
 
         rows_with_new_value_inserted = (
-            rows[:row_of_new_value] + row_with_new_value + rows[row_of_new_value:]
+            rows[:line_number_of_new_value] + row_with_new_value + rows[line_number_of_new_value:]
         )
 
         write_csv(
