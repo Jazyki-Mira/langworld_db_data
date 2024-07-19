@@ -245,26 +245,34 @@ def test__increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
         {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
         {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
         {"id": "A-2-2", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
-        {"id": "A-2-3", "feature_id": "A-2", "en": "Close, mid and open", "ru": "Верхний, средний и нижний"},
+        {
+            "id": "A-2-3",
+            "feature_id": "A-2",
+            "en": "Close, mid and open",
+            "ru": "Верхний, средний и нижний",
+        },
     ]
     value_indices_to_inventory_line_numbers = [
         {"index": 1, "line number": 1},
         {"index": 2, "line number": 2},
         {"index": 3, "line number": 3},
     ]
-    rows = (
-        test_adder._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
-            rows=rows,
-            value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
-            index_to_assign=2,
-        )
+    rows = test_adder._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
+        rows=rows,
+        value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
+        index_to_assign=2,
     )
 
     gold_standard_rows = [
         {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
         {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
         {"id": "A-2-3", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
-        {"id": "A-2-4", "feature_id": "A-2", "en": "Close, mid and open", "ru": "Верхний, средний и нижний"},
+        {
+            "id": "A-2-4",
+            "feature_id": "A-2",
+            "en": "Close, mid and open",
+            "ru": "Верхний, средний и нижний",
+        },
     ]
 
     assert rows == gold_standard_rows
