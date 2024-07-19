@@ -31,7 +31,7 @@ class ListedValueAdder(Adder):
             raise ListedValueAdderError("None of the passed strings can be empty")
 
         try:
-            id_of_new_value, _ = self._add_to_inventory_of_listed_values(
+            id_of_new_value = self._add_to_inventory_of_listed_values(
                 feature_id=feature_id,
                 new_value_en=new_value_en,
                 new_value_ru=new_value_ru,
@@ -53,7 +53,7 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
         index_to_assign: int,
-    ) -> (str, tuple[int]):
+    ) -> str:
         """
         Returns ID of new value and tuple of indices that must be incremented in feature profiles.
         index_to_assign means number that must be assigned to the new value within the feature, ex. 13 for A-2-13.
@@ -93,17 +93,12 @@ class ListedValueAdder(Adder):
 
         # If value is inserted into range of values, IDs following it must be incremented
 
-        # Empty list or list of ints. Contains indices within given feature and is used to correct language profiles:
-        # if a profile contains a value whose index belongs to this list, the value ID must be incremented by one.
-        ids_to_increment_in_profiles = []
-
         if index_to_assign > -1:
 
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{index_to_assign}"
 
             # Go through values of the feature, ignore indices less than index_to_assign,
             # increment all other indices
-
             rows = self._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
                 rows=rows,
                 value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
@@ -134,7 +129,7 @@ class ListedValueAdder(Adder):
             delimiter=",",
         )
 
-        return id_of_new_value, ids_to_increment_in_profiles
+        return id_of_new_value
 
     @staticmethod
     def _get_indices_and_their_line_numbers_in_features_listed_values(

@@ -99,7 +99,7 @@ def test__add_after_value_that_exceeds_maximum(test_adder):
 
 
 def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_adder):
-    new_value_id, _ = test_adder._add_to_inventory_of_listed_values(
+    new_value_id = test_adder._add_to_inventory_of_listed_values(
         feature_id="A-11",
         new_value_en="New value, listed with a comma",
         new_value_ru="Есть первые, вторые и третьи",
@@ -151,7 +151,7 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_custom_values(tes
 
 
 def test__add_to_inventory_of_listed_values_insert_after_non_final_value(test_adder):
-    new_value_id, _ = test_adder._add_to_inventory_of_listed_values(
+    new_value_id = test_adder._add_to_inventory_of_listed_values(
         feature_id="A-3",
         new_value_en="Central, mid-back and back",
         new_value_ru="Средний, задне-средний и задний",
