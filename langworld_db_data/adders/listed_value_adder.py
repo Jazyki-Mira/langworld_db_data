@@ -78,9 +78,7 @@ class ListedValueAdder(Adder):
                 continue
 
             if row["en"] == new_value_en or row["ru"] == new_value_ru:
-                raise ValueError(
-                    f"Row {row} already contains value you are trying to add"
-                )
+                raise ValueError(f"Row {row} already contains value you are trying to add")
 
             value_index = int(row["id"].split(ID_SEPARATOR)[-1])
             value_indices_to_inventory_line_numbers.append(
@@ -173,12 +171,8 @@ class ListedValueAdder(Adder):
 
             for i, row in enumerate(rows):
                 if row["feature_id"] == feature_id and row["value_type"] == "custom":
-                    value_ru = row[
-                        "value_ru"
-                    ].strip()
-                    value_ru = (
-                        value_ru[:-1] if value_ru.endswith(".") else value_ru
-                    )
+                    value_ru = row["value_ru"].strip()
+                    value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
 
                     new_value_with_variants: list[str] = (
                         [new_value_ru] + custom_values_to_rename
