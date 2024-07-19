@@ -103,18 +103,12 @@ class ListedValueAdder(Adder):
 
             # Go through values of the feature, ignore indices less than index_to_assign,
             # increment all other indices
-            for value_index_and_line_number in value_indices_to_inventory_line_numbers:
-                if value_index_and_line_number["index"] < index_to_assign:
-                    continue
 
-                row_where_id_must_be_incremented = value_index_and_line_number["line number"]
-                ids_to_increment_in_profiles.append(rows[row_where_id_must_be_incremented]["id"])
-                value_id_to_increment = rows[row_where_id_must_be_incremented]["id"]
-                components_of_value_id_to_increment = value_id_to_increment.split("-")
-                rows[row_where_id_must_be_incremented]["id"] = (
-                    f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
-                    f"{int(components_of_value_id_to_increment[2]) + 1}"
-                )
+            rows = self._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
+                rows=rows,
+                value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
+                index_to_assign=index_to_assign,
+            )
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
                 if value_index_and_line_number["index"] == index_to_assign:
@@ -148,7 +142,8 @@ class ListedValueAdder(Adder):
         feature_id: str,
         new_value_en: str,
         new_value_ru: str,
-    ):
+    ) -> list[dict[str, int]]:
+
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
         """List of dictionaries, each mapping value index to line number in features_listed_values,
         ex. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5}, {"index": 3, "line number": 6}].
@@ -171,6 +166,26 @@ class ListedValueAdder(Adder):
             )
 
         return value_indices_to_inventory_line_numbers
+
+    @staticmethod
+    def _increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
+        rows: list[dict[str, str]],
+        value_indices_to_inventory_line_numbers: list[dict[str, int]],
+        index_to_assign: int,
+    ):
+
+        for value_index_and_line_number in value_indices_to_inventory_line_numbers:
+            if value_index_and_line_number["index"] < index_to_assign:
+                continue
+            row_where_id_must_be_incremented = value_index_and_line_number["line number"]
+            value_id_to_increment = rows[row_where_id_must_be_incremented]["id"]
+            components_of_value_id_to_increment = value_id_to_increment.split("-")
+            rows[row_where_id_must_be_incremented]["id"] = (
+                f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
+                f"{int(components_of_value_id_to_increment[2]) + 1}"
+            )
+
+        return rows
 
     def _mark_value_as_listed_in_feature_profiles(
         self,
@@ -218,3 +233,4 @@ class ListedValueAdder(Adder):
                 )
 
     # TODO: so now a method must be written that updates IDs of values in profiles after a new value was added to FLV
+    # IMO, in this method, _get_indices_and_their_line_numbers_in_features_listed_values should be reused
