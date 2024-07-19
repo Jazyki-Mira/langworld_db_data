@@ -67,11 +67,13 @@ class ListedValueAdder(Adder):
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
         # Collect all indices and line numbers of given feature into value_indices_to_inventory_line_numbers
-        value_indices_to_inventory_line_numbers = self._get_indices_and_their_line_numbers_in_features_listed_values(
-            rows=rows,
-            feature_id=feature_id,
-            new_value_en=new_value_en,
-            new_value_ru=new_value_ru,
+        value_indices_to_inventory_line_numbers = (
+            self._get_indices_and_their_line_numbers_in_features_listed_values(
+                rows=rows,
+                feature_id=feature_id,
+                new_value_en=new_value_en,
+                new_value_ru=new_value_ru,
+            )
         )
 
         # Check if index_to_assign is -1 or belongs to range of indices in value_indices_to_inventory_line_numbers
@@ -142,10 +144,10 @@ class ListedValueAdder(Adder):
 
     @staticmethod
     def _get_indices_and_their_line_numbers_in_features_listed_values(
-            rows: list[dict[str, str]],
-            feature_id: str,
-            new_value_en: str,
-            new_value_ru: str,
+        rows: list[dict[str, str]],
+        feature_id: str,
+        new_value_en: str,
+        new_value_ru: str,
     ):
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
         """List of dictionaries, each mapping value index to line number in features_listed_values,
