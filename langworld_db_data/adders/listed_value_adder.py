@@ -78,7 +78,7 @@ class ListedValueAdder(Adder):
                 continue
 
             if row["en"] == new_value_en or row["ru"] == new_value_ru:
-                raise ListedValueAdderError(
+                raise ValueError(
                     f"Row {row} already contains value you are trying to add"
                 )
 
