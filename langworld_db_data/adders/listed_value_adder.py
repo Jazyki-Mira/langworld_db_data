@@ -30,19 +30,22 @@ class ListedValueAdder(Adder):
         if not (feature_id and new_value_en and new_value_ru):
             raise ListedValueAdderError("None of the passed strings can be empty")
 
-        id_of_new_value, _ = self._add_to_inventory_of_listed_values(
-            feature_id=feature_id,
-            new_value_en=new_value_en,
-            new_value_ru=new_value_ru,
-            index_to_assign=index_to_assign,
-        )
+        try:
+            id_of_new_value, _ = self._add_to_inventory_of_listed_values(
+                feature_id=feature_id,
+                new_value_en=new_value_en,
+                new_value_ru=new_value_ru,
+                index_to_assign=index_to_assign,
+            )
 
-        self._mark_value_as_listed_in_feature_profiles(
-            feature_id=feature_id,
-            new_value_id=id_of_new_value,
-            new_value_ru=new_value_ru,
-            custom_values_to_rename=custom_values_to_rename,
-        )
+            self._mark_value_as_listed_in_feature_profiles(
+                feature_id=feature_id,
+                new_value_id=id_of_new_value,
+                new_value_ru=new_value_ru,
+                custom_values_to_rename=custom_values_to_rename,
+            )
+        except ValueError as e:
+            raise ListedValueAdderError(e)
 
     def _add_to_inventory_of_listed_values(
         self,
@@ -91,7 +94,7 @@ class ListedValueAdder(Adder):
         last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
         acceptable_indices_to_assign = [-1] + [i for i in range(1, last_index_in_feature)]
         if index_to_assign not in acceptable_indices_to_assign:
-            raise ListedValueAdderError(
+            raise ValueError(
                 f"Invalid index_to assign (must be between 1 and {last_index_in_feature}, "
                 f"{index_to_assign} was given)"
             )
