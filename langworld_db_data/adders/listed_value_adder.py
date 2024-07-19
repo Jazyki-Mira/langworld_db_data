@@ -167,18 +167,18 @@ class ListedValueAdder(Adder):
         new_value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
     ) -> None:
-        for file in self.input_feature_profiles:  # MASH: for every Path in the list
+        for file in self.input_feature_profiles:
             is_changed = False
-            rows = read_dicts_from_csv(file)  # MASH: here we get info from the Path
+            rows = read_dicts_from_csv(file)
 
             for i, row in enumerate(rows):
                 if row["feature_id"] == feature_id and row["value_type"] == "custom":
                     value_ru = row[
                         "value_ru"
-                    ].strip()  # MASH: cut extra whitespaces in the beginning and in the end
+                    ].strip()
                     value_ru = (
                         value_ru[:-1] if value_ru.endswith(".") else value_ru
-                    )  # MASH: drop period if exists
+                    )
 
                     new_value_with_variants: list[str] = (
                         [new_value_ru] + custom_values_to_rename
