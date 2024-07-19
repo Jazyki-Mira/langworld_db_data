@@ -211,3 +211,43 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
             output_file=file,
             gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION / file.name,
         )
+
+
+def test__get_indices_and_their_line_numbers_in_features_listed_values(test_adder):
+    rows = [
+        {
+            "id": "A-1-1",
+            "feature_id": "A-1",
+            "en": "Two",
+            "ru": "Две"
+        },
+        {
+            "id": "A-2-1",
+            "feature_id": "A-2",
+            "en": "Close and open",
+            "ru": "Верхний и нижний"
+        },
+        {
+            "id": "A-2-2",
+            "feature_id": "A-2",
+            "en": "Close and mid",
+            "ru": "Верхний и средний"
+        },
+    ]
+    value_indices_to_inventory_line_numbers = test_adder._get_indices_and_their_line_numbers_in_features_listed_values(
+        rows=rows,
+        feature_id="A-2",
+        new_value_en="some value",
+        new_value_ru="какое-то значение"
+    )
+
+    assert value_indices_to_inventory_line_numbers == [
+        {
+            "index": 1,
+            "line number": 1,
+        },
+        {
+            "index": 2,
+            "line number": 2,
+        },
+    ]

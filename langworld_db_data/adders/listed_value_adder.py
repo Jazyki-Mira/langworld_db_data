@@ -66,27 +66,13 @@ class ListedValueAdder(Adder):
         if not [r for r in rows if r["feature_id"] == feature_id]:
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
-        value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
-        """List of dictionaries, each mapping value index to line number in features_listed_values,
-        ex. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5}, {"index": 3, "line number": 6}].
-        Contains all indices and line numbers of values with given feature_id.
-        """
-
         # Collect all indices and line numbers of given feature into value_indices_to_inventory_line_numbers
-        for i, row in enumerate(rows):
-            if row["feature_id"] != feature_id:
-                continue
-
-            if row["en"] == new_value_en or row["ru"] == new_value_ru:
-                raise ValueError(f"Row {row} already contains value you are trying to add")
-
-            value_index = int(row["id"].split(ID_SEPARATOR)[-1])
-            value_indices_to_inventory_line_numbers.append(
-                {
-                    "index": value_index,
-                    "line number": i,
-                }
-            )
+        value_indices_to_inventory_line_numbers = self._get_indices_and_their_line_numbers_in_features_listed_values(
+            rows=rows,
+            feature_id=feature_id,
+            new_value_en=new_value_en,
+            new_value_ru=new_value_ru,
+        )
 
         # Check if index_to_assign is -1 or belongs to range of indices in value_indices_to_inventory_line_numbers
         last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
@@ -114,7 +100,7 @@ class ListedValueAdder(Adder):
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{index_to_assign}"
 
             # Go through values of the feature, ignore indices less than index_to_assign,
-            # increment all the other indices
+            # increment all other indices
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
                 if value_index_and_line_number["index"] < index_to_assign:
                     continue
@@ -127,7 +113,6 @@ class ListedValueAdder(Adder):
                     f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
                     f"{int(components_of_value_id_to_increment[2]) + 1}"
                 )
-            print(ids_to_increment_in_profiles)
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
                 if value_index_and_line_number["index"] == index_to_assign:
@@ -154,6 +139,36 @@ class ListedValueAdder(Adder):
         )
 
         return id_of_new_value, ids_to_increment_in_profiles
+
+    @staticmethod
+    def _get_indices_and_their_line_numbers_in_features_listed_values(
+            rows: list[dict[str, str]],
+            feature_id: str,
+            new_value_en: str,
+            new_value_ru: str,
+    ):
+        value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
+        """List of dictionaries, each mapping value index to line number in features_listed_values,
+        ex. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5}, {"index": 3, "line number": 6}].
+        Contains all indices and line numbers of values with given feature_id.
+        """
+
+        for i, row in enumerate(rows):
+            if row["feature_id"] != feature_id:
+                continue
+
+            if row["en"] == new_value_en or row["ru"] == new_value_ru:
+                raise ValueError(f"Row {row} already contains value you are trying to add")
+
+            value_index = int(row["id"].split(ID_SEPARATOR)[-1])
+            value_indices_to_inventory_line_numbers.append(
+                {
+                    "index": value_index,
+                    "line number": i,
+                }
+            )
+
+        return value_indices_to_inventory_line_numbers
 
     def _mark_value_as_listed_in_feature_profiles(
         self,
