@@ -76,7 +76,7 @@ class ListedValueAdder(Adder):
             )
         )
 
-        # Check if index_to_assign is -1 or belongs to range of indices in value_indices_to_inventory_line_numbers
+        # Check if passed index is valid
         last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
         acceptable_indices_to_assign = set([-1] + [i for i in range(1, last_index_in_feature)])
         if index_to_assign not in acceptable_indices_to_assign:
