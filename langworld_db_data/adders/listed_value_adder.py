@@ -63,7 +63,7 @@ class ListedValueAdder(Adder):
     ) -> str:
         """
         Add new value to the inventory of listed values. Return ID of new value.
-        
+
         index_to_assign means number that must be assigned to the new value within the feature, ex. 13 for A-2-13.
         If no index_to_assign is given, the new value will be added as the last one in the feature.
         index_to_assign must be greater than 0.
