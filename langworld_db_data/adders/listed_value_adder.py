@@ -37,7 +37,12 @@ class ListedValueAdder(Adder):
                 new_value_ru=new_value_ru,
                 index_to_assign=index_to_assign,
             )
+        except ValueError as e:
+            raise ListedValueAdderError(
+                f"Failed to add new value to inventory of listed values. {e}"
+            )
 
+        try:
             self._mark_value_as_listed_in_feature_profiles(
                 feature_id=feature_id,
                 new_value_id=id_of_new_value,
@@ -45,7 +50,9 @@ class ListedValueAdder(Adder):
                 custom_values_to_rename=custom_values_to_rename,
             )
         except ValueError as e:
-            raise ListedValueAdderError(e)
+            raise ListedValueAdderError(
+                f"Failed to mark custom values (that match value being added) as 'listed' in profiles. {e}"
+            )
 
     def _add_to_inventory_of_listed_values(
         self,
