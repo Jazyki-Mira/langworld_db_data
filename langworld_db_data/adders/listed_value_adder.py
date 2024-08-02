@@ -74,7 +74,12 @@ class ListedValueAdder(Adder):
         if not [r for r in rows if r["feature_id"] == feature_id]:
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
-        # Collect all indices and line numbers of given feature into value_indices_to_inventory_line_numbers
+        """
+        Collect all indices and line numbers of given feature.
+        Indices are final parts of value IDs in the feature where new value is being added
+        This is done to get index and line number of final value (if the new value is intended final)
+        and to calculate line number for the new value (if it is intended non-final)
+        """
         value_indices_to_inventory_line_numbers = (
             self._get_indices_and_their_line_numbers_in_features_listed_values(
                 rows=rows,
