@@ -77,7 +77,7 @@ class ListedValueAdder(Adder):
         """
         Collect all indices and line numbers of given feature.
         Indices are final parts of value IDs in the feature where new value is being added.
-        Collecting is done to get index and line number of final value (if the new value is intended final)
+        Collecting is done to get index and line number of final value (if the new value itself is intended final)
         and to calculate line number for the new value (if it is intended non-final).
         """
         value_indices_to_inventory_line_numbers = (
