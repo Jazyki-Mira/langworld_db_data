@@ -115,7 +115,9 @@ def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_
     )
 
 
-def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no_custom_values(test_adder):
+def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no_custom_values(
+    test_adder,
+):
     # The feature A-11 has 14 values, we are asking the method to add the 15-th one
     new_value_id = test_adder._add_to_inventory_of_listed_values(
         feature_id="A-11",
@@ -129,7 +131,7 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
     )
 
 
