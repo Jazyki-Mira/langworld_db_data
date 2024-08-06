@@ -81,7 +81,7 @@ class ListedValueAdder(Adder):
         and to calculate line number for the new value (if it is intended non-final).
         """
         value_indices_to_inventory_line_numbers = (
-            self._get_indices_and_their_line_numbers_in_features_listed_values(
+            self._get_indices_and_their_line_numbers_for_given_feature_in_features_listed_values(
                 rows=rows,
                 feature_id=feature_id,
                 new_value_en=new_value_en,
@@ -148,7 +148,7 @@ class ListedValueAdder(Adder):
         return id_of_new_value
 
     @staticmethod
-    def _get_indices_and_their_line_numbers_in_features_listed_values(
+    def _get_indices_and_their_line_numbers_for_given_feature_in_features_listed_values(
         rows: list[dict[str, str]],
         feature_id: str,
         new_value_en: str,
