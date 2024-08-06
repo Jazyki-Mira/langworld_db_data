@@ -153,9 +153,9 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
     ) -> tuple[dict[str, int]]:
-        """List of dictionaries, each mapping value index to line number in features_listed_values,
-        ex. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5}, {"index": 3, "line number": 6}].
-        Contains all indices and line numbers of values with given feature_id.
+        """List of dictionaries, each mapping value index to line number iin the part of inventory of listed values
+        pertaining to the given feature ID, e.g. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5},
+        {"index": 3, "line number": 6}]. Contains all indices and line numbers of values with given feature_id.
         """
 
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
