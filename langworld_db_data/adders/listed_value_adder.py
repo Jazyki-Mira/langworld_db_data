@@ -104,6 +104,7 @@ class ListedValueAdder(Adder):
             line_number_of_new_value = (
                 value_indices_to_inventory_line_numbers[-1]["line number"] + 1
             )
+            rows_with_updated_value_indices = rows.copy()
 
         # If value is inserted into range of values, IDs following it must be incremented
         else:
@@ -111,10 +112,12 @@ class ListedValueAdder(Adder):
 
             # Go through values of the feature, ignore indices less than index_to_assign,
             # increment all other indices
-            rows = self._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
-                rows=rows,
-                value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
-                index_to_assign=index_to_assign,
+            rows_with_updated_value_indices = (
+                self._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
+                    rows=rows,
+                    value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
+                    index_to_assign=index_to_assign,
+                )
             )
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
@@ -131,7 +134,8 @@ class ListedValueAdder(Adder):
         ]
 
         rows_with_new_value_inserted = (
-            rows[:line_number_of_new_value] + row_with_new_value + rows[line_number_of_new_value:]
+            rows_with_updated_value_indices[:line_number_of_new_value] +
+            row_with_new_value + rows_with_updated_value_indices[line_number_of_new_value:]
         )
 
         write_csv(
