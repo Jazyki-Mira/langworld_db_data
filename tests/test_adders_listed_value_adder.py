@@ -243,8 +243,6 @@ def test__get_indices_and_their_line_numbers_in_features_listed_values(test_adde
         test_adder._get_indices_and_their_line_numbers_for_given_feature_in_features_listed_values(
             rows=rows,
             feature_id="A-2",
-            new_value_en="some value",
-            new_value_ru="какое-то значение",
         )
     )
 

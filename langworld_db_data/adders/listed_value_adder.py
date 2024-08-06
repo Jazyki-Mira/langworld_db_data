@@ -80,12 +80,15 @@ class ListedValueAdder(Adder):
         Collecting is done to get index and line number of final value (if the new value itself is intended final)
         and to calculate line number for the new value (if it is intended non-final).
         """
+
+        for row in rows:
+            if row["en"] == new_value_en or row["ru"] == new_value_ru:
+                raise ValueError(f"Row {row} already contains value you are trying to add")
+
         value_indices_to_inventory_line_numbers = (
             self._get_indices_and_their_line_numbers_for_given_feature_in_features_listed_values(
                 rows=rows,
                 feature_id=feature_id,
-                new_value_en=new_value_en,
-                new_value_ru=new_value_ru,
             )
         )
 
@@ -150,8 +153,6 @@ class ListedValueAdder(Adder):
     def _get_indices_and_their_line_numbers_for_given_feature_in_features_listed_values(
         rows: list[dict[str, str]],
         feature_id: str,
-        new_value_en: str,
-        new_value_ru: str,
     ) -> tuple[dict[str, int]]:
         """List of dictionaries, each mapping value index to line number iin the part of inventory of listed values
         pertaining to the given feature ID, e.g. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5},
@@ -163,9 +164,6 @@ class ListedValueAdder(Adder):
         for i, row in enumerate(rows):
             if row["feature_id"] != feature_id:
                 continue
-
-            if row["en"] == new_value_en or row["ru"] == new_value_ru:
-                raise ValueError(f"Row {row} already contains value you are trying to add")
 
             value_index = int(row["id"].split(ID_SEPARATOR)[-1])
             value_indices_to_inventory_line_numbers.append(
