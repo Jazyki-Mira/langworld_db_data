@@ -115,10 +115,12 @@ class ListedValueAdder(Adder):
 
             # Go through values of the feature, ignore indices less than index_to_assign,
             # increment all other indices
-            rows_with_updated_value_indices = self._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
-                rows=rows,
-                value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
-                index_to_assign=index_to_assign,
+            rows_with_updated_value_indices = (
+                self._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
+                    rows=rows,
+                    value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
+                    index_to_assign=index_to_assign,
+                )
             )
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
@@ -180,7 +182,10 @@ class ListedValueAdder(Adder):
         rows: list[dict[str, str]],
         value_indices_to_inventory_line_numbers: list[dict[str, int]],
         index_to_assign: int,
-    ):
+    ) -> list[dict[str, str]]:
+        """
+        Increases by 1 index of every value that will come after the value passed for insertion
+        """
 
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
             if value_index_and_line_number["index"] < index_to_assign:
