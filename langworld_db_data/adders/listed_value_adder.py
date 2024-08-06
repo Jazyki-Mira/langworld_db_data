@@ -94,7 +94,7 @@ class ListedValueAdder(Adder):
         acceptable_indices_to_assign = set([-1] + [i for i in range(1, last_index_in_feature + 2)])
         if index_to_assign not in acceptable_indices_to_assign:
             raise ValueError(
-                f"Invalid index_to assign (must be between 1 and {last_index_in_feature}, "
+                f"Invalid index_to assign (must be between 1 and {last_index_in_feature + 1}, "
                 f"{index_to_assign} was given)"
             )
 
