@@ -91,7 +91,7 @@ class ListedValueAdder(Adder):
 
         # Check if passed index is valid
         last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
-        acceptable_indices_to_assign = set([-1] + [i for i in range(1, last_index_in_feature)])
+        acceptable_indices_to_assign = set([-1] + [i for i in range(1, last_index_in_feature + 1)])
         if index_to_assign not in acceptable_indices_to_assign:
             raise ValueError(
                 f"Invalid index_to assign (must be between 1 and {last_index_in_feature}, "
