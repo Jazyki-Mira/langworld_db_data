@@ -115,6 +115,24 @@ def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_
     )
 
 
+def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no_custom_values(test_adder):
+    # The feature A-11 has 14 values, we are asking the method to add the 15-th one
+    new_value_id = test_adder._add_to_inventory_of_listed_values(
+        feature_id="A-11",
+        new_value_en="New value, listed with a comma",
+        new_value_ru="Есть первые, вторые и третьи",
+        index_to_assign=15,
+    )
+    assert new_value_id == "A-11-15"
+
+    assert test_adder.output_file_with_listed_values.exists()
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE
+    )
+
+
 def test__add_to_inventory_of_listed_values_append_to_end_with_custom_values(test_adder):
     test_adder.add_listed_value(
         feature_id="A-11",
