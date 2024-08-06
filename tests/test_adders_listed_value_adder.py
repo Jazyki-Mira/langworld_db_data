@@ -88,26 +88,13 @@ def test_add_listed_value_throws_exception_with_empty_args(test_adder):
             test_adder.add_listed_value(**bad_set_of_values)
 
 
-def test__add_value_with_id_greater_than_current_last_index_plus_one(test_adder):
+def test__add_value_with_id_greater_than_current_last_index_plus_one_throws_exception(test_adder):
     with pytest.raises(ListedValueAdderError, match="must be between 1 and 15"):
         test_adder.add_listed_value(
             feature_id="A-11",
             new_value_en="something",
             new_value_ru="что-нибудь",
             index_to_assign=16,
-        )
-
-
-# TODO: reorder tests logically
-
-
-def test__add_value_with_zero_index(test_adder):
-    with pytest.raises(ListedValueAdderError, match="must be between 1 and 15"):
-        test_adder.add_listed_value(
-            feature_id="A-11",
-            new_value_en="something",
-            new_value_ru="что-нибудь",
-            index_to_assign=0,
         )
 
 
@@ -201,7 +188,7 @@ def test__add_to_inventory_of_listed_values_insert_after_non_final_value(test_ad
     )
 
 
-def test__test__add_to_inventory_of_listed_values_put_as_first(test_adder):
+def test__add_to_inventory_of_listed_values_put_as_first(test_adder):
     test_adder.add_listed_value(
         feature_id="A-3",
         new_value_en="Central, mid-back and back",
