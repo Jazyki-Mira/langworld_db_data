@@ -88,13 +88,26 @@ def test_add_listed_value_throws_exception_with_empty_args(test_adder):
             test_adder.add_listed_value(**bad_set_of_values)
 
 
-def test__add_after_value_that_exceeds_maximum(test_adder):
-    with pytest.raises(ListedValueAdderError, match="must be between 1 and 5"):
+def test__add_value_with_id_greater_than_current_last_index_plus_one(test_adder):
+    with pytest.raises(ListedValueAdderError, match="must be between 1 and 15"):
         test_adder.add_listed_value(
-            feature_id="A-2",
+            feature_id="A-11",
             new_value_en="something",
             new_value_ru="что-нибудь",
             index_to_assign=16,
+        )
+
+
+# TODO: reorder tests logically
+
+
+def test__add_value_with_zero_index(test_adder):
+    with pytest.raises(ListedValueAdderError, match="must be between 1 and 15"):
+        test_adder.add_listed_value(
+            feature_id="A-11",
+            new_value_en="something",
+            new_value_ru="что-нибудь",
+            index_to_assign=0,
         )
 
 
