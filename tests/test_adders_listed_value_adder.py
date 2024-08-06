@@ -39,7 +39,7 @@ def test_adder():
 
 
 def test__add_to_inventory_of_listed_values_throws_exception_with_zero_index_to_assign(test_adder):
-    with pytest.raises(ListedValueAdderError, match="must be between 1 and 3"):
+    with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
         test_adder.add_listed_value(
             feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=0
         )
