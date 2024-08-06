@@ -16,54 +16,114 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
+        index_to_assign: int = -1,
     ) -> None:
         """Adds listed value to the inventory and marks matching custom value
         in feature profiles as listed.  If one or more custom values
         in feature profiles were formulated differently but now
         have to be renamed to be the new `listed` value, these custom values
         can be passed as a list.
+        If no id to assign is given, the new value will be appended after
+        the last present value, else the new value will receive ID based on the passed index.
         """
+
         if not (feature_id and new_value_en and new_value_ru):
             raise ListedValueAdderError("None of the passed strings can be empty")
 
-        id_of_new_value = self._add_to_inventory_of_listed_values(
-            feature_id=feature_id, new_value_en=new_value_en, new_value_ru=new_value_ru
-        )
-        self._mark_value_as_listed_in_feature_profiles(
-            feature_id=feature_id,
-            new_value_id=id_of_new_value,
-            new_value_ru=new_value_ru,
-            custom_values_to_rename=custom_values_to_rename,
-        )
+        try:
+            id_of_new_value = self._add_to_inventory_of_listed_values(
+                feature_id=feature_id,
+                new_value_en=new_value_en,
+                new_value_ru=new_value_ru,
+                index_to_assign=index_to_assign,
+            )
+        except ValueError as e:
+            raise ListedValueAdderError(
+                f"Failed to add new value to inventory of listed values. {e}"
+            )
+
+        try:
+            self._mark_value_as_listed_in_feature_profiles(
+                feature_id=feature_id,
+                new_value_id=id_of_new_value,
+                new_value_ru=new_value_ru,
+                custom_values_to_rename=custom_values_to_rename,
+            )
+        except ValueError as e:
+            raise ListedValueAdderError(
+                f"Failed to mark custom values (that match value being added) as 'listed' in profiles. {e}"
+            )
 
     def _add_to_inventory_of_listed_values(
         self,
         feature_id: str,
         new_value_en: str,
         new_value_ru: str,
+        index_to_assign: int,
     ) -> str:
+        """
+        Add new value to the inventory of listed values. Return ID of new value.
+
+        index_to_assign means number that must be assigned to the new value within the feature, ex. 13 for A-2-13.
+        If no index_to_assign is given, the new value will be added as the last one in the feature.
+        index_to_assign must be greater than 0.
+        """
+
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
         if not [r for r in rows if r["feature_id"] == feature_id]:
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
-        index_of_last_row_for_given_feature = 0
-        id_of_new_value = ""
+        """
+        Collect all indices and line numbers of given feature.
+        Indices are final parts of value IDs in the feature where new value is being added.
+        Collecting is done to get index and line number of final value (if the new value itself is intended final)
+        and to calculate line number for the new value (if it is intended non-final).
+        """
 
-        for i, row in enumerate(rows):
-            if row["feature_id"] != feature_id:
-                continue
-
+        for row in rows:
             if row["en"] == new_value_en or row["ru"] == new_value_ru:
-                raise ListedValueAdderError(
-                    f"Row {row} already contains value you are trying to add"
-                )
+                raise ValueError(f"Row {row} already contains value you are trying to add")
 
-            # Keep updating those with each row. This means that at the last row of the
-            # feature they will reach the required values.
-            index_of_last_row_for_given_feature = i
-            last_digit_of_value_id = int(row["id"].split(ID_SEPARATOR)[-1])
-            id_of_new_value = feature_id + ID_SEPARATOR + str(last_digit_of_value_id + 1)
+        value_indices_to_inventory_line_numbers = (
+            self._get_indices_and_their_line_numbers_for_given_feature_in_features_listed_values(
+                rows=rows,
+                feature_id=feature_id,
+            )
+        )
+
+        # Check if passed index is valid
+        last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
+        acceptable_indices_to_assign = set([-1] + [i for i in range(1, last_index_in_feature + 2)])
+        if index_to_assign not in acceptable_indices_to_assign:
+            raise ValueError(
+                f"Invalid index_to assign (must be between 1 and {last_index_in_feature + 1}, "
+                f"{index_to_assign} was given)"
+            )
+
+        # id_of_new_value and line_number_of_new_value are assigned for default case and then changed if necessary
+        if index_to_assign in (-1, last_index_in_feature + 1):
+            id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1]['index'] + 1}"
+            line_number_of_new_value = (
+                value_indices_to_inventory_line_numbers[-1]["line number"] + 1
+            )
+            rows_with_updated_value_indices = rows.copy()
+
+        # If value is inserted into range of values, IDs following it must be incremented
+        else:
+            id_of_new_value = f"{feature_id}{ID_SEPARATOR}{index_to_assign}"
+
+            # Go through values of the feature, ignore indices less than index_to_assign,
+            # increment all other indices
+            rows_with_updated_value_indices = self._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
+                rows=rows,
+                value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
+                index_to_assign=index_to_assign,
+            )
+
+            for value_index_and_line_number in value_indices_to_inventory_line_numbers:
+                if value_index_and_line_number["index"] == index_to_assign:
+                    line_number_of_new_value = value_index_and_line_number["line number"]
 
         row_with_new_value = [
             {
@@ -75,9 +135,9 @@ class ListedValueAdder(Adder):
         ]
 
         rows_with_new_value_inserted = (
-            rows[: index_of_last_row_for_given_feature + 1]
+            rows_with_updated_value_indices[:line_number_of_new_value]
             + row_with_new_value
-            + rows[index_of_last_row_for_given_feature + 1 :]
+            + rows_with_updated_value_indices[line_number_of_new_value:]
         )
 
         write_csv(
@@ -88,6 +148,55 @@ class ListedValueAdder(Adder):
         )
 
         return id_of_new_value
+
+    @staticmethod
+    def _get_indices_and_their_line_numbers_for_given_feature_in_features_listed_values(
+        rows: list[dict[str, str]],
+        feature_id: str,
+    ) -> tuple[dict[str, int]]:
+        """List of dictionaries, each mapping value index to line number iin the part of inventory of listed values
+        pertaining to the given feature ID, e.g. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5},
+        {"index": 3, "line number": 6}]. Contains all indices and line numbers of values with given feature_id.
+        """
+
+        value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
+
+        for i, row in enumerate(rows):
+            if row["feature_id"] != feature_id:
+                continue
+
+            value_index = int(row["id"].split(ID_SEPARATOR)[-1])
+            value_indices_to_inventory_line_numbers.append(
+                {
+                    "index": value_index,
+                    "line number": i,
+                }
+            )
+
+        return tuple(value_indices_to_inventory_line_numbers)
+
+    @staticmethod
+    def _increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
+        rows: list[dict[str, str]],
+        value_indices_to_inventory_line_numbers: list[dict[str, int]],
+        index_to_assign: int,
+    ) -> list[dict[str, str]]:
+        """
+        Increases by 1 index of every value that will come after the value passed for insertion
+        """
+
+        for value_index_and_line_number in value_indices_to_inventory_line_numbers:
+            if value_index_and_line_number["index"] < index_to_assign:
+                continue
+            row_where_id_must_be_incremented = value_index_and_line_number["line number"]
+            value_id_to_increment = rows[row_where_id_must_be_incremented]["id"]
+            components_of_value_id_to_increment = value_id_to_increment.split("-")
+            rows[row_where_id_must_be_incremented]["id"] = (
+                f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
+                f"{int(components_of_value_id_to_increment[2]) + 1}"
+            )
+
+        return rows
 
     def _mark_value_as_listed_in_feature_profiles(
         self,
@@ -133,3 +242,6 @@ class ListedValueAdder(Adder):
                     overwrite=True,
                     delimiter=",",
                 )
+
+    # TODO: so now a method must be written that updates IDs of values in profiles after a new value was added to FLV
+    # IMO, in this method, _get_indices_and_their_line_numbers_in_features_listed_values should be reused
