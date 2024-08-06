@@ -154,12 +154,12 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
     ) -> list[dict[str, int]]:
-
-        value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
         """List of dictionaries, each mapping value index to line number in features_listed_values,
         ex. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5}, {"index": 3, "line number": 6}].
         Contains all indices and line numbers of values with given feature_id.
         """
+
+        value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
 
         for i, row in enumerate(rows):
             if row["feature_id"] != feature_id:
