@@ -248,7 +248,7 @@ def test__get_indices_and_their_line_numbers_in_features_listed_values(test_adde
         )
     )
 
-    assert value_indices_to_inventory_line_numbers == [
+    assert value_indices_to_inventory_line_numbers == (
         {
             "index": 1,
             "line number": 1,
@@ -257,7 +257,7 @@ def test__get_indices_and_their_line_numbers_in_features_listed_values(test_adde
             "index": 2,
             "line number": 2,
         },
-    ]
+    )
 
 
 def test__increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(test_adder):

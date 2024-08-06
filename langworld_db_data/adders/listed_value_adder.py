@@ -152,7 +152,7 @@ class ListedValueAdder(Adder):
         feature_id: str,
         new_value_en: str,
         new_value_ru: str,
-    ) -> list[dict[str, int]]:
+    ) -> tuple[dict[str, int]]:
         """List of dictionaries, each mapping value index to line number in features_listed_values,
         ex. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5}, {"index": 3, "line number": 6}].
         Contains all indices and line numbers of values with given feature_id.
@@ -175,7 +175,7 @@ class ListedValueAdder(Adder):
                 }
             )
 
-        return value_indices_to_inventory_line_numbers
+        return tuple(value_indices_to_inventory_line_numbers)
 
     @staticmethod
     def _increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
