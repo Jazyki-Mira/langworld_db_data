@@ -98,7 +98,7 @@ def test__add_value_with_id_greater_than_current_last_index_plus_one_throws_exce
         )
 
 
-def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_adder):
+def test__add_to_inventory_of_listed_values_append_to_end_with_default_index_no_custom_values(test_adder):
     new_value_id = test_adder._add_to_inventory_of_listed_values(
         feature_id="A-11",
         new_value_en="New value, listed with a comma",
