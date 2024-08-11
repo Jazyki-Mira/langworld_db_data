@@ -238,7 +238,7 @@ def test__get_indices_and_their_line_numbers_in_features_listed_values(test_adde
         {"id": "A-2-2", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
     ]
     value_indices_to_inventory_line_numbers = (
-        test_adder._get_indices_and_their_line_numbers_for_given_feature_in_features_listed_values(
+        test_adder._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
             rows=rows,
             feature_id="A-2",
         )
@@ -268,11 +268,11 @@ def test__increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
             "ru": "Верхний, средний и нижний",
         },
     ]
-    value_indices_to_inventory_line_numbers = [
+    value_indices_to_inventory_line_numbers = (
         {"index": 1, "line number": 1},
         {"index": 2, "line number": 2},
         {"index": 3, "line number": 3},
-    ]
+    )
     rows = test_adder._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
         rows=rows,
         value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
