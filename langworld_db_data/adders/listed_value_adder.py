@@ -85,11 +85,9 @@ class ListedValueAdder(Adder):
             if row["en"] == new_value_en or row["ru"] == new_value_ru:
                 raise ValueError(f"Row {row} already contains value you are trying to add")
 
-        value_indices_to_inventory_line_numbers = (
-            self._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
-                rows=rows,
-                feature_id=feature_id,
-            )
+        value_indices_to_inventory_line_numbers = self._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
+            rows=rows,
+            feature_id=feature_id,
         )
 
         # Check if passed index is valid
