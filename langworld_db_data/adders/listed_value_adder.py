@@ -19,7 +19,7 @@ class ListedValueAdder(Adder):
         index_to_assign: int = -1,
     ) -> None:
         """Adds listed value to the inventory and marks matching custom value
-        in feature profiles as listed.  If one or more custom values
+        in feature profiles as listed. If one or more custom values
         in feature profiles were formulated differently but now
         have to be renamed to be the new `listed` value, these custom values
         can be passed as a list.
@@ -86,7 +86,7 @@ class ListedValueAdder(Adder):
                 raise ValueError(f"Row {row} already contains value you are trying to add")
 
         value_indices_to_inventory_line_numbers = (
-            self._get_indices_and_their_line_numbers_for_given_feature_in_features_listed_values(
+            self._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
                 rows=rows,
                 feature_id=feature_id,
             )
@@ -150,10 +150,10 @@ class ListedValueAdder(Adder):
         return id_of_new_value
 
     @staticmethod
-    def _get_indices_and_their_line_numbers_for_given_feature_in_features_listed_values(
+    def _get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
         rows: list[dict[str, str]],
         feature_id: str,
-    ) -> tuple[dict[str, int]]:
+    ) -> tuple[dict[str, int], ...]:
         """List of dictionaries, each mapping value index to line number iin the part of inventory of listed values
         pertaining to the given feature ID, e.g. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5},
         {"index": 3, "line number": 6}]. Contains all indices and line numbers of values with given feature_id.
@@ -178,7 +178,7 @@ class ListedValueAdder(Adder):
     @staticmethod
     def _increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
         rows: list[dict[str, str]],
-        value_indices_to_inventory_line_numbers: list[dict[str, int]],
+        value_indices_to_inventory_line_numbers: tuple[dict[str, int], ...],
         index_to_assign: int,
     ) -> list[dict[str, str]]:
         """
