@@ -135,7 +135,7 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no
     )
 
 
-def test__add_to_inventory_of_listed_values_append_to_end_with_custom_values(test_adder):
+def test__add_to_inventory_of_listed_values_append_to_end_with_default_index_with_custom_values(test_adder):
     test_adder.add_listed_value(
         feature_id="A-11",
         new_value_en="New value, listed with a comma",
