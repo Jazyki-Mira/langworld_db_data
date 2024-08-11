@@ -231,7 +231,7 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
         )
 
 
-def test__get_indices_and_their_line_numbers_in_features_listed_values(test_adder):
+def test__get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(test_adder):
     rows = [
         {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
         {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
