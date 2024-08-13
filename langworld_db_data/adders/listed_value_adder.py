@@ -174,7 +174,7 @@ class ListedValueAdder(Adder):
         return tuple(value_indices_to_inventory_line_numbers)
 
     @staticmethod
-    def _increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
+    def _increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
         rows: list[dict[str, str]],
         value_indices_to_inventory_line_numbers: tuple[dict[str, int], ...],
         index_to_assign: int,

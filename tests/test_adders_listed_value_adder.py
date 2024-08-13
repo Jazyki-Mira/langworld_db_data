@@ -273,7 +273,7 @@ def test__increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
         {"index": 2, "line number": 2},
         {"index": 3, "line number": 3},
     )
-    rows = test_adder._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
+    rows = test_adder._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
         rows=rows,
         value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
         index_to_assign=2,
