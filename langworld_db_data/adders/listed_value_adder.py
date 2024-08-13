@@ -195,18 +195,19 @@ class ListedValueAdder(Adder):
         This helps to prepare rows for new value insertion.
         """
 
+        rows_with_incremented_indices = rows.copy()
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
             if value_index_and_line_number["index"] < index_to_assign:
                 continue
             row_where_id_must_be_incremented = value_index_and_line_number["line number"]
-            value_id_to_increment = rows[row_where_id_must_be_incremented]["id"]
+            value_id_to_increment = rows_with_incremented_indices[row_where_id_must_be_incremented]["id"]
             components_of_value_id_to_increment = value_id_to_increment.split("-")
-            rows[row_where_id_must_be_incremented]["id"] = (
+            rows_with_incremented_indices[row_where_id_must_be_incremented]["id"] = (
                 f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
                 f"{int(components_of_value_id_to_increment[2]) + 1}"
             )
 
-        return rows
+        return rows_with_incremented_indices
 
     def _mark_value_as_listed_in_feature_profiles(
         self,
