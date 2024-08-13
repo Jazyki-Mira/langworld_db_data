@@ -74,13 +74,11 @@ class ListedValueAdder(Adder):
         if not [r for r in rows if r["feature_id"] == feature_id]:
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
-        """
-        Collect all indices and line numbers of given feature.
-        
-        Indices are final parts of value IDs in the feature where new value is being added.
-        Collecting is done to get index and line number of final value (if the new value itself is intended final)
-        and to calculate line number for the new value (if it is intended non-final).
-        """
+        # Collect all indices and line numbers of given feature.
+        #
+        # Indices are final parts of value IDs in the feature where new value is being added.
+        # Collecting is done to get index and line number of final value (if the new value itself is intended final)
+        # and to calculate line number for the new value (if it is intended non-final).
 
         for row in rows:
             if row["en"] == new_value_en or row["ru"] == new_value_ru:
