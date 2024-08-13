@@ -104,7 +104,10 @@ class ListedValueAdder(Adder):
             )
 
         # id_of_new_value and line_number_of_new_value are assigned for default case and then changed if necessary
-        if index_to_assign in (-1, last_index_in_feature + 1):  # new value is being added after last one
+        if index_to_assign in (
+            -1,
+            last_index_in_feature + 1,
+        ):  # new value is being added after last one
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1]['index'] + 1}"
             line_number_of_new_value = (
                 value_indices_to_inventory_line_numbers[-1]["line number"] + 1
