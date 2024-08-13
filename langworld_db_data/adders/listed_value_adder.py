@@ -115,7 +115,7 @@ class ListedValueAdder(Adder):
             rows_with_updated_value_indices = rows.copy()
 
         # If value is inserted into range of values, IDs following it must be incremented
-        else:
+        else:  # new value being inserted in the middle
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{index_to_assign}"
 
             # Go through values of the feature, ignore indices less than index_to_assign,
