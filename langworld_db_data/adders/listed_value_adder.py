@@ -200,7 +200,9 @@ class ListedValueAdder(Adder):
             if value_index_and_line_number["index"] < index_to_assign:
                 continue
             row_where_id_must_be_incremented = value_index_and_line_number["line number"]
-            value_id_to_increment = rows_with_incremented_indices[row_where_id_must_be_incremented]["id"]
+            value_id_to_increment = rows_with_incremented_indices[
+                row_where_id_must_be_incremented
+            ]["id"]
             components_of_value_id_to_increment = value_id_to_increment.split("-")
             rows_with_incremented_indices[row_where_id_must_be_incremented]["id"] = (
                 f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
