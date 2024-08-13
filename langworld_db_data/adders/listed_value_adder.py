@@ -92,6 +92,10 @@ class ListedValueAdder(Adder):
 
         # Check if passed index is valid
         last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
+        # This range includes -1, all the current indices in the given feature and the next number after
+        # the current maximum. To include the maximum, we must add 1 to last_index_in_feature.
+        # To include the number right after the maximum, we must again add 1.
+        # This results in adding 2 to the rightmost range border.
         acceptable_indices_to_assign = set([-1] + list(range(1, last_index_in_feature + 2)))
         if index_to_assign not in acceptable_indices_to_assign:
             raise ValueError(
