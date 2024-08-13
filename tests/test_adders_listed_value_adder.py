@@ -38,6 +38,55 @@ def test_adder():
     )
 
 
+def test__add_to_inventory_of_listed_values_append_to_end_with_custom_values(test_adder):
+    test_adder.add_listed_value(
+        feature_id="A-11",
+        new_value_en="New value, listed with a comma",
+        new_value_ru="Есть первые, вторые и третьи",
+        custom_values_to_rename=[
+            "первые, вторые и третьи",
+            "третьи, вторые и первые",
+            "Первые, третьи и вторые",
+        ],
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
+    )
+
+    for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
+        assert (OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / f"{stem}.csv").exists(), (
+            f"File {stem}.csv was not created. It means that no changes were made while"
+            " there should have been changes"
+        )
+
+    for file in OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES.glob("*.csv"):
+        assert (
+            file.stem not in STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED
+        ), f"File {file.name} is not supposed to be changed"
+
+        print(f"TEST: checking amended feature profile {file.name}")
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=file,
+            gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION / file.name,
+        )
+
+
+def test__add_to_inventory_of_listed_values_put_as_first(test_adder):
+    test_adder.add_listed_value(
+        feature_id="A-3",
+        new_value_en="Central, mid-back and back",
+        new_value_ru="Средний, задне-средний и задний",
+        index_to_assign=1,
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_FIRST,
+    )
+
+
 def test__add_to_inventory_of_listed_values_throws_exception_with_zero_index_to_assign(test_adder):
     with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
         test_adder.add_listed_value(
@@ -135,41 +184,6 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no
     )
 
 
-def test__add_to_inventory_of_listed_values_append_to_end_with_custom_values(test_adder):
-    test_adder.add_listed_value(
-        feature_id="A-11",
-        new_value_en="New value, listed with a comma",
-        new_value_ru="Есть первые, вторые и третьи",
-        custom_values_to_rename=[
-            "первые, вторые и третьи",
-            "третьи, вторые и первые",
-            "Первые, третьи и вторые",
-        ],
-    )
-
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
-    )
-
-    for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
-        assert (OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / f"{stem}.csv").exists(), (
-            f"File {stem}.csv was not created. It means that no changes were made while"
-            " there should have been changes"
-        )
-
-    for file in OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES.glob("*.csv"):
-        assert (
-            file.stem not in STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED
-        ), f"File {file.name} is not supposed to be changed"
-
-        print(f"TEST: checking amended feature profile {file.name}")
-        check_existence_of_output_csv_file_and_compare_with_gold_standard(
-            output_file=file,
-            gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION / file.name,
-        )
-
-
 def test__add_to_inventory_of_listed_values_insert_after_non_final_value(test_adder):
     new_value_id = test_adder._add_to_inventory_of_listed_values(
         feature_id="A-3",
@@ -183,20 +197,6 @@ def test__add_to_inventory_of_listed_values_insert_after_non_final_value(test_ad
         output_file=test_adder.output_file_with_listed_values,
         gold_standard_file=GS_FILE_WITH_LISTED_VALUES_INSERTION_AFTER_NON_FINAL_VALUE,
         unlink_if_successful=True,
-    )
-
-
-def test__add_to_inventory_of_listed_values_put_as_first(test_adder):
-    test_adder.add_listed_value(
-        feature_id="A-3",
-        new_value_en="Central, mid-back and back",
-        new_value_ru="Средний, задне-средний и задний",
-        index_to_assign=1,
-    )
-
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_FIRST,
     )
 
 
