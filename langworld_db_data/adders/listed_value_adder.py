@@ -187,7 +187,8 @@ class ListedValueAdder(Adder):
         index_to_assign: int,
     ) -> list[dict[str, str]]:
         """
-        Increases by 1 index of every value that will come after the value passed for insertion
+        Increases by 1 index of every value that will come after the value passed for insertion.
+        This helps to prepare rows for new value insertion.
         """
 
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
