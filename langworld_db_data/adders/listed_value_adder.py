@@ -103,7 +103,6 @@ class ListedValueAdder(Adder):
                 f"{index_to_assign} was given)"
             )
 
-        # id_of_new_value and line_number_of_new_value are assigned for default case and then changed if necessary
         if index_to_assign in (
             -1,
             last_index_in_feature + 1,
