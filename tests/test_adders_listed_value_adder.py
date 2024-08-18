@@ -12,9 +12,13 @@ from tests.paths import (
 GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_listed_value_adder.csv"
 )
-GS_FILE_WITH_LISTED_VALUES_INSERTION_AFTER_NON_FINAL_VALUE = (
+GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_THIRD = (
     DIR_WITH_ADDERS_TEST_FILES
-    / "features_listed_values_gold_standard_for_insertion_after_non_final_value.csv"
+    / "features_listed_values_gold_standard_for_insertion_as_third.csv"
+)
+GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_TENTH = (
+    DIR_WITH_ADDERS_TEST_FILES
+    / "features_listed_values_gold_standard_for_insertion_as_tenth.csv"
 )
 GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_FIRST = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_as_first.csv"
@@ -133,6 +137,8 @@ def test_add_listed_value_throws_exception_with_index_to_assign_greater_than_cur
         )
 
 
+# _add_to_inventory_of_listed_values
+# Normal cases
 def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_adder):
     new_value_id = test_adder._add_to_inventory_of_listed_values(
         feature_id="A-11",
@@ -148,28 +154,41 @@ def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_
         output_file=test_adder.output_file_with_listed_values,
         gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
     )
+    
 
-
-def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no_custom_values(
-    test_adder,
-):
-    # The feature A-11 has 14 values, we are asking the method to add the 15-th one
+def test__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_third(test_adder):
     new_value_id = test_adder._add_to_inventory_of_listed_values(
-        feature_id="A-11",
-        new_value_en="New value, listed with a comma",
-        new_value_ru="Есть первые, вторые и третьи",
-        index_to_assign=15,
+        feature_id="A-3",
+        new_value_en="Central, mid-back and back",
+        new_value_ru="Средний, задне-средний и задний",
+        index_to_assign=3,
     )
-    assert new_value_id == "A-11-15"
-
-    assert test_adder.output_file_with_listed_values.exists()
+    assert new_value_id == "A-3-3"
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_THIRD,
+        unlink_if_successful=True,
     )
 
 
+def test__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_tenth(test_adder):
+    new_value_id = test_adder._add_to_inventory_of_listed_values(
+        feature_id="A-11",
+        new_value_en="Some value",
+        new_value_ru="Какое-то значение",
+        index_to_assign=10,
+    )
+    assert new_value_id == "A-11-10"
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_TENTH,
+        unlink_if_successful=True,
+    )
+
+
+# Edge cases
 def test__add_to_inventory_of_listed_values_put_as_first(test_adder):
     test_adder._add_to_inventory_of_listed_values(
         feature_id="A-3",
@@ -184,19 +203,23 @@ def test__add_to_inventory_of_listed_values_put_as_first(test_adder):
     )
 
 
-def test__add_to_inventory_of_listed_values_insert_after_non_final_value(test_adder):
+def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no_custom_values(
+    test_adder,
+):
+    # The feature has 14 values, we are asking the method to add the 15-th one
     new_value_id = test_adder._add_to_inventory_of_listed_values(
-        feature_id="A-3",
-        new_value_en="Central, mid-back and back",
-        new_value_ru="Средний, задне-средний и задний",
-        index_to_assign=3,
+        feature_id="A-11",
+        new_value_en="New value, listed with a comma",
+        new_value_ru="Есть первые, вторые и третьи",
+        index_to_assign=15,
     )
-    assert new_value_id == "A-3-3"
+    assert new_value_id == "A-11-15"
+
+    assert test_adder.output_file_with_listed_values.exists()
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_INSERTION_AFTER_NON_FINAL_VALUE,
-        unlink_if_successful=True,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
     )
 
 
