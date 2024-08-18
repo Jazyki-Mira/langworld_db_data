@@ -18,7 +18,7 @@ class ListedValueAdder(Adder):
         custom_values_to_rename: Optional[list[str]] = None,
         index_to_assign: int = -1,
     ) -> None:
-        """Adds listed value to the inventory and marks matching custom value
+        """Adds listed value to the inventory and marks matching custom values
         in feature profiles as listed. If one or more custom values
         in feature profiles were formulated differently but now
         have to be renamed to be the new `listed` value, these custom values
@@ -91,7 +91,8 @@ class ListedValueAdder(Adder):
 
         # Check if passed index is valid
         last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
-        # This range includes -1, all the current indices in the given feature and the next number after
+        # The range of numbers acceptable as index_to_assign consists of
+        # all the current indices in the given feature and the next number after
         # the current maximum. To include the maximum, we must add 1 to last_index_in_feature.
         # To include the number right after the maximum, we must again add 1.
         # This results in adding 2 to the rightmost range border.
@@ -105,7 +106,7 @@ class ListedValueAdder(Adder):
         if index_to_assign in (
             -1,
             last_index_in_feature + 1,
-        ):  # new value is being added after last one
+        ):  # new value is being added after the last one
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1]['index'] + 1}"
             line_number_of_new_value = (
                 value_indices_to_inventory_line_numbers[-1]["line number"] + 1
