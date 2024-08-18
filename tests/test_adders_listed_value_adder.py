@@ -13,12 +13,10 @@ GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_listed_value_adder.csv"
 )
 GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_THIRD = (
-    DIR_WITH_ADDERS_TEST_FILES
-    / "features_listed_values_gold_standard_for_insertion_as_third.csv"
+    DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_as_third.csv"
 )
 GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_TENTH = (
-    DIR_WITH_ADDERS_TEST_FILES
-    / "features_listed_values_gold_standard_for_insertion_as_tenth.csv"
+    DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_as_tenth.csv"
 )
 GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_FIRST = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_as_first.csv"
@@ -156,7 +154,7 @@ def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_
         output_file=test_adder.output_file_with_listed_values,
         gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
     )
-    
+
 
 def test__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_third(test_adder):
     new_value_id = test_adder._add_to_inventory_of_listed_values(
