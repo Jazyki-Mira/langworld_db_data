@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 
 from langworld_db_data.adders.adder import Adder, AdderError
 from langworld_db_data.constants.literals import ID_SEPARATOR
@@ -16,7 +16,7 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
-        index_to_assign: int = -1,
+        index_to_assign: Union[int, None] = None,
     ) -> None:
         """Adds listed value to the inventory and marks matching custom values
         in feature profiles as listed. If one or more custom values
@@ -59,7 +59,7 @@ class ListedValueAdder(Adder):
         feature_id: str,
         new_value_en: str,
         new_value_ru: str,
-        index_to_assign: int,
+        index_to_assign: Union[int, None],
     ) -> str:
         """
         Add new value to the inventory of listed values. Return ID of new value.
@@ -96,7 +96,7 @@ class ListedValueAdder(Adder):
         # the current maximum. To include the maximum, we must add 1 to last_index_in_feature.
         # To include the number right after the maximum, we must again add 1.
         # This results in adding 2 to the rightmost range border.
-        acceptable_indices_to_assign = set([-1] + list(range(1, last_index_in_feature + 2)))
+        acceptable_indices_to_assign = set([None] + list(range(1, last_index_in_feature + 2)))
         if index_to_assign not in acceptable_indices_to_assign:
             raise ValueError(
                 f"Invalid index_to assign (must be between 1 and {last_index_in_feature + 1}, "
@@ -104,7 +104,7 @@ class ListedValueAdder(Adder):
             )
 
         if index_to_assign in (
-            -1,
+            None,
             last_index_in_feature + 1,
         ):  # new value is being added after the last one
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1]['index'] + 1}"
