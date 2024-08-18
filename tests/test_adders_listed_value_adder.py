@@ -38,7 +38,7 @@ def test_adder():
     )
 
 
-def test__add_to_inventory_of_listed_values_append_to_end_with_custom_values(test_adder):
+def test_add_listed_value_append_to_end_with_custom_values(test_adder):
     test_adder.add_listed_value(
         feature_id="A-11",
         new_value_en="New value, listed with a comma",
@@ -73,21 +73,21 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_custom_values(tes
         )
 
 
-def test__add_to_inventory_of_listed_values_throws_exception_with_zero_index_to_assign(test_adder):
+def test_add_listed_value_throws_exception_with_zero_index_to_assign(test_adder):
     with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
         test_adder.add_listed_value(
             feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=0
         )
 
 
-def test__add_to_inventory_of_listed_values_throws_exception_with_invalid_feature_id(
+def test_add_listed_value_throws_exception_with_invalid_feature_id(
     test_adder,
 ):
     with pytest.raises(ListedValueAdderError, match="Feature ID X-1 not found"):
         test_adder.add_listed_value("X-1", "Value", "значение")
 
 
-def test__add_to_inventory_of_listed_values_throws_exception_with_existing_value(
+def test_add_listed_value_throws_exception_with_existing_value(
     test_adder,
 ):
     for bad_args in (
@@ -123,7 +123,7 @@ def test_add_listed_value_throws_exception_with_empty_args(test_adder):
             test_adder.add_listed_value(**bad_set_of_values)
 
 
-def test__add_value_with_id_greater_than_current_last_index_plus_one_throws_exception(test_adder):
+def test_add_listed_value_throws_exception_with_index_to_assign_greater_than_current_last_index_plus_one(test_adder):
     with pytest.raises(ListedValueAdderError, match="must be between 1 and 15"):
         test_adder.add_listed_value(
             feature_id="A-11",
@@ -200,7 +200,7 @@ def test__add_to_inventory_of_listed_values_insert_after_non_final_value(test_ad
     )
 
 
-def test__get_indices_and_their_line_numbers_in_features_listed_values(test_adder):
+def test__get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(test_adder):
     rows = [
         {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
         {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
@@ -225,7 +225,7 @@ def test__get_indices_and_their_line_numbers_in_features_listed_values(test_adde
     )
 
 
-def test__increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(test_adder):
+def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(test_adder):
     rows = [
         {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
         {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
