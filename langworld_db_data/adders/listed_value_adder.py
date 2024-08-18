@@ -8,7 +8,7 @@ from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 FEATURE_ID = "feature_id"
 ID = "id"
 INDEX = "index"
-LINE_NUMBER = "line_number"
+LINE_NUMBER = "line number"
 
 
 class ListedValueAdderError(AdderError):
