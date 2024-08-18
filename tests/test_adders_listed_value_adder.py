@@ -147,7 +147,9 @@ def test_add_listed_value_throws_exception_with_index_to_assign_greater_than_cur
         )
 
 
-def test_add_listed_value_throws_exception_with_index_to_assign_much_greater_than_current_maximum_plus_one(test_adder):
+def test_add_listed_value_throws_exception_with_index_to_assign_much_greater_than_current_maximum_plus_one(
+    test_adder,
+):
     with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
         test_adder.add_listed_value(
             feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=100
