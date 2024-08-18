@@ -40,6 +40,8 @@ def test_adder():
     )
 
 
+# add_listed_value
+# Normal case
 def test_add_listed_value_append_to_end_with_custom_values(test_adder):
     test_adder.add_listed_value(
         feature_id="A-11",
@@ -75,6 +77,7 @@ def test_add_listed_value_append_to_end_with_custom_values(test_adder):
         )
 
 
+# Throws errors
 def test_add_listed_value_throws_exception_with_zero_index_to_assign(test_adder):
     with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
         test_adder.add_listed_value(
@@ -223,6 +226,8 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no
     )
 
 
+# _get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values
+# Normal case
 def test__get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
     test_adder,
 ):
@@ -248,6 +253,8 @@ def test__get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_l
     )
 
 
+# _increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign
+# Normal case
 def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(test_adder):
     rows = [
         {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
@@ -286,6 +293,8 @@ def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
     assert rows == gold_standard_rows
 
 
+# _mark_value_as_listed_in_feature_profiles
+# Normal case
 def test__mark_value_as_listed_in_feature_profiles(test_adder):
     test_adder._mark_value_as_listed_in_feature_profiles(
         feature_id="A-11",
