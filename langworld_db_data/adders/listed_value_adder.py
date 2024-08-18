@@ -4,7 +4,6 @@ from langworld_db_data.adders.adder import Adder, AdderError
 from langworld_db_data.constants.literals import ID_SEPARATOR
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
-
 FEATURE_ID = "feature_id"
 ID = "id"
 INDEX = "index"
@@ -114,9 +113,7 @@ class ListedValueAdder(Adder):
             last_index_in_feature + 1,
         ):  # new value is being added after the last one
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1][INDEX] + 1}"
-            line_number_of_new_value = (
-                value_indices_to_inventory_line_numbers[-1][LINE_NUMBER] + 1
-            )
+            line_number_of_new_value = value_indices_to_inventory_line_numbers[-1][LINE_NUMBER] + 1
             rows_with_updated_value_indices = rows.copy()
 
         # If value is inserted into range of values, IDs following it must be incremented
