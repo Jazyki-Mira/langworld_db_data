@@ -77,12 +77,15 @@ def test_add_listed_value_append_to_end_with_custom_values(test_adder):
         )
 
 
-# Throws errors
-def test_add_listed_value_throws_exception_with_zero_index_to_assign(test_adder):
-    with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
-        test_adder.add_listed_value(
-            feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=0
-        )
+# Throws exceptions
+def test_add_listed_value_throws_exception_with_empty_args(test_adder):
+    for bad_set_of_values in (
+        {"feature_id": "", "new_value_en": "Value", "new_value_ru": "Значение"},
+        {"feature_id": "A-1", "new_value_en": "", "new_value_ru": "Значение"},
+        {"feature_id": "A-1", "new_value_en": "Value", "new_value_ru": ""},
+    ):
+        with pytest.raises(ListedValueAdderError, match="None of the passed strings can be empty"):
+            test_adder.add_listed_value(**bad_set_of_values)
 
 
 def test_add_listed_value_throws_exception_with_invalid_feature_id(
@@ -118,14 +121,18 @@ def test_add_listed_value_throws_exception_with_existing_value(
             test_adder.add_listed_value(**bad_args)
 
 
-def test_add_listed_value_throws_exception_with_empty_args(test_adder):
-    for bad_set_of_values in (
-        {"feature_id": "", "new_value_en": "Value", "new_value_ru": "Значение"},
-        {"feature_id": "A-1", "new_value_en": "", "new_value_ru": "Значение"},
-        {"feature_id": "A-1", "new_value_en": "Value", "new_value_ru": ""},
-    ):
-        with pytest.raises(ListedValueAdderError, match="None of the passed strings can be empty"):
-            test_adder.add_listed_value(**bad_set_of_values)
+def test_add_listed_value_throws_exception_with_index_to_assign_less_than_minus_one(test_adder):
+    with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
+        test_adder.add_listed_value(
+            feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=-2
+        )
+
+
+def test_add_listed_value_throws_exception_with_zero_index_to_assign(test_adder):
+    with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
+        test_adder.add_listed_value(
+            feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=0
+        )
 
 
 def test_add_listed_value_throws_exception_with_index_to_assign_greater_than_current_last_index_plus_one(
@@ -137,6 +144,13 @@ def test_add_listed_value_throws_exception_with_index_to_assign_greater_than_cur
             new_value_en="something",
             new_value_ru="что-нибудь",
             index_to_assign=16,
+        )
+
+
+def test_add_listed_value_throws_exception_with_index_to_assign_much_greater_than_current_maximum_plus_one(test_adder):
+    with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
+        test_adder.add_listed_value(
+            feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=100
         )
 
 
