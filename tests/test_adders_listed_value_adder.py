@@ -121,10 +121,10 @@ def test_add_listed_value_throws_exception_with_existing_value(
             test_adder.add_listed_value(**bad_args)
 
 
-def test_add_listed_value_throws_exception_with_index_to_assign_less_than_minus_one(test_adder):
+def test_add_listed_value_throws_exception_with_index_to_assign_less_than_zero(test_adder):
     with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
         test_adder.add_listed_value(
-            feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=-2
+            feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=-1
         )
 
 
@@ -161,7 +161,7 @@ def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_
         feature_id="A-11",
         new_value_en="New value, listed with a comma",
         new_value_ru="Есть первые, вторые и третьи",
-        index_to_assign=-1,
+        index_to_assign=None,
     )
     assert new_value_id == "A-11-15"
 
