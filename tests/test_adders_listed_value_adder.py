@@ -123,7 +123,9 @@ def test_add_listed_value_throws_exception_with_empty_args(test_adder):
             test_adder.add_listed_value(**bad_set_of_values)
 
 
-def test_add_listed_value_throws_exception_with_index_to_assign_greater_than_current_last_index_plus_one(test_adder):
+def test_add_listed_value_throws_exception_with_index_to_assign_greater_than_current_last_index_plus_one(
+    test_adder,
+):
     with pytest.raises(ListedValueAdderError, match="must be between 1 and 15"):
         test_adder.add_listed_value(
             feature_id="A-11",
@@ -200,17 +202,17 @@ def test__add_to_inventory_of_listed_values_insert_after_non_final_value(test_ad
     )
 
 
-def test__get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(test_adder):
+def test__get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
+    test_adder,
+):
     rows = [
         {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
         {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
         {"id": "A-2-2", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
     ]
-    value_indices_to_inventory_line_numbers = (
-        test_adder._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
-            rows=rows,
-            feature_id="A-2",
-        )
+    value_indices_to_inventory_line_numbers = test_adder._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
+        rows=rows,
+        feature_id="A-2",
     )
 
     assert value_indices_to_inventory_line_numbers == (
