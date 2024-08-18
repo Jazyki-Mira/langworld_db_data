@@ -74,12 +74,11 @@ class ListedValueAdder(Adder):
         if not [r for r in rows if r["feature_id"] == feature_id]:
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
-        """
-        Collect all indices and line numbers of given feature.
-        Indices are final parts of value IDs in the feature where new value is being added.
-        Collecting is done to get index and line number of final value (if the new value itself is intended final)
-        and to calculate line number for the new value (if it is intended non-final).
-        """
+        # Collect all indices and line numbers of given feature.
+        #
+        # Indices are final parts of value IDs in the feature where new value is being added.
+        # Collecting is done to get index and line number of final value (if the new value itself is intended final)
+        # and to calculate line number for the new value (if it is intended non-final).
 
         for row in rows:
             if row["en"] == new_value_en or row["ru"] == new_value_ru:
@@ -92,15 +91,21 @@ class ListedValueAdder(Adder):
 
         # Check if passed index is valid
         last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
-        acceptable_indices_to_assign = set([-1] + [i for i in range(1, last_index_in_feature + 2)])
+        # This range includes -1, all the current indices in the given feature and the next number after
+        # the current maximum. To include the maximum, we must add 1 to last_index_in_feature.
+        # To include the number right after the maximum, we must again add 1.
+        # This results in adding 2 to the rightmost range border.
+        acceptable_indices_to_assign = set([-1] + list(range(1, last_index_in_feature + 2)))
         if index_to_assign not in acceptable_indices_to_assign:
             raise ValueError(
                 f"Invalid index_to assign (must be between 1 and {last_index_in_feature + 1}, "
                 f"{index_to_assign} was given)"
             )
 
-        # id_of_new_value and line_number_of_new_value are assigned for default case and then changed if necessary
-        if index_to_assign in (-1, last_index_in_feature + 1):
+        if index_to_assign in (
+            -1,
+            last_index_in_feature + 1,
+        ):  # new value is being added after last one
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1]['index'] + 1}"
             line_number_of_new_value = (
                 value_indices_to_inventory_line_numbers[-1]["line number"] + 1
@@ -108,12 +113,12 @@ class ListedValueAdder(Adder):
             rows_with_updated_value_indices = rows.copy()
 
         # If value is inserted into range of values, IDs following it must be incremented
-        else:
+        else:  # new value being inserted in the middle
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{index_to_assign}"
 
             # Go through values of the feature, ignore indices less than index_to_assign,
             # increment all other indices
-            rows_with_updated_value_indices = self._increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
+            rows_with_updated_value_indices = self._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
                 rows=rows,
                 value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
                 index_to_assign=index_to_assign,
@@ -152,9 +157,14 @@ class ListedValueAdder(Adder):
         rows: list[dict[str, str]],
         feature_id: str,
     ) -> tuple[dict[str, int], ...]:
-        """List of dictionaries, each mapping value index to line number iin the part of inventory of listed values
-        pertaining to the given feature ID, e.g. [{"index": 1, "line number": 4}, {"index": 2, "line number": 5},
-        {"index": 3, "line number": 6}]. Contains all indices and line numbers of values with given feature_id.
+        """
+        This method helps to gather indices and line numbers of the feature into which we want to insert
+        a new value. Once again, index is the last part of the value ID. This is necessary to calculate
+        the ID if the new value and its place in rows, which represent the current content of listed values inventory.
+        An example of what we want to get: [{"index": 1, "line number": 4}, {"index": 2, "line number": 5},
+        {"index": 3, "line number": 6}].
+        Returns list of dictionaries which contains all indices and line numbers of values with given feature_id
+        and is organized as the dictionary in the example.
         """
 
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
@@ -174,27 +184,31 @@ class ListedValueAdder(Adder):
         return tuple(value_indices_to_inventory_line_numbers)
 
     @staticmethod
-    def _increment_ids_whose_indices_are_not_less_than_index_to_assign_in_rows(
+    def _increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
         rows: list[dict[str, str]],
         value_indices_to_inventory_line_numbers: tuple[dict[str, int], ...],
         index_to_assign: int,
     ) -> list[dict[str, str]]:
         """
-        Increases by 1 index of every value that will come after the value passed for insertion
+        Increases by 1 index of every value that will come after the value passed for insertion.
+        This helps to prepare rows for new value insertion.
         """
 
+        rows_with_incremented_indices = rows.copy()
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
             if value_index_and_line_number["index"] < index_to_assign:
                 continue
             row_where_id_must_be_incremented = value_index_and_line_number["line number"]
-            value_id_to_increment = rows[row_where_id_must_be_incremented]["id"]
+            value_id_to_increment = rows_with_incremented_indices[
+                row_where_id_must_be_incremented
+            ]["id"]
             components_of_value_id_to_increment = value_id_to_increment.split("-")
-            rows[row_where_id_must_be_incremented]["id"] = (
+            rows_with_incremented_indices[row_where_id_must_be_incremented]["id"] = (
                 f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
                 f"{int(components_of_value_id_to_increment[2]) + 1}"
             )
 
-        return rows
+        return rows_with_incremented_indices
 
     def _mark_value_as_listed_in_feature_profiles(
         self,
