@@ -121,39 +121,15 @@ def test_add_listed_value_throws_exception_with_existing_value(
             test_adder.add_listed_value(**bad_args)
 
 
-def test_add_listed_value_throws_exception_with_index_to_assign_less_than_zero(test_adder):
-    with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
-        test_adder.add_listed_value(
-            feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=-1
-        )
-
-
-def test_add_listed_value_throws_exception_with_zero_index_to_assign(test_adder):
-    with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
-        test_adder.add_listed_value(
-            feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=0
-        )
-
-
-def test_add_listed_value_throws_exception_with_index_to_assign_greater_than_current_last_index_plus_one(
-    test_adder,
-):
-    with pytest.raises(ListedValueAdderError, match="must be between 1 and 15"):
-        test_adder.add_listed_value(
-            feature_id="A-11",
-            new_value_en="something",
-            new_value_ru="что-нибудь",
-            index_to_assign=16,
-        )
-
-
-def test_add_listed_value_throws_exception_with_index_to_assign_much_greater_than_current_maximum_plus_one(
-    test_adder,
-):
-    with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
-        test_adder.add_listed_value(
-            feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=100
-        )
+def test_add_listed_value_throws_exception_with_invalid_index_to_assign(test_adder):
+    invalid_indices_to_assign = [
+        -1, 0, 5, 100
+    ]
+    for invalid_index in invalid_indices_to_assign:
+        with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
+            test_adder.add_listed_value(
+                feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=invalid_index
+            )
 
 
 # _add_to_inventory_of_listed_values
