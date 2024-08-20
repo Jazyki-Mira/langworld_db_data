@@ -294,17 +294,19 @@ def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
         index_to_assign=2,
     )
 
-    gold_standard_rows = [
-        {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
-        {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
-        {"id": "A-2-3", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
-        {
-            "id": "A-2-4",
-            "feature_id": "A-2",
-            "en": "Close, mid and open",
-            "ru": "Верхний, средний и нижний",
-        },
-    ]
+    gold_standard_rows = tuple(
+            [
+            {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
+            {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
+            {"id": "A-2-3", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
+            {
+                "id": "A-2-4",
+                "feature_id": "A-2",
+                "en": "Close, mid and open",
+                "ru": "Верхний, средний и нижний",
+            },
+        ]
+    )
 
     assert rows == gold_standard_rows
 

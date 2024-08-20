@@ -114,7 +114,7 @@ class ListedValueAdder(Adder):
         ):  # new value is being added after the last one
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1][INDEX] + 1}"
             line_number_of_new_value = value_indices_to_inventory_line_numbers[-1][LINE_NUMBER] + 1
-            rows_with_updated_value_indices = rows.copy()
+            rows_with_updated_value_indices = tuple(rows.copy())
 
         # If value is inserted into range of values, IDs following it must be incremented
         else:  # new value being inserted in the middle
@@ -132,14 +132,16 @@ class ListedValueAdder(Adder):
                 if value_index_and_line_number[INDEX] == index_to_assign:
                     line_number_of_new_value = value_index_and_line_number[LINE_NUMBER]
 
-        row_with_new_value = [
-            {
-                ID: id_of_new_value,
-                FEATURE_ID: feature_id,
-                "en": new_value_en[0].upper() + new_value_en[1:],
-                "ru": new_value_ru[0].upper() + new_value_ru[1:],
-            }
-        ]
+        row_with_new_value = tuple(
+            [
+                {
+                    ID: id_of_new_value,
+                    FEATURE_ID: feature_id,
+                    "en": new_value_en[0].upper() + new_value_en[1:],
+                    "ru": new_value_ru[0].upper() + new_value_ru[1:],
+                }
+            ]
+        )
 
         rows_with_new_value_inserted = (
             rows_with_updated_value_indices[:line_number_of_new_value]
@@ -192,7 +194,7 @@ class ListedValueAdder(Adder):
         rows: list[dict[str, str]],
         value_indices_to_inventory_line_numbers: tuple[dict[str, int], ...],
         index_to_assign: int,
-    ) -> list[dict[str, str]]:
+    ) -> tuple[dict[str, str]]:
         """
         Increases by 1 index of every value that will come after the value passed for insertion.
         
