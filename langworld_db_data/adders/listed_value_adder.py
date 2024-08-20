@@ -199,7 +199,7 @@ class ListedValueAdder(Adder):
         Returns tuple of dictionaries with incremented indices and line numbers.
         """
 
-        rows_with_incremented_indices = rows.copy()
+        rows_with_incremented_indices = rows[:]
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
             if value_index_and_line_number[INDEX] < index_to_assign:
                 continue
