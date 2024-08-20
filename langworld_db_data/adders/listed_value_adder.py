@@ -161,7 +161,6 @@ class ListedValueAdder(Adder):
         rows: list[dict[str, str]],
         feature_id: str,
     ) -> tuple[dict[str, int], ...]:
-
         """
         Gather indices (last parts of value ID) and line numbers of feature into which new value will be inserted.
 
