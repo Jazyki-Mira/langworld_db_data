@@ -195,7 +195,7 @@ class ListedValueAdder(Adder):
     ) -> list[dict[str, str]]:
         """
         Increases by 1 index of every value that will come after the value passed for insertion.
-        
+
         Returns tuple of dictionaries with incremented indices and line numbers.
         """
 
