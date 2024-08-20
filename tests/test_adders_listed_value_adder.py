@@ -122,13 +122,14 @@ def test_add_listed_value_throws_exception_with_existing_value(
 
 
 def test_add_listed_value_throws_exception_with_invalid_index_to_assign(test_adder):
-    invalid_indices_to_assign = [
-        -1, 0, 5, 100
-    ]
+    invalid_indices_to_assign = [-1, 0, 5, 100]
     for invalid_index in invalid_indices_to_assign:
         with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
             test_adder.add_listed_value(
-                feature_id="A-1", new_value_en="Value", new_value_ru="значение", index_to_assign=invalid_index
+                feature_id="A-1",
+                new_value_en="Value",
+                new_value_ru="значение",
+                index_to_assign=invalid_index,
             )
 
 
