@@ -213,7 +213,7 @@ class ListedValueAdder(Adder):
                 f"{int(components_of_value_id_to_increment[2]) + 1}"
             )
 
-        return rows_with_incremented_indices
+        return tuple(rows_with_incremented_indices)
 
     def _mark_value_as_listed_in_feature_profiles(
         self,
