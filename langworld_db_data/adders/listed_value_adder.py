@@ -161,14 +161,15 @@ class ListedValueAdder(Adder):
         rows: list[dict[str, str]],
         feature_id: str,
     ) -> tuple[dict[str, int], ...]:
+
         """
-        This method helps to gather indices and line numbers of the feature into which we want to insert
-        a new value. Once again, index is the last part of the value ID. This is necessary to calculate
-        the ID if the new value and its place in rows, which represent the current content of listed values inventory.
-        An example of what we want to get: [{"index": 1, "line number": 4}, {"index": 2, "line number": 5},
-        {"index": 3, "line number": 6}].
-        Returns list of dictionaries which contains all indices and line numbers of values with given feature_id
-        and is organized as the dictionary in the example.
+        Gather indices (last parts of value ID) and line numbers of feature into which new value will be inserted.
+
+        This method is used to calculate ID of the value being added and its place in rows of listed values inventory.
+
+        Returns tuple of dictionaries containing all indices and line numbers of values with given feature_id.
+        Example:
+        ({"index": 1, "line number": 4}, {"index": 2, "line number": 5}, {"index": 3, "line number": 6})
         """
 
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
