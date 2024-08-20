@@ -195,7 +195,8 @@ class ListedValueAdder(Adder):
     ) -> list[dict[str, str]]:
         """
         Increases by 1 index of every value that will come after the value passed for insertion.
-        This helps to prepare rows for new value insertion.
+        
+        Returns tuple of dictionaries with incremented indices and line numbers.
         """
 
         rows_with_incremented_indices = rows.copy()
