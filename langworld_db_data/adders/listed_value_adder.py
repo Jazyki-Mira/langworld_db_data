@@ -272,7 +272,26 @@ class ListedValueAdder(Adder):
                     delimiter=",",
                 )
 
-    def increase_value_indices_greater_or_equal_to_index_of_inserted_value_in_language_profiles(self
+    def _make_dict_for_incrementing_value_indices_in_language_profiles(
+        self,
+        feature_id: str,
+        incremented_value_indices: tuple[int, ...],
+    ) -> dict[str, str]:
+        """
+        Makes a dictionary for profiles updating. As keys, it stores value IDs whose indices (last numbers)
+        must be incremented in language profiles. As values, it stores their correspondences,
+        i.e. IDs whose indices are incremented. Although the connection between key and value IDs is obvious,
+        it seems better to store them as textual units: otherwise, we would have to take the input ID,
+        extract its index, increment it, then formulate the new ID and replace the former ID with it.
+        """
+        pass
 
-        ):
+    def _increase_value_ids_with_index_greater_or_equal_to_index_of_inserted_value_in_language_profiles(
+        self,
+        old_value_id_new_value_id: dict[str, str],
+    ):
+        """
+        in every profile, the method looks for values to be incremented after insertion of new value
+        into the inventory. It receives
+        """
         pass
