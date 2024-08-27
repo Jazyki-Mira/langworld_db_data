@@ -4,10 +4,10 @@ from langworld_db_data.adders.adder import Adder, AdderError
 from langworld_db_data.constants.literals import ID_SEPARATOR
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
-COLUMN_FOR_FEATURE_ID = "feature_id"  # column for feature id
-COLUMN_FOR_PRIMARY_KEY = "id"  # column for primary key
-KEY_FOR_FEATURE_VALUE_INDEX = "index"  # key for feature value index
-KEY_FOR_FEATURE_VALUE_LINE_NUMBER = "line number"  # key for feature value line number
+COLUMN_FOR_FEATURE_ID = "feature_id"
+COLUMN_FOR_PRIMARY_KEY = "id"
+KEY_FOR_FEATURE_VALUE_INDEX = "index"
+KEY_FOR_FEATURE_VALUE_LINE_NUMBER = "line number"
 
 
 class ListedValueAdderError(AdderError):
