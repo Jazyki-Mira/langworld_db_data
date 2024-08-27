@@ -4,8 +4,8 @@ from langworld_db_data.adders.adder import Adder, AdderError
 from langworld_db_data.constants.literals import ID_SEPARATOR
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
-COLUMN_FOR_FEATURE_ID = "feature_id"
-COLUMN_FOR_PRIMARY_KEY = "id"
+KEY_FOR_FEATURE_ID = "feature_id"
+KEY_FOR_VALUE_ID = "id"
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
 KEY_FOR_FEATURE_VALUE_LINE_NUMBER = "line number"
 
@@ -76,7 +76,7 @@ class ListedValueAdder(Adder):
 
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
-        if not [r for r in rows if r[COLUMN_FOR_FEATURE_ID] == feature_id]:
+        if not [r for r in rows if r[KEY_FOR_FEATURE_ID] == feature_id]:
             raise ListedValueAdderError(f"Feature ID {feature_id} not found")
 
         # Collect all indices and line numbers of given feature.
@@ -141,8 +141,8 @@ class ListedValueAdder(Adder):
         row_with_new_value = tuple(
             [
                 {
-                    COLUMN_FOR_PRIMARY_KEY: id_of_new_value,
-                    COLUMN_FOR_FEATURE_ID: feature_id,
+                    KEY_FOR_VALUE_ID: id_of_new_value,
+                    KEY_FOR_FEATURE_ID: feature_id,
                     "en": new_value_en[0].upper() + new_value_en[1:],
                     "ru": new_value_ru[0].upper() + new_value_ru[1:],
                 }
@@ -182,10 +182,10 @@ class ListedValueAdder(Adder):
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
 
         for i, row in enumerate(rows):
-            if row[COLUMN_FOR_FEATURE_ID] != feature_id:
+            if row[KEY_FOR_FEATURE_ID] != feature_id:
                 continue
 
-            value_index = int(row[COLUMN_FOR_PRIMARY_KEY].split(ID_SEPARATOR)[-1])
+            value_index = int(row[KEY_FOR_VALUE_ID].split(ID_SEPARATOR)[-1])
             value_indices_to_inventory_line_numbers.append(
                 {
                     KEY_FOR_FEATURE_VALUE_INDEX: value_index,
@@ -216,10 +216,10 @@ class ListedValueAdder(Adder):
             ]
             value_id_to_increment = rows_with_incremented_indices[
                 row_where_id_must_be_incremented
-            ][COLUMN_FOR_PRIMARY_KEY]
+            ][KEY_FOR_VALUE_ID]
             components_of_value_id_to_increment = value_id_to_increment.split("-")
             rows_with_incremented_indices[row_where_id_must_be_incremented][
-                COLUMN_FOR_PRIMARY_KEY
+                KEY_FOR_VALUE_ID
             ] = (
                 f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
                 f"{int(components_of_value_id_to_increment[2]) + 1}"
@@ -239,7 +239,7 @@ class ListedValueAdder(Adder):
             rows = read_dicts_from_csv(file)
 
             for i, row in enumerate(rows):
-                if row[COLUMN_FOR_FEATURE_ID] == feature_id and row["value_type"] == "custom":
+                if row[KEY_FOR_FEATURE_ID] == feature_id and row["value_type"] == "custom":
                     value_ru = row["value_ru"].strip()
                     value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
 
