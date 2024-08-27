@@ -95,7 +95,9 @@ class ListedValueAdder(Adder):
         )
 
         # Check if passed index is valid
-        last_index_in_feature = value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_INDEX]
+        last_index_in_feature = value_indices_to_inventory_line_numbers[-1][
+            KEY_FOR_FEATURE_VALUE_INDEX
+        ]
         # The range of numbers acceptable as index_to_assign consists of
         # all the current indices in the given feature and the next number after
         # the current maximum. To include the maximum, we must add 1 to last_index_in_feature.
@@ -113,7 +115,9 @@ class ListedValueAdder(Adder):
             last_index_in_feature + 1,
         ):  # new value is being added after the last one
             id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_INDEX] + 1}"
-            line_number_of_new_value = value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_LINE_NUMBER] + 1
+            line_number_of_new_value = (
+                value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_LINE_NUMBER] + 1
+            )
             rows_with_updated_value_indices = tuple(rows.copy())
 
         # If value is inserted into range of values, IDs following it must be incremented
@@ -130,7 +134,9 @@ class ListedValueAdder(Adder):
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
                 if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] == index_to_assign:
-                    line_number_of_new_value = value_index_and_line_number[KEY_FOR_FEATURE_VALUE_LINE_NUMBER]
+                    line_number_of_new_value = value_index_and_line_number[
+                        KEY_FOR_FEATURE_VALUE_LINE_NUMBER
+                    ]
 
         row_with_new_value = tuple(
             [
@@ -205,12 +211,16 @@ class ListedValueAdder(Adder):
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
             if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] < index_to_assign:
                 continue
-            row_where_id_must_be_incremented = value_index_and_line_number[KEY_FOR_FEATURE_VALUE_LINE_NUMBER]
+            row_where_id_must_be_incremented = value_index_and_line_number[
+                KEY_FOR_FEATURE_VALUE_LINE_NUMBER
+            ]
             value_id_to_increment = rows_with_incremented_indices[
                 row_where_id_must_be_incremented
             ][COLUMN_FOR_PRIMARY_KEY]
             components_of_value_id_to_increment = value_id_to_increment.split("-")
-            rows_with_incremented_indices[row_where_id_must_be_incremented][COLUMN_FOR_PRIMARY_KEY] = (
+            rows_with_incremented_indices[row_where_id_must_be_incremented][
+                COLUMN_FOR_PRIMARY_KEY
+            ] = (
                 f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
                 f"{int(components_of_value_id_to_increment[2]) + 1}"
             )
