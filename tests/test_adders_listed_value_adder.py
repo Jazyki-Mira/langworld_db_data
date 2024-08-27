@@ -329,9 +329,11 @@ def test__make_dict_for_incrementing_value_indices_in_language_profiles(test_add
         "X-8-4": "X-8-5",
         "X-8-5": "X-8-6",
     }
-    old_value_id_new_value_id = test_adder._make_dict_for_incrementing_value_indices_in_language_profiles(
-        feature_id=feature_id,
-        incremented_value_indices=incremented_value_indices,
+    old_value_id_new_value_id = (
+        test_adder._make_dict_for_incrementing_value_indices_in_language_profiles(
+            feature_id=feature_id,
+            incremented_value_indices=incremented_value_indices,
+        )
     )
     assert old_value_id_new_value_id == old_value_id_new_value_id_gold_standard
 
