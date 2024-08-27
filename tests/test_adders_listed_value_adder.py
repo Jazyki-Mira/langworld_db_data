@@ -24,6 +24,18 @@ GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_FIRST = (
 GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION = (
     OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / "gold_standard"
 )
+DIR_WITH_FEATURE_PROFILES = (
+    DIR_WITH_ADDERS_TEST_FILES / "feature_profiles"
+)
+DIR_WITH_PROFILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES = (
+    DIR_WITH_FEATURE_PROFILES / "increment_value_ids_in_feature_profiles"
+)
+DIR_WITH_INPUT_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES = (
+    DIR_WITH_PROFILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES / "input"
+)
+DIR_WITH_GS_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES = (
+    DIR_WITH_PROFILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES / "gold_standard"
+)
 
 STEMS_OF_EXPECTED_OUTPUT_FILES = ("catalan", "corsican", "franco_provencal")
 STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED = ("pashto", "ukrainian")
@@ -289,7 +301,22 @@ def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
 
 
 def test__increment_value_ids_in_feature_profiles(test_adder):
-    pass
+    output_dir = DIR_WITH_PROFILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES / "output"
+    if not output_dir.exists():
+        output_dir.mkdir()
+    test_adder._increment_value_ids_in_feature_profiles(
+        new_value_id="A-11-5",
+        input_dir=DIR_WITH_INPUT_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES,
+        output_dir=output_dir,
+    )
+
+    for gs_file in DIR_WITH_GS_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES.glob("*.csv"):
+        test_output_file = output_dir / gs_file.name
+
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=test_output_file,
+            gold_standard_file=gs_file,
+        )
 
 
 # _mark_value_as_listed_in_feature_profiles

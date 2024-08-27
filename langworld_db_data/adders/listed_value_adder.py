@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Optional, Union
 
 from langworld_db_data.adders.adder import Adder, AdderError
@@ -230,6 +231,8 @@ class ListedValueAdder(Adder):
     def _increment_value_ids_in_feature_profiles(
         self,
         new_value_id: str,
+        input_dir: Path,
+        output_dir: Path,
     ):
         pass
 
