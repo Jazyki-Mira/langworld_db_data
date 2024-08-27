@@ -290,6 +290,7 @@ class ListedValueAdder(Adder):
     ):
         """
         in every profile, the method looks for values to be incremented after insertion of new value
-        into the inventory. It receives
+        into the inventory. It receives dictionary whose keys represent IDs to change and values represent
+        new IDs.
         """
         pass
