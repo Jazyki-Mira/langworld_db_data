@@ -218,9 +218,7 @@ class ListedValueAdder(Adder):
                 row_where_id_must_be_incremented
             ][KEY_FOR_VALUE_ID]
             components_of_value_id_to_increment = value_id_to_increment.split("-")
-            rows_with_incremented_indices[row_where_id_must_be_incremented][
-                KEY_FOR_VALUE_ID
-            ] = (
+            rows_with_incremented_indices[row_where_id_must_be_incremented][KEY_FOR_VALUE_ID] = (
                 f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
                 f"{int(components_of_value_id_to_increment[2]) + 1}"
             )
