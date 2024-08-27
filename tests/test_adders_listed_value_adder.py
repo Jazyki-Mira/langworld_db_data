@@ -319,3 +319,22 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
             output_file=file,
             gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION / file.name,
         )
+
+
+def test__make_dict_for_incrementing_value_indices_in_language_profiles(test_adder):
+    feature_id = "X-8"
+    incremented_value_indices = (4, 5, 6)
+    old_value_id_new_value_id_gold_standard = {
+        "X-8-3": "X-8-4",
+        "X-8-4": "X-8-5",
+        "X-8-5": "X-8-6",
+    }
+    old_value_id_new_value_id = test_adder._make_dict_for_incrementing_value_indices_in_language_profiles(
+        feature_id=feature_id,
+        incremented_value_indices=incremented_value_indices,
+    )
+    assert old_value_id_new_value_id == old_value_id_new_value_id_gold_standard
+
+
+def test__increase_value_ids_with_index_greater_or_equal_to_index_of_inserted_value_in_language_profiles():
+    new_value_id = ""
