@@ -272,5 +272,7 @@ class ListedValueAdder(Adder):
                     delimiter=",",
                 )
 
-    # TODO: so now a method must be written that updates IDs of values in profiles after a new value was added to FLV
-    # IMO, in this method, _get_indices_and_their_line_numbers_in_features_listed_values should be reused
+    def increase_value_indices_greater_or_equal_to_index_of_inserted_value_in_language_profiles(self
+
+        ):
+        pass
