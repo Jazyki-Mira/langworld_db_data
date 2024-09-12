@@ -228,13 +228,42 @@ class ListedValueAdder(Adder):
 
         return tuple(rows_with_incremented_indices)
 
+    @staticmethod
     def _increment_value_ids_in_feature_profiles(
-        self,
         new_value_id: str,
         input_dir: Path,
         output_dir: Path,
-    ):
-        pass
+    ):  # How should I connect it with properties of the object? It has input and output feature profiles dir
+        for file in sorted(list(input_dir.glob("*.csv"))):
+            # I see that in the next function is_changed is used, to write only changed files.
+            # As a first iteration, I am trying to do without it.
+            rows = read_dicts_from_csv(file)
+
+            new_value_id_decomposed = new_value_id.split("-")
+            target_feature_id = f"{new_value_id_decomposed[0]}-{new_value_id_decomposed[1]}"
+            new_value_index = new_value_id_decomposed[2]
+            for i, row in enumerate(rows):
+                if row["value_type"] != "listed":
+                    continue
+                if row["feature_id"] != target_feature_id:
+                    continue
+                current_value_id_decomposed = row["value_id"].split("-")
+                current_value_index = current_value_id_decomposed[2]
+                if int(current_value_index) < int(new_value_index):
+                    print(True)
+                    continue
+                current_value_id_decomposed[2] = str(int(current_value_id_decomposed[2]) + 1)
+                incremented_current_value_id = (f"{current_value_id_decomposed[0]}-"
+                                                f"{current_value_id_decomposed[1]}-"
+                                                f"{current_value_id_decomposed[2]}")
+                row["value_id"] = incremented_current_value_id
+
+            write_csv(
+                rows,
+                path_to_file=output_dir / file.name,
+                overwrite=True,
+                delimiter=",",
+            )
 
     def _mark_value_as_listed_in_feature_profiles(
         self,
