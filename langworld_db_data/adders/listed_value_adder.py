@@ -253,9 +253,11 @@ class ListedValueAdder(Adder):
                     print(True)
                     continue
                 current_value_id_decomposed[2] = str(int(current_value_id_decomposed[2]) + 1)
-                incremented_current_value_id = (f"{current_value_id_decomposed[0]}-"
-                                                f"{current_value_id_decomposed[1]}-"
-                                                f"{current_value_id_decomposed[2]}")
+                incremented_current_value_id = (
+                    f"{current_value_id_decomposed[0]}-"
+                    f"{current_value_id_decomposed[1]}-"
+                    f"{current_value_id_decomposed[2]}"
+                )
                 row["value_id"] = incremented_current_value_id
 
             write_csv(
