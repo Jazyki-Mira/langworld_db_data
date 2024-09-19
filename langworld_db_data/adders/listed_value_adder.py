@@ -250,9 +250,7 @@ class ListedValueAdder(Adder):
                     print(True)
                     continue
 
-                incremented_current_value_id = (
-                    f"{target_feature_id}-" f"{current_value_index + 1}"
-                )
+                incremented_current_value_id = f"{target_feature_id}-" f"{current_value_index + 1}"
                 row["value_id"] = incremented_current_value_id
 
             write_csv(
