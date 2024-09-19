@@ -251,7 +251,7 @@ class ListedValueAdder(Adder):
                     continue
 
                 incremented_current_value_id = (
-                    f"{target_feature_id}-" f"{current_value_id_decomposed[2]}"
+                    f"{target_feature_id}-" f"{current_value_index + 1}"
                 )
                 row["value_id"] = incremented_current_value_id
 
