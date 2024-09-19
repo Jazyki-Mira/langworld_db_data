@@ -249,7 +249,7 @@ class ListedValueAdder(Adder):
                 if int(current_value_index) < int(new_value_index):
                     print(True)
                     continue
-                
+
                 incremented_current_value_id = (
                     f"{target_feature_id}-" f"{current_value_id_decomposed[2]}"
                 )
