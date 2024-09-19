@@ -245,8 +245,7 @@ class ListedValueAdder(Adder):
             for row in rows:
                 if row["feature_id"] != target_feature_id or row["value_type"] != "listed":
                     continue
-                current_value_id_decomposed = row["value_id"].split("-")
-                current_value_index = current_value_id_decomposed[2]
+                current_value_index = int(row["value_id"].split("-")[-1])
                 if int(current_value_index) < int(new_value_index):
                     print(True)
                     continue
