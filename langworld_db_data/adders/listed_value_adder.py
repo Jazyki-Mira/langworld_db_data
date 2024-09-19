@@ -249,7 +249,9 @@ class ListedValueAdder(Adder):
                 if int(current_value_index) < int(new_value_index):
                     continue
 
-                incremented_current_value_id = f"{target_feature_id}{ID_SEPARATOR}{current_value_index + 1}"
+                incremented_current_value_id = (
+                    f"{target_feature_id}{ID_SEPARATOR}{current_value_index + 1}"
+                )
                 row["value_id"] = incremented_current_value_id
 
             write_csv(
