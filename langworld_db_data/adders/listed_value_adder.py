@@ -245,11 +245,11 @@ class ListedValueAdder(Adder):
             for row in rows:
                 if row["feature_id"] != target_feature_id or row["value_type"] != "listed":
                     continue
-                current_value_index = int(row["value_id"].split("-")[-1])
+                current_value_index = int(row["value_id"].split(ID_SEPARATOR)[-1])
                 if int(current_value_index) < int(new_value_index):
                     continue
 
-                incremented_current_value_id = f"{target_feature_id}-" f"{current_value_index + 1}"
+                incremented_current_value_id = f"{target_feature_id}{ID_SEPARATOR}{current_value_index + 1}"
                 row["value_id"] = incremented_current_value_id
 
             write_csv(
