@@ -242,7 +242,7 @@ class ListedValueAdder(Adder):
             new_value_id_decomposed = new_value_id.split("-")
             target_feature_id = f"{new_value_id_decomposed[0]}-{new_value_id_decomposed[1]}"
             new_value_index = int(new_value_id_decomposed[-1])
-            for i, row in enumerate(rows):
+            for row in rows:
                 if row["value_type"] != "listed":
                     continue
                 if row["feature_id"] != target_feature_id:
