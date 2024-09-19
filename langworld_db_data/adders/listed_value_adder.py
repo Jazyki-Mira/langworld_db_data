@@ -246,7 +246,7 @@ class ListedValueAdder(Adder):
                 if row["feature_id"] != target_feature_id or row["value_type"] != "listed":
                     continue
                 current_value_index = int(row["value_id"].split(ID_SEPARATOR)[-1])
-                if int(current_value_index) < int(new_value_index):
+                if current_value_index < new_value_index:
                     continue
 
                 incremented_current_value_id = f"{target_feature_id}{ID_SEPARATOR}{current_value_index + 1}"
