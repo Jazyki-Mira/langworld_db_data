@@ -340,7 +340,8 @@ def test__increment_value_ids_in_feature_profiles(test_adder):
 
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=file,
-            gold_standard_file=DIR_WITH_GS_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES / file.name,
+            gold_standard_file=DIR_WITH_GS_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES
+            / file.name,
         )
 
 
