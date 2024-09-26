@@ -48,7 +48,16 @@ class ListedValueAdder(Adder):
                 f"Failed to add new value to inventory of listed values. {e}"
             )
 
-        # Somewhere here self._increment_value_ids_in_feature_profiles should be used
+        try:
+            self._increment_value_ids_in_feature_profiles(
+                new_value_id=id_of_new_value,
+                input_dir=self.input_feature_profiles,
+                output_dir=self.output_dir_with_feature_profiles,
+            )
+        except ValueError as e:
+            raise ListedValueAdderError(
+                f"Failed to update value IDs in feature profiles. {e}"
+            )
 
         try:
             self._mark_value_as_listed_in_feature_profiles(
@@ -231,10 +240,10 @@ class ListedValueAdder(Adder):
     @staticmethod
     def _increment_value_ids_in_feature_profiles(
         new_value_id: str,
-        input_dir: Path,
+        input_dir: list[Path],
         output_dir: Path,
     ):
-        for file in sorted(list(input_dir.glob("*.csv"))):
+        for file in input_dir:
 
             rows = read_dicts_from_csv(file)
 
