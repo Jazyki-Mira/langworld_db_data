@@ -12,6 +12,9 @@ from tests.paths import (
 GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_listed_value_adder.csv"
 )
+GS_FILE_WITH_LISTED_VALUES_INSERTION_OF_A_2_3 = (
+    DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_of_A-2-3.csv"
+)
 GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_THIRD = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_as_third.csv"
 )
@@ -21,8 +24,11 @@ GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_TENTH = (
 GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_FIRST = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_as_first.csv"
 )
-GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION = (
-    OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / "gold_standard"
+GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES = (
+    OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / "gold_standard_custom_values"
+)
+GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES_AND_VALUE_IDS_UPDATING = (
+    OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / "gold_standard_custom_values_and_value_ids_updating"
 )
 DIR_WITH_FEATURE_PROFILES = DIR_WITH_ADDERS_TEST_FILES / "feature_profiles"
 DIR_WITH_PROFILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES = (
@@ -83,7 +89,31 @@ def test_add_listed_value_append_to_end_with_custom_values(test_adder):
         print(f"TEST: checking amended feature profile {file.name}")
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=file,
-            gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION / file.name,
+            gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES / file.name,
+        )
+
+
+def test_add_listed_value_append_to_end_with_custom_values_and_updating_value_ids(test_adder):
+    test_adder.add_listed_value(
+        feature_id="A-2",
+        new_value_en="Four degrees",
+        new_value_ru="Четыре подъема",
+        custom_values_to_rename=[
+            "Верхний, средний (закрытые и открытые) и нижний",
+        ],
+        index_to_assign=3
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_INSERTION_OF_A_2_3,
+    )
+
+    for file in OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES.glob("*.csv"):
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=file,
+            gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES_AND_VALUE_IDS_UPDATING
+                               / file.name,
         )
 
 
@@ -374,5 +404,5 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
 
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=file,
-            gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION / file.name,
+            gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES / file.name,
         )
