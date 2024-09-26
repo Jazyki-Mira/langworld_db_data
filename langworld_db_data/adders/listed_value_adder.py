@@ -233,10 +233,9 @@ class ListedValueAdder(Adder):
         new_value_id: str,
         input_dir: Path,
         output_dir: Path,
-    ):  # How should I connect it with properties of the object? It has input and output feature profiles dir
+    ):
         for file in sorted(list(input_dir.glob("*.csv"))):
-            # I see that in the next function is_changed is used, to write only changed files.
-            # As a first iteration, I am trying to do without it.
+
             rows = read_dicts_from_csv(file)
 
             new_value_id_decomposed = new_value_id.split("-")
