@@ -55,9 +55,7 @@ class ListedValueAdder(Adder):
                 output_dir=self.output_dir_with_feature_profiles,
             )
         except ValueError as e:
-            raise ListedValueAdderError(
-                f"Failed to update value IDs in feature profiles. {e}"
-            )
+            raise ListedValueAdderError(f"Failed to update value IDs in feature profiles. {e}")
 
         try:
             self._mark_value_as_listed_in_feature_profiles(
