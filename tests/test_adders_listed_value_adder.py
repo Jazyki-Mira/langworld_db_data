@@ -302,9 +302,10 @@ def test__increment_value_ids_in_feature_profiles(test_adder):
     output_dir = DIR_WITH_PROFILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES / "output"
     if not output_dir.exists():
         output_dir.mkdir()
+    input_feature_profiles = sorted(list(DIR_WITH_INPUT_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES.glob("*.csv")))
     test_adder._increment_value_ids_in_feature_profiles(
         new_value_id="A-11-5",
-        input_dir=DIR_WITH_INPUT_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES,
+        input_dir=input_feature_profiles,
         output_dir=output_dir,
     )
 
