@@ -28,7 +28,8 @@ GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES = (
     OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / "gold_standard_custom_values"
 )
 GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES_AND_VALUE_IDS_UPDATING = (
-    OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / "gold_standard_custom_values_and_value_ids_updating"
+    OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES
+    / "gold_standard_custom_values_and_value_ids_updating"
 )
 DIR_WITH_FEATURE_PROFILES = DIR_WITH_ADDERS_TEST_FILES / "feature_profiles"
 DIR_WITH_PROFILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES = (
@@ -89,7 +90,8 @@ def test_add_listed_value_append_to_end_with_custom_values(test_adder):
         print(f"TEST: checking amended feature profile {file.name}")
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=file,
-            gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES / file.name,
+            gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES
+            / file.name,
         )
 
 
@@ -101,7 +103,7 @@ def test_add_listed_value_append_to_end_with_custom_values_and_updating_value_id
         custom_values_to_rename=[
             "Верхний, средний (закрытые и открытые) и нижний",
         ],
-        index_to_assign=3
+        index_to_assign=3,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -113,7 +115,7 @@ def test_add_listed_value_append_to_end_with_custom_values_and_updating_value_id
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=file,
             gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES_AND_VALUE_IDS_UPDATING
-                               / file.name,
+            / file.name,
         )
 
 
@@ -404,5 +406,6 @@ def test__mark_value_as_listed_in_feature_profiles(test_adder):
 
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=file,
-            gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES / file.name,
+            gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES
+            / file.name,
         )
