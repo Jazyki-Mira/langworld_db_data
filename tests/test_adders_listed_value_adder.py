@@ -299,6 +299,20 @@ def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
 
 
 def test__increment_value_ids_in_feature_profiles(test_adder):
+
+    stems_of_files_that_must_be_changed = [
+        "catalan_A-11-5",
+        "catalan_A-11-6",
+        "catalan_A-11-14",
+    ]
+
+    stems_of_files_that_must_not_be_changed = [
+        "catalan_A-11-1",
+        "catalan_A-11-2",
+        "catalan_custom",
+        "catalan_not_stated",
+    ]
+
     output_dir = DIR_WITH_PROFILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES / "output"
     if not output_dir.exists():
         output_dir.mkdir()
@@ -311,12 +325,22 @@ def test__increment_value_ids_in_feature_profiles(test_adder):
         output_dir=output_dir,
     )
 
-    for gs_file in DIR_WITH_GS_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES.glob("*.csv"):
-        test_output_file = output_dir / gs_file.name
+    for stem in stems_of_files_that_must_be_changed:
+        assert (output_dir / f"{stem}.csv").exists(), (
+            f"File {stem}.csv was not created. It means that no changes were made while"
+            " there should have been changes"
+        )
+
+    for file in output_dir.glob("*.csv"):
+        assert (
+            file.stem not in stems_of_files_that_must_not_be_changed
+        ), f"File {file.name} is not supposed to be changed"
+
+        print(f"TEST: checking amended feature profile {file.name}")
 
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
-            output_file=test_output_file,
-            gold_standard_file=gs_file,
+            output_file=file,
+            gold_standard_file=DIR_WITH_GS_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES / file.name,
         )
 
 
