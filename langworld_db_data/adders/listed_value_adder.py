@@ -242,7 +242,7 @@ class ListedValueAdder(Adder):
         output_dir: Path,
     ):
         for file in input_dir:
-
+            is_changed = False
             rows = read_dicts_from_csv(file)
 
             new_value_id_decomposed = new_value_id.split("-")
@@ -259,13 +259,17 @@ class ListedValueAdder(Adder):
                     f"{target_feature_id}{ID_SEPARATOR}{current_value_index + 1}"
                 )
                 row["value_id"] = incremented_current_value_id
+                is_changed = True
+                print(True)
 
-            write_csv(
-                rows,
-                path_to_file=output_dir / file.name,
-                overwrite=True,
-                delimiter=",",
-            )
+            if is_changed:
+                print(f"Writing new file for {file.stem}")
+                write_csv(
+                    rows,
+                    path_to_file=output_dir / file.name,
+                    overwrite=True,
+                    delimiter=",",
+                )
 
     def _mark_value_as_listed_in_feature_profiles(
         self,
