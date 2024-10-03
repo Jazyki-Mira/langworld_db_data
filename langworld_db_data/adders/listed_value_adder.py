@@ -48,26 +48,18 @@ class ListedValueAdder(Adder):
                 f"Failed to add new value to inventory of listed values. {e}"
             )
 
-        try:
-            self._increment_value_ids_in_feature_profiles(
-                new_value_id=id_of_new_value,
-                input_files=self.input_feature_profiles,
-                output_dir=self.output_dir_with_feature_profiles,
-            )
-        except ValueError as e:
-            raise ListedValueAdderError(f"Failed to update value IDs in feature profiles. {e}")
+        self._increment_value_ids_in_feature_profiles(
+            new_value_id=id_of_new_value,
+            input_files=self.input_feature_profiles,
+            output_dir=self.output_dir_with_feature_profiles,
+        )
 
-        try:
-            self._mark_value_as_listed_in_feature_profiles(
-                feature_id=feature_id,
-                new_value_id=id_of_new_value,
-                new_value_ru=new_value_ru,
-                custom_values_to_rename=custom_values_to_rename,
-            )
-        except ValueError as e:
-            raise ListedValueAdderError(
-                f"Failed to mark custom values (that match value being added) as 'listed' in profiles. {e}"
-            )
+        self._mark_value_as_listed_in_feature_profiles(
+            feature_id=feature_id,
+            new_value_id=id_of_new_value,
+            new_value_ru=new_value_ru,
+            custom_values_to_rename=custom_values_to_rename,
+        )
 
     def _add_to_inventory_of_listed_values(
         self,
@@ -227,7 +219,7 @@ class ListedValueAdder(Adder):
             value_id_to_increment = rows_with_incremented_indices[
                 row_where_id_must_be_incremented
             ][KEY_FOR_VALUE_ID]
-            components_of_value_id_to_increment = value_id_to_increment.split("-")
+            components_of_value_id_to_increment = value_id_to_increment.split(ID_SEPARATOR)
             rows_with_incremented_indices[row_where_id_must_be_incremented][KEY_FOR_VALUE_ID] = (
                 f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
                 f"{int(components_of_value_id_to_increment[2]) + 1}"
@@ -245,7 +237,7 @@ class ListedValueAdder(Adder):
             is_changed = False
             rows = read_dicts_from_csv(file)
 
-            new_value_id_decomposed = new_value_id.split("-")
+            new_value_id_decomposed = new_value_id.split(ID_SEPARATOR)
             target_feature_id = f"{new_value_id_decomposed[0]}-{new_value_id_decomposed[1]}"
             new_value_index = int(new_value_id_decomposed[-1])
             for row in rows:
