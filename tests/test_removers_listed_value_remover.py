@@ -1,8 +1,10 @@
 import pytest
 
-from langworld_db_data.removers.listed_value_remover import ListedValueRemover, ListedValueRemoverError
+from langworld_db_data.removers.listed_value_remover import (
+    ListedValueRemover,
+    ListedValueRemoverError,
+)
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
-
 
 # To my mind, this will probably be a structure isomorphic to adders
 # It should be, first of all, able to remove a value from the inventory
