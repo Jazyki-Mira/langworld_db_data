@@ -54,17 +54,13 @@ class ListedValueAdder(Adder):
             output_dir=self.output_dir_with_feature_profiles,
         )
 
-        try:
-            self._mark_value_as_listed_in_feature_profiles(
-                feature_id=feature_id,
-                new_value_id=id_of_new_value,
-                new_value_ru=new_value_ru,
-                custom_values_to_rename=custom_values_to_rename,
-            )
-        except ValueError as e:
-            raise ListedValueAdderError(
-                f"Failed to mark custom values (that match value being added) as 'listed' in profiles. {e}"
-            )
+        self._mark_value_as_listed_in_feature_profiles(
+            feature_id=feature_id,
+            new_value_id=id_of_new_value,
+            new_value_ru=new_value_ru,
+            custom_values_to_rename=custom_values_to_rename,
+        )
+
 
     def _add_to_inventory_of_listed_values(
         self,
