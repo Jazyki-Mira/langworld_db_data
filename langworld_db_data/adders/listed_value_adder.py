@@ -61,7 +61,6 @@ class ListedValueAdder(Adder):
             custom_values_to_rename=custom_values_to_rename,
         )
 
-
     def _add_to_inventory_of_listed_values(
         self,
         feature_id: str,
