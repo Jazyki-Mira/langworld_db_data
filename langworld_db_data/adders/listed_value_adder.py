@@ -48,14 +48,11 @@ class ListedValueAdder(Adder):
                 f"Failed to add new value to inventory of listed values. {e}"
             )
 
-        try:
-            self._increment_value_ids_in_feature_profiles(
-                new_value_id=id_of_new_value,
-                input_files=self.input_feature_profiles,
-                output_dir=self.output_dir_with_feature_profiles,
-            )
-        except ValueError as e:
-            raise ListedValueAdderError(f"Failed to update value IDs in feature profiles. {e}")
+        self._increment_value_ids_in_feature_profiles(
+            new_value_id=id_of_new_value,
+            input_files=self.input_feature_profiles,
+            output_dir=self.output_dir_with_feature_profiles,
+        )
 
         try:
             self._mark_value_as_listed_in_feature_profiles(
