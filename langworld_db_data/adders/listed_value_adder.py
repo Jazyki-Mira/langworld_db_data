@@ -260,7 +260,6 @@ class ListedValueAdder(Adder):
                 )
                 row["value_id"] = incremented_current_value_id
                 is_changed = True
-                print(True)
 
             if is_changed:
                 print(f"Writing new file for {file.stem}")
