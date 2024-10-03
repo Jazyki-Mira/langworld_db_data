@@ -353,7 +353,7 @@ def test__increment_value_ids_in_feature_profiles(test_adder):
     )
     test_adder._increment_value_ids_in_feature_profiles(
         new_value_id="A-11-5",
-        input_dir=input_feature_profiles,
+        input_files=input_feature_profiles,
         output_dir=output_dir,
     )
 

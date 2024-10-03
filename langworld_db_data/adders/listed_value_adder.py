@@ -51,7 +51,7 @@ class ListedValueAdder(Adder):
         try:
             self._increment_value_ids_in_feature_profiles(
                 new_value_id=id_of_new_value,
-                input_dir=self.input_feature_profiles,
+                input_files=self.input_feature_profiles,
                 output_dir=self.output_dir_with_feature_profiles,
             )
         except ValueError as e:
@@ -241,7 +241,7 @@ class ListedValueAdder(Adder):
         input_files: list[Path],
         output_dir: Path,
     ):
-        for file in input_dir:
+        for file in input_files:
             is_changed = False
             rows = read_dicts_from_csv(file)
 
