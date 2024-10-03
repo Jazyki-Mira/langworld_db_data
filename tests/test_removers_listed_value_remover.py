@@ -25,11 +25,14 @@ def test_remove_listed_value_from_end_of_feature(test_remover):
     pass
 
 
-# Check if the target value is removed from the inventory (not the end of the feature) and saved into a variable
-# A-5-5 should be removed
+def test_remove_listed_value_from_middle_of_feature(test_remover):
+    # Check if the target value is removed from the inventory (not the end of the feature) and saved into a variable
+    # A-5-5 should be removed
+    pass
 
 
-# Check the validity of the requested value_id
+def test_remove_listed_value_throws_exception_with_invalid_value_id(test_remover):
+    pass
 
 
 # What should the module do if it is asked to pop a value which does not exist?
