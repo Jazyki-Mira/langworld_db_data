@@ -238,7 +238,7 @@ class ListedValueAdder(Adder):
     @staticmethod
     def _increment_value_ids_in_feature_profiles(
         new_value_id: str,
-        input_dir: list[Path],
+        input_files: list[Path],
         output_dir: Path,
     ):
         for file in input_dir:
