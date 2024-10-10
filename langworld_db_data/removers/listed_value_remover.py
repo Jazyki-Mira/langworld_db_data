@@ -7,8 +7,8 @@ class ListedValueRemoverError(RemoverError):
 
 class ListedValueRemover(Remover):
     def remove_listed_value(
-            self,
-            id_of_value_to_remove: str,
+        self,
+        id_of_value_to_remove: str,
     ) -> str:
         removed_value_information = ""
         self._remove_from_inventory_of_listed_values()

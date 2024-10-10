@@ -38,6 +38,7 @@ def test_remove_listed_value_throws_exception_with_invalid_value_id(test_remover
 def test_remove_listed_value_throws_exception_with_value_that_does_not_exist(test_remover):
     pass
 
+
 # What should the module do if it is asked to pop a value which does not exist?
 
 
