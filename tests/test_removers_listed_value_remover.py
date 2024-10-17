@@ -43,9 +43,11 @@ def test_remove_listed_value_from_end_of_feature(test_remover):
     removed_value_information = test_remover.remove_listed_value(
         id_of_value_to_remove="A-5-8",
     )
-    gs_removed_value_information = (
-        'A-5,"Present for front, central and back vowels","В переднем, среднем и заднем рядах"'
-    )
+    gs_removed_value_information = {
+        "feature_id": "A-5",
+        "en": "Present for front, central and back vowels",
+        "ru": "В переднем, среднем и заднем рядах",
+    }
     assert removed_value_information == gs_removed_value_information
 
     assert test_remover.output_file_with_listed_values.exists()
@@ -60,9 +62,11 @@ def test_remove_listed_value_from_middle_of_feature(test_remover):
     removed_value_information = test_remover.remove_listed_value(
         id_of_value_to_remove="A-5-5",
     )
-    gs_removed_value_information = (
-        "A-5,Present for front and central vowels,В переднем и среднем рядах"
-    )
+    gs_removed_value_information = {
+        "feature_id": "A-5",
+        "en": "Present for front and central vowels",
+        "ru": "В переднем и среднем рядах",
+    }
     assert removed_value_information == gs_removed_value_information
 
     assert test_remover.output_file_with_listed_values.exists()
