@@ -10,8 +10,7 @@ class ListedValueRemover(Remover):
         self,
         id_of_value_to_remove: str,
     ) -> str:
-        removed_value_information = ""
-        self._remove_from_inventory_of_listed_values()
+        removed_value_information = self._remove_from_inventory_of_listed_values()
         self._remove_from_feature_profiles()
 
         if not removed_value_information:
