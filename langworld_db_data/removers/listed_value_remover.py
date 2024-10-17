@@ -1,6 +1,6 @@
-from langworld_db_data.removers.remover import Remover, RemoverError
 from langworld_db_data.constants.literals import ID_SEPARATOR
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
+from langworld_db_data.removers.remover import Remover, RemoverError
 
 
 class ListedValueRemoverError(RemoverError):
@@ -11,7 +11,7 @@ class ListedValueRemover(Remover):
     def remove_listed_value(
         self,
         id_of_value_to_remove: str,
-    ) -> dict[str,str]:
+    ) -> dict[str, str]:
         removed_value_information = self._remove_from_inventory_of_listed_values(
             id_of_value_to_remove=id_of_value_to_remove
         )
@@ -25,11 +25,10 @@ class ListedValueRemover(Remover):
         else:
             return removed_value_information
 
-
     def _remove_from_inventory_of_listed_values(
-            self,
-            id_of_value_to_remove: str,
-    ) -> dict[str,str]:
+        self,
+        id_of_value_to_remove: str,
+    ) -> dict[str, str]:
         removed_value_information = {}
 
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
@@ -44,8 +43,7 @@ class ListedValueRemover(Remover):
         self._update_value_ids_in_inventory()
 
         rows_without_removed_value = (
-            rows[:line_number_of_value_to_remove]
-            + rows[line_number_of_value_to_remove+1:]
+            rows[:line_number_of_value_to_remove] + rows[line_number_of_value_to_remove + 1 :]
         )
 
         write_csv(
