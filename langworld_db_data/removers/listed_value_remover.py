@@ -29,6 +29,8 @@ class ListedValueRemover(Remover):
     ) -> dict[str, str]:
         removed_value_information = {}
 
+        line_number_of_value_to_remove = 0
+
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
         for i, row in enumerate(rows):
             if row["id"] == id_of_value_to_remove:
@@ -40,6 +42,7 @@ class ListedValueRemover(Remover):
 
         self._update_value_ids_in_inventory()
 
+        # If value not found, inventory will remain intact
         rows_without_removed_value = (
             rows[:line_number_of_value_to_remove] + rows[line_number_of_value_to_remove + 1 :]
         )
