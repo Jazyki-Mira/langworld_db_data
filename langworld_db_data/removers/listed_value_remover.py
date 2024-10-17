@@ -12,7 +12,9 @@ class ListedValueRemover(Remover):
         self,
         id_of_value_to_remove: str,
     ) -> dict[str, str]:
-        removed_value_information = self._remove_from_inventory_of_listed_values(id_of_value_to_remove)
+        removed_value_information = self._remove_from_inventory_of_listed_values(
+            id_of_value_to_remove
+        )
         self._remove_from_feature_profiles()
 
         if not removed_value_information:
@@ -61,15 +63,13 @@ class ListedValueRemover(Remover):
 
         return removed_value_information
 
-
     def _remove_from_feature_profiles(self):
         self._update_value_ids_in_feature_profiles()
 
-
     @staticmethod
     def _update_value_indices_in_inventory(
-            rows: list[dict[str, str]],
-            id_of_value_to_remove: str,
+        rows: list[dict[str, str]],
+        id_of_value_to_remove: str,
     ) -> list[dict[str, str]]:
         feature_id = "-".join(id_of_value_to_remove.split(ID_SEPARATOR)[:2])
         rows_with_updated_indices = rows
@@ -82,11 +82,12 @@ class ListedValueRemover(Remover):
             if current_value_index > index_of_value_to_remove:
                 current_value_id_decomposed = row["id"].split("-")
                 new_current_value_index = str(current_value_index - 1)
-                new_current_value_id = "-".join(current_value_id_decomposed[:2] + [new_current_value_index])
+                new_current_value_id = "-".join(
+                    current_value_id_decomposed[:2] + [new_current_value_index]
+                )
                 rows_with_updated_indices[i]["id"] = new_current_value_id
 
         return rows_with_updated_indices
-
 
     def _update_value_ids_in_feature_profiles(self):
         pass
