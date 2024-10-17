@@ -29,9 +29,10 @@ class ListedValueRemover(Remover):
     ) -> dict[str, str]:
         removed_value_information = {}
 
+        rows = read_dicts_from_csv(self.input_file_with_listed_values)
+
         line_number_of_value_to_remove = 0
 
-        rows = read_dicts_from_csv(self.input_file_with_listed_values)
         for i, row in enumerate(rows):
             if row["id"] == id_of_value_to_remove:
                 line_number_of_value_to_remove = i
@@ -40,11 +41,15 @@ class ListedValueRemover(Remover):
                 removed_value_information["ru"] = row["ru"]
                 break
 
-        self._update_value_ids_in_inventory()
+        rows_with_updated_value_indices = self._update_value_indices_in_inventory(
+            rows=rows,
+            id_of_value_to_remove=id_of_value_to_remove,
+        )
 
         # If value not found, inventory will remain intact
         rows_without_removed_value = (
-            rows[:line_number_of_value_to_remove] + rows[line_number_of_value_to_remove + 1 :]
+            rows_with_updated_value_indices[:line_number_of_value_to_remove]
+            + rows_with_updated_value_indices[line_number_of_value_to_remove + 1 :]
         )
 
         write_csv(
@@ -56,11 +61,32 @@ class ListedValueRemover(Remover):
 
         return removed_value_information
 
-    def _remove_from_feature_profiles(self):
-        pass
 
-    def _update_value_ids_in_inventory(self):
+    def _remove_from_feature_profiles(self):
         self._update_value_ids_in_feature_profiles()
+
+
+    @staticmethod
+    def _update_value_indices_in_inventory(
+            rows: list[dict[str, str]],
+            id_of_value_to_remove: str,
+    ) -> list[dict[str, str]]:
+        feature_id = "-".join(id_of_value_to_remove.split(ID_SEPARATOR)[:2])
+        rows_with_updated_indices = rows
+
+        for i, row in enumerate(rows):
+            if row["feature_id"] != feature_id:
+                pass
+            current_value_index = int(row["id"].split("-")[2])
+            index_of_value_to_remove = int(id_of_value_to_remove.split("-")[2])
+            if current_value_index > index_of_value_to_remove:
+                current_value_id_decomposed = row["id"].split("-")
+                new_current_value_index = str(current_value_index - 1)
+                new_current_value_id = "-".join(current_value_id_decomposed[:2] + [new_current_value_index])
+                rows_with_updated_indices[i]["id"] = new_current_value_id
+
+        return rows_with_updated_indices
+
 
     def _update_value_ids_in_feature_profiles(self):
         pass
