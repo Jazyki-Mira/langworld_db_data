@@ -76,7 +76,7 @@ class ListedValueRemover(Remover):
 
         for i, row in enumerate(rows):
             if row["feature_id"] != feature_id:
-                pass
+                continue
             current_value_index = int(row["id"].split("-")[2])
             index_of_value_to_remove = int(id_of_value_to_remove.split("-")[2])
             if current_value_index > index_of_value_to_remove:
