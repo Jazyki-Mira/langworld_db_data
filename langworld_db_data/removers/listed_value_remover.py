@@ -42,12 +42,12 @@ class ListedValueRemover(Remover):
         line_number_of_value_to_remove = 0
 
         for i, row in enumerate(rows):
-            if row["id"] == id_of_value_to_remove:
-                line_number_of_value_to_remove = i
-                removed_value_information["feature_id"] = row["feature_id"]
-                removed_value_information["en"] = row["en"]
-                removed_value_information["ru"] = row["ru"]
-                break
+            if row["id"] != id_of_value_to_remove:
+                continue
+            line_number_of_value_to_remove = i
+            removed_value_information = {
+                key: row[key] for key in ("feature_id", "en", "ru")
+            }
 
         rows_with_updated_value_indices = self._update_value_indices_in_inventory(
             rows=rows,
