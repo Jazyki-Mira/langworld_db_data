@@ -105,6 +105,7 @@ def test_remove_listed_value_throws_exception_with_invalid_or_absent_value_id(te
     for bad_value_id in ["A-5-256", "S-256", "ABC"]:
         with pytest.raises(ListedValueRemoverError, match="not found. Perhaps"):
             test_remover.remove_listed_value(bad_value_id)
+            test_remover.output_file_with_listed_values.unlink()
 
 
 # What should the module do if it is asked to pop a value which does not exist?
