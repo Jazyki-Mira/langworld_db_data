@@ -33,6 +33,9 @@ class ListedValueRemover(Remover):
         id_of_value_to_remove: str,
     ) -> dict[str, str]:
         removed_value_information = {}
+        """
+        Contains the feature ID and English and Russian names of the removed value.
+        """
 
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
