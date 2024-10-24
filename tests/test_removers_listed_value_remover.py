@@ -12,12 +12,18 @@ from tests.paths import (
     OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES,
 )
 
-GS_FILE_WITH_LISTED_VALUES_REMOVING_THE_LAST = (
-    DIR_WITH_REMOVERS_TEST_FILES / "features_listed_values_gold_standard_for_removing_the_last.csv"
+GS_FILE_WITH_LISTED_VALUES_REMOVING_THE_FIRST= (
+    DIR_WITH_REMOVERS_TEST_FILES
+    / "features_listed_values_gold_standard_for_removing_the_first.csv"
 )
+
 GS_FILE_WITH_LISTED_VALUES_REMOVING_IN_MIDDLE = (
     DIR_WITH_REMOVERS_TEST_FILES
     / "features_listed_values_gold_standard_for_removing_in_middle.csv"
+)
+
+GS_FILE_WITH_LISTED_VALUES_REMOVING_THE_LAST = (
+    DIR_WITH_REMOVERS_TEST_FILES / "features_listed_values_gold_standard_for_removing_the_last.csv"
 )
 
 # To my mind, this will probably be a structure isomorphic to adders
@@ -74,6 +80,25 @@ def test_remove_listed_value_from_middle_of_feature(test_remover):
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_remover.output_file_with_listed_values,
         gold_standard_file=GS_FILE_WITH_LISTED_VALUES_REMOVING_IN_MIDDLE,
+    )
+
+
+def test_remove_listed_value_from_beginning_of_feature(test_remover):
+    removed_value_information = test_remover.remove_listed_value(
+        id_of_value_to_remove="A-5-1",
+    )
+    gs_removed_value_information = {
+        "feature_id": "A-5",
+        "en": "No vowel opposition in labialization",
+        "ru": "Противопоставление гласных по лабиализации отсутствует",
+    }
+    assert removed_value_information == gs_removed_value_information
+
+    assert test_remover.output_file_with_listed_values.exists()
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_remover.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_REMOVING_THE_FIRST,
     )
 
 
