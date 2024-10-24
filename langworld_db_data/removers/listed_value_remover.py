@@ -55,7 +55,7 @@ class ListedValueRemover(Remover):
 
         rows_without_removed_value_and_with_updated_value_indices = self._update_value_indices_in_inventory(
             rows=rows_without_removed_value,
-            id_of_value_to_remove=id_of_value_to_remove,
+            id_of_removed_value=id_of_value_to_remove,
         )
 
         write_csv(
@@ -73,16 +73,16 @@ class ListedValueRemover(Remover):
     @staticmethod
     def _update_value_indices_in_inventory(
         rows: list[dict[str, str]],
-        id_of_value_to_remove: str,
+        id_of_removed_value: str,
     ) -> list[dict[str, str]]:
-        feature_id = "-".join(id_of_value_to_remove.split(ID_SEPARATOR)[:2])
+        feature_id = "-".join(id_of_removed_value.split(ID_SEPARATOR)[:2])
         rows_with_updated_indices = rows
 
         for i, row in enumerate(rows):
             if row["feature_id"] != feature_id:
                 continue
             current_value_index = int(row["id"].split("-")[2])
-            index_of_value_to_remove = int(id_of_value_to_remove.split("-")[2])
+            index_of_value_to_remove = int(id_of_removed_value.split("-")[2])
             if current_value_index > index_of_value_to_remove:
                 current_value_id_decomposed = row["id"].split("-")
                 new_current_value_index = str(current_value_index - 1)
