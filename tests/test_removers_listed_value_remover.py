@@ -28,6 +28,8 @@ GS_FILE_WITH_LISTED_VALUES_REMOVING_THE_LAST = (
 
 GS_DIR_WITH_REMOVERS_FEATURE_PROFILES = DIR_WITH_REMOVERS_FEATURE_PROFILES / "gold_standard"
 
+GS_FILE_WITH_CHANGED_PROFILES_REPORT = GS_DIR_WITH_REMOVERS_FEATURE_PROFILES / "changed_profiles.txt"
+
 FILE_WITH_CHANGED_PROFILES_REPORT = (
     OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES / "changed_profiles.txt"
 )
@@ -148,3 +150,12 @@ def test__update_value_ids_in_feature_profiles(test_remover):
             output_file=file,
             gold_standard_file=GS_DIR_WITH_REMOVERS_FEATURE_PROFILES / file.name,
         )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=FILE_WITH_CHANGED_PROFILES_REPORT,
+        gold_standard_file=GS_FILE_WITH_CHANGED_PROFILES_REPORT,
+    )
+
+
+def test__update_value_ids_in_feature_profiles_changes_nothing(test_remover):
+    pass
