@@ -15,6 +15,9 @@ class ListedValueRemover(Remover):
         removed_value_information = self._remove_from_inventory_of_listed_values(
             id_of_value_to_remove
         )
+        """
+        Contains the feature ID and English and Russian names of the removed value.
+        """
         self._remove_from_feature_profiles()
 
         if not removed_value_information:
