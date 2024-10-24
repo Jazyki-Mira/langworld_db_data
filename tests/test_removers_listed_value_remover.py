@@ -33,7 +33,8 @@ GS_FILE_WITH_CHANGED_PROFILES_REPORT = (
 )
 
 FILE_WITH_CHANGED_PROFILES_REPORT = (
-    OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES / "changed_profiles_A-9-1_No_diphthongs_and_triphthongs.txt"
+    OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES
+    / "changed_profiles_A-9-1_No_diphthongs_and_triphthongs.txt"
 )
 
 
@@ -131,7 +132,7 @@ def test__remove_from_feature_profiles(test_remover):
 
     test_remover._remove_from_feature_profiles(
         id_of_value_to_remove="A-9-1",
-        english_name_of_value_to_remove="No diphthongs and triphthongs"
+        english_name_of_value_to_remove="No diphthongs and triphthongs",
     )
 
     assert FILE_WITH_CHANGED_PROFILES_REPORT.exists()

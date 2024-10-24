@@ -20,7 +20,7 @@ class ListedValueRemover(Remover):
         """
         self._remove_from_feature_profiles(
             id_of_value_to_remove=id_of_value_to_remove,
-            english_name_of_value_to_remove=removed_value_information["en"]
+            english_name_of_value_to_remove=removed_value_information["en"],
         )
 
         if not removed_value_information:
@@ -83,9 +83,9 @@ class ListedValueRemover(Remover):
         english_name_of_value_to_remove = english_name_of_value_to_remove.replace(" ", "_")
         file_with_changed_profiles_report = (
             self.output_dir_with_feature_profiles / f"changed_profiles_{id_of_value_to_remove}_"
-                                                    f"{english_name_of_value_to_remove}.txt"
+            f"{english_name_of_value_to_remove}.txt"
         )
-        file_with_changed_profiles_report.touch(exist_ok = True)
+        file_with_changed_profiles_report.touch(exist_ok=True)
 
         for file in self.input_feature_profiles:
             is_changed = False
