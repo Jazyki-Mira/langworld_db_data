@@ -45,9 +45,7 @@ class ListedValueRemover(Remover):
             if row["id"] != id_of_value_to_remove:
                 continue
             line_number_of_value_to_remove = i
-            removed_value_information = {
-                key: row[key] for key in ("feature_id", "en", "ru")
-            }
+            removed_value_information = {key: row[key] for key in ("feature_id", "en", "ru")}
 
         rows_with_updated_value_indices = self._update_value_indices_in_inventory(
             rows=rows,
