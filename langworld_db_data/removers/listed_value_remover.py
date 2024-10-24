@@ -69,7 +69,13 @@ class ListedValueRemover(Remover):
             delimiter=",",
         )
 
-        return removed_value_information
+        if not removed_value_information:
+            raise ListedValueRemoverError(
+                f"Value ID {id_of_value_to_remove} not found. "
+                f"Perhaps it is invalid or does not exist"
+            )
+        else:
+            return removed_value_information
 
     def _remove_from_feature_profiles(
         self,

@@ -106,10 +106,10 @@ def test_remove_listed_value_from_beginning_of_feature(test_remover):
     )
 
 
-def test_remove_listed_value_throws_exception_with_invalid_or_absent_value_id(test_remover):
+def test__remove_from_inventory_of_listed_values_throws_exception_with_invalid_or_absent_value_id(test_remover):
     for bad_value_id in ["A-5-256", "S-256", "ABC"]:
         with pytest.raises(ListedValueRemoverError, match="not found. Perhaps"):
-            test_remover.remove_listed_value(bad_value_id)
+            test_remover._remove_from_inventory_of_listed_values(bad_value_id)
             test_remover.output_file_with_listed_values.unlink()
 
 
