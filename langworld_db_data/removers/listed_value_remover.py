@@ -95,13 +95,15 @@ class ListedValueRemover(Remover):
         return rows_with_updated_indices
 
     def _update_value_ids_in_feature_profiles(
-            self,
-            id_of_value_to_remove: str,
+        self,
+        id_of_value_to_remove: str,
     ):
         if not self.output_dir_with_feature_profiles.exists():
             self.output_dir_with_feature_profiles.mkdir()
 
-        file_with_changed_profiles_report = self.output_dir_with_feature_profiles / "changed_profiles.txt"
+        file_with_changed_profiles_report = (
+            self.output_dir_with_feature_profiles / "changed_profiles.txt"
+        )
         file_with_changed_profiles_report.touch()
 
         for file in self.input_feature_profiles:
