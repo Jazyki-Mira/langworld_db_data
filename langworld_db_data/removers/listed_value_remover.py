@@ -47,19 +47,19 @@ class ListedValueRemover(Remover):
             line_number_of_value_to_remove = i
             removed_value_information = {key: row[key] for key in ("feature_id", "en", "ru")}
 
-        rows_with_updated_value_indices = self._update_value_indices_in_inventory(
-            rows=rows,
+        # If value not found, inventory will remain intact
+        rows_without_removed_value = (
+            rows[:line_number_of_value_to_remove]
+            + rows[line_number_of_value_to_remove + 1 :]
+        )
+
+        rows_without_removed_value_and_with_updated_value_indices = self._update_value_indices_in_inventory(
+            rows=rows_without_removed_value,
             id_of_value_to_remove=id_of_value_to_remove,
         )
 
-        # If value not found, inventory will remain intact
-        rows_without_removed_value = (
-            rows_with_updated_value_indices[:line_number_of_value_to_remove]
-            + rows_with_updated_value_indices[line_number_of_value_to_remove + 1 :]
-        )
-
         write_csv(
-            rows_without_removed_value,
+            rows_without_removed_value_and_with_updated_value_indices,
             path_to_file=self.output_file_with_listed_values,
             overwrite=True,
             delimiter=",",
