@@ -25,7 +25,7 @@ INPUT_FILE_WITH_LISTED_VALUES_FOR_REMOVERS = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values.csv"
 )
 OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES = (
-    DIR_WITH_REMOVERS_TEST_FILES / "output_listed_value_remover"
+    DIR_WITH_REMOVERS_FEATURE_PROFILES / "output_feature_profiles_listed_value_remover"
 )
 OUTPUT_DIR_FOR_FEATURE_REMOVER_FEATURE_PROFILES = (
     DIR_WITH_REMOVERS_TEST_FILES / "output_feature_remover"

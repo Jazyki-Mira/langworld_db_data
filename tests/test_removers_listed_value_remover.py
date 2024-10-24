@@ -26,6 +26,14 @@ GS_FILE_WITH_LISTED_VALUES_REMOVING_THE_LAST = (
     DIR_WITH_REMOVERS_TEST_FILES / "features_listed_values_gold_standard_for_removing_the_last.csv"
 )
 
+GS_DIR_WITH_REMOVERS_FEATURE_PROFILES = (
+    DIR_WITH_REMOVERS_FEATURE_PROFILES / "gold_standard"
+)
+
+FILE_WITH_CHANGED_PROFILES_REPORT = (
+    OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES / "changed_profiles.txt"
+)
+
 
 @pytest.fixture(scope="function")
 def test_remover():
@@ -103,4 +111,42 @@ def test_remove_listed_value_throws_exception_with_invalid_or_absent_value_id(te
 
 
 # In profiles, instances of the removed value must turn custom. The user must be notified about it.
-# Also, a file msu be created which enumerates all profiles where the delete value has gone custom
+# Also, a file must be created which enumerates all profiles where the delete value has gone custom
+
+
+def test__update_value_ids_in_feature_profiles(test_remover):
+
+    stems_of_files_that_must_be_changed = [
+        "corsican",
+        "ukrainian",
+    ]
+
+    stems_of_files_that_must_not_be_changed = [
+        "catalan",
+        "franco_provencal",
+        "pashto",
+    ]
+
+    test_remover._update_value_ids_in_feature_profiles(
+        id_of_value_to_remove="A-9-1",
+    )
+
+    assert FILE_WITH_CHANGED_PROFILES_REPORT.exists()
+
+    for stem in stems_of_files_that_must_be_changed:
+        assert (test_remover.output_dir_with_feature_profiles / f"{stem}.csv").exists(), (
+            f"File {stem}.csv was not created. It means that no changes were made while"
+            " there should have been changes"
+        )
+
+    for file in test_remover.output_dir_with_feature_profiles.glob("*.csv"):
+        assert (
+            file.stem not in stems_of_files_that_must_not_be_changed
+        ), f"File {file.name} is not supposed to be changed"
+
+        print(f"TEST: checking amended feature profile {file.name}")
+
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=file,
+            gold_standard_file=GS_DIR_WITH_REMOVERS_FEATURE_PROFILES / file.name,
+        )
