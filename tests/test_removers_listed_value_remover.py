@@ -26,12 +26,6 @@ GS_FILE_WITH_LISTED_VALUES_REMOVING_THE_LAST = (
     DIR_WITH_REMOVERS_TEST_FILES / "features_listed_values_gold_standard_for_removing_the_last.csv"
 )
 
-# To my mind, this will probably be a structure isomorphic to adders
-# It should be, first of all, able to remove a value from the inventory
-# and subsequently update the IDs of reminiscent values
-# Moreover, as was discussed earlier, it should not simply remove values but pop them
-# so that the popped value will be available to insert somewhere else with ListedValueAdder
-
 
 @pytest.fixture(scope="function")
 def test_remover():
@@ -108,11 +102,5 @@ def test_remove_listed_value_throws_exception_with_invalid_or_absent_value_id(te
             test_remover.output_file_with_listed_values.unlink()
 
 
-# What should the module do if it is asked to pop a value which does not exist?
-
-
-# How should the removed values be changed in profiles? Should they become custom or not_stated?
-# To me, it would be more logical to make them custom, again for the sake of possible movement
-# However, perhaps both options may be necessary to provide
-
-# Should we also be able to remove custom values?
+# In profiles, instances of the removed value must turn custom. The user must be notified about it.
+# Also, a file msu be created which enumerates all profiles where the delete value has gone custom
