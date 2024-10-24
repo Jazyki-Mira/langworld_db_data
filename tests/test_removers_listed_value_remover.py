@@ -157,7 +157,3 @@ def test__update_value_ids_in_feature_profiles(test_remover):
         output_file=FILE_WITH_CHANGED_PROFILES_REPORT,
         gold_standard_file=GS_FILE_WITH_CHANGED_PROFILES_REPORT,
     )
-
-
-def test__update_value_ids_in_feature_profiles_changes_nothing(test_remover):
-    pass
