@@ -12,7 +12,7 @@ from tests.paths import (
     OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES,
 )
 
-GS_FILE_WITH_LISTED_VALUES_REMOVING_THE_FIRST= (
+GS_FILE_WITH_LISTED_VALUES_REMOVING_THE_FIRST = (
     DIR_WITH_REMOVERS_TEST_FILES
     / "features_listed_values_gold_standard_for_removing_the_first.csv"
 )
