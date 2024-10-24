@@ -33,7 +33,7 @@ GS_FILE_WITH_CHANGED_PROFILES_REPORT = (
 )
 
 FILE_WITH_CHANGED_PROFILES_REPORT = (
-    OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES / "changed_profiles.txt"
+    OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES / "changed_profiles_A-9-1_No_diphthongs_and_triphthongs.txt"
 )
 
 
@@ -116,7 +116,7 @@ def test_remove_listed_value_throws_exception_with_invalid_or_absent_value_id(te
 # Also, a file must be created which enumerates all profiles where the delete value has gone custom
 
 
-def test__update_value_ids_in_feature_profiles(test_remover):
+def test__remove_from_feature_profiles(test_remover):
 
     stems_of_files_that_must_be_changed = [
         "corsican",
@@ -129,8 +129,9 @@ def test__update_value_ids_in_feature_profiles(test_remover):
         "pashto",
     ]
 
-    test_remover._update_value_ids_in_feature_profiles(
+    test_remover._remove_from_feature_profiles(
         id_of_value_to_remove="A-9-1",
+        english_name_of_value_to_remove="No diphthongs and triphthongs"
     )
 
     assert FILE_WITH_CHANGED_PROFILES_REPORT.exists()

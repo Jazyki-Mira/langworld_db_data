@@ -18,7 +18,10 @@ class ListedValueRemover(Remover):
         """
         Contains the feature ID and English and Russian names of the removed value.
         """
-        self._remove_from_feature_profiles()
+        self._remove_from_feature_profiles(
+            id_of_value_to_remove=id_of_value_to_remove,
+            english_name_of_value_to_remove=removed_value_information["en"]
+        )
 
         if not removed_value_information:
             raise ListedValueRemoverError(
@@ -68,8 +71,49 @@ class ListedValueRemover(Remover):
 
         return removed_value_information
 
-    def _remove_from_feature_profiles(self):
-        self._update_value_ids_in_feature_profiles()
+    def _remove_from_feature_profiles(
+        self,
+        id_of_value_to_remove: str,
+        english_name_of_value_to_remove: str,
+    ):
+        if not self.output_dir_with_feature_profiles.exists():
+            self.output_dir_with_feature_profiles.mkdir()
+
+        english_name_of_value_to_remove = english_name_of_value_to_remove.replace(",", "")
+        english_name_of_value_to_remove = english_name_of_value_to_remove.replace(" ", "_")
+        file_with_changed_profiles_report = (
+            self.output_dir_with_feature_profiles / f"changed_profiles_{id_of_value_to_remove}_"
+                                                    f"{english_name_of_value_to_remove}.txt"
+        )
+        file_with_changed_profiles_report.touch(exist_ok = True)
+
+        for file in self.input_feature_profiles:
+            is_changed = False
+            rows = read_dicts_from_csv(file)
+
+            for row in rows:
+                if row["value_id"] == id_of_value_to_remove:
+                    row["value_id"] = ""
+                    row["value_type"] = "custom"
+                    is_changed = True
+                    break
+
+            if is_changed:
+                print(f"Writing new file for {file.stem}")
+                write_csv(
+                    rows,
+                    path_to_file=self.output_dir_with_feature_profiles / file.name,
+                    overwrite=True,
+                    delimiter=",",
+                )
+                with open(file_with_changed_profiles_report, "a", encoding="utf-8") as report:
+                    print(f"Adding '{file.stem}' to the changed files report")
+                    report.write(f"{file.stem}\n")
+            else:
+                print(f"{file.stem} is not changed")
+
+        with open(file_with_changed_profiles_report, "a", encoding="utf-8") as report:
+            report.write("\n")
 
     @staticmethod
     def _update_value_indices_in_inventory(
@@ -93,43 +137,3 @@ class ListedValueRemover(Remover):
                 rows_with_updated_indices[i]["id"] = new_current_value_id
 
         return rows_with_updated_indices
-
-    def _update_value_ids_in_feature_profiles(
-        self,
-        id_of_value_to_remove: str,
-    ):
-        if not self.output_dir_with_feature_profiles.exists():
-            self.output_dir_with_feature_profiles.mkdir()
-
-        file_with_changed_profiles_report = (
-            self.output_dir_with_feature_profiles / "changed_profiles.txt"
-        )
-        file_with_changed_profiles_report.touch()
-
-        for file in self.input_feature_profiles:
-            is_changed = False
-            rows = read_dicts_from_csv(file)
-
-            for row in rows:
-                if row["value_id"] == id_of_value_to_remove:
-                    row["value_id"] = ""
-                    row["value_type"] = "custom"
-                    is_changed = True
-                    break
-
-            if is_changed:
-                print(f"Writing new file for {file.stem}")
-                write_csv(
-                    rows,
-                    path_to_file=self.output_dir_with_feature_profiles / file.name,
-                    overwrite=True,
-                    delimiter=",",
-                )
-                with open(file_with_changed_profiles_report, "w", encoding="utf-8") as report:
-                    print(f"Adding '{file.stem}' to the changed files report")
-                    report.write(f"{file.stem}")
-            else:
-                print(f"{file.stem} is not changed")
-
-        with open(file_with_changed_profiles_report, "w", encoding="utf-8") as report:
-            report.write("\n")
