@@ -44,7 +44,6 @@ def test_remover():
     )
 
 
-# Tests
 def test_remove_listed_value_from_end_of_feature(test_remover):
     removed_value_information = test_remover.remove_listed_value(
         id_of_value_to_remove="A-5-8",
