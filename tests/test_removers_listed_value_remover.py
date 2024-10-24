@@ -49,8 +49,8 @@ def test_remover():
     )
 
 
-def test_remove_listed_value_from_end_of_feature(test_remover):
-    removed_value_information = test_remover.remove_listed_value(
+def test__remove_from_inventory_of_listed_values_from_end_of_feature(test_remover):
+    removed_value_information = test_remover._remove_from_inventory_of_listed_values(
         id_of_value_to_remove="A-5-8",
     )
     gs_removed_value_information = {
@@ -68,8 +68,8 @@ def test_remove_listed_value_from_end_of_feature(test_remover):
     )
 
 
-def test_remove_listed_value_from_middle_of_feature(test_remover):
-    removed_value_information = test_remover.remove_listed_value(
+def test__remove_from_inventory_of_listed_values_from_middle_of_feature(test_remover):
+    removed_value_information = test_remover._remove_from_inventory_of_listed_values(
         id_of_value_to_remove="A-5-5",
     )
     gs_removed_value_information = {
@@ -87,8 +87,8 @@ def test_remove_listed_value_from_middle_of_feature(test_remover):
     )
 
 
-def test_remove_listed_value_from_beginning_of_feature(test_remover):
-    removed_value_information = test_remover.remove_listed_value(
+def test__remove_from_inventory_of_listed_values_from_beginning_of_feature(test_remover):
+    removed_value_information = test_remover._remove_from_inventory_of_listed_values(
         id_of_value_to_remove="A-5-1",
     )
     gs_removed_value_information = {
