@@ -12,6 +12,11 @@ from tests.paths import (
     OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES,
 )
 
+GS_FILE_WITH_LISTED_VALUES_REMOVING_A_9_1 = (
+    DIR_WITH_REMOVERS_TEST_FILES
+    / "features_listed_values_gold_standard_for_removing_A-9-1.csv"
+)
+
 GS_FILE_WITH_LISTED_VALUES_REMOVING_THE_FIRST = (
     DIR_WITH_REMOVERS_TEST_FILES
     / "features_listed_values_gold_standard_for_removing_the_first.csv"
@@ -48,6 +53,25 @@ def test_remover():
         output_dir_with_feature_profiles=OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES,
     )
 
+def test_remove_listed_value(test_remover):
+    gs_removed_value_information = {
+        "feature_id": "A-9",
+        "en": "No diphthongs and triphthongs",
+        "ru": "Дифтонги и трифтонги отсутствуют",
+    }
+
+    assert test_remover.remove_listed_value("A-9-1") == gs_removed_value_information
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_remover.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_REMOVING_A_9_1,
+    )
+
+    (test_remover.output_dir_with_feature_profiles / "corsican.csv").unlink()
+    (test_remover.output_dir_with_feature_profiles / "ukrainian.csv").unlink()
+    (test_remover.output_dir_with_feature_profiles / "changed_profiles_A-9-1_No_diphthongs_and_triphthongs.txt").unlink()
+
+    # The same value is being removed in the dedicated test for the self._remove_from_feature_profiles method
 
 def test__remove_from_inventory_of_listed_values_from_end_of_feature(test_remover):
     removed_value_information = test_remover._remove_from_inventory_of_listed_values(
@@ -112,7 +136,7 @@ def test__remove_from_inventory_of_listed_values_throws_exception_with_invalid_o
     for bad_value_id in ["A-5-256", "S-256", "ABC"]:
         with pytest.raises(ListedValueRemoverError, match="not found. Perhaps"):
             test_remover._remove_from_inventory_of_listed_values(bad_value_id)
-            test_remover.output_file_with_listed_values.unlink()
+        test_remover.output_file_with_listed_values.unlink()
 
 
 # In profiles, instances of the removed value must turn custom. The user must be notified about it.
