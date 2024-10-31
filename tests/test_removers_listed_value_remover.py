@@ -13,8 +13,7 @@ from tests.paths import (
 )
 
 GS_FILE_WITH_LISTED_VALUES_REMOVING_A_9_1 = (
-    DIR_WITH_REMOVERS_TEST_FILES
-    / "features_listed_values_gold_standard_for_removing_A-9-1.csv"
+    DIR_WITH_REMOVERS_TEST_FILES / "features_listed_values_gold_standard_for_removing_A-9-1.csv"
 )
 
 GS_FILE_WITH_LISTED_VALUES_REMOVING_THE_FIRST = (
@@ -53,6 +52,7 @@ def test_remover():
         output_dir_with_feature_profiles=OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES,
     )
 
+
 def test_remove_listed_value(test_remover):
     gs_removed_value_information = {
         "feature_id": "A-9",
@@ -69,9 +69,13 @@ def test_remove_listed_value(test_remover):
 
     (test_remover.output_dir_with_feature_profiles / "corsican.csv").unlink()
     (test_remover.output_dir_with_feature_profiles / "ukrainian.csv").unlink()
-    (test_remover.output_dir_with_feature_profiles / "changed_profiles_A-9-1_No_diphthongs_and_triphthongs.txt").unlink()
+    (
+        test_remover.output_dir_with_feature_profiles
+        / "changed_profiles_A-9-1_No_diphthongs_and_triphthongs.txt"
+    ).unlink()
 
     # The same value is being removed in the dedicated test for the self._remove_from_feature_profiles method
+
 
 def test__remove_from_inventory_of_listed_values_from_end_of_feature(test_remover):
     removed_value_information = test_remover._remove_from_inventory_of_listed_values(
