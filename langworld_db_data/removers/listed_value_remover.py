@@ -16,7 +16,10 @@ class ListedValueRemover(Remover):
             id_of_value_to_remove
         )
         """
-        Contains the feature ID and English and Russian names of the removed value.
+        The dictionary contains three items:
+        - key: "feature_id", value: the feature ID of the removed value,
+        - key: "en", value: its English name,
+        - key: "ru", value: its Russian name.
         """
         self._remove_from_feature_profiles(
             id_of_value_to_remove=id_of_value_to_remove,
