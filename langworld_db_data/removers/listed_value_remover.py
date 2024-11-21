@@ -88,8 +88,8 @@ class ListedValueRemover(Remover):
         if not self.output_dir_with_feature_profiles.exists():
             self.output_dir_with_feature_profiles.mkdir()
 
-        english_name_of_value_to_remove = english_name_of_value_to_remove.replace(",", "")
-        english_name_of_value_to_remove = english_name_of_value_to_remove.replace(" ", "_")
+        english_name_of_value_to_remove = (english_name_of_value_to_remove.replace(",", "").
+                                           replace(" ", "_"))
         file_with_changed_profiles_report = (
             self.output_dir_with_feature_profiles / f"changed_profiles_{id_of_value_to_remove}_"
             f"{english_name_of_value_to_remove}.txt"
@@ -115,13 +115,13 @@ class ListedValueRemover(Remover):
                     overwrite=True,
                     delimiter=",",
                 )
-                with open(file_with_changed_profiles_report, "a", encoding="utf-8") as report:
+                with open(file_with_changed_profiles_report, "a") as report:
                     print(f"Adding '{file.stem}' to the changed files report")
                     report.write(f"{file.stem}\n")
             else:
                 print(f"{file.stem} is not changed")
 
-        with open(file_with_changed_profiles_report, "a", encoding="utf-8") as report:
+        with open(file_with_changed_profiles_report, "a") as report:
             report.write("\n")
 
     @staticmethod
