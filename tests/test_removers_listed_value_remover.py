@@ -36,10 +36,10 @@ GS_FILE_WITH_CHANGED_PROFILES_REPORT = (
     GS_DIR_WITH_REMOVERS_FEATURE_PROFILES / "changed_profiles.txt"
 )
 
-FILE_WITH_CHANGED_PROFILES_REPORT = (
-    OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES
-    / "changed_profiles_A-9-1_No_diphthongs_and_triphthongs.txt"
-)
+# FILE_WITH_CHANGED_PROFILES_REPORT = (
+#     OUTPUT_DIR_FOR_LISTED_VALUE_REMOVER_FEATURE_PROFILES
+#     / "changed_profiles_A-9-1_No_diphthongs_and_triphthongs.txt"
+# )
 
 
 @pytest.fixture(scope="function")
@@ -69,10 +69,10 @@ def test_remove_listed_value(test_remover):
 
     (test_remover.output_dir_with_feature_profiles / "corsican.csv").unlink()
     (test_remover.output_dir_with_feature_profiles / "ukrainian.csv").unlink()
-    (
-        test_remover.output_dir_with_feature_profiles
-        / "changed_profiles_A-9-1_No_diphthongs_and_triphthongs.txt"
-    ).unlink()
+    # (
+    #     test_remover.output_dir_with_feature_profiles
+    #     / "changed_profiles_A-9-1_No_diphthongs_and_triphthongs.txt"
+    # ).unlink()
 
     # The same value is being removed in the dedicated test for the self._remove_from_feature_profiles method
 
@@ -144,7 +144,7 @@ def test__remove_from_inventory_of_listed_values_throws_exception_with_invalid_o
 
 
 # In profiles, instances of the removed value must turn custom. The user must be notified about it.
-# Also, a file must be created which enumerates all profiles where the delete value has gone custom
+# (outdated?) Also, a file must be created which enumerates all profiles where the delete value has gone custom
 
 
 def test__remove_from_feature_profiles(test_remover):
@@ -165,7 +165,7 @@ def test__remove_from_feature_profiles(test_remover):
         english_name_of_value_to_remove="No diphthongs and triphthongs",
     )
 
-    assert FILE_WITH_CHANGED_PROFILES_REPORT.exists()
+    # assert FILE_WITH_CHANGED_PROFILES_REPORT.exists()
 
     for stem in stems_of_files_that_must_be_changed:
         assert (test_remover.output_dir_with_feature_profiles / f"{stem}.csv").exists(), (
@@ -185,7 +185,7 @@ def test__remove_from_feature_profiles(test_remover):
             gold_standard_file=GS_DIR_WITH_REMOVERS_FEATURE_PROFILES / file.name,
         )
 
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=FILE_WITH_CHANGED_PROFILES_REPORT,
-        gold_standard_file=GS_FILE_WITH_CHANGED_PROFILES_REPORT,
-    )
+    # check_existence_of_output_csv_file_and_compare_with_gold_standard(
+    #     output_file=FILE_WITH_CHANGED_PROFILES_REPORT,
+    #     gold_standard_file=GS_FILE_WITH_CHANGED_PROFILES_REPORT,
+    # )

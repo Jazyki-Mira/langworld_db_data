@@ -90,11 +90,11 @@ class ListedValueRemover(Remover):
 
         english_name_of_value_to_remove = (english_name_of_value_to_remove.replace(",", "").
                                            replace(" ", "_"))
-        file_with_changed_profiles_report = (
-            self.output_dir_with_feature_profiles / f"changed_profiles_{id_of_value_to_remove}_"
-            f"{english_name_of_value_to_remove}.txt"
-        )
-        file_with_changed_profiles_report.touch(exist_ok=True)
+        # file_with_changed_profiles_report = (
+        #     self.output_dir_with_feature_profiles / f"changed_profiles_{id_of_value_to_remove}_"
+        #     f"{english_name_of_value_to_remove}.txt"
+        # )
+        # file_with_changed_profiles_report.touch(exist_ok=True)
 
         for file in self.input_feature_profiles:
             is_changed = False
@@ -115,14 +115,14 @@ class ListedValueRemover(Remover):
                     overwrite=True,
                     delimiter=",",
                 )
-                with open(file_with_changed_profiles_report, "a") as report:
-                    print(f"Adding '{file.stem}' to the changed files report")
-                    report.write(f"{file.stem}\n")
+                # with open(file_with_changed_profiles_report, "a") as report:
+                #     print(f"Adding '{file.stem}' to the changed files report")
+                #     report.write(f"{file.stem}\n")
             else:
                 print(f"{file.stem} is not changed")
 
-        with open(file_with_changed_profiles_report, "a") as report:
-            report.write("\n")
+        # with open(file_with_changed_profiles_report, "a") as report:
+        #     report.write("\n")
 
     @staticmethod
     def _update_value_indices_in_inventory(
