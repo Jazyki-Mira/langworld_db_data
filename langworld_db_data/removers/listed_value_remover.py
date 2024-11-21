@@ -88,8 +88,9 @@ class ListedValueRemover(Remover):
         if not self.output_dir_with_feature_profiles.exists():
             self.output_dir_with_feature_profiles.mkdir()
 
-        english_name_of_value_to_remove = (english_name_of_value_to_remove.replace(",", "").
-                                           replace(" ", "_"))
+        english_name_of_value_to_remove = english_name_of_value_to_remove.replace(",", "").replace(
+            " ", "_"
+        )
         # file_with_changed_profiles_report = (
         #     self.output_dir_with_feature_profiles / f"changed_profiles_{id_of_value_to_remove}_"
         #     f"{english_name_of_value_to_remove}.txt"
