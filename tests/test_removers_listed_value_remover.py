@@ -67,8 +67,6 @@ def test_remove_listed_value(test_remover):
         gold_standard_file=GS_FILE_WITH_LISTED_VALUES_REMOVING_A_9_1,
     )
 
-    (test_remover.output_dir_with_feature_profiles / "corsican.csv").unlink()
-    (test_remover.output_dir_with_feature_profiles / "ukrainian.csv").unlink()
     # (
     #     test_remover.output_dir_with_feature_profiles
     #     / "changed_profiles_A-9-1_No_diphthongs_and_triphthongs.txt"
