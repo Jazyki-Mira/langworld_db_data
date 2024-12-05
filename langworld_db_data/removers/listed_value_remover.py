@@ -12,9 +12,7 @@ class ListedValueRemover(Remover):
         self,
         id_of_value_to_remove: str,
     ) -> dict[str, str]:
-        removed_value = self._remove_from_inventory_of_listed_values(
-            id_of_value_to_remove
-        )
+        removed_value = self._remove_from_inventory_of_listed_values(id_of_value_to_remove)
         """
         The dictionary contains four items.
         The keys are identical to column names in the inventory of listed values
@@ -51,23 +49,27 @@ class ListedValueRemover(Remover):
                 continue
             line_number_of_value_to_remove = i
             try:
-                removed_value = {key: row[key] for key in (
-                    "id",
-                    "feature_id",
-                    "en",
-                    "ru",
-                    "description_formatted_en",
-                    "description_formatted_ru",
-                )
-                                 }
+                removed_value = {
+                    key: row[key]
+                    for key in (
+                        "id",
+                        "feature_id",
+                        "en",
+                        "ru",
+                        "description_formatted_en",
+                        "description_formatted_ru",
+                    )
+                }
             except KeyError:
-                removed_value = {key: row[key] for key in (
-                    "id",
-                    "feature_id",
-                    "en",
-                    "ru",
-                )
-                                 }
+                removed_value = {
+                    key: row[key]
+                    for key in (
+                        "id",
+                        "feature_id",
+                        "en",
+                        "ru",
+                    )
+                }
 
         # If value not found, inventory will remain intact
         rows_without_removed_value = (
