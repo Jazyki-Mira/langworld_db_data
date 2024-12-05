@@ -48,7 +48,8 @@ class ListedValueRemover(Remover):
                 continue
             line_number_of_value_to_remove = i
             removed_value = {
-                key: row[key] for key in (
+                key: row[key]
+                for key in (
                     "id",
                     "feature_id",
                     "en",
