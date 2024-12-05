@@ -45,13 +45,14 @@ def test_remover():
 
 
 def test_remove_listed_value(test_remover):
-    gs_removed_value_information = {
+    gs_removed_value = {
+        "id": "A-9-1",
         "feature_id": "A-9",
         "en": "No diphthongs and triphthongs",
         "ru": "Дифтонги и трифтонги отсутствуют",
     }
 
-    assert test_remover.remove_listed_value("A-9-1") == gs_removed_value_information
+    assert test_remover.remove_listed_value("A-9-1") == gs_removed_value
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_remover.output_file_with_listed_values,
@@ -65,12 +66,13 @@ def test__remove_from_inventory_of_listed_values_from_end_of_feature(test_remove
     removed_value_information = test_remover._remove_from_inventory_of_listed_values(
         id_of_value_to_remove="A-5-8",
     )
-    gs_removed_value_information = {
+    gs_removed_value = {
+        "id": "A-5-8",
         "feature_id": "A-5",
         "en": "Present for front, central and back vowels",
         "ru": "В переднем, среднем и заднем рядах",
     }
-    assert removed_value_information == gs_removed_value_information
+    assert removed_value_information == gs_removed_value
 
     assert test_remover.output_file_with_listed_values.exists()
 
@@ -84,12 +86,13 @@ def test__remove_from_inventory_of_listed_values_from_middle_of_feature(test_rem
     removed_value_information = test_remover._remove_from_inventory_of_listed_values(
         id_of_value_to_remove="A-5-5",
     )
-    gs_removed_value_information = {
+    gs_removed_value = {
+        "id": "A-5-5",
         "feature_id": "A-5",
         "en": "Present for front and central vowels",
         "ru": "В переднем и среднем рядах",
     }
-    assert removed_value_information == gs_removed_value_information
+    assert removed_value_information == gs_removed_value
 
     assert test_remover.output_file_with_listed_values.exists()
 
@@ -103,12 +106,13 @@ def test__remove_from_inventory_of_listed_values_from_beginning_of_feature(test_
     removed_value_information = test_remover._remove_from_inventory_of_listed_values(
         id_of_value_to_remove="A-5-1",
     )
-    gs_removed_value_information = {
+    gs_removed_value = {
+        "id": "A-5-1",
         "feature_id": "A-5",
         "en": "No vowel opposition in labialization",
         "ru": "Противопоставление гласных по лабиализации отсутствует",
     }
-    assert removed_value_information == gs_removed_value_information
+    assert removed_value_information == gs_removed_value
 
     assert test_remover.output_file_with_listed_values.exists()
 

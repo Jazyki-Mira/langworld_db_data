@@ -12,33 +12,32 @@ class ListedValueRemover(Remover):
         self,
         id_of_value_to_remove: str,
     ) -> dict[str, str]:
-        removed_value_information = self._remove_from_inventory_of_listed_values(
+        removed_value = self._remove_from_inventory_of_listed_values(
             id_of_value_to_remove
         )
         """
-        The dictionary contains three items:
-        - key: "feature_id", value: the feature ID of the removed value,
-        - key: "en", value: its English name,
-        - key: "ru", value: its Russian name.
+        The dictionary contains four items.
+        The keys are identical to column names in the inventory of listed values
+        (except for absence of "description_formatted_en" and "description_formatted_ru").
         """
         self._remove_from_feature_profiles(
             id_of_value_to_remove=id_of_value_to_remove,
-            english_name_of_value_to_remove=removed_value_information["en"],
+            english_name_of_value_to_remove=removed_value["en"],
         )
 
-        if not removed_value_information:
+        if not removed_value:
             raise ListedValueRemoverError(
                 f"Value ID {id_of_value_to_remove} not found. "
                 f"Perhaps it is invalid or does not exist"
             )
         else:
-            return removed_value_information
+            return removed_value
 
     def _remove_from_inventory_of_listed_values(
         self,
         id_of_value_to_remove: str,
     ) -> dict[str, str]:
-        removed_value_information = {}
+        removed_value = {}
         """
         Contains the feature ID and English and Russian names of the removed value.
         """
@@ -51,7 +50,24 @@ class ListedValueRemover(Remover):
             if row["id"] != id_of_value_to_remove:
                 continue
             line_number_of_value_to_remove = i
-            removed_value_information = {key: row[key] for key in ("feature_id", "en", "ru")}
+            try:
+                removed_value = {key: row[key] for key in (
+                    "id",
+                    "feature_id",
+                    "en",
+                    "ru",
+                    "description_formatted_en",
+                    "description_formatted_ru",
+                )
+                                 }
+            except KeyError:
+                removed_value = {key: row[key] for key in (
+                    "id",
+                    "feature_id",
+                    "en",
+                    "ru",
+                )
+                                 }
 
         # If value not found, inventory will remain intact
         rows_without_removed_value = (
@@ -72,13 +88,13 @@ class ListedValueRemover(Remover):
             delimiter=",",
         )
 
-        if not removed_value_information:
+        if not removed_value:
             raise ListedValueRemoverError(
                 f"Value ID {id_of_value_to_remove} not found. "
                 f"Perhaps it is invalid or does not exist"
             )
         else:
-            return removed_value_information
+            return removed_value
 
     def _remove_from_feature_profiles(
         self,
