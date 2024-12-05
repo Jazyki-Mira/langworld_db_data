@@ -47,17 +47,7 @@ class ListedValueRemover(Remover):
             if row["id"] != id_of_value_to_remove:
                 continue
             line_number_of_value_to_remove = i
-            removed_value = {
-                key: row[key]
-                for key in (
-                    "id",
-                    "feature_id",
-                    "en",
-                    "ru",
-                    "description_formatted_en",
-                    "description_formatted_ru",
-                )
-            }
+            removed_value = row
 
         # If value not found, inventory will remain intact
         rows_without_removed_value = (
