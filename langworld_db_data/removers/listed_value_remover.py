@@ -19,7 +19,7 @@ class ListedValueRemover(Remover):
         but value type will be replaced with "custom".
 
         Returns dictionary with data of removed value.
-        Its are identical to column names in the inventory of listed values.
+        Its keys are identical to column names in the inventory of listed values.
         """
         removed_value = self._remove_from_inventory_of_listed_values(id_of_value_to_remove)
         self._remove_from_feature_profiles(id_of_value_to_remove)
