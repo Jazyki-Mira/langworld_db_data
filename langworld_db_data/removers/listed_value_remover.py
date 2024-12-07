@@ -81,9 +81,6 @@ class ListedValueRemover(Remover):
         id_of_value_to_remove: str,
         english_name_of_value_to_remove: str,
     ):
-        if not self.output_dir_with_feature_profiles.exists():
-            self.output_dir_with_feature_profiles.mkdir()
-
         for file in self.input_feature_profiles:
             is_changed = False
             rows = read_dicts_from_csv(file)

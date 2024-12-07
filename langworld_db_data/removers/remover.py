@@ -21,3 +21,5 @@ class Remover:
 
         self.output_file_with_listed_values = output_file_with_listed_values
         self.output_dir_with_feature_profiles = output_dir_with_feature_profiles
+        if not self.output_dir_with_feature_profiles.exists():
+            self.output_dir_with_feature_profiles.mkdir()
