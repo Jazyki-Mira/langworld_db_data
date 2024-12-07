@@ -17,10 +17,7 @@ class ListedValueRemover(Remover):
         The dictionary contains four items.
         The keys are identical to column names in the inventory of listed values.
         """
-        self._remove_from_feature_profiles(
-            id_of_value_to_remove=id_of_value_to_remove,
-            english_name_of_value_to_remove=removed_value["en"],
-        )
+        self._remove_from_feature_profiles(id_of_value_to_remove)
 
         if not removed_value:
             raise ListedValueRemoverError(
@@ -79,7 +76,6 @@ class ListedValueRemover(Remover):
     def _remove_from_feature_profiles(
         self,
         id_of_value_to_remove: str,
-        english_name_of_value_to_remove: str,
     ):
         for file in self.input_feature_profiles:
             is_changed = False

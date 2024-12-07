@@ -152,10 +152,7 @@ def test__remove_from_feature_profiles(test_remover):
         "pashto",
     ]
 
-    test_remover._remove_from_feature_profiles(
-        id_of_value_to_remove="A-9-1",
-        english_name_of_value_to_remove="No diphthongs and triphthongs",
-    )
+    test_remover._remove_from_feature_profiles("A-9-1")
 
     for stem in stems_of_files_that_must_be_changed:
         assert (test_remover.output_dir_with_feature_profiles / f"{stem}.csv").exists(), (
