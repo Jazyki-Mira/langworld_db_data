@@ -136,7 +136,7 @@ def test__remove_from_inventory_of_listed_values_throws_exception_with_invalid_o
     for bad_value_id in ["A-5-256", "S-256", "ABC"]:
         with pytest.raises(ListedValueRemoverError, match="not found. Perhaps"):
             test_remover.remove_listed_value(bad_value_id)
-        test_remover.output_file_with_listed_values.unlink()
+        assert not test_remover.output_file_with_listed_values.exists()
 
 
 def test__remove_from_feature_profiles(test_remover):

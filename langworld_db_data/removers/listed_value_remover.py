@@ -12,39 +12,41 @@ class ListedValueRemover(Remover):
         self,
         id_of_value_to_remove: str,
     ) -> dict[str, str]:
+        """
+        Remove listed value from inventories and feature profiles.
+
+        In feature profiles, the name of the value will be kept intact,
+        but value type will be replaced with "custom".
+
+        Returns dictionary with data of removed value.
+        Its are identical to column names in the inventory of listed values.
+        """
         removed_value = self._remove_from_inventory_of_listed_values(id_of_value_to_remove)
-        """
-        The dictionary contains four items.
-        The keys are identical to column names in the inventory of listed values.
-        """
         self._remove_from_feature_profiles(id_of_value_to_remove)
 
-        if not removed_value:
-            raise ListedValueRemoverError(
-                f"Value ID {id_of_value_to_remove} not found. "
-                f"Perhaps it is invalid or does not exist"
-            )
-        else:
-            return removed_value
+        return removed_value
 
     def _remove_from_inventory_of_listed_values(
         self,
         id_of_value_to_remove: str,
     ) -> dict[str, str]:
-        removed_value = {}
-        """
-        Contains the feature ID and English and Russian names of the removed value.
-        """
-
-        rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
         line_number_of_value_to_remove = 0
+        value_to_remove: dict[str, str] = {}
+
+        rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
         for i, row in enumerate(rows):
             if row["id"] != id_of_value_to_remove:
                 continue
             line_number_of_value_to_remove = i
-            removed_value = row
+            value_to_remove = row
+
+        if not value_to_remove:
+            raise ListedValueRemoverError(
+                f"Value ID {id_of_value_to_remove} not found. "
+                f"Perhaps it is invalid or does not exist."
+            )
 
         # If value not found, inventory will remain intact
         rows_without_removed_value = (
@@ -65,13 +67,8 @@ class ListedValueRemover(Remover):
             delimiter=",",
         )
 
-        if not removed_value:
-            raise ListedValueRemoverError(
-                f"Value ID {id_of_value_to_remove} not found. "
-                f"Perhaps it is invalid or does not exist"
-            )
-        else:
-            return removed_value
+        print(f"Removed value {id_of_value_to_remove} from inventory of listed values")
+        return value_to_remove
 
     def _remove_from_feature_profiles(
         self,
