@@ -10,3 +10,7 @@ ID_SEPARATOR = "-"
 """Sign that separates category ID from feature ID from value ID."""
 ATOMIC_VALUE_SEPARATOR = "&"
 """Sign that separates atomic values within a compound value."""
+
+# For dicts
+KEY_FOR_FEATURE_ID = "feature_id"
+KEY_FOR_VALUE_ID = "id"
