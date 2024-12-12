@@ -23,6 +23,8 @@ class ListedValueAdder(Adder):
         new_value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
         index_to_assign: Union[int, None] = None,
+        description_formatted_en: Optional[str] = "",
+        description_formatted_ru: Optional[str] = "",
     ) -> None:
         """Adds listed value to the inventory and marks matching custom values
         in feature profiles as listed. If one or more custom values
@@ -34,7 +36,8 @@ class ListedValueAdder(Adder):
         """
 
         if not (feature_id and new_value_en and new_value_ru):
-            raise ListedValueAdderError("None of the passed strings can be empty")
+            raise ListedValueAdderError("None of the following strings can be empty:"
+                                        "feature_id, new_value_id, new_value_ru.")
 
         try:
             id_of_new_value = self._add_to_inventory_of_listed_values(
@@ -67,6 +70,8 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
         index_to_assign: Union[int, None],
+        description_formatted_en: Optional[str] = "",
+        description_formatted_ru: Optional[str] = "",
     ) -> str:
         """
         Add new value to the inventory of listed values. Return ID of new value.
@@ -147,6 +152,8 @@ class ListedValueAdder(Adder):
                     KEY_FOR_FEATURE_ID: feature_id,
                     "en": new_value_en[0].upper() + new_value_en[1:],
                     "ru": new_value_ru[0].upper() + new_value_ru[1:],
+                    "description_formatted_en": description_formatted_en,
+                    "description_formatted_ru": description_formatted_ru,
                 }
             ]
         )
