@@ -36,8 +36,10 @@ class ListedValueAdder(Adder):
         """
 
         if not (feature_id and new_value_en and new_value_ru):
-            raise ListedValueAdderError("None of the following strings can be empty:"
-                                        "feature_id, new_value_id, new_value_ru.")
+            raise ListedValueAdderError(
+                "None of the following strings can be empty:"
+                "feature_id, new_value_id, new_value_ru."
+            )
 
         try:
             id_of_new_value = self._add_to_inventory_of_listed_values(

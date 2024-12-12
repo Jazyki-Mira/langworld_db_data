@@ -126,7 +126,9 @@ def test_add_listed_value_throws_exception_with_empty_args(test_adder):
         {"feature_id": "A-1", "new_value_en": "", "new_value_ru": "Значение"},
         {"feature_id": "A-1", "new_value_en": "Value", "new_value_ru": ""},
     ):
-        with pytest.raises(ListedValueAdderError, match="None of the following strings can be empty"):
+        with pytest.raises(
+            ListedValueAdderError, match="None of the following strings can be empty"
+        ):
             test_adder.add_listed_value(**bad_set_of_values)
 
 
