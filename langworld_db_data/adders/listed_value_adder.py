@@ -113,6 +113,8 @@ class ListedValueAdder(Adder):
         # To include the number right after the maximum, we must again add 1.
         # This results in adding 2 to the rightmost range border.
         acceptable_indices_to_assign = set([None] + list(range(1, last_index_in_feature + 2)))
+        # Here we add None to the list because None is the default value for appending
+        # value to the end onf feature
         if index_to_assign not in acceptable_indices_to_assign:
             raise ValueError(
                 f"Invalid index_to assign (must be between 1 and {last_index_in_feature + 1}, "
