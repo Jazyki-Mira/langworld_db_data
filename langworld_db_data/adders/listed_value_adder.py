@@ -6,6 +6,9 @@ from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_I
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
 
+KEY_FOR_FEATURE_VALUE_INDEX = 'index'
+
+
 class ListedValueAdderError(AdderError):
     pass
 
@@ -101,7 +104,7 @@ class ListedValueAdder(Adder):
         )
 
         # Check if passed index is valid
-        last_index_in_feature = value_indices_to_inventory_line_numbers[-1]['index']
+        last_index_in_feature = value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_INDEX]
         # The range of numbers acceptable as index_to_assign consists of
         # all the current indices in the given feature and the next number after
         # the current maximum. To include the maximum, we must add 1 to last_index_in_feature.
@@ -120,7 +123,7 @@ class ListedValueAdder(Adder):
             None,
             last_index_in_feature + 1,
         ):  # new value is being added after the last one
-            id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1]['index'] + 1}"
+            id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_INDEX] + 1}"
             line_number_of_new_value = (
                 value_indices_to_inventory_line_numbers[-1]['line number'] + 1
             )
@@ -139,7 +142,7 @@ class ListedValueAdder(Adder):
             )
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
-                if value_index_and_line_number['index'] == index_to_assign:
+                if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] == index_to_assign:
                     line_number_of_new_value = value_index_and_line_number[
                         'line number'
                     ]
@@ -184,7 +187,7 @@ class ListedValueAdder(Adder):
 
         Returns tuple of dictionaries containing all indices and line numbers of values with given feature_id.
         Example:
-        ({'index': 1, 'line number': 4}, {'index': 2, 'line number': 5}, {'index': 3, 'line number': 6})
+        ({KEY_FOR_FEATURE_VALUE_INDEX: 1, 'line number': 4}, {KEY_FOR_FEATURE_VALUE_INDEX: 2, 'line number': 5}, {KEY_FOR_FEATURE_VALUE_INDEX: 3, 'line number': 6})
         """
 
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
@@ -196,7 +199,7 @@ class ListedValueAdder(Adder):
             value_index = int(row[KEY_FOR_VALUE_ID].split(ID_SEPARATOR)[-1])
             value_indices_to_inventory_line_numbers.append(
                 {
-                    'index': value_index,
+                    KEY_FOR_FEATURE_VALUE_INDEX: value_index,
                     'line number': i,
                 }
             )
@@ -217,7 +220,7 @@ class ListedValueAdder(Adder):
 
         rows_with_incremented_indices = rows[:]
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
-            if value_index_and_line_number['index'] < index_to_assign:
+            if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] < index_to_assign:
                 continue
             row_where_id_must_be_incremented = value_index_and_line_number[
                 'line number'
