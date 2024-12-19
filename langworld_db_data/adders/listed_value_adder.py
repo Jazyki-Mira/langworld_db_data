@@ -122,7 +122,10 @@ class ListedValueAdder(Adder):
             None,
             last_index_in_feature + 1,
         ):  # new value is being added after the last one
-            id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_INDEX] + 1}"
+            id_of_new_value = (
+                f"{feature_id}{ID_SEPARATOR}"
+                f"{value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_INDEX] + 1}"
+            )
             line_number_of_new_value = (
                 value_indices_to_inventory_line_numbers[-1]["line number"] + 1
             )
@@ -134,10 +137,12 @@ class ListedValueAdder(Adder):
 
             # Go through values of the feature, ignore indices less than index_to_assign,
             # increment all other indices
-            rows_with_updated_value_indices = self._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
-                rows=rows,
-                value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
-                index_to_assign=index_to_assign,
+            rows_with_updated_value_indices = (
+                self._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
+                    rows=rows,
+                    value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
+                    index_to_assign=index_to_assign,
+                )
             )
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
@@ -183,8 +188,11 @@ class ListedValueAdder(Adder):
         This method is used to calculate ID of the value being added and its place in rows of listed values inventory.
 
         Returns tuple of dictionaries containing all indices and line numbers of values with given feature_id.
+
         Example:
-        ({KEY_FOR_FEATURE_VALUE_INDEX: 1, 'line number': 4}, {KEY_FOR_FEATURE_VALUE_INDEX: 2, 'line number': 5}, {KEY_FOR_FEATURE_VALUE_INDEX: 3, 'line number': 6})
+        ``({KEY_FOR_FEATURE_VALUE_INDEX: 1, 'line number': 4},
+        {KEY_FOR_FEATURE_VALUE_INDEX: 2, 'line number': 5},
+        {KEY_FOR_FEATURE_VALUE_INDEX: 3, 'line number': 6} ...)``
         """
 
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
