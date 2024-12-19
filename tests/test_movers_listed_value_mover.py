@@ -1,14 +1,11 @@
 import pytest
 
-from langworld_db_data.movers.listed_value_mover import (
-    ListedValueMover,
-    ListedValueMoverError,
-)
+from langworld_db_data.movers.listed_value_mover import ListedValueMover, ListedValueMoverError
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
+    DIR_WITH_MOVERS_FEATURE_PROFILES,
     DIR_WITH_MOVERS_TEST_FILES,
     INPUT_FILE_WITH_LISTED_VALUES_FOR_MOVERS,
-    DIR_WITH_MOVERS_FEATURE_PROFILES,
     OUTPUT_DIR_FOR_LISTED_VALUE_MOVER_FEATURE_PROFILES,
 )
 
