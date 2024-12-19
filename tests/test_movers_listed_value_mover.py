@@ -11,8 +11,11 @@ from tests.paths import (
 
 GS_DIR_WITH_MOVERS_FEATURE_PROFILES = DIR_WITH_MOVERS_FEATURE_PROFILES / "gold_standard"
 
-GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_DIFFERENT_MIDDLE_UP = (DIR_WITH_MOVERS_TEST_FILES /
-    "features_listed_values_gold_standard_from_middle_to_different_middle_up.csv")
+GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_DIFFERENT_MIDDLE_UP = (
+    DIR_WITH_MOVERS_TEST_FILES
+    / "features_listed_values_gold_standard_from_middle_to_different_middle_up.csv"
+)
+
 
 @pytest.fixture(scope="function")
 def test_mover():
@@ -23,6 +26,7 @@ def test_mover():
         input_dir_with_feature_profiles=DIR_WITH_MOVERS_FEATURE_PROFILES,
         output_dir_with_feature_profiles=OUTPUT_DIR_FOR_LISTED_VALUE_MOVER_FEATURE_PROFILES,
     )
+
 
 # move from A-3-4 o A-3-2
 def test_move_listed_value(test_mover):
