@@ -11,8 +11,31 @@ from tests.paths import (
 
 GS_DIR_WITH_MOVERS_FEATURE_PROFILES = DIR_WITH_MOVERS_FEATURE_PROFILES / "gold_standard"
 
+
+GS_FILE_FOR_MOVING_FROM_FIRST_TO_MIDDLE = (DIR_WITH_MOVERS_TEST_FILES /
+    "features_listed_values_gold_standard_from_first_to_middle.csv")
+
+GS_FILE_FOR_MOVING_FROM_FIRST_TO_LAST = (DIR_WITH_MOVERS_TEST_FILES /
+    "features_listed_values_gold_standard_from_first_to_last.csv")
+
+GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_FIRST = (DIR_WITH_MOVERS_TEST_FILES /
+    "features_listed_values_gold_standard_from_middle_to_first.csv")
+
 GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_DIFFERENT_MIDDLE_UP = (DIR_WITH_MOVERS_TEST_FILES /
     "features_listed_values_gold_standard_from_middle_to_different_middle_up.csv")
+
+GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_DIFFERENT_MIDDLE_DOWN = (DIR_WITH_MOVERS_TEST_FILES /
+    "features_listed_values_gold_standard_from_middle_to_different_middle_down.csv")
+
+GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_LAST = (DIR_WITH_MOVERS_TEST_FILES /
+    "features_listed_values_gold_standard_from_middle_to_last.csv")
+
+GS_FILE_FOR_MOVING_FROM_LAST_TO_FIRST = (DIR_WITH_MOVERS_TEST_FILES /
+    "features_listed_values_gold_standard_from_last_to_first.csv")
+
+GS_FILE_FOR_MOVING_FROM_LAST_TO_MIDDLE = (DIR_WITH_MOVERS_TEST_FILES /
+    "features_listed_values_gold_standard_from_last_to_middle.csv")
+
 
 @pytest.fixture(scope="function")
 def test_mover():
@@ -67,8 +90,55 @@ def test_move_listed_value(test_mover):
         )
 
 
-def test__move_value_in_inventory_of_listed_values(test_mover):
-    pass
+def test__move_value_in_inventory_of_listed_values(
+    test_mover,
+):
+    for args in (
+        {
+            "initial_value_id": "A-3-1",
+            "final_value_id": "A-3-3",
+            "gold_standard_file": GS_FILE_FOR_MOVING_FROM_FIRST_TO_MIDDLE,
+            },
+            {
+            "initial_value_id": "A-3-1",
+            "final_value_id": "A-3-5",
+            "gold_standard_file": GS_FILE_FOR_MOVING_FROM_FIRST_TO_LAST,
+            },
+            {
+            "initial_value_id": "A-3-3",
+            "final_value_id": "A-3-1",
+            "gold_standard_file": GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_FIRST,
+            },
+            {
+            "initial_value_id": "A-3-2",
+            "final_value_id": "A-3-4",
+            "gold_standard_file": GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_DIFFERENT_MIDDLE_DOWN,
+            },
+            {
+            "initial_value_id": "A-3-2",
+            "final_value_id": "A-3-5",
+            "gold_standard_file": GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_LAST,
+            },
+            {
+            "initial_value_id": "A-3-5",
+            "final_value_id": "A-3-1",
+            "gold_standard_file": GS_FILE_FOR_MOVING_FROM_LAST_TO_FIRST,
+            },
+            {
+            "initial_value_id": "A-3-5",
+            "final_value_id": "A-3-2",
+            "gold_standard_file": GS_FILE_FOR_MOVING_FROM_LAST_TO_MIDDLE,
+            },
+    ):
+        test_mover.move_listed_value(
+            initial_value_id=args["initial_value_id"],
+            final_value_id=args["final_value_id"],
+        )
+
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=test_mover.output_file_with_listed_values,
+            gold_standard_file=args["gold_standard_file"],
+        )
 
 
 def test_move_value_in_inventory_of_listed_values_throws_error_with_coinciding_from_and_to(
