@@ -5,8 +5,8 @@ from langworld_db_data.adders.adder import Adder, AdderError
 from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
+KEY_FOR_FEATURE_VALUE_INDEX = "index"
 
-KEY_FOR_FEATURE_VALUE_INDEX = 'index'
 
 class ListedValueAdderError(AdderError):
     pass
