@@ -21,3 +21,14 @@ def test_mover():
         input_dir_with_feature_profiles=DIR_WITH_MOVERS_FEATURE_PROFILES,
         output_dir_with_feature_profiles=OUTPUT_DIR_FOR_LISTED_VALUE_MOVER_FEATURE_PROFILES,
     )
+
+def test_move_listed_value(test_mover):
+    pass
+
+
+def test__move_value_in_inventory_of_listed_values(test_mover):
+    pass
+
+
+def test_move_value_in_inventory_of_listed_values_throws_error_with_coinciding_from_and_to(test_mover):
+    pass

@@ -21,3 +21,25 @@ class ListedValueMover(Mover):
         self.listed_value_remover = ListedValueRemover(
             **kwargs,
         )
+
+    def move_listed_value(
+        self,
+        initial_value_id: str,
+        final_value_id: str,
+    ):
+        self._move_value_in_inventory_of_listed_values(
+            initial_value_id=initial_value_id,
+            final_value_id=final_value_id,
+        )
+        self._update_value_indices_in_inventory()
+
+    def _move_value_in_inventory_of_listed_values(
+        self,
+        initial_value_id: str,
+        final_value_id: str,
+    ):
+        pass
+
+    @staticmethod
+    def _update_value_indices_in_inventory():
+        pass
