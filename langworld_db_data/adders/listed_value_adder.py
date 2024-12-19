@@ -2,13 +2,10 @@ from pathlib import Path
 from typing import Optional, Union
 
 from langworld_db_data.adders.adder import Adder, AdderError
-from langworld_db_data.constants.literals import ID_SEPARATOR
+from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 
-KEY_FOR_FEATURE_ID = "feature_id"
-KEY_FOR_VALUE_ID = "id"
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
-KEY_FOR_FEATURE_VALUE_LINE_NUMBER = "line number"
 
 
 class ListedValueAdderError(AdderError):
@@ -23,6 +20,8 @@ class ListedValueAdder(Adder):
         new_value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
         index_to_assign: Union[int, None] = None,
+        description_formatted_en: Optional[str] = None,
+        description_formatted_ru: Optional[str] = None,
     ) -> None:
         """Adds listed value to the inventory and marks matching custom values
         in feature profiles as listed. If one or more custom values
@@ -34,7 +33,10 @@ class ListedValueAdder(Adder):
         """
 
         if not (feature_id and new_value_en and new_value_ru):
-            raise ListedValueAdderError("None of the passed strings can be empty")
+            raise ListedValueAdderError(
+                "None of the following strings can be empty:"
+                "feature_id, new_value_id, new_value_ru."
+            )
 
         try:
             id_of_new_value = self._add_to_inventory_of_listed_values(
@@ -42,6 +44,8 @@ class ListedValueAdder(Adder):
                 new_value_en=new_value_en,
                 new_value_ru=new_value_ru,
                 index_to_assign=index_to_assign,
+                description_formatted_en=description_formatted_en,
+                description_formatted_ru=description_formatted_ru,
             )
         except ValueError as e:
             raise ListedValueAdderError(
@@ -67,6 +71,8 @@ class ListedValueAdder(Adder):
         new_value_en: str,
         new_value_ru: str,
         index_to_assign: Union[int, None],
+        description_formatted_en: Optional[str] = None,
+        description_formatted_ru: Optional[str] = None,
     ) -> str:
         """
         Add new value to the inventory of listed values. Return ID of new value.
@@ -97,15 +103,15 @@ class ListedValueAdder(Adder):
         )
 
         # Check if passed index is valid
-        last_index_in_feature = value_indices_to_inventory_line_numbers[-1][
-            KEY_FOR_FEATURE_VALUE_INDEX
-        ]
+        last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
         # The range of numbers acceptable as index_to_assign consists of
         # all the current indices in the given feature and the next number after
         # the current maximum. To include the maximum, we must add 1 to last_index_in_feature.
         # To include the number right after the maximum, we must again add 1.
         # This results in adding 2 to the rightmost range border.
         acceptable_indices_to_assign = set([None] + list(range(1, last_index_in_feature + 2)))
+        # Here we add None to the list because None is the default value for appending
+        # value to the end onf feature
         if index_to_assign not in acceptable_indices_to_assign:
             raise ValueError(
                 f"Invalid index_to assign (must be between 1 and {last_index_in_feature + 1}, "
@@ -116,9 +122,12 @@ class ListedValueAdder(Adder):
             None,
             last_index_in_feature + 1,
         ):  # new value is being added after the last one
-            id_of_new_value = f"{feature_id}{ID_SEPARATOR}{value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_INDEX] + 1}"
+            id_of_new_value = (
+                f"{feature_id}{ID_SEPARATOR}"
+                f"{value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_INDEX] + 1}"
+            )
             line_number_of_new_value = (
-                value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_LINE_NUMBER] + 1
+                value_indices_to_inventory_line_numbers[-1]["line number"] + 1
             )
             rows_with_updated_value_indices = tuple(rows.copy())
 
@@ -135,10 +144,8 @@ class ListedValueAdder(Adder):
             )
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
-                if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] == index_to_assign:
-                    line_number_of_new_value = value_index_and_line_number[
-                        KEY_FOR_FEATURE_VALUE_LINE_NUMBER
-                    ]
+                if value_index_and_line_number["index"] == index_to_assign:
+                    line_number_of_new_value = value_index_and_line_number["line number"]
 
         row_with_new_value = tuple(
             [
@@ -147,6 +154,8 @@ class ListedValueAdder(Adder):
                     KEY_FOR_FEATURE_ID: feature_id,
                     "en": new_value_en[0].upper() + new_value_en[1:],
                     "ru": new_value_ru[0].upper() + new_value_ru[1:],
+                    "description_formatted_en": description_formatted_en,
+                    "description_formatted_ru": description_formatted_ru,
                 }
             ]
         )
@@ -177,8 +186,11 @@ class ListedValueAdder(Adder):
         This method is used to calculate ID of the value being added and its place in rows of listed values inventory.
 
         Returns tuple of dictionaries containing all indices and line numbers of values with given feature_id.
+
         Example:
-        ({"index": 1, "line number": 4}, {"index": 2, "line number": 5}, {"index": 3, "line number": 6})
+        ``({KEY_FOR_FEATURE_VALUE_INDEX: 1, 'line number': 4},
+        {KEY_FOR_FEATURE_VALUE_INDEX: 2, 'line number': 5},
+        {KEY_FOR_FEATURE_VALUE_INDEX: 3, 'line number': 6} ...)``
         """
 
         value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
@@ -190,8 +202,8 @@ class ListedValueAdder(Adder):
             value_index = int(row[KEY_FOR_VALUE_ID].split(ID_SEPARATOR)[-1])
             value_indices_to_inventory_line_numbers.append(
                 {
-                    KEY_FOR_FEATURE_VALUE_INDEX: value_index,
-                    KEY_FOR_FEATURE_VALUE_LINE_NUMBER: i,
+                    "index": value_index,
+                    "line number": i,
                 }
             )
 
@@ -211,11 +223,9 @@ class ListedValueAdder(Adder):
 
         rows_with_incremented_indices = rows[:]
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
-            if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] < index_to_assign:
+            if value_index_and_line_number["index"] < index_to_assign:
                 continue
-            row_where_id_must_be_incremented = value_index_and_line_number[
-                KEY_FOR_FEATURE_VALUE_LINE_NUMBER
-            ]
+            row_where_id_must_be_incremented = value_index_and_line_number["line number"]
             value_id_to_increment = rows_with_incremented_indices[
                 row_where_id_must_be_incremented
             ][KEY_FOR_VALUE_ID]

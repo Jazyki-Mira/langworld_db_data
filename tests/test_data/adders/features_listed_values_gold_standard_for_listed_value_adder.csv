@@ -1,1068 +1,1068 @@
-id,feature_id,en,ru
-A-1-1,A-1,Two,Две
-A-1-2,A-1,Three,Три
-A-1-3,A-1,Four,Четыре
-A-2-1,A-2,Close and open,Верхний и нижний
-A-2-2,A-2,Close and mid,Верхний и средний
-A-2-3,A-2,"Close, mid and open","Верхний, средний и нижний"
-A-2-4,A-2,"Close, close-mid, mid and open","Верхний, верхне-средний, средний и нижний"
-A-2-5,A-2,"Close, close-mid, open-mid and open","Верхний, верхне-средний, нижне-средний и нижний"
-A-3-1,A-3,Linear system,Линейная система
-A-3-2,A-3,Front and back,Передний и задний
-A-3-3,A-3,Central and back,Средний и задний
-A-3-4,A-3,"Front, central and back","Передний, средний и задний"
-A-3-5,A-3,Front and non-front,Передний и непередний
-A-4-1,A-4,No length degrees,Фонологические ступени долготы отсутствуют
-A-4-2,A-4,Two,Две ступени
-A-4-3,A-4,Three,Три ступени
-A-4-4,A-4,Four,Четыре ступени
-A-5-1,A-5,No vowel opposition in labialization,Противопоставление гласных по лабиализации отсутствует
-A-5-2,A-5,Present for front vowels,В переднем ряду
-A-5-3,A-5,Present for central vowels,В среднем ряду
-A-5-4,A-5,Present for back vowels,В заднем ряду
-A-5-5,A-5,Present for front and central vowels,В переднем и среднем рядах
-A-5-6,A-5,Present for front and back vowels,В переднем и заднем рядах
-A-5-7,A-5,Present for central and back vowels,В среднем и заднем рядах
-A-5-8,A-5,"Present for front, central and back vowels","В переднем, среднем и заднем рядах"
-A-6-1,A-6,No vowel opposition in nasalization,Противопоставление гласных по назализации отсутствует
-A-6-2,A-6,Present for front and back vowels,В переднем и заднем рядах
-A-6-3,A-6,Present for central and back vowels,В среднем и заднем рядах
-A-6-4,A-6,"Present for front, central and back vowels","В переднем, среднем и заднем рядах"
-A-6-5,A-6,Present for front vowels,В переднем ряду
-A-6-6,A-6,Present for front and central vowels,В переднем и среднем рядах
-A-7-1,A-7,No vowel opposition in pharyngealization,Противопоставление гласных по фарингализации отсутствует
-A-7-2,A-7,Present for front vowels,В переднем ряду
-A-7-3,A-7,Present for central vowels,В среднем ряду
-A-7-4,A-7,Present for back vowels,В заднем ряду
-A-7-5,A-7,Present for front and central vowels,В переднем и среднем рядах
-A-7-6,A-7,Present for front and back vowels,В переднем и заднем рядах
-A-7-7,A-7,Present for central and back vowels,В среднем и заднем рядах
-A-7-8,A-7,"Present for front, central and back vowels","В переднем, среднем и заднем рядах"
-A-8-1,A-8,No vowel opposition in ATR,Противопоставление гласных по продвинутости корня языка отсутствует
-A-8-2,A-8,Present for front vowels,В переднем ряду
-A-8-3,A-8,Present for central vowels,В среднем ряду
-A-8-4,A-8,Present for back vowels,В заднем ряду
-A-8-5,A-8,Present for front and central vowels,В переднем и среднем рядах
-A-8-6,A-8,Present for front and back vowels,В переднем и заднем рядах
-A-8-7,A-8,Present for central and back vowels,В среднем и заднем рядах
-A-8-8,A-8,"Present for front, central and back vowels","В переднем, среднем и заднем рядах"
-A-9-1,A-9,No diphthongs and triphthongs,Дифтонги и трифтонги отсутствуют
-A-9-2,A-9,Only diphthongs present,Только дифтонги
-A-9-3,A-9,Both diphthongs and triphthongs present,Дифтонги и трифтонги
-A-10-1,A-10,Rising (ascending),Восходящие
-A-10-2,A-10,Falling (descending),Нисходящие
-A-10-3,A-10,Rising (ascending) and falling (descending),Восходящие и нисходящие
-A-11-1,A-11,Opposition by presence and absence of voice,Есть противопоставления по звонкости/глухости
-A-11-2,A-11,Opposition by aspiration,Есть противопоставления по аспирации
-A-11-3,A-11,Ejectives present,Есть глоттализованные согласные
-A-11-4,A-11,Clicks present,Есть щелкающие согласные
-A-11-5,A-11,Geminated consonants present,Есть геминированные согласные
-A-11-6,A-11,Opposition by voice presence/absence and by aspiration,Есть противопоставления по звонкости/глухости и по аспирации
-A-11-7,A-11,"Opposition by voice presence/absence, ejectives present","Есть противопоставления по звонкости/глухости, есть глоттализованные согласные"
-A-11-8,A-11,Ejective consonants present,Есть абруптивные согласные
-A-11-9,A-11,Opposition by voice presence/absence and softness,Есть противопоставление по звонкости/глухости и твердости/мягкости
-A-11-10,A-11,Strong and weak consonants present,Есть сильные и слабые согласные
-A-11-11,A-11,Emphatic consonants present,Есть эмфатические согласные
-A-11-12,A-11,Opposition by strain,Есть противопоставление по напряженности и ненапряженности
-A-11-13,A-11,"Opposition by voice presence/absence, emphatic consonants present",Есть противопоставление по звонкости/глухости и эмфатические согласные
-A-11-14,A-11,"Opposition by voice presence/absence and strain",Есть противопоставление по звонкости/глухости и напряженности/ненапряженности
-A-11-15,A-11,"New value, listed with a comma","Есть первые, вторые и третьи"
-A-12-1,A-12,Plosives and fricatives,Взрывные и фрикативные
-A-12-2,A-12,Plosives and affricates,Взрывные и аффрикаты
-A-12-3,A-12,"Plosives, fricatives and affricates","Взрывные, фрикативные и аффрикаты"
-A-12-4,A-12,"Plosives, voiced, prenasalized, fricatives and affricates","Взрывные, звонкие, преназализованные, фрикативные и аффрикаты"
-A-13-1,A-13,"Labial, coronal and guttural","Губные, переднеязычные и заднеязычные"
-A-13-2,A-13,"Labial, coronal, dorsal, guttural and postuvular","Губные, переднеязычные, среднеязычные, заднеязычные и постувулярные"
-A-13-3,A-13,"Labial, coronal, dorsal and guttural","Губные, переднеязычные, среднеязычные и заднеязычные"
-A-13-4,A-13,"Labial, coronal, dorsal and postuvular","Губные, переднеязычные, среднеязычные и постувулярные"
-A-13-5,A-13,"Labial, coronal, guttural and postuvular","Губные, переднеязычные, заднеязычные и постувулярные"
-A-13-6,A-13,"Labial, dental-alveolar, palatal, velar and labialized velar","Губные, зубно-альвеолярные, палатальные, велярные и велярные огубленные"
-A-14-1,A-14,Only bilabial,Только билабиальные
-A-14-2,A-14,Bilabial and labiodental,Билабиальные и лабиодентальные
-A-15-1,A-15,Dental,Дентальные
-A-15-2,A-15,Interdental,Интердентальные
-A-15-3,A-15,Alveolar,Альвеолярные
-A-15-4,A-15,Postalveolar,Постальвеолярные
-A-15-5,A-15,Retroflex,Ретрофлексные
-A-15-6,A-15,Dental and alveolar,Дентальные и альвеолярные
-A-15-7,A-15,Dental and interdental,Дентальные и интердентальные
-A-15-8,A-15,Dental and retroflex,Дентальные и ретрофлексные
-A-15-9,A-15,Dental and postlaveolar,Дентальные и постальвеолярные
-A-15-10,A-15,Dental and alveopalatal,Дентальные и альвео-палатальные
-A-15-11,A-15,"Dental, interdental and alveolar","Дентальные, интердентальные и альвеолярные"
-A-15-12,A-15,"Dental, interdental and retroflex","Дентальные, интердентальные и ретрефлексные"
-A-15-13,A-15,"Dental, prepalatal and alveopalatal","Дентальные, препалатальные и альвео-палатальные"
-A-15-14,A-15,"Dental, alveolar and postalveolar","Дентальные, альвеолярные и постальвеолярные"
-A-15-15,A-15,"Dental, interdental and alveopalatal","Дентальные, интердентальные и альвео-палатальные"
-A-15-16,A-15,Alveolar and postalveolar,Альвеолярные и постальвеолярные
-A-15-17,A-15,Alveolar and retroflex,Альвеолярные и ретрофлексные
-A-15-18,A-15,"Alveolar, retroflex and alveopalatal","Альвеолярные, ретрофлексные и альвео-палатальные"
-A-15-19,A-15,"Dental, alveolar, postalveolar, and retroflex","Дентальные, альвеолярные, постальвеолярные и ретрофлексные"
-A-15-20,A-15,"Dental, alveolar, and retroflex","Дентальные, альвеолярные и ретрофлексные"
-A-15-21,A-15,Dental-alveolar and palatal,Зубно-альвеолярные и палатальные
-A-15-22,A-15,"Dental, alveolar and dental-alveolar","Дентальные, альвеолярные и дентально-альвеолярные"
-A-15-23,A-15,Dental-alveolar,Дентально-альвеолярные
-A-15-24,A-15,Alveolar and alveopalatal,Альвеолярные и альвео-палатальные
-A-15-25,A-15,Interdental and dental-alveolar,Интердентальные и дентально-альвеолярные
-A-16-1,A-16,Velar,Велярные
-A-16-2,A-16,Labiovelar,Лабиовелярные
-A-16-3,A-16,Uvular,Увулярные
-A-16-4,A-16,Velar and labiovelar,Велярные и лабиовелярные
-A-16-5,A-16,Velar and uvular,Велярные и увулярные
-A-16-6,A-16,"Velar, uvular and labiovelar","Велярные, увулярные и лабиовелярные"
-A-16-7,A-16,Velar and labialized velar,Велярные и велярные-огубленные
-A-17-1,A-17,Only pharyngeal,Только фарингальные
-A-17-2,A-17,Only glottal,Только глоттальные
-A-17-3,A-17,Both pharyngeal and glottal,Фарингальные и глоттальные
-A-18-1,A-18,Absent,Отсутствуют
-A-18-2,A-18,By labialization,По лабиализации
-A-18-3,A-18,By nasalization,По назализации
-A-18-4,A-18,By palatalization,По палатализации
-A-18-5,A-18,By pharyngealization,По фарингализации
-A-18-6,A-18,By labialization and palatalization,По лабиализации и палатализации
-A-18-7,A-18,By labialization and pharyngealization,По лабиализации и фарингализации
-A-18-8,A-18,"By labialization, palatalization and pharyngealization","По лабиализации, палатализации и фарингализации"
-A-18-9,A-18,By nasalization and palatalization,По назализации и палатализации
-A-18-10,A-18,By palatalization and pharyngealization,По палатализации и фарингализации
-A-18-11,A-18,By palatalization and velarization,По палатализации и веляризации
-A-18-12,A-18,By labialization and nasalisation,По лабиализации и назализации
-A-19-1,A-19,Nasal and liquid,Назальные и плавные
-A-19-2,A-19,"Nasal, liquid and vibrant","Назальные, плавные и вибранты"
-A-19-3,A-19,"Nasal, liquid and glide","Назальные, плавные и глайды"
-A-19-4,A-19,"Nasal, vibrant and glide","Назальные, вибранты и глайды"
-A-19-5,A-19,"Liquid, vibrant and glide","Плавные, вибранты и глайды"
-A-19-6,A-19,"Nasal, liquid, vibrant and glide","Назальные, плавные, вибранты и глайды"
-A-19-7,A-19,Nasal and glide,Назальные и глайды
-A-19-8,A-19,"Approximant, nasal, vibrant and lateral","Аппроксиманты, носовые, вибранты и боковые"
-A-20-1,A-20,Coronal,Переднеязычные
-A-20-2,A-20,Dorsal,Среднеязычные
-A-20-3,A-20,Guttural,Заднеязычные
-A-20-4,A-20,Lateral,Латеральные
-A-20-5,A-20,Retroflex,Ретрофлексные
-A-20-6,A-20,Labial and guttural,Губные и заднеязычные
-A-20-7,A-20,Labial and coronal,Губные и переднеязычные
-A-20-8,A-20,Coronal and guttural,Переднеязычные и заднеязычные
-A-20-9,A-20,Coronal and postuvular,Переднеязычные и постувулярные
-A-20-10,A-20,Dorsal and guttural,Среднеязычные и заднеязычные
-A-20-11,A-20,"Labial, coronal, dorsal, guttural and postuvular","Губные, переднеязычные, среднеязычные, заднеязычные и постувулярные"
-A-20-12,A-20,"Labial, coronal, guttural and postuvular","Губные, переднеязычные, заднеязычные и постувулярные"
-A-20-13,A-20,"Labial, coronal, dorsal and postuvular","Губные, переднеязычные, среднеязычные и постувулярные"
-A-20-14,A-20,"Labial, coronal and dorsal","Губные, переднеязычные и среднеязычные"
-A-20-15,A-20,"Coronal, dorsal and guttural","Переднеязычные, среднеязычные и заднеязычные"
-A-20-16,A-20,"Labial, coronal and guttural","Губные, переднеязычные и заднеязычные"
-A-20-17,A-20,"Labial, coronal, dorsal and guttural","Губные, переднеязычные, среднеязычные и заднеязычные"
-A-20-18,A-20,Coronal and dorsal,Переднеязычные и среднеязычные
-A-21-1,A-21,Absent,Отсутствуют
-A-21-2,A-21,By vocalization,По звонкости
-A-21-3,A-21,By palatalization,По палатализации
-A-21-4,A-21,By labialization,По лабиализации
-A-21-5,A-21,By intensity,По интенсивности
-A-21-6,A-21,By pharyngealization,По фарингализации
-A-21-7,A-21,By length,По долготе
-A-21-8,A-21,By vocalization and pharyngealization,По звонкости и фарингализации
-A-21-9,A-21,"By vocalization, labialization and length","По звонкости, лабиализации и долготе"
-A-21-10,A-21,By vocalization and length,По звонкости и долготе
-A-21-11,A-21,By palatalization and labialization,По палатализации и лабиализации
-A-21-12,A-21,By palatalization and intensity,По палатализации и интенсивности
-A-21-13,A-21,By palatalization and pharyngealization,По палатализации и фарингализации
-A-21-14,A-21,By palatalization and length,По палатализации и долготе
-A-21-15,A-21,By pharyngealization and length,По фарингализации и долготе
-A-21-16,A-21,By nasalization,По назализации
-B-1-1,B-1,No stress,Ударение отсутствует
-B-1-2,B-1,Phonological,Фонологическое
-B-1-3,B-1,Non-phonological,Нефонологическое
-B-1-4,B-1,Phonological and non-phonological,Фонологическое/ нефонологическое
-B-2-1,B-2,Dynamic,Динамическое
-B-2-2,B-2,Quantitative,Количественное
-B-2-3,B-2,Pitch-accent,Музыкальное
-B-2-4,B-2,Mixed,Смешанное
-B-3-1,B-3,Syllable,Слог
-B-3-2,B-3,Mora,Мора
-B-3-3,B-3,Word,Слово
-B-4-1,B-4,Single-place fixed,Одноместно фиксированное
-B-4-2,B-4,Not fixed,Нефиксированное
-B-4-3,B-4,Movable fixed,Разноместно фиксированное
-B-4-4,B-4,Movable flexible,Разноместное подвижное
-B-4-5,B-4,Movable non-fixed,Разноместное нефиксированное
-B-5-1,B-5,First syllable of word,Начальный слог
-B-5-2,B-5,First syllable of root,Начальный слог корня
-B-5-3,B-5,Second syllable,Второй слог
-B-5-4,B-5,Ultima,Конечный слог
-B-5-5,B-5,Last closed syllable,Конечный закрытый слог
-B-5-6,B-5,Last syllable of stem,Конечный слог основы
-B-5-7,B-5,Penult,Пенультима
-B-5-8,B-5,Antepenult,Антепенультима
-B-5-9,B-5,First or second syllable,Начальный или второй слог
-B-5-10,B-5,"First, second or third syllable","Начальный, второй или третий слог"
-B-5-11,B-5,First syllable or ultima,Начальный или конечный слог
-B-5-12,B-5,First syllable or penult,Начальный слог или пенультима
-B-5-13,B-5,First or first long syllable,Начальный слог или первый долгий слог
-B-5-14,B-5,Penult or antepenult,Пенультима или антепенультима
-B-5-15,B-5,First syllable or antepenult,Начальный слог или антепенультима
-B-5-16,B-5,Ultima or penult,Конечный слог или пенультима
-B-5-17,B-5,"Ultima, penult or antepenult","Конечный слог, пенультима или антепенультима"
-B-5-18,B-5,"First syllable, penult or ultima","Начальный слог, пенультима или конечный слог"
-B-6-1,B-6,Two,Два
-B-6-2,B-6,Three,Три
-B-6-3,B-6,More than three,Более трёх
-B-7-1,B-7,Rising,Восходящий
-B-7-2,B-7,Falling,Нисходящий
-B-7-3,B-7,Rising and falling,Восходящий и нисходящий
-B-7-4,B-7,Rising and falling-rising,Восходящий и нисходяще-восходящный
-B-7-5,B-7,Flat and rising,Ровный и восходящий
-B-7-6,B-7,Flat and falling,Ровный и нисходящий
-B-7-7,B-7,"Flat, rising and falling","Ровный, восходящий и нисходящий"
-B-7-8,B-7,"Rising, falling and rising-falling","Восходящий, нисходящий и восходяще-нисходящный"
-B-7-9,B-7,"Rising, falling and falling-rising","Восходящий, нисходящий и нисходяще-восходящный"
-B-7-10,B-7,"Rising, falling, rising-falling and falling-rising","Восходящий, нисходящий, восходяще-нисходящный и нисходяще-восходящный"
-B-7-11,B-7,"Rising, rising-falling, flat and broken","Восходящий, восходяще-нисходящий, ровный и прерывистый"
-B-7-12,B-7,Flat and broken,Ровный и прерывистый
-B-8-1,B-8,Syllable,Слог
-B-8-2,B-8,Word,Слово
-B-8-3,B-8,Syllable or word,Слог или слово
-B-8-4,B-8,Phrase,Фраза
-B-8-5,B-8,Foot,Стопа
-B-9-1,B-9,Phonological,Фонологическая
-B-9-2,B-9,Non-phonological,Нефонологическая
-B-9-3,B-9,Rhythmic,Ритмическая
-B-9-4,B-9,Phonological and non-phonological,Фонологическая и нефонологическая
-B-9-5,B-9,Phonological and rhythmic,Фонологическая и ритмическая
-B-9-6,B-9,Non-phonological and rhythmic,Нефонологическая и ритмическая
-B-10-1,B-10,Phoneme,Фонема
-B-10-2,B-10,Group of phonemes,Группа фонем
-B-10-3,B-10,Affix,Аффикс
-B-10-4,B-10,Group of affixes,Группа аффиксов
-B-10-5,B-10,"Group of affixes, all vowels",Группа слогов или все гласные слова
-B-10-6,B-10,All vowels,Все гласные слова
-B-10-7,B-10,One vowel or all vowels,Один гласный или все гласные слова
-B-10-8,B-10,Foot,Стопа
-B-10-9,B-10,No vowel harmony,Гармоническое уподобление гласных отсутствует
-B-11-1,B-11,Length,Долгота
-B-11-2,B-11,Backness,Ряд
-B-11-3,B-11,Height,Подъем
-B-11-4,B-11,Labialization,Лабиализация
-B-11-5,B-11,ATR,Позиция корня языка
-B-11-6,B-11,Backness and height,Ряд и подъем
-B-11-7,B-11,Backness and roundedness,Ряд и лабиализация
-B-11-8,B-11,Height and roundedness,Подъем и лабиализация
-B-11-9,B-11,Height and palatality,Подъем и палатальность
-B-11-10,B-11,Roundedness and palatality,Лабиализация и палатальность
-B-11-11,B-11,"Backness, height and roundedness","Ряд, подъем и лабиализация"
-B-11-12,B-11,"Height, length, and labialization","Подъем, долгота и лабиализация"
-B-11-13,B-11,Nasalization,Назализация
-B-11-14,B-11,ATR and nasalization,Степень продвинутости языка (ATR) и назализация
-B-12-1,B-12,First vowel of word,Первый гласный слова
-B-12-2,B-12,First vowel of affix,Первый гласный аффикса
-B-12-3,B-12,First vowel of root,Первый гласный корня
-B-12-4,B-12,Stressed vowel,Ударный гласный
-B-12-5,B-12,Last vowel of stem,Последний гласный основы
-B-12-6,B-12,First vowel of word (root),Первый гласный слова (=корня)
-B-12-7,B-12,"Final syllable vowel, or first vowel of word, or stressed syllable of stem","Гласный финального слога, первый гласный слова, или ударный гласный основы"
-B-12-8,B-12,First vowel of word or last vowel of stem,Первый гласный слова или последний гласный основы
-B-12-9,B-12,First vowel of affix or first vowel of root,Первый гласный аффикса или первый гласный корня
-B-13-1,B-13,Nasalization,Назализация
-B-13-2,B-13,Palatalization,Палатализация
-B-13-3,B-13,Pharyngealization,Фарингализация
-B-13-4,B-13,Phonation,Фонация
-B-13-5,B-13,Velarization and palatalization,Веляризация и палатализация
-B-13-6,B-13,Pharyngealization and phonation,Фарингализация и фонация
-B-13-7,B-13,Palatalization and nasalization,Палатализация и назализация
-B-14-1,B-14,Creaky voice,Скрипучая
-B-14-2,B-14,Stiff voice and slack voice,Напряженная и слабая
-B-14-3,B-14,"Stiff voice, slack voice and creaky voice","Напряженная, слабая и скрипучая"
-B-14-4,B-14,Stiff voice and aspirated voice,Напряженная и придыхательная
-B-14-5,B-14,"Stiff voice, modal voice and aspirated voice","Напряженная, модальная и придыхательная"
-B-14-6,B-14,Stiff voice,Напряженная
-B-14-7,B-14,Aspirated voice,Придыхательная
-C-1-1,C-1,No null onset,Обязательно имеется
-C-1-2,C-1,Only null onset possible,Запрещен
-C-1-3,C-1,Most syllables have a non-null onset,Большинство слогов прикрытые
-C-1-4,C-1,Most syllables have a null onset,Большинство слогов неприкрытые
-C-1-5,C-1,Both null and non-null onset possible,Есть прикрытые и неприкрытые слоги
-C-2-1,C-2,No null coda,Обязательно имеется
-C-2-2,C-2,Only null coda possible,Запрещен
-C-2-3,C-2,Most syllables have a non-null coda,Большинство слогов закрытые
-C-2-4,C-2,Most syllables have a null coda,Большинство слогов открытые
-C-2-5,C-2,Both null and non-null ocoda possible,Есть закрытые и открытые слоги
-D-1-1,D-1,No restrictions,Отсутствуют
-D-1-2,D-1,Only vowels possible,Только гласные
-D-1-3,D-1,Only consonants possible,Только согласные
-D-1-4,D-1,Limited set of consonants possible,Ограниченный набор согласных
-D-1-5,D-1,No vowel clusters,Запрет на любые стечения гласных
-D-1-6,D-1,No consonant clusters,Запрет на любые стечения согласных
-D-1-7,D-1,Limited set of consonants and vowels possible,Ограниченный набор гласных и согласных
-D-1-8,D-1,No vowel clusters and no consonant clusters,Запрет на любые стечения гласных и согласных
-D-1-9,D-1,"Limited set of consonants possible, no consonant clusters",Ограниченный набор согласных и запрет на любые стечения согласных
-D-1-10,D-1,"Limited set of consonants, no consonant clusters","Ограниченный набор гласных и согласных, запрет на стечения согласных"
-D-1-11,D-1,Limited set of vowels,Ограниченный набор гласных
-D-1-12,D-1,"Limited set of vowels and consonants, no consonant clusters or long vowels","Ограниченный набор гласных и согласных, запрет на стечение согласных и на долгие согласные"
-D-2-1,D-2,No restrictions,Отсутствуют
-D-2-2,D-2,Only vowels possible,Только гласные
-D-2-3,D-2,Only consonants possible,Только согласные
-D-2-4,D-2,Limited set of vowels possible,Ограниченный набор гласных
-D-2-5,D-2,Limited set of consonants possible,Ограниченный набор согласных
-D-2-6,D-2,No vowel clusters,Запрет на любые стечения гласных
-D-2-7,D-2,No consonant clusters,Запрет на любые стечения согласных
-D-2-8,D-2,Limited set of vowels and consonants possible,Ограниченный набор гласных и согласных
-D-2-9,D-2,No vowel clusters and no consonant clusters,Запрет на любые стечения гласных и согласных
-D-2-10,D-2,"Limited set of consonants possible, no vowel clusters",Ограниченный набор согласных и запрет на любые стечения гласных
-D-2-11,D-2,"Limited set of consonants possible, no consonant clusters",Ограниченный набор согласных и запрет на стечения согласных
-D-2-12,D-2,No clusters of more than two consonants,Запрет на стечение более двух согласных
-D-3-1,D-3,Only monosyllabic words,Только односложные слова
-D-3-2,D-3,Only polysyllabic words,Только неодносложные слова
-D-3-3,D-3,Mainly monosyllabic words,Преимущественно односложные слова
-D-3-4,D-3,Mainly polysyllabic words,Преимущественно неодносложные слова
-D-4-1,D-4,No differences,Отсутствуют
-D-4-2,D-4,Differences in phonetic structure,Различия в фонетическом составе
-D-4-3,D-4,Differences in accentuation,Акцентные различия
-D-4-4,D-4,Differences in phonetic structure and in syllable structure,Различия в фонетическом составе и в структуре слога
-D-4-5,D-4,Differences in phonetic structure and accentual differences,Различия в фонетическом составе и акцентные различия
-D-4-6,D-4,Differences in syllable structure and accentual differences,Различия в структуре слога и акцентные различия
-D-4-7,D-4,"Differences in phonetic structure, in syllable structure and accentual differences","Различия в фонетическом составе, в структуре слога и акцентные различия"
-D-4-8,D-4,Differences in syllable structure,Различия в структуре слога
-D-5-1,D-5,No differences,Отсутствуют
-D-5-2,D-5,Differences in phonetic structure,Различия в фонетическом составе
-D-5-3,D-5,Differences in accentuation,Акцентные различия
-D-5-4,D-5,Differences in syllable structure,Различия в структуре слога
-D-5-5,D-5,Differences in syllable structure and accentual differences,Различия в структуре слога и акцентные различия
-D-5-6,D-5,Differences in phonetic structure and in syllable structure,Различия в фонетическом составе и в структуре слога
-D-5-7,D-5,"Differences in phonetic structure, in syllable structure and in accentuation","Различия в фонетическом составе, в структуре слога и акцентные различия"
-D-5-8,D-5,"Differences in phonetic structure, and in accentuation",Различия в фонетическом составе и акцентные различия
-D-6-1,D-6,No differences,Отсутствуют
-D-6-2,D-6,Differences in phonetic structure,Различия в фонетическом составе
-D-6-3,D-6,Accentual differences,Акцентные различия
-D-6-4,D-6,Differences in syllable structure,Различия в структуре слога
-D-6-5,D-6,Differences in phonetic structure and accentuation,Различия в фонетическом составе и акцентные различия
-D-6-6,D-6,"Differences in phonetic structure, in syllable structure and accentuation","Различия в фонетическом составе, в структуре слога и акцентные различия"
-D-6-7,D-6,Differences in syllable structure and accentuation,Различия в структуре слога и акцентные различия
-D-6-8,D-6,Differences in phonetic strcutre and in syllable structure,Различия в фонетическом составе и в структуре слога
-D-6-9,D-6,Differences in tones,Тоновые различия
-D-7-1,D-7,No alternations,Чередования отсутствуют
-D-7-2,D-7,Accompanying,Сопутствующие
-D-7-3,D-7,Distinctive,Смыслоразличительные
-D-7-4,D-7,Accompanying and distinctive,Сопутствующие и смыслоразличительные
-D-8-1,D-8,Vowel alternations,Вокалические
-D-8-2,D-8,Consonant alternations,Консонантные
-D-8-3,D-8,Mixed alternations,Смешанные
-D-8-4,D-8,Tone alternations,Тоновые
-D-8-5,D-8,Phoneme complex alternations,Чередование комплексов фонем
-D-8-6,D-8,Vowel and consonant alternations,Вокалические и консонантные
-D-8-7,D-8,Vowel and mixed alternations,Вокалические и смешанные
-D-8-8,D-8,"Vowel, consonant and mixed alternations","Вокалические, консонантные и смешанные"
-D-8-9,D-8,Consonant and phoneme complex alternations,Консонантные и чередование комплексов
-D-8-10,D-8,"Vowel, consonant, mixed, and phoneme complex alternations","Вокалические, консонантные, смешанные и чередование комплексов"
-D-8-11,D-8,"Vowel, consonant, and phoneme complex alternations","Вокалические, консонантные и чередования комплексов"
-D-8-12,D-8,Vowel and tone alternations,Вокалические и тоновые
-D-8-13,D-8,Consonant and tone alternations,Консонантные и тоновые
-E-1-1,E-1,Agglutinative,Агглютинативный
-E-1-2,E-1,Agglutinative with some fusional features,Агглютинативный с элементами флективного
-E-1-3,E-1,Fusional,Флективный
-E-1-4,E-1,Fusional with some agglutinative features,Флективный с элементами агглютинации
-E-1-5,E-1,Fusional-agglutinative,Флективно-агглютинативный
-E-2-1,E-2,Internal flection,Внутренняя флексия
-E-2-2,E-2,Cumulative affixes,Кумулятивность аффиксов
-E-2-3,E-2,Phonetically unconditioned stem alternations,Фонетически необусловленные изменения в основе
-E-2-4,E-2,Phonetically unconditioned fusion,Фонетически необусловленная фузия
-E-2-5,E-2,"Cumulative affixes, several conjugation types",Кумулятивность аффиксов и наличие параллельных типов словоизменения
-E-2-6,E-2,"Cumulative affixes, several conjugation types, phonetically unconditioned stem alternations","Кумулятивность аффиксов, наличие параллельных типов словоизменения и фонетически необусловленные изменения в основе"
-E-2-7,E-2,Phonetically unconditioned stem alternations and cumulative affixes,Фонетически необусловленные изменения в основе и кумулятивность аффиксов
-E-2-8,E-2,"Internal flection, phonetically unconditioned fusion",Внутренняя флексия и фонетически необусловленная фузия
-E-3-1,E-3,One affix can express only one meaning,Отсутствие полисемантизма аффиксов
-E-3-2,E-3,Single inflection/conjugation type,Единый тип склонения или спряжения
-E-3-3,E-3,Low degree of fusion between root and non-root morphemes,Низкая степень фузии между некорневыми и корневыми морфемами
-E-3-4,E-3,No phonetic alternations in morphemes,Постоянство морфемного облика
-E-3-5,E-3,"One affix can express only one meaning, single inflection/conjugation type, no phonetic alternations in morphemes","Отсутствие полисемантизма аффиксов, единый тип склонения или спряжения и постоянство морфемного облика"
-E-3-6,E-3,"One affix can express only one meaning, single inflection/conjugation type, no phonetic alternations in morphemes, basic form bare stem","Отсутствие полисемантизма аффиксов, единый тип склонения или спряжения, постоянство морфемного облика и совпадение исходной формы с чистой основой"
-E-3-7,E-3,"No phonetic alternations in morphemes, basic form bare stem",Постоянство морфемного облика и совпадение исходной формы с чистой основой
-E-4-1,E-4,Polysynthetic,Полисентетический
-E-4-2,E-4,Analytic,Аналитический
-E-4-3,E-4,Analytic with elements of synthetism,Аналитический с элементами синтетизма
-E-4-4,E-4,Isolating,Изолирующий
-E-4-5,E-4,Synthetic,Синтетический
-E-4-6,E-4,Synthetic with elements of analytism,Синтетический с элементами аналитизма
-E-4-7,E-4,Synthetic with elements of polysynthetism,синтетический с элементами полисинтетизма
-F-1-1,F-1,No agreement classes,Согласовательные классы отсутствуют
-F-1-2,F-1,Two,Два
-F-1-3,F-1,Three,Три
-F-1-4,F-1,Four,Четыре
-F-1-5,F-1,Six,Шесть
-F-2-1,F-2,Articles,Артикли
-F-2-2,F-2,Umlaut,Перегласовка основы
-F-2-3,F-2,Verbal affixes,Аффиксация в глаголе
-F-2-4,F-2,Verbal affixes and adjective affixes,Аффиксация в глаголе и прилагательном
-F-2-5,F-2,Umlaut and affixes,Перегласовка основы и аффиксация
-F-3-1,F-3,Articles,В артикле
-F-3-2,F-3,Verbs,В глаголе
-F-3-3,F-3,Pronouns,В местоимении
-F-3-4,F-3,Adverbs,В наречии
-F-3-5,F-3,Postpositions,В послелоге
-F-3-6,F-3,Adjectives,В прилагательном
-F-3-7,F-3,Participles,В причастии
-F-3-8,F-3,Numerals,В числительном
-F-3-9,F-3,"Pronouns, adjectives, and verbs","В местоимении, прилагательном и глаголе"
-F-3-10,F-3,"Adjectives, verbs, and numerals","В прилагательном, глаголе и числительном"
-F-3-11,F-3,"Adjectives, numerals, pronouns, and verbs","В прилагательном, числительном, местоимении и глаголе"
-F-3-12,F-3,Adjectives and verbs,В прилагательном и глаголе
-F-3-13,F-3,"Adjectives, verbs, and adverbs","В прилагательном, глаголе и наречии"
-F-3-14,F-3,"Adjectives. Numerals, and pronouns","В прилагательном, числительном и местоимении"
-F-3-15,F-3,"Adjectives, pronouns, participles, and articles","В прилагательном, местоимении, причастии и артикле"
-F-3-16,F-3,"Adjectives, numerals, pronouns, and participles","В прилагательном, числительном, местоимении и причастии"
-F-3-17,F-3,"Adjectives, numerals, pronouns, verbs, and participles","В прилагательном, числительном, местоимении, глаголе и причастии"
-F-3-18,F-3,Adjectives and numerals,В прилагательном и числительном
-F-3-19,F-3,Verbs and pronouns,В глаголе и местоимении
-F-4-1,F-4,Classifier verbs,Классифицирующие глаголы
-F-4-2,F-4,Numeral classifiers,Счетные классификаторы
-F-5-1,F-5,Only in singular,Только в единственном числе
-F-5-2,F-5,In singular and in plural,В единственном и множественном числе
-F-5-3,F-5,"In singular, dual, and plural","В единственном, двойственном и множественном числе"
-F-6-1,F-6,Absent,Отсутствует
-F-6-2,F-6,Always present,Всегда присутствует
-F-6-3,F-6,"For ""one""","Для числительного ""один"""
-F-6-4,F-6,"For ""one"", ""two""","Для числительных ""один"" и ""два"""
-F-6-5,F-6,"For ""one"", ""two"", ""three"", ""four""","Для числительных ""один"", ""два"", ""три"", ""четыре"""
-F-7-1,F-7,Absent,Отсутствуют
-F-7-2,F-7,Person/non-person,Личность/неличность
-F-7-3,F-7,Animacy/inanimacy,Одушевленность/неодушевленность
-F-7-4,F-7,Person/non-person and animacy/inanimacy,Личность/неличность и одушевленность/неодушевленность
-F-7-5,F-7,Class,Класс
-F-8-1,F-8,Lexical,Лексическое
-F-8-2,F-8,Morphological,Морфологическое
-F-8-3,F-8,Syntactic,Синтаксическое
-F-8-4,F-8,Lexical and morphological,Лексическое и морфологическое
-F-8-5,F-8,Lexical and syntactic,Лексическое и синтаксическое
-F-8-6,F-8,Morphological and syntactic,Морфологическое и синтаксическое
-F-8-7,F-8,"Lexical, morphological and syntactic","Лексическое, морфологическое и синтаксическое"
-F-9-1,F-9,Lexical,Лексический
-F-9-2,F-9,Morphological,Морфологический
-F-9-3,F-9,Syntactic,Синтаксический
-F-9-4,F-9,Lexical and syntactic,Лексический и синтаксический
-F-9-5,F-9,Morphological and syntactic,Морфологический и синтаксический
-F-9-6,F-9,Lexical and morphological,Лексический и морфологический
-F-9-7,F-9,"Lexical, morphological, and syntactic","Лексический, морфологический и синтаксический"
-G-1-1,G-1,Singular and plural,Единственное и множественное
-G-1-2,G-1,"Singular, dual and plural","Единственное, двойственное и множественное"
-G-1-3,G-1,Distributive and plural,Дистрибутивное и множественное
-G-1-4,G-1,"Singular, paucal and plural","Единственное, паукальное и множественное"
-G-1-5,G-1,"Singular, dual, trial and plural","Единственное, двойственное, тройственное и множественное"
-G-1-6,G-1,Indefinite and plural,Неопределенное и множественное
-G-1-7,G-1,"Indefinite, distributive and plural","Неопределенное, дистрибутивное и множественное"
-G-2-1,G-2,Marked,Маркированное
-G-2-2,G-2,Unmarked,Немаркированное
-G-2-3,G-2,Marked and unmarked,Маркированное и немаркированное
-G-3-1,G-3,Absent,Отсутствуют
-G-3-2,G-3,Neutral and polite,Нейтральная и вежливая
-G-3-3,G-3,"Neutral, polite, and impolite","Нейтральная, вежливая и невежливая"
-G-4-1,G-4,No agreement in number,Отсутствует
-G-4-2,G-4,Predicative,Предикативное
-G-4-3,G-4,Attributive,Атрибутивное
-G-4-4,G-4,Predicative and attributive,Предикативное и атрибутивное
-G-5-1,G-5,Singular,Единственное число
-G-5-2,G-5,Plural,Множественное число
-G-5-3,G-5,Singular and plural,Единственное и множественное
-G-5-4,G-5,"Singular, dual, and plural","Единственное, двойственное и множественное"
-G-6-1,G-6,Decimal,Десятеричная
-G-6-2,G-6,Quinary,Пятеричная
-G-6-3,G-6,Decimal with elements of duodecimal,Десятеричная с элементами двенадцатеричной
-G-6-4,G-6,Decimal with elements of vigesimal,Десятеричная с элементами двадцатеричной
-G-6-5,G-6,Vigesimal with elements of decimal,Двадцатеричная с элементами десятеричной
-G-6-6,G-6,Vigesimal with elements of quinary,Двадцатеричная с элементами пятеричной
-G-6-7,G-6,Vigesimal,Двадцатеричная
-G-6-8,G-6,"Mixed, with elements of quinary, decimal, pentadecimal, and vigesimal","Смешанная с элементами пятеричной, десятеричной, пятнадцатеричной и двадцатеричной"
-G-6-9,G-6,Decimal with elements of quinary,Десятеричная с элементами пятеричной
-G-6-10,G-6,"Mixed, with elements of quinary, decimal, and vigesimal","Смешанная с элементами пятеричной, десятеричной и двадцатеричной"
-G-7-1,G-7,No indefinite article,Неопределенный артикль отсутствует
-G-7-2,G-7,Same,Совпадают
-G-7-3,G-7,Different,Не совпадают
-H-1-1,H-1,One-two,Один-два
-H-1-2,H-1,Three-seven,Три-семь
-H-1-3,H-1,Eight-twelve,Восемь-двенадцать
-H-1-4,H-1,Thirteen-twenty,Тринадцать-двадцать
-H-1-5,H-1,Over twenty,Больше 20
-H-1-6,H-1,No case,Категория падежа отсутствует
-H-2-1,H-2,Verbal agreement,Глагольное согласование
-H-2-2,H-2,Object pronouns,Объектная форма личных местоимений
-H-2-3,H-2,Case affixes,Падежные аффиксы
-H-2-4,H-2,Function words,Служебные слова
-H-2-5,H-2,Verbal agreement and case affixes,Глагольное согласование и падежные аффиксы
-H-2-6,H-2,Verbal agreement and function words,Глагольное согласование и служебные слова
-H-2-7,H-2,"Internal inflection, verbal agreement, and case affixes","Внутренняя флексия, глагольное согласование и падежные аффиксы"
-H-2-8,H-2,"Verbal agreement, case affixes and function words","Глагольное согласование, падежные аффиксы и служебные слова"
-H-2-9,H-2,"Verbal agreement, pronominal reprise, case affixes, and function words","Глагольное согласование, местоименная реприза, падежные аффиксы и служебные слова"
-H-2-10,H-2,"Verbal agreement, function words, object pronouns, and verbal pronouns","Глагольное согласование, служебные слова, объектная форма личных местоимений и приглагольные местоимения"
-H-2-11,H-2,"Object pronouns, function words, case affixes, and verbal agreement","Объектная форма местоимений, служебные слова, падежные аффиксы и глагольное согласование"
-H-2-12,H-2,"Subject and object personal pronouns and word order",Субъектная и объектная форма личных местоимений и порядок слов
-H-2-13,H-2,"Case affixes, verbal agreement, and word order","Падежные аффиксы, глагольное согласование и порядок слов"
-H-2-14,H-2,"Subject and object personal pronouns, prepositions, and word order","Субъектная и объектная форма личных местоимений, предлоги и порядок слов"
-H-2-15,H-2,"Subject and object personal pronouns, prepositions, verbal agreement, and word order","Субъектная и объектная форма личных местоимений, предлоги, глагольное согласование и порядок слов"
-H-2-16,H-2,"Subject and object personal pronouns, verbal agreement, and word order","Субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов"
-H-2-17,H-2,"Subject and object personal pronouns, prepositions, and verbal agreement","Субъектная и объектная форма личных местоимений, предлоги и глагольное согласование"
-H-2-18,H-2,"Case affixes, subject and object personal pronouns, prepositions, and verbal agreement","Падежные аффиксы, субъектная и объектная форма личных местоимений, предлоги и глагольное согласование"
-H-2-19,H-2,"Case affixes, subject and object personal pronouns, prepositions, verbal agreement, and word order","Падежные аффиксы, субъектная и объектная форма личных местоимений, предлоги, глагольное согласование и порядок слов"
-H-2-20,H-2,"Subject and object personal pronouns, case and number flections, prepositions, and verbal agreement","Субъектная и объектная форма местоимений, падежно-числовые флексии, предлоги и глагольное согласование"
-H-3-1,H-3,Absolutive,Абсолютив
-H-3-2,H-3,Genitive,Генитив
-H-3-3,H-3,Oblique,Косвенный падеж
-H-3-4,H-3,Nominative,Номинатив
-H-3-5,H-3,Partitive,Партитив
-H-3-6,H-3,Instrumental,Инструменталис
-H-3-7,H-3,Translative,Транслатив
-H-3-8,H-3,Essive,Эссив
-H-3-9,H-3,Nominative or oblique,Номинатив или косвенный падеж
-H-3-10,H-3,Nominative or partitive,Номинатив или партитив
-H-3-11,H-3,Nominative or rhemative,Номинатив или рематив
-H-3-12,H-3,Nominative or instrumental,Номинатив или инструменталис
-H-3-13,H-3,Translative or essive,Транслатив или эссив
-H-3-14,H-3,Caseless form,Общий падеж
-H-4-1,H-4,Ablative,Аблатив
-H-4-2,H-4,Illative,Иллатив
-H-4-3,H-4,Genitive,Генитив
-H-4-4,H-4,Dative,Датив
-H-4-5,H-4,Comitative,Комитатив
-H-4-6,H-4,Oblique,Косвенный
-H-4-7,H-4,Locative,Локатив
-H-4-8,H-4,Possessive,Посессив
-H-4-9,H-4,Ergative,Эргатив
-H-4-10,H-4,Locative or dative,Локатив или датив
-H-4-11,H-4,Genitive or dative,Генитив или датив
-H-4-12,H-4,Nominative or genitive,Номинатив или генитив
-H-4-13,H-4,Genitive or ablative,Генитив или аблатив
-H-4-14,H-4,Genitive-accusative,Генитив-аккузатив
-H-5-1,H-5,Verbs of possession,Глаголы обладания
-H-5-2,H-5,Possessive particles,Посессивные частицы
-H-5-3,H-5,Possessive affixes,Посессивные аффиксы
-H-5-4,H-5,Possessive pronouns,Посессивные местоимения
-H-5-5,H-5,Adpositions,Послелоги и предлоги
-H-5-6,H-5,Possessive adjectives,Посессивные прилагательные
-H-5-7,H-5,Apposition,Соположение
-H-5-8,H-5,Possessive declension,Посессивное склонение
-H-5-9,H-5,Possessive affixes and possessive pronouns,Посессивные аффиксы и посессивные местоимения
-H-5-10,H-5,Possessive pronominal enclitics and possessive pronouns,Посессивные местоименные энклитики и посессивные местоимения
-H-5-11,H-5,Apposition and prepositions,Соположение и предлоги
-H-5-12,H-5,Possessive particles and reflexive pronouns,Посессивные частицы и возвратные местоимения
-H-5-13,H-5,"Apposition, pronouns and pronominal enclitics","Соположение, местоимения и местоименные энклитики"
-H-5-14,H-5,"Apposition, possessive pronouns, possessive adjectives and possessive affixes","Соположение, притяжательное местоимение, притяжательные прилагательные и притяжательные аффиксы"
-H-5-15,H-5,"Apposition, possessive affixes and prepositions","Соположение, посессивные аффиксы и предлоги"
-H-5-16,H-5,Possessive adjectives and pronouns,Посессивные прилагательные и местоимения
-H-5-17,H-5,"Possessive adjectives, pronouns and affixes","Притяжательные прилагательные, местоимения и аффиксы"
-H-5-18,H-5,Prepositions,Предлоги
-H-5-19,H-5,Possessive pronouns and prepositions,Посессивные местоимения и предлоги
-H-5-20,H-5,Apposition and postpositions,Соположение и послелоги
-H-5-21,H-5,Possessive pronouns and possessive adjectives,Притяжательные местоимения и притяжательные прилагательные
-H-5-22,H-5,"Apposition, izafat, and possessive particles","Соположение, изафетная конструкция и посессивные частицы"
-H-5-23,H-5,Apposition and possessive pronouns,Соположение и посессивные местоимения
-H-6-1,H-6,Noun affixes,Именные аффиксы
-H-6-2,H-6,Preverbs,Превербы
-H-6-3,H-6,Verbal affixes,Глагольные аффиксы
-H-6-4,H-6,Spatial adverbs,Наречия места
-H-6-5,H-6,Postpositions,Послелоги
-H-6-6,H-6,Prepositions,Предлоги
-H-6-7,H-6,Adpositional constructions,Предложно/послеложно-именные конструкции
-H-6-8,H-6,Noun affixes and verbal affixes,Именные аффиксы и глагольные аффиксы
-H-6-9,H-6,Noun affixes and adpositional constructions,Именные аффкисы и предложно/послеложно-именные конструкции
-H-6-10,H-6,Noun affixes and prepositions,Именные аффиксы и предлоги
-H-6-11,H-6,Noun affixes and postpositions,Именные аффиксы и послелоги
-H-6-12,H-6,Adpositions,Предлоги и послелоги
-H-6-13,H-6,Noun affixes and spatial adverbs,Именные аффиксы и наречия места
-H-6-14,H-6,Postpositions and function nouns,Послелоги и служебные имена
-H-6-15,H-6,Pronouns and locative cases,Местоимения и пространственные падежи
-H-6-16,H-6,"Noun affixes, pronominal adverbs and adpositional constructions","Именные аффиксы, местоименные наречия и предложно/послеложно-именные конструкции"
-H-6-17,H-6,"Noun affixes, adverbs of place, and postpositions","Именные аффиксы, наречия места и послелоги"
-H-6-18,H-6,"Noun affixes, adverbs of place, and prepositions","Именные аффиксы, наречия места и предлоги"
-H-6-19,H-6,"Noun affixes, preverbs and postpositions","Именные аффиксы, превербы и послелоги"
-H-6-20,H-6,"Noun affixes, verbal affixes and postpositions","Именные аффиксы, глагольные аффиксы и послелоги"
-H-6-21,H-6,Noun affixes and adpositions,"Именные аффиксы, предлоги и послелоги"
-H-6-22,H-6,"Pronouns, pronominal adverbs, locative cases, postpositions","Местоимения, местоименные наречия, пространственные падежи и послелоги"
-H-6-23,H-6,"Noun affixes, adpositions and internal flection","Именные аффиксы, предлоги, послелоги и внутренняя флексия"
-H-6-24,H-6,"Pronouns, pronominal adverbs, locative cases, adpositions","Местоимения, местоименные наречия, пространственные падежи, предлоги/ послелоги"
-H-6-25,H-6,Preverbs and adverbs,Превербы и наречия
-H-6-26,H-6,"Locative cases, prepositions, and pronouns","Пространственные падежи, предлоги и местоимения"
-H-6-27,H-6,Adverbs and prepositional constructions,Наречия и предложные конструкции
-H-6-28,H-6,Pronouns,Местоимения
-H-6-29,H-6,"Nouns affixes, prepositions, adverbs and pronouns","Именные аффиксы, предлоги, наречия и местоимения"
-H-6-30,H-6,"Prepositional constructions, pronouns and adverbs","Предложные конструкции, местоимения и наречия"
-H-6-31,H-6,"Adverbs, pronouns, verb prefixes, and prepositions","Наречия, местоимения, глагольные префиксы и предлоги"
-H-6-32,H-6,Adverbs and pronouns,Наречия и предлоги
-H-6-33,H-6,Pronouns and adverbs,Местоимения и наречия
-H-6-34,H-6,"Pronouns, adverbs, and prepositions","Местоимения, наречия и предлоги"
-H-6-35,H-6,Adverbs and prepositional-nominal constructions,Наречия и предложно-именные конструкции
-H-6-36,H-6,"Nominal affixes, spatial adverbs, postpositions, and particles","Именные аффиксы, наречия места, послелоги и частицы"
-H-7-1,H-7,Marked,Маркированное
-H-7-2,H-7,Unmarked,Немаркированное
-H-8-1,H-8,Same,Одинаковое
-H-8-2,H-8,Different,Различное
-H-9-1,H-9,Present,Присутствуют
-H-9-2,H-9,Absent,Отсутствуют
-I-1-1,I-1,Category of voice is absent,Категория залога отсутствует
-I-1-2,I-1,Auxiliary verb,Вспомогательный глагол
-I-1-3,I-1,Morphonological alternation,Значимое морфонологическое чередование
-I-1-4,I-1,Affixes,Аффиксы
-I-1-5,I-1,Function words,Служебные слова
-I-1-6,I-1,Auxiliary verb and affixes,Вспомогательный глагол и аффиксы
-I-1-7,I-1,Affixes and function words,Аффиксы и служебные слова
-I-1-8,I-1,Morphonological alternation and function words,Значимое морфонологическое чередование и служебные слова
-I-1-9,I-1,"Auxiliary verb, affixes and function words","Вспомогательный глагол, аффиксы и служебные слова"
-I-1-10,I-1,Auxiliary verb + participle and affixes,Вспомогательный глагол + причастие и аффиксы
-I-1-11,I-1,Auxiliary verb + participle and reflexive pronoun,Вспомогательный глагол + причастие и возвратное местоимение
-I-1-12,I-1,Auxiliary verb + participle and reflexive pronouns,Вспомогательный глагол + причастие и возвратные местоимения
-I-1-13,I-1,Auxiliary verb + participle and reflexive particles,Вспомогательный глагол + причастие и возвратные частицы
-I-1-14,I-1,Auxiliary verb + participle and personal-reflexive pronoun,Вспомогательный глагол + причастие и лично-возвратное местоимение
-I-1-15,I-1,Passive participle,Страдательное причастие
-I-1-16,I-1,Morphonological alternation and affixes,Значимое морфонологическое чередование и аффиксы
-I-2-1,I-2,Present,Присутствует
-I-2-2,I-2,Absent,Отсутствует
-I-3-1,I-3,Passive and causative,Пассив и каузатив
-I-3-2,I-3,Passive and reflexive,Пассив и рефлексив
-I-3-3,I-3,Causative and reflexive,Каузатив и рефлексив
-I-3-4,I-3,Causative and reciprocal,Каузатив и реципрок
-I-3-5,I-3,Middle and causative,Медий и каузатив
-I-3-6,I-3,Passive and reciprocal,Пассив и реципрок
-I-3-7,I-3,Reflexive and reciprocal/ reflexive and causative,Рефлексив и реципрок/ рефлексив и каузатив
-I-3-8,I-3,Reflexive and causative/ causative and reciprocal,Рефлексив и каузатив/ каузатив и реципрок
-I-3-9,I-3,Causative and passive/reciprocal,Каузатив и пассив/реципрок
-I-4-1,I-4,Absent,Отсутствует
-I-4-2,I-4,Middle and causative,Медий и каузатив
-I-4-3,I-4,Middle and passive,Медий и пассив
-I-4-4,I-4,Passive and reflexive,Пассив и рефлексив
-I-4-5,I-4,"Passive, reflexive and reciprocal","Пассив, рефлексив и реципрок"
-I-4-6,I-4,"Passive, reflexive, middle and reciprocal","Пассив, рефлексив, медий и реципрок"
-I-4-7,I-4,Potential and passive,Потенциалис и пассив
-I-4-8,I-4,Passive and causative,Пассив и каузатив
-I-4-9,I-4,Passive and decausative,Пассив и декаузатив
-I-5-1,I-5,No tense opposition,Отсутствуют
-I-5-2,I-5,Future and non-future,Будущее и небудущее
-I-5-3,I-5,"Future, non-future and past","Будущее, небудущее и прошедшее"
-I-5-4,I-5,Present and non-present,Настоящее и ненастоящее
-I-5-5,I-5,Present and past,Настоящее и прошедшее
-I-5-6,I-5,Present-future and past,Настоящее-будущее и прошедшее
-I-5-7,I-5,"Present, past and future","Настоящее, прошедшее и будущее"
-I-5-8,I-5,"Present, past and present-future","Настоящее, прошедшее и настоящее-будущее"
-I-5-9,I-5,"Present, present-future, future, past","Настоящее, настоящее-будущее, будущее и прошедшее"
-I-5-10,I-5,Past and non-past,Прошедшее и непрошедшее
-I-5-11,I-5,"Present-future, future and past","Настоящее-будущее, будущее и прошедшее"
-I-6-1,I-6,Separate,Раздельное
-I-6-2,I-6,Syncretic,Синкретическое
-I-6-3,I-6,Separate and syncretic,Раздельное и синкретическое
-I-7-1,I-7,Affixes,Аффиксы
-I-7-2,I-7,Function words,Служебные слова
-I-7-3,I-7,Auxiliary verbs and affixes,Вспомогательный глагол и аффиксы
-I-7-4,I-7,Affixes and function words,Аффиксы и служебные слова
-I-7-5,I-7,"Auxiliary verbs, affixes and function words","Вспомогательный глагол, аффиксы и служебные слова"
-I-7-6,I-7,Tone alternations,Тоновые чередования
-I-8-1,I-8,Absent,Отсутствует
-I-8-2,I-8,Aspect and tense,Вид и время
-I-8-3,I-8,Tense and modality,Время и модальность
-I-8-4,I-8,Person and number,Лицо и число
-I-8-5,I-8,Aspect and modality,Вид и модальность
-I-8-6,I-8,Person and tense,Лицо и время
-I-8-7,I-8,"Tense, aspect and modality","Время, вид и модальность"
-I-8-8,I-8,"Tense, person and number","Время, лицо, число"
-I-8-9,I-8,"Person, number and gender/ aspect and tense","Лицо, число и род/ вид и время"
-I-8-10,I-8,Tense and negation,Время и отрицание
-I-8-11,I-8,"Person, number, gender, aspect, tense, and modality","Лицо, число, род, вид, время и модальность"
-I-8-12,I-8,"Aspect, tense, person, and number","Вид, время, лицо и число"
-I-8-13,I-8,"Tense, aspect, modality, and mood","Время, вид, модальность и наклонение"
-I-8-14,I-8,"Tense, aspect, and modality (mood)","Время, вид и модальность (наклонение)"
-I-8-15,I-8,"Tense, aspect, and polarity","Время, вид и полярность"
-I-8-16,I-8,"Tense, aspect, modality, and polarity","Время, вид, модальность и полярность"
-I-8-17,I-8,"Person, number, tense, aspect, and modality (mood)","Лицо, число, время, вид и модальность (наклонение)"
-I-8-18,I-8,"Person, number, tense, aspect, voice, and modality (mood)","Лицо, число, время, вид, залог и модальность (наклонение)"
-I-8-19,I-8,"Person, number, gender, tense, aspect, and modality (mood)","Лицо, число, род, время, вид и модальность (наклонение)"
-I-8-20,I-8,Gender and number,Род и число
-I-8-21,I-8,"Gender, person, and number","Род, лицо и число"
-I-8-22,I-8,"Tense and modality, person and number","Время и модальность, лицо и число"
-I-9-1,I-9,Absent,Отсутствует
-I-9-2,I-9,Only in singular,Только в единственном числе
-I-9-3,I-9,In singular and plural,В единственном и множественном числе
-I-9-4,I-9,Only third person singular,Только 3 лицо единственное число
-I-9-5,I-9,"In singular, dual and plural","В единственном, двойственном и множественном числе"
-I-9-6,I-9,Only in plural,Только во множественном числе
-I-10-1,I-10,Absent,Отсутствует
-I-10-2,I-10,Affix,Аффикс
-I-10-3,I-10,Function word,Служебное слово
-I-10-4,I-10,Morphonological alternation,Значимое морфологическое чередование
-I-10-5,I-10,Special type of agreement,Особый тип согласования
-I-10-6,I-10,Change of conjugation type,Изменение типа спряжения
-I-10-7,I-10,Affix and function word,Аффикс и служебное слово
-I-10-8,I-10,Affix and special type of agreement,Аффикс и особый тип согласования
-I-10-9,I-10,Function word and special type of agreement,Служебное слово и особый тип согласования
-I-10-10,I-10,Morphonological alternation and change of conjugation type,Значимое морфологическое чередование и изменение типа спряжения
-I-10-11,I-10,Affix and meaningful morphonological alternation,Аффикс и значимое морфологическое чередование
-J-1-1,J-1,Absent,Отсутствуют
-J-1-2,J-1,Quasi-pronoun,Квазиместоимения
-J-1-3,J-1,Pronominal adverbs,Местоименные наречия
-J-1-4,J-1,Pronominal prepositions,Местоименные предлоги
-J-1-5,J-1,Pronominal adjectives,Местоименные прилагательные
-J-1-6,J-1,Pronominal numerals,Местоименные числительные
-J-1-7,J-1,Pronominal nouns,Местоименные существительные
-J-1-8,J-1,Pronouns-nouns,Местоимения-существительные
-J-1-9,J-1,Pronominal adverbs and adjectives,Местоименные наречия и прилагательные
-J-1-10,J-1,"Pronominal adverbs, adjectives and nouns","Местоименные наречия, прилагательные и существительные"
-J-1-11,J-1,Pronouns-nouns and pronouns-adjectives,Местоимения-существительные и местоимения-прилагательные
-J-2-1,J-2,Demonstrative pronouns,Указательные местоимения
-J-2-2,J-2,Preverbs,Превербы
-J-2-3,J-2,Noun affixes,Именные аффиксы
-J-2-4,J-2,Adverbs,Наречия
-J-2-5,J-2,Postpositions,Послелоги
-J-2-6,J-2,Prepositions,Предлоги
-J-2-7,J-2,Particles,Частицы
-J-2-8,J-2,Demonstrative pronouns and particles,Указательные местоимения и частицы
-J-2-9,J-2,Demonstrative pronouns and preverbs,Указательные местоимения и превербы
-J-2-10,J-2,Demonstrative pronouns and prepositions,Указательные местоимения и предлоги
-J-2-11,J-2,Demonstrative pronouns and adverbs,Указательные местоимения и наречия
-J-2-12,J-2,Demonstrative pronouns and articles,Указательные местоимения и артикли
-J-2-13,J-2,Nominal afffixes and postpositions,Именные аффиксы и послелоги
-J-2-14,J-2,Demonstrative pronouns and nominal affixes,Указательные местоимения и именные аффиксы
-J-2-15,J-2,Demonstrative pronouns and postpositions,Указательные местоимения и послелоги
-J-2-16,J-2,Demonstrative pronouns and adpositions,"Указательные местоимения, предлоги и послелоги"
-J-2-17,J-2,"Demonstrative pronouns, postpositions and adverbs","Указательные местоимения, послелоги и наречия"
-J-3-1,J-3,Directionals,Дирекционалы
-J-3-2,J-3,Postpositions,Послелоги
-J-3-3,J-3,Prepositions,Предлоги
-J-3-4,J-3,Postverbs,Поствербы
-J-3-5,J-3,Function nouns,Служебные имена
-J-3-6,J-3,Particles,Частицы
-J-3-7,J-3,Directionals and prepositions,Дирекционалы и предлоги
-J-3-8,J-3,Postpositions and function nouns,Послелоги и служебные имена
-J-3-9,J-3,Adpositions,Предлоги и послелоги
-J-3-10,J-3,Adpositions and particles,"Послелоги, предлоги и частицы"
-J-3-11,J-3,Preverbs and postpositions,Превербы и послелоги
-J-3-12,J-3,Preverbs,Превербы
-J-3-13,J-3,Particles and prepositions,Частицы и предлоги
-J-4-1,J-4,Adjectives,Прилагательные
-J-4-2,J-4,Adverbial participles,Деепричастия
-J-4-3,J-4,Adverbs,Наречия
-J-4-4,J-4,Pronouns,Местоимения
-J-4-5,J-4,Adjectives and adverbs,Прилагательные и наречия
-J-4-6,J-4,Pronouns and adverbs,Местоимения и наречия
-J-5-1,J-5,Absent,Отсутствует
-J-5-2,J-5,Noun affixes,Именные аффиксы
-J-5-3,J-5,Definite/indefinite verb conjugation,Определенное/неопределенное спряжение глагола
-J-5-4,J-5,Special verb form,Особая глагольная форма
-J-5-5,J-5,Special case form,Особая падежная форма
-J-5-6,J-5,Special form of class marker,Особая форма классного показателя
-J-5-7,J-5,Special verb form and noun affixes,Особая глагольная форма и именные аффиксы
-J-5-8,J-5,Special form of class marker and noun affixes,Особая форма классного показателя и именные аффиксы
-J-5-9,J-5,Different case affixes for definite and indefinite objects,Различное оформление падежа у определенного и неопределенного объекта
-J-5-10,J-5,Different cases for definite and indefinite objects,Различное падежное оформление опреленного и неопределенного объекта
-J-5-11,J-5,Definite/indefinite noun declension,Определенное/неопределенное склонение имен
-J-5-12,J-5,Different case affixes for definite and indefinite objects and special verb form,Различное оформление падежа у определенного и неопределенного объекта и особая глагольная форма
-J-5-13,J-5,"Different case affixes for definite and indefinite objects and subjects, and definite/indefinite verb conjugation",Различное падежное оформление определенного и неопределенного субъекта/объекта и определенное-неопределенное спряжение глагола
-J-5-14,J-5,Noun affixes and definite/indefinite verb conjugation,Именные аффиксы и определенное/неопределенное спряжение
-J-6-1,J-6,Articles,Артикли
-J-6-2,J-6,Pronouns,Местоимения
-J-6-3,J-6,Postpositions,Послелоги
-J-6-4,J-6,Adverbs,Наречия
-J-6-5,J-6,Adjectives,Прилагательные
-J-6-6,J-6,Participles,Причастия
-J-6-7,J-6,Numerals,Числительные
-J-6-8,J-6,Particles,Частицы
-J-6-9,J-6,Prepositions,Предлоги
-J-6-10,J-6,Postpositions and particles,Послелоги и частицы
-J-6-11,J-6,Postpositions and pronouns,Послелоги и местоимения
-J-6-12,J-6,Prepositions and pronouns,Предлоги и местоимения
-J-6-13,J-6,Articles and adjectives,Артикли и прилагательные
-J-6-14,J-6,Pronouns and adjectives,Местоимения и прилагательные
-J-6-15,J-6,Articles and numerals,Артикли и числительные
-J-6-16,J-6,Numerals and pronouns,Числительные и местоимения
-J-6-17,J-6,Adjectives and numerals,Прилагательные и числительные
-J-6-18,J-6,"Postpositions, pronouns and numerals","Послелоги, местоимения и числительные"
-J-6-19,J-6,"Articles, adjectives and participles","Артикли, прилагательные и причастия"
-J-6-20,J-6,"Pronouns, adjectives and numerals","Местоимения, прилагательные и числительные"
-J-6-21,J-6,"Articles, pronouns and numerals","Артикли, местоимения и числительные"
-J-6-22,J-6,"Articles, adjectives, participles and numerals","Артикли, прилагательные, причастия и числительные"
-J-6-23,J-6,"Articles, prepositions, pronouns and numerals","Артикли, предлоги, местоимения и числительные"
-J-7-1,J-7,In noun phrase,В именной группе
-J-7-2,J-7,In verb phrase,В глагольной группе
-J-7-3,J-7,In pronouns,В местоимениях
-J-7-4,J-7,In noun phrase and in verb phrase,В именной и глагольной группах
-J-7-5,J-7,In noun phrase and in pronouns,В именной группе и в местоимениях
-J-7-6,J-7,In verb phrase and in pronouns,В глагольной группе и в местоимениях
-J-7-7,J-7,In quasi-pronouns and in pronouns,В квазиметоимениях и в местоимениях
-J-7-8,J-7,In pronouns and syntactically,В местоимениях и синтаксически
-J-7-9,J-7,"In verb group, in pronouns and syntactically","В глагольной группе, в местоимениях и синтаксически"
-J-7-10,J-7,"In noun group, in verb group and in pronouns",В именной и глагольной группах и в местоимениях
-J-8-1,J-8,Negative affixes,Отрицательные аффиксы
-J-8-2,J-8,Prohibitive affixes,Запретительные аффиксы
-J-8-3,J-8,Negative particles,Отрицательные частицы
-J-8-4,J-8,Negative verbs,Отрицательные глаголы
-J-8-5,J-8,Negative pronouns,Отрицательные местоимения
-J-8-6,J-8,Negative pronouns and negative particles,Отрицательные местоимения и частицы
-J-8-7,J-8,Negative particles and negative verbs,Отрицательные частицы и глаголы
-J-8-8,J-8,Prohibitive and negative particles,Запретительные и отрицательные частицы
-J-8-9,J-8,Negative particles and negative affixes,Отрицательные частицы и аффиксы
-J-8-10,J-8,"Negative particles, negative verbs and caritive affixes","Отрицательные частицы и глаголы, каритивные аффиксы"
-J-8-11,J-8,"Negative pronouns, negative adverbs and negative verbs","Отрицательные местоимения, наречия и глаголы"
-J-8-12,J-8,"Negative particles, negative pronouns and negative conjugation of verbs","Отрицательные частицы и местоимения, отрицательное спряжение глаголов"
-J-8-13,J-8,Negative and prohibitive affixes,Отрицательные и запретительные аффиксы
-J-8-14,J-8,Negative particles and reduplication,Отрицательные частицы и редупликация
-J-8-15,J-8,"Negative particles, pronouns and adverbs","Отрицательные частицы, местоимения и наречия"
-J-8-16,J-8,"Negative particles, prefixes, conjunctions, and pronouns","Отрицательные частицы, префиксы, союзы и местоимения"
-J-8-17,J-8,"Negative prefixes, particles, and pronouns","Отрицательные префиксы, частицы и местоимения"
-J-9-1,J-9,Incorporation,Инкорпорация
-J-9-2,J-9,Framing,Обрамление
-J-9-3,J-9,Preposition,Препозиция
-J-9-4,J-9,Postposition,Постпозиция
-J-9-5,J-9,Incorporation and postposition,Инкорпорация или постпозиция
-J-9-6,J-9,Incorporation and preposition,Инкорпорация или препозиция
-J-9-7,J-9,Framing and preposition,Обрамление или препозиция
-J-9-8,J-9,Framing and postposition,Обрамление или постпозиция
-J-9-9,J-9,Preposition and postposition,Препозиция или постпозиция
-J-9-10,J-9,"Incorporation, postpostion and preposition","Инкорпорация, постпозиция или препозиция"
-J-9-11,J-9,"Framing, preposition and postposition","Обрамление, препозиция или постпозиция"
-K-1-1,K-1,Pronouns are not inflected,Местоимения не склоняются
-K-1-2,K-1,Case affixes of pronouns are the same as noun case affixes,Падежные местоименные аффиксы совпадают с именными
-K-1-3,K-1,Pronominal inflection type,Собственный тип склонения
-K-2-1,K-2,No articles,Артикли отсутствуют
-K-2-2,K-2,Only indefinite,Только неопределенные
-K-2-3,K-2,Only definite,Только определенные
-K-2-4,K-2,Definite and indefinite,Определенные и неопределенные
-K-2-5,K-2,"Definite, indefinite and partitive","Определенные, неопределенные и партитивные"
-K-3-1,K-3,Preposition,Препозиция
-K-3-2,K-3,Postposition,Постпозиция
-K-3-3,K-3,Preposition and postposition,Препозиция и постпозиция
-K-4-1,K-4,Single article preceding the phrase,Единый артикль для всей именной группы
-K-4-2,K-4,Articles preceding each word,Собственный артикль перед каждым словом
-K-5-1,K-5,Animacy,Одушевленность
-K-5-2,K-5,Definiteness,Определенность
-K-5-3,K-5,Animacy and gender,Одушевленность и род
-K-5-4,K-5,Definiteness and case,Определенность и падеж
-K-5-5,K-5,Definiteness and number,Определенность и число
-K-5-6,K-5,Definiteness and gender,Определенность и род
-K-5-7,K-5,"Animacy, case and number","Одушевленность, падеж и число"
-K-5-8,K-5,"Definiteness, case and gender","Определенность, падеж и род"
-K-5-9,K-5,"Definiteness, gender and number","Определенность, род и число"
-K-5-10,K-5,"Case, gender and number","Падеж, род и число"
-K-5-11,K-5,"Definiteness, case, gender and number","Определенность, падеж, род и число"
-K-5-12,K-5,"Definiteness, possessivity, case, gender and number","Определенность, посессивность, падеж, род и число"
-K-6-1,K-6,Single type of conjugation,Единый тип спряжения
-K-6-2,K-6,Two types of conjugation,Два типа спряжения
-K-6-3,K-6,Three types of conjugation,Три типа спряжения
-K-6-4,K-6,Four types of conjugation,Четыре типа спряжения
-K-6-5,K-6,Six types of conjugation,Шесть типов спряжения
-K-6-6,K-6,Forteen types of conjugation,Четырнадцать типов спряжения
-K-7-1,K-7,No verb agreement,Глагольное согласование отсутствует
-K-7-2,K-7,Subject,Субъектное
-K-7-3,K-7,Subject and object,Субъектное и объектное
-K-7-4,K-7,Subject and subject-object,Субъектное и субъектно-объектное
-K-8-1,K-8,Absent,Отсутствуют
-K-8-2,K-8,Case,Падеж
-K-8-3,K-8,Augmentation,Порода
-K-8-4,K-8,Gender,Род
-K-8-5,K-8,Number,Число
-K-8-6,K-8,Gender and number,Род и число
-K-8-7,K-8,"Gender, number and case","Род, число и падеж"
-K-8-8,K-8,Number and case,Число и падеж
-K-9-1,K-9,Present-past,Настоящее-прошедшее
-K-9-2,K-9,Future,Будущее
-K-9-3,K-9,Present,Настоящее
-K-9-4,K-9,Past,Прошедшее
-K-9-5,K-9,Present-future,Настоящее-будущее
-K-9-6,K-9,Present and past,Настоящее и прошедшее
-K-9-7,K-9,Past and future,Прошедшее и будущее
-K-9-8,K-9,Present-future and past,Настоящее-будущее и прошедшее
-K-9-9,K-9,Present-past and future,Настоящее-прошедшее и будущее
-K-9-10,K-9,"Present, past and future","Настоящее, прошедшее и будущее"
-K-9-11,K-9,"Present-past, past and future","Настоящее-прошедшее, прошедшее и будущее"
-K-9-12,K-9,"Present, present-future, future and past","Настоящее, настоящее-будущее, будущее и прошедшее"
-K-10-1,K-10,Absent,Отсутствуют
-K-10-2,K-10,Degrees of comparison,Степень сравнения
-K-11-1,K-11,Absent,Отсутствуют
-K-11-2,K-11,Person,Лицо
-K-11-3,K-11,Animacy,Одушевленность
-K-11-4,K-11,Case,Падеж
-K-11-5,K-11,Gender,Род
-K-11-6,K-11,Number,Число
-K-11-7,K-11,Gender and number,Род и число
-K-11-8,K-11,Number and case,Число и падеж
-K-11-9,K-11,"Animacy, person and case","Одушевленность, лицо и падеж"
-K-11-10,K-11,"Gender, number and case","Род, число и падеж"
-K-11-11,K-11,"Gender, number and definiteness","Род, число и определенность"
-K-11-12,K-11,"Gender, number and state","Род, число и состояние"
-K-11-13,K-11,"Person, case, number and gender","Лицо, падеж, число и род"
-K-11-14,K-11,"Gender, number, case and definiteness","Род, число, падеж и определенность"
-K-11-15,K-11,"Animacy, person, case and number","Одушевленность, лицо, падеж и число"
-K-11-16,K-11,"Animacy, person, case, number and gender","Одушевленность, лицо, падеж, число и род"
-K-11-17,K-11,"Animacy, definiteness, case, number and gender","Одушевленность, определенность, падеж, число и род"
-K-11-18,K-11,"Animacy, person, case, number, gender and possessivity","Одушевленность, лицо, падеж, число, род и посессивность"
-K-11-19,K-11,"Agreement class, number, and case","Согласовательный класс, число и падеж"
-K-11-20,K-11,Agreement class and number,Согласовательный класс и число
-K-11-21,K-11,"Gender, animacy, number, and case","Род, одушевленность, число и падеж"
-K-12-1,K-12,Absent,Отсутствует
-K-12-2,K-12,Person and number,Лица и числа
-K-12-3,K-12,Agreement class and case,Согласовательного класса и падежа
-K-12-4,K-12,Number and case,Числа и падежа
-K-12-5,K-12,Gender and number,Рода и числа
-K-12-6,K-12,Number and agreement class,Числа и согласовательного класса
-K-12-7,K-12,"Gender, number and case","Рода, числа и падежа"
-K-12-8,K-12,"Agreement class, number and case","Согласовательного класса, числа и падежа"
-K-12-9,K-12,Agreement class and state,Согласовательного класса и состояния
-K-12-10,K-12,"Gender, number, case, animacy, and person","Рода, числа , падежа, одушевленности и личности"
-K-13-1,K-13,Always present,Всегда присутствует
-K-13-2,K-13,Absent,Отсутствует
-K-13-3,K-13,Only in preposition,Только в препозиции
-K-13-4,K-13,Optional,Факультативно
-K-14-1,K-14,No attributive agreement,Атрибутивное согласование отсутствует
-K-14-2,K-14,In class,По классу
-K-14-3,K-14,In person,По лицу
-K-14-4,K-14,In gender,По роду
-K-14-5,K-14,In number,По числу
-K-14-6,K-14,In (in)definiteness and gender,По (не)определенности и роду
-K-14-7,K-14,In person and number,По лицу и числу
-K-14-8,K-14,In case ans number,По падежу и числу
-K-14-9,K-14,In gender and number,По роду и числу
-K-14-10,K-14,In class and number,По классу и числу
-K-14-11,K-14,"In case, gender and number","По падежу, роду и числу"
-K-14-12,K-14,"In person, gender and number","По лицу, роду и числу"
-K-14-13,K-14,"In person, case and number","По лицу, падежу и числу"
-K-14-14,K-14,"In person, case and gender","По лицу, падежу и роду"
-K-14-15,K-14,"In gender, number and case","По роду, числу и падежу"
-K-14-16,K-14,"In (in)definiteness, gender and number","По (не)определенности, роду и числу"
-K-14-17,K-14,"In humanness, person and number","По (не)личности, лицу и числу"
-K-14-18,K-14,"In gender, state and number","По роду, состоянию и числу"
-K-14-19,K-14,"In class, type of stem and number","По классу, типу основы и числу"
-K-14-20,K-14,"In person, case, gender and number","По лицу, падежу, роду и числу"
-K-14-21,K-14,"In person, case, gender, and (in)definiteness","По лицу, падежу, роду и (не)определенности"
-K-14-22,K-14,"In case, number, gender, (in)definiteness, and (in)animacy","По падежу, числу, роду, (не)определенности, (не)одушевленность."
-K-14-23,K-14,"In gender, number, case, and (in)animacy","По роду, числу, падежу и (не)личности"
-K-15-1,K-15,Absent,Отсутствуют
-K-15-2,K-15,Case,Падеж
-K-15-3,K-15,(In)definiteness,Определенность/ неопределенность
-K-15-4,K-15,Number,Число
-K-15-5,K-15,Possessivity,Посессивность
-K-15-6,K-15,Honorific/neutral forms,Гонорифическая и нейтральная формы
-K-15-7,K-15,Case and number,Падеж и число
-K-15-8,K-15,(In)definiteness and number,Определенность и число
-K-15-9,K-15,Number and state,Число и состояние
-K-15-10,K-15,Possessivity and honorific/neutral forms,Посессивность и гонорифическая/нейтральная формы
-K-15-11,K-15,"Case, possessivity and number","Падеж, посессивность и число"
-K-15-12,K-15,"(In)definiteness, number and state","Определенность, число и состояние"
-K-15-13,K-15,"Possessivity, (in)definiteness, and number","Посессивность, определенность, число"
-K-15-14,K-15,"(In)definiteness, number, and case","Определенность, число, падеж"
-K-16-1,K-16,Absent,Отсутствует
-K-16-2,K-16,Person and number,Лица и числа
-K-16-3,K-16,Person and number of the possessee,Лица и числа обладаемого
-K-16-4,K-16,Case and definiteness,Падежа и определенности
-K-16-5,K-16,Case and agreement class,Падежа и согласовательного класса
-K-16-6,K-16,Number and case,Числа и падежа
-K-16-7,K-16,Number and agreement class,Числа и согласовательного класса
-K-16-8,K-16,Case and person of possessor,Падежа и лица посессора
-K-16-9,K-16,Person and number of possessor,Лица посессора и числа посессора
-K-16-10,K-16,"Person, number and possessivity","Лица, числа и посессивности"
-K-16-11,K-16,"Agreement class, number and case","Согласовательного класса, числа и падежа"
-K-16-12,K-16,"Agreement class, number and state","Согласовательного класса, числа и состояния"
-K-16-13,K-16,"Person, number and case","Лица, числа и падежа"
-K-16-14,K-16,"Agreement class, number, case and definiteness","Согласовательного класса, числа, падежа, определенности"
-K-16-15,K-16,"Number, case, person and number of possessor","Числа, падежа, лица посессора и числа посессора"
-K-16-16,K-16,"Agreement class, number, case and animateness","Согласовательного класса, числа, падежа и одушевленности"
-K-17-1,K-17,Internal flection,Внутренняя флексия
-K-17-2,K-17,Affixes,Аффиксы
-K-17-3,K-17,Stem truncation and augmentation,Наращение/ усечение основы
-K-17-4,K-17,Reduplication,Редупликация
-K-17-5,K-17,Internal flection and affixes,Внутренняя флексия и аффиксы
-K-17-6,K-17,Reduplication and affixes,Редупликация и аффиксы
-K-17-7,K-17,Reduplication and internal flection,Редупликация и внутренняя флексия
-K-17-8,K-17,Stem truncation/augmentation and affixes,Наращение/ усечение основы и аффиксы
-K-17-9,K-17,Internation inflection and stem truncation/augmentation,Внутренняя флексия и наращение/ усечение основы
-K-17-10,K-17,"Internation inflection, stem truncation/augmentation and affixes","Внутренняя флексия, наращение/ усечение основы и аффиксы"
-K-17-11,K-17,"Reduplication, internal inflection and affixes","Редупликация, внутренняя флексия и аффиксы"
-K-18-1,K-18,Prefixal-suffixal,Префиксально-суффиксальная
-K-18-2,K-18,Mainly or only infixal,Преимущественно или только инфиксальная
-K-18-3,K-18,Mainly or only prefixal,Преимущественно или только префиксальная
-K-18-4,K-18,Mainly or only suffixal,Преимущественно или только суффиксальная
-L-1-1,L-1,Conversion,Конверсия
-L-1-2,L-1,Suffix truncation,Деаффиксация
-L-1-3,L-1,Reduplication,Редупликация
-L-1-4,L-1,Compounding,Словосложение
-L-1-5,L-1,Abbreviation,Аббревиация
-L-1-6,L-1,Derivation,Аффиксация
-L-1-7,L-1,Suffix truncation and compounding,Деаффиксация и словосложение
-L-1-8,L-1,Compounding and abbreviation,Словосложение и аббревиация
-L-1-9,L-1,Derivation and reduplication,Аффиксация и редупликация
-L-1-10,L-1,Conversion and compounding,Конверсия и словосложение
-L-1-11,L-1,Reduplication and compounding,Редупликация и словосложение
-L-1-12,L-1,Derivation and compounding,Аффиксация и словосложение
-L-1-13,L-1,Derivation and internal flection,Аффиксация и внутренняя флексия
-L-1-14,L-1,"Derivation, compounding and abbreviation","Аффиксация, словосложение и аббревиация"
-L-1-15,L-1,"Derivation, conversion and reduplication","Аффиксация, конверсия и редупликация"
-L-1-16,L-1,"Suffix truncation, compounding and abbreviation","Деаффиксация, словосложение и аббревиация"
-L-1-17,L-1,"Compounding, abbreviation and reduplication","Словосложение, аббревиация и редупликация"
-L-1-18,L-1,"Conversion, reduplication and compounding","Конверсия, словосложение и аффиксация"
-L-1-19,L-1,"Derivation, reduplication and compounding","Аффиксация, редупликация и словосложение"
-L-1-20,L-1,"Derivation, compounding, conversion and abbreviation","Аффиксация, словосложение, конверсия и аббревиация"
-L-1-21,L-1,"Derivation, compounding, conversion and reduplication","Аффиксация, словосложение, конверсия и редупликация"
-L-1-22,L-1,"Ablaut, derivation, compounding and conversion","Аблаут, аффиксация, словосложение и конверсия"
-L-1-23,L-1,"Derivation, conversion, reduplication, compounding and abbreviation","Аффиксация, конверсия, редупликация, словосложение и аббревиация"
-L-1-24,L-1,Derivation and conversion,Аффиксация и конверсия
-L-1-25,L-1,"Derivation, compounding, conversion, and clipping","Аффиксация, словосложение, конверсия, усечение"
-L-1-26,L-1,"Affixation, conversion, compounding, abbreviation, reduplication, and clipping","Аффиксация, конверсия, словосложение, аббревиация, редупликация и усечение"
-L-2-1,L-2,Prefixes,Префиксы
-L-2-2,L-2,Suffixes,Суффиксы
-L-2-3,L-2,Prefixes and suffixes,Префиксы и суффиксы
-L-2-4,L-2,Infixes and suffixes,Инфиксы и суффиксы
-L-2-5,L-2,Infixes and prefixes,Инфиксы и префиксы
-L-2-6,L-2,"Prefixes, suffixes and postfixes","Префиксы, суффиксы и постфиксы"
-L-2-7,L-2,"Infixes, prefixes and suffixes","Инфиксы, префиксы и суффиксы"
-L-2-8,L-2,"Circumfixes, prefixes and suffixes","Конфиксы, префиксы и суффиксы"
-L-2-9,L-2,"Prefixes, suffixes and transfixes","Префиксы, суффиксы и трансфиксы"
-L-2-10,L-2,"Infixes, prefixes, suffixes and transfixes","Инфиксы, префиксы, суффиксы и трансфиксы"
-L-2-11,L-2,"Infixes, prefixes, suprafixes and suffixes","Инфиксы, префиксы, супрафиксы и суффиксы"
-L-2-12,L-2,"Prefixes, suprafixes, suffixes and confixes","Префиксы, супрафиксы, суффиксы и конфиксы"
-L-2-13,L-2,"Circumfixes, prefixes, suffixes and infixes","Конфиксы, префиксы, суффиксы и инфиксы"
-L-2-14,L-2,"Prefixes, infixes, suffixes, postfixes and transfixes","Префиксы, инфиксы, суффиксы, постфиксы и трансфиксы"
-L-2-15,L-2,"Suffixes, prefixes, circumfixes and transfixes","Суффиксы, префиксы, циркумфиксы и трансфиксы"
-L-2-16,L-2,"Prefixes, suffixes, and interfixes","Префиксы, суффиксы и интерфиксы"
-L-2-17,L-2,"Prefixes, suffixes, postfixes, and interfixes","Префиксы, суффиксы, постфиксы и интерфиксы"
-L-3-1,L-3,Subordination,Только подчинение
-L-3-2,L-3,Coordination,Только сочинение
-L-3-3,L-3,Coordination and subordination,Сочинение и подчинение
-L-3-4,L-3,Apposition and coordination,Аппозиция и сочинение
-L-3-5,L-3,Apposition and subordination,Аппозиция и подчинение
-L-3-6,L-3,"Apposition, coordination and subordination","Аппозиция, сочинение и подчинение"
-M-1-1,M-1,Active,Активная
-M-1-2,M-1,Direct,Нейтральный
-M-1-3,M-1,Accusative,Аккузативная
-M-1-4,M-1,Tripartite,Трехчленная
-M-1-5,M-1,Ergative,Эргативная
-M-1-6,M-1,Austronesian,Тематическая
-M-1-7,M-1,Accusative with elements of ergativity,Аккузативная с элементами эргативной
-M-1-8,M-1,"Accusative, ergative, and dative","Аккузативная, эргативная и дативная"
-M-1-9,M-1,Ergative with elements of accusative,Эргативная с элементами аккузативной
-M-2-1,M-2,Fixed,Жесткий
-M-2-2,M-2,Non-fixed,Свободный
-M-3-1,M-3,SVO,SVO
-M-3-2,M-3,SOV,SOV
-M-3-3,M-3,VSO,VSO
-M-3-4,M-3,VOS,VOS
-M-3-5,M-3,SVO/ SOV,SVO/ SOV
-M-3-6,M-3,SVO/ VSO,SVO/ VSO
-M-3-7,M-3,SVO/ VOS,SVO/ VOS
-M-3-8,M-3,SVO/ OSV,SVO/ OSV
-M-3-9,M-3,SVO/ OVS,SVO/ OVS
-M-3-10,M-3,SOV/ VSO,SOV/ VSO
-M-3-11,M-3,SOV/ OSV,SOV/ OSV
-M-3-12,M-3,VSO/ VOS,VSO/ VOS
-M-4-1,M-4,Modifier precedes noun,Определение предшествует определяемому
-M-4-2,M-4,Modifier follows noun,Определение следует за определямым
-M-4-3,M-4,Not fixed,Не фиксирован
-M-4-4,M-4,Preposition and postposition,Препозиция и постпозиция
-M-5-1,M-5,Possible,Возможно
-M-5-2,M-5,Impossible,Невозможно
-N-1-1,N-1,Main clause precedes subordinate clause,Главное предшествует придаточному
-N-1-2,N-1,Subordinate clause precedes main clause,Придаточное предшествует главному
-N-1-3,N-1,Not fixed,Не фиксирован
-N-1-4,N-1,Main clause frames the subordinate clause,Придаточное помещается внутри главного
-N-2-1,N-2,Special marking of arguments,Особое оформление именных групп
-N-2-2,N-2,Special form of subject,Особое оформление подлежащего
-N-2-3,N-2,Special word order,Особый порядок слов
-N-2-4,N-2,Special form of predicate,Особое оформление сказуемого
-N-3-1,N-3,Finite forms,Финитные формы
-N-3-2,N-3,Non-finite forms,Нефинитные формы
-N-3-3,N-3,Both finite and non-finite forms possible,Финитные и нефинитные формы
-N-4-1,N-4,Clause chaining,Цепочки клауз
-N-4-2,N-4,Subordination,Подчинение
-N-4-3,N-4,Compounding,Сочинение
-N-4-4,N-4,Subordination and compounding,Сочинение и подчинение
-N-4-5,N-4,"Subordination, compounding and clause chaining","Сочинение, подчинение и цепочки клауз"
-N-5-1,N-5,Syndesis dominant,Преобладает союзная
-N-5-2,N-5,Asyndeton dominant,Преобладает бессоюзная
-N-5-3,N-5,Both syndesis and asyndeton possible,Союзная и бессоюзная
+id,feature_id,en,ru,description_formatted_en,description_formatted_ru
+A-1-1,A-1,Two,Две,,
+A-1-2,A-1,Three,Три,,
+A-1-3,A-1,Four,Четыре,,
+A-2-1,A-2,Close and open,Верхний и нижний,,
+A-2-2,A-2,Close and mid,Верхний и средний,,
+A-2-3,A-2,"Close, mid and open","Верхний, средний и нижний",,
+A-2-4,A-2,"Close, close-mid, mid and open","Верхний, верхне-средний, средний и нижний",,
+A-2-5,A-2,"Close, close-mid, open-mid and open","Верхний, верхне-средний, нижне-средний и нижний",,
+A-3-1,A-3,Linear system,Линейная система,,
+A-3-2,A-3,Front and back,Передний и задний,,
+A-3-3,A-3,Central and back,Средний и задний,,
+A-3-4,A-3,"Front, central and back","Передний, средний и задний",,
+A-3-5,A-3,Front and non-front,Передний и непередний,,
+A-4-1,A-4,No length degrees,Фонологические ступени долготы отсутствуют,,
+A-4-2,A-4,Two,Две ступени,,
+A-4-3,A-4,Three,Три ступени,,
+A-4-4,A-4,Four,Четыре ступени,,
+A-5-1,A-5,No vowel opposition in labialization,Противопоставление гласных по лабиализации отсутствует,,
+A-5-2,A-5,Present for front vowels,В переднем ряду,,
+A-5-3,A-5,Present for central vowels,В среднем ряду,,
+A-5-4,A-5,Present for back vowels,В заднем ряду,,
+A-5-5,A-5,Present for front and central vowels,В переднем и среднем рядах,,
+A-5-6,A-5,Present for front and back vowels,В переднем и заднем рядах,,
+A-5-7,A-5,Present for central and back vowels,В среднем и заднем рядах,,
+A-5-8,A-5,"Present for front, central and back vowels","В переднем, среднем и заднем рядах",,
+A-6-1,A-6,No vowel opposition in nasalization,Противопоставление гласных по назализации отсутствует,,
+A-6-2,A-6,Present for front and back vowels,В переднем и заднем рядах,,
+A-6-3,A-6,Present for central and back vowels,В среднем и заднем рядах,,
+A-6-4,A-6,"Present for front, central and back vowels","В переднем, среднем и заднем рядах",,
+A-6-5,A-6,Present for front vowels,В переднем ряду,,
+A-6-6,A-6,Present for front and central vowels,В переднем и среднем рядах,,
+A-7-1,A-7,No vowel opposition in pharyngealization,Противопоставление гласных по фарингализации отсутствует,,
+A-7-2,A-7,Present for front vowels,В переднем ряду,,
+A-7-3,A-7,Present for central vowels,В среднем ряду,,
+A-7-4,A-7,Present for back vowels,В заднем ряду,,
+A-7-5,A-7,Present for front and central vowels,В переднем и среднем рядах,,
+A-7-6,A-7,Present for front and back vowels,В переднем и заднем рядах,,
+A-7-7,A-7,Present for central and back vowels,В среднем и заднем рядах,,
+A-7-8,A-7,"Present for front, central and back vowels","В переднем, среднем и заднем рядах",,
+A-8-1,A-8,No vowel opposition in ATR,Противопоставление гласных по продвинутости корня языка отсутствует,,
+A-8-2,A-8,Present for front vowels,В переднем ряду,,
+A-8-3,A-8,Present for central vowels,В среднем ряду,,
+A-8-4,A-8,Present for back vowels,В заднем ряду,,
+A-8-5,A-8,Present for front and central vowels,В переднем и среднем рядах,,
+A-8-6,A-8,Present for front and back vowels,В переднем и заднем рядах,,
+A-8-7,A-8,Present for central and back vowels,В среднем и заднем рядах,,
+A-8-8,A-8,"Present for front, central and back vowels","В переднем, среднем и заднем рядах",,
+A-9-1,A-9,No diphthongs and triphthongs,Дифтонги и трифтонги отсутствуют,,
+A-9-2,A-9,Only diphthongs present,Только дифтонги,,
+A-9-3,A-9,Both diphthongs and triphthongs present,Дифтонги и трифтонги,,
+A-10-1,A-10,Rising (ascending),Восходящие,,
+A-10-2,A-10,Falling (descending),Нисходящие,,
+A-10-3,A-10,Rising (ascending) and falling (descending),Восходящие и нисходящие,,
+A-11-1,A-11,Opposition by presence and absence of voice,Есть противопоставления по звонкости/глухости,,
+A-11-2,A-11,Opposition by aspiration,Есть противопоставления по аспирации,,
+A-11-3,A-11,Ejectives present,Есть глоттализованные согласные,,
+A-11-4,A-11,Clicks present,Есть щелкающие согласные,,
+A-11-5,A-11,Geminated consonants present,Есть геминированные согласные,,
+A-11-6,A-11,Opposition by voice presence/absence and by aspiration,Есть противопоставления по звонкости/глухости и по аспирации,,
+A-11-7,A-11,"Opposition by voice presence/absence, ejectives present","Есть противопоставления по звонкости/глухости, есть глоттализованные согласные",,
+A-11-8,A-11,Ejective consonants present,Есть абруптивные согласные,,
+A-11-9,A-11,Opposition by voice presence/absence and softness,Есть противопоставление по звонкости/глухости и твердости/мягкости,,
+A-11-10,A-11,Strong and weak consonants present,Есть сильные и слабые согласные,,
+A-11-11,A-11,Emphatic consonants present,Есть эмфатические согласные,,
+A-11-12,A-11,Opposition by strain,Есть противопоставление по напряженности и ненапряженности,,
+A-11-13,A-11,"Opposition by voice presence/absence, emphatic consonants present",Есть противопоставление по звонкости/глухости и эмфатические согласные,,
+A-11-14,A-11,"Opposition by voice presence/absence and strain",Есть противопоставление по звонкости/глухости и напряженности/ненапряженности,,
+A-11-15,A-11,"New value, listed with a comma","Есть первые, вторые и третьи",,
+A-12-1,A-12,Plosives and fricatives,Взрывные и фрикативные,,
+A-12-2,A-12,Plosives and affricates,Взрывные и аффрикаты,,
+A-12-3,A-12,"Plosives, fricatives and affricates","Взрывные, фрикативные и аффрикаты",,
+A-12-4,A-12,"Plosives, voiced, prenasalized, fricatives and affricates","Взрывные, звонкие, преназализованные, фрикативные и аффрикаты",,
+A-13-1,A-13,"Labial, coronal and guttural","Губные, переднеязычные и заднеязычные",,
+A-13-2,A-13,"Labial, coronal, dorsal, guttural and postuvular","Губные, переднеязычные, среднеязычные, заднеязычные и постувулярные",,
+A-13-3,A-13,"Labial, coronal, dorsal and guttural","Губные, переднеязычные, среднеязычные и заднеязычные",,
+A-13-4,A-13,"Labial, coronal, dorsal and postuvular","Губные, переднеязычные, среднеязычные и постувулярные",,
+A-13-5,A-13,"Labial, coronal, guttural and postuvular","Губные, переднеязычные, заднеязычные и постувулярные",,
+A-13-6,A-13,"Labial, dental-alveolar, palatal, velar and labialized velar","Губные, зубно-альвеолярные, палатальные, велярные и велярные огубленные",,
+A-14-1,A-14,Only bilabial,Только билабиальные,,
+A-14-2,A-14,Bilabial and labiodental,Билабиальные и лабиодентальные,,
+A-15-1,A-15,Dental,Дентальные,,
+A-15-2,A-15,Interdental,Интердентальные,,
+A-15-3,A-15,Alveolar,Альвеолярные,,
+A-15-4,A-15,Postalveolar,Постальвеолярные,,
+A-15-5,A-15,Retroflex,Ретрофлексные,,
+A-15-6,A-15,Dental and alveolar,Дентальные и альвеолярные,,
+A-15-7,A-15,Dental and interdental,Дентальные и интердентальные,,
+A-15-8,A-15,Dental and retroflex,Дентальные и ретрофлексные,,
+A-15-9,A-15,Dental and postlaveolar,Дентальные и постальвеолярные,,
+A-15-10,A-15,Dental and alveopalatal,Дентальные и альвео-палатальные,,
+A-15-11,A-15,"Dental, interdental and alveolar","Дентальные, интердентальные и альвеолярные",,
+A-15-12,A-15,"Dental, interdental and retroflex","Дентальные, интердентальные и ретрефлексные",,
+A-15-13,A-15,"Dental, prepalatal and alveopalatal","Дентальные, препалатальные и альвео-палатальные",,
+A-15-14,A-15,"Dental, alveolar and postalveolar","Дентальные, альвеолярные и постальвеолярные",,
+A-15-15,A-15,"Dental, interdental and alveopalatal","Дентальные, интердентальные и альвео-палатальные",,
+A-15-16,A-15,Alveolar and postalveolar,Альвеолярные и постальвеолярные,,
+A-15-17,A-15,Alveolar and retroflex,Альвеолярные и ретрофлексные,,
+A-15-18,A-15,"Alveolar, retroflex and alveopalatal","Альвеолярные, ретрофлексные и альвео-палатальные",,
+A-15-19,A-15,"Dental, alveolar, postalveolar, and retroflex","Дентальные, альвеолярные, постальвеолярные и ретрофлексные",,
+A-15-20,A-15,"Dental, alveolar, and retroflex","Дентальные, альвеолярные и ретрофлексные",,
+A-15-21,A-15,Dental-alveolar and palatal,Зубно-альвеолярные и палатальные,,
+A-15-22,A-15,"Dental, alveolar and dental-alveolar","Дентальные, альвеолярные и дентально-альвеолярные",,
+A-15-23,A-15,Dental-alveolar,Дентально-альвеолярные,,
+A-15-24,A-15,Alveolar and alveopalatal,Альвеолярные и альвео-палатальные,,
+A-15-25,A-15,Interdental and dental-alveolar,Интердентальные и дентально-альвеолярные,,
+A-16-1,A-16,Velar,Велярные,,
+A-16-2,A-16,Labiovelar,Лабиовелярные,,
+A-16-3,A-16,Uvular,Увулярные,,
+A-16-4,A-16,Velar and labiovelar,Велярные и лабиовелярные,,
+A-16-5,A-16,Velar and uvular,Велярные и увулярные,,
+A-16-6,A-16,"Velar, uvular and labiovelar","Велярные, увулярные и лабиовелярные",,
+A-16-7,A-16,Velar and labialized velar,Велярные и велярные-огубленные,,
+A-17-1,A-17,Only pharyngeal,Только фарингальные,,
+A-17-2,A-17,Only glottal,Только глоттальные,,
+A-17-3,A-17,Both pharyngeal and glottal,Фарингальные и глоттальные,,
+A-18-1,A-18,Absent,Отсутствуют,,
+A-18-2,A-18,By labialization,По лабиализации,,
+A-18-3,A-18,By nasalization,По назализации,,
+A-18-4,A-18,By palatalization,По палатализации,,
+A-18-5,A-18,By pharyngealization,По фарингализации,,
+A-18-6,A-18,By labialization and palatalization,По лабиализации и палатализации,,
+A-18-7,A-18,By labialization and pharyngealization,По лабиализации и фарингализации,,
+A-18-8,A-18,"By labialization, palatalization and pharyngealization","По лабиализации, палатализации и фарингализации",,
+A-18-9,A-18,By nasalization and palatalization,По назализации и палатализации,,
+A-18-10,A-18,By palatalization and pharyngealization,По палатализации и фарингализации,,
+A-18-11,A-18,By palatalization and velarization,По палатализации и веляризации,,
+A-18-12,A-18,By labialization and nasalisation,По лабиализации и назализации,,
+A-19-1,A-19,Nasal and liquid,Назальные и плавные,,
+A-19-2,A-19,"Nasal, liquid and vibrant","Назальные, плавные и вибранты",,
+A-19-3,A-19,"Nasal, liquid and glide","Назальные, плавные и глайды",,
+A-19-4,A-19,"Nasal, vibrant and glide","Назальные, вибранты и глайды",,
+A-19-5,A-19,"Liquid, vibrant and glide","Плавные, вибранты и глайды",,
+A-19-6,A-19,"Nasal, liquid, vibrant and glide","Назальные, плавные, вибранты и глайды",,
+A-19-7,A-19,Nasal and glide,Назальные и глайды,,
+A-19-8,A-19,"Approximant, nasal, vibrant and lateral","Аппроксиманты, носовые, вибранты и боковые",,
+A-20-1,A-20,Coronal,Переднеязычные,,
+A-20-2,A-20,Dorsal,Среднеязычные,,
+A-20-3,A-20,Guttural,Заднеязычные,,
+A-20-4,A-20,Lateral,Латеральные,,
+A-20-5,A-20,Retroflex,Ретрофлексные,,
+A-20-6,A-20,Labial and guttural,Губные и заднеязычные,,
+A-20-7,A-20,Labial and coronal,Губные и переднеязычные,,
+A-20-8,A-20,Coronal and guttural,Переднеязычные и заднеязычные,,
+A-20-9,A-20,Coronal and postuvular,Переднеязычные и постувулярные,,
+A-20-10,A-20,Dorsal and guttural,Среднеязычные и заднеязычные,,
+A-20-11,A-20,"Labial, coronal, dorsal, guttural and postuvular","Губные, переднеязычные, среднеязычные, заднеязычные и постувулярные",,
+A-20-12,A-20,"Labial, coronal, guttural and postuvular","Губные, переднеязычные, заднеязычные и постувулярные",,
+A-20-13,A-20,"Labial, coronal, dorsal and postuvular","Губные, переднеязычные, среднеязычные и постувулярные",,
+A-20-14,A-20,"Labial, coronal and dorsal","Губные, переднеязычные и среднеязычные",,
+A-20-15,A-20,"Coronal, dorsal and guttural","Переднеязычные, среднеязычные и заднеязычные",,
+A-20-16,A-20,"Labial, coronal and guttural","Губные, переднеязычные и заднеязычные",,
+A-20-17,A-20,"Labial, coronal, dorsal and guttural","Губные, переднеязычные, среднеязычные и заднеязычные",,
+A-20-18,A-20,Coronal and dorsal,Переднеязычные и среднеязычные,,
+A-21-1,A-21,Absent,Отсутствуют,,
+A-21-2,A-21,By vocalization,По звонкости,,
+A-21-3,A-21,By palatalization,По палатализации,,
+A-21-4,A-21,By labialization,По лабиализации,,
+A-21-5,A-21,By intensity,По интенсивности,,
+A-21-6,A-21,By pharyngealization,По фарингализации,,
+A-21-7,A-21,By length,По долготе,,
+A-21-8,A-21,By vocalization and pharyngealization,По звонкости и фарингализации,,
+A-21-9,A-21,"By vocalization, labialization and length","По звонкости, лабиализации и долготе",,
+A-21-10,A-21,By vocalization and length,По звонкости и долготе,,
+A-21-11,A-21,By palatalization and labialization,По палатализации и лабиализации,,
+A-21-12,A-21,By palatalization and intensity,По палатализации и интенсивности,,
+A-21-13,A-21,By palatalization and pharyngealization,По палатализации и фарингализации,,
+A-21-14,A-21,By palatalization and length,По палатализации и долготе,,
+A-21-15,A-21,By pharyngealization and length,По фарингализации и долготе,,
+A-21-16,A-21,By nasalization,По назализации,,
+B-1-1,B-1,No stress,Ударение отсутствует,,
+B-1-2,B-1,Phonological,Фонологическое,,
+B-1-3,B-1,Non-phonological,Нефонологическое,,
+B-1-4,B-1,Phonological and non-phonological,Фонологическое/ нефонологическое,,
+B-2-1,B-2,Dynamic,Динамическое,,
+B-2-2,B-2,Quantitative,Количественное,,
+B-2-3,B-2,Pitch-accent,Музыкальное,,
+B-2-4,B-2,Mixed,Смешанное,,
+B-3-1,B-3,Syllable,Слог,,
+B-3-2,B-3,Mora,Мора,,
+B-3-3,B-3,Word,Слово,,
+B-4-1,B-4,Single-place fixed,Одноместно фиксированное,,
+B-4-2,B-4,Not fixed,Нефиксированное,,
+B-4-3,B-4,Movable fixed,Разноместно фиксированное,,
+B-4-4,B-4,Movable flexible,Разноместное подвижное,,
+B-4-5,B-4,Movable non-fixed,Разноместное нефиксированное,,
+B-5-1,B-5,First syllable of word,Начальный слог,,
+B-5-2,B-5,First syllable of root,Начальный слог корня,,
+B-5-3,B-5,Second syllable,Второй слог,,
+B-5-4,B-5,Ultima,Конечный слог,,
+B-5-5,B-5,Last closed syllable,Конечный закрытый слог,,
+B-5-6,B-5,Last syllable of stem,Конечный слог основы,,
+B-5-7,B-5,Penult,Пенультима,,
+B-5-8,B-5,Antepenult,Антепенультима,,
+B-5-9,B-5,First or second syllable,Начальный или второй слог,,
+B-5-10,B-5,"First, second or third syllable","Начальный, второй или третий слог",,
+B-5-11,B-5,First syllable or ultima,Начальный или конечный слог,,
+B-5-12,B-5,First syllable or penult,Начальный слог или пенультима,,
+B-5-13,B-5,First or first long syllable,Начальный слог или первый долгий слог,,
+B-5-14,B-5,Penult or antepenult,Пенультима или антепенультима,,
+B-5-15,B-5,First syllable or antepenult,Начальный слог или антепенультима,,
+B-5-16,B-5,Ultima or penult,Конечный слог или пенультима,,
+B-5-17,B-5,"Ultima, penult or antepenult","Конечный слог, пенультима или антепенультима",,
+B-5-18,B-5,"First syllable, penult or ultima","Начальный слог, пенультима или конечный слог",,
+B-6-1,B-6,Two,Два,,
+B-6-2,B-6,Three,Три,,
+B-6-3,B-6,More than three,Более трёх,,
+B-7-1,B-7,Rising,Восходящий,,
+B-7-2,B-7,Falling,Нисходящий,,
+B-7-3,B-7,Rising and falling,Восходящий и нисходящий,,
+B-7-4,B-7,Rising and falling-rising,Восходящий и нисходяще-восходящный,,
+B-7-5,B-7,Flat and rising,Ровный и восходящий,,
+B-7-6,B-7,Flat and falling,Ровный и нисходящий,,
+B-7-7,B-7,"Flat, rising and falling","Ровный, восходящий и нисходящий",,
+B-7-8,B-7,"Rising, falling and rising-falling","Восходящий, нисходящий и восходяще-нисходящный",,
+B-7-9,B-7,"Rising, falling and falling-rising","Восходящий, нисходящий и нисходяще-восходящный",,
+B-7-10,B-7,"Rising, falling, rising-falling and falling-rising","Восходящий, нисходящий, восходяще-нисходящный и нисходяще-восходящный",,
+B-7-11,B-7,"Rising, rising-falling, flat and broken","Восходящий, восходяще-нисходящий, ровный и прерывистый",,
+B-7-12,B-7,Flat and broken,Ровный и прерывистый,,
+B-8-1,B-8,Syllable,Слог,,
+B-8-2,B-8,Word,Слово,,
+B-8-3,B-8,Syllable or word,Слог или слово,,
+B-8-4,B-8,Phrase,Фраза,,
+B-8-5,B-8,Foot,Стопа,,
+B-9-1,B-9,Phonological,Фонологическая,,
+B-9-2,B-9,Non-phonological,Нефонологическая,,
+B-9-3,B-9,Rhythmic,Ритмическая,,
+B-9-4,B-9,Phonological and non-phonological,Фонологическая и нефонологическая,,
+B-9-5,B-9,Phonological and rhythmic,Фонологическая и ритмическая,,
+B-9-6,B-9,Non-phonological and rhythmic,Нефонологическая и ритмическая,,
+B-10-1,B-10,Phoneme,Фонема,,
+B-10-2,B-10,Group of phonemes,Группа фонем,,
+B-10-3,B-10,Affix,Аффикс,,
+B-10-4,B-10,Group of affixes,Группа аффиксов,,
+B-10-5,B-10,"Group of affixes, all vowels",Группа слогов или все гласные слова,,
+B-10-6,B-10,All vowels,Все гласные слова,,
+B-10-7,B-10,One vowel or all vowels,Один гласный или все гласные слова,,
+B-10-8,B-10,Foot,Стопа,,
+B-10-9,B-10,No vowel harmony,Гармоническое уподобление гласных отсутствует,,
+B-11-1,B-11,Length,Долгота,,
+B-11-2,B-11,Backness,Ряд,,
+B-11-3,B-11,Height,Подъем,,
+B-11-4,B-11,Labialization,Лабиализация,,
+B-11-5,B-11,ATR,Позиция корня языка,,
+B-11-6,B-11,Backness and height,Ряд и подъем,,
+B-11-7,B-11,Backness and roundedness,Ряд и лабиализация,,
+B-11-8,B-11,Height and roundedness,Подъем и лабиализация,,
+B-11-9,B-11,Height and palatality,Подъем и палатальность,,
+B-11-10,B-11,Roundedness and palatality,Лабиализация и палатальность,,
+B-11-11,B-11,"Backness, height and roundedness","Ряд, подъем и лабиализация",,
+B-11-12,B-11,"Height, length, and labialization","Подъем, долгота и лабиализация",,
+B-11-13,B-11,Nasalization,Назализация,,
+B-11-14,B-11,ATR and nasalization,Степень продвинутости языка (ATR) и назализация,,
+B-12-1,B-12,First vowel of word,Первый гласный слова,,
+B-12-2,B-12,First vowel of affix,Первый гласный аффикса,,
+B-12-3,B-12,First vowel of root,Первый гласный корня,,
+B-12-4,B-12,Stressed vowel,Ударный гласный,,
+B-12-5,B-12,Last vowel of stem,Последний гласный основы,,
+B-12-6,B-12,First vowel of word (root),Первый гласный слова (=корня),,
+B-12-7,B-12,"Final syllable vowel, or first vowel of word, or stressed syllable of stem","Гласный финального слога, первый гласный слова, или ударный гласный основы",,
+B-12-8,B-12,First vowel of word or last vowel of stem,Первый гласный слова или последний гласный основы,,
+B-12-9,B-12,First vowel of affix or first vowel of root,Первый гласный аффикса или первый гласный корня,,
+B-13-1,B-13,Nasalization,Назализация,,
+B-13-2,B-13,Palatalization,Палатализация,,
+B-13-3,B-13,Pharyngealization,Фарингализация,,
+B-13-4,B-13,Phonation,Фонация,,
+B-13-5,B-13,Velarization and palatalization,Веляризация и палатализация,,
+B-13-6,B-13,Pharyngealization and phonation,Фарингализация и фонация,,
+B-13-7,B-13,Palatalization and nasalization,Палатализация и назализация,,
+B-14-1,B-14,Creaky voice,Скрипучая,,
+B-14-2,B-14,Stiff voice and slack voice,Напряженная и слабая,,
+B-14-3,B-14,"Stiff voice, slack voice and creaky voice","Напряженная, слабая и скрипучая",,
+B-14-4,B-14,Stiff voice and aspirated voice,Напряженная и придыхательная,,
+B-14-5,B-14,"Stiff voice, modal voice and aspirated voice","Напряженная, модальная и придыхательная",,
+B-14-6,B-14,Stiff voice,Напряженная,,
+B-14-7,B-14,Aspirated voice,Придыхательная,,
+C-1-1,C-1,No null onset,Обязательно имеется,,
+C-1-2,C-1,Only null onset possible,Запрещен,,
+C-1-3,C-1,Most syllables have a non-null onset,Большинство слогов прикрытые,,
+C-1-4,C-1,Most syllables have a null onset,Большинство слогов неприкрытые,,
+C-1-5,C-1,Both null and non-null onset possible,Есть прикрытые и неприкрытые слоги,,
+C-2-1,C-2,No null coda,Обязательно имеется,,
+C-2-2,C-2,Only null coda possible,Запрещен,,
+C-2-3,C-2,Most syllables have a non-null coda,Большинство слогов закрытые,,
+C-2-4,C-2,Most syllables have a null coda,Большинство слогов открытые,,
+C-2-5,C-2,Both null and non-null ocoda possible,Есть закрытые и открытые слоги,,
+D-1-1,D-1,No restrictions,Отсутствуют,,
+D-1-2,D-1,Only vowels possible,Только гласные,,
+D-1-3,D-1,Only consonants possible,Только согласные,,
+D-1-4,D-1,Limited set of consonants possible,Ограниченный набор согласных,,
+D-1-5,D-1,No vowel clusters,Запрет на любые стечения гласных,,
+D-1-6,D-1,No consonant clusters,Запрет на любые стечения согласных,,
+D-1-7,D-1,Limited set of consonants and vowels possible,Ограниченный набор гласных и согласных,,
+D-1-8,D-1,No vowel clusters and no consonant clusters,Запрет на любые стечения гласных и согласных,,
+D-1-9,D-1,"Limited set of consonants possible, no consonant clusters",Ограниченный набор согласных и запрет на любые стечения согласных,,
+D-1-10,D-1,"Limited set of consonants, no consonant clusters","Ограниченный набор гласных и согласных, запрет на стечения согласных",,
+D-1-11,D-1,Limited set of vowels,Ограниченный набор гласных,,
+D-1-12,D-1,"Limited set of vowels and consonants, no consonant clusters or long vowels","Ограниченный набор гласных и согласных, запрет на стечение согласных и на долгие согласные",,
+D-2-1,D-2,No restrictions,Отсутствуют,,
+D-2-2,D-2,Only vowels possible,Только гласные,,
+D-2-3,D-2,Only consonants possible,Только согласные,,
+D-2-4,D-2,Limited set of vowels possible,Ограниченный набор гласных,,
+D-2-5,D-2,Limited set of consonants possible,Ограниченный набор согласных,,
+D-2-6,D-2,No vowel clusters,Запрет на любые стечения гласных,,
+D-2-7,D-2,No consonant clusters,Запрет на любые стечения согласных,,
+D-2-8,D-2,Limited set of vowels and consonants possible,Ограниченный набор гласных и согласных,,
+D-2-9,D-2,No vowel clusters and no consonant clusters,Запрет на любые стечения гласных и согласных,,
+D-2-10,D-2,"Limited set of consonants possible, no vowel clusters",Ограниченный набор согласных и запрет на любые стечения гласных,,
+D-2-11,D-2,"Limited set of consonants possible, no consonant clusters",Ограниченный набор согласных и запрет на стечения согласных,,
+D-2-12,D-2,No clusters of more than two consonants,Запрет на стечение более двух согласных,,
+D-3-1,D-3,Only monosyllabic words,Только односложные слова,,
+D-3-2,D-3,Only polysyllabic words,Только неодносложные слова,,
+D-3-3,D-3,Mainly monosyllabic words,Преимущественно односложные слова,,
+D-3-4,D-3,Mainly polysyllabic words,Преимущественно неодносложные слова,,
+D-4-1,D-4,No differences,Отсутствуют,,
+D-4-2,D-4,Differences in phonetic structure,Различия в фонетическом составе,,
+D-4-3,D-4,Differences in accentuation,Акцентные различия,,
+D-4-4,D-4,Differences in phonetic structure and in syllable structure,Различия в фонетическом составе и в структуре слога,,
+D-4-5,D-4,Differences in phonetic structure and accentual differences,Различия в фонетическом составе и акцентные различия,,
+D-4-6,D-4,Differences in syllable structure and accentual differences,Различия в структуре слога и акцентные различия,,
+D-4-7,D-4,"Differences in phonetic structure, in syllable structure and accentual differences","Различия в фонетическом составе, в структуре слога и акцентные различия",,
+D-4-8,D-4,Differences in syllable structure,Различия в структуре слога,,
+D-5-1,D-5,No differences,Отсутствуют,,
+D-5-2,D-5,Differences in phonetic structure,Различия в фонетическом составе,,
+D-5-3,D-5,Differences in accentuation,Акцентные различия,,
+D-5-4,D-5,Differences in syllable structure,Различия в структуре слога,,
+D-5-5,D-5,Differences in syllable structure and accentual differences,Различия в структуре слога и акцентные различия,,
+D-5-6,D-5,Differences in phonetic structure and in syllable structure,Различия в фонетическом составе и в структуре слога,,
+D-5-7,D-5,"Differences in phonetic structure, in syllable structure and in accentuation","Различия в фонетическом составе, в структуре слога и акцентные различия",,
+D-5-8,D-5,"Differences in phonetic structure, and in accentuation",Различия в фонетическом составе и акцентные различия,,
+D-6-1,D-6,No differences,Отсутствуют,,
+D-6-2,D-6,Differences in phonetic structure,Различия в фонетическом составе,,
+D-6-3,D-6,Accentual differences,Акцентные различия,,
+D-6-4,D-6,Differences in syllable structure,Различия в структуре слога,,
+D-6-5,D-6,Differences in phonetic structure and accentuation,Различия в фонетическом составе и акцентные различия,,
+D-6-6,D-6,"Differences in phonetic structure, in syllable structure and accentuation","Различия в фонетическом составе, в структуре слога и акцентные различия",,
+D-6-7,D-6,Differences in syllable structure and accentuation,Различия в структуре слога и акцентные различия,,
+D-6-8,D-6,Differences in phonetic strcutre and in syllable structure,Различия в фонетическом составе и в структуре слога,,
+D-6-9,D-6,Differences in tones,Тоновые различия,,
+D-7-1,D-7,No alternations,Чередования отсутствуют,,
+D-7-2,D-7,Accompanying,Сопутствующие,,
+D-7-3,D-7,Distinctive,Смыслоразличительные,,
+D-7-4,D-7,Accompanying and distinctive,Сопутствующие и смыслоразличительные,,
+D-8-1,D-8,Vowel alternations,Вокалические,,
+D-8-2,D-8,Consonant alternations,Консонантные,,
+D-8-3,D-8,Mixed alternations,Смешанные,,
+D-8-4,D-8,Tone alternations,Тоновые,,
+D-8-5,D-8,Phoneme complex alternations,Чередование комплексов фонем,,
+D-8-6,D-8,Vowel and consonant alternations,Вокалические и консонантные,,
+D-8-7,D-8,Vowel and mixed alternations,Вокалические и смешанные,,
+D-8-8,D-8,"Vowel, consonant and mixed alternations","Вокалические, консонантные и смешанные",,
+D-8-9,D-8,Consonant and phoneme complex alternations,Консонантные и чередование комплексов,,
+D-8-10,D-8,"Vowel, consonant, mixed, and phoneme complex alternations","Вокалические, консонантные, смешанные и чередование комплексов",,
+D-8-11,D-8,"Vowel, consonant, and phoneme complex alternations","Вокалические, консонантные и чередования комплексов",,
+D-8-12,D-8,Vowel and tone alternations,Вокалические и тоновые,,
+D-8-13,D-8,Consonant and tone alternations,Консонантные и тоновые,,
+E-1-1,E-1,Agglutinative,Агглютинативный,,
+E-1-2,E-1,Agglutinative with some fusional features,Агглютинативный с элементами флективного,,
+E-1-3,E-1,Fusional,Флективный,,
+E-1-4,E-1,Fusional with some agglutinative features,Флективный с элементами агглютинации,,
+E-1-5,E-1,Fusional-agglutinative,Флективно-агглютинативный,,
+E-2-1,E-2,Internal flection,Внутренняя флексия,,
+E-2-2,E-2,Cumulative affixes,Кумулятивность аффиксов,,
+E-2-3,E-2,Phonetically unconditioned stem alternations,Фонетически необусловленные изменения в основе,,
+E-2-4,E-2,Phonetically unconditioned fusion,Фонетически необусловленная фузия,,
+E-2-5,E-2,"Cumulative affixes, several conjugation types",Кумулятивность аффиксов и наличие параллельных типов словоизменения,,
+E-2-6,E-2,"Cumulative affixes, several conjugation types, phonetically unconditioned stem alternations","Кумулятивность аффиксов, наличие параллельных типов словоизменения и фонетически необусловленные изменения в основе",,
+E-2-7,E-2,Phonetically unconditioned stem alternations and cumulative affixes,Фонетически необусловленные изменения в основе и кумулятивность аффиксов,,
+E-2-8,E-2,"Internal flection, phonetically unconditioned fusion",Внутренняя флексия и фонетически необусловленная фузия,,
+E-3-1,E-3,One affix can express only one meaning,Отсутствие полисемантизма аффиксов,,
+E-3-2,E-3,Single inflection/conjugation type,Единый тип склонения или спряжения,,
+E-3-3,E-3,Low degree of fusion between root and non-root morphemes,Низкая степень фузии между некорневыми и корневыми морфемами,,
+E-3-4,E-3,No phonetic alternations in morphemes,Постоянство морфемного облика,,
+E-3-5,E-3,"One affix can express only one meaning, single inflection/conjugation type, no phonetic alternations in morphemes","Отсутствие полисемантизма аффиксов, единый тип склонения или спряжения и постоянство морфемного облика",,
+E-3-6,E-3,"One affix can express only one meaning, single inflection/conjugation type, no phonetic alternations in morphemes, basic form bare stem","Отсутствие полисемантизма аффиксов, единый тип склонения или спряжения, постоянство морфемного облика и совпадение исходной формы с чистой основой",,
+E-3-7,E-3,"No phonetic alternations in morphemes, basic form bare stem",Постоянство морфемного облика и совпадение исходной формы с чистой основой,,
+E-4-1,E-4,Polysynthetic,Полисентетический,,
+E-4-2,E-4,Analytic,Аналитический,,
+E-4-3,E-4,Analytic with elements of synthetism,Аналитический с элементами синтетизма,,
+E-4-4,E-4,Isolating,Изолирующий,,
+E-4-5,E-4,Synthetic,Синтетический,,
+E-4-6,E-4,Synthetic with elements of analytism,Синтетический с элементами аналитизма,,
+E-4-7,E-4,Synthetic with elements of polysynthetism,синтетический с элементами полисинтетизма,,
+F-1-1,F-1,No agreement classes,Согласовательные классы отсутствуют,,
+F-1-2,F-1,Two,Два,,
+F-1-3,F-1,Three,Три,,
+F-1-4,F-1,Four,Четыре,,
+F-1-5,F-1,Six,Шесть,,
+F-2-1,F-2,Articles,Артикли,,
+F-2-2,F-2,Umlaut,Перегласовка основы,,
+F-2-3,F-2,Verbal affixes,Аффиксация в глаголе,,
+F-2-4,F-2,Verbal affixes and adjective affixes,Аффиксация в глаголе и прилагательном,,
+F-2-5,F-2,Umlaut and affixes,Перегласовка основы и аффиксация,,
+F-3-1,F-3,Articles,В артикле,,
+F-3-2,F-3,Verbs,В глаголе,,
+F-3-3,F-3,Pronouns,В местоимении,,
+F-3-4,F-3,Adverbs,В наречии,,
+F-3-5,F-3,Postpositions,В послелоге,,
+F-3-6,F-3,Adjectives,В прилагательном,,
+F-3-7,F-3,Participles,В причастии,,
+F-3-8,F-3,Numerals,В числительном,,
+F-3-9,F-3,"Pronouns, adjectives, and verbs","В местоимении, прилагательном и глаголе",,
+F-3-10,F-3,"Adjectives, verbs, and numerals","В прилагательном, глаголе и числительном",,
+F-3-11,F-3,"Adjectives, numerals, pronouns, and verbs","В прилагательном, числительном, местоимении и глаголе",,
+F-3-12,F-3,Adjectives and verbs,В прилагательном и глаголе,,
+F-3-13,F-3,"Adjectives, verbs, and adverbs","В прилагательном, глаголе и наречии",,
+F-3-14,F-3,"Adjectives. Numerals, and pronouns","В прилагательном, числительном и местоимении",,
+F-3-15,F-3,"Adjectives, pronouns, participles, and articles","В прилагательном, местоимении, причастии и артикле",,
+F-3-16,F-3,"Adjectives, numerals, pronouns, and participles","В прилагательном, числительном, местоимении и причастии",,
+F-3-17,F-3,"Adjectives, numerals, pronouns, verbs, and participles","В прилагательном, числительном, местоимении, глаголе и причастии",,
+F-3-18,F-3,Adjectives and numerals,В прилагательном и числительном,,
+F-3-19,F-3,Verbs and pronouns,В глаголе и местоимении,,
+F-4-1,F-4,Classifier verbs,Классифицирующие глаголы,,
+F-4-2,F-4,Numeral classifiers,Счетные классификаторы,,
+F-5-1,F-5,Only in singular,Только в единственном числе,,
+F-5-2,F-5,In singular and in plural,В единственном и множественном числе,,
+F-5-3,F-5,"In singular, dual, and plural","В единственном, двойственном и множественном числе",,
+F-6-1,F-6,Absent,Отсутствует,,
+F-6-2,F-6,Always present,Всегда присутствует,,
+F-6-3,F-6,"For ""one""","Для числительного ""один""",,
+F-6-4,F-6,"For ""one"", ""two""","Для числительных ""один"" и ""два""",,
+F-6-5,F-6,"For ""one"", ""two"", ""three"", ""four""","Для числительных ""один"", ""два"", ""три"", ""четыре""",,
+F-7-1,F-7,Absent,Отсутствуют,,
+F-7-2,F-7,Person/non-person,Личность/неличность,,
+F-7-3,F-7,Animacy/inanimacy,Одушевленность/неодушевленность,,
+F-7-4,F-7,Person/non-person and animacy/inanimacy,Личность/неличность и одушевленность/неодушевленность,,
+F-7-5,F-7,Class,Класс,,
+F-8-1,F-8,Lexical,Лексическое,,
+F-8-2,F-8,Morphological,Морфологическое,,
+F-8-3,F-8,Syntactic,Синтаксическое,,
+F-8-4,F-8,Lexical and morphological,Лексическое и морфологическое,,
+F-8-5,F-8,Lexical and syntactic,Лексическое и синтаксическое,,
+F-8-6,F-8,Morphological and syntactic,Морфологическое и синтаксическое,,
+F-8-7,F-8,"Lexical, morphological and syntactic","Лексическое, морфологическое и синтаксическое",,
+F-9-1,F-9,Lexical,Лексический,,
+F-9-2,F-9,Morphological,Морфологический,,
+F-9-3,F-9,Syntactic,Синтаксический,,
+F-9-4,F-9,Lexical and syntactic,Лексический и синтаксический,,
+F-9-5,F-9,Morphological and syntactic,Морфологический и синтаксический,,
+F-9-6,F-9,Lexical and morphological,Лексический и морфологический,,
+F-9-7,F-9,"Lexical, morphological, and syntactic","Лексический, морфологический и синтаксический",,
+G-1-1,G-1,Singular and plural,Единственное и множественное,,
+G-1-2,G-1,"Singular, dual and plural","Единственное, двойственное и множественное",,
+G-1-3,G-1,Distributive and plural,Дистрибутивное и множественное,,
+G-1-4,G-1,"Singular, paucal and plural","Единственное, паукальное и множественное",,
+G-1-5,G-1,"Singular, dual, trial and plural","Единственное, двойственное, тройственное и множественное",,
+G-1-6,G-1,Indefinite and plural,Неопределенное и множественное,,
+G-1-7,G-1,"Indefinite, distributive and plural","Неопределенное, дистрибутивное и множественное",,
+G-2-1,G-2,Marked,Маркированное,,
+G-2-2,G-2,Unmarked,Немаркированное,,
+G-2-3,G-2,Marked and unmarked,Маркированное и немаркированное,,
+G-3-1,G-3,Absent,Отсутствуют,,
+G-3-2,G-3,Neutral and polite,Нейтральная и вежливая,,
+G-3-3,G-3,"Neutral, polite, and impolite","Нейтральная, вежливая и невежливая",,
+G-4-1,G-4,No agreement in number,Отсутствует,,
+G-4-2,G-4,Predicative,Предикативное,,
+G-4-3,G-4,Attributive,Атрибутивное,,
+G-4-4,G-4,Predicative and attributive,Предикативное и атрибутивное,,
+G-5-1,G-5,Singular,Единственное число,,
+G-5-2,G-5,Plural,Множественное число,,
+G-5-3,G-5,Singular and plural,Единственное и множественное,,
+G-5-4,G-5,"Singular, dual, and plural","Единственное, двойственное и множественное",,
+G-6-1,G-6,Decimal,Десятеричная,,
+G-6-2,G-6,Quinary,Пятеричная,,
+G-6-3,G-6,Decimal with elements of duodecimal,Десятеричная с элементами двенадцатеричной,,
+G-6-4,G-6,Decimal with elements of vigesimal,Десятеричная с элементами двадцатеричной,,
+G-6-5,G-6,Vigesimal with elements of decimal,Двадцатеричная с элементами десятеричной,,
+G-6-6,G-6,Vigesimal with elements of quinary,Двадцатеричная с элементами пятеричной,,
+G-6-7,G-6,Vigesimal,Двадцатеричная,,
+G-6-8,G-6,"Mixed, with elements of quinary, decimal, pentadecimal, and vigesimal","Смешанная с элементами пятеричной, десятеричной, пятнадцатеричной и двадцатеричной",,
+G-6-9,G-6,Decimal with elements of quinary,Десятеричная с элементами пятеричной,,
+G-6-10,G-6,"Mixed, with elements of quinary, decimal, and vigesimal","Смешанная с элементами пятеричной, десятеричной и двадцатеричной",,
+G-7-1,G-7,No indefinite article,Неопределенный артикль отсутствует,,
+G-7-2,G-7,Same,Совпадают,,
+G-7-3,G-7,Different,Не совпадают,,
+H-1-1,H-1,One-two,Один-два,,
+H-1-2,H-1,Three-seven,Три-семь,,
+H-1-3,H-1,Eight-twelve,Восемь-двенадцать,,
+H-1-4,H-1,Thirteen-twenty,Тринадцать-двадцать,,
+H-1-5,H-1,Over twenty,Больше 20,,
+H-1-6,H-1,No case,Категория падежа отсутствует,,
+H-2-1,H-2,Verbal agreement,Глагольное согласование,,
+H-2-2,H-2,Object pronouns,Объектная форма личных местоимений,,
+H-2-3,H-2,Case affixes,Падежные аффиксы,,
+H-2-4,H-2,Function words,Служебные слова,,
+H-2-5,H-2,Verbal agreement and case affixes,Глагольное согласование и падежные аффиксы,,
+H-2-6,H-2,Verbal agreement and function words,Глагольное согласование и служебные слова,,
+H-2-7,H-2,"Internal inflection, verbal agreement, and case affixes","Внутренняя флексия, глагольное согласование и падежные аффиксы",,
+H-2-8,H-2,"Verbal agreement, case affixes and function words","Глагольное согласование, падежные аффиксы и служебные слова",,
+H-2-9,H-2,"Verbal agreement, pronominal reprise, case affixes, and function words","Глагольное согласование, местоименная реприза, падежные аффиксы и служебные слова",,
+H-2-10,H-2,"Verbal agreement, function words, object pronouns, and verbal pronouns","Глагольное согласование, служебные слова, объектная форма личных местоимений и приглагольные местоимения",,
+H-2-11,H-2,"Object pronouns, function words, case affixes, and verbal agreement","Объектная форма местоимений, служебные слова, падежные аффиксы и глагольное согласование",,
+H-2-12,H-2,"Subject and object personal pronouns and word order",Субъектная и объектная форма личных местоимений и порядок слов,,
+H-2-13,H-2,"Case affixes, verbal agreement, and word order","Падежные аффиксы, глагольное согласование и порядок слов",,
+H-2-14,H-2,"Subject and object personal pronouns, prepositions, and word order","Субъектная и объектная форма личных местоимений, предлоги и порядок слов",,
+H-2-15,H-2,"Subject and object personal pronouns, prepositions, verbal agreement, and word order","Субъектная и объектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",,
+H-2-16,H-2,"Subject and object personal pronouns, verbal agreement, and word order","Субъектная и объектная форма личных местоимений, глагольное согласование и порядок слов",,
+H-2-17,H-2,"Subject and object personal pronouns, prepositions, and verbal agreement","Субъектная и объектная форма личных местоимений, предлоги и глагольное согласование",,
+H-2-18,H-2,"Case affixes, subject and object personal pronouns, prepositions, and verbal agreement","Падежные аффиксы, субъектная и объектная форма личных местоимений, предлоги и глагольное согласование",,
+H-2-19,H-2,"Case affixes, subject and object personal pronouns, prepositions, verbal agreement, and word order","Падежные аффиксы, субъектная и объектная форма личных местоимений, предлоги, глагольное согласование и порядок слов",,
+H-2-20,H-2,"Subject and object personal pronouns, case and number flections, prepositions, and verbal agreement","Субъектная и объектная форма местоимений, падежно-числовые флексии, предлоги и глагольное согласование",,
+H-3-1,H-3,Absolutive,Абсолютив,,
+H-3-2,H-3,Genitive,Генитив,,
+H-3-3,H-3,Oblique,Косвенный падеж,,
+H-3-4,H-3,Nominative,Номинатив,,
+H-3-5,H-3,Partitive,Партитив,,
+H-3-6,H-3,Instrumental,Инструменталис,,
+H-3-7,H-3,Translative,Транслатив,,
+H-3-8,H-3,Essive,Эссив,,
+H-3-9,H-3,Nominative or oblique,Номинатив или косвенный падеж,,
+H-3-10,H-3,Nominative or partitive,Номинатив или партитив,,
+H-3-11,H-3,Nominative or rhemative,Номинатив или рематив,,
+H-3-12,H-3,Nominative or instrumental,Номинатив или инструменталис,,
+H-3-13,H-3,Translative or essive,Транслатив или эссив,,
+H-3-14,H-3,Caseless form,Общий падеж,,
+H-4-1,H-4,Ablative,Аблатив,,
+H-4-2,H-4,Illative,Иллатив,,
+H-4-3,H-4,Genitive,Генитив,,
+H-4-4,H-4,Dative,Датив,,
+H-4-5,H-4,Comitative,Комитатив,,
+H-4-6,H-4,Oblique,Косвенный,,
+H-4-7,H-4,Locative,Локатив,,
+H-4-8,H-4,Possessive,Посессив,,
+H-4-9,H-4,Ergative,Эргатив,,
+H-4-10,H-4,Locative or dative,Локатив или датив,,
+H-4-11,H-4,Genitive or dative,Генитив или датив,,
+H-4-12,H-4,Nominative or genitive,Номинатив или генитив,,
+H-4-13,H-4,Genitive or ablative,Генитив или аблатив,,
+H-4-14,H-4,Genitive-accusative,Генитив-аккузатив,,
+H-5-1,H-5,Verbs of possession,Глаголы обладания,,
+H-5-2,H-5,Possessive particles,Посессивные частицы,,
+H-5-3,H-5,Possessive affixes,Посессивные аффиксы,,
+H-5-4,H-5,Possessive pronouns,Посессивные местоимения,,
+H-5-5,H-5,Adpositions,Послелоги и предлоги,,
+H-5-6,H-5,Possessive adjectives,Посессивные прилагательные,,
+H-5-7,H-5,Apposition,Соположение,,
+H-5-8,H-5,Possessive declension,Посессивное склонение,,
+H-5-9,H-5,Possessive affixes and possessive pronouns,Посессивные аффиксы и посессивные местоимения,,
+H-5-10,H-5,Possessive pronominal enclitics and possessive pronouns,Посессивные местоименные энклитики и посессивные местоимения,,
+H-5-11,H-5,Apposition and prepositions,Соположение и предлоги,,
+H-5-12,H-5,Possessive particles and reflexive pronouns,Посессивные частицы и возвратные местоимения,,
+H-5-13,H-5,"Apposition, pronouns and pronominal enclitics","Соположение, местоимения и местоименные энклитики",,
+H-5-14,H-5,"Apposition, possessive pronouns, possessive adjectives and possessive affixes","Соположение, притяжательное местоимение, притяжательные прилагательные и притяжательные аффиксы",,
+H-5-15,H-5,"Apposition, possessive affixes and prepositions","Соположение, посессивные аффиксы и предлоги",,
+H-5-16,H-5,Possessive adjectives and pronouns,Посессивные прилагательные и местоимения,,
+H-5-17,H-5,"Possessive adjectives, pronouns and affixes","Притяжательные прилагательные, местоимения и аффиксы",,
+H-5-18,H-5,Prepositions,Предлоги,,
+H-5-19,H-5,Possessive pronouns and prepositions,Посессивные местоимения и предлоги,,
+H-5-20,H-5,Apposition and postpositions,Соположение и послелоги,,
+H-5-21,H-5,Possessive pronouns and possessive adjectives,Притяжательные местоимения и притяжательные прилагательные,,
+H-5-22,H-5,"Apposition, izafat, and possessive particles","Соположение, изафетная конструкция и посессивные частицы",,
+H-5-23,H-5,Apposition and possessive pronouns,Соположение и посессивные местоимения,,
+H-6-1,H-6,Noun affixes,Именные аффиксы,,
+H-6-2,H-6,Preverbs,Превербы,,
+H-6-3,H-6,Verbal affixes,Глагольные аффиксы,,
+H-6-4,H-6,Spatial adverbs,Наречия места,,
+H-6-5,H-6,Postpositions,Послелоги,,
+H-6-6,H-6,Prepositions,Предлоги,,
+H-6-7,H-6,Adpositional constructions,Предложно/послеложно-именные конструкции,,
+H-6-8,H-6,Noun affixes and verbal affixes,Именные аффиксы и глагольные аффиксы,,
+H-6-9,H-6,Noun affixes and adpositional constructions,Именные аффкисы и предложно/послеложно-именные конструкции,,
+H-6-10,H-6,Noun affixes and prepositions,Именные аффиксы и предлоги,,
+H-6-11,H-6,Noun affixes and postpositions,Именные аффиксы и послелоги,,
+H-6-12,H-6,Adpositions,Предлоги и послелоги,,
+H-6-13,H-6,Noun affixes and spatial adverbs,Именные аффиксы и наречия места,,
+H-6-14,H-6,Postpositions and function nouns,Послелоги и служебные имена,,
+H-6-15,H-6,Pronouns and locative cases,Местоимения и пространственные падежи,,
+H-6-16,H-6,"Noun affixes, pronominal adverbs and adpositional constructions","Именные аффиксы, местоименные наречия и предложно/послеложно-именные конструкции",,
+H-6-17,H-6,"Noun affixes, adverbs of place, and postpositions","Именные аффиксы, наречия места и послелоги",,
+H-6-18,H-6,"Noun affixes, adverbs of place, and prepositions","Именные аффиксы, наречия места и предлоги",,
+H-6-19,H-6,"Noun affixes, preverbs and postpositions","Именные аффиксы, превербы и послелоги",,
+H-6-20,H-6,"Noun affixes, verbal affixes and postpositions","Именные аффиксы, глагольные аффиксы и послелоги",,
+H-6-21,H-6,Noun affixes and adpositions,"Именные аффиксы, предлоги и послелоги",,
+H-6-22,H-6,"Pronouns, pronominal adverbs, locative cases, postpositions","Местоимения, местоименные наречия, пространственные падежи и послелоги",,
+H-6-23,H-6,"Noun affixes, adpositions and internal flection","Именные аффиксы, предлоги, послелоги и внутренняя флексия",,
+H-6-24,H-6,"Pronouns, pronominal adverbs, locative cases, adpositions","Местоимения, местоименные наречия, пространственные падежи, предлоги/ послелоги",,
+H-6-25,H-6,Preverbs and adverbs,Превербы и наречия,,
+H-6-26,H-6,"Locative cases, prepositions, and pronouns","Пространственные падежи, предлоги и местоимения",,
+H-6-27,H-6,Adverbs and prepositional constructions,Наречия и предложные конструкции,,
+H-6-28,H-6,Pronouns,Местоимения,,
+H-6-29,H-6,"Nouns affixes, prepositions, adverbs and pronouns","Именные аффиксы, предлоги, наречия и местоимения",,
+H-6-30,H-6,"Prepositional constructions, pronouns and adverbs","Предложные конструкции, местоимения и наречия",,
+H-6-31,H-6,"Adverbs, pronouns, verb prefixes, and prepositions","Наречия, местоимения, глагольные префиксы и предлоги",,
+H-6-32,H-6,Adverbs and pronouns,Наречия и предлоги,,
+H-6-33,H-6,Pronouns and adverbs,Местоимения и наречия,,
+H-6-34,H-6,"Pronouns, adverbs, and prepositions","Местоимения, наречия и предлоги",,
+H-6-35,H-6,Adverbs and prepositional-nominal constructions,Наречия и предложно-именные конструкции,,
+H-6-36,H-6,"Nominal affixes, spatial adverbs, postpositions, and particles","Именные аффиксы, наречия места, послелоги и частицы",,
+H-7-1,H-7,Marked,Маркированное,,
+H-7-2,H-7,Unmarked,Немаркированное,,
+H-8-1,H-8,Same,Одинаковое,,
+H-8-2,H-8,Different,Различное,,
+H-9-1,H-9,Present,Присутствуют,,
+H-9-2,H-9,Absent,Отсутствуют,,
+I-1-1,I-1,Category of voice is absent,Категория залога отсутствует,,
+I-1-2,I-1,Auxiliary verb,Вспомогательный глагол,,
+I-1-3,I-1,Morphonological alternation,Значимое морфонологическое чередование,,
+I-1-4,I-1,Affixes,Аффиксы,,
+I-1-5,I-1,Function words,Служебные слова,,
+I-1-6,I-1,Auxiliary verb and affixes,Вспомогательный глагол и аффиксы,,
+I-1-7,I-1,Affixes and function words,Аффиксы и служебные слова,,
+I-1-8,I-1,Morphonological alternation and function words,Значимое морфонологическое чередование и служебные слова,,
+I-1-9,I-1,"Auxiliary verb, affixes and function words","Вспомогательный глагол, аффиксы и служебные слова",,
+I-1-10,I-1,Auxiliary verb + participle and affixes,Вспомогательный глагол + причастие и аффиксы,,
+I-1-11,I-1,Auxiliary verb + participle and reflexive pronoun,Вспомогательный глагол + причастие и возвратное местоимение,,
+I-1-12,I-1,Auxiliary verb + participle and reflexive pronouns,Вспомогательный глагол + причастие и возвратные местоимения,,
+I-1-13,I-1,Auxiliary verb + participle and reflexive particles,Вспомогательный глагол + причастие и возвратные частицы,,
+I-1-14,I-1,Auxiliary verb + participle and personal-reflexive pronoun,Вспомогательный глагол + причастие и лично-возвратное местоимение,,
+I-1-15,I-1,Passive participle,Страдательное причастие,,
+I-1-16,I-1,Morphonological alternation and affixes,Значимое морфонологическое чередование и аффиксы,,
+I-2-1,I-2,Present,Присутствует,,
+I-2-2,I-2,Absent,Отсутствует,,
+I-3-1,I-3,Passive and causative,Пассив и каузатив,,
+I-3-2,I-3,Passive and reflexive,Пассив и рефлексив,,
+I-3-3,I-3,Causative and reflexive,Каузатив и рефлексив,,
+I-3-4,I-3,Causative and reciprocal,Каузатив и реципрок,,
+I-3-5,I-3,Middle and causative,Медий и каузатив,,
+I-3-6,I-3,Passive and reciprocal,Пассив и реципрок,,
+I-3-7,I-3,Reflexive and reciprocal/ reflexive and causative,Рефлексив и реципрок/ рефлексив и каузатив,,
+I-3-8,I-3,Reflexive and causative/ causative and reciprocal,Рефлексив и каузатив/ каузатив и реципрок,,
+I-3-9,I-3,Causative and passive/reciprocal,Каузатив и пассив/реципрок,,
+I-4-1,I-4,Absent,Отсутствует,,
+I-4-2,I-4,Middle and causative,Медий и каузатив,,
+I-4-3,I-4,Middle and passive,Медий и пассив,,
+I-4-4,I-4,Passive and reflexive,Пассив и рефлексив,,
+I-4-5,I-4,"Passive, reflexive and reciprocal","Пассив, рефлексив и реципрок",,
+I-4-6,I-4,"Passive, reflexive, middle and reciprocal","Пассив, рефлексив, медий и реципрок",,
+I-4-7,I-4,Potential and passive,Потенциалис и пассив,,
+I-4-8,I-4,Passive and causative,Пассив и каузатив,,
+I-4-9,I-4,Passive and decausative,Пассив и декаузатив,,
+I-5-1,I-5,No tense opposition,Отсутствуют,,
+I-5-2,I-5,Future and non-future,Будущее и небудущее,,
+I-5-3,I-5,"Future, non-future and past","Будущее, небудущее и прошедшее",,
+I-5-4,I-5,Present and non-present,Настоящее и ненастоящее,,
+I-5-5,I-5,Present and past,Настоящее и прошедшее,,
+I-5-6,I-5,Present-future and past,Настоящее-будущее и прошедшее,,
+I-5-7,I-5,"Present, past and future","Настоящее, прошедшее и будущее",,
+I-5-8,I-5,"Present, past and present-future","Настоящее, прошедшее и настоящее-будущее",,
+I-5-9,I-5,"Present, present-future, future, past","Настоящее, настоящее-будущее, будущее и прошедшее",,
+I-5-10,I-5,Past and non-past,Прошедшее и непрошедшее,,
+I-5-11,I-5,"Present-future, future and past","Настоящее-будущее, будущее и прошедшее",,
+I-6-1,I-6,Separate,Раздельное,,
+I-6-2,I-6,Syncretic,Синкретическое,,
+I-6-3,I-6,Separate and syncretic,Раздельное и синкретическое,,
+I-7-1,I-7,Affixes,Аффиксы,,
+I-7-2,I-7,Function words,Служебные слова,,
+I-7-3,I-7,Auxiliary verbs and affixes,Вспомогательный глагол и аффиксы,,
+I-7-4,I-7,Affixes and function words,Аффиксы и служебные слова,,
+I-7-5,I-7,"Auxiliary verbs, affixes and function words","Вспомогательный глагол, аффиксы и служебные слова",,
+I-7-6,I-7,Tone alternations,Тоновые чередования,,
+I-8-1,I-8,Absent,Отсутствует,,
+I-8-2,I-8,Aspect and tense,Вид и время,,
+I-8-3,I-8,Tense and modality,Время и модальность,,
+I-8-4,I-8,Person and number,Лицо и число,,
+I-8-5,I-8,Aspect and modality,Вид и модальность,,
+I-8-6,I-8,Person and tense,Лицо и время,,
+I-8-7,I-8,"Tense, aspect and modality","Время, вид и модальность",,
+I-8-8,I-8,"Tense, person and number","Время, лицо, число",,
+I-8-9,I-8,"Person, number and gender/ aspect and tense","Лицо, число и род/ вид и время",,
+I-8-10,I-8,Tense and negation,Время и отрицание,,
+I-8-11,I-8,"Person, number, gender, aspect, tense, and modality","Лицо, число, род, вид, время и модальность",,
+I-8-12,I-8,"Aspect, tense, person, and number","Вид, время, лицо и число",,
+I-8-13,I-8,"Tense, aspect, modality, and mood","Время, вид, модальность и наклонение",,
+I-8-14,I-8,"Tense, aspect, and modality (mood)","Время, вид и модальность (наклонение)",,
+I-8-15,I-8,"Tense, aspect, and polarity","Время, вид и полярность",,
+I-8-16,I-8,"Tense, aspect, modality, and polarity","Время, вид, модальность и полярность",,
+I-8-17,I-8,"Person, number, tense, aspect, and modality (mood)","Лицо, число, время, вид и модальность (наклонение)",,
+I-8-18,I-8,"Person, number, tense, aspect, voice, and modality (mood)","Лицо, число, время, вид, залог и модальность (наклонение)",,
+I-8-19,I-8,"Person, number, gender, tense, aspect, and modality (mood)","Лицо, число, род, время, вид и модальность (наклонение)",,
+I-8-20,I-8,Gender and number,Род и число,,
+I-8-21,I-8,"Gender, person, and number","Род, лицо и число",,
+I-8-22,I-8,"Tense and modality, person and number","Время и модальность, лицо и число",,
+I-9-1,I-9,Absent,Отсутствует,,
+I-9-2,I-9,Only in singular,Только в единственном числе,,
+I-9-3,I-9,In singular and plural,В единственном и множественном числе,,
+I-9-4,I-9,Only third person singular,Только 3 лицо единственное число,,
+I-9-5,I-9,"In singular, dual and plural","В единственном, двойственном и множественном числе",,
+I-9-6,I-9,Only in plural,Только во множественном числе,,
+I-10-1,I-10,Absent,Отсутствует,,
+I-10-2,I-10,Affix,Аффикс,,
+I-10-3,I-10,Function word,Служебное слово,,
+I-10-4,I-10,Morphonological alternation,Значимое морфологическое чередование,,
+I-10-5,I-10,Special type of agreement,Особый тип согласования,,
+I-10-6,I-10,Change of conjugation type,Изменение типа спряжения,,
+I-10-7,I-10,Affix and function word,Аффикс и служебное слово,,
+I-10-8,I-10,Affix and special type of agreement,Аффикс и особый тип согласования,,
+I-10-9,I-10,Function word and special type of agreement,Служебное слово и особый тип согласования,,
+I-10-10,I-10,Morphonological alternation and change of conjugation type,Значимое морфологическое чередование и изменение типа спряжения,,
+I-10-11,I-10,Affix and meaningful morphonological alternation,Аффикс и значимое морфологическое чередование,,
+J-1-1,J-1,Absent,Отсутствуют,,
+J-1-2,J-1,Quasi-pronoun,Квазиместоимения,,
+J-1-3,J-1,Pronominal adverbs,Местоименные наречия,,
+J-1-4,J-1,Pronominal prepositions,Местоименные предлоги,,
+J-1-5,J-1,Pronominal adjectives,Местоименные прилагательные,,
+J-1-6,J-1,Pronominal numerals,Местоименные числительные,,
+J-1-7,J-1,Pronominal nouns,Местоименные существительные,,
+J-1-8,J-1,Pronouns-nouns,Местоимения-существительные,,
+J-1-9,J-1,Pronominal adverbs and adjectives,Местоименные наречия и прилагательные,,
+J-1-10,J-1,"Pronominal adverbs, adjectives and nouns","Местоименные наречия, прилагательные и существительные",,
+J-1-11,J-1,Pronouns-nouns and pronouns-adjectives,Местоимения-существительные и местоимения-прилагательные,,
+J-2-1,J-2,Demonstrative pronouns,Указательные местоимения,,
+J-2-2,J-2,Preverbs,Превербы,,
+J-2-3,J-2,Noun affixes,Именные аффиксы,,
+J-2-4,J-2,Adverbs,Наречия,,
+J-2-5,J-2,Postpositions,Послелоги,,
+J-2-6,J-2,Prepositions,Предлоги,,
+J-2-7,J-2,Particles,Частицы,,
+J-2-8,J-2,Demonstrative pronouns and particles,Указательные местоимения и частицы,,
+J-2-9,J-2,Demonstrative pronouns and preverbs,Указательные местоимения и превербы,,
+J-2-10,J-2,Demonstrative pronouns and prepositions,Указательные местоимения и предлоги,,
+J-2-11,J-2,Demonstrative pronouns and adverbs,Указательные местоимения и наречия,,
+J-2-12,J-2,Demonstrative pronouns and articles,Указательные местоимения и артикли,,
+J-2-13,J-2,Nominal afffixes and postpositions,Именные аффиксы и послелоги,,
+J-2-14,J-2,Demonstrative pronouns and nominal affixes,Указательные местоимения и именные аффиксы,,
+J-2-15,J-2,Demonstrative pronouns and postpositions,Указательные местоимения и послелоги,,
+J-2-16,J-2,Demonstrative pronouns and adpositions,"Указательные местоимения, предлоги и послелоги",,
+J-2-17,J-2,"Demonstrative pronouns, postpositions and adverbs","Указательные местоимения, послелоги и наречия",,
+J-3-1,J-3,Directionals,Дирекционалы,,
+J-3-2,J-3,Postpositions,Послелоги,,
+J-3-3,J-3,Prepositions,Предлоги,,
+J-3-4,J-3,Postverbs,Поствербы,,
+J-3-5,J-3,Function nouns,Служебные имена,,
+J-3-6,J-3,Particles,Частицы,,
+J-3-7,J-3,Directionals and prepositions,Дирекционалы и предлоги,,
+J-3-8,J-3,Postpositions and function nouns,Послелоги и служебные имена,,
+J-3-9,J-3,Adpositions,Предлоги и послелоги,,
+J-3-10,J-3,Adpositions and particles,"Послелоги, предлоги и частицы",,
+J-3-11,J-3,Preverbs and postpositions,Превербы и послелоги,,
+J-3-12,J-3,Preverbs,Превербы,,
+J-3-13,J-3,Particles and prepositions,Частицы и предлоги,,
+J-4-1,J-4,Adjectives,Прилагательные,,
+J-4-2,J-4,Adverbial participles,Деепричастия,,
+J-4-3,J-4,Adverbs,Наречия,,
+J-4-4,J-4,Pronouns,Местоимения,,
+J-4-5,J-4,Adjectives and adverbs,Прилагательные и наречия,,
+J-4-6,J-4,Pronouns and adverbs,Местоимения и наречия,,
+J-5-1,J-5,Absent,Отсутствует,,
+J-5-2,J-5,Noun affixes,Именные аффиксы,,
+J-5-3,J-5,Definite/indefinite verb conjugation,Определенное/неопределенное спряжение глагола,,
+J-5-4,J-5,Special verb form,Особая глагольная форма,,
+J-5-5,J-5,Special case form,Особая падежная форма,,
+J-5-6,J-5,Special form of class marker,Особая форма классного показателя,,
+J-5-7,J-5,Special verb form and noun affixes,Особая глагольная форма и именные аффиксы,,
+J-5-8,J-5,Special form of class marker and noun affixes,Особая форма классного показателя и именные аффиксы,,
+J-5-9,J-5,Different case affixes for definite and indefinite objects,Различное оформление падежа у определенного и неопределенного объекта,,
+J-5-10,J-5,Different cases for definite and indefinite objects,Различное падежное оформление опреленного и неопределенного объекта,,
+J-5-11,J-5,Definite/indefinite noun declension,Определенное/неопределенное склонение имен,,
+J-5-12,J-5,Different case affixes for definite and indefinite objects and special verb form,Различное оформление падежа у определенного и неопределенного объекта и особая глагольная форма,,
+J-5-13,J-5,"Different case affixes for definite and indefinite objects and subjects, and definite/indefinite verb conjugation",Различное падежное оформление определенного и неопределенного субъекта/объекта и определенное-неопределенное спряжение глагола,,
+J-5-14,J-5,Noun affixes and definite/indefinite verb conjugation,Именные аффиксы и определенное/неопределенное спряжение,,
+J-6-1,J-6,Articles,Артикли,,
+J-6-2,J-6,Pronouns,Местоимения,,
+J-6-3,J-6,Postpositions,Послелоги,,
+J-6-4,J-6,Adverbs,Наречия,,
+J-6-5,J-6,Adjectives,Прилагательные,,
+J-6-6,J-6,Participles,Причастия,,
+J-6-7,J-6,Numerals,Числительные,,
+J-6-8,J-6,Particles,Частицы,,
+J-6-9,J-6,Prepositions,Предлоги,,
+J-6-10,J-6,Postpositions and particles,Послелоги и частицы,,
+J-6-11,J-6,Postpositions and pronouns,Послелоги и местоимения,,
+J-6-12,J-6,Prepositions and pronouns,Предлоги и местоимения,,
+J-6-13,J-6,Articles and adjectives,Артикли и прилагательные,,
+J-6-14,J-6,Pronouns and adjectives,Местоимения и прилагательные,,
+J-6-15,J-6,Articles and numerals,Артикли и числительные,,
+J-6-16,J-6,Numerals and pronouns,Числительные и местоимения,,
+J-6-17,J-6,Adjectives and numerals,Прилагательные и числительные,,
+J-6-18,J-6,"Postpositions, pronouns and numerals","Послелоги, местоимения и числительные",,
+J-6-19,J-6,"Articles, adjectives and participles","Артикли, прилагательные и причастия",,
+J-6-20,J-6,"Pronouns, adjectives and numerals","Местоимения, прилагательные и числительные",,
+J-6-21,J-6,"Articles, pronouns and numerals","Артикли, местоимения и числительные",,
+J-6-22,J-6,"Articles, adjectives, participles and numerals","Артикли, прилагательные, причастия и числительные",,
+J-6-23,J-6,"Articles, prepositions, pronouns and numerals","Артикли, предлоги, местоимения и числительные",,
+J-7-1,J-7,In noun phrase,В именной группе,,
+J-7-2,J-7,In verb phrase,В глагольной группе,,
+J-7-3,J-7,In pronouns,В местоимениях,,
+J-7-4,J-7,In noun phrase and in verb phrase,В именной и глагольной группах,,
+J-7-5,J-7,In noun phrase and in pronouns,В именной группе и в местоимениях,,
+J-7-6,J-7,In verb phrase and in pronouns,В глагольной группе и в местоимениях,,
+J-7-7,J-7,In quasi-pronouns and in pronouns,В квазиметоимениях и в местоимениях,,
+J-7-8,J-7,In pronouns and syntactically,В местоимениях и синтаксически,,
+J-7-9,J-7,"In verb group, in pronouns and syntactically","В глагольной группе, в местоимениях и синтаксически",,
+J-7-10,J-7,"In noun group, in verb group and in pronouns",В именной и глагольной группах и в местоимениях,,
+J-8-1,J-8,Negative affixes,Отрицательные аффиксы,,
+J-8-2,J-8,Prohibitive affixes,Запретительные аффиксы,,
+J-8-3,J-8,Negative particles,Отрицательные частицы,,
+J-8-4,J-8,Negative verbs,Отрицательные глаголы,,
+J-8-5,J-8,Negative pronouns,Отрицательные местоимения,,
+J-8-6,J-8,Negative pronouns and negative particles,Отрицательные местоимения и частицы,,
+J-8-7,J-8,Negative particles and negative verbs,Отрицательные частицы и глаголы,,
+J-8-8,J-8,Prohibitive and negative particles,Запретительные и отрицательные частицы,,
+J-8-9,J-8,Negative particles and negative affixes,Отрицательные частицы и аффиксы,,
+J-8-10,J-8,"Negative particles, negative verbs and caritive affixes","Отрицательные частицы и глаголы, каритивные аффиксы",,
+J-8-11,J-8,"Negative pronouns, negative adverbs and negative verbs","Отрицательные местоимения, наречия и глаголы",,
+J-8-12,J-8,"Negative particles, negative pronouns and negative conjugation of verbs","Отрицательные частицы и местоимения, отрицательное спряжение глаголов",,
+J-8-13,J-8,Negative and prohibitive affixes,Отрицательные и запретительные аффиксы,,
+J-8-14,J-8,Negative particles and reduplication,Отрицательные частицы и редупликация,,
+J-8-15,J-8,"Negative particles, pronouns and adverbs","Отрицательные частицы, местоимения и наречия",,
+J-8-16,J-8,"Negative particles, prefixes, conjunctions, and pronouns","Отрицательные частицы, префиксы, союзы и местоимения",,
+J-8-17,J-8,"Negative prefixes, particles, and pronouns","Отрицательные префиксы, частицы и местоимения",,
+J-9-1,J-9,Incorporation,Инкорпорация,,
+J-9-2,J-9,Framing,Обрамление,,
+J-9-3,J-9,Preposition,Препозиция,,
+J-9-4,J-9,Postposition,Постпозиция,,
+J-9-5,J-9,Incorporation and postposition,Инкорпорация или постпозиция,,
+J-9-6,J-9,Incorporation and preposition,Инкорпорация или препозиция,,
+J-9-7,J-9,Framing and preposition,Обрамление или препозиция,,
+J-9-8,J-9,Framing and postposition,Обрамление или постпозиция,,
+J-9-9,J-9,Preposition and postposition,Препозиция или постпозиция,,
+J-9-10,J-9,"Incorporation, postpostion and preposition","Инкорпорация, постпозиция или препозиция",,
+J-9-11,J-9,"Framing, preposition and postposition","Обрамление, препозиция или постпозиция",,
+K-1-1,K-1,Pronouns are not inflected,Местоимения не склоняются,,
+K-1-2,K-1,Case affixes of pronouns are the same as noun case affixes,Падежные местоименные аффиксы совпадают с именными,,
+K-1-3,K-1,Pronominal inflection type,Собственный тип склонения,,
+K-2-1,K-2,No articles,Артикли отсутствуют,,
+K-2-2,K-2,Only indefinite,Только неопределенные,,
+K-2-3,K-2,Only definite,Только определенные,,
+K-2-4,K-2,Definite and indefinite,Определенные и неопределенные,,
+K-2-5,K-2,"Definite, indefinite and partitive","Определенные, неопределенные и партитивные",,
+K-3-1,K-3,Preposition,Препозиция,,
+K-3-2,K-3,Postposition,Постпозиция,,
+K-3-3,K-3,Preposition and postposition,Препозиция и постпозиция,,
+K-4-1,K-4,Single article preceding the phrase,Единый артикль для всей именной группы,,
+K-4-2,K-4,Articles preceding each word,Собственный артикль перед каждым словом,,
+K-5-1,K-5,Animacy,Одушевленность,,
+K-5-2,K-5,Definiteness,Определенность,,
+K-5-3,K-5,Animacy and gender,Одушевленность и род,,
+K-5-4,K-5,Definiteness and case,Определенность и падеж,,
+K-5-5,K-5,Definiteness and number,Определенность и число,,
+K-5-6,K-5,Definiteness and gender,Определенность и род,,
+K-5-7,K-5,"Animacy, case and number","Одушевленность, падеж и число",,
+K-5-8,K-5,"Definiteness, case and gender","Определенность, падеж и род",,
+K-5-9,K-5,"Definiteness, gender and number","Определенность, род и число",,
+K-5-10,K-5,"Case, gender and number","Падеж, род и число",,
+K-5-11,K-5,"Definiteness, case, gender and number","Определенность, падеж, род и число",,
+K-5-12,K-5,"Definiteness, possessivity, case, gender and number","Определенность, посессивность, падеж, род и число",,
+K-6-1,K-6,Single type of conjugation,Единый тип спряжения,,
+K-6-2,K-6,Two types of conjugation,Два типа спряжения,,
+K-6-3,K-6,Three types of conjugation,Три типа спряжения,,
+K-6-4,K-6,Four types of conjugation,Четыре типа спряжения,,
+K-6-5,K-6,Six types of conjugation,Шесть типов спряжения,,
+K-6-6,K-6,Forteen types of conjugation,Четырнадцать типов спряжения,,
+K-7-1,K-7,No verb agreement,Глагольное согласование отсутствует,,
+K-7-2,K-7,Subject,Субъектное,,
+K-7-3,K-7,Subject and object,Субъектное и объектное,,
+K-7-4,K-7,Subject and subject-object,Субъектное и субъектно-объектное,,
+K-8-1,K-8,Absent,Отсутствуют,,
+K-8-2,K-8,Case,Падеж,,
+K-8-3,K-8,Augmentation,Порода,,
+K-8-4,K-8,Gender,Род,,
+K-8-5,K-8,Number,Число,,
+K-8-6,K-8,Gender and number,Род и число,,
+K-8-7,K-8,"Gender, number and case","Род, число и падеж",,
+K-8-8,K-8,Number and case,Число и падеж,,
+K-9-1,K-9,Present-past,Настоящее-прошедшее,,
+K-9-2,K-9,Future,Будущее,,
+K-9-3,K-9,Present,Настоящее,,
+K-9-4,K-9,Past,Прошедшее,,
+K-9-5,K-9,Present-future,Настоящее-будущее,,
+K-9-6,K-9,Present and past,Настоящее и прошедшее,,
+K-9-7,K-9,Past and future,Прошедшее и будущее,,
+K-9-8,K-9,Present-future and past,Настоящее-будущее и прошедшее,,
+K-9-9,K-9,Present-past and future,Настоящее-прошедшее и будущее,,
+K-9-10,K-9,"Present, past and future","Настоящее, прошедшее и будущее",,
+K-9-11,K-9,"Present-past, past and future","Настоящее-прошедшее, прошедшее и будущее",,
+K-9-12,K-9,"Present, present-future, future and past","Настоящее, настоящее-будущее, будущее и прошедшее",,
+K-10-1,K-10,Absent,Отсутствуют,,
+K-10-2,K-10,Degrees of comparison,Степень сравнения,,
+K-11-1,K-11,Absent,Отсутствуют,,
+K-11-2,K-11,Person,Лицо,,
+K-11-3,K-11,Animacy,Одушевленность,,
+K-11-4,K-11,Case,Падеж,,
+K-11-5,K-11,Gender,Род,,
+K-11-6,K-11,Number,Число,,
+K-11-7,K-11,Gender and number,Род и число,,
+K-11-8,K-11,Number and case,Число и падеж,,
+K-11-9,K-11,"Animacy, person and case","Одушевленность, лицо и падеж",,
+K-11-10,K-11,"Gender, number and case","Род, число и падеж",,
+K-11-11,K-11,"Gender, number and definiteness","Род, число и определенность",,
+K-11-12,K-11,"Gender, number and state","Род, число и состояние",,
+K-11-13,K-11,"Person, case, number and gender","Лицо, падеж, число и род",,
+K-11-14,K-11,"Gender, number, case and definiteness","Род, число, падеж и определенность",,
+K-11-15,K-11,"Animacy, person, case and number","Одушевленность, лицо, падеж и число",,
+K-11-16,K-11,"Animacy, person, case, number and gender","Одушевленность, лицо, падеж, число и род",,
+K-11-17,K-11,"Animacy, definiteness, case, number and gender","Одушевленность, определенность, падеж, число и род",,
+K-11-18,K-11,"Animacy, person, case, number, gender and possessivity","Одушевленность, лицо, падеж, число, род и посессивность",,
+K-11-19,K-11,"Agreement class, number, and case","Согласовательный класс, число и падеж",,
+K-11-20,K-11,Agreement class and number,Согласовательный класс и число,,
+K-11-21,K-11,"Gender, animacy, number, and case","Род, одушевленность, число и падеж",,
+K-12-1,K-12,Absent,Отсутствует,,
+K-12-2,K-12,Person and number,Лица и числа,,
+K-12-3,K-12,Agreement class and case,Согласовательного класса и падежа,,
+K-12-4,K-12,Number and case,Числа и падежа,,
+K-12-5,K-12,Gender and number,Рода и числа,,
+K-12-6,K-12,Number and agreement class,Числа и согласовательного класса,,
+K-12-7,K-12,"Gender, number and case","Рода, числа и падежа",,
+K-12-8,K-12,"Agreement class, number and case","Согласовательного класса, числа и падежа",,
+K-12-9,K-12,Agreement class and state,Согласовательного класса и состояния,,
+K-12-10,K-12,"Gender, number, case, animacy, and person","Рода, числа , падежа, одушевленности и личности",,
+K-13-1,K-13,Always present,Всегда присутствует,,
+K-13-2,K-13,Absent,Отсутствует,,
+K-13-3,K-13,Only in preposition,Только в препозиции,,
+K-13-4,K-13,Optional,Факультативно,,
+K-14-1,K-14,No attributive agreement,Атрибутивное согласование отсутствует,,
+K-14-2,K-14,In class,По классу,,
+K-14-3,K-14,In person,По лицу,,
+K-14-4,K-14,In gender,По роду,,
+K-14-5,K-14,In number,По числу,,
+K-14-6,K-14,In (in)definiteness and gender,По (не)определенности и роду,,
+K-14-7,K-14,In person and number,По лицу и числу,,
+K-14-8,K-14,In case ans number,По падежу и числу,,
+K-14-9,K-14,In gender and number,По роду и числу,,
+K-14-10,K-14,In class and number,По классу и числу,,
+K-14-11,K-14,"In case, gender and number","По падежу, роду и числу",,
+K-14-12,K-14,"In person, gender and number","По лицу, роду и числу",,
+K-14-13,K-14,"In person, case and number","По лицу, падежу и числу",,
+K-14-14,K-14,"In person, case and gender","По лицу, падежу и роду",,
+K-14-15,K-14,"In gender, number and case","По роду, числу и падежу",,
+K-14-16,K-14,"In (in)definiteness, gender and number","По (не)определенности, роду и числу",,
+K-14-17,K-14,"In humanness, person and number","По (не)личности, лицу и числу",,
+K-14-18,K-14,"In gender, state and number","По роду, состоянию и числу",,
+K-14-19,K-14,"In class, type of stem and number","По классу, типу основы и числу",,
+K-14-20,K-14,"In person, case, gender and number","По лицу, падежу, роду и числу",,
+K-14-21,K-14,"In person, case, gender, and (in)definiteness","По лицу, падежу, роду и (не)определенности",,
+K-14-22,K-14,"In case, number, gender, (in)definiteness, and (in)animacy","По падежу, числу, роду, (не)определенности, (не)одушевленность.",,
+K-14-23,K-14,"In gender, number, case, and (in)animacy","По роду, числу, падежу и (не)личности",,
+K-15-1,K-15,Absent,Отсутствуют,,
+K-15-2,K-15,Case,Падеж,,
+K-15-3,K-15,(In)definiteness,Определенность/ неопределенность,,
+K-15-4,K-15,Number,Число,,
+K-15-5,K-15,Possessivity,Посессивность,,
+K-15-6,K-15,Honorific/neutral forms,Гонорифическая и нейтральная формы,,
+K-15-7,K-15,Case and number,Падеж и число,,
+K-15-8,K-15,(In)definiteness and number,Определенность и число,,
+K-15-9,K-15,Number and state,Число и состояние,,
+K-15-10,K-15,Possessivity and honorific/neutral forms,Посессивность и гонорифическая/нейтральная формы,,
+K-15-11,K-15,"Case, possessivity and number","Падеж, посессивность и число",,
+K-15-12,K-15,"(In)definiteness, number and state","Определенность, число и состояние",,
+K-15-13,K-15,"Possessivity, (in)definiteness, and number","Посессивность, определенность, число",,
+K-15-14,K-15,"(In)definiteness, number, and case","Определенность, число, падеж",,
+K-16-1,K-16,Absent,Отсутствует,,
+K-16-2,K-16,Person and number,Лица и числа,,
+K-16-3,K-16,Person and number of the possessee,Лица и числа обладаемого,,
+K-16-4,K-16,Case and definiteness,Падежа и определенности,,
+K-16-5,K-16,Case and agreement class,Падежа и согласовательного класса,,
+K-16-6,K-16,Number and case,Числа и падежа,,
+K-16-7,K-16,Number and agreement class,Числа и согласовательного класса,,
+K-16-8,K-16,Case and person of possessor,Падежа и лица посессора,,
+K-16-9,K-16,Person and number of possessor,Лица посессора и числа посессора,,
+K-16-10,K-16,"Person, number and possessivity","Лица, числа и посессивности",,
+K-16-11,K-16,"Agreement class, number and case","Согласовательного класса, числа и падежа",,
+K-16-12,K-16,"Agreement class, number and state","Согласовательного класса, числа и состояния",,
+K-16-13,K-16,"Person, number and case","Лица, числа и падежа",,
+K-16-14,K-16,"Agreement class, number, case and definiteness","Согласовательного класса, числа, падежа, определенности",,
+K-16-15,K-16,"Number, case, person and number of possessor","Числа, падежа, лица посессора и числа посессора",,
+K-16-16,K-16,"Agreement class, number, case and animateness","Согласовательного класса, числа, падежа и одушевленности",,
+K-17-1,K-17,Internal flection,Внутренняя флексия,,
+K-17-2,K-17,Affixes,Аффиксы,,
+K-17-3,K-17,Stem truncation and augmentation,Наращение/ усечение основы,,
+K-17-4,K-17,Reduplication,Редупликация,,
+K-17-5,K-17,Internal flection and affixes,Внутренняя флексия и аффиксы,,
+K-17-6,K-17,Reduplication and affixes,Редупликация и аффиксы,,
+K-17-7,K-17,Reduplication and internal flection,Редупликация и внутренняя флексия,,
+K-17-8,K-17,Stem truncation/augmentation and affixes,Наращение/ усечение основы и аффиксы,,
+K-17-9,K-17,Internation inflection and stem truncation/augmentation,Внутренняя флексия и наращение/ усечение основы,,
+K-17-10,K-17,"Internation inflection, stem truncation/augmentation and affixes","Внутренняя флексия, наращение/ усечение основы и аффиксы",,
+K-17-11,K-17,"Reduplication, internal inflection and affixes","Редупликация, внутренняя флексия и аффиксы",,
+K-18-1,K-18,Prefixal-suffixal,Префиксально-суффиксальная,,
+K-18-2,K-18,Mainly or only infixal,Преимущественно или только инфиксальная,,
+K-18-3,K-18,Mainly or only prefixal,Преимущественно или только префиксальная,,
+K-18-4,K-18,Mainly or only suffixal,Преимущественно или только суффиксальная,,
+L-1-1,L-1,Conversion,Конверсия,,
+L-1-2,L-1,Suffix truncation,Деаффиксация,,
+L-1-3,L-1,Reduplication,Редупликация,,
+L-1-4,L-1,Compounding,Словосложение,,
+L-1-5,L-1,Abbreviation,Аббревиация,,
+L-1-6,L-1,Derivation,Аффиксация,,
+L-1-7,L-1,Suffix truncation and compounding,Деаффиксация и словосложение,,
+L-1-8,L-1,Compounding and abbreviation,Словосложение и аббревиация,,
+L-1-9,L-1,Derivation and reduplication,Аффиксация и редупликация,,
+L-1-10,L-1,Conversion and compounding,Конверсия и словосложение,,
+L-1-11,L-1,Reduplication and compounding,Редупликация и словосложение,,
+L-1-12,L-1,Derivation and compounding,Аффиксация и словосложение,,
+L-1-13,L-1,Derivation and internal flection,Аффиксация и внутренняя флексия,,
+L-1-14,L-1,"Derivation, compounding and abbreviation","Аффиксация, словосложение и аббревиация",,
+L-1-15,L-1,"Derivation, conversion and reduplication","Аффиксация, конверсия и редупликация",,
+L-1-16,L-1,"Suffix truncation, compounding and abbreviation","Деаффиксация, словосложение и аббревиация",,
+L-1-17,L-1,"Compounding, abbreviation and reduplication","Словосложение, аббревиация и редупликация",,
+L-1-18,L-1,"Conversion, reduplication and compounding","Конверсия, словосложение и аффиксация",,
+L-1-19,L-1,"Derivation, reduplication and compounding","Аффиксация, редупликация и словосложение",,
+L-1-20,L-1,"Derivation, compounding, conversion and abbreviation","Аффиксация, словосложение, конверсия и аббревиация",,
+L-1-21,L-1,"Derivation, compounding, conversion and reduplication","Аффиксация, словосложение, конверсия и редупликация",,
+L-1-22,L-1,"Ablaut, derivation, compounding and conversion","Аблаут, аффиксация, словосложение и конверсия",,
+L-1-23,L-1,"Derivation, conversion, reduplication, compounding and abbreviation","Аффиксация, конверсия, редупликация, словосложение и аббревиация",,
+L-1-24,L-1,Derivation and conversion,Аффиксация и конверсия,,
+L-1-25,L-1,"Derivation, compounding, conversion, and clipping","Аффиксация, словосложение, конверсия, усечение",,
+L-1-26,L-1,"Affixation, conversion, compounding, abbreviation, reduplication, and clipping","Аффиксация, конверсия, словосложение, аббревиация, редупликация и усечение",,
+L-2-1,L-2,Prefixes,Префиксы,,
+L-2-2,L-2,Suffixes,Суффиксы,,
+L-2-3,L-2,Prefixes and suffixes,Префиксы и суффиксы,,
+L-2-4,L-2,Infixes and suffixes,Инфиксы и суффиксы,,
+L-2-5,L-2,Infixes and prefixes,Инфиксы и префиксы,,
+L-2-6,L-2,"Prefixes, suffixes and postfixes","Префиксы, суффиксы и постфиксы",,
+L-2-7,L-2,"Infixes, prefixes and suffixes","Инфиксы, префиксы и суффиксы",,
+L-2-8,L-2,"Circumfixes, prefixes and suffixes","Конфиксы, префиксы и суффиксы",,
+L-2-9,L-2,"Prefixes, suffixes and transfixes","Префиксы, суффиксы и трансфиксы",,
+L-2-10,L-2,"Infixes, prefixes, suffixes and transfixes","Инфиксы, префиксы, суффиксы и трансфиксы",,
+L-2-11,L-2,"Infixes, prefixes, suprafixes and suffixes","Инфиксы, префиксы, супрафиксы и суффиксы",,
+L-2-12,L-2,"Prefixes, suprafixes, suffixes and confixes","Префиксы, супрафиксы, суффиксы и конфиксы",,
+L-2-13,L-2,"Circumfixes, prefixes, suffixes and infixes","Конфиксы, префиксы, суффиксы и инфиксы",,
+L-2-14,L-2,"Prefixes, infixes, suffixes, postfixes and transfixes","Префиксы, инфиксы, суффиксы, постфиксы и трансфиксы",,
+L-2-15,L-2,"Suffixes, prefixes, circumfixes and transfixes","Суффиксы, префиксы, циркумфиксы и трансфиксы",,
+L-2-16,L-2,"Prefixes, suffixes, and interfixes","Префиксы, суффиксы и интерфиксы",,
+L-2-17,L-2,"Prefixes, suffixes, postfixes, and interfixes","Префиксы, суффиксы, постфиксы и интерфиксы",,
+L-3-1,L-3,Subordination,Только подчинение,,
+L-3-2,L-3,Coordination,Только сочинение,,
+L-3-3,L-3,Coordination and subordination,Сочинение и подчинение,,
+L-3-4,L-3,Apposition and coordination,Аппозиция и сочинение,,
+L-3-5,L-3,Apposition and subordination,Аппозиция и подчинение,,
+L-3-6,L-3,"Apposition, coordination and subordination","Аппозиция, сочинение и подчинение",,
+M-1-1,M-1,Active,Активная,,
+M-1-2,M-1,Direct,Нейтральный,,
+M-1-3,M-1,Accusative,Аккузативная,,
+M-1-4,M-1,Tripartite,Трехчленная,,
+M-1-5,M-1,Ergative,Эргативная,,
+M-1-6,M-1,Austronesian,Тематическая,,
+M-1-7,M-1,Accusative with elements of ergativity,Аккузативная с элементами эргативной,,
+M-1-8,M-1,"Accusative, ergative, and dative","Аккузативная, эргативная и дативная",,
+M-1-9,M-1,Ergative with elements of accusative,Эргативная с элементами аккузативной,,
+M-2-1,M-2,Fixed,Жесткий,,
+M-2-2,M-2,Non-fixed,Свободный,,
+M-3-1,M-3,SVO,SVO,,
+M-3-2,M-3,SOV,SOV,,
+M-3-3,M-3,VSO,VSO,,
+M-3-4,M-3,VOS,VOS,,
+M-3-5,M-3,SVO/ SOV,SVO/ SOV,,
+M-3-6,M-3,SVO/ VSO,SVO/ VSO,,
+M-3-7,M-3,SVO/ VOS,SVO/ VOS,,
+M-3-8,M-3,SVO/ OSV,SVO/ OSV,,
+M-3-9,M-3,SVO/ OVS,SVO/ OVS,,
+M-3-10,M-3,SOV/ VSO,SOV/ VSO,,
+M-3-11,M-3,SOV/ OSV,SOV/ OSV,,
+M-3-12,M-3,VSO/ VOS,VSO/ VOS,,
+M-4-1,M-4,Modifier precedes noun,Определение предшествует определяемому,,
+M-4-2,M-4,Modifier follows noun,Определение следует за определямым,,
+M-4-3,M-4,Not fixed,Не фиксирован,,
+M-4-4,M-4,Preposition and postposition,Препозиция и постпозиция,,
+M-5-1,M-5,Possible,Возможно,,
+M-5-2,M-5,Impossible,Невозможно,,
+N-1-1,N-1,Main clause precedes subordinate clause,Главное предшествует придаточному,,
+N-1-2,N-1,Subordinate clause precedes main clause,Придаточное предшествует главному,,
+N-1-3,N-1,Not fixed,Не фиксирован,,
+N-1-4,N-1,Main clause frames the subordinate clause,Придаточное помещается внутри главного,,
+N-2-1,N-2,Special marking of arguments,Особое оформление именных групп,,
+N-2-2,N-2,Special form of subject,Особое оформление подлежащего,,
+N-2-3,N-2,Special word order,Особый порядок слов,,
+N-2-4,N-2,Special form of predicate,Особое оформление сказуемого,,
+N-3-1,N-3,Finite forms,Финитные формы,,
+N-3-2,N-3,Non-finite forms,Нефинитные формы,,
+N-3-3,N-3,Both finite and non-finite forms possible,Финитные и нефинитные формы,,
+N-4-1,N-4,Clause chaining,Цепочки клауз,,
+N-4-2,N-4,Subordination,Подчинение,,
+N-4-3,N-4,Compounding,Сочинение,,
+N-4-4,N-4,Subordination and compounding,Сочинение и подчинение,,
+N-4-5,N-4,"Subordination, compounding and clause chaining","Сочинение, подчинение и цепочки клауз",,
+N-5-1,N-5,Syndesis dominant,Преобладает союзная,,
+N-5-2,N-5,Asyndeton dominant,Преобладает бессоюзная,,
+N-5-3,N-5,Both syndesis and asyndeton possible,Союзная и бессоюзная,,
