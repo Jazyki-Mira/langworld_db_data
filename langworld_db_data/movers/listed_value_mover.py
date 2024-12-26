@@ -19,7 +19,7 @@ class ListedValueMover(Mover):
             input_file_with_listed_values=self.output_file_with_listed_values,  # Otherwise in tests
             # listed_value_adder opens the input inventory where the removed value is
             # present and throws an error
-            input_dir_with_feature_profiles=self.input_dir_with_feature_profiles,
+            input_dir_with_feature_profiles=self.output_dir_with_feature_profiles,
             output_file_with_listed_values=self.output_file_with_listed_values,
             output_dir_with_feature_profiles=self.output_dir_with_feature_profiles,
         )
@@ -35,12 +35,12 @@ class ListedValueMover(Mover):
         if int(initial_value_id.split("-")[2]) == index_to_assign:
             raise ListedValueMoverError("Initial and final indices must not coincide.")
         value_to_move = self.listed_value_remover.remove_listed_value(initial_value_id)
-        print(value_to_move)
+        print(index_to_assign)
         self.listed_value_adder.add_listed_value(
             feature_id=value_to_move["feature_id"],
             new_value_en=value_to_move["en"],
             new_value_ru=value_to_move["ru"],
+            index_to_assign=index_to_assign,
             description_formatted_en=value_to_move["description_formatted_en"],
             description_formatted_ru=value_to_move["description_formatted_ru"],
-            index_to_assign=index_to_assign,
         )
