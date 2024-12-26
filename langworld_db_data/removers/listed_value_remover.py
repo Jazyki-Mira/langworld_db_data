@@ -84,7 +84,7 @@ class ListedValueRemover(Remover):
                     continue
                 if row["feature_id"] != "-".join(id_of_value_to_remove.split("-")[:2]):
                     continue
-                
+
                 if row["value_id"] == id_of_value_to_remove:
                     row["value_id"] = ""
                     row["value_type"] = "custom"
