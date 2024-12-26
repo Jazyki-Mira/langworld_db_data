@@ -139,7 +139,9 @@ def test__remove_from_inventory_of_listed_values_throws_exception_with_invalid_o
         assert not test_remover.output_file_with_listed_values.exists()
 
 
-def test__remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_than_one_of_removed_value(test_remover):
+def test__remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_than_one_of_removed_value(
+    test_remover,
+):
 
     stems_of_files_that_must_be_changed = [
         "catalan",
@@ -150,7 +152,9 @@ def test__remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_
         "corsican",
     ]
 
-    test_remover._remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_than_one_of_removed_value("A-9-2")
+    test_remover._remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_than_one_of_removed_value(
+        "A-9-2"
+    )
 
     for stem in stems_of_files_that_must_be_changed:
         assert (test_remover.output_dir_with_feature_profiles / f"{stem}.csv").exists(), (
