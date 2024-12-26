@@ -59,7 +59,7 @@ def test_mover():
 
 
 # move from A-3-4 to A-3-2 and update profiles
-def test_move_listed_value(test_mover):
+def test_move_listed_value_full_process(test_mover):
 
     stems_of_files_that_must_be_changed = [
         "catalan",
@@ -102,7 +102,7 @@ def test_move_listed_value(test_mover):
 
 
 # different moving scenarios without profiles check
-def test__move_value_in_inventory_of_listed_values(
+def test_move_listed_value_inventories_only(
     test_mover,
 ):
     for args in (
