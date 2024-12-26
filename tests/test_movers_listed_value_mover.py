@@ -58,7 +58,7 @@ def test_mover():
     )
 
 
-# move from A-3-4 o A-3-2
+# move from A-3-4 to A-3-2 and update profiles
 def test_move_listed_value(test_mover):
 
     stems_of_files_that_must_be_changed = [
@@ -74,7 +74,7 @@ def test_move_listed_value(test_mover):
 
     test_mover.move_listed_value(
         initial_value_id="A-3-4",
-        final_value_id="A-3-2",
+        index_to_assign=2,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -101,49 +101,50 @@ def test_move_listed_value(test_mover):
         )
 
 
+# different moving scenarios without profiles check
 def test__move_value_in_inventory_of_listed_values(
     test_mover,
 ):
     for args in (
         {
             "initial_value_id": "A-3-1",
-            "final_value_id": "A-3-3",
+            "index_to_assign": 3,
             "gold_standard_file": GS_FILE_FOR_MOVING_FROM_FIRST_TO_MIDDLE,
         },
         {
             "initial_value_id": "A-3-1",
-            "final_value_id": "A-3-5",
+            "index_to_assign": 5,
             "gold_standard_file": GS_FILE_FOR_MOVING_FROM_FIRST_TO_LAST,
         },
         {
             "initial_value_id": "A-3-3",
-            "final_value_id": "A-3-1",
+            "index_to_assign": 1,
             "gold_standard_file": GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_FIRST,
         },
         {
             "initial_value_id": "A-3-2",
-            "final_value_id": "A-3-4",
+            "index_to_assign": 4,
             "gold_standard_file": GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_DIFFERENT_MIDDLE_DOWN,
         },
         {
             "initial_value_id": "A-3-2",
-            "final_value_id": "A-3-5",
+            "index_to_assign": 5,
             "gold_standard_file": GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_LAST,
         },
         {
             "initial_value_id": "A-3-5",
-            "final_value_id": "A-3-1",
+            "index_to_assign": 1,
             "gold_standard_file": GS_FILE_FOR_MOVING_FROM_LAST_TO_FIRST,
         },
         {
             "initial_value_id": "A-3-5",
-            "final_value_id": "A-3-2",
+            "index_to_assign": 2,
             "gold_standard_file": GS_FILE_FOR_MOVING_FROM_LAST_TO_MIDDLE,
         },
     ):
         test_mover.move_listed_value(
             initial_value_id=args["initial_value_id"],
-            final_value_id=args["final_value_id"],
+            index_to_assign=args["index_to_assign"],
         )
 
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -158,5 +159,5 @@ def test_move_value_in_inventory_of_listed_values_throws_error_with_coinciding_f
     with pytest.raises(ListedValueMoverError, match="must not coincide"):
         test_mover.move_listed_value(
             initial_value_id="A-3-2",
-            final_value_id="A-3-2",
+            index_to_assign=2,
         )

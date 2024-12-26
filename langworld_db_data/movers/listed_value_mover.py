@@ -25,13 +25,24 @@ class ListedValueMover(Mover):
     def move_listed_value(
         self,
         initial_value_id: str,
-        final_value_id: str,
+        index_to_assign: int,
     ):
-        self._move_value_in_inventory_of_listed_values(
-            initial_value_id=initial_value_id,
-            final_value_id=final_value_id,
+        if initial_value_id.split("-")[2] == index_to_assign:
+            raise ListedValueMoverError("Initial and final indices must not coincide.")
+        value_to_move = self.listed_value_remover.remove_listed_value(initial_value_id)
+        self.listed_value_adder.add_listed_value(
+            feature_id=value_to_move["feature_id"],
+            new_value_en=value_to_move["en"],
+            new_value_ru=value_to_move["ru"],
+            description_formatted_en=value_to_move["description_formatted_en"],
+            description_formatted_ru=value_to_move["description_formatted_ru"],
+            index_to_assign=index_to_assign,
         )
-        self._update_value_indices_in_inventory()
+        # self._move_value_in_inventory_of_listed_values(
+        #     initial_value_id=initial_value_id,
+        #     final_value_id=final_value_id,
+        # )
+        # self._update_value_indices_in_inventory()
 
     def _move_value_in_inventory_of_listed_values(
         self,
