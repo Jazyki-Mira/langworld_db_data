@@ -22,7 +22,7 @@ class ListedValueRemover(Remover):
         Its keys are identical to column names in the inventory of listed values.
         """
         removed_value = self._remove_from_inventory_of_listed_values(id_of_value_to_remove)
-        self._remove_from_feature_profiles(id_of_value_to_remove)
+        self._remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_than_one_of_removed_value(id_of_value_to_remove)
 
         return removed_value
 
@@ -70,7 +70,7 @@ class ListedValueRemover(Remover):
         print(f"Removed value {id_of_value_to_remove} from inventory of listed values")
         return value_to_remove
 
-    def _remove_from_feature_profiles(
+    def _remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_than_one_of_removed_value(
         self,
         id_of_value_to_remove: str,
     ):
@@ -84,7 +84,7 @@ class ListedValueRemover(Remover):
                     continue
                 if row["feature_id"] != "-".join(id_of_value_to_remove.split("-")[:2]):
                     continue
-                
+
                 if row["value_id"] == id_of_value_to_remove:
                     row["value_id"] = ""
                     row["value_type"] = "custom"
