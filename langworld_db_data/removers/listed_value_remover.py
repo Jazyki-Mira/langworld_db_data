@@ -22,7 +22,9 @@ class ListedValueRemover(Remover):
         Its keys are identical to column names in the inventory of listed values.
         """
         removed_value = self._remove_from_inventory_of_listed_values(id_of_value_to_remove)
-        self._remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_than_one_of_removed_value(id_of_value_to_remove)
+        self._remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_than_one_of_removed_value(
+            id_of_value_to_remove
+        )
 
         return removed_value
 
