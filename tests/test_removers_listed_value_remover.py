@@ -142,17 +142,15 @@ def test__remove_from_inventory_of_listed_values_throws_exception_with_invalid_o
 def test__remove_from_feature_profiles(test_remover):
 
     stems_of_files_that_must_be_changed = [
-        "corsican",
-        "ukrainian",
+        "catalan",
+        "franco_provencal",
     ]
 
     stems_of_files_that_must_not_be_changed = [
-        "catalan",
-        "franco_provencal",
-        "pashto",
+        "corsican",
     ]
 
-    test_remover._remove_from_feature_profiles("A-9-1")
+    test_remover._remove_from_feature_profiles("A-9-2")
 
     for stem in stems_of_files_that_must_be_changed:
         assert (test_remover.output_dir_with_feature_profiles / f"{stem}.csv").exists(), (

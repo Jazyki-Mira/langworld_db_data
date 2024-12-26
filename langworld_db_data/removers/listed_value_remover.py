@@ -74,19 +74,32 @@ class ListedValueRemover(Remover):
         self,
         id_of_value_to_remove: str,
     ):
+        print(id_of_value_to_remove)
         for file in self.input_feature_profiles:
             is_changed = False
             rows = read_dicts_from_csv(file)
 
             for row in rows:
+                if row["value_type"] != "listed":
+                    continue
+                if row["feature_id"] != "-".join(id_of_value_to_remove.split("-")[:2]):
+                    continue
+                
                 if row["value_id"] == id_of_value_to_remove:
                     row["value_id"] = ""
                     row["value_type"] = "custom"
+                    print(f"Changing value type to custom in {file.stem}")
+                    is_changed = True
+                    break
+                elif int(row["value_id"].split("-")[2]) > int(id_of_value_to_remove.split("-")[2]):
+                    print(row["value_id"])
+                    new_value_index = str(int(row["value_id"].split("-")[2]) - 1)
+                    row["value_id"] = "-".join(row["value_id"].split("-")[:2] + [new_value_index])
+                    print(f"Updating value id in {file.stem}")
                     is_changed = True
                     break
 
             if is_changed:
-                print(f"Writing new file for {file.stem}")
                 write_csv(
                     rows,
                     path_to_file=self.output_dir_with_feature_profiles / file.name,
@@ -102,7 +115,7 @@ class ListedValueRemover(Remover):
         id_of_removed_value: str,
     ) -> list[dict[str, str]]:
         feature_id = "-".join(id_of_removed_value.split(ID_SEPARATOR)[:2])
-        rows_with_updated_indices = rows
+        rows_with_updated_indices = rows.copy()
 
         for i, row in enumerate(rows):
             if row["feature_id"] != feature_id:
