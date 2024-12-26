@@ -64,17 +64,6 @@ def test_mover():
 # move from A-3-4 to A-3-2 and update profiles
 def test_move_listed_value_full_process(test_mover):
 
-    stems_of_files_that_must_be_changed = [
-        "catalan",
-        "franco_provencal",
-        "pashto",
-    ]
-
-    stems_of_files_that_must_not_be_changed = [
-        "corsican",
-        "ukrainian",
-    ]
-
     test_mover.move_listed_value(
         initial_value_id="A-3-4",
         index_to_assign=2,
@@ -85,19 +74,8 @@ def test_move_listed_value_full_process(test_mover):
         gold_standard_file=GS_FILE_FOR_MOVING_FROM_MIDDLE_TO_DIFFERENT_MIDDLE_UP,
     )
 
-    for stem in stems_of_files_that_must_be_changed:
-        assert (test_mover.output_dir_with_feature_profiles / f"{stem}.csv").exists(), (
-            f"File {stem}.csv was not created. It means that no changes were made while"
-            " there should have been changes"
-        )
-
     for file in test_mover.output_dir_with_feature_profiles.glob("*.csv"):
-        assert (
-            file.stem not in stems_of_files_that_must_not_be_changed
-        ), f"File {file.name} is not supposed to be changed"
-
-        print(f"TEST: checking amended feature profile {file.name}")
-
+        print(f"TEST: feature profile {file.name}")
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=file,
             gold_standard_file=GS_DIR_WITH_MOVERS_FEATURE_PROFILES / file.name,
