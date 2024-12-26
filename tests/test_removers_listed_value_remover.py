@@ -60,6 +60,8 @@ def test_remove_listed_value(test_remover):
         output_file=test_remover.output_file_with_listed_values,
         gold_standard_file=GS_FILE_WITH_LISTED_VALUES_REMOVING_A_9_1,
     )
+    for file in list(test_remover.output_dir_with_feature_profiles.glob("*.csv")):
+        file.unlink()
 
     # The same value is being removed in the dedicated test for the self._remove_from_feature_profiles method
 
