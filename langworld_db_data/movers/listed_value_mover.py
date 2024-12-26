@@ -16,7 +16,12 @@ class ListedValueMover(Mover):
     ):
         super().__init__(**kwargs)
         self.listed_value_adder = ListedValueAdder(
-            **kwargs,
+            input_file_with_listed_values=self.output_file_with_listed_values,  # Otherwise in tests
+            # listed_value_adder opens the input inventory where the removed value is
+            # present and throws an error
+            input_dir_with_feature_profiles=self.input_dir_with_feature_profiles,
+            output_file_with_listed_values=self.output_file_with_listed_values,
+            output_dir_with_feature_profiles=self.output_dir_with_feature_profiles,
         )
         self.listed_value_remover = ListedValueRemover(
             **kwargs,
@@ -27,9 +32,10 @@ class ListedValueMover(Mover):
         initial_value_id: str,
         index_to_assign: int,
     ):
-        if initial_value_id.split("-")[2] == index_to_assign:
+        if int(initial_value_id.split("-")[2]) == index_to_assign:
             raise ListedValueMoverError("Initial and final indices must not coincide.")
         value_to_move = self.listed_value_remover.remove_listed_value(initial_value_id)
+        print(value_to_move)
         self.listed_value_adder.add_listed_value(
             feature_id=value_to_move["feature_id"],
             new_value_en=value_to_move["en"],
@@ -38,19 +44,3 @@ class ListedValueMover(Mover):
             description_formatted_ru=value_to_move["description_formatted_ru"],
             index_to_assign=index_to_assign,
         )
-        # self._move_value_in_inventory_of_listed_values(
-        #     initial_value_id=initial_value_id,
-        #     final_value_id=final_value_id,
-        # )
-        # self._update_value_indices_in_inventory()
-
-    def _move_value_in_inventory_of_listed_values(
-        self,
-        initial_value_id: str,
-        final_value_id: str,
-    ):
-        pass
-
-    @staticmethod
-    def _update_value_indices_in_inventory():
-        pass
