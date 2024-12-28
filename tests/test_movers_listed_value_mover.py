@@ -1,6 +1,7 @@
 import pytest
 
 from langworld_db_data.movers.listed_value_mover import ListedValueMover, ListedValueMoverError
+from langworld_db_data.adders.listed_value_adder import ListedValueAdder
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
     DIR_WITH_MOVERS_FEATURE_PROFILES,
@@ -8,6 +9,8 @@ from tests.paths import (
     INPUT_FILE_WITH_LISTED_VALUES_FOR_MOVERS,
     OUTPUT_DIR_FOR_LISTED_VALUE_MOVER_FEATURE_PROFILES,
 )
+
+OUTPUT_FILE_WITH_LISTED_VALUES = DIR_WITH_MOVERS_TEST_FILES / "features_listed_values_output_value_remover.csv"
 
 GS_DIR_WITH_MOVERS_FEATURE_PROFILES = DIR_WITH_MOVERS_FEATURE_PROFILES / "gold_standard"
 
@@ -54,10 +57,11 @@ def test_mover():
         path_to_write_into.write_text(filepath.read_text())
     return ListedValueMover(
         input_file_with_listed_values=INPUT_FILE_WITH_LISTED_VALUES_FOR_MOVERS,
-        output_file_with_listed_values=DIR_WITH_MOVERS_TEST_FILES
-        / "features_listed_values_output_value_remover.csv",
+        output_file_with_listed_values=OUTPUT_FILE_WITH_LISTED_VALUES,
         input_dir_with_feature_profiles=DIR_WITH_MOVERS_FEATURE_PROFILES,
         output_dir_with_feature_profiles=OUTPUT_DIR_FOR_LISTED_VALUE_MOVER_FEATURE_PROFILES,
+        listed_value_adder_input_file_with_inventories=OUTPUT_FILE_WITH_LISTED_VALUES,
+        listed_value_adder_input_dir_with_feature_profiles=OUTPUT_DIR_FOR_LISTED_VALUE_MOVER_FEATURE_PROFILES,
     )
 
 
