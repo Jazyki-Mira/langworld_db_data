@@ -36,7 +36,7 @@ class ListedValueMover(Mover):
         index_to_assign: int,
     ):
         if int(initial_value_id.split("-")[2]) == index_to_assign:
-            raise ListedValueMoverError("Initial and final indices must not coincide.")
+            raise ListedValueMoverError("Initial and final indices cannot be equal.")
         value_to_move = self.listed_value_remover.remove_listed_value(initial_value_id)
         print(index_to_assign)
         self.listed_value_adder.add_listed_value(
