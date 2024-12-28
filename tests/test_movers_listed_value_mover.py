@@ -143,7 +143,7 @@ def test_move_listed_value_inventories_only(
 def test_move_value_in_inventory_of_listed_values_throws_error_with_coinciding_from_and_to(
     test_mover,
 ):
-    with pytest.raises(ListedValueMoverError, match="cannot not be equal"):
+    with pytest.raises(ListedValueMoverError, match="Initial and final indices cannot be equal."):
         test_mover.move_listed_value(
             initial_value_id="A-3-2",
             index_to_assign=2,
