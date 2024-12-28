@@ -35,6 +35,11 @@ class ListedValueMover(Mover):
         initial_value_id: str,
         index_to_assign: int,
     ):
+        """
+        Moves value with the passed ID to the position of the passed index
+        within the same feature. Refreshes other IDs of the feature in both
+        the inventory and the feature profiles.
+        """
         if int(initial_value_id.split("-")[2]) == index_to_assign:
             raise ListedValueMoverError("Initial and final indices cannot be equal.")
         value_to_move = self.listed_value_remover.remove_listed_value(initial_value_id)
