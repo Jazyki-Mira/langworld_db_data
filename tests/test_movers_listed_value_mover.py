@@ -1,7 +1,7 @@
 import pytest
 
-from langworld_db_data.movers.listed_value_mover import ListedValueMover, ListedValueMoverError
 from langworld_db_data.adders.listed_value_adder import ListedValueAdder
+from langworld_db_data.movers.listed_value_mover import ListedValueMover, ListedValueMoverError
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
     DIR_WITH_MOVERS_FEATURE_PROFILES,
@@ -10,7 +10,9 @@ from tests.paths import (
     OUTPUT_DIR_FOR_LISTED_VALUE_MOVER_FEATURE_PROFILES,
 )
 
-OUTPUT_FILE_WITH_LISTED_VALUES = DIR_WITH_MOVERS_TEST_FILES / "features_listed_values_output_value_remover.csv"
+OUTPUT_FILE_WITH_LISTED_VALUES = (
+    DIR_WITH_MOVERS_TEST_FILES / "features_listed_values_output_value_remover.csv"
+)
 
 GS_DIR_WITH_MOVERS_FEATURE_PROFILES = DIR_WITH_MOVERS_FEATURE_PROFILES / "gold_standard"
 
