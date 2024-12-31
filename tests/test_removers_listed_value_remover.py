@@ -60,6 +60,8 @@ def test_remove_listed_value(test_remover):
         output_file=test_remover.output_file_with_listed_values,
         gold_standard_file=GS_FILE_WITH_LISTED_VALUES_REMOVING_A_9_1,
     )
+    for file in list(test_remover.output_dir_with_feature_profiles.glob("*.csv")):
+        file.unlink()
 
     # The same value is being removed in the dedicated test for the self._remove_from_feature_profiles method
 
@@ -139,20 +141,22 @@ def test__remove_from_inventory_of_listed_values_throws_exception_with_invalid_o
         assert not test_remover.output_file_with_listed_values.exists()
 
 
-def test__remove_from_feature_profiles(test_remover):
+def test__remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_than_one_of_removed_value(
+    test_remover,
+):
 
     stems_of_files_that_must_be_changed = [
-        "corsican",
-        "ukrainian",
+        "catalan",
+        "franco_provencal",
     ]
 
     stems_of_files_that_must_not_be_changed = [
-        "catalan",
-        "franco_provencal",
-        "pashto",
+        "corsican",
     ]
 
-    test_remover._remove_from_feature_profiles("A-9-1")
+    test_remover._remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_than_one_of_removed_value(
+        "A-9-2"
+    )
 
     for stem in stems_of_files_that_must_be_changed:
         assert (test_remover.output_dir_with_feature_profiles / f"{stem}.csv").exists(), (
