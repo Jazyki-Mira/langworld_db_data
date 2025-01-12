@@ -7,6 +7,7 @@ class ObjectWithPaths:
     """Class for initializing objects that store paths
     to important files and dirs.
     """
+
     def __init__(
         self,
         *,
