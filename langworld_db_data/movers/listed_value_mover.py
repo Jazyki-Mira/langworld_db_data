@@ -1,18 +1,14 @@
-from pathlib import Path
-
+from langworld_db_data import ObjectWithPaths
 from langworld_db_data.adders.listed_value_adder import ListedValueAdder
-from langworld_db_data.constants.literals import ID_SEPARATOR
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
-from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
-from langworld_db_data.movers.mover import Mover, MoverError
 from langworld_db_data.removers.listed_value_remover import ListedValueRemover
 
 
-class ListedValueMoverError(MoverError):
+class ListedValueMoverError(Exception):
     pass
 
 
-class ListedValueMover(Mover):
+class ListedValueMover(ObjectWithPaths):
     def __init__(  # type: ignore
         self,
         listed_value_adder_input_file_with_inventories=FILE_WITH_LISTED_VALUES,
