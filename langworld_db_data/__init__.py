@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from langworld_db_data.constants.paths import FILE_WITH_LISTED_VALUES, FEATURE_PROFILES_DIR
+from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
 
 
 class ObjectWithPaths:
