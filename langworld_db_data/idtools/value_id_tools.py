@@ -14,3 +14,14 @@ writing corresponding methods may improve the readability of the methods
 
 Perhaps these methods might yield a new class later
 """
+
+
+def extract_feature_id(
+    value_id: str,
+) -> str:
+    pass
+
+def extract_value_index(
+    value_id: str,
+) -> str:
+    pass
