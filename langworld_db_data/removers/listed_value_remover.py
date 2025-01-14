@@ -94,10 +94,14 @@ class ListedValueRemover(Remover):
                     print(f"Changing value type to custom in {file.stem}")
                     is_changed = True
                     break
-                elif extract_value_index(row["value_id"]) > extract_value_index(id_of_value_to_remove):
+                elif extract_value_index(row["value_id"]) > extract_value_index(
+                    id_of_value_to_remove
+                ):
                     print(row["value_id"])
                     new_value_index = str(extract_value_index(row["value_id"]) - 1)
-                    row["value_id"] = f'{extract_feature_id(row["value_id"])}{ID_SEPARATOR}{new_value_index}'
+                    row["value_id"] = (
+                        f'{extract_feature_id(row["value_id"])}{ID_SEPARATOR}{new_value_index}'
+                    )
                     print(f"Updating value id in {file.stem}")
                     is_changed = True
                     break
@@ -127,7 +131,9 @@ class ListedValueRemover(Remover):
             current_value_index = extract_value_index(row["id"])
             if current_value_index > index_of_value_to_remove:
                 new_current_value_index = str(current_value_index - 1)
-                new_current_value_id = f'{extract_feature_id(row["id"])}{ID_SEPARATOR}{new_current_value_index}'
+                new_current_value_id = (
+                    f'{extract_feature_id(row["id"])}{ID_SEPARATOR}{new_current_value_index}'
+                )
                 rows_with_updated_indices[i]["id"] = new_current_value_id
 
         return rows_with_updated_indices
