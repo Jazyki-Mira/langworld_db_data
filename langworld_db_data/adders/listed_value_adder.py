@@ -4,6 +4,8 @@ from typing import Optional, Union
 from langworld_db_data.adders.adder import Adder, AdderError
 from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
+from langworld_db_data.idtools.value_id_tools import (extract_feature_id,
+                                                      extract_value_index)
 
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
 
@@ -103,7 +105,8 @@ class ListedValueAdder(Adder):
         )
 
         # Check if passed index is valid
-        last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
+        last_index_in_feature = (value_indices_to_inventory_line_numbers[-1]
+                                 [KEY_FOR_FEATURE_VALUE_INDEX])
         # The range of numbers acceptable as index_to_assign consists of
         # all the current indices in the given feature and the next number after
         # the current maximum. To include the maximum, we must add 1 to last_index_in_feature.
@@ -144,7 +147,7 @@ class ListedValueAdder(Adder):
             )
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
-                if value_index_and_line_number["index"] == index_to_assign:
+                if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] == index_to_assign:
                     line_number_of_new_value = value_index_and_line_number["line number"]
 
         row_with_new_value = tuple(
@@ -223,7 +226,7 @@ class ListedValueAdder(Adder):
 
         rows_with_incremented_indices = rows[:]
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
-            if value_index_and_line_number["index"] < index_to_assign:
+            if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] < index_to_assign:
                 continue
             row_where_id_must_be_incremented = value_index_and_line_number["line number"]
             value_id_to_increment = rows_with_incremented_indices[
