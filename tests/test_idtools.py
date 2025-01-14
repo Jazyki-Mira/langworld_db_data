@@ -1,19 +1,29 @@
 from langworld_db_data.idtools.value_id_tools import (
     extract_feature_id,
-    extract_value_index_as_int,
-    extract_value_index_as_str,
+    extract_value_index,
 )
 
-ID_FOR_EXTRACTION = "A-12-6"
+IDS_FOR_EXTRACTION = [
+    'A-1-2',
+    'A-1-22',
+    'A-12-6',
+    'A-12-26',
+]
+# add cases with different numbers of digits
 
 
 def test_extract_feature_id():
-    assert extract_feature_id(ID_FOR_EXTRACTION) == "A-12"
+    gold_standard = [
+        'A-1',
+        'A-1',
+        'A-12',
+        'A-12',
+    ]
+    for i in range(len(IDS_FOR_EXTRACTION)):
+        assert extract_feature_id(IDS_FOR_EXTRACTION[i]) == gold_standard[i]
 
 
-def test_extract_value_index_as_str():
-    assert extract_value_index_as_str(ID_FOR_EXTRACTION) == "6"
-
-
-def test_extract_value_index_as_int():
-    assert extract_value_index_as_int(ID_FOR_EXTRACTION) == 6
+def test_extract_value_index():
+    gold_standard = [2, 22, 6, 26]
+    for i in range(len(IDS_FOR_EXTRACTION)):
+        assert extract_value_index(IDS_FOR_EXTRACTION[i]) == gold_standard[i]
