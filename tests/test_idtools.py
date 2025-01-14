@@ -6,7 +6,6 @@ from langworld_db_data.idtools.value_id_tools import (
     extract_value_index,
 )
 
-
 IDS_FOR_EXTRACTION = [
     "A-1-2",
     "B-7-22",
