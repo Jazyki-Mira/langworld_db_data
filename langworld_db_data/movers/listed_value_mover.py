@@ -9,7 +9,7 @@ class ListedValueMoverError(Exception):
 
 
 class ListedValueMover(ObjectWithPaths):
-    def __init__(  # type: ignore
+    def __init__(
         self,
         listed_value_adder_input_file_with_inventories=FILE_WITH_LISTED_VALUES,
         listed_value_adder_input_dir_with_feature_profiles=FEATURE_PROFILES_DIR,

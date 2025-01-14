@@ -19,7 +19,7 @@ class FeatureAdderError(Exception):
 
 
 class FeatureAdder(ObjectWithPaths):
-    def __init__(  # type: ignore
+    def __init__(
         self,
         *,
         file_with_categories: Path = FILE_WITH_CATEGORIES,
