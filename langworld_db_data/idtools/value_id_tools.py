@@ -1,22 +1,5 @@
 from langworld_db_data.constants.literals import ID_SEPARATOR
 
-"""
-tools for ID should be able to do:
-- feature ID extraction
-- value index extraction
-- category ID extraction
-- feature index extraction (as int)
-These also might be useful:
-- value ID composition from feature ID and value index
-All these are frequently used in methods for adding/removing/moving values.
-- value ID incrementation
-- value ID decrementation
-These are used only in adding and removing values once each, but perhaps
-writing corresponding functions may improve the readability of the methods
-
-Perhaps these functions might yield a new class later
-"""
-
 
 def _split_value_id(
     value_id: str,
