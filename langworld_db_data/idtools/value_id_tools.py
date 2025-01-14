@@ -2,6 +2,7 @@
 tools for ID should be able to do:
 - feature ID extraction
 - value index extraction
+These also might be useful:
 - value ID composition from feature ID and value index
 - ID decomposition into the three components -- category ID, feature index and
 value index
