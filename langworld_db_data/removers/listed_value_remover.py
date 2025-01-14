@@ -1,5 +1,6 @@
 from langworld_db_data.constants.literals import ID_SEPARATOR
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
+from langworld_db_data.idtools.value_id_tools import extract_feature_id, extract_value_index
 from langworld_db_data.removers.remover import Remover, RemoverError
 
 
@@ -84,7 +85,7 @@ class ListedValueRemover(Remover):
             for row in rows:
                 if row["value_type"] != "listed":
                     continue
-                if row["feature_id"] != "-".join(id_of_value_to_remove.split("-")[:2]):
+                if row["feature_id"] != extract_feature_id(id_of_value_to_remove):
                     continue
 
                 if row["value_id"] == id_of_value_to_remove:
@@ -93,10 +94,10 @@ class ListedValueRemover(Remover):
                     print(f"Changing value type to custom in {file.stem}")
                     is_changed = True
                     break
-                elif int(row["value_id"].split("-")[2]) > int(id_of_value_to_remove.split("-")[2]):
+                elif extract_value_index(row["value_id"]) > extract_value_index(id_of_value_to_remove):
                     print(row["value_id"])
-                    new_value_index = str(int(row["value_id"].split("-")[2]) - 1)
-                    row["value_id"] = "-".join(row["value_id"].split("-")[:2] + [new_value_index])
+                    new_value_index = str(extract_value_index(row["value_id"]) - 1)
+                    row["value_id"] = f'{extract_feature_id(row["value_id"])}{ID_SEPARATOR}{new_value_index}'
                     print(f"Updating value id in {file.stem}")
                     is_changed = True
                     break
@@ -116,20 +117,17 @@ class ListedValueRemover(Remover):
         rows: list[dict[str, str]],
         id_of_removed_value: str,
     ) -> list[dict[str, str]]:
-        feature_id = "-".join(id_of_removed_value.split(ID_SEPARATOR)[:2])
+        feature_id = extract_feature_id(id_of_removed_value)
+        index_of_value_to_remove = extract_value_index(id_of_removed_value)
         rows_with_updated_indices = rows.copy()
 
         for i, row in enumerate(rows):
             if row["feature_id"] != feature_id:
                 continue
-            current_value_index = int(row["id"].split("-")[2])
-            index_of_value_to_remove = int(id_of_removed_value.split("-")[2])
+            current_value_index = extract_value_index(row["id"])
             if current_value_index > index_of_value_to_remove:
-                current_value_id_decomposed = row["id"].split("-")
                 new_current_value_index = str(current_value_index - 1)
-                new_current_value_id = "-".join(
-                    current_value_id_decomposed[:2] + [new_current_value_index]
-                )
+                new_current_value_id = f'{extract_feature_id(row["id"])}{ID_SEPARATOR}{new_current_value_index}'
                 rows_with_updated_indices[i]["id"] = new_current_value_id
 
         return rows_with_updated_indices
