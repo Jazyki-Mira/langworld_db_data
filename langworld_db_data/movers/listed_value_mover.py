@@ -1,16 +1,16 @@
+from langworld_db_data import ObjectWithPaths
 from langworld_db_data.adders.listed_value_adder import ListedValueAdder
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
 from langworld_db_data.idtools.value_id_tools import extract_value_index
-from langworld_db_data.movers.mover import Mover, MoverError
 from langworld_db_data.removers.listed_value_remover import ListedValueRemover
 
 
-class ListedValueMoverError(MoverError):
+class ListedValueMoverError(Exception):
     pass
 
 
-class ListedValueMover(Mover):
-    def __init__(  # type: ignore
+class ListedValueMover(ObjectWithPaths):
+    def __init__(
         self,
         listed_value_adder_input_file_with_inventories=FILE_WITH_LISTED_VALUES,
         listed_value_adder_input_dir_with_feature_profiles=FEATURE_PROFILES_DIR,

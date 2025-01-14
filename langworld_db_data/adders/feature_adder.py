@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Optional
 
-from langworld_db_data.adders.adder import Adder, AdderError
+from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import AUX_ROW_MARKER, ID_SEPARATOR
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.filetools.csv_xls import (
@@ -14,12 +14,12 @@ from langworld_db_data.filetools.txt import remove_extra_space
 INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS = 100
 
 
-class FeatureAdderError(AdderError):
+class FeatureAdderError(Exception):
     pass
 
 
-class FeatureAdder(Adder):
-    def __init__(  # type: ignore
+class FeatureAdder(ObjectWithPaths):
+    def __init__(
         self,
         *,
         file_with_categories: Path = FILE_WITH_CATEGORIES,

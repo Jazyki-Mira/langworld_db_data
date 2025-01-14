@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Optional, Union
 
-from langworld_db_data.adders.adder import Adder, AdderError
+from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.idtools.value_id_tools import extract_feature_id, extract_value_index
@@ -9,11 +9,11 @@ from langworld_db_data.idtools.value_id_tools import extract_feature_id, extract
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
 
 
-class ListedValueAdderError(AdderError):
+class ListedValueAdderError(Exception):
     pass
 
 
-class ListedValueAdder(Adder):
+class ListedValueAdder(ObjectWithPaths):
     def add_listed_value(
         self,
         feature_id: str,
