@@ -4,8 +4,7 @@ from typing import Optional, Union
 from langworld_db_data.adders.adder import Adder, AdderError
 from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
-from langworld_db_data.idtools.value_id_tools import (extract_feature_id,
-                                                      extract_value_index)
+from langworld_db_data.idtools.value_id_tools import extract_feature_id, extract_value_index
 
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
 
@@ -105,8 +104,9 @@ class ListedValueAdder(Adder):
         )
 
         # Check if passed index is valid
-        last_index_in_feature = (value_indices_to_inventory_line_numbers[-1]
-                                 [KEY_FOR_FEATURE_VALUE_INDEX])
+        last_index_in_feature = value_indices_to_inventory_line_numbers[-1][
+            KEY_FOR_FEATURE_VALUE_INDEX
+        ]
         # The range of numbers acceptable as index_to_assign consists of
         # all the current indices in the given feature and the next number after
         # the current maximum. To include the maximum, we must add 1 to last_index_in_feature.
