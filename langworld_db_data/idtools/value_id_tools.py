@@ -21,10 +21,12 @@ def extract_feature_id(
 ) -> str:
     pass
 
+
 def extract_value_index_as_str(
     value_id: str,
 ) -> str:
     pass
+
 
 def extract_value_index_as_int(
     value_id: str,
