@@ -26,12 +26,14 @@ def extract_feature_id(
     feature_id = ID_SEPARATOR.join(value_id_segments[0:2])
     return feature_id
 
+
 def extract_value_index_as_str(
     value_id: str,
 ) -> str:
     value_id_segments = value_id.split(ID_SEPARATOR)
     value_index = value_id_segments[2]
     return value_index
+
 
 def extract_value_index_as_int(
     value_id: str,
