@@ -38,5 +38,6 @@ def extract_value_index_as_str(
 def extract_value_index_as_int(
     value_id: str,
 ) -> int:
-    value_index_as_int = int(extract_value_index_as_str(value_id))
+    value_id_segments = value_id.split(ID_SEPARATOR)
+    value_index_as_int = int(value_id_segments[2])
     return value_index_as_int
