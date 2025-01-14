@@ -1,3 +1,6 @@
+from langworld_db_data.constants.literals import ID_SEPARATOR
+
+
 """
 tools for ID should be able to do:
 - feature ID extraction
@@ -19,14 +22,19 @@ Perhaps these methods might yield a new class later
 def extract_feature_id(
     value_id: str,
 ) -> str:
-    pass
+    value_id_segments = value_id.split(ID_SEPARATOR)
+    feature_id = ID_SEPARATOR.join(value_id_segments[0:2])
+    return feature_id
 
 def extract_value_index_as_str(
     value_id: str,
 ) -> str:
-    pass
+    value_id_segments = value_id.split(ID_SEPARATOR)
+    value_index = value_id_segments[2]
+    return value_index
 
 def extract_value_index_as_int(
     value_id: str,
 ) -> int:
-    pass
+    value_index_as_int = int(extract_value_index_as_str(value_id))
+    return value_index_as_int
