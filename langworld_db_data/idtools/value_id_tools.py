@@ -20,6 +20,25 @@ Perhaps these functions might yield a new class later
 """
 
 
+def extract_category_id(
+    value_id: str,
+) -> str:
+    value_id_segments = value_id.split(ID_SEPARATOR)
+    return value_id_segments[0]
+
+
+def extract_feature_index(
+    value_id: str,
+) -> int:
+    """
+    Return feature index as int
+
+    Feature index is the ordinal number of the feature within its category
+    """
+    value_id_segments = value_id.split(ID_SEPARATOR)
+    return int(value_id_segments[1])
+
+
 def extract_feature_id(
     value_id: str,
 ) -> str:
@@ -38,22 +57,3 @@ def extract_value_index(
     """
     value_id_segments = value_id.split(ID_SEPARATOR)
     return int(value_id_segments[2])
-
-
-def extract_feature_index(
-    value_id: str,
-) -> int:
-    """
-    Return feature index as int
-
-    Feature index is the ordinal number of the feature within its category
-    """
-    value_id_segments = value_id.split(ID_SEPARATOR)
-    return int(value_id_segments[1])
-
-
-def extract_category_id(
-    value_id: str,
-) -> str:
-    value_id_segments = value_id.split(ID_SEPARATOR)
-    return value_id_segments[0]
