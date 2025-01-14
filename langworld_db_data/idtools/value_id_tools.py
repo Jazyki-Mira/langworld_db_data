@@ -8,8 +8,6 @@ tools for ID should be able to do:
 - feature index extraction (as int)
 These also might be useful:
 - value ID composition from feature ID and value index
-- ID decomposition into the three components -- category ID, feature index and
-value index
 All these are frequently used in methods for adding/removing/moving values.
 - value ID incrementation
 - value ID decrementation
@@ -18,6 +16,12 @@ writing corresponding functions may improve the readability of the methods
 
 Perhaps these functions might yield a new class later
 """
+
+
+def _split_value_id(
+    value_id: str,
+) -> list[str]:
+    return value_id.split(ID_SEPARATOR)
 
 
 def extract_category_id(
