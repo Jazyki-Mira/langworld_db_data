@@ -27,8 +27,7 @@ def _split_value_id(
 def extract_category_id(
     value_id: str,
 ) -> str:
-    value_id_segments = value_id.split(ID_SEPARATOR)
-    return value_id_segments[0]
+    return _split_value_id(value_id)[0]
 
 
 def extract_feature_index(
@@ -39,15 +38,13 @@ def extract_feature_index(
 
     Feature index is the ordinal number of the feature within its category
     """
-    value_id_segments = value_id.split(ID_SEPARATOR)
-    return int(value_id_segments[1])
+    return int(_split_value_id(value_id)[1])
 
 
 def extract_feature_id(
     value_id: str,
 ) -> str:
-    value_id_segments = value_id.split(ID_SEPARATOR)
-    feature_id = ID_SEPARATOR.join(value_id_segments[0:2])
+    feature_id = ID_SEPARATOR.join(_split_value_id(value_id)[0:2])
     return feature_id
 
 
@@ -59,5 +56,4 @@ def extract_value_index(
 
     Value index is the ordinal number of the value within its feature
     """
-    value_id_segments = value_id.split(ID_SEPARATOR)
-    return int(value_id_segments[2])
+    return int(_split_value_id(value_id)[2])
