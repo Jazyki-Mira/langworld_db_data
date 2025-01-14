@@ -4,6 +4,8 @@ from langworld_db_data.constants.literals import ID_SEPARATOR
 tools for ID should be able to do:
 - feature ID extraction
 - value index extraction
+- category ID extraction
+- feature index extraction (as int)
 These also might be useful:
 - value ID composition from feature ID and value index
 - ID decomposition into the three components -- category ID, feature index and
@@ -12,9 +14,9 @@ All these are frequently used in methods for adding/removing/moving values.
 - value ID incrementation
 - value ID decrementation
 These are used only in adding and removing values once each, but perhaps
-writing corresponding methods may improve the readability of the methods
+writing corresponding functions may improve the readability of the methods
 
-Perhaps these methods might yield a new class later
+Perhaps these functions might yield a new class later
 """
 
 
@@ -26,17 +28,32 @@ def extract_feature_id(
     return feature_id
 
 
-def extract_value_index_as_str(
+def extract_value_index(
+    value_id: str,
+) -> int:
+    """
+    Return value index as int
+
+    Value index is the ordinal number of the value within its feature
+    """
+    value_id_segments = value_id.split(ID_SEPARATOR)
+    return int(value_id_segments[2])
+
+
+def extract_feature_index(
+    value_id: str,
+) -> int:
+    """
+    Return feature index as int
+
+    Feature index is the ordinal number of the feature within its category
+    """
+    value_id_segments = value_id.split(ID_SEPARATOR)
+    return int(value_id_segments[1])
+
+
+def extract_category_id(
     value_id: str,
 ) -> str:
     value_id_segments = value_id.split(ID_SEPARATOR)
-    value_index = value_id_segments[2]
-    return value_index
-
-
-def extract_value_index_as_int(
-    value_id: str,
-) -> int:
-    value_id_segments = value_id.split(ID_SEPARATOR)
-    value_index_as_int = int(value_id_segments[2])
-    return value_index_as_int
+    return value_id_segments[0]
