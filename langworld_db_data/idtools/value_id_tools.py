@@ -27,8 +27,7 @@ def extract_feature_index(
 def extract_feature_id(
     value_id: str,
 ) -> str:
-    feature_id = ID_SEPARATOR.join(_split_value_id(value_id)[0:2])
-    return feature_id
+    return ID_SEPARATOR.join(_split_value_id(value_id)[0:2])
 
 
 def extract_value_index(
