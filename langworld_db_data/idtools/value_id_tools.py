@@ -19,7 +19,8 @@ def extract_feature_index(
     """
     Return feature index as int
 
-    Feature index is the ordinal number of the feature within its category
+    Feature index (not to confuse with feature ID) is the ordinal number of the feature within its category,
+    the second component of value ID
     """
     return int(_split_value_id(value_id)[1])
 
@@ -27,6 +28,11 @@ def extract_feature_index(
 def extract_feature_id(
     value_id: str,
 ) -> str:
+    """
+    Return feature ID as str
+
+    Feature ID (not to confuse with feature index) consists of category ID and feature index
+    """
     return ID_SEPARATOR.join(_split_value_id(value_id)[0:2])
 
 
@@ -36,6 +42,6 @@ def extract_value_index(
     """
     Return value index as int
 
-    Value index is the ordinal number of the value within its feature
+    Value index is the ordinal number of the value within its feature, the third component of value ID
     """
     return int(_split_value_id(value_id)[2])
