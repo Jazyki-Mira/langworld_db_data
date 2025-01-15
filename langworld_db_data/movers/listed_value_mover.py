@@ -1,6 +1,7 @@
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.adders.listed_value_adder import ListedValueAdder
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
+from langworld_db_data.idtools.value_id_tools import extract_value_index
 from langworld_db_data.removers.listed_value_remover import ListedValueRemover
 
 
@@ -36,7 +37,7 @@ class ListedValueMover(ObjectWithPaths):
         within the same feature. Refreshes other IDs of the feature in both
         the inventory and the feature profiles.
         """
-        if int(initial_value_id.split("-")[2]) == index_to_assign:
+        if extract_value_index(initial_value_id) == index_to_assign:
             raise ListedValueMoverError("Initial and final indices cannot be equal.")
         value_to_move = self.listed_value_remover.remove_listed_value(initial_value_id)
         self.listed_value_adder.add_listed_value(

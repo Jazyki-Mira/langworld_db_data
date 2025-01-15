@@ -4,6 +4,7 @@ from typing import Optional, Union
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
 from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
+from langworld_db_data.idtools.value_id_tools import extract_feature_id, extract_value_index
 
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
 
@@ -103,7 +104,9 @@ class ListedValueAdder(ObjectWithPaths):
         )
 
         # Check if passed index is valid
-        last_index_in_feature = value_indices_to_inventory_line_numbers[-1]["index"]
+        last_index_in_feature = value_indices_to_inventory_line_numbers[-1][
+            KEY_FOR_FEATURE_VALUE_INDEX
+        ]
         # The range of numbers acceptable as index_to_assign consists of
         # all the current indices in the given feature and the next number after
         # the current maximum. To include the maximum, we must add 1 to last_index_in_feature.
@@ -144,7 +147,7 @@ class ListedValueAdder(ObjectWithPaths):
             )
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
-                if value_index_and_line_number["index"] == index_to_assign:
+                if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] == index_to_assign:
                     line_number_of_new_value = value_index_and_line_number["line number"]
 
         row_with_new_value = tuple(
@@ -199,7 +202,7 @@ class ListedValueAdder(ObjectWithPaths):
             if row[KEY_FOR_FEATURE_ID] != feature_id:
                 continue
 
-            value_index = int(row[KEY_FOR_VALUE_ID].split(ID_SEPARATOR)[-1])
+            value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
             value_indices_to_inventory_line_numbers.append(
                 {
                     "index": value_index,
@@ -223,16 +226,15 @@ class ListedValueAdder(ObjectWithPaths):
 
         rows_with_incremented_indices = rows[:]
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
-            if value_index_and_line_number["index"] < index_to_assign:
+            if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] < index_to_assign:
                 continue
             row_where_id_must_be_incremented = value_index_and_line_number["line number"]
             value_id_to_increment = rows_with_incremented_indices[
                 row_where_id_must_be_incremented
             ][KEY_FOR_VALUE_ID]
-            components_of_value_id_to_increment = value_id_to_increment.split(ID_SEPARATOR)
             rows_with_incremented_indices[row_where_id_must_be_incremented][KEY_FOR_VALUE_ID] = (
-                f"{components_of_value_id_to_increment[0]}-{components_of_value_id_to_increment[1]}-"
-                f"{int(components_of_value_id_to_increment[2]) + 1}"
+                f"{extract_feature_id(value_id_to_increment)}-"
+                f"{extract_value_index(value_id_to_increment) + 1}"
             )
 
         return tuple(rows_with_incremented_indices)
@@ -247,13 +249,12 @@ class ListedValueAdder(ObjectWithPaths):
             is_changed = False
             rows = read_dicts_from_csv(file)
 
-            new_value_id_decomposed = new_value_id.split(ID_SEPARATOR)
-            target_feature_id = f"{new_value_id_decomposed[0]}-{new_value_id_decomposed[1]}"
-            new_value_index = int(new_value_id_decomposed[-1])
+            target_feature_id = extract_feature_id(new_value_id)
+            new_value_index = extract_value_index(new_value_id)
             for row in rows:
                 if row["feature_id"] != target_feature_id or row["value_type"] != "listed":
                     continue
-                current_value_index = int(row["value_id"].split(ID_SEPARATOR)[-1])
+                current_value_index = extract_value_index(row["value_id"])
                 if current_value_index < new_value_index:
                     continue
 
