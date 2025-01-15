@@ -16,10 +16,10 @@ IDS_FOR_EXTRACTION = (
 
 def test__split_value_id():
     gold_standard = (
-        ["A", "1", "2"],
-        ["B", "7", "22"],
-        ["C", "12", "6"],
-        ["K", "14", "26"],
+        ("A", "1", "2"),
+        ("B", "7", "22"),
+        ("C", "12", "6"),
+        ("K", "14", "26"),
     )
     for i in range(len(IDS_FOR_EXTRACTION)):
         assert _split_value_id(IDS_FOR_EXTRACTION[i]) == gold_standard[i]
