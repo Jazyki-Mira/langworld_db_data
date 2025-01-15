@@ -6,32 +6,33 @@ from langworld_db_data.idtools.value_id_tools import (
     extract_value_index,
 )
 
-IDS_FOR_EXTRACTION = [
+IDS_FOR_EXTRACTION = (
     "A-1-2",
     "B-7-22",
     "C-12-6",
     "K-14-26",
-]
+)
+
 
 
 def test__split_value_id():
-    gold_standard = [
+    gold_standard = (
         ["A", "1", "2"],
         ["B", "7", "22"],
         ["C", "12", "6"],
         ["K", "14", "26"],
-    ]
+    )
     for i in range(len(IDS_FOR_EXTRACTION)):
         assert _split_value_id(IDS_FOR_EXTRACTION[i]) == gold_standard[i]
 
 
 def test_extract_feature_id():
-    gold_standard = [
+    gold_standard = (
         "A-1",
         "B-7",
         "C-12",
         "K-14",
-    ]
+    )
     for i in range(len(IDS_FOR_EXTRACTION)):
         assert extract_feature_id(IDS_FOR_EXTRACTION[i]) == gold_standard[i]
 
