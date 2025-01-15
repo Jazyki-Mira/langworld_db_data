@@ -14,7 +14,6 @@ IDS_FOR_EXTRACTION = (
 )
 
 
-
 def test__split_value_id():
     gold_standard = (
         ["A", "1", "2"],
