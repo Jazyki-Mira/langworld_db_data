@@ -1,6 +1,6 @@
 import pytest
 
-from langworld_db_data.filetools.txt import (
+from langworld_db_data.tools.files.txt import (
     check_encoding_of_file,
     move_line,
     read_non_empty_lines_from_txt_file,
