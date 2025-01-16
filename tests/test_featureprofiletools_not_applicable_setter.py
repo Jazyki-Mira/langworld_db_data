@@ -1,6 +1,6 @@
 import pytest
 
-from langworld_db_data.featureprofiletools.not_applicable_setter import NotApplicableSetter
+from langworld_db_data.tools.featureprofiles.not_applicable_setter import NotApplicableSetter
 from langworld_db_data.validators.feature_profile_validator import FeatureProfileValidator
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES, DIR_WITH_VALIDATORS_TEST_FILES

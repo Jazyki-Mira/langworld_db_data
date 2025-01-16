@@ -8,8 +8,8 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_DOCULECTS_MATCHED_TO_COUNTRIES,
     SOCIOLINGUISTIC_PROFILES_DIR,
 )
-from langworld_db_data.filetools.csv_xls import read_dicts_from_csv, write_csv
-from langworld_db_data.filetools.json_toml_yaml import read_json_toml_yaml
+from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
+from langworld_db_data.tools.files.json_toml_yaml import read_json_toml_yaml
 
 
 class DoculectInCountryWriterError(Exception):

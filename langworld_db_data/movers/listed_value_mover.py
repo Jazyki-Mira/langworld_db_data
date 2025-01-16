@@ -1,7 +1,7 @@
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.adders.listed_value_adder import ListedValueAdder
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
-from langworld_db_data.idtools.value_id_tools import extract_value_index
+from langworld_db_data.tools.value_ids.value_ids import extract_value_index
 from langworld_db_data.removers.listed_value_remover import ListedValueRemover
 
 

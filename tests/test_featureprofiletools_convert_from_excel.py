@@ -1,4 +1,4 @@
-from langworld_db_data.featureprofiletools.convert_from_excel import convert_from_excel
+from langworld_db_data.tools.featureprofiles.convert_from_excel import convert_from_excel
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 from tests.test_helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 

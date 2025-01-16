@@ -3,7 +3,7 @@ from collections import Counter
 from pathlib import Path
 
 from langworld_db_data.constants.paths import FILE_WITH_LISTED_VALUES, FILE_WITH_NAMES_OF_FEATURES
-from langworld_db_data.filetools.csv_xls import (
+from langworld_db_data.tools.files.csv_xls import (
     check_csv_for_malformed_rows,
     check_csv_for_repetitions_in_column,
     read_dicts_from_csv,

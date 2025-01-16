@@ -7,7 +7,7 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NAMES_OF_FEATURES,
 )
-from langworld_db_data.filetools.csv_xls import (
+from langworld_db_data.tools.files.csv_xls import (
     read_column_from_csv,
     read_dict_from_2_csv_columns,
     read_dicts_from_csv,
