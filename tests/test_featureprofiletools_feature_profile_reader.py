@@ -1,6 +1,8 @@
 import pytest
 
-from langworld_db_data.tools.featureprofiles.data_structures import ValueForFeatureProfileDictionary
+from langworld_db_data.tools.featureprofiles.data_structures import (
+    ValueForFeatureProfileDictionary,
+)
 from langworld_db_data.tools.featureprofiles.feature_profile_reader import FeatureProfileReader
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 

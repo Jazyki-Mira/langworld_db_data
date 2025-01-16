@@ -3,7 +3,9 @@ from pathlib import Path
 import pyperclip
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
-from langworld_db_data.tools.featureprofiles.data_structures import ValueForFeatureProfileDictionary
+from langworld_db_data.tools.featureprofiles.data_structures import (
+    ValueForFeatureProfileDictionary,
+)
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv
 
 

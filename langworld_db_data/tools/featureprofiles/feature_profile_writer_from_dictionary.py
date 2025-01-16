@@ -1,7 +1,9 @@
 from dataclasses import asdict
 from pathlib import Path
 
-from langworld_db_data.tools.featureprofiles.data_structures import ValueForFeatureProfileDictionary
+from langworld_db_data.tools.featureprofiles.data_structures import (
+    ValueForFeatureProfileDictionary,
+)
 from langworld_db_data.tools.files.csv_xls import write_csv
 
 
