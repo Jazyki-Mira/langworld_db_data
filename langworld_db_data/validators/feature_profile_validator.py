@@ -12,9 +12,11 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_NAMES_OF_FEATURES,
     FILE_WITH_VALUE_TYPES,
 )
-from langworld_db_data.featureprofiletools.data_structures import ValueForFeatureProfileDictionary
-from langworld_db_data.featureprofiletools.feature_profile_reader import FeatureProfileReader
-from langworld_db_data.filetools.csv_xls import (
+from langworld_db_data.tools.featureprofiles.data_structures import (
+    ValueForFeatureProfileDictionary,
+)
+from langworld_db_data.tools.featureprofiles.feature_profile_reader import FeatureProfileReader
+from langworld_db_data.tools.files.csv_xls import (
     check_csv_for_malformed_rows,
     check_csv_for_repetitions_in_column,
     read_dict_from_2_csv_columns,

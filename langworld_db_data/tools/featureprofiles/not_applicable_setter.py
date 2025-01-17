@@ -2,8 +2,8 @@ from copy import copy
 from pathlib import Path
 
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
-from langworld_db_data.featureprofiletools.feature_profile_reader import FeatureProfileReader
-from langworld_db_data.featureprofiletools.feature_profile_writer_from_dictionary import (  # noqa E501
+from langworld_db_data.tools.featureprofiles.feature_profile_reader import FeatureProfileReader
+from langworld_db_data.tools.featureprofiles.feature_profile_writer_from_dictionary import (  # noqa E501
     FeatureProfileWriterFromDictionary,
 )
 from langworld_db_data.validators.feature_profile_validator import (

@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from pathlib import Path
 
-from langworld_db_data.filetools.csv_xls import read_column_from_csv
+from langworld_db_data.tools.files.csv_xls import read_column_from_csv
 
 
 class ValidatorError(ValueError):

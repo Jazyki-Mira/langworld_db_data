@@ -6,7 +6,7 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_DOCULECTS,
     FILE_WITH_GENEALOGY_NAMES,
 )
-from langworld_db_data.filetools.csv_xls import (
+from langworld_db_data.tools.files.csv_xls import (
     check_csv_for_malformed_rows,
     check_csv_for_repetitions_in_column,
     read_dicts_from_csv,

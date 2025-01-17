@@ -4,12 +4,12 @@ from typing import Optional
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import AUX_ROW_MARKER, ID_SEPARATOR
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
-from langworld_db_data.filetools.csv_xls import (
+from langworld_db_data.tools.files.csv_xls import (
     read_column_from_csv,
     read_dicts_from_csv,
     write_csv,
 )
-from langworld_db_data.filetools.txt import remove_extra_space
+from langworld_db_data.tools.files.txt import remove_extra_space
 
 INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS = 100
 

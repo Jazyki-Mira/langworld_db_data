@@ -6,12 +6,12 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_GENEALOGY_HIERARCHY,
     FILE_WITH_GENEALOGY_NAMES,
 )
-from langworld_db_data.filetools.csv_xls import (
+from langworld_db_data.tools.files.csv_xls import (
     check_csv_for_malformed_rows,
     check_csv_for_repetitions_in_column,
 )
-from langworld_db_data.filetools.json_toml_yaml import check_yaml_file
-from langworld_db_data.filetools.txt import read_non_empty_lines_from_txt_file
+from langworld_db_data.tools.files.json_toml_yaml import check_yaml_file
+from langworld_db_data.tools.files.txt import read_non_empty_lines_from_txt_file
 from langworld_db_data.validators.validator import Validator, ValidatorError
 
 
