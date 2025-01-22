@@ -1,6 +1,7 @@
 from functools import partial
 from pathlib import Path
 
+from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR
 from langworld_db_data.constants.paths import CONFIG_DIR
 from langworld_db_data.tools.featureprofiles.data_structures import (
     ValueForFeatureProfileDictionary,
@@ -8,23 +9,47 @@ from langworld_db_data.tools.featureprofiles.data_structures import (
 from langworld_db_data.tools.featureprofiles.feature_profile_writer_from_dictionary import (  # noqa E501
     FeatureProfileWriterFromDictionary,
 )
-from langworld_db_data.tools.files.csv_xls import read_dicts_from_xls
+from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, read_dicts_from_xls
 from langworld_db_data.tools.files.json_toml_yaml import read_json_toml_yaml
 
 
 class FeatureProfileConverter:
+    """Contains methods for converting Excel "questionnaire" file
+    (which researchers produce) into feature profile in CSV and vice versa.
+
+    The most notable differences between input Excel and output CSV:
+
+    1. Excel questionnaire has two columns for value name
+    (one for 'listed' and one for 'custom'), whereas a CSV file has only one.
+
+    2. In multiselect features, Excel file has multiple lines
+    for each elementary value (because of dropdown fields) while CSV file
+    has one line with all elementary values joined together.
+    """
+
+    def csv_to_excel(self, path_to_input_csv: Path) -> Path:
+        """Converts CSV feature profile into Excel "questionnaire" file
+        that researchers feel comfortable working with.
+
+        Return output path for convenience.
+        """
+
+        rows = read_dicts_from_csv(path_to_file=path_to_input_csv)
+        rows_for_excel = []
+
+        for row in rows:
+            rows_for_excel += self._generate_excel_rows_from_one_csv_row(row)
+
+        # FIXME write to Excel
+        output_path = path_to_input_csv.parent / f"{path_to_input_csv.stem}.xlsm"
+        print(f"Saving converted CSV file as Excel file {output_path}")
+        return output_path
+
     def excel_to_csv(self, path_to_input_excel: Path) -> Path:
-        """Converts Excel "questionnaire" file (which researchers produce)
-        into feature profile in CSV. Returns output path for convenience.
+        """Convert Excel "questionnaire" file (which researchers produce)
+        into feature profile in CSV.
 
-        The most notable differences between input Excel and output CSV:
-
-        1. Excel questionnaire has two columns for value name
-        (one for 'listed' and one for 'custom'), whereas a CSV file has only one.
-
-        2. In multiselect features, Excel file has multiple lines
-        for each elementary value (because of dropdown fields) while CSV file
-        has one line with all elementary values joined together.
+        Return output path for convenience.
         """
 
         # It is important to always use the current YAML file in conversion,
@@ -89,6 +114,57 @@ class FeatureProfileConverter:
             feature_dict=value_for_feature_id, output_path=output_path
         )
         return output_path
+
+    @staticmethod
+    def _generate_excel_rows_from_one_csv_row(row: dict[str, str]) -> list[list[str]]:
+        """Generate one or more rows for Excel from one CSV row.
+        The amount of rows is equal to the amount of atomic values in CSV row.
+
+        For uniformity, returns list of lists (rows) in all cases.
+        """
+        if ATOMIC_VALUE_SEPARATOR not in row["value_id"]:
+            # simple case: CSV row yields one row in Excel
+            return [
+                [
+                    row["feature_id"],
+                    row["feature_name_ru"],
+                    row["value_type"],
+                    row["value_id"],
+                    (
+                        f'{row["value_id"]}: {row["value_ru"]}'
+                        if row["value_type"] == "listed"
+                        else ""
+                    ),
+                    row["value_ru"] if row["value_type"] == "custom" else "",
+                    row["comment_ru"],
+                    row["comment_en"],
+                    row["page_numbers"],
+                ]
+            ]
+
+        # complex case: CSV row must yield multiple rows in Excel
+        value_ids = row["value_id"].split(ATOMIC_VALUE_SEPARATOR)
+        value_names_en = row["value_en"].split(ATOMIC_VALUE_SEPARATOR)
+        value_names_ru = row["value_ru"].split(ATOMIC_VALUE_SEPARATOR)
+
+        rows_for_excel = []
+        for value_id, value_name_en, value_name_ru in zip(
+            value_ids, value_names_en, value_names_ru
+        ):
+            row_for_excel = [
+                row["feature_id"],
+                row["feature_name_ru"],
+                row["value_type"],
+                value_id,
+                f"{value_id}: {value_name_ru}",  # no need to check for value type: it's "listed"
+                "",  # value is not custom, so this will be empty
+                row["comment_ru"],
+                row["comment_en"],
+                row["page_numbers"],
+            ]
+            rows_for_excel.append(row_for_excel)
+
+        return rows_for_excel
 
     @staticmethod
     def _get_value_from_row(
