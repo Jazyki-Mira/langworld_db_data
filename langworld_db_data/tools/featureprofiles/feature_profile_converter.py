@@ -39,6 +39,7 @@ class FeatureProfileConverter:
 
         for row in rows:
             rows_for_excel += self._generate_excel_rows_from_one_csv_row(row)
+        # FIXME add last row with editor's name
 
         # FIXME write to Excel
         output_path = path_to_input_csv.parent / f"{path_to_input_csv.stem}.xlsm"
