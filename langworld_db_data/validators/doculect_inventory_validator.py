@@ -1,7 +1,6 @@
 from collections import defaultdict
 from pathlib import Path
 
-from langworld_db_data.constants.literals import KEY_FOR_VALUE_ID
 from langworld_db_data.constants.paths import (
     FEATURE_PROFILES_DIR,
     FILE_WITH_DOCULECTS,
@@ -36,12 +35,12 @@ class DoculectInventoryValidator(Validator):
             raise DoculectInventoryValidatorError(str(e))
 
         self.doculects = read_dicts_from_csv(file_with_doculects)
-        self.doculect_ids = {d[KEY_FOR_VALUE_ID] for d in self.doculects}
+        self.doculect_ids = {d["id"] for d in self.doculects}
 
         self.genealogy_family_ids = set(self._read_ids(file_with_genealogy_names))
 
         self.has_feature_profile_for_doculect_id = {
-            d[KEY_FOR_VALUE_ID]: d["has_feature_profile"] for d in self.doculects
+            d["id"]: d["has_feature_profile"] for d in self.doculects
         }
 
     def validate(self) -> None:
@@ -103,10 +102,10 @@ class DoculectInventoryValidator(Validator):
         for doculect in self.doculects:
             if (
                 doculect["has_feature_profile"] == "1"
-                and doculect[KEY_FOR_VALUE_ID] not in self.names_of_feature_profiles
+                and doculect["id"] not in self.names_of_feature_profiles
             ):
                 raise DoculectInventoryValidatorError(
-                    f"Doculect {doculect[KEY_FOR_VALUE_ID]} has no file with feature profile."
+                    f"Doculect {doculect["id"]} has no file with feature profile."
                 )
         print(
             "OK: Every doculect that is marked as having a feature profile has a"

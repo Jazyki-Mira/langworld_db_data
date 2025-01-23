@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from langworld_db_data.constants.iterables import LOCALES
-from langworld_db_data.constants.literals import KEY_FOR_VALUE_ID
 from langworld_db_data.constants.paths import (
     FILE_WITH_COUNTRIES,
     FILE_WITH_COUNTRY_ALIASES,
@@ -69,7 +68,7 @@ class DoculectInCountryWriter:
 
         doculect_rows = read_dicts_from_csv(file_with_doculects)
 
-        self.doculect_ids = [row[KEY_FOR_VALUE_ID] for row in doculect_rows]
+        self.doculect_ids = [row["id"] for row in doculect_rows]
 
         self.doculect_id_to_locale_to_file = {}
 
@@ -91,7 +90,7 @@ class DoculectInCountryWriter:
         # this is the initial version that will have to be amended by reading the file
         # with aliases
         self.doculect_id_to_countries: dict[str, set[str]] = {
-            row[KEY_FOR_VALUE_ID]: {row["main_country_id"]} for row in doculect_rows
+            row["id"]: {row["main_country_id"]} for row in doculect_rows
         }
 
         if self.verbose:
@@ -102,9 +101,7 @@ class DoculectInCountryWriter:
         for row in read_dicts_from_csv(file_with_countries):
             for locale in LOCALES:
                 # (row[locale], locale) gives a dictionary key like (Russia, en):
-                self.country_name_and_locale_to_country_id[(row[locale], locale)] = row[
-                    KEY_FOR_VALUE_ID
-                ]
+                self.country_name_and_locale_to_country_id[(row[locale], locale)] = row["id"]
 
         for row in read_dicts_from_csv(file_with_country_aliases):
             tuple_key = (row["alias"], row["locale"])

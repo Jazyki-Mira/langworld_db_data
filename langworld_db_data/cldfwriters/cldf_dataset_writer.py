@@ -5,7 +5,6 @@ from pycldf import StructureDataset
 from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     KEY_FOR_FEATURE_ID,
-    KEY_FOR_VALUE_ID,
 )
 from langworld_db_data.constants.paths import (
     CLDF_DIR,
@@ -53,7 +52,7 @@ class CLDFDatasetWriter:
         # CodeTable
         listed_values = [
             {
-                "ID": row[KEY_FOR_VALUE_ID],
+                "ID": row["id"],
                 "Parameter_ID": row[KEY_FOR_FEATURE_ID],
                 "Name": row["en"],
                 "Description": "",
@@ -66,7 +65,7 @@ class CLDFDatasetWriter:
         # ParameterTable
         features = [
             {
-                "ID": row[KEY_FOR_VALUE_ID],
+                "ID": row["id"],
                 "Name": row["en"],
                 "Description": "",
                 # custom columns:
@@ -77,7 +76,7 @@ class CLDFDatasetWriter:
 
         languages = [
             {
-                "ID": row[KEY_FOR_VALUE_ID],
+                "ID": row["id"],
                 "Name": row["name_en"],
                 "Macroarea": "",
                 "Latitude": row["latitude"],
