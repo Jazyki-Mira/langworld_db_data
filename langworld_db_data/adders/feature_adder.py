@@ -75,9 +75,9 @@ class FeatureAdder(ObjectWithPaths):
 
         rows_with_features = read_dicts_from_csv(self.input_file_with_features)
 
-        if feat_en in [row[KEY_FOR_ENGLISH_NAME] for row in rows_with_features] or feat_ru.strip() in [
-            row["ru"] for row in rows_with_features
-        ]:
+        if feat_en in [
+            row[KEY_FOR_ENGLISH_NAME] for row in rows_with_features
+        ] or feat_ru.strip() in [row["ru"] for row in rows_with_features]:
             # note that this check should not be restricted to one feature category
             raise FeatureAdderError(
                 "English or Russian feature name is already present in list of features"
