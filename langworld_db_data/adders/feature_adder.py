@@ -2,7 +2,12 @@ from pathlib import Path
 from typing import Optional
 
 from langworld_db_data import ObjectWithPaths
-from langworld_db_data.constants.literals import AUX_ROW_MARKER, ID_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
+from langworld_db_data.constants.literals import (
+    AUX_ROW_MARKER,
+    ID_SEPARATOR,
+    KEY_FOR_FEATURE_ID,
+    KEY_FOR_VALUE_ID,
+)
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import (
     read_column_from_csv,
@@ -81,7 +86,9 @@ class FeatureAdder(ObjectWithPaths):
         if insert_after_index is not None:
             feature_id_to_add_after = f"{cat_id}{ID_SEPARATOR}{insert_after_index}"
 
-            if feature_id_to_add_after not in [row[KEY_FOR_VALUE_ID] for row in rows_with_features]:
+            if feature_id_to_add_after not in [
+                row[KEY_FOR_VALUE_ID] for row in rows_with_features
+            ]:
                 raise FeatureAdderError(
                     f"Cannot add feature after {cat_id}{ID_SEPARATOR}{insert_after_index}:"
                     f" There is no feature with index {index_of_new_feature} in"
@@ -106,9 +113,17 @@ class FeatureAdder(ObjectWithPaths):
         if insert_after_index is None:
             print(f"after the last feature in category {cat_id}")
             rows_to_write = (
-                [row for row in rows_with_features if row[KEY_FOR_VALUE_ID].split(ID_SEPARATOR)[0] <= cat_id]
+                [
+                    row
+                    for row in rows_with_features
+                    if row[KEY_FOR_VALUE_ID].split(ID_SEPARATOR)[0] <= cat_id
+                ]
                 + [row_to_add]
-                + [row for row in rows_with_features if row[KEY_FOR_VALUE_ID].split(ID_SEPARATOR)[0] > cat_id]
+                + [
+                    row
+                    for row in rows_with_features
+                    if row[KEY_FOR_VALUE_ID].split(ID_SEPARATOR)[0] > cat_id
+                ]
             )
         else:
             print(f"after feature {feature_id_to_add_after}")

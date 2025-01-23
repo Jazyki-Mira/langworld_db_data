@@ -102,7 +102,9 @@ class DoculectInCountryWriter:
         for row in read_dicts_from_csv(file_with_countries):
             for locale in LOCALES:
                 # (row[locale], locale) gives a dictionary key like (Russia, en):
-                self.country_name_and_locale_to_country_id[(row[locale], locale)] = row[KEY_FOR_VALUE_ID]
+                self.country_name_and_locale_to_country_id[(row[locale], locale)] = row[
+                    KEY_FOR_VALUE_ID
+                ]
 
         for row in read_dicts_from_csv(file_with_country_aliases):
             tuple_key = (row["alias"], row["locale"])

@@ -2,7 +2,11 @@ from pathlib import Path
 
 from pycldf import StructureDataset
 
-from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
+from langworld_db_data.constants.literals import (
+    ATOMIC_VALUE_SEPARATOR,
+    KEY_FOR_FEATURE_ID,
+    KEY_FOR_VALUE_ID,
+)
 from langworld_db_data.constants.paths import (
     CLDF_DIR,
     FEATURE_PROFILES_DIR,

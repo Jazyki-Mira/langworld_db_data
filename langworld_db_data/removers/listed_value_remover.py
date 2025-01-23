@@ -131,9 +131,7 @@ class ListedValueRemover(ObjectWithPaths):
             current_value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
             if current_value_index > index_of_value_to_remove:
                 new_current_value_index = str(current_value_index - 1)
-                new_current_value_id = (
-                    f'{extract_feature_id(row[KEY_FOR_VALUE_ID])}{ID_SEPARATOR}{new_current_value_index}'
-                )
+                new_current_value_id = f"{extract_feature_id(row[KEY_FOR_VALUE_ID])}{ID_SEPARATOR}{new_current_value_index}"
                 rows_with_updated_indices[i][KEY_FOR_VALUE_ID] = new_current_value_id
 
         return rows_with_updated_indices
