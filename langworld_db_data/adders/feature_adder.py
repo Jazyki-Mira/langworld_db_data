@@ -5,6 +5,7 @@ from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import (
     AUX_ROW_MARKER,
     ID_SEPARATOR,
+    KEY_FOR_ENGLISH_NAME,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_VALUE_ID,
 )
@@ -74,7 +75,7 @@ class FeatureAdder(ObjectWithPaths):
 
         rows_with_features = read_dicts_from_csv(self.input_file_with_features)
 
-        if feat_en in [row["en"] for row in rows_with_features] or feat_ru.strip() in [
+        if feat_en in [row[KEY_FOR_ENGLISH_NAME] for row in rows_with_features] or feat_ru.strip() in [
             row["ru"] for row in rows_with_features
         ]:
             # note that this check should not be restricted to one feature category
@@ -151,7 +152,7 @@ class FeatureAdder(ObjectWithPaths):
                 {
                     "id": value_id,
                     "feature_id": id_of_new_feature,
-                    "en": new_listed_value["en"],
+                    "en": new_listed_value[KEY_FOR_ENGLISH_NAME],
                     "ru": new_listed_value["ru"],
                 }
             )
