@@ -105,7 +105,7 @@ class DoculectInventoryValidator(Validator):
                 and doculect["id"] not in self.names_of_feature_profiles
             ):
                 raise DoculectInventoryValidatorError(
-                    f"Doculect {doculect["id"]} has no file with feature profile."
+                    f"Doculect {doculect['id']} has no file with feature profile."
                 )
         print(
             "OK: Every doculect that is marked as having a feature profile has a"
