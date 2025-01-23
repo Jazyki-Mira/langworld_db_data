@@ -148,7 +148,7 @@ class FeatureAdder(ObjectWithPaths):
 
         for i, new_listed_value in enumerate(listed_values_to_add, start=1):
             value_id = f"{id_of_new_feature}{ID_SEPARATOR}{i}"
-            print(f'Value ID {value_id} - {new_listed_value[KEY_FOR_RUSSIAN_NAME]} will be added')
+            print(f"Value ID {value_id} - {new_listed_value[KEY_FOR_RUSSIAN_NAME]} will be added")
             rows_to_add_to_file_with_listed_values.append(
                 {
                     "id": value_id,

@@ -101,7 +101,10 @@ class ListedValueAdder(ObjectWithPaths):
         # and to calculate line number for the new value (if it is intended non-final).
 
         for row in rows:
-            if row[KEY_FOR_ENGLISH_NAME] == new_value_en or row[KEY_FOR_RUSSIAN_NAME] == new_value_ru:
+            if (
+                row[KEY_FOR_ENGLISH_NAME] == new_value_en
+                or row[KEY_FOR_RUSSIAN_NAME] == new_value_ru
+            ):
                 raise ValueError(f"Row {row} already contains value you are trying to add")
 
         value_indices_to_inventory_line_numbers = self._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(

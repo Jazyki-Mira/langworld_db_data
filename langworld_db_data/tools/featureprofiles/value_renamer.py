@@ -1,6 +1,10 @@
 from pathlib import Path
 
-from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR, KEY_FOR_VALUE_ID, KEY_FOR_RUSSIAN_NAME
+from langworld_db_data.constants.literals import (
+    ATOMIC_VALUE_SEPARATOR,
+    KEY_FOR_RUSSIAN_NAME,
+    KEY_FOR_VALUE_ID,
+)
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, INVENTORIES_DIR
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.tools.files.txt import remove_extra_space
