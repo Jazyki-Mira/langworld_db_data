@@ -2,7 +2,7 @@ from pathlib import Path
 
 from pycldf import StructureDataset
 
-from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR, KEY_FOR_FEATURE_ID
+from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
 from langworld_db_data.constants.paths import (
     CLDF_DIR,
     FEATURE_PROFILES_DIR,
@@ -49,7 +49,7 @@ class CLDFDatasetWriter:
         # CodeTable
         listed_values = [
             {
-                "ID": row["id"],
+                "ID": row[KEY_FOR_VALUE_ID],
                 "Parameter_ID": row[KEY_FOR_FEATURE_ID],
                 "Name": row["en"],
                 "Description": "",
@@ -62,7 +62,7 @@ class CLDFDatasetWriter:
         # ParameterTable
         features = [
             {
-                "ID": row["id"],
+                "ID": row[KEY_FOR_VALUE_ID],
                 "Name": row["en"],
                 "Description": "",
                 # custom columns:
@@ -73,7 +73,7 @@ class CLDFDatasetWriter:
 
         languages = [
             {
-                "ID": row["id"],
+                "ID": row[KEY_FOR_VALUE_ID],
                 "Name": row["name_en"],
                 "Macroarea": "",
                 "Latitude": row["latitude"],

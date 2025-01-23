@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR
+from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR, KEY_FOR_VALUE_ID
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, INVENTORIES_DIR
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.tools.files.txt import remove_extra_space
@@ -66,7 +66,7 @@ class ValueRenamer:
         id_of_value_to_rename: str,
     ) -> bool:
         for line in self.inventory_of_listed_values:
-            if line["id"] == id_of_value_to_rename:
+            if line[KEY_FOR_VALUE_ID] == id_of_value_to_rename:
                 return True
         return False
 
@@ -76,7 +76,7 @@ class ValueRenamer:
         new_value_name: str,
     ):
         for line in self.inventory_of_listed_values:
-            if line["id"] != id_of_value_to_rename:
+            if line[KEY_FOR_VALUE_ID] != id_of_value_to_rename:
                 continue
             if line["ru"] == new_value_name:
                 return True
@@ -92,7 +92,7 @@ class ValueRenamer:
 
         data_to_write = []
         for line in self.inventory_of_listed_values:
-            if id_of_value_to_rename not in line["id"]:
+            if id_of_value_to_rename not in line[KEY_FOR_VALUE_ID]:
                 data_to_write.append(line)
                 continue
             line_to_write = line.copy()
