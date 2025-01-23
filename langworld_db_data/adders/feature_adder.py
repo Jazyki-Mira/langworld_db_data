@@ -251,10 +251,16 @@ class FeatureAdder(ObjectWithPaths):
         else:
             found_feature_to_add_after = False
             for row_index, row in enumerate(rows):
-                if row[KEY_FOR_FEATURE_ID] == feature_id_to_add_after and not found_feature_to_add_after:
+                if (
+                    row[KEY_FOR_FEATURE_ID] == feature_id_to_add_after
+                    and not found_feature_to_add_after
+                ):
                     # found beginning of block of values for relevant feature
                     found_feature_to_add_after = True
-                elif row[KEY_FOR_FEATURE_ID] != feature_id_to_add_after and found_feature_to_add_after:
+                elif (
+                    row[KEY_FOR_FEATURE_ID] != feature_id_to_add_after
+                    and found_feature_to_add_after
+                ):
                     # found end of block
                     return rows[:row_index] + rows_to_add + rows[row_index:]
             else:

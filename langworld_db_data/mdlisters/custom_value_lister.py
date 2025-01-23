@@ -42,8 +42,8 @@ class CustomValueLister(AbstractValueLister):
             )
             for row in self.filtered_rows_for_volume_doculect_id[volume_doculect_id]:
                 content += (
-                    f'- **{row[KEY_FOR_FEATURE_ID]}**'
-                    f' ({self.feature_ru_for_feature_id[row[KEY_FOR_FEATURE_ID]]}):'
+                    f"- **{row[KEY_FOR_FEATURE_ID]}**"
+                    f" ({self.feature_ru_for_feature_id[row[KEY_FOR_FEATURE_ID]]}):"
                     f' {row["value_ru"]}'
                 )
                 if row["comment_ru"]:
