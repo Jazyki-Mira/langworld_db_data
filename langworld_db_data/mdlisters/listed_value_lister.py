@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR
+from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR, KEY_FOR_FEATURE_ID
 from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_LISTED_VALUES,
     FEATURE_PROFILES_DIR,
@@ -38,7 +38,7 @@ class ListedValueLister(AbstractValueLister):
             feature_id: {
                 row["id"]: []
                 for row in read_dicts_from_csv(self.file_with_listed_values)
-                if row["feature_id"] == feature_id
+                if row[KEY_FOR_FEATURE_ID] == feature_id
             }
             for feature_id in feature_ids
         }
@@ -51,13 +51,13 @@ class ListedValueLister(AbstractValueLister):
 
         for volume_and_doculect_id in self.filtered_rows_for_volume_doculect_id:
             for row in self.filtered_rows_for_volume_doculect_id[volume_and_doculect_id]:
-                if feature_is_multiselect_for_feature_id[row["feature_id"]] == "1":
+                if feature_is_multiselect_for_feature_id[row[KEY_FOR_FEATURE_ID]] == "1":
                     for value_id in row["value_id"].split(ATOMIC_VALUE_SEPARATOR):
-                        feature_to_value_to_doculects[row["feature_id"]][value_id].append(
+                        feature_to_value_to_doculects[row[KEY_FOR_FEATURE_ID]][value_id].append(
                             volume_and_doculect_id
                         )
                 else:
-                    feature_to_value_to_doculects[row["feature_id"]][row["value_id"]].append(
+                    feature_to_value_to_doculects[row[KEY_FOR_FEATURE_ID]][row["value_id"]].append(
                         volume_and_doculect_id
                     )
 

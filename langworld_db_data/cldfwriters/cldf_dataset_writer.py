@@ -2,7 +2,7 @@ from pathlib import Path
 
 from pycldf import StructureDataset
 
-from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR
+from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR, KEY_FOR_FEATURE_ID
 from langworld_db_data.constants.paths import (
     CLDF_DIR,
     FEATURE_PROFILES_DIR,
@@ -50,7 +50,7 @@ class CLDFDatasetWriter:
         listed_values = [
             {
                 "ID": row["id"],
-                "Parameter_ID": row["feature_id"],
+                "Parameter_ID": row[KEY_FOR_FEATURE_ID],
                 "Name": row["en"],
                 "Description": "",
                 # custom columns:
@@ -102,7 +102,7 @@ class CLDFDatasetWriter:
                 # handling multiselect listed values
                 if (
                     relevant_row["value_type"] == "listed"
-                    and self.is_multiselect_for_feature_id[relevant_row["feature_id"]] == "1"
+                    and self.is_multiselect_for_feature_id[relevant_row[KEY_FOR_FEATURE_ID]] == "1"
                 ):
                     for value_id, value_ru in zip(
                         relevant_row["value_id"].split(ATOMIC_VALUE_SEPARATOR),
@@ -112,7 +112,7 @@ class CLDFDatasetWriter:
                             {
                                 "ID": value_table_row_id,
                                 "Language_ID": language_id,
-                                "Parameter_ID": relevant_row["feature_id"],
+                                "Parameter_ID": relevant_row[KEY_FOR_FEATURE_ID],
                                 "Value": self.value_en_for_value_id[value_id],
                                 "Value_RU": value_ru,
                                 "Code_ID": value_id,
@@ -128,7 +128,7 @@ class CLDFDatasetWriter:
                         {
                             "ID": value_table_row_id,
                             "Language_ID": language_id,
-                            "Parameter_ID": relevant_row["feature_id"],
+                            "Parameter_ID": relevant_row[KEY_FOR_FEATURE_ID],
                             # English value will be empty for values that are not yet
                             # in the inventory
                             "Value": self.value_en_for_value_id.get(relevant_row["value_id"], ""),

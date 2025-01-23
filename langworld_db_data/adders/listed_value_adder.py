@@ -252,7 +252,7 @@ class ListedValueAdder(ObjectWithPaths):
             target_feature_id = extract_feature_id(new_value_id)
             new_value_index = extract_value_index(new_value_id)
             for row in rows:
-                if row["feature_id"] != target_feature_id or row["value_type"] != "listed":
+                if row[KEY_FOR_FEATURE_ID] != target_feature_id or row["value_type"] != "listed":
                     continue
                 current_value_index = extract_value_index(row["value_id"])
                 if current_value_index < new_value_index:

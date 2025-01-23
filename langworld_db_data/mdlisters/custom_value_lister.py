@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from langworld_db_data.constants.literals import ID_SEPARATOR
+from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_ID
 from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT,
     DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_FEATURE,
@@ -42,8 +42,8 @@ class CustomValueLister(AbstractValueLister):
             )
             for row in self.filtered_rows_for_volume_doculect_id[volume_doculect_id]:
                 content += (
-                    f'- **{row["feature_id"]}**'
-                    f' ({self.feature_ru_for_feature_id[row["feature_id"]]}):'
+                    f'- **{row[KEY_FOR_FEATURE_ID]}**'
+                    f' ({self.feature_ru_for_feature_id[row[KEY_FOR_FEATURE_ID]]}):'
                     f' {row["value_ru"]}'
                 )
                 if row["comment_ru"]:
@@ -65,7 +65,7 @@ class CustomValueLister(AbstractValueLister):
                 rows_with_custom_values += [
                     [
                         volume_doculect_id.split(":")[1],
-                        row["feature_id"],
+                        row[KEY_FOR_FEATURE_ID],
                         row["value_ru"],
                         row["comment_ru"],
                     ]

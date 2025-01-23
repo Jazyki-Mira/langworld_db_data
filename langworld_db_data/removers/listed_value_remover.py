@@ -1,5 +1,5 @@
 from langworld_db_data import ObjectWithPaths
-from langworld_db_data.constants.literals import ID_SEPARATOR
+from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_ID
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.tools.value_ids.value_ids import extract_feature_id, extract_value_index
 
@@ -85,7 +85,7 @@ class ListedValueRemover(ObjectWithPaths):
             for row in rows:
                 if row["value_type"] != "listed":
                     continue
-                if row["feature_id"] != extract_feature_id(id_of_value_to_remove):
+                if row[KEY_FOR_FEATURE_ID] != extract_feature_id(id_of_value_to_remove):
                     continue
 
                 if row["value_id"] == id_of_value_to_remove:
@@ -126,7 +126,7 @@ class ListedValueRemover(ObjectWithPaths):
         rows_with_updated_indices = rows.copy()
 
         for i, row in enumerate(rows):
-            if row["feature_id"] != feature_id:
+            if row[KEY_FOR_FEATURE_ID] != feature_id:
                 continue
             current_value_index = extract_value_index(row["id"])
             if current_value_index > index_of_value_to_remove:

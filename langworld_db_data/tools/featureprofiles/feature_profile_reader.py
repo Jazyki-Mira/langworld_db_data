@@ -2,6 +2,7 @@ from pathlib import Path
 
 import pyperclip
 
+from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
 from langworld_db_data.tools.featureprofiles.data_structures import (
     ValueForFeatureProfileDictionary,
@@ -40,10 +41,10 @@ class FeatureProfileReader:
         feature_id_to_row_dict = {}
 
         for i, row in enumerate(read_dicts_from_csv(file), start=1):
-            if not row["feature_id"]:
+            if not row[KEY_FOR_FEATURE_ID]:
                 raise ValueError(f"File {file.stem} does not contain feature ID in row {i + 1}")
             relevant_columns = {key: row[key] for key in row if key != "feature_id"}
-            feature_id_to_row_dict[row["feature_id"]] = ValueForFeatureProfileDictionary(
+            feature_id_to_row_dict[row[KEY_FOR_FEATURE_ID]] = ValueForFeatureProfileDictionary(
                 **relevant_columns
             )
 

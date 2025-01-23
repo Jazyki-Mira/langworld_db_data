@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Optional
 
 from langworld_db_data import ObjectWithPaths
-from langworld_db_data.constants.literals import AUX_ROW_MARKER, ID_SEPARATOR
+from langworld_db_data.constants.literals import AUX_ROW_MARKER, ID_SEPARATOR, KEY_FOR_FEATURE_ID
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import (
     read_column_from_csv,
@@ -242,8 +242,8 @@ class FeatureAdder(ObjectWithPaths):
         if feature_id_to_add_after is None:
             for row_index, row in enumerate(rows):
                 if (
-                    row["feature_id"].split(ID_SEPARATOR)[0] > category_id
-                    or row["feature_id"] == AUX_ROW_MARKER
+                    row[KEY_FOR_FEATURE_ID].split(ID_SEPARATOR)[0] > category_id
+                    or row[KEY_FOR_FEATURE_ID] == AUX_ROW_MARKER
                 ):
                     return rows[:row_index] + rows_to_add + rows[row_index:]
             else:  # we have reached end of file
@@ -251,10 +251,10 @@ class FeatureAdder(ObjectWithPaths):
         else:
             found_feature_to_add_after = False
             for row_index, row in enumerate(rows):
-                if row["feature_id"] == feature_id_to_add_after and not found_feature_to_add_after:
+                if row[KEY_FOR_FEATURE_ID] == feature_id_to_add_after and not found_feature_to_add_after:
                     # found beginning of block of values for relevant feature
                     found_feature_to_add_after = True
-                elif row["feature_id"] != feature_id_to_add_after and found_feature_to_add_after:
+                elif row[KEY_FOR_FEATURE_ID] != feature_id_to_add_after and found_feature_to_add_after:
                     # found end of block
                     return rows[:row_index] + rows_to_add + rows[row_index:]
             else:
