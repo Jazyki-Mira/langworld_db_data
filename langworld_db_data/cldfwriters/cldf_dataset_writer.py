@@ -6,6 +6,7 @@ from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     KEY_FOR_ENGLISH_NAME,
     KEY_FOR_FEATURE_ID,
+    KEY_FOR_RUSSIAN_NAME,
 )
 from langworld_db_data.constants.paths import (
     CLDF_DIR,
@@ -58,7 +59,7 @@ class CLDFDatasetWriter:
                 "Name": row[KEY_FOR_ENGLISH_NAME],
                 "Description": "",
                 # custom columns:
-                "Name_RU": row["ru"],
+                "Name_RU": row[KEY_FOR_RUSSIAN_NAME],
             }
             for row in self.listed_values
         ]
@@ -70,7 +71,7 @@ class CLDFDatasetWriter:
                 "Name": row[KEY_FOR_ENGLISH_NAME],
                 "Description": "",
                 # custom columns:
-                "Name_RU": row["ru"],
+                "Name_RU": row[KEY_FOR_RUSSIAN_NAME],
             }
             for row in self.features
         ]

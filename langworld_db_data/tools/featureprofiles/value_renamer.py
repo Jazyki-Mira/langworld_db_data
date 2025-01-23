@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR, KEY_FOR_VALUE_ID
+from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR, KEY_FOR_VALUE_ID, KEY_FOR_RUSSIAN_NAME
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, INVENTORIES_DIR
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.tools.files.txt import remove_extra_space
@@ -78,7 +78,7 @@ class ValueRenamer:
         for line in self.inventory_of_listed_values:
             if line[KEY_FOR_VALUE_ID] != id_of_value_to_rename:
                 continue
-            if line["ru"] == new_value_name:
+            if line[KEY_FOR_RUSSIAN_NAME] == new_value_name:
                 return True
             return False
 
@@ -97,8 +97,8 @@ class ValueRenamer:
                 continue
             line_to_write = line.copy()
             print(f"Found exact match in {input_file.name}")
-            print(f"Changed {line['ru']} to {new_value_name}")
-            line_to_write["ru"] = new_value_name
+            print(f"Changed {line[KEY_FOR_RUSSIAN_NAME]} to {new_value_name}")
+            line_to_write[KEY_FOR_RUSSIAN_NAME] = new_value_name
             data_to_write.append(line_to_write)
         write_csv(
             rows=data_to_write,

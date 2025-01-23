@@ -7,6 +7,7 @@ from langworld_db_data.constants.literals import (
     ID_SEPARATOR,
     KEY_FOR_ENGLISH_NAME,
     KEY_FOR_FEATURE_ID,
+    KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_VALUE_ID,
 )
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
@@ -77,7 +78,7 @@ class FeatureAdder(ObjectWithPaths):
 
         if feat_en in [
             row[KEY_FOR_ENGLISH_NAME] for row in rows_with_features
-        ] or feat_ru.strip() in [row["ru"] for row in rows_with_features]:
+        ] or feat_ru.strip() in [row[KEY_FOR_RUSSIAN_NAME] for row in rows_with_features]:
             # note that this check should not be restricted to one feature category
             raise FeatureAdderError(
                 "English or Russian feature name is already present in list of features"
@@ -147,13 +148,13 @@ class FeatureAdder(ObjectWithPaths):
 
         for i, new_listed_value in enumerate(listed_values_to_add, start=1):
             value_id = f"{id_of_new_feature}{ID_SEPARATOR}{i}"
-            print(f'Value ID {value_id} - {new_listed_value["ru"]} will be added')
+            print(f'Value ID {value_id} - {new_listed_value[KEY_FOR_RUSSIAN_NAME]} will be added')
             rows_to_add_to_file_with_listed_values.append(
                 {
                     "id": value_id,
                     "feature_id": id_of_new_feature,
                     "en": new_listed_value[KEY_FOR_ENGLISH_NAME],
-                    "ru": new_listed_value["ru"],
+                    "ru": new_listed_value[KEY_FOR_RUSSIAN_NAME],
                 }
             )
 
