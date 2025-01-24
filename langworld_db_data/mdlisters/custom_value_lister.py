@@ -52,7 +52,7 @@ class CustomValueLister(AbstractValueLister):
                     f" {row[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}"
                 )
                 if row[KEY_FOR_RUSSIAN_COMMENT]:
-                    content += f'\n\n\t_Комментарий: {row[KEY_FOR_RUSSIAN_COMMENT]}_'
+                    content += f"\n\n\t_Комментарий: {row[KEY_FOR_RUSSIAN_COMMENT]}_"
                 content += "\n"
             content += "\n"
 
