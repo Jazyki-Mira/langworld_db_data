@@ -1,6 +1,5 @@
 import pytest
 
-from langworld_db_data.constants.literals import KEY_FOR_VALUE_TYPE
 from langworld_db_data.tools.featureprofiles.data_structures import (
     ValueForFeatureProfileDictionary,
 )
@@ -75,7 +74,7 @@ def test_read_feature_profile_as_dict_from_file_fails_with_bad_file(test_reader)
             "catalan",
             "A-1",
             {
-                KEY_FOR_VALUE_TYPE: "listed",
+                "value_type": "listed",
                 "value_id": "A-1-2",
                 "value_ru": "Три",
                 "comment_ru": "",
@@ -85,7 +84,7 @@ def test_read_feature_profile_as_dict_from_file_fails_with_bad_file(test_reader)
             "catalan",
             "D-6",
             {
-                KEY_FOR_VALUE_TYPE: "not_stated",
+                "value_type": "not_stated",
                 "value_id": "",
                 "value_ru": "",
                 "comment_ru": "Систематизированных данных нет.",
