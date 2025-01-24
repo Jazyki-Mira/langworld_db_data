@@ -1,5 +1,5 @@
 from langworld_db_data import ObjectWithPaths
-from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
+from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID, KEY_FOR_VALUE_TYPE
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.tools.value_ids.value_ids import extract_feature_id, extract_value_index
 
@@ -83,14 +83,14 @@ class ListedValueRemover(ObjectWithPaths):
             rows = read_dicts_from_csv(file)
 
             for row in rows:
-                if row["value_type"] != "listed":
+                if row[KEY_FOR_VALUE_TYPE] != "listed":
                     continue
                 if row[KEY_FOR_FEATURE_ID] != extract_feature_id(id_of_value_to_remove):
                     continue
 
                 if row["value_id"] == id_of_value_to_remove:
                     row["value_id"] = ""
-                    row["value_type"] = "custom"
+                    row[KEY_FOR_VALUE_TYPE] = "custom"
                     print(f"Changing value type to custom in {file.stem}")
                     is_changed = True
                     break

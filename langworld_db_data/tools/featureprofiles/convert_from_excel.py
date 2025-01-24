@@ -1,6 +1,7 @@
 from functools import partial
 from pathlib import Path
 
+from langworld_db_data.constants.literals import KEY_FOR_VALUE_TYPE
 from langworld_db_data.constants.paths import CONFIG_DIR
 from langworld_db_data.tools.featureprofiles.data_structures import (
     ValueForFeatureProfileDictionary,
@@ -55,7 +56,7 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
         _get = partial(_get_value_from_row, row_=row, name_for_id=sheet_or_column_name_for_id)
 
         feature_id = _get("feature_id")
-        value_type = _get("value_type")
+        value_type = _get(KEY_FOR_VALUE_TYPE)
         value_id = _get("value_id")
         value_ru = (
             _get("listed_value_ru").removeprefix(f"{value_id}: ")

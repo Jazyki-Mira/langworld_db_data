@@ -8,6 +8,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_VALUE_ID,
+    KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.tools.value_ids.value_ids import extract_feature_id, extract_value_index
@@ -262,7 +263,7 @@ class ListedValueAdder(ObjectWithPaths):
             target_feature_id = extract_feature_id(new_value_id)
             new_value_index = extract_value_index(new_value_id)
             for row in rows:
-                if row[KEY_FOR_FEATURE_ID] != target_feature_id or row["value_type"] != "listed":
+                if row[KEY_FOR_FEATURE_ID] != target_feature_id or row[KEY_FOR_VALUE_TYPE] != "listed":
                     continue
                 current_value_index = extract_value_index(row["value_id"])
                 if current_value_index < new_value_index:
@@ -295,7 +296,7 @@ class ListedValueAdder(ObjectWithPaths):
             rows = read_dicts_from_csv(file)
 
             for i, row in enumerate(rows):
-                if row[KEY_FOR_FEATURE_ID] == feature_id and row["value_type"] == "custom":
+                if row[KEY_FOR_FEATURE_ID] == feature_id and row[KEY_FOR_VALUE_TYPE] == "custom":
                     value_ru = row["value_ru"].strip()
                     value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
 
@@ -314,7 +315,7 @@ class ListedValueAdder(ObjectWithPaths):
                         f"Custom value <{row['value_ru']}> will become listed value "
                         f"<{new_value_ru}> ({new_value_id})"
                     )
-                    row["value_type"] = "listed"
+                    row[KEY_FOR_VALUE_TYPE] = "listed"
                     row["value_id"] = new_value_id
                     row["value_ru"] = new_value_ru
                     is_changed = True

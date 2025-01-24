@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pyperclip
 
-from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID
+from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_TYPE
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
 from langworld_db_data.tools.featureprofiles.data_structures import (
     ValueForFeatureProfileDictionary,
@@ -79,7 +79,7 @@ class FeatureProfileReader:
 
         data_to_return = {
             key: getattr(loaded_data_for_feature, key)
-            for key in ("value_type", "value_id", "value_ru", "comment_ru")
+            for key in (KEY_FOR_VALUE_TYPE, "value_id", "value_ru", "comment_ru")
         }
 
         if verbose:

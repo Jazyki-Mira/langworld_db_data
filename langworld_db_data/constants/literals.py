@@ -17,3 +17,4 @@ KEY_FOR_VALUE_ID = "id"
 KEY_FOR_ENGLISH_NAME = "en"  # applies to both features and values
 KEY_FOR_RUSSIAN_NAME = "ru"  # applies to both features and values
 KEY_FOR_MULTISELECT_OPTION = "is_multiselect"
+KEY_FOR_VALUE_TYPE = "value_type"

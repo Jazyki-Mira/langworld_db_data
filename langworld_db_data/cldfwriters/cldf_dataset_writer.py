@@ -9,6 +9,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_MULTISELECT_OPTION,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_VALUE_ID,
+    KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import (
     CLDF_DIR,
@@ -102,13 +103,13 @@ class CLDFDatasetWriter:
             relevant_rows = [
                 row
                 for row in read_dicts_from_csv(file)
-                if row["value_type"] in ("listed", "custom")
+                if row[KEY_FOR_VALUE_TYPE] in ("listed", "custom")
             ]
 
             for relevant_row in relevant_rows:
                 # handling multiselect listed values
                 if (
-                    relevant_row["value_type"] == "listed"
+                    relevant_row[KEY_FOR_VALUE_TYPE] == "listed"
                     and self.is_multiselect_for_feature_id[relevant_row[KEY_FOR_FEATURE_ID]] == "1"
                 ):
                     for value_id, value_ru in zip(

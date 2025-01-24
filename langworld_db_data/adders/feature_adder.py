@@ -9,6 +9,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_VALUE_ID,
+    KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import (
@@ -188,7 +189,7 @@ class FeatureAdder(ObjectWithPaths):
                     {
                         KEY_FOR_FEATURE_ID: id_of_new_feature,
                         "feature_name_ru": feat_ru,
-                        "value_type": "not_stated",
+                        KEY_FOR_VALUE_TYPE: "not_stated",
                         "value_id": "",
                         "value_ru": "",
                         "comment_ru": "",
