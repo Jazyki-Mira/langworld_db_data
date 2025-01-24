@@ -7,6 +7,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_ENGLISH_NAME,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_MULTISELECT_OPTION,
+    KEY_FOR_RUSSIAN_COMMENT,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_RUSSIAN_NAME_OF_VALUE,
     KEY_FOR_VALUE_ID,
