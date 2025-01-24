@@ -3,6 +3,7 @@ from pathlib import Path
 from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     KEY_FOR_FEATURE_ID,
+    KEY_FOR_MULTISELECT_OPTION,
     KEY_FOR_VALUE_ID,
 )
 from langworld_db_data.constants.paths import (
@@ -50,7 +51,7 @@ class ListedValueLister(AbstractValueLister):
         feature_is_multiselect_for_feature_id = read_dict_from_2_csv_columns(
             self.file_with_features,
             key_col="id",
-            val_col="is_multiselect",
+            val_col=KEY_FOR_MULTISELECT_OPTION,
         )
 
         for volume_and_doculect_id in self.filtered_rows_for_volume_doculect_id:

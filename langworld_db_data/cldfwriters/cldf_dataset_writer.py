@@ -6,6 +6,7 @@ from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     KEY_FOR_ENGLISH_NAME,
     KEY_FOR_FEATURE_ID,
+    KEY_FOR_MULTISELECT_OPTION,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_VALUE_ID,
 )
@@ -29,13 +30,13 @@ class CLDFDatasetWriter:
     ):
         self.listed_values = read_dicts_from_csv(file_with_listed_values)
         self.value_en_for_value_id = read_dict_from_2_csv_columns(
-            file_with_listed_values, key_col="id", val_col="en"
+            file_with_listed_values, key_col=KEY_FOR_VALUE_ID, val_col=KEY_FOR_ENGLISH_NAME
         )
 
         self.doculects = read_dicts_from_csv(file_with_doculects)
         self.features = read_dicts_from_csv(file_with_features)
         self.is_multiselect_for_feature_id = read_dict_from_2_csv_columns(
-            file_with_features, key_col="id", val_col="is_multiselect"
+            file_with_features, key_col=KEY_FOR_VALUE_ID, val_col=KEY_FOR_MULTISELECT_OPTION
         )
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob("*.csv")))
 

@@ -5,6 +5,7 @@ from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     AUX_ROW_MARKER,
     ID_SEPARATOR,
+    KEY_FOR_MULTISELECT_OPTION,
 )
 from langworld_db_data.constants.paths import (
     FEATURE_PROFILES_DIR,
@@ -72,7 +73,7 @@ class FeatureProfileValidator(Validator):
             file_with_features, key_col="id", val_col="ru"
         )
         self.feature_is_multiselect_for_feature_id = read_dict_from_2_csv_columns(
-            file_with_features, key_col="id", val_col="is_multiselect"
+            file_with_features, key_col="id", val_col=KEY_FOR_MULTISELECT_OPTION
         )
         self.not_applicable_trigger_values_for_feature_id: dict[str, list[str]] = {
             feature_id: trigger_values.split(", ")
