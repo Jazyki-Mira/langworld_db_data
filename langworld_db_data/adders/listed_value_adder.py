@@ -13,6 +13,7 @@ from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.tools.value_ids.value_ids import extract_feature_id, extract_value_index
 
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
+KEY_FOR_LINE_NUMBER = "line number"
 
 
 class ListedValueAdderError(Exception):
@@ -139,7 +140,7 @@ class ListedValueAdder(ObjectWithPaths):
                 f"{value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_INDEX] + 1}"
             )
             line_number_of_new_value = (
-                value_indices_to_inventory_line_numbers[-1]["line number"] + 1
+                value_indices_to_inventory_line_numbers[-1][KEY_FOR_LINE_NUMBER] + 1
             )
             rows_with_updated_value_indices = tuple(rows.copy())
 
@@ -157,15 +158,15 @@ class ListedValueAdder(ObjectWithPaths):
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
                 if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] == index_to_assign:
-                    line_number_of_new_value = value_index_and_line_number["line number"]
+                    line_number_of_new_value = value_index_and_line_number[KEY_FOR_LINE_NUMBER]
 
         row_with_new_value = tuple(
             [
                 {
                     KEY_FOR_VALUE_ID: id_of_new_value,
                     KEY_FOR_FEATURE_ID: feature_id,
-                    "en": new_value_en[0].upper() + new_value_en[1:],
-                    "ru": new_value_ru[0].upper() + new_value_ru[1:],
+                    KEY_FOR_ENGLISH_NAME: new_value_en[0].upper() + new_value_en[1:],
+                    KEY_FOR_RUSSIAN_NAME: new_value_ru[0].upper() + new_value_ru[1:],
                     "description_formatted_en": description_formatted_en,
                     "description_formatted_ru": description_formatted_ru,
                 }
@@ -214,8 +215,8 @@ class ListedValueAdder(ObjectWithPaths):
             value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
             value_indices_to_inventory_line_numbers.append(
                 {
-                    "index": value_index,
-                    "line number": i,
+                    KEY_FOR_FEATURE_VALUE_INDEX: value_index,
+                    KEY_FOR_LINE_NUMBER: i,
                 }
             )
 
@@ -237,7 +238,7 @@ class ListedValueAdder(ObjectWithPaths):
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
             if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] < index_to_assign:
                 continue
-            row_where_id_must_be_incremented = value_index_and_line_number["line number"]
+            row_where_id_must_be_incremented = value_index_and_line_number[KEY_FOR_LINE_NUMBER]
             value_id_to_increment = rows_with_incremented_indices[
                 row_where_id_must_be_incremented
             ][KEY_FOR_VALUE_ID]
