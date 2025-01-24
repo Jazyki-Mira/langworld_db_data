@@ -133,10 +133,14 @@ class ValueRenamer:
                 print(f"Found match in combined value in {input_file.name}")
                 combined_value_ids = line["value_id"].split(ATOMIC_VALUE_SEPARATOR)
                 target_value_index = combined_value_ids.index(id_of_value_to_rename)
-                combined_value_names = line[KEY_FOR_RUSSIAN_NAME_OF_VALUE].split(ATOMIC_VALUE_SEPARATOR)
+                combined_value_names = line[KEY_FOR_RUSSIAN_NAME_OF_VALUE].split(
+                    ATOMIC_VALUE_SEPARATOR
+                )
                 combined_value_names.pop(target_value_index)
                 combined_value_names.insert(target_value_index, new_value_name)
-                line_to_write[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = ATOMIC_VALUE_SEPARATOR.join(combined_value_names)
+                line_to_write[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = ATOMIC_VALUE_SEPARATOR.join(
+                    combined_value_names
+                )
                 number_of_replacements += 1
                 data_to_write.append(line_to_write)
                 print(f"Changed {line['value_ru']} to {line_to_write['value_ru']}")
