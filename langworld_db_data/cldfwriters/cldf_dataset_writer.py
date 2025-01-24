@@ -126,7 +126,7 @@ class CLDFDatasetWriter:
                                 "Value_RU": value_ru,
                                 "Code_ID": value_id,
                                 "Comment": relevant_row["comment_en"],
-                                "Comment_RU": relevant_row["comment_ru"],
+                                "Comment_RU": relevant_row[KEY_FOR_RUSSIAN_COMMENT],
                                 "Source": "",
                             }
                         )
@@ -144,7 +144,7 @@ class CLDFDatasetWriter:
                             "Value_RU": relevant_row[KEY_FOR_RUSSIAN_NAME_OF_VALUE],
                             "Code_ID": relevant_row["value_id"],
                             "Comment": relevant_row["comment_en"],
-                            "Comment_RU": relevant_row["comment_ru"],
+                            "Comment_RU": relevant_row[KEY_FOR_RUSSIAN_COMMENT],
                             "Source": "",
                         }
                     )

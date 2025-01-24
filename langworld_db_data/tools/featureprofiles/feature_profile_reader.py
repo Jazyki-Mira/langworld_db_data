@@ -4,6 +4,7 @@ import pyperclip
 
 from langworld_db_data.constants.literals import (
     KEY_FOR_FEATURE_ID,
+    KEY_FOR_RUSSIAN_COMMENT,
     KEY_FOR_RUSSIAN_NAME_OF_VALUE,
     KEY_FOR_VALUE_TYPE,
 )
@@ -87,7 +88,7 @@ class FeatureProfileReader:
                 KEY_FOR_VALUE_TYPE,
                 "value_id",
                 KEY_FOR_RUSSIAN_NAME_OF_VALUE,
-                "comment_ru",
+                KEY_FOR_RUSSIAN_COMMENT,
             )
         }
 
@@ -104,7 +105,7 @@ class FeatureProfileReader:
 
         # sometimes a custom value can be written in comment while value itself is empty
         text_to_copy = (
-            data_to_return[KEY_FOR_RUSSIAN_NAME_OF_VALUE] or data_to_return["comment_ru"]
+            data_to_return[KEY_FOR_RUSSIAN_NAME_OF_VALUE] or data_to_return[KEY_FOR_RUSSIAN_COMMENT]
         )
         if copy_to_clipboard and text_to_copy:
             pyperclip.copy(text_to_copy)
