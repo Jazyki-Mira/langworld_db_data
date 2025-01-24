@@ -110,7 +110,11 @@ class FeatureAdder(ObjectWithPaths):
             end=" ",
         )
 
-        row_to_add = {"id": id_of_new_feature, KEY_FOR_ENGLISH_NAME: feat_en, KEY_FOR_RUSSIAN_NAME: feat_ru}
+        row_to_add = {
+            "id": id_of_new_feature,
+            KEY_FOR_ENGLISH_NAME: feat_en,
+            KEY_FOR_RUSSIAN_NAME: feat_ru,
+        }
 
         if insert_after_index is None:
             print(f"after the last feature in category {cat_id}")
