@@ -7,6 +7,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_ENGLISH_NAME,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_NAME,
+    KEY_FOR_VALUE_ID,
 )
 from langworld_db_data.constants.paths import (
     CLDF_DIR,
@@ -54,7 +55,7 @@ class CLDFDatasetWriter:
         # CodeTable
         listed_values = [
             {
-                "ID": row["id"],
+                "ID": row[KEY_FOR_VALUE_ID],
                 "Parameter_ID": row[KEY_FOR_FEATURE_ID],
                 "Name": row[KEY_FOR_ENGLISH_NAME],
                 "Description": "",
