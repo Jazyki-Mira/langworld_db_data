@@ -62,7 +62,7 @@ class FeatureAdder(ObjectWithPaths):
             )
 
         for item in listed_values_to_add:
-            if not ("en" in item and "ru" in item):
+            if not (KEY_FOR_ENGLISH_NAME in item and KEY_FOR_RUSSIAN_NAME in item):
                 raise FeatureAdderError(
                     f"Listed value must have keys 'en' and 'ru'. Your value: {item}"
                 )
@@ -110,7 +110,7 @@ class FeatureAdder(ObjectWithPaths):
             end=" ",
         )
 
-        row_to_add = {"id": id_of_new_feature, "en": feat_en, "ru": feat_ru}
+        row_to_add = {"id": id_of_new_feature, KEY_FOR_ENGLISH_NAME: feat_en, KEY_FOR_RUSSIAN_NAME: feat_ru}
 
         if insert_after_index is None:
             print(f"after the last feature in category {cat_id}")
@@ -151,10 +151,10 @@ class FeatureAdder(ObjectWithPaths):
             print(f"Value ID {value_id} - {new_listed_value[KEY_FOR_RUSSIAN_NAME]} will be added")
             rows_to_add_to_file_with_listed_values.append(
                 {
-                    "id": value_id,
-                    "feature_id": id_of_new_feature,
-                    "en": new_listed_value[KEY_FOR_ENGLISH_NAME],
-                    "ru": new_listed_value[KEY_FOR_RUSSIAN_NAME],
+                    KEY_FOR_VALUE_ID: value_id,
+                    KEY_FOR_FEATURE_ID: id_of_new_feature,
+                    KEY_FOR_ENGLISH_NAME: new_listed_value[KEY_FOR_ENGLISH_NAME],
+                    KEY_FOR_RUSSIAN_NAME: new_listed_value[KEY_FOR_RUSSIAN_NAME],
                 }
             )
 
@@ -182,7 +182,7 @@ class FeatureAdder(ObjectWithPaths):
                 rows_before_insertion=read_dicts_from_csv(file),
                 rows_to_add=[
                     {
-                        "feature_id": id_of_new_feature,
+                        KEY_FOR_FEATURE_ID: id_of_new_feature,
                         "feature_name_ru": feat_ru,
                         "value_type": "not_stated",
                         "value_id": "",
