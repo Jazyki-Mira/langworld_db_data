@@ -1,7 +1,7 @@
 from functools import partial
 from pathlib import Path
 
-from langworld_db_data.constants.literals import KEY_FOR_RUSSIAN_COMMENT, KEY_FOR_VALUE_TYPE
+from langworld_db_data.constants.literals import KEY_FOR_ENGLISH_COMMENT, KEY_FOR_RUSSIAN_COMMENT, KEY_FOR_VALUE_TYPE
 from langworld_db_data.constants.paths import CONFIG_DIR
 from langworld_db_data.tools.featureprofiles.data_structures import (
     ValueForFeatureProfileDictionary,
@@ -72,7 +72,7 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
                 value_id=value_id,
                 value_ru=value_ru,
                 comment_ru=_get(KEY_FOR_RUSSIAN_COMMENT),
-                comment_en=_get("comment_en"),
+                comment_en=_get(KEY_FOR_ENGLISH_COMMENT),
                 page_numbers=_get("page_numbers"),
             )
             processed_feature_ids.add(feature_id)

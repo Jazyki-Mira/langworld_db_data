@@ -4,6 +4,7 @@ from pycldf import StructureDataset
 
 from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
+    KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_ENGLISH_NAME,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_MULTISELECT_OPTION,
@@ -126,7 +127,7 @@ class CLDFDatasetWriter:
                                 "Value": self.value_en_for_value_id[value_id],
                                 "Value_RU": value_ru,
                                 "Code_ID": value_id,
-                                "Comment": relevant_row["comment_en"],
+                                "Comment": relevant_row[KEY_FOR_ENGLISH_COMMENT],
                                 "Comment_RU": relevant_row[KEY_FOR_RUSSIAN_COMMENT],
                                 "Source": "",
                             }
@@ -144,7 +145,7 @@ class CLDFDatasetWriter:
                             "Value": self.value_en_for_value_id.get(relevant_row["value_id"], ""),
                             "Value_RU": relevant_row[KEY_FOR_RUSSIAN_NAME_OF_VALUE],
                             "Code_ID": relevant_row["value_id"],
-                            "Comment": relevant_row["comment_en"],
+                            "Comment": relevant_row[KEY_FOR_ENGLISH_COMMENT],
                             "Comment_RU": relevant_row[KEY_FOR_RUSSIAN_COMMENT],
                             "Source": "",
                         }

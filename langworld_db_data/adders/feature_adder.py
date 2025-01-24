@@ -5,6 +5,7 @@ from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import (
     AUX_ROW_MARKER,
     ID_SEPARATOR,
+    KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_ENGLISH_NAME,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_COMMENT,
@@ -195,7 +196,7 @@ class FeatureAdder(ObjectWithPaths):
                         "value_id": "",
                         KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
                         KEY_FOR_RUSSIAN_COMMENT: "",
-                        "comment_en": "",
+                        KEY_FOR_ENGLISH_COMMENT: "",
                     }
                 ],
                 category_id=cat_id,
