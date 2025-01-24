@@ -7,6 +7,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_ENGLISH_NAME,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_NAME,
+    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
@@ -300,7 +301,7 @@ class ListedValueAdder(ObjectWithPaths):
 
             for i, row in enumerate(rows):
                 if row[KEY_FOR_FEATURE_ID] == feature_id and row[KEY_FOR_VALUE_TYPE] == "custom":
-                    value_ru = row["value_ru"].strip()
+                    value_ru = row[KEY_FOR_RUSSIAN_NAME_OF_VALUE].strip()
                     value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
 
                     new_value_with_variants: list[str] = (
@@ -320,7 +321,7 @@ class ListedValueAdder(ObjectWithPaths):
                     )
                     row[KEY_FOR_VALUE_TYPE] = "listed"
                     row["value_id"] = new_value_id
-                    row["value_ru"] = new_value_ru
+                    row[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_ru
                     is_changed = True
                     break
 

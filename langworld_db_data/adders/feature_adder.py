@@ -8,6 +8,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_ENGLISH_NAME,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_NAME,
+    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
@@ -191,7 +192,7 @@ class FeatureAdder(ObjectWithPaths):
                         "feature_name_ru": feat_ru,
                         KEY_FOR_VALUE_TYPE: "not_stated",
                         "value_id": "",
-                        "value_ru": "",
+                        KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
                         "comment_ru": "",
                         "comment_en": "",
                     }

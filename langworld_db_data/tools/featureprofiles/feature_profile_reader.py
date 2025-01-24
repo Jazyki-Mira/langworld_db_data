@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pyperclip
 
-from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_TYPE
+from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID, KEY_FOR_RUSSIAN_NAME_OF_VALUE, KEY_FOR_VALUE_TYPE
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
 from langworld_db_data.tools.featureprofiles.data_structures import (
     ValueForFeatureProfileDictionary,
@@ -79,7 +79,7 @@ class FeatureProfileReader:
 
         data_to_return = {
             key: getattr(loaded_data_for_feature, key)
-            for key in (KEY_FOR_VALUE_TYPE, "value_id", "value_ru", "comment_ru")
+            for key in (KEY_FOR_VALUE_TYPE, "value_id", KEY_FOR_RUSSIAN_NAME_OF_VALUE, "comment_ru")
         }
 
         if verbose:
@@ -94,7 +94,7 @@ class FeatureProfileReader:
                     print(f"{key_for_print} is empty")
 
         # sometimes a custom value can be written in comment while value itself is empty
-        text_to_copy = data_to_return["value_ru"] or data_to_return["comment_ru"]
+        text_to_copy = data_to_return[KEY_FOR_RUSSIAN_NAME_OF_VALUE] or data_to_return["comment_ru"]
         if copy_to_clipboard and text_to_copy:
             pyperclip.copy(text_to_copy)
             print("\nValue (or comment for empty value) copied to clipboard")

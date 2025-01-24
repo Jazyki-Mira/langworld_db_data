@@ -8,6 +8,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_FEATURE_ID,
     KEY_FOR_MULTISELECT_OPTION,
     KEY_FOR_RUSSIAN_NAME,
+    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
@@ -114,7 +115,7 @@ class CLDFDatasetWriter:
                 ):
                     for value_id, value_ru in zip(
                         relevant_row["value_id"].split(ATOMIC_VALUE_SEPARATOR),
-                        relevant_row["value_ru"].split(ATOMIC_VALUE_SEPARATOR),
+                        relevant_row[KEY_FOR_RUSSIAN_NAME_OF_VALUE].split(ATOMIC_VALUE_SEPARATOR),
                     ):
                         value_table_rows.append(
                             {
@@ -140,7 +141,7 @@ class CLDFDatasetWriter:
                             # English value will be empty for values that are not yet
                             # in the inventory
                             "Value": self.value_en_for_value_id.get(relevant_row["value_id"], ""),
-                            "Value_RU": relevant_row["value_ru"],
+                            "Value_RU": relevant_row[KEY_FOR_RUSSIAN_NAME_OF_VALUE],
                             "Code_ID": relevant_row["value_id"],
                             "Comment": relevant_row["comment_en"],
                             "Comment_RU": relevant_row["comment_ru"],
