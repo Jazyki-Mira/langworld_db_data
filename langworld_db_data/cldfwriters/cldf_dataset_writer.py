@@ -26,6 +26,10 @@ from langworld_db_data.constants.paths import (
 from langworld_db_data.tools.files.csv_xls import read_dict_from_2_csv_columns, read_dicts_from_csv
 
 
+KEY_FOR_ID_IN_CLDF = "ID"
+KEY_FOR_RUSSIAN_NAME_IN_CLDF = "Name_RU"
+
+
 class CLDFDatasetWriter:
     def __init__(
         self,
@@ -51,7 +55,7 @@ class CLDFDatasetWriter:
 
         for component_name in ("CodeTable", "LanguageTable", "ParameterTable"):
             dataset.add_component(component_name)
-            dataset.add_columns(component_name, "Name_RU")
+            dataset.add_columns(component_name, KEY_FOR_RUSSIAN_NAME_IN_CLDF)
 
         for column_name in ("Value_RU", "Comment_RU"):
             dataset.add_columns("ValueTable", column_name)
@@ -62,12 +66,12 @@ class CLDFDatasetWriter:
         # CodeTable
         listed_values = [
             {
-                "ID": row[KEY_FOR_ID],
+                KEY_FOR_ID_IN_CLDF: row[KEY_FOR_ID],
                 "Parameter_ID": row[KEY_FOR_FEATURE_ID],
                 "Name": row[KEY_FOR_ENGLISH],
                 "Description": "",
                 # custom columns:
-                "Name_RU": row[KEY_FOR_RUSSIAN],
+                KEY_FOR_RUSSIAN_NAME_IN_CLDF: row[KEY_FOR_RUSSIAN],
             }
             for row in self.listed_values
         ]
@@ -75,18 +79,18 @@ class CLDFDatasetWriter:
         # ParameterTable
         features = [
             {
-                "ID": row[KEY_FOR_ID],
+                KEY_FOR_ID_IN_CLDF: row[KEY_FOR_ID],
                 "Name": row[KEY_FOR_ENGLISH],
                 "Description": "",
                 # custom columns:
-                "Name_RU": row[KEY_FOR_RUSSIAN],
+                KEY_FOR_RUSSIAN_NAME_IN_CLDF: row[KEY_FOR_RUSSIAN],
             }
             for row in self.features
         ]
 
         languages = [
             {
-                "ID": row[KEY_FOR_ID],
+                KEY_FOR_ID_IN_CLDF: row[KEY_FOR_ID],
                 "Name": row["name_en"],
                 "Macroarea": "",
                 "Latitude": row["latitude"],
@@ -94,7 +98,7 @@ class CLDFDatasetWriter:
                 "Glottocode": row["glottocode"].split(", "),
                 "ISO639P3code": row["iso_639_3"].split(", "),
                 # custom columns:
-                "Name_RU": row[KEY_FOR_RUSSIAN_NAME],
+                KEY_FOR_RUSSIAN_NAME_IN_CLDF: row[KEY_FOR_RUSSIAN_NAME],
             }
             for row in self.doculects
         ]
@@ -123,7 +127,7 @@ class CLDFDatasetWriter:
                     ):
                         value_table_rows.append(
                             {
-                                "ID": value_table_row_id,
+                                KEY_FOR_ID_IN_CLDF: value_table_row_id,
                                 "Language_ID": language_id,
                                 "Parameter_ID": relevant_row[KEY_FOR_FEATURE_ID],
                                 "Value": self.value_en_for_value_id[value_id],
@@ -139,7 +143,7 @@ class CLDFDatasetWriter:
                 else:
                     value_table_rows.append(
                         {
-                            "ID": value_table_row_id,
+                            KEY_FOR_ID_IN_CLDF: value_table_row_id,
                             "Language_ID": language_id,
                             "Parameter_ID": relevant_row[KEY_FOR_FEATURE_ID],
                             # English value will be empty for values that are not yet
