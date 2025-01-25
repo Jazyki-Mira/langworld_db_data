@@ -11,6 +11,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_MULTISELECT_OPTION,
     KEY_FOR_RUSSIAN,
     KEY_FOR_RUSSIAN_COMMENT,
+    KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_RUSSIAN_OF_VALUE,
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
@@ -93,7 +94,7 @@ class CLDFDatasetWriter:
                 "Glottocode": row["glottocode"].split(", "),
                 "ISO639P3code": row["iso_639_3"].split(", "),
                 # custom columns:
-                "Name_RU": row["name_ru"],
+                "Name_RU": row[KEY_FOR_RUSSIAN_NAME],
             }
             for row in self.doculects
         ]
