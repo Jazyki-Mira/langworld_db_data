@@ -6,6 +6,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_COMMENT,
     KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+    KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
@@ -86,7 +87,7 @@ class FeatureProfileReader:
             key: getattr(loaded_data_for_feature, key)
             for key in (
                 KEY_FOR_VALUE_TYPE,
-                "value_id",
+                KEY_FOR_VALUE_ID,
                 KEY_FOR_RUSSIAN_NAME_OF_VALUE,
                 KEY_FOR_RUSSIAN_COMMENT,
             )

@@ -12,6 +12,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_RUSSIAN_COMMENT,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+    KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import (
@@ -116,7 +117,7 @@ class CLDFDatasetWriter:
                     and self.is_multiselect_for_feature_id[relevant_row[KEY_FOR_FEATURE_ID]] == "1"
                 ):
                     for value_id, value_ru in zip(
-                        relevant_row["value_id"].split(ATOMIC_VALUE_SEPARATOR),
+                        relevant_row[KEY_FOR_VALUE_ID].split(ATOMIC_VALUE_SEPARATOR),
                         relevant_row[KEY_FOR_RUSSIAN_NAME_OF_VALUE].split(ATOMIC_VALUE_SEPARATOR),
                     ):
                         value_table_rows.append(
@@ -142,9 +143,9 @@ class CLDFDatasetWriter:
                             "Parameter_ID": relevant_row[KEY_FOR_FEATURE_ID],
                             # English value will be empty for values that are not yet
                             # in the inventory
-                            "Value": self.value_en_for_value_id.get(relevant_row["value_id"], ""),
+                            "Value": self.value_en_for_value_id.get(relevant_row[KEY_FOR_VALUE_ID], ""),
                             "Value_RU": relevant_row[KEY_FOR_RUSSIAN_NAME_OF_VALUE],
-                            "Code_ID": relevant_row["value_id"],
+                            "Code_ID": relevant_row[KEY_FOR_VALUE_ID],
                             "Comment": relevant_row[KEY_FOR_ENGLISH_COMMENT],
                             "Comment_RU": relevant_row[KEY_FOR_RUSSIAN_COMMENT],
                             "Source": "",

@@ -4,6 +4,7 @@ from pathlib import Path
 from langworld_db_data.constants.literals import (
     KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_RUSSIAN_COMMENT,
+    KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import CONFIG_DIR
@@ -61,7 +62,7 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
 
         feature_id = _get("feature_id")
         value_type = _get(KEY_FOR_VALUE_TYPE)
-        value_id = _get("value_id")
+        value_id = _get(KEY_FOR_VALUE_ID)
         value_ru = (
             _get("listed_value_ru").removeprefix(f"{value_id}: ")
             if value_type == "listed"

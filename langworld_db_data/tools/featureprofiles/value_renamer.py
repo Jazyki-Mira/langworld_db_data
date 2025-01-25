@@ -5,6 +5,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_ID,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+    KEY_FOR_VALUE_ID,
 )
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, INVENTORIES_DIR
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
@@ -124,14 +125,14 @@ class ValueRenamer:
         data_from_file = read_dicts_from_csv(input_file)
         data_to_write = []
         for line in data_from_file:
-            if id_of_value_to_rename not in line["value_id"]:
+            if id_of_value_to_rename not in line[KEY_FOR_VALUE_ID]:
                 data_to_write.append(line)
                 continue
             line_to_write = line.copy()
             # After this clause, only lines with the target value are considered (they may contain other values too)
-            if ATOMIC_VALUE_SEPARATOR in line["value_id"]:
+            if ATOMIC_VALUE_SEPARATOR in line[KEY_FOR_VALUE_ID]:
                 print(f"Found match in combined value in {input_file.name}")
-                combined_value_ids = line["value_id"].split(ATOMIC_VALUE_SEPARATOR)
+                combined_value_ids = line[KEY_FOR_VALUE_ID].split(ATOMIC_VALUE_SEPARATOR)
                 target_value_index = combined_value_ids.index(id_of_value_to_rename)
                 combined_value_names = line[KEY_FOR_RUSSIAN_NAME_OF_VALUE].split(
                     ATOMIC_VALUE_SEPARATOR

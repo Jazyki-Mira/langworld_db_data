@@ -5,6 +5,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_MULTISELECT_OPTION,
+    KEY_FOR_VALUE_ID,
 )
 from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_LISTED_VALUES,
@@ -59,12 +60,12 @@ class ListedValueLister(AbstractValueLister):
         for volume_and_doculect_id in self.filtered_rows_for_volume_doculect_id:
             for row in self.filtered_rows_for_volume_doculect_id[volume_and_doculect_id]:
                 if feature_is_multiselect_for_feature_id[row[KEY_FOR_FEATURE_ID]] == "1":
-                    for value_id in row["value_id"].split(ATOMIC_VALUE_SEPARATOR):
+                    for value_id in row[KEY_FOR_VALUE_ID].split(ATOMIC_VALUE_SEPARATOR):
                         feature_to_value_to_doculects[row[KEY_FOR_FEATURE_ID]][value_id].append(
                             volume_and_doculect_id
                         )
                 else:
-                    feature_to_value_to_doculects[row[KEY_FOR_FEATURE_ID]][row["value_id"]].append(
+                    feature_to_value_to_doculects[row[KEY_FOR_FEATURE_ID]][row[KEY_FOR_VALUE_ID]].append(
                         volume_and_doculect_id
                     )
 

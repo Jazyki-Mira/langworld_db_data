@@ -9,6 +9,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_ID,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+    KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
@@ -269,14 +270,14 @@ class ListedValueAdder(ObjectWithPaths):
                     or row[KEY_FOR_VALUE_TYPE] != "listed"
                 ):
                     continue
-                current_value_index = extract_value_index(row["value_id"])
+                current_value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
                 if current_value_index < new_value_index:
                     continue
 
                 incremented_current_value_id = (
                     f"{target_feature_id}{ID_SEPARATOR}{current_value_index + 1}"
                 )
-                row["value_id"] = incremented_current_value_id
+                row[KEY_FOR_VALUE_ID] = incremented_current_value_id
                 is_changed = True
 
             if is_changed:
@@ -320,7 +321,7 @@ class ListedValueAdder(ObjectWithPaths):
                         f"<{new_value_ru}> ({new_value_id})"
                     )
                     row[KEY_FOR_VALUE_TYPE] = "listed"
-                    row["value_id"] = new_value_id
+                    row[KEY_FOR_VALUE_ID] = new_value_id
                     row[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_ru
                     is_changed = True
                     break

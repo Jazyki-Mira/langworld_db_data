@@ -3,6 +3,7 @@ from langworld_db_data.constants.literals import (
     ID_SEPARATOR,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
+    KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
@@ -93,19 +94,19 @@ class ListedValueRemover(ObjectWithPaths):
                 if row[KEY_FOR_FEATURE_ID] != extract_feature_id(id_of_value_to_remove):
                     continue
 
-                if row["value_id"] == id_of_value_to_remove:
-                    row["value_id"] = ""
+                if row[KEY_FOR_VALUE_ID] == id_of_value_to_remove:
+                    row[KEY_FOR_VALUE_ID] = ""
                     row[KEY_FOR_VALUE_TYPE] = "custom"
                     print(f"Changing value type to custom in {file.stem}")
                     is_changed = True
                     break
-                elif extract_value_index(row["value_id"]) > extract_value_index(
+                elif extract_value_index(row[KEY_FOR_VALUE_ID]) > extract_value_index(
                     id_of_value_to_remove
                 ):
-                    print(row["value_id"])
-                    new_value_index = str(extract_value_index(row["value_id"]) - 1)
-                    row["value_id"] = (
-                        f'{extract_feature_id(row["value_id"])}{ID_SEPARATOR}{new_value_index}'
+                    print(row[KEY_FOR_VALUE_ID])
+                    new_value_index = str(extract_value_index(row[KEY_FOR_VALUE_ID]) - 1)
+                    row[KEY_FOR_VALUE_ID] = (
+                        f'{extract_feature_id(row[KEY_FOR_VALUE_ID])}{ID_SEPARATOR}{new_value_index}'
                     )
                     print(f"Updating value id in {file.stem}")
                     is_changed = True
