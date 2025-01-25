@@ -3,8 +3,8 @@ from pathlib import Path
 from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     KEY_FOR_FEATURE_ID,
-    KEY_FOR_MULTISELECT_OPTION,
     KEY_FOR_ID,
+    KEY_FOR_MULTISELECT_OPTION,
 )
 from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_LISTED_VALUES,

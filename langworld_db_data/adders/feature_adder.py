@@ -8,10 +8,10 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_ENGLISH_NAME,
     KEY_FOR_FEATURE_ID,
+    KEY_FOR_ID,
     KEY_FOR_RUSSIAN_COMMENT,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_RUSSIAN_NAME_OF_VALUE,
-    KEY_FOR_ID,
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
@@ -92,9 +92,7 @@ class FeatureAdder(ObjectWithPaths):
         if insert_after_index is not None:
             feature_id_to_add_after = f"{cat_id}{ID_SEPARATOR}{insert_after_index}"
 
-            if feature_id_to_add_after not in [
-                row[KEY_FOR_ID] for row in rows_with_features
-            ]:
+            if feature_id_to_add_after not in [row[KEY_FOR_ID] for row in rows_with_features]:
                 raise FeatureAdderError(
                     f"Cannot add feature after {cat_id}{ID_SEPARATOR}{insert_after_index}:"
                     f" There is no feature with index {index_of_new_feature} in"
