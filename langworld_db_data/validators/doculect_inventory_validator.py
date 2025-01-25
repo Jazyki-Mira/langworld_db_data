@@ -65,7 +65,7 @@ class DoculectInventoryValidator(Validator):
         for doculect in self.doculects:
             if doculect["family_id"] not in self.genealogy_family_ids:
                 raise DoculectInventoryValidatorError(
-                    f"{doculect['id'].capitalize()}: genealogy family ID"
+                    f"{doculect[KEY_FOR_ID].capitalize()}: genealogy family ID"
                     f" {doculect['family_id']} not found in genealogy inventory"
                 )
         print("OK: ID of language family for each doculect is present in genealogy" " inventory")
@@ -78,7 +78,7 @@ class DoculectInventoryValidator(Validator):
         coords_to_doculect_ids: dict[tuple[str, str], list[str]] = defaultdict(list)
         for doculect in self.doculects:
             coords_to_doculect_ids[(doculect["latitude"], doculect["longitude"])].append(
-                f"{doculect['id']} ({doculect['glottocode']})"
+                f"{doculect[KEY_FOR_ID]} ({doculect['glottocode']})"
             )
 
         coords_with_more_than_one_doculect = [
@@ -106,7 +106,7 @@ class DoculectInventoryValidator(Validator):
                 and doculect[KEY_FOR_ID] not in self.names_of_feature_profiles
             ):
                 raise DoculectInventoryValidatorError(
-                    f"Doculect {doculect['id']} has no file with feature profile."
+                    f"Doculect {doculect[KEY_FOR_ID]} has no file with feature profile."
                 )
         print(
             "OK: Every doculect that is marked as having a feature profile has a"

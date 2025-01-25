@@ -317,7 +317,7 @@ class ListedValueAdder(ObjectWithPaths):
 
                     print(
                         f"{file.name}: changing row {i + 2} (feature {feature_id}). "
-                        f"Custom value <{row['value_ru']}> will become listed value "
+                        f"Custom value <{row[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}> will become listed value "
                         f"<{new_value_ru}> ({new_value_id})"
                     )
                     row[KEY_FOR_VALUE_TYPE] = "listed"

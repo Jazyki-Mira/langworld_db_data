@@ -23,3 +23,9 @@ KEY_FOR_RUSSIAN_COMMENT = "comment_ru"
 KEY_FOR_ENGLISH_COMMENT = "comment_en"
 KEY_FOR_VALUE_ID = "value_id"
 KEY_FOR_RUSSIAN_NAME_OF_FEATURE = "feature_name_ru"
+KEY_FOR_FORMATTED_ENGLISH_DESCRIPTION = "description_formatted_en"
+KEY_FOR_FORMATTED_RUSSIAN_DESCRIPTION = "description_formatted_ru"
+# also add "name_ru"
+# add "*.csv"? And delimiter=","?
+# take a closer look at cldf_dataset_writer, it may need some local constants
+# delete encoding="utf-8"? Is sometimes used in value listers. Though I think in "files" its mention is logical gor there are many other encodings used there

@@ -144,14 +144,14 @@ class ValueRenamer:
                 )
                 number_of_replacements += 1
                 data_to_write.append(line_to_write)
-                print(f"Changed {line['value_ru']} to {line_to_write['value_ru']}")
+                print(f"Changed {line[KEY_FOR_RUSSIAN_NAME_OF_VALUE]} to {line_to_write[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}")
                 continue
             # After this clause, only those lines are considered which contain the target value only
             print(f"Found exact match in {input_file.name}")
             line_to_write[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_name
             number_of_replacements += 1
             data_to_write.append(line_to_write)
-            print(f"Changed {line['value_ru']} to {new_value_name}")
+            print(f"Changed {line[KEY_FOR_RUSSIAN_NAME_OF_VALUE]} to {new_value_name}")
         print(f"Replacements made in this file: {number_of_replacements}")
         output_file = output_dir / input_file.name
         write_csv(rows=data_to_write, path_to_file=output_file, overwrite=True, delimiter=",")
