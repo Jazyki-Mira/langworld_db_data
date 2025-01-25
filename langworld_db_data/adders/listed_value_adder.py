@@ -8,7 +8,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_RUSSIAN_NAME_OF_VALUE,
-    KEY_FOR_VALUE_ID,
+    KEY_FOR_ID,
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
@@ -165,7 +165,7 @@ class ListedValueAdder(ObjectWithPaths):
         row_with_new_value = tuple(
             [
                 {
-                    KEY_FOR_VALUE_ID: id_of_new_value,
+                    KEY_FOR_ID: id_of_new_value,
                     KEY_FOR_FEATURE_ID: feature_id,
                     KEY_FOR_ENGLISH_NAME: new_value_en[0].upper() + new_value_en[1:],
                     KEY_FOR_RUSSIAN_NAME: new_value_ru[0].upper() + new_value_ru[1:],
@@ -214,7 +214,7 @@ class ListedValueAdder(ObjectWithPaths):
             if row[KEY_FOR_FEATURE_ID] != feature_id:
                 continue
 
-            value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
+            value_index = extract_value_index(row[KEY_FOR_ID])
             value_indices_to_inventory_line_numbers.append(
                 {
                     KEY_FOR_FEATURE_VALUE_INDEX: value_index,
@@ -243,8 +243,8 @@ class ListedValueAdder(ObjectWithPaths):
             row_where_id_must_be_incremented = value_index_and_line_number[KEY_FOR_LINE_NUMBER]
             value_id_to_increment = rows_with_incremented_indices[
                 row_where_id_must_be_incremented
-            ][KEY_FOR_VALUE_ID]
-            rows_with_incremented_indices[row_where_id_must_be_incremented][KEY_FOR_VALUE_ID] = (
+            ][KEY_FOR_ID]
+            rows_with_incremented_indices[row_where_id_must_be_incremented][KEY_FOR_ID] = (
                 f"{extract_feature_id(value_id_to_increment)}-"
                 f"{extract_value_index(value_id_to_increment) + 1}"
             )

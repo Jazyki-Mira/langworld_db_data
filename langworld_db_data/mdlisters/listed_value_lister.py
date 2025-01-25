@@ -4,7 +4,7 @@ from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_MULTISELECT_OPTION,
-    KEY_FOR_VALUE_ID,
+    KEY_FOR_ID,
 )
 from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_LISTED_VALUES,
@@ -41,7 +41,7 @@ class ListedValueLister(AbstractValueLister):
 
         feature_to_value_to_doculects: dict[str, dict[str, list[str]]] = {
             feature_id: {
-                row[KEY_FOR_VALUE_ID]: []
+                row[KEY_FOR_ID]: []
                 for row in read_dicts_from_csv(self.file_with_listed_values)
                 if row[KEY_FOR_FEATURE_ID] == feature_id
             }

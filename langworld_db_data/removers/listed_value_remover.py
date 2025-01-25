@@ -2,7 +2,7 @@ from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import (
     ID_SEPARATOR,
     KEY_FOR_FEATURE_ID,
-    KEY_FOR_VALUE_ID,
+    KEY_FOR_ID,
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
@@ -45,7 +45,7 @@ class ListedValueRemover(ObjectWithPaths):
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
         for i, row in enumerate(rows):
-            if row[KEY_FOR_VALUE_ID] != id_of_value_to_remove:
+            if row[KEY_FOR_ID] != id_of_value_to_remove:
                 continue
             line_number_of_value_to_remove = i
             value_to_remove = row
@@ -133,10 +133,10 @@ class ListedValueRemover(ObjectWithPaths):
         for i, row in enumerate(rows):
             if row[KEY_FOR_FEATURE_ID] != feature_id:
                 continue
-            current_value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
+            current_value_index = extract_value_index(row[KEY_FOR_ID])
             if current_value_index > index_of_value_to_remove:
                 new_current_value_index = str(current_value_index - 1)
-                new_current_value_id = f"{extract_feature_id(row[KEY_FOR_VALUE_ID])}{ID_SEPARATOR}{new_current_value_index}"
-                rows_with_updated_indices[i][KEY_FOR_VALUE_ID] = new_current_value_id
+                new_current_value_id = f"{extract_feature_id(row[KEY_FOR_ID])}{ID_SEPARATOR}{new_current_value_index}"
+                rows_with_updated_indices[i][KEY_FOR_ID] = new_current_value_id
 
         return rows_with_updated_indices

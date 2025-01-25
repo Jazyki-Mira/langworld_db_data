@@ -11,7 +11,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_RUSSIAN_COMMENT,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_RUSSIAN_NAME_OF_VALUE,
-    KEY_FOR_VALUE_ID,
+    KEY_FOR_ID,
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
@@ -93,7 +93,7 @@ class FeatureAdder(ObjectWithPaths):
             feature_id_to_add_after = f"{cat_id}{ID_SEPARATOR}{insert_after_index}"
 
             if feature_id_to_add_after not in [
-                row[KEY_FOR_VALUE_ID] for row in rows_with_features
+                row[KEY_FOR_ID] for row in rows_with_features
             ]:
                 raise FeatureAdderError(
                     f"Cannot add feature after {cat_id}{ID_SEPARATOR}{insert_after_index}:"
@@ -126,13 +126,13 @@ class FeatureAdder(ObjectWithPaths):
                 [
                     row
                     for row in rows_with_features
-                    if row[KEY_FOR_VALUE_ID].split(ID_SEPARATOR)[0] <= cat_id
+                    if row[KEY_FOR_ID].split(ID_SEPARATOR)[0] <= cat_id
                 ]
                 + [row_to_add]
                 + [
                     row
                     for row in rows_with_features
-                    if row[KEY_FOR_VALUE_ID].split(ID_SEPARATOR)[0] > cat_id
+                    if row[KEY_FOR_ID].split(ID_SEPARATOR)[0] > cat_id
                 ]
             )
         else:
@@ -140,7 +140,7 @@ class FeatureAdder(ObjectWithPaths):
             rows_to_write = []
             for row in rows_with_features:
                 rows_to_write.append(row)
-                if row[KEY_FOR_VALUE_ID] == feature_id_to_add_after:
+                if row[KEY_FOR_ID] == feature_id_to_add_after:
                     rows_to_write.append(row_to_add)
 
         write_csv(
@@ -159,7 +159,7 @@ class FeatureAdder(ObjectWithPaths):
             print(f"Value ID {value_id} - {new_listed_value[KEY_FOR_RUSSIAN_NAME]} will be added")
             rows_to_add_to_file_with_listed_values.append(
                 {
-                    KEY_FOR_VALUE_ID: value_id,
+                    KEY_FOR_ID: value_id,
                     KEY_FOR_FEATURE_ID: id_of_new_feature,
                     KEY_FOR_ENGLISH_NAME: new_listed_value[KEY_FOR_ENGLISH_NAME],
                     KEY_FOR_RUSSIAN_NAME: new_listed_value[KEY_FOR_RUSSIAN_NAME],
@@ -233,9 +233,9 @@ class FeatureAdder(ObjectWithPaths):
 
         rows_with_features = read_dicts_from_csv(self.input_file_with_features)
         feature_ids_in_category = [
-            row[KEY_FOR_VALUE_ID]
+            row[KEY_FOR_ID]
             for row in rows_with_features
-            if row[KEY_FOR_VALUE_ID].startswith(f"{category_id}{ID_SEPARATOR}")
+            if row[KEY_FOR_ID].startswith(f"{category_id}{ID_SEPARATOR}")
         ]
 
         if custom_index_of_new_feature is None:

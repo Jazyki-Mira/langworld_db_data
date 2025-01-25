@@ -11,7 +11,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_RUSSIAN_COMMENT,
     KEY_FOR_RUSSIAN_NAME,
     KEY_FOR_RUSSIAN_NAME_OF_VALUE,
-    KEY_FOR_VALUE_ID,
+    KEY_FOR_ID,
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import (
@@ -34,13 +34,13 @@ class CLDFDatasetWriter:
     ):
         self.listed_values = read_dicts_from_csv(file_with_listed_values)
         self.value_en_for_value_id = read_dict_from_2_csv_columns(
-            file_with_listed_values, key_col=KEY_FOR_VALUE_ID, val_col=KEY_FOR_ENGLISH_NAME
+            file_with_listed_values, key_col=KEY_FOR_ID, val_col=KEY_FOR_ENGLISH_NAME
         )
 
         self.doculects = read_dicts_from_csv(file_with_doculects)
         self.features = read_dicts_from_csv(file_with_features)
         self.is_multiselect_for_feature_id = read_dict_from_2_csv_columns(
-            file_with_features, key_col=KEY_FOR_VALUE_ID, val_col=KEY_FOR_MULTISELECT_OPTION
+            file_with_features, key_col=KEY_FOR_ID, val_col=KEY_FOR_MULTISELECT_OPTION
         )
         self.feature_profiles = sorted(list(dir_with_feature_profiles.glob("*.csv")))
 
@@ -60,7 +60,7 @@ class CLDFDatasetWriter:
         # CodeTable
         listed_values = [
             {
-                "ID": row[KEY_FOR_VALUE_ID],
+                "ID": row[KEY_FOR_ID],
                 "Parameter_ID": row[KEY_FOR_FEATURE_ID],
                 "Name": row[KEY_FOR_ENGLISH_NAME],
                 "Description": "",

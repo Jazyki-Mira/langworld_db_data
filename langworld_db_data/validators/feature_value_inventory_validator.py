@@ -2,7 +2,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
-from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
+from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID, KEY_FOR_ID
 from langworld_db_data.constants.paths import FILE_WITH_LISTED_VALUES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import (
     check_csv_for_malformed_rows,
@@ -48,7 +48,7 @@ class FeatureValueInventoryValidator(Validator):
 
     def _validate_listed_values(self) -> None:
         feature_id_for_value_id = {
-            row[KEY_FOR_VALUE_ID]: row[KEY_FOR_FEATURE_ID] for row in self.rows_with_listed_values
+            row[KEY_FOR_ID]: row[KEY_FOR_FEATURE_ID] for row in self.rows_with_listed_values
         }
 
         for value_id in feature_id_for_value_id:
