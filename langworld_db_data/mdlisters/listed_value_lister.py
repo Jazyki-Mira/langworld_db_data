@@ -65,9 +65,9 @@ class ListedValueLister(AbstractValueLister):
                             volume_and_doculect_id
                         )
                 else:
-                    feature_to_value_to_doculects[row[KEY_FOR_FEATURE_ID]][row[KEY_FOR_VALUE_ID]].append(
-                        volume_and_doculect_id
-                    )
+                    feature_to_value_to_doculects[row[KEY_FOR_FEATURE_ID]][
+                        row[KEY_FOR_VALUE_ID]
+                    ].append(volume_and_doculect_id)
 
         feature_name_for_feature_id = read_dict_from_2_csv_columns(
             self.file_with_features,

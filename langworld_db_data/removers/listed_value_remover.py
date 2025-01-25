@@ -106,7 +106,7 @@ class ListedValueRemover(ObjectWithPaths):
                     print(row[KEY_FOR_VALUE_ID])
                     new_value_index = str(extract_value_index(row[KEY_FOR_VALUE_ID]) - 1)
                     row[KEY_FOR_VALUE_ID] = (
-                        f'{extract_feature_id(row[KEY_FOR_VALUE_ID])}{ID_SEPARATOR}{new_value_index}'
+                        f"{extract_feature_id(row[KEY_FOR_VALUE_ID])}{ID_SEPARATOR}{new_value_index}"
                     )
                     print(f"Updating value id in {file.stem}")
                     is_changed = True
