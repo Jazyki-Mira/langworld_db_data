@@ -1,7 +1,12 @@
 from abc import ABC, abstractmethod
 from pathlib import Path
 
-from langworld_db_data.constants.literals import KEY_FOR_ID, KEY_FOR_RUSSIAN_NAME, KEY_FOR_VALUE_TYPE, ValueType
+from langworld_db_data.constants.literals import (
+    KEY_FOR_ID,
+    KEY_FOR_RUSSIAN_NAME,
+    KEY_FOR_VALUE_TYPE,
+    ValueType,
+)
 from langworld_db_data.constants.paths import FILE_WITH_DOCULECTS, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import read_dict_from_2_csv_columns, read_dicts_from_csv
 
