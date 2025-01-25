@@ -3,7 +3,7 @@ from pathlib import Path
 
 from langworld_db_data.constants.literals import (
     KEY_FOR_ID,
-    KEY_FOR_RUSSIAN_NAME,
+    KEY_FOR_RUSSIAN,
     KEY_FOR_VALUE_TYPE,
     ValueType,
 )
@@ -26,7 +26,7 @@ class AbstractValueLister(ABC):
         )
 
         self.feature_ru_for_feature_id = read_dict_from_2_csv_columns(
-            self.file_with_features, KEY_FOR_ID, KEY_FOR_RUSSIAN_NAME
+            self.file_with_features, KEY_FOR_ID, KEY_FOR_RUSSIAN
         )
 
         self.encyclopedia_volume_for_doculect_id = read_dict_from_2_csv_columns(

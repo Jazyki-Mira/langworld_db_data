@@ -3,8 +3,8 @@ from pathlib import Path
 from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     KEY_FOR_ID,
-    KEY_FOR_RUSSIAN_NAME,
-    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+    KEY_FOR_RUSSIAN,
+    KEY_FOR_RUSSIAN_OF_VALUE,
     KEY_FOR_VALUE_ID,
 )
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, INVENTORIES_DIR
@@ -84,7 +84,7 @@ class ValueRenamer:
         for line in self.inventory_of_listed_values:
             if line[KEY_FOR_ID] != id_of_value_to_rename:
                 continue
-            if line[KEY_FOR_RUSSIAN_NAME] == new_value_name:
+            if line[KEY_FOR_RUSSIAN] == new_value_name:
                 return True
             return False
 
@@ -103,8 +103,8 @@ class ValueRenamer:
                 continue
             line_to_write = line.copy()
             print(f"Found exact match in {input_file.name}")
-            print(f"Changed {line[KEY_FOR_RUSSIAN_NAME]} to {new_value_name}")
-            line_to_write[KEY_FOR_RUSSIAN_NAME] = new_value_name
+            print(f"Changed {line[KEY_FOR_RUSSIAN]} to {new_value_name}")
+            line_to_write[KEY_FOR_RUSSIAN] = new_value_name
             data_to_write.append(line_to_write)
         write_csv(
             rows=data_to_write,
@@ -134,26 +134,26 @@ class ValueRenamer:
                 print(f"Found match in combined value in {input_file.name}")
                 combined_value_ids = line[KEY_FOR_VALUE_ID].split(ATOMIC_VALUE_SEPARATOR)
                 target_value_index = combined_value_ids.index(id_of_value_to_rename)
-                combined_value_names = line[KEY_FOR_RUSSIAN_NAME_OF_VALUE].split(
+                combined_value_names = line[KEY_FOR_RUSSIAN_OF_VALUE].split(
                     ATOMIC_VALUE_SEPARATOR
                 )
                 combined_value_names.pop(target_value_index)
                 combined_value_names.insert(target_value_index, new_value_name)
-                line_to_write[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = ATOMIC_VALUE_SEPARATOR.join(
+                line_to_write[KEY_FOR_RUSSIAN_OF_VALUE] = ATOMIC_VALUE_SEPARATOR.join(
                     combined_value_names
                 )
                 number_of_replacements += 1
                 data_to_write.append(line_to_write)
                 print(
-                    f"Changed {line[KEY_FOR_RUSSIAN_NAME_OF_VALUE]} to {line_to_write[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}"
+                    f"Changed {line[KEY_FOR_RUSSIAN_OF_VALUE]} to {line_to_write[KEY_FOR_RUSSIAN_OF_VALUE]}"
                 )
                 continue
             # After this clause, only those lines are considered which contain the target value only
             print(f"Found exact match in {input_file.name}")
-            line_to_write[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_name
+            line_to_write[KEY_FOR_RUSSIAN_OF_VALUE] = new_value_name
             number_of_replacements += 1
             data_to_write.append(line_to_write)
-            print(f"Changed {line[KEY_FOR_RUSSIAN_NAME_OF_VALUE]} to {new_value_name}")
+            print(f"Changed {line[KEY_FOR_RUSSIAN_OF_VALUE]} to {new_value_name}")
         print(f"Replacements made in this file: {number_of_replacements}")
         output_file = output_dir / input_file.name
         write_csv(rows=data_to_write, path_to_file=output_file, overwrite=True, delimiter=",")

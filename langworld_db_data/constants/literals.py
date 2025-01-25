@@ -15,14 +15,14 @@ ATOMIC_VALUE_SEPARATOR = "&"
 KEY_FOR_FEATURE_ID = "feature_id"
 KEY_FOR_ID = "id"
 KEY_FOR_ENGLISH = "en"  # applies to both features and values
-KEY_FOR_RUSSIAN_NAME = "ru"  # applies to both features and values
+KEY_FOR_RUSSIAN = "ru"  # applies to both features and values
 KEY_FOR_MULTISELECT_OPTION = "is_multiselect"
 KEY_FOR_VALUE_TYPE = "value_type"
-KEY_FOR_RUSSIAN_NAME_OF_VALUE = "value_ru"
+KEY_FOR_RUSSIAN_OF_VALUE = "value_ru"
 KEY_FOR_RUSSIAN_COMMENT = "comment_ru"
 KEY_FOR_ENGLISH_COMMENT = "comment_en"
 KEY_FOR_VALUE_ID = "value_id"
-KEY_FOR_RUSSIAN_NAME_OF_FEATURE = "feature_name_ru"
+KEY_FOR_RUSSIAN_OF_FEATURE = "feature_name_ru"
 KEY_FOR_FORMATTED_ENGLISH_DESCRIPTION = "description_formatted_en"
 KEY_FOR_FORMATTED_RUSSIAN_DESCRIPTION = "description_formatted_ru"
 # also add "name_ru"

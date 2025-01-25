@@ -10,9 +10,9 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_RUSSIAN_COMMENT,
-    KEY_FOR_RUSSIAN_NAME,
-    KEY_FOR_RUSSIAN_NAME_OF_FEATURE,
-    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+    KEY_FOR_RUSSIAN,
+    KEY_FOR_RUSSIAN_OF_FEATURE,
+    KEY_FOR_RUSSIAN_OF_VALUE,
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
@@ -68,7 +68,7 @@ class FeatureAdder(ObjectWithPaths):
             )
 
         for item in listed_values_to_add:
-            if not (KEY_FOR_ENGLISH in item and KEY_FOR_RUSSIAN_NAME in item):
+            if not (KEY_FOR_ENGLISH in item and KEY_FOR_RUSSIAN in item):
                 raise FeatureAdderError(
                     f"Listed value must have keys 'en' and 'ru'. Your value: {item}"
                 )
@@ -83,7 +83,7 @@ class FeatureAdder(ObjectWithPaths):
         rows_with_features = read_dicts_from_csv(self.input_file_with_features)
 
         if feat_en in [row[KEY_FOR_ENGLISH] for row in rows_with_features] or feat_ru.strip() in [
-            row[KEY_FOR_RUSSIAN_NAME] for row in rows_with_features
+            row[KEY_FOR_RUSSIAN] for row in rows_with_features
         ]:
             # note that this check should not be restricted to one feature category
             raise FeatureAdderError(
@@ -117,7 +117,7 @@ class FeatureAdder(ObjectWithPaths):
         row_to_add = {
             KEY_FOR_ID: id_of_new_feature,
             KEY_FOR_ENGLISH: feat_en,
-            KEY_FOR_RUSSIAN_NAME: feat_ru,
+            KEY_FOR_RUSSIAN: feat_ru,
         }
 
         if insert_after_index is None:
@@ -156,13 +156,13 @@ class FeatureAdder(ObjectWithPaths):
 
         for i, new_listed_value in enumerate(listed_values_to_add, start=1):
             value_id = f"{id_of_new_feature}{ID_SEPARATOR}{i}"
-            print(f"Value ID {value_id} - {new_listed_value[KEY_FOR_RUSSIAN_NAME]} will be added")
+            print(f"Value ID {value_id} - {new_listed_value[KEY_FOR_RUSSIAN]} will be added")
             rows_to_add_to_file_with_listed_values.append(
                 {
                     KEY_FOR_ID: value_id,
                     KEY_FOR_FEATURE_ID: id_of_new_feature,
                     KEY_FOR_ENGLISH: new_listed_value[KEY_FOR_ENGLISH],
-                    KEY_FOR_RUSSIAN_NAME: new_listed_value[KEY_FOR_RUSSIAN_NAME],
+                    KEY_FOR_RUSSIAN: new_listed_value[KEY_FOR_RUSSIAN],
                 }
             )
 
@@ -191,10 +191,10 @@ class FeatureAdder(ObjectWithPaths):
                 rows_to_add=[
                     {
                         KEY_FOR_FEATURE_ID: id_of_new_feature,
-                        KEY_FOR_RUSSIAN_NAME_OF_FEATURE: feat_ru,
+                        KEY_FOR_RUSSIAN_OF_FEATURE: feat_ru,
                         KEY_FOR_VALUE_TYPE: "not_stated",
                         KEY_FOR_VALUE_ID: "",
-                        KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
+                        KEY_FOR_RUSSIAN_OF_VALUE: "",
                         KEY_FOR_RUSSIAN_COMMENT: "",
                         KEY_FOR_ENGLISH_COMMENT: "",
                     }

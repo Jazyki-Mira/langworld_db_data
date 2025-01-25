@@ -5,7 +5,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_MULTISELECT_OPTION,
-    KEY_FOR_RUSSIAN_NAME,
+    KEY_FOR_RUSSIAN,
     KEY_FOR_VALUE_ID,
 )
 from langworld_db_data.constants.paths import (
@@ -73,11 +73,11 @@ class ListedValueLister(AbstractValueLister):
         feature_name_for_feature_id = read_dict_from_2_csv_columns(
             self.file_with_features,
             key_col=KEY_FOR_ID,
-            val_col=KEY_FOR_RUSSIAN_NAME,
+            val_col=KEY_FOR_RUSSIAN,
         )
 
         value_name_for_value_id = read_dict_from_2_csv_columns(
-            self.file_with_listed_values, key_col=KEY_FOR_ID, val_col=KEY_FOR_RUSSIAN_NAME
+            self.file_with_listed_values, key_col=KEY_FOR_ID, val_col=KEY_FOR_RUSSIAN
         )
 
         content = (

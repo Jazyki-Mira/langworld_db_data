@@ -7,8 +7,8 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_ENGLISH,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
-    KEY_FOR_RUSSIAN_NAME,
-    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+    KEY_FOR_RUSSIAN,
+    KEY_FOR_RUSSIAN_OF_VALUE,
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
@@ -105,7 +105,7 @@ class ListedValueAdder(ObjectWithPaths):
         # and to calculate line number for the new value (if it is intended non-final).
 
         for row in rows:
-            if row[KEY_FOR_ENGLISH] == new_value_en or row[KEY_FOR_RUSSIAN_NAME] == new_value_ru:
+            if row[KEY_FOR_ENGLISH] == new_value_en or row[KEY_FOR_RUSSIAN] == new_value_ru:
                 raise ValueError(f"Row {row} already contains value you are trying to add")
 
         value_indices_to_inventory_line_numbers = self._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
@@ -166,7 +166,7 @@ class ListedValueAdder(ObjectWithPaths):
                     KEY_FOR_ID: id_of_new_value,
                     KEY_FOR_FEATURE_ID: feature_id,
                     KEY_FOR_ENGLISH: new_value_en[0].upper() + new_value_en[1:],
-                    KEY_FOR_RUSSIAN_NAME: new_value_ru[0].upper() + new_value_ru[1:],
+                    KEY_FOR_RUSSIAN: new_value_ru[0].upper() + new_value_ru[1:],
                     "description_formatted_en": description_formatted_en,
                     "description_formatted_ru": description_formatted_ru,
                 }
@@ -299,7 +299,7 @@ class ListedValueAdder(ObjectWithPaths):
 
             for i, row in enumerate(rows):
                 if row[KEY_FOR_FEATURE_ID] == feature_id and row[KEY_FOR_VALUE_TYPE] == "custom":
-                    value_ru = row[KEY_FOR_RUSSIAN_NAME_OF_VALUE].strip()
+                    value_ru = row[KEY_FOR_RUSSIAN_OF_VALUE].strip()
                     value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
 
                     new_value_with_variants: list[str] = (
@@ -314,12 +314,12 @@ class ListedValueAdder(ObjectWithPaths):
 
                     print(
                         f"{file.name}: changing row {i + 2} (feature {feature_id}). "
-                        f"Custom value <{row[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}> will become listed value "
+                        f"Custom value <{row[KEY_FOR_RUSSIAN_OF_VALUE]}> will become listed value "
                         f"<{new_value_ru}> ({new_value_id})"
                     )
                     row[KEY_FOR_VALUE_TYPE] = "listed"
                     row[KEY_FOR_VALUE_ID] = new_value_id
-                    row[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_ru
+                    row[KEY_FOR_RUSSIAN_OF_VALUE] = new_value_ru
                     is_changed = True
                     break
 

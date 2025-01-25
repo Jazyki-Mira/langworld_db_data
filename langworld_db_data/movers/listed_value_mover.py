@@ -3,7 +3,7 @@ from langworld_db_data.adders.listed_value_adder import ListedValueAdder
 from langworld_db_data.constants.literals import (
     KEY_FOR_ENGLISH,
     KEY_FOR_FEATURE_ID,
-    KEY_FOR_RUSSIAN_NAME,
+    KEY_FOR_RUSSIAN,
 )
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
 from langworld_db_data.removers.listed_value_remover import ListedValueRemover
@@ -48,7 +48,7 @@ class ListedValueMover(ObjectWithPaths):
         self.listed_value_adder.add_listed_value(
             feature_id=value_to_move[KEY_FOR_FEATURE_ID],
             new_value_en=value_to_move[KEY_FOR_ENGLISH],
-            new_value_ru=value_to_move[KEY_FOR_RUSSIAN_NAME],
+            new_value_ru=value_to_move[KEY_FOR_RUSSIAN],
             index_to_assign=index_to_assign,
             description_formatted_en=value_to_move["description_formatted_en"],
             description_formatted_ru=value_to_move["description_formatted_ru"],
