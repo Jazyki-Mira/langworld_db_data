@@ -1,7 +1,11 @@
 from functools import partial
 from pathlib import Path
 
-from langworld_db_data.constants.literals import KEY_FOR_ENGLISH_COMMENT, KEY_FOR_RUSSIAN_COMMENT, KEY_FOR_VALUE_TYPE
+from langworld_db_data.constants.literals import (
+    KEY_FOR_ENGLISH_COMMENT,
+    KEY_FOR_RUSSIAN_COMMENT,
+    KEY_FOR_VALUE_TYPE,
+)
 from langworld_db_data.constants.paths import CONFIG_DIR
 from langworld_db_data.tools.featureprofiles.data_structures import (
     ValueForFeatureProfileDictionary,
