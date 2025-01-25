@@ -2,6 +2,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
+from langworld_db_data.constants.iterables import LOCALES
 from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID, KEY_FOR_ID
 from langworld_db_data.constants.paths import FILE_WITH_LISTED_VALUES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import (
@@ -70,7 +71,7 @@ class FeatureValueInventoryValidator(Validator):
             feature_id: [] for feature_id in self.feature_ids
         }
 
-        for locale in ("en", "ru"):
+        for locale in LOCALES:
             for feature_id in self.feature_ids:
                 names_of_listed_values_for_feature_id[feature_id] = [
                     row[locale]
