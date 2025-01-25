@@ -144,7 +144,9 @@ class ValueRenamer:
                 )
                 number_of_replacements += 1
                 data_to_write.append(line_to_write)
-                print(f"Changed {line[KEY_FOR_RUSSIAN_NAME_OF_VALUE]} to {line_to_write[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}")
+                print(
+                    f"Changed {line[KEY_FOR_RUSSIAN_NAME_OF_VALUE]} to {line_to_write[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}"
+                )
                 continue
             # After this clause, only those lines are considered which contain the target value only
             print(f"Found exact match in {input_file.name}")
