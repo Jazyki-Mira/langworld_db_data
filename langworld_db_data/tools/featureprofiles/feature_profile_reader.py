@@ -106,8 +106,7 @@ class FeatureProfileReader:
 
         # sometimes a custom value can be written in comment while value itself is empty
         text_to_copy = (
-            data_to_return[KEY_FOR_RUSSIAN_OF_VALUE]
-            or data_to_return[KEY_FOR_RUSSIAN_COMMENT]
+            data_to_return[KEY_FOR_RUSSIAN_OF_VALUE] or data_to_return[KEY_FOR_RUSSIAN_COMMENT]
         )
         if copy_to_clipboard and text_to_copy:
             pyperclip.copy(text_to_copy)
