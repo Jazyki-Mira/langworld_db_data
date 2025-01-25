@@ -25,7 +25,6 @@ from langworld_db_data.constants.paths import (
 )
 from langworld_db_data.tools.files.csv_xls import read_dict_from_2_csv_columns, read_dicts_from_csv
 
-
 KEY_FOR_ID_IN_CLDF = "ID"
 KEY_FOR_RUSSIAN_NAME_IN_CLDF = "Name_RU"
 
