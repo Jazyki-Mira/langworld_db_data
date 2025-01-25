@@ -4,8 +4,8 @@ from pycldf import StructureDataset
 
 from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
-    KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_ENGLISH,
+    KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_MULTISELECT_OPTION,

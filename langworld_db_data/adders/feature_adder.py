@@ -5,8 +5,8 @@ from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import (
     AUX_ROW_MARKER,
     ID_SEPARATOR,
-    KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_ENGLISH,
+    KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_RUSSIAN_COMMENT,
@@ -82,9 +82,9 @@ class FeatureAdder(ObjectWithPaths):
 
         rows_with_features = read_dicts_from_csv(self.input_file_with_features)
 
-        if feat_en in [
-            row[KEY_FOR_ENGLISH] for row in rows_with_features
-        ] or feat_ru.strip() in [row[KEY_FOR_RUSSIAN_NAME] for row in rows_with_features]:
+        if feat_en in [row[KEY_FOR_ENGLISH] for row in rows_with_features] or feat_ru.strip() in [
+            row[KEY_FOR_RUSSIAN_NAME] for row in rows_with_features
+        ]:
             # note that this check should not be restricted to one feature category
             raise FeatureAdderError(
                 "English or Russian feature name is already present in list of features"
