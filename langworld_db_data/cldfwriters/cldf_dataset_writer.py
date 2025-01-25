@@ -5,7 +5,7 @@ from pycldf import StructureDataset
 from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     KEY_FOR_ENGLISH_COMMENT,
-    KEY_FOR_ENGLISH_NAME,
+    KEY_FOR_ENGLISH,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_MULTISELECT_OPTION,
@@ -35,7 +35,7 @@ class CLDFDatasetWriter:
     ):
         self.listed_values = read_dicts_from_csv(file_with_listed_values)
         self.value_en_for_value_id = read_dict_from_2_csv_columns(
-            file_with_listed_values, key_col=KEY_FOR_ID, val_col=KEY_FOR_ENGLISH_NAME
+            file_with_listed_values, key_col=KEY_FOR_ID, val_col=KEY_FOR_ENGLISH
         )
 
         self.doculects = read_dicts_from_csv(file_with_doculects)
@@ -63,7 +63,7 @@ class CLDFDatasetWriter:
             {
                 "ID": row[KEY_FOR_ID],
                 "Parameter_ID": row[KEY_FOR_FEATURE_ID],
-                "Name": row[KEY_FOR_ENGLISH_NAME],
+                "Name": row[KEY_FOR_ENGLISH],
                 "Description": "",
                 # custom columns:
                 "Name_RU": row[KEY_FOR_RUSSIAN_NAME],
@@ -75,7 +75,7 @@ class CLDFDatasetWriter:
         features = [
             {
                 "ID": row[KEY_FOR_ID],
-                "Name": row[KEY_FOR_ENGLISH_NAME],
+                "Name": row[KEY_FOR_ENGLISH],
                 "Description": "",
                 # custom columns:
                 "Name_RU": row[KEY_FOR_RUSSIAN_NAME],

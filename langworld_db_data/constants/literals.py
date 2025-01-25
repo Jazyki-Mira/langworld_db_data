@@ -14,7 +14,7 @@ ATOMIC_VALUE_SEPARATOR = "&"
 # For dicts
 KEY_FOR_FEATURE_ID = "feature_id"
 KEY_FOR_ID = "id"
-KEY_FOR_ENGLISH_NAME = "en"  # applies to both features and values
+KEY_FOR_ENGLISH = "en"  # applies to both features and values
 KEY_FOR_RUSSIAN_NAME = "ru"  # applies to both features and values
 KEY_FOR_MULTISELECT_OPTION = "is_multiselect"
 KEY_FOR_VALUE_TYPE = "value_type"

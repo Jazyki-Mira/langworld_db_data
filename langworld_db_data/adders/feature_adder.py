@@ -6,7 +6,7 @@ from langworld_db_data.constants.literals import (
     AUX_ROW_MARKER,
     ID_SEPARATOR,
     KEY_FOR_ENGLISH_COMMENT,
-    KEY_FOR_ENGLISH_NAME,
+    KEY_FOR_ENGLISH,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_RUSSIAN_COMMENT,
@@ -68,7 +68,7 @@ class FeatureAdder(ObjectWithPaths):
             )
 
         for item in listed_values_to_add:
-            if not (KEY_FOR_ENGLISH_NAME in item and KEY_FOR_RUSSIAN_NAME in item):
+            if not (KEY_FOR_ENGLISH in item and KEY_FOR_RUSSIAN_NAME in item):
                 raise FeatureAdderError(
                     f"Listed value must have keys 'en' and 'ru'. Your value: {item}"
                 )
@@ -83,7 +83,7 @@ class FeatureAdder(ObjectWithPaths):
         rows_with_features = read_dicts_from_csv(self.input_file_with_features)
 
         if feat_en in [
-            row[KEY_FOR_ENGLISH_NAME] for row in rows_with_features
+            row[KEY_FOR_ENGLISH] for row in rows_with_features
         ] or feat_ru.strip() in [row[KEY_FOR_RUSSIAN_NAME] for row in rows_with_features]:
             # note that this check should not be restricted to one feature category
             raise FeatureAdderError(
@@ -116,7 +116,7 @@ class FeatureAdder(ObjectWithPaths):
 
         row_to_add = {
             KEY_FOR_ID: id_of_new_feature,
-            KEY_FOR_ENGLISH_NAME: feat_en,
+            KEY_FOR_ENGLISH: feat_en,
             KEY_FOR_RUSSIAN_NAME: feat_ru,
         }
 
@@ -161,7 +161,7 @@ class FeatureAdder(ObjectWithPaths):
                 {
                     KEY_FOR_ID: value_id,
                     KEY_FOR_FEATURE_ID: id_of_new_feature,
-                    KEY_FOR_ENGLISH_NAME: new_listed_value[KEY_FOR_ENGLISH_NAME],
+                    KEY_FOR_ENGLISH: new_listed_value[KEY_FOR_ENGLISH],
                     KEY_FOR_RUSSIAN_NAME: new_listed_value[KEY_FOR_RUSSIAN_NAME],
                 }
             )
