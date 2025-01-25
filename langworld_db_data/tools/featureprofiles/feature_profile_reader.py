@@ -49,7 +49,7 @@ class FeatureProfileReader:
         for i, row in enumerate(read_dicts_from_csv(file), start=1):
             if not row[KEY_FOR_FEATURE_ID]:
                 raise ValueError(f"File {file.stem} does not contain feature ID in row {i + 1}")
-            relevant_columns = {key: row[key] for key in row if key != "feature_id"}
+            relevant_columns = {key: row[key] for key in row if key != KEY_FOR_FEATURE_ID}
             feature_id_to_row_dict[row[KEY_FOR_FEATURE_ID]] = ValueForFeatureProfileDictionary(
                 **relevant_columns
             )

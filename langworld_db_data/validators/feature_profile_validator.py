@@ -5,6 +5,7 @@ from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     AUX_ROW_MARKER,
     ID_SEPARATOR,
+    KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_MULTISELECT_OPTION,
 )
@@ -67,7 +68,7 @@ class FeatureProfileValidator(Validator):
 
         for file in self.feature_profiles:
             check_csv_for_malformed_rows(file)
-            for column_name in ("feature_id", "feature_name_ru"):
+            for column_name in (KEY_FOR_FEATURE_ID, "feature_name_ru"):
                 check_csv_for_repetitions_in_column(file, column_name=column_name)
 
         self.feature_ru_for_feature_id = read_dict_from_2_csv_columns(

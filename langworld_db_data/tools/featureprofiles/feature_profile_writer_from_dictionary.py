@@ -1,6 +1,7 @@
 from dataclasses import asdict
 from pathlib import Path
 
+from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID
 from langworld_db_data.tools.featureprofiles.data_structures import (
     ValueForFeatureProfileDictionary,
 )
@@ -28,7 +29,7 @@ class FeatureProfileWriterFromDictionary:
         rows_to_write = []
 
         for key in feature_dict:
-            row_dict = {"feature_id": key}
+            row_dict = {KEY_FOR_FEATURE_ID: key}
             row_dict.update(asdict(feature_dict[key]))
             rows_to_write.append(row_dict)
 

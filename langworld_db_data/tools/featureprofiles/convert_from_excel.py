@@ -3,6 +3,7 @@ from pathlib import Path
 
 from langworld_db_data.constants.literals import (
     KEY_FOR_ENGLISH_COMMENT,
+    KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_COMMENT,
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
@@ -60,7 +61,7 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
     for row in rows:
         _get = partial(_get_value_from_row, row_=row, name_for_id=sheet_or_column_name_for_id)
 
-        feature_id = _get("feature_id")
+        feature_id = _get(KEY_FOR_FEATURE_ID)
         value_type = _get(KEY_FOR_VALUE_TYPE)
         value_id = _get(KEY_FOR_VALUE_ID)
         value_ru = (
