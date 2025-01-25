@@ -72,7 +72,7 @@ class FeatureAdder(ObjectWithPaths):
                 )
 
         if cat_id not in read_column_from_csv(
-            path_to_file=self.file_with_categories, column_name="id"
+            path_to_file=self.file_with_categories, column_name=KEY_FOR_ID
         ):
             raise FeatureAdderError(
                 f"Category ID <{cat_id}> not found in file" f" {self.file_with_categories.name}"
@@ -113,7 +113,7 @@ class FeatureAdder(ObjectWithPaths):
         )
 
         row_to_add = {
-            "id": id_of_new_feature,
+            KEY_FOR_ID: id_of_new_feature,
             KEY_FOR_ENGLISH_NAME: feat_en,
             KEY_FOR_RUSSIAN_NAME: feat_ru,
         }

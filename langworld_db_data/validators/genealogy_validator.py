@@ -2,6 +2,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
+from langworld_db_data.constants.literals import KEY_FOR_ID
 from langworld_db_data.constants.paths import (
     FILE_WITH_GENEALOGY_HIERARCHY,
     FILE_WITH_GENEALOGY_NAMES,
@@ -36,7 +37,7 @@ class GenealogyValidator(Validator):
         check_yaml_file(self.file_with_hierarchy, verbose=False)
 
         check_csv_for_malformed_rows(self.file_with_names)
-        check_csv_for_repetitions_in_column(self.file_with_names, "id")
+        check_csv_for_repetitions_in_column(self.file_with_names, KEY_FOR_ID)
 
         family_ids_from_hierarchy = self._check_and_get_ids_from_hierarchy()
         self._check_ids_in_list_of_names(family_ids_from_hierarchy)
@@ -67,7 +68,7 @@ class GenealogyValidator(Validator):
                     "It can only contain lowercase letters and underscores"
                 )
 
-            family_id = match.group("id")
+            family_id = match.group(KEY_FOR_ID)
 
             if family_id not in self.family_ids_from_file_with_names:
                 raise GenealogyValidatorError(

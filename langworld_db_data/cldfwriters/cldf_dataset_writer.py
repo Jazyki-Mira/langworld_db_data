@@ -73,7 +73,7 @@ class CLDFDatasetWriter:
         # ParameterTable
         features = [
             {
-                "ID": row["id"],
+                "ID": row[KEY_FOR_ID],
                 "Name": row[KEY_FOR_ENGLISH_NAME],
                 "Description": "",
                 # custom columns:
@@ -84,7 +84,7 @@ class CLDFDatasetWriter:
 
         languages = [
             {
-                "ID": row["id"],
+                "ID": row[KEY_FOR_ID],
                 "Name": row["name_en"],
                 "Macroarea": "",
                 "Latitude": row["latitude"],

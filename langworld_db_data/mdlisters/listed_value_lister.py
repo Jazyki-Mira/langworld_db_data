@@ -37,7 +37,7 @@ class ListedValueLister(AbstractValueLister):
     def write_grouped_by_feature(
         self, output_file: Path = DISCUSSION_FILE_WITH_LISTED_VALUES
     ) -> None:
-        feature_ids = read_column_from_csv(path_to_file=self.file_with_features, column_name="id")
+        feature_ids = read_column_from_csv(path_to_file=self.file_with_features, column_name=KEY_FOR_ID)
 
         feature_to_value_to_doculects: dict[str, dict[str, list[str]]] = {
             feature_id: {
@@ -50,7 +50,7 @@ class ListedValueLister(AbstractValueLister):
 
         feature_is_multiselect_for_feature_id = read_dict_from_2_csv_columns(
             self.file_with_features,
-            key_col="id",
+            key_col=KEY_FOR_ID,
             val_col=KEY_FOR_MULTISELECT_OPTION,
         )
 
@@ -68,12 +68,12 @@ class ListedValueLister(AbstractValueLister):
 
         feature_name_for_feature_id = read_dict_from_2_csv_columns(
             self.file_with_features,
-            key_col="id",
+            key_col=KEY_FOR_ID,
             val_col="ru",
         )
 
         value_name_for_value_id = read_dict_from_2_csv_columns(
-            self.file_with_listed_values, key_col="id", val_col="ru"
+            self.file_with_listed_values, key_col=KEY_FOR_ID, val_col="ru"
         )
 
         content = (

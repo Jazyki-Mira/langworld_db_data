@@ -26,7 +26,7 @@ class FeatureValueInventoryValidator(Validator):
 
         for file in (file_with_features, file_with_listed_values):
             check_csv_for_malformed_rows(file)
-            check_csv_for_repetitions_in_column(file, column_name="id")
+            check_csv_for_repetitions_in_column(file, column_name=KEY_FOR_ID)
         print("OK: No malformed rows found, all feature IDs and value IDs are unique")
 
         self.feature_ids = self._read_ids(file_with_features)
