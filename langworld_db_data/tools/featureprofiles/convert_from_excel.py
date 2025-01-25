@@ -5,7 +5,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_COMMENT,
-    KEY_FOR_RUSSIAN_OF_FEATURE,
+    KEY_FOR_RUSSIAN_NAME_OF_FEATURE,
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
@@ -74,7 +74,7 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
         # if this is a new feature ID, just write the value
         if feature_id not in processed_feature_ids:
             value_for_feature_id[feature_id] = ValueForFeatureProfileDictionary(
-                feature_name_ru=_get(KEY_FOR_RUSSIAN_OF_FEATURE),
+                feature_name_ru=_get(KEY_FOR_RUSSIAN_NAME_OF_FEATURE),
                 value_type=value_type,
                 value_id=value_id,
                 value_ru=value_ru,

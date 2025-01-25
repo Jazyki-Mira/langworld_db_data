@@ -12,7 +12,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_RUSSIAN,
     KEY_FOR_RUSSIAN_COMMENT,
     KEY_FOR_RUSSIAN_NAME,
-    KEY_FOR_RUSSIAN_OF_VALUE,
+    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
@@ -122,7 +122,7 @@ class CLDFDatasetWriter:
                 ):
                     for value_id, value_ru in zip(
                         relevant_row[KEY_FOR_VALUE_ID].split(ATOMIC_VALUE_SEPARATOR),
-                        relevant_row[KEY_FOR_RUSSIAN_OF_VALUE].split(ATOMIC_VALUE_SEPARATOR),
+                        relevant_row[KEY_FOR_RUSSIAN_NAME_OF_VALUE].split(ATOMIC_VALUE_SEPARATOR),
                     ):
                         value_table_rows.append(
                             {
@@ -150,7 +150,7 @@ class CLDFDatasetWriter:
                             "Value": self.value_en_for_value_id.get(
                                 relevant_row[KEY_FOR_VALUE_ID], ""
                             ),
-                            "Value_RU": relevant_row[KEY_FOR_RUSSIAN_OF_VALUE],
+                            "Value_RU": relevant_row[KEY_FOR_RUSSIAN_NAME_OF_VALUE],
                             "Code_ID": relevant_row[KEY_FOR_VALUE_ID],
                             "Comment": relevant_row[KEY_FOR_ENGLISH_COMMENT],
                             "Comment_RU": relevant_row[KEY_FOR_RUSSIAN_COMMENT],

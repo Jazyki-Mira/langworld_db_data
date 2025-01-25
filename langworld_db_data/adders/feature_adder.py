@@ -11,8 +11,8 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_ID,
     KEY_FOR_RUSSIAN,
     KEY_FOR_RUSSIAN_COMMENT,
-    KEY_FOR_RUSSIAN_OF_FEATURE,
-    KEY_FOR_RUSSIAN_OF_VALUE,
+    KEY_FOR_RUSSIAN_NAME_OF_FEATURE,
+    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
@@ -191,10 +191,10 @@ class FeatureAdder(ObjectWithPaths):
                 rows_to_add=[
                     {
                         KEY_FOR_FEATURE_ID: id_of_new_feature,
-                        KEY_FOR_RUSSIAN_OF_FEATURE: feat_ru,
+                        KEY_FOR_RUSSIAN_NAME_OF_FEATURE: feat_ru,
                         KEY_FOR_VALUE_TYPE: "not_stated",
                         KEY_FOR_VALUE_ID: "",
-                        KEY_FOR_RUSSIAN_OF_VALUE: "",
+                        KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
                         KEY_FOR_RUSSIAN_COMMENT: "",
                         KEY_FOR_ENGLISH_COMMENT: "",
                     }

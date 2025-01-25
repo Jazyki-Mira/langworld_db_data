@@ -8,7 +8,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_RUSSIAN,
-    KEY_FOR_RUSSIAN_OF_VALUE,
+    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
@@ -299,7 +299,7 @@ class ListedValueAdder(ObjectWithPaths):
 
             for i, row in enumerate(rows):
                 if row[KEY_FOR_FEATURE_ID] == feature_id and row[KEY_FOR_VALUE_TYPE] == "custom":
-                    value_ru = row[KEY_FOR_RUSSIAN_OF_VALUE].strip()
+                    value_ru = row[KEY_FOR_RUSSIAN_NAME_OF_VALUE].strip()
                     value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
 
                     new_value_with_variants: list[str] = (
@@ -314,12 +314,12 @@ class ListedValueAdder(ObjectWithPaths):
 
                     print(
                         f"{file.name}: changing row {i + 2} (feature {feature_id}). "
-                        f"Custom value <{row[KEY_FOR_RUSSIAN_OF_VALUE]}> will become listed value "
+                        f"Custom value <{row[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}> will become listed value "
                         f"<{new_value_ru}> ({new_value_id})"
                     )
                     row[KEY_FOR_VALUE_TYPE] = "listed"
                     row[KEY_FOR_VALUE_ID] = new_value_id
-                    row[KEY_FOR_RUSSIAN_OF_VALUE] = new_value_ru
+                    row[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_ru
                     is_changed = True
                     break
 

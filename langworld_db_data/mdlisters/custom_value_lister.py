@@ -4,7 +4,7 @@ from langworld_db_data.constants.literals import (
     ID_SEPARATOR,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_COMMENT,
-    KEY_FOR_RUSSIAN_OF_VALUE,
+    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
 )
 from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT,
@@ -49,7 +49,7 @@ class CustomValueLister(AbstractValueLister):
                 content += (
                     f"- **{row[KEY_FOR_FEATURE_ID]}**"
                     f" ({self.feature_ru_for_feature_id[row[KEY_FOR_FEATURE_ID]]}):"
-                    f" {row[KEY_FOR_RUSSIAN_OF_VALUE]}"
+                    f" {row[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}"
                 )
                 if row[KEY_FOR_RUSSIAN_COMMENT]:
                     content += f"\n\n\t_Комментарий: {row[KEY_FOR_RUSSIAN_COMMENT]}_"
@@ -71,7 +71,7 @@ class CustomValueLister(AbstractValueLister):
                     [
                         volume_doculect_id.split(":")[1],
                         row[KEY_FOR_FEATURE_ID],
-                        row[KEY_FOR_RUSSIAN_OF_VALUE],
+                        row[KEY_FOR_RUSSIAN_NAME_OF_VALUE],
                         row[KEY_FOR_RUSSIAN_COMMENT],
                     ]
                     for row in self.filtered_rows_for_volume_doculect_id[volume_doculect_id]
