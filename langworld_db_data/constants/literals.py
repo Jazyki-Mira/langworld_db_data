@@ -11,7 +11,7 @@ ID_SEPARATOR = "-"
 ATOMIC_VALUE_SEPARATOR = "&"
 """Sign that separates atomic values within a compound value."""
 
-# For dicts
+
 KEY_FOR_ENGLISH = "en"
 KEY_FOR_ENGLISH_COMMENT = "comment_en"
 KEY_FOR_FEATURE_ID = "feature_id"
