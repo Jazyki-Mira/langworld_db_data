@@ -52,6 +52,22 @@ def append_empty_column_to_csv(
     )
 
 
+def append_to_excel_template(
+    template_file_path: Path, output_file_path: Path, rows: list[list[str]]
+):
+    # FIXME test
+    # Load the template file
+    wb = openpyxl.load_workbook(template_file_path, keep_vba=True)
+    ws = wb["input"]
+
+    # Append rows to the worksheet
+    for row in rows:
+        ws.append(row)
+
+    # Save the file to the specified output path
+    wb.save(output_file_path)
+
+
 def check_csv_for_malformed_rows(path_to_file: Path) -> None:
     """
     Checks whether all rows in CSV file have the same number of columns.
