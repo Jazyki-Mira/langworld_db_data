@@ -1,6 +1,7 @@
 from collections import defaultdict
 from pathlib import Path
 
+from langworld_db_data.constants.literals import KEY_FOR_ID
 from langworld_db_data.constants.paths import (
     FEATURE_PROFILES_DIR,
     FILE_WITH_DOCULECTS,
@@ -30,17 +31,17 @@ class DoculectInventoryValidator(Validator):
 
         check_csv_for_malformed_rows(file_with_doculects)
         try:
-            check_csv_for_repetitions_in_column(file_with_doculects, column_name="id")
+            check_csv_for_repetitions_in_column(file_with_doculects, column_name=KEY_FOR_ID)
         except ValueError as e:
             raise DoculectInventoryValidatorError(str(e))
 
         self.doculects = read_dicts_from_csv(file_with_doculects)
-        self.doculect_ids = {d["id"] for d in self.doculects}
+        self.doculect_ids = {d[KEY_FOR_ID] for d in self.doculects}
 
         self.genealogy_family_ids = set(self._read_ids(file_with_genealogy_names))
 
         self.has_feature_profile_for_doculect_id = {
-            d["id"]: d["has_feature_profile"] for d in self.doculects
+            d[KEY_FOR_ID]: d["has_feature_profile"] for d in self.doculects
         }
 
     def validate(self) -> None:
@@ -64,7 +65,7 @@ class DoculectInventoryValidator(Validator):
         for doculect in self.doculects:
             if doculect["family_id"] not in self.genealogy_family_ids:
                 raise DoculectInventoryValidatorError(
-                    f"{doculect['id'].capitalize()}: genealogy family ID"
+                    f"{doculect[KEY_FOR_ID].capitalize()}: genealogy family ID"
                     f" {doculect['family_id']} not found in genealogy inventory"
                 )
         print("OK: ID of language family for each doculect is present in genealogy" " inventory")
@@ -77,7 +78,7 @@ class DoculectInventoryValidator(Validator):
         coords_to_doculect_ids: dict[tuple[str, str], list[str]] = defaultdict(list)
         for doculect in self.doculects:
             coords_to_doculect_ids[(doculect["latitude"], doculect["longitude"])].append(
-                f"{doculect['id']} ({doculect['glottocode']})"
+                f"{doculect[KEY_FOR_ID]} ({doculect['glottocode']})"
             )
 
         coords_with_more_than_one_doculect = [
@@ -102,10 +103,10 @@ class DoculectInventoryValidator(Validator):
         for doculect in self.doculects:
             if (
                 doculect["has_feature_profile"] == "1"
-                and doculect["id"] not in self.names_of_feature_profiles
+                and doculect[KEY_FOR_ID] not in self.names_of_feature_profiles
             ):
                 raise DoculectInventoryValidatorError(
-                    f'Doculect {doculect["id"]} has no file with feature profile.'
+                    f"Doculect {doculect[KEY_FOR_ID]} has no file with feature profile."
                 )
         print(
             "OK: Every doculect that is marked as having a feature profile has a"

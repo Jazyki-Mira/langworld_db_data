@@ -2,6 +2,8 @@ import re
 from collections import Counter
 from pathlib import Path
 
+from langworld_db_data.constants.iterables import LOCALES
+from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID, KEY_FOR_ID
 from langworld_db_data.constants.paths import FILE_WITH_LISTED_VALUES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import (
     check_csv_for_malformed_rows,
@@ -25,7 +27,7 @@ class FeatureValueInventoryValidator(Validator):
 
         for file in (file_with_features, file_with_listed_values):
             check_csv_for_malformed_rows(file)
-            check_csv_for_repetitions_in_column(file, column_name="id")
+            check_csv_for_repetitions_in_column(file, column_name=KEY_FOR_ID)
         print("OK: No malformed rows found, all feature IDs and value IDs are unique")
 
         self.feature_ids = self._read_ids(file_with_features)
@@ -47,7 +49,7 @@ class FeatureValueInventoryValidator(Validator):
 
     def _validate_listed_values(self) -> None:
         feature_id_for_value_id = {
-            row["id"]: row["feature_id"] for row in self.rows_with_listed_values
+            row[KEY_FOR_ID]: row[KEY_FOR_FEATURE_ID] for row in self.rows_with_listed_values
         }
 
         for value_id in feature_id_for_value_id:
@@ -69,12 +71,12 @@ class FeatureValueInventoryValidator(Validator):
             feature_id: [] for feature_id in self.feature_ids
         }
 
-        for locale in ("en", "ru"):
+        for locale in LOCALES:
             for feature_id in self.feature_ids:
                 names_of_listed_values_for_feature_id[feature_id] = [
                     row[locale]
                     for row in self.rows_with_listed_values
-                    if row["feature_id"] == feature_id
+                    if row[KEY_FOR_FEATURE_ID] == feature_id
                 ]
 
             for feature_id in names_of_listed_values_for_feature_id:

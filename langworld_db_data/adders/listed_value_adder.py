@@ -2,11 +2,21 @@ from pathlib import Path
 from typing import Optional, Union
 
 from langworld_db_data import ObjectWithPaths
-from langworld_db_data.constants.literals import ID_SEPARATOR, KEY_FOR_FEATURE_ID, KEY_FOR_VALUE_ID
+from langworld_db_data.constants.literals import (
+    ID_SEPARATOR,
+    KEY_FOR_ENGLISH,
+    KEY_FOR_FEATURE_ID,
+    KEY_FOR_ID,
+    KEY_FOR_RUSSIAN,
+    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+    KEY_FOR_VALUE_ID,
+    KEY_FOR_VALUE_TYPE,
+)
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.tools.value_ids.value_ids import extract_feature_id, extract_value_index
 
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
+KEY_FOR_LINE_NUMBER = "line number"
 
 
 class ListedValueAdderError(Exception):
@@ -95,7 +105,7 @@ class ListedValueAdder(ObjectWithPaths):
         # and to calculate line number for the new value (if it is intended non-final).
 
         for row in rows:
-            if row["en"] == new_value_en or row["ru"] == new_value_ru:
+            if row[KEY_FOR_ENGLISH] == new_value_en or row[KEY_FOR_RUSSIAN] == new_value_ru:
                 raise ValueError(f"Row {row} already contains value you are trying to add")
 
         value_indices_to_inventory_line_numbers = self._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
@@ -130,7 +140,7 @@ class ListedValueAdder(ObjectWithPaths):
                 f"{value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_INDEX] + 1}"
             )
             line_number_of_new_value = (
-                value_indices_to_inventory_line_numbers[-1]["line number"] + 1
+                value_indices_to_inventory_line_numbers[-1][KEY_FOR_LINE_NUMBER] + 1
             )
             rows_with_updated_value_indices = tuple(rows.copy())
 
@@ -148,15 +158,15 @@ class ListedValueAdder(ObjectWithPaths):
 
             for value_index_and_line_number in value_indices_to_inventory_line_numbers:
                 if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] == index_to_assign:
-                    line_number_of_new_value = value_index_and_line_number["line number"]
+                    line_number_of_new_value = value_index_and_line_number[KEY_FOR_LINE_NUMBER]
 
         row_with_new_value = tuple(
             [
                 {
-                    KEY_FOR_VALUE_ID: id_of_new_value,
+                    KEY_FOR_ID: id_of_new_value,
                     KEY_FOR_FEATURE_ID: feature_id,
-                    "en": new_value_en[0].upper() + new_value_en[1:],
-                    "ru": new_value_ru[0].upper() + new_value_ru[1:],
+                    KEY_FOR_ENGLISH: new_value_en[0].upper() + new_value_en[1:],
+                    KEY_FOR_RUSSIAN: new_value_ru[0].upper() + new_value_ru[1:],
                     "description_formatted_en": description_formatted_en,
                     "description_formatted_ru": description_formatted_ru,
                 }
@@ -202,11 +212,11 @@ class ListedValueAdder(ObjectWithPaths):
             if row[KEY_FOR_FEATURE_ID] != feature_id:
                 continue
 
-            value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
+            value_index = extract_value_index(row[KEY_FOR_ID])
             value_indices_to_inventory_line_numbers.append(
                 {
-                    "index": value_index,
-                    "line number": i,
+                    KEY_FOR_FEATURE_VALUE_INDEX: value_index,
+                    KEY_FOR_LINE_NUMBER: i,
                 }
             )
 
@@ -228,11 +238,11 @@ class ListedValueAdder(ObjectWithPaths):
         for value_index_and_line_number in value_indices_to_inventory_line_numbers:
             if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] < index_to_assign:
                 continue
-            row_where_id_must_be_incremented = value_index_and_line_number["line number"]
+            row_where_id_must_be_incremented = value_index_and_line_number[KEY_FOR_LINE_NUMBER]
             value_id_to_increment = rows_with_incremented_indices[
                 row_where_id_must_be_incremented
-            ][KEY_FOR_VALUE_ID]
-            rows_with_incremented_indices[row_where_id_must_be_incremented][KEY_FOR_VALUE_ID] = (
+            ][KEY_FOR_ID]
+            rows_with_incremented_indices[row_where_id_must_be_incremented][KEY_FOR_ID] = (
                 f"{extract_feature_id(value_id_to_increment)}-"
                 f"{extract_value_index(value_id_to_increment) + 1}"
             )
@@ -252,16 +262,19 @@ class ListedValueAdder(ObjectWithPaths):
             target_feature_id = extract_feature_id(new_value_id)
             new_value_index = extract_value_index(new_value_id)
             for row in rows:
-                if row["feature_id"] != target_feature_id or row["value_type"] != "listed":
+                if (
+                    row[KEY_FOR_FEATURE_ID] != target_feature_id
+                    or row[KEY_FOR_VALUE_TYPE] != "listed"
+                ):
                     continue
-                current_value_index = extract_value_index(row["value_id"])
+                current_value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
                 if current_value_index < new_value_index:
                     continue
 
                 incremented_current_value_id = (
                     f"{target_feature_id}{ID_SEPARATOR}{current_value_index + 1}"
                 )
-                row["value_id"] = incremented_current_value_id
+                row[KEY_FOR_VALUE_ID] = incremented_current_value_id
                 is_changed = True
 
             if is_changed:
@@ -285,8 +298,8 @@ class ListedValueAdder(ObjectWithPaths):
             rows = read_dicts_from_csv(file)
 
             for i, row in enumerate(rows):
-                if row[KEY_FOR_FEATURE_ID] == feature_id and row["value_type"] == "custom":
-                    value_ru = row["value_ru"].strip()
+                if row[KEY_FOR_FEATURE_ID] == feature_id and row[KEY_FOR_VALUE_TYPE] == "custom":
+                    value_ru = row[KEY_FOR_RUSSIAN_NAME_OF_VALUE].strip()
                     value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
 
                     new_value_with_variants: list[str] = (
@@ -301,12 +314,12 @@ class ListedValueAdder(ObjectWithPaths):
 
                     print(
                         f"{file.name}: changing row {i + 2} (feature {feature_id}). "
-                        f"Custom value <{row['value_ru']}> will become listed value "
+                        f"Custom value <{row[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}> will become listed value "
                         f"<{new_value_ru}> ({new_value_id})"
                     )
-                    row["value_type"] = "listed"
-                    row["value_id"] = new_value_id
-                    row["value_ru"] = new_value_ru
+                    row[KEY_FOR_VALUE_TYPE] = "listed"
+                    row[KEY_FOR_VALUE_ID] = new_value_id
+                    row[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_ru
                     is_changed = True
                     break
 

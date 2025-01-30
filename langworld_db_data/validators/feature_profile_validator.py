@@ -5,6 +5,11 @@ from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     AUX_ROW_MARKER,
     ID_SEPARATOR,
+    KEY_FOR_FEATURE_ID,
+    KEY_FOR_ID,
+    KEY_FOR_MULTISELECT_OPTION,
+    KEY_FOR_RUSSIAN,
+    KEY_FOR_RUSSIAN_NAME_OF_FEATURE,
 )
 from langworld_db_data.constants.paths import (
     FEATURE_PROFILES_DIR,
@@ -65,24 +70,24 @@ class FeatureProfileValidator(Validator):
 
         for file in self.feature_profiles:
             check_csv_for_malformed_rows(file)
-            for column_name in ("feature_id", "feature_name_ru"):
+            for column_name in (KEY_FOR_FEATURE_ID, KEY_FOR_RUSSIAN_NAME_OF_FEATURE):
                 check_csv_for_repetitions_in_column(file, column_name=column_name)
 
         self.feature_ru_for_feature_id = read_dict_from_2_csv_columns(
-            file_with_features, key_col="id", val_col="ru"
+            file_with_features, key_col=KEY_FOR_ID, val_col=KEY_FOR_RUSSIAN
         )
         self.feature_is_multiselect_for_feature_id = read_dict_from_2_csv_columns(
-            file_with_features, key_col="id", val_col="is_multiselect"
+            file_with_features, key_col=KEY_FOR_ID, val_col=KEY_FOR_MULTISELECT_OPTION
         )
         self.not_applicable_trigger_values_for_feature_id: dict[str, list[str]] = {
             feature_id: trigger_values.split(", ")
             for feature_id, trigger_values in read_dict_from_2_csv_columns(
-                file_with_features, key_col="id", val_col="not_applicable_if"
+                file_with_features, key_col=KEY_FOR_ID, val_col="not_applicable_if"
             ).items()
             if trigger_values  # we don't need features that don't depend on other features
         }
         self.value_ru_for_value_id = read_dict_from_2_csv_columns(
-            file_with_listed_values, key_col="id", val_col="ru"
+            file_with_listed_values, key_col=KEY_FOR_ID, val_col=KEY_FOR_RUSSIAN
         )
 
         self.must_throw_error_at_feature_or_value_name_mismatch = (

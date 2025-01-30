@@ -1,6 +1,11 @@
 from pathlib import Path
 
-from langworld_db_data.constants.literals import ID_SEPARATOR
+from langworld_db_data.constants.literals import (
+    ID_SEPARATOR,
+    KEY_FOR_FEATURE_ID,
+    KEY_FOR_RUSSIAN_COMMENT,
+    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+)
 from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_DOCULECT,
     DISCUSSION_FILE_WITH_CUSTOM_VALUES_BY_FEATURE,
@@ -42,12 +47,12 @@ class CustomValueLister(AbstractValueLister):
             )
             for row in self.filtered_rows_for_volume_doculect_id[volume_doculect_id]:
                 content += (
-                    f'- **{row["feature_id"]}**'
-                    f' ({self.feature_ru_for_feature_id[row["feature_id"]]}):'
-                    f' {row["value_ru"]}'
+                    f"- **{row[KEY_FOR_FEATURE_ID]}**"
+                    f" ({self.feature_ru_for_feature_id[row[KEY_FOR_FEATURE_ID]]}):"
+                    f" {row[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}"
                 )
-                if row["comment_ru"]:
-                    content += f'\n\n\t_Комментарий: {row["comment_ru"]}_'
+                if row[KEY_FOR_RUSSIAN_COMMENT]:
+                    content += f"\n\n\t_Комментарий: {row[KEY_FOR_RUSSIAN_COMMENT]}_"
                 content += "\n"
             content += "\n"
 
@@ -65,9 +70,9 @@ class CustomValueLister(AbstractValueLister):
                 rows_with_custom_values += [
                     [
                         volume_doculect_id.split(":")[1],
-                        row["feature_id"],
-                        row["value_ru"],
-                        row["comment_ru"],
+                        row[KEY_FOR_FEATURE_ID],
+                        row[KEY_FOR_RUSSIAN_NAME_OF_VALUE],
+                        row[KEY_FOR_RUSSIAN_COMMENT],
                     ]
                     for row in self.filtered_rows_for_volume_doculect_id[volume_doculect_id]
                 ]
