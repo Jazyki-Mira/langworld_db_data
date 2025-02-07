@@ -141,3 +141,5 @@ dmypy.json
 
 # one-off scripts
 temp_*.py
+langworld_db_data/tools/wals_codes.py
+data/inventories/wals_languages.csv
