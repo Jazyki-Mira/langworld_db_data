@@ -22,6 +22,7 @@ pytest-cov = "*"
 ruff = "*"
 isort = "*"
 pre-commit = "*"
+langworld-db-data = {editable = true, path = "."}
 
 [requires]
 python_version = "3.9"
