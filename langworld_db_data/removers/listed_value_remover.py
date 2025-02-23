@@ -1,5 +1,11 @@
 from langworld_db_data import ObjectWithPaths
-from langworld_db_data.constants.literals import ID_SEPARATOR
+from langworld_db_data.constants.literals import (
+    ID_SEPARATOR,
+    KEY_FOR_FEATURE_ID,
+    KEY_FOR_ID,
+    KEY_FOR_VALUE_ID,
+    KEY_FOR_VALUE_TYPE,
+)
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.tools.value_ids.value_ids import extract_feature_id, extract_value_index
 
@@ -40,7 +46,7 @@ class ListedValueRemover(ObjectWithPaths):
         rows = read_dicts_from_csv(self.input_file_with_listed_values)
 
         for i, row in enumerate(rows):
-            if row["id"] != id_of_value_to_remove:
+            if row[KEY_FOR_ID] != id_of_value_to_remove:
                 continue
             line_number_of_value_to_remove = i
             value_to_remove = row
@@ -83,24 +89,24 @@ class ListedValueRemover(ObjectWithPaths):
             rows = read_dicts_from_csv(file)
 
             for row in rows:
-                if row["value_type"] != "listed":
+                if row[KEY_FOR_VALUE_TYPE] != "listed":
                     continue
-                if row["feature_id"] != extract_feature_id(id_of_value_to_remove):
+                if row[KEY_FOR_FEATURE_ID] != extract_feature_id(id_of_value_to_remove):
                     continue
 
-                if row["value_id"] == id_of_value_to_remove:
-                    row["value_id"] = ""
-                    row["value_type"] = "custom"
+                if row[KEY_FOR_VALUE_ID] == id_of_value_to_remove:
+                    row[KEY_FOR_VALUE_ID] = ""
+                    row[KEY_FOR_VALUE_TYPE] = "custom"
                     print(f"Changing value type to custom in {file.stem}")
                     is_changed = True
                     break
-                elif extract_value_index(row["value_id"]) > extract_value_index(
+                elif extract_value_index(row[KEY_FOR_VALUE_ID]) > extract_value_index(
                     id_of_value_to_remove
                 ):
-                    print(row["value_id"])
-                    new_value_index = str(extract_value_index(row["value_id"]) - 1)
-                    row["value_id"] = (
-                        f'{extract_feature_id(row["value_id"])}{ID_SEPARATOR}{new_value_index}'
+                    print(row[KEY_FOR_VALUE_ID])
+                    new_value_index = str(extract_value_index(row[KEY_FOR_VALUE_ID]) - 1)
+                    row[KEY_FOR_VALUE_ID] = (
+                        f"{extract_feature_id(row[KEY_FOR_VALUE_ID])}{ID_SEPARATOR}{new_value_index}"
                     )
                     print(f"Updating value id in {file.stem}")
                     is_changed = True
@@ -126,14 +132,14 @@ class ListedValueRemover(ObjectWithPaths):
         rows_with_updated_indices = rows.copy()
 
         for i, row in enumerate(rows):
-            if row["feature_id"] != feature_id:
+            if row[KEY_FOR_FEATURE_ID] != feature_id:
                 continue
-            current_value_index = extract_value_index(row["id"])
+            current_value_index = extract_value_index(row[KEY_FOR_ID])
             if current_value_index > index_of_value_to_remove:
                 new_current_value_index = str(current_value_index - 1)
                 new_current_value_id = (
-                    f'{extract_feature_id(row["id"])}{ID_SEPARATOR}{new_current_value_index}'
+                    f"{extract_feature_id(row[KEY_FOR_ID])}{ID_SEPARATOR}{new_current_value_index}"
                 )
-                rows_with_updated_indices[i]["id"] = new_current_value_id
+                rows_with_updated_indices[i][KEY_FOR_ID] = new_current_value_id
 
         return rows_with_updated_indices

@@ -1,7 +1,13 @@
 from abc import ABC, abstractmethod
 from pathlib import Path
 
-from langworld_db_data.constants.literals import ValueType
+from langworld_db_data.constants.literals import (
+    KEY_FOR_ID,
+    KEY_FOR_RUSSIAN,
+    KEY_FOR_RUSSIAN_NAME,
+    KEY_FOR_VALUE_TYPE,
+    ValueType,
+)
 from langworld_db_data.constants.paths import FILE_WITH_DOCULECTS, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import read_dict_from_2_csv_columns, read_dicts_from_csv
 
@@ -17,15 +23,15 @@ class AbstractValueLister(ABC):
         self.file_with_features = file_with_features
 
         self.doculect_ru_for_doculect_id = read_dict_from_2_csv_columns(
-            FILE_WITH_DOCULECTS, "id", "name_ru"
+            FILE_WITH_DOCULECTS, KEY_FOR_ID, KEY_FOR_RUSSIAN_NAME
         )
 
         self.feature_ru_for_feature_id = read_dict_from_2_csv_columns(
-            self.file_with_features, "id", "ru"
+            self.file_with_features, KEY_FOR_ID, KEY_FOR_RUSSIAN
         )
 
         self.encyclopedia_volume_for_doculect_id = read_dict_from_2_csv_columns(
-            FILE_WITH_DOCULECTS, "id", "encyclopedia_volume_id"
+            FILE_WITH_DOCULECTS, KEY_FOR_ID, "encyclopedia_volume_id"
         )
 
         # replace empty values with zeroes for sorting
@@ -47,7 +53,7 @@ class AbstractValueLister(ABC):
             key = f"{self.encyclopedia_volume_for_doculect_id[file.stem]}:{file.stem}"
             rows = read_dicts_from_csv(file)
             self.filtered_rows_for_volume_doculect_id[key] = [
-                row for row in rows if row["value_type"] == self.value_type
+                row for row in rows if row[KEY_FOR_VALUE_TYPE] == self.value_type
             ]
 
     @abstractmethod
