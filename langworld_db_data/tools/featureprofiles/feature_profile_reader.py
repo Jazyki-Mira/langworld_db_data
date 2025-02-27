@@ -2,6 +2,13 @@ from pathlib import Path
 
 import pyperclip
 
+from langworld_db_data.constants.literals import (
+    KEY_FOR_FEATURE_ID,
+    KEY_FOR_RUSSIAN_COMMENT,
+    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+    KEY_FOR_VALUE_ID,
+    KEY_FOR_VALUE_TYPE,
+)
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
 from langworld_db_data.tools.featureprofiles.data_structures import (
     ValueForFeatureProfileDictionary,
@@ -40,10 +47,10 @@ class FeatureProfileReader:
         feature_id_to_row_dict = {}
 
         for i, row in enumerate(read_dicts_from_csv(file), start=1):
-            if not row["feature_id"]:
+            if not row[KEY_FOR_FEATURE_ID]:
                 raise ValueError(f"File {file.stem} does not contain feature ID in row {i + 1}")
-            relevant_columns = {key: row[key] for key in row if key != "feature_id"}
-            feature_id_to_row_dict[row["feature_id"]] = ValueForFeatureProfileDictionary(
+            relevant_columns = {key: row[key] for key in row if key != KEY_FOR_FEATURE_ID}
+            feature_id_to_row_dict[row[KEY_FOR_FEATURE_ID]] = ValueForFeatureProfileDictionary(
                 **relevant_columns
             )
 
@@ -78,7 +85,12 @@ class FeatureProfileReader:
 
         data_to_return = {
             key: getattr(loaded_data_for_feature, key)
-            for key in ("value_type", "value_id", "value_ru", "comment_ru")
+            for key in (
+                KEY_FOR_VALUE_TYPE,
+                KEY_FOR_VALUE_ID,
+                KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+                KEY_FOR_RUSSIAN_COMMENT,
+            )
         }
 
         if verbose:
@@ -93,7 +105,10 @@ class FeatureProfileReader:
                     print(f"{key_for_print} is empty")
 
         # sometimes a custom value can be written in comment while value itself is empty
-        text_to_copy = data_to_return["value_ru"] or data_to_return["comment_ru"]
+        text_to_copy = (
+            data_to_return[KEY_FOR_RUSSIAN_NAME_OF_VALUE]
+            or data_to_return[KEY_FOR_RUSSIAN_COMMENT]
+        )
         if copy_to_clipboard and text_to_copy:
             pyperclip.copy(text_to_copy)
             print("\nValue (or comment for empty value) copied to clipboard")

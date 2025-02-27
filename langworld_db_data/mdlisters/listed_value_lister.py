@@ -1,6 +1,13 @@
 from pathlib import Path
 
-from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR
+from langworld_db_data.constants.literals import (
+    ATOMIC_VALUE_SEPARATOR,
+    KEY_FOR_FEATURE_ID,
+    KEY_FOR_ID,
+    KEY_FOR_MULTISELECT_OPTION,
+    KEY_FOR_RUSSIAN,
+    KEY_FOR_VALUE_ID,
+)
 from langworld_db_data.constants.paths import (
     DISCUSSION_FILE_WITH_LISTED_VALUES,
     FEATURE_PROFILES_DIR,
@@ -32,43 +39,45 @@ class ListedValueLister(AbstractValueLister):
     def write_grouped_by_feature(
         self, output_file: Path = DISCUSSION_FILE_WITH_LISTED_VALUES
     ) -> None:
-        feature_ids = read_column_from_csv(path_to_file=self.file_with_features, column_name="id")
+        feature_ids = read_column_from_csv(
+            path_to_file=self.file_with_features, column_name=KEY_FOR_ID
+        )
 
         feature_to_value_to_doculects: dict[str, dict[str, list[str]]] = {
             feature_id: {
-                row["id"]: []
+                row[KEY_FOR_ID]: []
                 for row in read_dicts_from_csv(self.file_with_listed_values)
-                if row["feature_id"] == feature_id
+                if row[KEY_FOR_FEATURE_ID] == feature_id
             }
             for feature_id in feature_ids
         }
 
         feature_is_multiselect_for_feature_id = read_dict_from_2_csv_columns(
             self.file_with_features,
-            key_col="id",
-            val_col="is_multiselect",
+            key_col=KEY_FOR_ID,
+            val_col=KEY_FOR_MULTISELECT_OPTION,
         )
 
         for volume_and_doculect_id in self.filtered_rows_for_volume_doculect_id:
             for row in self.filtered_rows_for_volume_doculect_id[volume_and_doculect_id]:
-                if feature_is_multiselect_for_feature_id[row["feature_id"]] == "1":
-                    for value_id in row["value_id"].split(ATOMIC_VALUE_SEPARATOR):
-                        feature_to_value_to_doculects[row["feature_id"]][value_id].append(
+                if feature_is_multiselect_for_feature_id[row[KEY_FOR_FEATURE_ID]] == "1":
+                    for value_id in row[KEY_FOR_VALUE_ID].split(ATOMIC_VALUE_SEPARATOR):
+                        feature_to_value_to_doculects[row[KEY_FOR_FEATURE_ID]][value_id].append(
                             volume_and_doculect_id
                         )
                 else:
-                    feature_to_value_to_doculects[row["feature_id"]][row["value_id"]].append(
-                        volume_and_doculect_id
-                    )
+                    feature_to_value_to_doculects[row[KEY_FOR_FEATURE_ID]][
+                        row[KEY_FOR_VALUE_ID]
+                    ].append(volume_and_doculect_id)
 
         feature_name_for_feature_id = read_dict_from_2_csv_columns(
             self.file_with_features,
-            key_col="id",
-            val_col="ru",
+            key_col=KEY_FOR_ID,
+            val_col=KEY_FOR_RUSSIAN,
         )
 
         value_name_for_value_id = read_dict_from_2_csv_columns(
-            self.file_with_listed_values, key_col="id", val_col="ru"
+            self.file_with_listed_values, key_col=KEY_FOR_ID, val_col=KEY_FOR_RUSSIAN
         )
 
         content = (
