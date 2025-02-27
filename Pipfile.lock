@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3e693ac243142c0edd6ce9adbb71485adff0a318058be9199b4c64470cdcb961"
+            "sha256": "f07ed0721a6620179e80e0667b053f5d914e3ea3b1a3f4a7ffbed0d4e8066247"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -45,6 +45,7 @@
                 "sha256:ca78db4565a652026a4db2bcdf68f2fb589ea80d0be70e03929ed730746b84fe"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==2025.1.31"
         },
         "charset-normalizer": {
@@ -501,11 +502,12 @@
         },
         "pycldf": {
             "hashes": [
-                "sha256:32f16242f94da3322bdc27a3f0fc60ec0707873f55a85d26f1dfe2f0920460f4",
-                "sha256:40f935856218a81f7984af344ef7e731f13e5c6178c9ea723884d8ecec166f42"
+                "sha256:50d383f0dc623ab6710bdd280a3d069dacbf0be8233bf2afaa09110f17bce4a6",
+                "sha256:b0204033718097853a73f0ea2c203919eda433b050906b5d8cc408733f0976f4"
             ],
             "index": "pypi",
-            "version": "==1.40.4"
+            "markers": "python_version >= '3.8'",
+            "version": "==1.41.0"
         },
         "pylatexenc": {
             "hashes": [
@@ -600,6 +602,7 @@
                 "sha256:ff3824dc5261f50c9b0dfb3be22b4567a6f938ccce4587b38952d85fd9e9afe4"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==6.0.2"
         },
         "rdflib": {
@@ -748,6 +751,7 @@
                 "sha256:e3982f444617239225d675215d51f6ba05f845d4eec313da4418fdbb56fb27e3"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.9'",
             "version": "==75.8.0"
         },
         "six": {
