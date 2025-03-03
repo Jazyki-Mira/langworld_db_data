@@ -349,7 +349,7 @@ rajasthani,language,0,0,Rajasthani,раджастхани,,,,,cent_indo_aryan,ra
 banjari,language,0,0,Banjari,банджари,,,"Banjara, Banjori, Banjuri, Brinjari, Lambadi, Lamani, Lamadi, Lambani, Labhani, Lambara, Lavani, Lemadi, Lumadale, Labhani Muka, Gohar-Herkeri, Goola, Kora, Singali, Sugali, Sukali, Tanda, Vanjari, Vanji","банджара, банджори, банджури, бринджари, ламбади, ламани, ламади, ламбани, лабхани, ламбара, лавани, лемади, лумадале, лабхани мука, гохар-херкери, гула, кора, сингали, сугали, сукали, танда, ванджари, ванджи",cent_indo_aryan,lmn,lamb1269,lmn,17,77,ind,17,146,1,,
 domaaki,language,0,0,Domaaki,домааки,,,"Domaki, Dumaki","домаки, думаки",indo_aryan,dmk,doma1260,dmk,34.9842,75.1101,ind,17,165,1,,
 bangani,language,0,0,Bangani,бангани,,,,,pahari,gbm,garh1243,,30.5,78.5,ind,17,219,0,,
-nepali,language,0,0,Nepali,непальский,,,"Eastern Pahari, Gorkhali, Khas Kura, Parbatiya","непали, восточный пахари, гуркхали, кхас-кура, парбатия",pahari,nep,east1436,,27.7114,85.3087,npl,17,262,0,,
+nepali,language,0,0,Nepali,непальский,,,"Eastern Pahari, Gorkhali, Khas Kura, Parbatiya","непали, восточный пахари, гуркхали, кхас-кура, парбатия",pahari,npi,nepa1254,nep,27.7114,85.3087,npl,17,262,0,,
 bote,language,0,0,Bote,боте,,,,,pahari,bmj,bote1238,,27.9208,83.5082,npl,17,282,0,,
 danuwar,language,0,0,Danuwar,данувар,,,,,pahari,dhw,koch1253,,26.9661,86.3223,npl,17,291,0,,
 darai,language,0,0,Darai,дараи,,,Darai Kura,дараи кура,pahari,dry,dara1250,dar,27.9264,84.331,npl,17,299,0,,
