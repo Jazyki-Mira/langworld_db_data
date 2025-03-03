@@ -400,7 +400,7 @@ budukh,language,0,0,Budukh,будухский,,,Budugh,будугский,lezg,b
 udi,language,0,0,Udi,удинсткий,,,,удийский,lezg,udi,udii1243,udi,41.8818,46.9171,rus,,,0,,
 khinalug,language,0,0,Khinalug,хиналугский,,,"Khinalig, Khinalugi, Xinalug(h), Xinaliq, Khinalugh",кештский,north_east_cauc,kjj,khin1240,khi,41.1777,48.1297,aze,,,0,,
 bamana,language,0,0,Bamana,бамана,,,,,manding_east,bam,bamb1269,bam,12.9,-7.65,mli,21,46,1,,
-kpelle,language,0,0,Kpelle,кпелле,,,,,south_west_mande,kpe,kpel1252,,7.75,-8.8167,gin,21,284,1,,
+kpelle,language,0,0,Kpelle,кпелле,,,,,south_west_mande,kpe,kpel1252,kpe,7.75,-8.8167,gin,21,284,1,,
 looma,language,0,0,Looma,лоома,,,,,south_west_mande,"lom, tob","loma1260, toba1269",lma,7.92,-10.8,lbr,21,343,1,,
 dan,language,0,0,Dan,дан,,,,,south_mande,dnj,nucl1770,dan,7.27,-8.15,civ,21,469,1,,
 kla_dan,language,0,0,Kla-Dan,кла-дан,,,,,south_mande,lda,klad1234,,6.85,-5.3,civ,21,617,1,,
