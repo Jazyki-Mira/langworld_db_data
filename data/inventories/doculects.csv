@@ -363,7 +363,7 @@ assamese,language,0,0,Assamese,ассамский,,,Ohomia,охомия,east_ind
 bengali,language,0,0,Bengali,бенгальский,,,,бенгали,east_indo_aryan,ben,beng1280,ben,24.3666,88.6,bgd,17,396,1,,
 rajbanshi_kamta,language,0,0,Rajbanshi/Kamta (in India and Bangladesh),раджбанши/камта (в Индии и Бангладеш),,,"Kampta, Kamtapuri, Raunpuri, Dekri, Dekia, Bahe","камта, камптапури, рангпури, декри, бахе",east_indo_aryan,rkt,rang1265,,23.2167,72.6833,ind,17,429,1,,
 rajbanshi_nepal,language,0,0,Rajbanshi (Nepal),раджбанши (Непал),,,"Koch, Tajpuri, Handi","коче, таджпурия, ханди",east_indo_aryan,rjs,rajb1243,,26.521945,88.038582,npl,17,439,1,,
-oriya,language,0,0,Oriya,ория,,,"Odri, Utkali","одри, уткали",east_indo_aryan,ori,,,20.27,85.84,ind,17,446,1,,
+oriya,language,0,0,Oriya,ория,,,"Odri, Utkali","одри, уткали",east_indo_aryan,ory,oriy1255,oya,20.27,85.84,ind,17,446,1,,
 punjabi,language,0,0,Punjabi,панджаби,,,,"панджабский, пенджаби, пенджабский",north_indo_aryan,"pan, pnb","panj1256, west2386",pan,31.5497,74.3436,pak,17,456,1,,
 pothohari,language,0,0,Pot(h)ohari,потхорари,,,"Potwari, Pahari-Potwari","потвари, пахари-потвари",north_indo_aryan,phr,paha1251,,31,72,pak,17,516,1,,
 hindko,language,0,0,Hindko,хиндко,,,,,north_indo_aryan,"hnd, hno","sout2668, nort2662",,34,71.32,pak,17,527,1,,
