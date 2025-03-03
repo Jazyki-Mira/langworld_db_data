@@ -303,7 +303,7 @@ bactrian,language,1,0,Bactrian,бактрийский,,,Aryao,"тохарски�
 khotanese,language,1,0,Khotanese,хотаносакский,,,,,south_east_iran,kho,khot1251,,37.103,79.9288,chn,7,46,1,,
 sogdian,language,1,0,Sogdian,согдийский,,,,"согд, сули",north_east_iran,sog,sogd1245,,39.6541,66.9597,uzb,7,58,1,,
 khwaresmian,language,1,0,Khwaresmian,хорезмийский,,,"Khwarazmian, Chorasmian, Khorezmian",,north_east_iran,xco,khwa1238,,41.55,60.6333,uzb,7,95,1,,
-pashto,language,0,0,Pashto,пашто,,,,,south_east_iran,pus,nucl1276,,34.5328,69.1658,afg,7,111,1,,
+pashto,language,0,0,Pashto,пашто,,,,,south_east_iran,pus,nucl1276,psh,34.5328,69.1658,afg,7,111,1,,
 munji,language,0,0,Munji,мунджанский,,,,йига-мунджанский,south_east_iran,mnj,munj1244,,36.0379,70.6723,afg,7,154,1,,
 wakhi,language,0,0,Wakhi,ваханский,,,,,south_east_iran,wbl,wakh1245,wak,35.5167,69.8667,afg,7,174,1,,
 sanglechi,language,0,0,Sanglechi,сангличский,,,Sanglich,санглечи,south_east_iran,sgy,sang1344,,36.6585,71.4784,afg,7,186,1,,
