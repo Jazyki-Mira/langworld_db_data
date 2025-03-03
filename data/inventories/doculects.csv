@@ -176,7 +176,7 @@ gurani,language,0,0,Gurani,гурани,,,,"горани, хеврамани, х
 jawshakani,dialect,0,0,Jawshakani,джавшакани,,,,,north_west_iran,,jows1234,,33.99,51.4,irn,6,218,1,,
 keshei,dialect,0,0,Keshei,кешеи,,,,,north_west_iran,,kesh1234,,33.23,51.47,irn,6,210,1,,
 kohrudi,dialect,0,0,Kohrudi,кохруди,,,,,north_west_iran,,qohr1234,,34.3805565276271,51.3433813172377,irn,6,207,1,,
-kurdish,language,0,0,Kurdish,курдский,,,,курди,north_west_iran,kur,kurd1259,,36.1833,44,irq,6,56,1,,
+kurdish,language,0,0,Kurdish,курдский,,,,курди,north_west_iran,kur,kurd1259,krd,36.1833,44,irq,6,56,1,,
 lasgerdi,language/dialect,0,0,Lasgerdi,ласгерди,,,,,north_west_iran,lsa,lasg1238,,35.4,53,irn,6,158,1,,
 mazanderani,language,0,0,Mazanderani,мазандеранский,,,,"мазендеранский, мазандарани, табари",north_west_iran,mzn,maza1291,mzn,36.24,52.3,irn,6,125,1,,
 meimei,dialect,0,0,Meimei,меймеи,,,,,north_west_iran,,meym1234,,35.34,53.24,irn,6,214,1,,
