@@ -372,7 +372,7 @@ parya,language,0,0,Parya,парья,,,"Parya-Sazi, Zaboni Lagmani, Zaboni Nosfur
 gujarati,language,0,0,Gujarati,гуджарати,,,,,south_indo_aryan,guj,guja1252,guj,23.22,72.68,ind,17,565,1,,
 saurashtra,language,0,0,Saurashtra,саураштра,,,"Sawrashtra, Sourashtra","савраштра, соураштра",south_indo_aryan,saz,saur1248,,13.09,80.27,ind,17,584,1,,
 marathi,language,0,0,Marathi,маратхи,,,,маратхский,south_indo_aryan,mar,mara1378,mhi,18.97,72.82,ind,17,596,1,,
-konkani,language,0,0,Konkani,конкани,,,"Konkni, Canarim","конкни, канарим",south_indo_aryan,knn,goan1235	,kkn,28.6139,77.2089,ind,17,616,1,,
+konkani,language,0,0,Konkani,конкани,,,"Konkni, Canarim","конкни, канарим",south_indo_aryan,knn,goan1235,kkn,28.6139,77.2089,ind,17,616,1,,
 sinhala,language,0,0,Sinhala,сингальский,,,Sinhalese,сингалезский,insu_indo_aryan,sin,sinh1246,snh,6.9,79.9164,lka,17,638,1,,
 maldivian_dhivehi,language,0,0,Maldivian/Dhivehi,мальдивский/дивехи,,,"Dhivehi, Divehi",дивехи,insu_indo_aryan,div,dhiv1236,dhi,4.1753,73.5089,mdv,17,662,1,,
 romani,language,0,0,Romani,цыганский,Romani (Romani dialects of Europe),Цыганский язык (цыганские диалекты Европы),Gypsy language,,indo_aryan,rom,roma1329,"rav, rbu, rbg, rka, rlo, rnr, rse, rwe",41.01746,28.94053,tur,17,680,1,,Для точки на карте взяты координаты района Фатих в Стамбуле как координаты Константинополя
