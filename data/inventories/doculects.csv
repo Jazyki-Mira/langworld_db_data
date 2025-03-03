@@ -188,7 +188,7 @@ talysh,language,0,0,Talysh,талышский,,,,,north_west_iran,tly,taly1247,t
 velatru,language/dialect,0,0,Velatru,велатру,,,,,north_west_iran,,vela1234,,36.0796613596055,51.3812756086621,irn,6,141,1,,
 yarandi,dialect,0,0,Yaran(d)i,яран(д)и,,,,,north_west_iran,,yara1255,,32.5765081139801,52.430019336531,irn,6,198,1,,
 yazdi_and_kermani,language/dialect,0,1,Yazdi and Kermani,йезди и кермани,,,,,north_west_iran,,jude1275,,30.3995581523314,57.1489882360503,irn,6,184,1,,
-zaza,language,0,0,Zaza,заза,,,"Zazaki, Kirmanjki, Kirdki, Dimli","зазаки, дымли",north_west_iran,zza,zaza1246,,39,41,tur,6,73,1,,
+zaza,language,0,0,Zaza,заза,,,"Zazaki, Kirmanjki, Kirdki, Dimli","зазаки, дымли",north_west_iran,zza,zaza1246,zaz,39,41,tur,6,73,1,,
 abaza,language,0,0,Abaza,абазинский,,,,абазский,abazgi,abq,abaz1241,abz,44.1556,41.9368,rus,9,131,1,,
 abkhaz,language,0,0,Abkhaz,абхазский,,,,,abazgi,abk,abkh1244,abk,43.133,40.8471,rus,9,113,1,,
 adyghe,language,0,0,Adyghe,адыгейский,,,"Lower-Adyghe, Kiach","нижне-адыгский, кяхский",circas,ady,adyg1241,ash,44.9181,39.7485,rus,9,91,1,,
