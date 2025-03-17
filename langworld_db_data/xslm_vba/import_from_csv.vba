@@ -1,10 +1,12 @@
+Const constSeparator As String = "&"
+
 Sub ImportRemoteCSVAndInsert()
 
     Call SecImportCSV
     Call SecCopyImportedColumnsToInputSheet
+    Call SplitMultiSelectFeatures
 
 End Sub
-
 
 Sub SecImportCSV()
 
@@ -81,5 +83,75 @@ Sub SecCopyImportedColumnsToInputSheet()
 
     Sheets("Лист1").Select
     ActiveWindow.SelectedSheets.Visible = False
+
+End Sub
+
+
+Sub SplitMultiSelectFeatures()
+'
+' Split lines with compound values like "I-1&I-2: Past&Present"
+' into separate lines with one elementary value per line
+'
+    Dim strValueId As String
+    Dim strValueName As String
+    Dim strFeatureId As String
+    Dim strFeatureName As String
+    Dim strValueType As String
+
+    Dim intElementaryValueCount As Integer
+    Dim i As Integer
+
+    Dim arrValueIDs
+    Dim arrValueNames
+
+    Dim rngFoundCell
+
+    Sheets("input").Unprotect
+
+    Range("InputForm[ValueID]").Select
+    Set rngFoundCell = Selection.Find(What:=constSeparator, After:=ActiveCell, LookIn:=xlValues, LookAt:= _
+        xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:=False _
+        , SearchFormat:=False)
+
+    If rngFoundCell Is Nothing Then
+        Cells(1, 1).Select
+        Debug.Print "No (more) compound values found"
+        Exit Sub
+    End If
+
+    rngFoundCell.Select
+
+    strValueId = Selection.Value
+
+    strFeatureId = ActiveCell.Offset(0, -3).Value
+    strValueType = ActiveCell.Offset(0, -1).Value
+    'Feature name is set using a formula, so not setting here
+
+    ' Option Base 1 will not affect the result of Split, it will be from 0 anyway. So I don't declare Option Base 1 in this module
+    strValueName = ActiveCell.Offset(0, 1).Value
+    Debug.Print "Splitting compound value " & strValueName
+    strValueName = Split(strValueName, ": ")(1)
+
+    arrValueIDs = Split(strValueId, constSeparator)
+    arrValueNames = Split(strValueName, constSeparator)
+
+    intElementaryValueCount = UBound(arrValueIDs)
+
+    For i = 1 To intElementaryValueCount
+        Selection.ListObject.ListRows.Add (Selection.Row)
+    Next i
+
+    For i = 0 To intElementaryValueCount
+        ' i - 1 means we start with the active cell that currently has the compound value
+        ActiveCell.Offset(i, 0).Value = arrValueIDs(i)
+        ActiveCell.Offset(i, 1).Value = arrValueIDs(i) & ": " & arrValueNames(i)
+        ActiveCell.Offset(i, -3).Value = strFeatureId
+        ActiveCell.Offset(i, -1).Value = strValueType
+    Next i
+
+    ' repeat with next compound value
+    Call SplitMultiSelectFeatures
+
+    Sheets("input").Protect
 
 End Sub
