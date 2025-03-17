@@ -465,7 +465,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 464,akhvakh,M-2,Non-fixed,M-2-2,,,Свободный,
 465,akhvakh,M-3,SOV,M-3-2,,,SOV,
 466,akhvakh,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
-467,akkadian,A-4,Three,A-4-3,,,Три ступени,
+467,akkadian,A-4,Two,A-4-2,,,Две ступени,
 468,akkadian,A-12,Plosives and fricatives,A-12-1,,,Взрывные и фрикативные,
 469,akkadian,A-13,"Labial, coronal, dorsal, guttural and postuvular",A-13-2,,,"Лабиальные, переднеязычные, среднеязычные, заднеязычные и постувулярные",
 470,akkadian,A-14,Only bilabial,A-14-1,,,Только билабиальные,
@@ -2041,7 +2041,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2040,banjari,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 2041,banjari,A-210,Mid,A-210-2,,,В среднем,
 2042,banjari,A-3,"Front, central and back",A-3-4,,,"Передний, средний (смешанный) и задний",
-2043,banjari,A-4,Three,A-4-3,Three levels of length in dialects influenced by Telugu,,Три ступени,"Три ступени долготы в диалектах, подверженных влиянию телугу"
+2043,banjari,A-4,Two,A-4-2,Three levels of length in dialects influenced by Telugu,,Две ступени,"Три ступени долготы в диалектах, подверженных влиянию телугу"
 2044,banjari,A-5,No vowel opposition in labialization,A-5-1,,,Противопоставление гласных по лабиализации отсутствует,
 2045,banjari,A-6,"Present for front, central and back vowels",A-6-4,,,"В переднем, среднем и заднем рядах",
 2046,banjari,A-7,No vowel opposition in pharyngealization,A-7-1,,,Противопоставление гласных по фарингализации отсутствует,
@@ -11230,7 +11230,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11229,khakas,N-5,Both syndesis and asyndeton possible,N-5-3,,,Союзная и бессоюзная,
 11230,khanty,A-1,Three,A-1-2,,,Три,
 11231,khanty,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
-11232,khanty,A-4,Three,A-4-3,,,Три ступени,
+11232,khanty,A-4,Two,A-4-2,,,Две ступени,
 11233,khanty,A-7,No vowel opposition in pharyngealization,A-7-1,,,Противопоставление гласных по фарингализации отсутствует,
 11234,khanty,A-9,No diphthongs and triphthongs,A-9-1,,,Дифтонги и трифтонги отсутствуют,
 11235,khanty,A-12,"Plosives, fricatives and affricates",A-12-3,,,"Взрывные, фрикативные и аффрикаты",
@@ -13818,7 +13818,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13817,luxembourgian,A-1,Three,A-1-2,,,Три,
 13818,luxembourgian,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний","Верхний (закрытые), средний (полузакрытые, полуоткрытые и медиальный) и нижний (открытые)."
 13819,luxembourgian,A-3,"Front, central and back",A-3-4,,,"Передний, средний (смешанный) и задний",
-13820,luxembourgian,A-4,Three,A-4-3,,,Три ступени,
+13820,luxembourgian,A-4,Two,A-4-2,,,Две ступени,
 13821,luxembourgian,A-5,Present for central and back vowels,A-5-7,,,В среднем и заднем рядах,
 13822,luxembourgian,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
 13823,luxembourgian,A-9,Only diphthongs present,A-9-2,,,Только дифтонги,
@@ -17414,7 +17414,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17413,old_russian,A-1,Three,A-1-2,,,Три,
 17414,old_russian,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 17415,old_russian,A-3,Front and back,A-3-2,,,Передний и непередний / задний,
-17416,old_russian,A-4,Three,A-4-3,,,Три ступени,
+17416,old_russian,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,
 17417,old_russian,A-5,Present for back vowels,A-5-4,,,В заднем ряду,
 17418,old_russian,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,Фонема /а?/ переднего ряда нижнего подъема использовалась на месте утраченной носовой в ограниченном числе слов и форм.
 17419,old_russian,A-7,No vowel opposition in pharyngealization,A-7-1,,,Противопоставление гласных по фарингализации отсутствует,
@@ -21930,7 +21930,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21928,sivandi,A-1,Three,A-1-2,,,Три,В общих чертах система современного вокализма С.я./д. соответствует современной персидской.
 21929,sivandi,A-2,,,,,"Закрытые, средние и открытые",
 21930,sivandi,A-3,"Front, central and back",A-3-4,,,"Передний, средний (смешанный) и задний",
-21931,sivandi,A-4,Three,A-4-3,,,Три ступени,Оппозиция по долготе/краткости (количеству) характеризует гласные по признаку устойчивочти/неустойчивости (качеству).
+21931,sivandi,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,Оппозиция по долготе/краткости (количеству) характеризует гласные по признаку устойчивочти/неустойчивости (качеству).
 21932,sivandi,A-5,"Present for front, central and back vowels",A-5-8,,,"В переднем, среднем и заднем рядах",
 21933,sivandi,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
 21934,sivandi,A-9,Only diphthongs present,A-9-2,,,Только дифтонги,
@@ -23551,7 +23551,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23549,talysh,A-1,Four,A-1-3,,,Четыре,На основании приведенной схемы. Терминологическая интерпретация отсутствует.
 23550,talysh,A-2,"Close, close-mid, open-mid and open",A-2-5,,,"Верхний, верхне-средний, нижне-средний и нижний",Терминологическя интерпретация отсутствует.
 23551,talysh,A-3,,,,,Отмечается широкий диапазон по признаку ряда и качественная неустойчивость гласных,
-23552,talysh,A-4,Three,A-4-3,,,Три ступени,Количественый признак не имеет самостоятельной фонологческой значимости и подчинен качественным оппозициям.
+23552,talysh,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,Количественый признак не имеет самостоятельной фонологческой значимости и подчинен качественным оппозициям.
 23553,talysh,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
 23554,talysh,A-9,No diphthongs and triphthongs,A-9-1,,,Дифтонги и трифтонги отсутствуют,
 23555,talysh,A-11,Opposition by presence and absence of voice,A-11-1,,,Противопоставление по звонкости/глухости,
