@@ -15141,7 +15141,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15140,mazanderani,A-1,Four,A-1-3,,,Четыре,
 15141,mazanderani,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 15142,mazanderani,A-210,Close and mid,A-210-4,,,В верхнем и среднем,В верхнем подъеме: закрытые в разной степени и открытые
-15143,mazanderani,A-3,"Front, mixed, advanced back, and back",A-3-11,,,"Передний, смешанный, продвинутый вперед задний и задний",
+15143,mazanderani,A-3,"Front, central and back",A-3-4,,,"Передний, средний и задний",
 15144,mazanderani,A-5,"Present for front, central and back vowels",A-5-8,,,"В переднем, среднем и заднем рядах",
 15145,mazanderani,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
 15146,mazanderani,A-11,Opposition by presence and absence of voice,A-11-1,,,Противопоставление по звонкости/глухости,
@@ -18114,7 +18114,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18113,pao_an,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
 18114,parachi,A-1,Four,A-1-3,,,Четыре,
 18115,parachi,A-2,"Close, close-mid, mid and open",A-2-4,,,"Верхний, верхне-средний, средний и нижний",Вокализм П.я. представляет собой гетерогенную систему на основе заимствований из дардских языков и языков дари пашто.
-18116,parachi,A-3,"Front, neutral and back",A-3-7,,,"Передний, нейтральный и задний",Других жанных нет.
+18116,parachi,A-3,"Front, central and back",A-3-4,,,"Передний, средний и задний",Других жанных нет.
 18117,parachi,A-4,,,,,Две ступени долготы гласных фонологически не интерпретируются,
 18118,parachi,A-6,Present for neutral and back vowels,A-6-7,,,В нейтральном и заднем рядах,Других данных нет.
 18119,parachi,A-11,Opposition by voice presence/absence and by aspiration,A-11-6,,,Противопоставления по звонкости/глухости и по аспирации,
@@ -20435,7 +20435,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20433,sangesari,M-4,Not fixed,M-4-3,,,Не фиксирован,
 20434,sanglechi,A-1,Three,A-1-2,,,Три,Других данных нет. Список из 11 гласных фонем по количеству степеней подъема терминологически не интепретируется.
 20435,sanglechi,A-2,,,,,Список из 11 гласных фонем по степени подъема терминологически не интепретируется,
-20436,sanglechi,A-3,Mixed-front and back,A-3-6,,,Смешанно-передний и задний,Других данных нет. Список из 11 гласных фонем по признаку ряда терминологически не интепретируется.
+20436,sanglechi,A-3,"Front, central and back",A-3-4,,,"Передний, средний и задний",Других данных нет. Список из 11 гласных фонем по признаку ряда терминологически не интепретируется.
 20437,sanglechi,A-4,Two,A-4-2,,,Две ступени,Фонологический статус долготы гласных не определен.
 20438,sanglechi,A-5,,,,,"Нейтральная гласная /?/ реализуется в широком диапазоне вариантов по огубленности, ряду и подъему",
 20439,sanglechi,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
@@ -21146,7 +21146,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21144,selkup,N-5,Asyndeton dominant,N-5-2,,,Преобладает бессоюзная,
 21145,semnani,A-1,Four,A-1-3,,,Четыре,
 21146,semnani,A-2,"Close, close-mid, mid and open",A-2-4,,,"Верхний, верхне-средний, средний и нижний",
-21147,semnani,A-3,"Front, mixed-front and back",A-3-9,,,"Передний, смешанно-передний и задний",
+21147,semnani,A-3,"Front, central and back",A-3-4,,,"Передний, средний и задний",
 21148,semnani,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,
 21149,semnani,A-11,Opposition by presence and absence of voice,A-11-1,,,Противопоставление по звонкости/глухости,
 21150,semnani,A-12,,,,,"Смычные (простые, носовые и аффрикаты), щелевые (одно- и двухфокусные, срединные и боковые) и дрожащие",
@@ -26733,7 +26733,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26730,yazdi_and_kermani,N-5,Both syndesis and asyndeton possible,N-5-3,,,Союзная и бессоюзная,
 26731,yazghulami,A-1,,,,,От четырех до пяти,Восемь гласных фонем по количеству степеней подъема не интерпретируются.
 26732,yazghulami,A-2,,,,,Гласные по признаку подъема терминологически не интерпретируются,
-26733,yazghulami,A-3,"Front, front-central, central and back",A-3-8,,,"Передний, передне-средний, средний и задний",
+26733,yazghulami,A-3,"Front, central and back",A-3-4,,,"Передний, средний и задний",
 26734,yazghulami,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,
 26735,yazghulami,A-5,No vowel opposition in labialization,A-5-1,,,Противопоставление гласных по лабиализации отсутствует,
 26736,yazghulami,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
