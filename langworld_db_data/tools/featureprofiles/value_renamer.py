@@ -162,6 +162,6 @@ class ValueRenamer:
 
 if __name__ == "__main__":
     ValueRenamer().rename_value_in_profiles_and_inventories(
-        id_of_value_to_rename="A-3-2",
-        new_value_name="Передний и непередний / задний",
+        id_of_value_to_rename="A-3-4",
+        new_value_name="Передний, средний (смешанный) и задний",
     )
