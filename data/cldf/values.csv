@@ -17000,7 +17000,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16999,old_church_slavonic,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 17000,old_church_slavonic,A-3,"Front, central and back",A-3-4,,,"Передний, средний (смешанный) и задний",
 17001,old_church_slavonic,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,
-17002,old_church_slavonic,A-5,Present for non-front vowels,A-5-9,,,В непереднем ряду,
+17002,old_church_slavonic,A-5,Present for back vowels,A-5-4,,,В заднем ряду,
 17003,old_church_slavonic,A-6,Present for front and non-front values,A-6-8,,,В переднем и непереднем рядах,
 17004,old_church_slavonic,A-7,No vowel opposition in pharyngealization,A-7-1,,,Противопоставление гласных по фарингализации отсутствует,
 17005,old_church_slavonic,A-8,No vowel opposition in ATR,A-8-1,,,Противопоставление гласных по продвинутости корня языка отсутствует,
@@ -17702,7 +17702,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17701,ormuri,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 17702,ormuri,A-3,,,,,Гласные в составе шести фонем по признаку ряда не интерпретируются,
 17703,ormuri,A-4,Two,A-4-2,,,Две ступени,В логарском диалекте длительность/краткость гласных нефонологична.
-17704,ormuri,A-5,Present for all vowels,A-5-11,,,Во всех рядах,
+17704,ormuri,A-5,"Present for front, central and back vowels",A-5-8,,,"В переднем, среднем и заднем рядах / во всех рядах",
 17705,ormuri,A-11,Opposition by presence and absence of voice,A-11-1,,,Противопоставление по звонкости/глухости,
 17706,ormuri,A-12,,,,,"Смычные: чистые (неносовые и носовые) и аффрикаты (одно- и двухфокусные), щелевые: срединные (одно- и двухфокусные) и боковые; дрожащие",
 17707,ormuri,A-13,"Labial, coronal, dorsal, guttural and postuvular",A-13-2,,,"Лабиальные, переднеязычные, среднеязычные, заднеязычные и постувулярные",
@@ -23084,7 +23084,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23082,swedish,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 23083,swedish,A-3,"Front, central and back",A-3-4,,,"Передний, средний (смешанный) и задний",Гласный смешанного ряда имеет особую фонологически значимую форму лабиализации.
 23084,swedish,A-4,Two,A-4-2,,,Две ступени,
-23085,swedish,A-5,Present for front and mixed vowels,A-5-10,,,В переднем и смешанном рядах,
+23085,swedish,A-5,Present for front and central vowels,A-5-5,,,В переднем и среднем рядах,
 23086,swedish,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
 23087,swedish,A-9,No diphthongs and triphthongs,A-9-1,,,Дифтонги и трифтонги отсутствуют,
 23088,swedish,A-11,Opposition by presence and absence of voice,A-11-1,,,Противопоставление по звонкости/глухости,
@@ -25732,7 +25732,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25729,vonishuni,A-1,,,,,"Списки, включающие по разным источникам от 9 до 14 гласных, терминологически не интерпретируются",Группа языков/диалектов Центрального Ирана.
 25730,vonishuni,A-3,,,,,Гласные по признаку ряда терминологически не интерпретируются,
 25731,vonishuni,A-4,,,,,Две ступени долготы гласных фонологически не интерпретируются,
-25732,vonishuni,A-5,Present for all vowels,A-5-11,,,Во всех рядах,Других данных нет.
+25732,vonishuni,A-5,"Present for front, central and back vowels",A-5-8,,,"В переднем, среднем и заднем рядах / во всех рядах",Других данных нет.
 25733,vonishuni,A-9,No diphthongs and triphthongs,A-9-1,,,Дифтонги и трифтонги отсутствуют,Других данных нет.
 25734,vonishuni,A-11,Opposition by presence and absence of voice,A-11-1,,,Противопоставление по звонкости/глухости,
 25735,vonishuni,A-12,,,,,"Смычные, аффрикаты, щелевые (одно- и двухфокусные)",
@@ -27030,7 +27030,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 27027,zefrei,A-1,,,,,"Список, включающий 15 гласных звуков, терминологически не интерпретируется",Группа языков/диалектов Центрального Ирана.
 27028,zefrei,A-3,,,,,Гласные по признаку ряда терминологически не интерпретируются,
 27029,zefrei,A-4,,,,,Две ступени долготы гласных фонологически не интерпретируются,
-27030,zefrei,A-5,Present for all vowels,A-5-11,,,Во всех рядах,Других данных нет.
+27030,zefrei,A-5,"Present for front, central and back vowels",A-5-8,,,"В переднем, среднем и заднем рядах / во всех рядах",Других данных нет.
 27031,zefrei,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,Других данных нет.
 27032,zefrei,A-9,Only diphthongs present,A-9-2,,,Только дифтонги,
 27033,zefrei,A-10,Falling (descending),A-10-2,,,Нисходящие,
