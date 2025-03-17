@@ -142,7 +142,6 @@ Sub SplitMultiSelectFeatures()
     Next i
 
     For i = 0 To intElementaryValueCount
-        ' i - 1 means we start with the active cell that currently has the compound value
         ActiveCell.Offset(i, 0).Value = arrValueIDs(i)
         ActiveCell.Offset(i, 1).Value = arrValueIDs(i) & ": " & arrValueNames(i)
         ActiveCell.Offset(i, -3).Value = strFeatureId
