@@ -16311,7 +16311,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16310,nenets,A-1,Three,A-1-2,,,Три,
 16311,nenets,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 16312,nenets,A-3,"Front, central and back",A-3-4,,,"Передний, средний (смешанный) и задний",
-16313,nenets,A-4,Four,A-4-4,,,Четыре ступени,
+16313,nenets,A-4,Two,A-4-2,,,Две ступени,
 16314,nenets,A-5,No vowel opposition in labialization,A-5-1,,,Противопоставление гласных по лабиализации отсутствует,
 16315,nenets,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
 16316,nenets,A-7,No vowel opposition in pharyngealization,A-7-1,,,Противопоставление гласных по фарингализации отсутствует,
