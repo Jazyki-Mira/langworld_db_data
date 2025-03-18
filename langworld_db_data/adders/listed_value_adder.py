@@ -330,3 +330,11 @@ class ListedValueAdder(ObjectWithPaths):
                     overwrite=True,
                     delimiter=",",
                 )
+
+
+if __name__ == "__main__":
+    ListedValueAdder().add_listed_value(
+        feature_id="",
+        new_value_en="",
+        new_value_ru="",
+    )
