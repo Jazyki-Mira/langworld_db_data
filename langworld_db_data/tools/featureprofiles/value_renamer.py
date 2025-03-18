@@ -162,6 +162,6 @@ class ValueRenamer:
 
 if __name__ == "__main__":
     ValueRenamer().rename_value_in_profiles_and_inventories(
-        id_of_value_to_rename="A-14-2",
-        new_value_name="Губно-губные и губно-зубные",
+        id_of_value_to_rename="A-16-3",
+        new_value_name="Велярно-увулярные",
     )
