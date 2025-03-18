@@ -143,7 +143,7 @@ class ListedValueRemover(ObjectWithPaths):
                 rows_with_updated_indices[i][KEY_FOR_ID] = new_current_value_id
 
         return rows_with_updated_indices
-    
+
 
 if __name__ == "__main__":
     ListedValueRemover().remove_listed_value(
