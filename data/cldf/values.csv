@@ -7997,7 +7997,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7996,guro,A-3,"Front, central and back",A-3-4,,,"Передний, средний (смешанный) и задний",
 7997,guro,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,
 7998,guro,A-5,No vowel opposition in labialization,A-5-1,,,Противопоставление гласных по лабиализации отсутствует,
-7999,guro,A-6,Present for front and non-front values,A-6-8,,,В переднем и непереднем рядах,
+7999,guro,A-6,Present for front and back vowels,A-6-2,,,В переднем и заднем рядах,
 8000,guro,A-7,No vowel opposition in pharyngealization,A-7-1,,,Противопоставление гласных по фарингализации отсутствует,
 8001,guro,A-8,,,,,В переднем и непереднем рядах,
 8002,guro,A-9,No diphthongs and triphthongs,A-9-1,,,Дифтонги и трифтонги отсутствуют,
@@ -17000,7 +17000,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16999,old_church_slavonic,A-3,"Front, central and back",A-3-4,,,"Передний, средний (смешанный) и задний",
 17000,old_church_slavonic,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,
 17001,old_church_slavonic,A-5,Present for back vowels,A-5-4,,,В заднем ряду,
-17002,old_church_slavonic,A-6,Present for front and non-front values,A-6-8,,,В переднем и непереднем рядах,
+17002,old_church_slavonic,A-6,Present for front and back vowels,A-6-2,,,В переднем и заднем рядах,
 17003,old_church_slavonic,A-7,No vowel opposition in pharyngealization,A-7-1,,,Противопоставление гласных по фарингализации отсутствует,
 17004,old_church_slavonic,A-8,No vowel opposition in ATR,A-8-1,,,Противопоставление гласных по продвинутости корня языка отсутствует,
 17005,old_church_slavonic,A-9,No diphthongs and triphthongs,A-9-1,,,Дифтонги и трифтонги отсутствуют,
@@ -18115,7 +18115,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18114,parachi,A-2,"Close, close-mid, mid and open",A-2-4,,,"Верхний, верхне-средний, средний и нижний",Вокализм П.я. представляет собой гетерогенную систему на основе заимствований из дардских языков и языков дари пашто.
 18115,parachi,A-3,"Front, central and back",A-3-4,,,"Передний, средний (смешанный) и задний",Других жанных нет.
 18116,parachi,A-4,,,,,Две ступени долготы гласных фонологически не интерпретируются,
-18117,parachi,A-6,Present for neutral and back vowels,A-6-7,,,В нейтральном и заднем рядах,Других данных нет.
+18117,parachi,A-6,Present for central and back vowels,A-6-3,,,В среднем и заднем рядах,Других данных нет.
 18118,parachi,A-11,Opposition by voice presence/absence and by aspiration,A-11-6,,,Противопоставления по звонкости/глухости и по аспирации,
 18119,parachi,A-12,,,,,Смычные: чистые (неносовые и носовые) и аффрикаты; щелевые: срединные (одно- и двухфокусные); дрожащие,
 18120,parachi,A-13,"Labial, coronal, dorsal, guttural and postuvular",A-13-2,,,"Лабиальные, переднеязычные, среднеязычные, заднеязычные и постувулярные",
