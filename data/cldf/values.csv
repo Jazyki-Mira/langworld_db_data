@@ -16322,7 +16322,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16321,nenets,A-14,Only bilabial,A-14-1,,,Только губно-губные,
 16322,nenets,A-15,Alveolar,A-15-3,,,Альвеолярные,
 16323,nenets,A-16,Velar,A-16-1,,,Велярные,
-16324,nenets,A-18,By nasalization and palatalization,A-18-9,,,По назализации и палатализации,
+16324,nenets,A-18,By palatalization,A-18-4,,,По палатализации,
 16325,nenets,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 16326,nenets,A-20,"Labial, coronal and guttural",A-20-16,,,"Лабиальные, переднеязычные и заднеязычные",
 16327,nenets,A-21,By palatalization,A-21-3,,,По палатализации,
