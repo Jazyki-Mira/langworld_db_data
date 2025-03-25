@@ -16599,7 +16599,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16598,norwegian,A-15,"Dental, alveolar and postalveolar",A-15-14,,,"Дентальные, альвеолярные и постальвеолярные",Имеются региональные различия.
 16599,norwegian,A-16,Velar,A-16-1,,,Велярные,
 16600,norwegian,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,
-16601,norwegian,A-18,By length,A-18-14,,,По долготе,
+16601,norwegian,A-18,Absent,A-18-1,,,Отсутствуют,
 16602,norwegian,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",Глайд /j/ определяется как полугласный. Переднеязычные назальные и плавные включают в себя какуминальные.
 16603,norwegian,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",Переднеязычные назальные и плавные включают в себя альвеолярные и постальвеолярные.
 16604,norwegian,A-21,By length,A-21-7,,,По долготе,
@@ -23093,7 +23093,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23091,swedish,A-15,,,,,"Дентальные, альвеолярные и постальвеолярные (ретрофлексные)",Большинство исследователей считает ретрофлексные вариантами бифонемных сочетаний (аллофонами соответствующих дентальных).
 23092,swedish,A-16,Velar,A-16-1,,,Велярные,
 23093,swedish,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,
-23094,swedish,A-18,By length,A-18-14,,,По долготе,
+23094,swedish,A-18,Absent,A-18-1,,,Отсутствуют,
 23095,swedish,A-19,"Nasal, liquid and vibrant",A-19-2,,,"Назальные, плавные и вибранты",
 23096,swedish,A-20,"Labial, coronal and guttural",A-20-16,,,"Лабиальные, переднеязычные и заднеязычные",В южной Швеции вместо переднеязычного /r/ употребляется увулярное /R/.
 23097,swedish,A-21,By length,A-21-7,,,По долготе,
