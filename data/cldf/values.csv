@@ -8622,7 +8622,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8621,icelandic,A-15,"Dental, interdental and alveolar",A-15-11,,,"Дентальные, интердентальные и альвеолярные",
 8622,icelandic,A-16,Velar,A-16-1,,,Велярные,
 8623,icelandic,A-17,Only pharyngeal,A-17-1,,,Только фарингальные,
-8624,icelandic,A-18,By palatalization and length,A-18-15,,,По палатализации и долготе,
+8624,icelandic,A-18,By palatalization,A-18-4,,,По палатализации,
 8625,icelandic,A-19,"Nasal, liquid, vibrant and glide",A-19-6,,,"Назальные, плавные, вибранты и глайды",
 8626,icelandic,A-20,"Labial, coronal, dorsal and guttural",A-20-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 8627,icelandic,A-21,By vocalization and length,A-21-10,,,По звонкости и долготе,
