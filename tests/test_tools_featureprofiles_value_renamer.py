@@ -90,6 +90,27 @@ def test_update_features_listed_values(value_renamer):
     )
 
 
+def test_update_first_value_in_features_listed_values(value_renamer):
+    value_renamer._update_features_listed_values(
+        id_of_value_to_rename="A-11-1",
+        new_value_name="Ничего нет",
+        input_file=DIR_WITH_INPUT_INVENTORIES / "features_listed_values.csv",
+        output_file=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES
+        / "inventories"
+        / "features_listed_values.csv",
+    )
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=(
+            DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES
+            / "inventories"
+            / "features_listed_values.csv"
+        ),
+        gold_standard_file=DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES
+        / "features_listed_values_A-11-1.csv",
+        unlink_if_successful=True,
+    )
+
+
 def test_set_empty_name_for_value(value_renamer):
     with pytest.raises(ValueRenamerError, match="a null string passed as new value name"):
         value_renamer.rename_value_in_profiles_and_inventories(
