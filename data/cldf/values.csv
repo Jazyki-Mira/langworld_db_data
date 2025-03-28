@@ -11687,7 +11687,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11686,khwaresmian,N-5,Asyndeton dominant,N-5-2,,,Преобладает бессоюзная,
 11687,khwarezmian_turkic,A-1,Two,A-1-1,,,Две,
 11688,khwarezmian_turkic,A-2,Close and open,A-2-1,,,Верхний и нижний,
-11689,khwarezmian_turkic,A-3,Central and back,A-3-3,,,Средний и задний,
+11689,khwarezmian_turkic,A-3,Front and back,A-3-2,,,Передний и непередний / задний,
 11690,khwarezmian_turkic,A-5,Present for central and back vowels,A-5-7,,,В среднем и заднем рядах,
 11691,khwarezmian_turkic,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
 11692,khwarezmian_turkic,A-9,No diphthongs and triphthongs,A-9-1,,,Дифтонги и трифтонги отсутствуют,
