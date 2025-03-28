@@ -1,7 +1,7 @@
 ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1,abaza,A-1,Two,A-1-1,,,Две,
 2,abaza,A-2,Close and open,A-2-1,,,Верхний и нижний,
-3,abaza,A-3,Linear system,A-3-1,,,Линейная система,
+3,abaza,A-3,Linear system,A-3-1,,,Один ряд,
 4,abaza,A-4,No length degrees,A-4-1,,,Фонологические ступени долготы отсутствуют,
 5,abaza,A-5,No vowel opposition in labialization,A-5-1,,,Противопоставление гласных по лабиализации отсутствует,
 6,abaza,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
@@ -104,7 +104,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 103,abdui,M-3,SOV,M-3-2,,,SOV,
 104,abkhaz,A-1,Two,A-1-1,,,Две,
 105,abkhaz,A-2,Close and open,A-2-1,,,Верхний и нижний,
-106,abkhaz,A-3,Linear system,A-3-1,,,Линейная система,
+106,abkhaz,A-3,Linear system,A-3-1,,,Один ряд,
 107,abkhaz,A-5,No vowel opposition in labialization,A-5-1,,,Противопоставление гласных по лабиализации отсутствует,
 108,abkhaz,A-6,No vowel opposition in nasalization,A-6-1,,,Противопоставление гласных по назализации отсутствует,
 109,abkhaz,A-7,No vowel opposition in pharyngealization,A-7-1,,,Противопоставление гласных по фарингализации отсутствует,
