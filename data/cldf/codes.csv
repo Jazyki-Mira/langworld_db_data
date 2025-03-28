@@ -134,15 +134,14 @@ A-17-2,A-17,Only glottal,,Только глоттальные
 A-17-3,A-17,Both pharyngeal and glottal,,Фарингальные и глоттальные
 A-18-1,A-18,Absent,,Отсутствуют
 A-18-2,A-18,By labialization,,По лабиализации
-A-18-3,A-18,By nasalization,,По назализации
-A-18-4,A-18,By palatalization,,По палатализации
-A-18-5,A-18,By pharyngealization,,По фарингализации
-A-18-6,A-18,By labialization and palatalization,,По лабиализации и палатализации
-A-18-7,A-18,By labialization and pharyngealization,,По лабиализации и фарингализации
-A-18-8,A-18,"By labialization, palatalization and pharyngealization",,"По лабиализации, палатализации и фарингализации"
-A-18-9,A-18,By palatalization and pharyngealization,,По палатализации и фарингализации
-A-18-10,A-18,By palatalization and velarization,,По палатализации и веляризации
-A-18-11,A-18,By labialization and nasalisation,,По лабиализации и назализации
+A-18-3,A-18,By palatalization,,По палатализации
+A-18-4,A-18,By pharyngealization,,По фарингализации
+A-18-5,A-18,By labialization and palatalization,,По лабиализации и палатализации
+A-18-6,A-18,By labialization and pharyngealization,,По лабиализации и фарингализации
+A-18-7,A-18,"By labialization, palatalization and pharyngealization",,"По лабиализации, палатализации и фарингализации"
+A-18-8,A-18,By palatalization and pharyngealization,,По палатализации и фарингализации
+A-18-9,A-18,By palatalization and velarization,,По палатализации и веляризации
+A-18-10,A-18,By labialization and nasalisation,,По лабиализации и назализации
 A-19-1,A-19,Nasal and liquid,,Назальные и плавные
 A-19-2,A-19,"Nasal, liquid and vibrant",,"Назальные, плавные и вибранты"
 A-19-3,A-19,"Nasal, liquid and glide",,"Назальные, плавные и глайды"
