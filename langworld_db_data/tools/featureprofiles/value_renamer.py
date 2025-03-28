@@ -98,7 +98,7 @@ class ValueRenamer:
 
         data_to_write = []
         for line in self.inventory_of_listed_values:
-            if id_of_value_to_rename not in line[KEY_FOR_ID]:
+            if id_of_value_to_rename != line[KEY_FOR_ID]:
                 data_to_write.append(line)
                 continue
             line_to_write = line.copy()

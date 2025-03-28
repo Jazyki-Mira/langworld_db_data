@@ -53,3 +53,10 @@ class ListedValueMover(ObjectWithPaths):
             description_formatted_en=value_to_move["description_formatted_en"],
             description_formatted_ru=value_to_move["description_formatted_ru"],
         )
+
+
+if __name__ == "__main__":
+    ListedValueMover().move_listed_value(
+        initial_value_id="",
+        index_to_assign=0,
+    )
