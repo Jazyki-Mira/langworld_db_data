@@ -9,7 +9,7 @@ pyyaml = "*"
 openpyxl = "~=3.1.5"
 pycldf = "==1.41.0"
 pyperclip = "~=1.9.0"
-setuptools = "~= 77.0.3"
+setuptools = "~= 79.0.1"
 certifi = "~=2025.1.31"
 
 [dev-packages]
