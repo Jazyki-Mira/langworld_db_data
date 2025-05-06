@@ -24,6 +24,12 @@ GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_TENTH = (
 GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_FIRST = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_as_first.csv"
 )
+GS_FILE_WITH_LISTED_VALUES_HOMONYMOUS_VALUE_TO_A_1_4 = (
+    DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_A-1-4.csv"
+)
+GS_FILE_WITH_LISTED_VALUES_HOMONYMOUS_VALUE_TO_A_6_7 = (
+    DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_A-6-7.csv"
+)
 GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES = (
     OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / "gold_standard_custom_values"
 )
@@ -117,6 +123,32 @@ def test_add_listed_value_append_to_end_with_custom_values_and_updating_value_id
             gold_standard_file=GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES_AND_VALUE_IDS_UPDATING
             / file.name,
         )
+
+
+def test_add_listed_value_add_value_homonymous_to_value_in_feature_before_the_current_one(test_adder):
+    test_adder.add_listed_value(
+        feature_id="A-1",
+        new_value_en="Present for central vowels",
+        new_value_ru="В среднем ряду",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_HOMONYMOUS_VALUE_TO_A_1_4,
+    )
+
+
+def test_add_listed_value_add_value_homonymous_to_value_in_feature_after_the_current_one(test_adder):
+    test_adder.add_listed_value(
+        feature_id="A-6",
+        new_value_en="Present for central vowels",
+        new_value_ru="В среднем ряду",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_HOMONYMOUS_VALUE_TO_A_6_7,
+    )
 
 
 # Throws exceptions
