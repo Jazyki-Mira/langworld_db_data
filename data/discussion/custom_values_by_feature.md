@@ -106,7 +106,6 @@
 ## A-6: Противопоставление гласных по назализации
 
 -  В переднем и непереднем рядах: [дан](../feature_profiles/dan.csv)
-- В заднем ряду: [тхару](../feature_profiles/tharu.csv)
 - Вопрос окончательно не решен, назализованные фонемы, по-видимому, являются позиционными вариантами: [сусу](../feature_profiles/susu.csv)
 - Есть назализованные и неназализованные гласные: [ашкун](../feature_profiles/ashkun.csv), [дамели](../feature_profiles/dameli.csv), [гарви](../feature_profiles/garwi.csv), [глангали](../feature_profiles/grangali.csv), [калаша](../feature_profiles/kalasha.csv), [майян](../feature_profiles/mayan.csv), [пхалура](../feature_profiles/phalura.csv), [сави](../feature_profiles/sawi.csv), [шина](../feature_profiles/shina.csv), [вайгали](../feature_profiles/waigali.csv), [земиаки](../feature_profiles/zemiaki.csv)
 - Назализация в языке есть, однако данные о границах ее применения отсутствуют: [какабе](../feature_profiles/kakabe.csv)
