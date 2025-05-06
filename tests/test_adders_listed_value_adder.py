@@ -64,7 +64,6 @@ def test_adder():
 
 
 # add_listed_value
-# Normal case
 def test_add_listed_value_append_to_end_with_custom_values(test_adder):
     test_adder.add_listed_value(
         feature_id="A-11",
@@ -151,27 +150,7 @@ def test_add_listed_value_add_value_homonymous_to_value_in_feature_after_the_cur
     )
 
 
-# Throws exceptions
-def test_add_listed_value_throws_exception_with_empty_args(test_adder):
-    for bad_set_of_values in (
-        {"feature_id": "", "new_value_en": "Value", "new_value_ru": "Значение"},
-        {"feature_id": "A-1", "new_value_en": "", "new_value_ru": "Значение"},
-        {"feature_id": "A-1", "new_value_en": "Value", "new_value_ru": ""},
-    ):
-        with pytest.raises(
-            ListedValueAdderError, match="None of the following strings can be empty"
-        ):
-            test_adder.add_listed_value(**bad_set_of_values)
-
-
-def test_add_listed_value_throws_exception_with_invalid_feature_id(
-    test_adder,
-):
-    with pytest.raises(ListedValueAdderError, match="Feature ID X-1 not found"):
-        test_adder.add_listed_value("X-1", "Value", "значение")
-
-
-def test_add_listed_value_throws_exception_with_existing_value(
+def test_add_listed_value_throws_exception_add_value_homonymous_to_value_in_the_same_feature(
     test_adder,
 ):
     for bad_args in (
@@ -195,6 +174,25 @@ def test_add_listed_value_throws_exception_with_existing_value(
             ListedValueAdderError, match="already contains value you are trying to add"
         ):
             test_adder.add_listed_value(**bad_args)
+
+
+def test_add_listed_value_throws_exception_with_empty_args(test_adder):
+    for bad_set_of_values in (
+        {"feature_id": "", "new_value_en": "Value", "new_value_ru": "Значение"},
+        {"feature_id": "A-1", "new_value_en": "", "new_value_ru": "Значение"},
+        {"feature_id": "A-1", "new_value_en": "Value", "new_value_ru": ""},
+    ):
+        with pytest.raises(
+            ListedValueAdderError, match="None of the following strings can be empty"
+        ):
+            test_adder.add_listed_value(**bad_set_of_values)
+
+
+def test_add_listed_value_throws_exception_with_invalid_feature_id(
+    test_adder,
+):
+    with pytest.raises(ListedValueAdderError, match="Feature ID X-1 not found"):
+        test_adder.add_listed_value("X-1", "Value", "значение")
 
 
 def test_add_listed_value_throws_exception_with_invalid_index_to_assign(test_adder):
