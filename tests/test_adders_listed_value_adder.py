@@ -124,7 +124,9 @@ def test_add_listed_value_append_to_end_with_custom_values_and_updating_value_id
         )
 
 
-def test_add_listed_value_add_value_homonymous_to_value_in_feature_before_the_current_one(test_adder):
+def test_add_listed_value_add_value_homonymous_to_value_in_feature_before_the_current_one(
+    test_adder,
+):
     test_adder.add_listed_value(
         feature_id="A-1",
         new_value_en="Present for central vowels",
@@ -137,7 +139,9 @@ def test_add_listed_value_add_value_homonymous_to_value_in_feature_before_the_cu
     )
 
 
-def test_add_listed_value_add_value_homonymous_to_value_in_feature_after_the_current_one(test_adder):
+def test_add_listed_value_add_value_homonymous_to_value_in_feature_after_the_current_one(
+    test_adder,
+):
     test_adder.add_listed_value(
         feature_id="A-6",
         new_value_en="Present for central vowels",
