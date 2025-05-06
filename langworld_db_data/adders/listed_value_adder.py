@@ -105,6 +105,8 @@ class ListedValueAdder(ObjectWithPaths):
         # and to calculate line number for the new value (if it is intended non-final).
 
         for row in rows:
+            if row[KEY_FOR_FEATURE_ID] != feature_id:
+                continue
             if row[KEY_FOR_ENGLISH] == new_value_en or row[KEY_FOR_RUSSIAN] == new_value_ru:
                 raise ValueError(f"Row {row} already contains value you are trying to add")
 

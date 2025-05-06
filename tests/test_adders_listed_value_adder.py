@@ -24,6 +24,12 @@ GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_TENTH = (
 GS_FILE_WITH_LISTED_VALUES_INSERTION_AS_FIRST = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_insertion_as_first.csv"
 )
+GS_FILE_WITH_LISTED_VALUES_HOMONYMOUS_VALUE_TO_A_1_4 = (
+    DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_A-1-4.csv"
+)
+GS_FILE_WITH_LISTED_VALUES_HOMONYMOUS_VALUE_TO_A_6_7 = (
+    DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_A-6-7.csv"
+)
 GS_DIR_WITH_FEATURE_PROFILES_AFTER_ADDITION_WITH_CUSTOM_VALUES = (
     OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES / "gold_standard_custom_values"
 )
@@ -58,7 +64,6 @@ def test_adder():
 
 
 # add_listed_value
-# Normal case
 def test_add_listed_value_append_to_end_with_custom_values(test_adder):
     test_adder.add_listed_value(
         feature_id="A-11",
@@ -119,27 +124,37 @@ def test_add_listed_value_append_to_end_with_custom_values_and_updating_value_id
         )
 
 
-# Throws exceptions
-def test_add_listed_value_throws_exception_with_empty_args(test_adder):
-    for bad_set_of_values in (
-        {"feature_id": "", "new_value_en": "Value", "new_value_ru": "Значение"},
-        {"feature_id": "A-1", "new_value_en": "", "new_value_ru": "Значение"},
-        {"feature_id": "A-1", "new_value_en": "Value", "new_value_ru": ""},
-    ):
-        with pytest.raises(
-            ListedValueAdderError, match="None of the following strings can be empty"
-        ):
-            test_adder.add_listed_value(**bad_set_of_values)
-
-
-def test_add_listed_value_throws_exception_with_invalid_feature_id(
+def test_add_listed_value_add_value_homonymous_to_value_in_feature_before_the_current_one(
     test_adder,
 ):
-    with pytest.raises(ListedValueAdderError, match="Feature ID X-1 not found"):
-        test_adder.add_listed_value("X-1", "Value", "значение")
+    test_adder.add_listed_value(
+        feature_id="A-1",
+        new_value_en="Present for central vowels",
+        new_value_ru="В среднем ряду",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_HOMONYMOUS_VALUE_TO_A_1_4,
+    )
 
 
-def test_add_listed_value_throws_exception_with_existing_value(
+def test_add_listed_value_add_value_homonymous_to_value_in_feature_after_the_current_one(
+    test_adder,
+):
+    test_adder.add_listed_value(
+        feature_id="A-6",
+        new_value_en="Present for central vowels",
+        new_value_ru="В среднем ряду",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_HOMONYMOUS_VALUE_TO_A_6_7,
+    )
+
+
+def test_add_listed_value_throws_exception_add_value_homonymous_to_value_in_the_same_feature(
     test_adder,
 ):
     for bad_args in (
@@ -163,6 +178,25 @@ def test_add_listed_value_throws_exception_with_existing_value(
             ListedValueAdderError, match="already contains value you are trying to add"
         ):
             test_adder.add_listed_value(**bad_args)
+
+
+def test_add_listed_value_throws_exception_with_empty_args(test_adder):
+    for bad_set_of_values in (
+        {"feature_id": "", "new_value_en": "Value", "new_value_ru": "Значение"},
+        {"feature_id": "A-1", "new_value_en": "", "new_value_ru": "Значение"},
+        {"feature_id": "A-1", "new_value_en": "Value", "new_value_ru": ""},
+    ):
+        with pytest.raises(
+            ListedValueAdderError, match="None of the following strings can be empty"
+        ):
+            test_adder.add_listed_value(**bad_set_of_values)
+
+
+def test_add_listed_value_throws_exception_with_invalid_feature_id(
+    test_adder,
+):
+    with pytest.raises(ListedValueAdderError, match="Feature ID X-1 not found"):
+        test_adder.add_listed_value("X-1", "Value", "значение")
 
 
 def test_add_listed_value_throws_exception_with_invalid_index_to_assign(test_adder):
