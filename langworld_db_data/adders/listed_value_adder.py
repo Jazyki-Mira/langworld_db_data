@@ -336,7 +336,8 @@ class ListedValueAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     ListedValueAdder().add_listed_value(
-        feature_id="",
-        new_value_en="",
-        new_value_ru="",
+        feature_id="A-6",
+        new_value_en="Present for central vowels",
+        new_value_ru="В среднем ряду",
+        index_to_assign=3,
     )
