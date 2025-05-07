@@ -290,7 +290,8 @@ class FeatureAdder(ObjectWithPaths):
                     return rows[:row_index] + rows_to_add + rows[row_index:]
             else:
                 return rows + rows_to_add
-            
+
+
 if __name__ == "__main__":
     FeatureAdder.add_feature(
         category_id="",
