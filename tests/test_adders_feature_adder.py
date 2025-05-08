@@ -122,31 +122,23 @@ def test_add_feature_fails_with_non_existent_index_of_feature_to_insert_after(
                 insert_after_index=number,
             )
 
-
-def test__build_feature_id_fails_with_existing_index(test_feature_adder):
-    with pytest.raises(FeatureAdderError, match="Feature index 211 already in use in category A"):
-        test_feature_adder._generate_feature_id(category_id="A", custom_index_of_new_feature=211)
+def test__generate_feature_id_at_the_beginning_of_category(test_feature_adder):
+    pass
 
 
-def test__build_feature_id_fails_with_small_index(test_feature_adder):
-    with pytest.raises(FeatureAdderError, match="must be greater than 100"):
-        test_feature_adder._generate_feature_id(category_id="A", custom_index_of_new_feature=99)
+def test__generate_feature_id_in_the_middle_of_category(test_feature_adder):
+    pass
 
 
-def test__build_feature_id_works_with_good_custom_index(test_feature_adder):
+def test__generate_feature_id_at_the_end_of_category(test_feature_adder):
     feature_id = test_feature_adder._generate_feature_id(
-        category_id="A", custom_index_of_new_feature=130
+        category_id="A",
     )
-    assert feature_id == "A-130"
-
-
-def test__build_feature_id_generates_auto_index(test_feature_adder):
-    feature_id = test_feature_adder._generate_feature_id(
-        category_id="A", custom_index_of_new_feature=None
-    )
-    # note that there is a feature with ID A-211 in test file with features.
-    # Code must ignore this ID.
     assert feature_id == "A-22"
+
+
+def test__generate_feature_id_at_the_end_of_category_with_given_feature_to_add_after(test_feature_adder):
+    pass
 
 
 def test_add_feature_writes_good_output_files(test_feature_adder):
@@ -162,16 +154,9 @@ def test_add_feature_writes_good_output_files(test_feature_adder):
             "feature_ru": "Новый признак в C",
         },
         {
-            "category_id": "D",
-            "feature_en": "New feature in D with custom index",
-            "feature_ru": "Новый признак в D",
-            "index_of_new_feature": 415,
-        },
-        {
             "category_id": "N",
-            "feature_en": "New feature in N with custom index in custom place",
+            "feature_en": "New feature in N in custom place",
             "feature_ru": "Новый признак в N в указанной строке",
-            "index_of_new_feature": 201,
             "insert_after_index": 2,
         },
         # adding to the very end of file (with custom index):

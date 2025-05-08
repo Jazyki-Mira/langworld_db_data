@@ -55,7 +55,6 @@ class FeatureAdder(ObjectWithPaths):
         feature_en: str,
         feature_ru: str,
         listed_values_to_add: list[dict[str, str]],
-        index_of_new_feature: Optional[int] = None,
         insert_after_index: Optional[int] = None,
     ) -> None:
         _ = remove_extra_space
@@ -96,14 +95,13 @@ class FeatureAdder(ObjectWithPaths):
 
             if feature_id_to_add_after not in [row[KEY_FOR_ID] for row in rows_with_features]:
                 raise FeatureAdderError(
-                    f"Cannot add feature after {cat_id}{ID_SEPARATOR}{insert_after_index}:"
-                    f" There is no feature with index {index_of_new_feature} in"
+                    f"Cannot add feature after {feature_id_to_add_after}:"
+                    f" There is no feature with index {insert_after_index} in"
                     f" category {cat_id}."
                 )
 
         id_of_new_feature = self._generate_feature_id(
             category_id=cat_id,
-            custom_index_of_new_feature=index_of_new_feature,
         )
 
         print(
@@ -213,23 +211,10 @@ class FeatureAdder(ObjectWithPaths):
     def _generate_feature_id(
         self,
         category_id: str,
-        custom_index_of_new_feature: Optional[int],
     ) -> str:
         """
-        Generates feature ID. If custom feature index is given, tries to use it.
-        Otherwise, takes the largest feature ID that is **less than 100**
-        (to reserve indices that are higher than 100 for custom feature indices)
-        and produces feature ID with next index (plus one).
+
         """
-        if (
-            custom_index_of_new_feature is not None
-            and custom_index_of_new_feature < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
-        ):
-            raise FeatureAdderError(
-                "For clarity, manual feature indices must be greater than"
-                f" {INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS} (you gave"
-                f" {custom_index_of_new_feature})."
-            )
 
         rows_with_features = read_dicts_from_csv(self.input_file_with_features)
         feature_ids_in_category = [
@@ -238,22 +223,13 @@ class FeatureAdder(ObjectWithPaths):
             if row[KEY_FOR_ID].startswith(f"{category_id}{ID_SEPARATOR}")
         ]
 
-        if custom_index_of_new_feature is None:
-            largest_index_under_100 = max(
-                int(feature_id.split(ID_SEPARATOR)[1])
-                for feature_id in feature_ids_in_category
-                if int(feature_id.split(ID_SEPARATOR)[1]) < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
-            )
-            return f"{category_id}{ID_SEPARATOR}{largest_index_under_100 + 1}"
-
-        custom_index_str = str(custom_index_of_new_feature)
-
-        if f"{category_id}{ID_SEPARATOR}{custom_index_str}" in feature_ids_in_category:
-            raise FeatureAdderError(
-                f"Feature index {custom_index_str} already in use in category" f" {category_id}"
-            )
-        else:
-            return f"{category_id}{ID_SEPARATOR}{custom_index_str}"
+        largest_index_under_100 = max(
+            int(feature_id.split(ID_SEPARATOR)[1])
+            for feature_id in feature_ids_in_category
+            if int(feature_id.split(ID_SEPARATOR)[1]) < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
+        )
+        return f"{category_id}{ID_SEPARATOR}{largest_index_under_100 + 1}"
+    
 
     @staticmethod
     def insert_rows(
