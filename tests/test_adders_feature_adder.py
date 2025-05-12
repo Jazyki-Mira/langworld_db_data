@@ -122,6 +122,7 @@ def test_add_feature_fails_with_non_existent_index_of_feature_to_insert_after(
                 insert_after_index=number,
             )
 
+
 def test__add_feature_to_inventory_of_features_at_the_beginning_of_category(test_feature_adder):
     feature_id = test_feature_adder._add_feature_to_inventory_of_features(
         category_id="A",
@@ -151,7 +152,9 @@ def test__add_feature_to_inventory_of_features_at_the_end_of_category(test_featu
     assert feature_id == "A-22"
 
 
-def test__add_feature_to_inventory_of_features_at_the_end_of_category_with_given_index(test_feature_adder):
+def test__add_feature_to_inventory_of_features_at_the_end_of_category_with_given_index(
+    test_feature_adder,
+):
     feature_id = test_feature_adder._add_feature_to_inventory_of_features(
         category_id="A",
         new_feature_en="Some feature",

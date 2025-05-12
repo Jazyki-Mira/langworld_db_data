@@ -78,7 +78,7 @@ class FeatureAdder(ObjectWithPaths):
             raise FeatureAdderError(
                 f"Category ID <{cat_id}> not found in file" f" {self.file_with_categories.name}"
             )
-        
+
         try:
             feature_id = self._add_feature_to_inventory_of_features(
                 category_id=cat_id,
@@ -87,13 +87,11 @@ class FeatureAdder(ObjectWithPaths):
                 index_to_assign=index_to_assign,
             )
         except ValueError as e:
-            raise FeatureAdderError(
-                f"Failed to add new feature to inventory of features. {e}"
-            )
-        
+            raise FeatureAdderError(f"Failed to add new feature to inventory of features. {e}")
+
         self._add_feature_to_feature_profiles(
             new_feature_id=feature_id,
-            feature_ru = feat_ru,
+            feature_ru=feat_ru,
         )
 
         # print(
@@ -199,7 +197,7 @@ class FeatureAdder(ObjectWithPaths):
         #         overwrite=True,
         #         delimiter=",",
         #     )
-    
+
     def _add_feature_to_inventory_of_features(
         self,
         category_id: str,
@@ -216,20 +214,17 @@ class FeatureAdder(ObjectWithPaths):
         """
         rows = read_dicts_from_csv(self.input_file_with_features)
 
-        if new_feature_en in [
-            row[KEY_FOR_ENGLISH] for row in rows
-        ] or new_feature_ru in [
+        if new_feature_en in [row[KEY_FOR_ENGLISH] for row in rows] or new_feature_ru in [
             row[KEY_FOR_RUSSIAN] for row in rows
         ]:
             # note that this check should not be restricted to one feature category
             raise FeatureAdderError(
                 "English or Russian feature name is already present in list of features"
             )
-        
-        id_of_new_feature = "R-0"
-        
-        return id_of_new_feature
 
+        id_of_new_feature = "R-0"
+
+        return id_of_new_feature
 
     def _add_feature_to_feature_profiles(
         self,
