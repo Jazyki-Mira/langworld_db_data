@@ -89,115 +89,17 @@ class FeatureAdder(ObjectWithPaths):
         except ValueError as e:
             raise FeatureAdderError(f"Failed to add new feature to inventory of features. {e}")
 
+        self._add_values_of_new_feature_to_inventory_of_listed_values(
+            category_id=category_id,
+            feature_id=feature_id,
+            listed_values_to_add=listed_values_to_add,
+        )
+
         self._add_feature_to_feature_profiles(
             new_feature_id=feature_id,
             feature_ru=feat_ru,
         )
-
-        # print(
-        #     (
-        #         f"\nAdding feature {id_of_new_feature} ({feature_en} / {feature_ru}) to"
-        #         " list of features"
-        #     ),
-        #     end=" ",
-        # )
-
-        # row_to_add = {
-        #     KEY_FOR_ID: id_of_new_feature,
-        #     KEY_FOR_ENGLISH: feat_en,
-        #     KEY_FOR_RUSSIAN: feat_ru,
-        # }
-
-        # if insert_after_index is None:
-        #     print(f"after the last feature in category {cat_id}")
-        #     rows_to_write = (
-        #         [
-        #             row
-        #             for row in rows_with_features
-        #             if row[KEY_FOR_ID].split(ID_SEPARATOR)[0] <= cat_id
-        #         ]
-        #         + [row_to_add]
-        #         + [
-        #             row
-        #             for row in rows_with_features
-        #             if row[KEY_FOR_ID].split(ID_SEPARATOR)[0] > cat_id
-        #         ]
-        #     )
-        # else:
-        #     print(f"after feature {feature_id_to_add_after}")
-        #     rows_to_write = []
-        #     for row in rows_with_features:
-        #         rows_to_write.append(row)
-        #         if row[KEY_FOR_ID] == feature_id_to_add_after:
-        #             rows_to_write.append(row_to_add)
-
-        # write_csv(
-        #     rows=rows_to_write,
-        #     path_to_file=self.output_file_with_features,
-        #     overwrite=True,
-        #     delimiter=",",
-        # )
-
-        # print(f"\nAdding new values in {id_of_new_feature} to file with listed values")
-
-        # rows_to_add_to_file_with_listed_values = []
-
-        # for i, new_listed_value in enumerate(listed_values_to_add, start=1):
-        #     value_id = f"{id_of_new_feature}{ID_SEPARATOR}{i}"
-        #     print(f"Value ID {value_id} - {new_listed_value[KEY_FOR_RUSSIAN]} will be added")
-        #     rows_to_add_to_file_with_listed_values.append(
-        #         {
-        #             KEY_FOR_ID: value_id,
-        #             KEY_FOR_FEATURE_ID: id_of_new_feature,
-        #             KEY_FOR_ENGLISH: new_listed_value[KEY_FOR_ENGLISH],
-        #             KEY_FOR_RUSSIAN: new_listed_value[KEY_FOR_RUSSIAN],
-        #         }
-        #     )
-
-        # value_rows_with_new_values_inserted = self.insert_rows(
-        #     rows_before_insertion=read_dicts_from_csv(self.input_file_with_listed_values),
-        #     rows_to_add=rows_to_add_to_file_with_listed_values,
-        #     category_id=cat_id,
-        #     feature_id_to_add_after=feature_id_to_add_after,
-        # )
-
-        # write_csv(
-        #     rows=value_rows_with_new_values_inserted,
-        #     path_to_file=self.output_file_with_listed_values,
-        #     overwrite=True,
-        #     delimiter=",",
-        # )
-
-        # print(
-        #     f"\nAdding feature {id_of_new_feature} to feature profiles with value type"
-        #     " 'not_stated'"
-        # )
-
-        # for file in self.input_feature_profiles:
-        #     feature_profile_rows_with_new_features_inserted = self.insert_rows(
-        #         rows_before_insertion=read_dicts_from_csv(file),
-        #         rows_to_add=[
-        #             {
-        #                 KEY_FOR_FEATURE_ID: id_of_new_feature,
-        #                 KEY_FOR_RUSSIAN_NAME_OF_FEATURE: feat_ru,
-        #                 KEY_FOR_VALUE_TYPE: "not_stated",
-        #                 KEY_FOR_VALUE_ID: "",
-        #                 KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
-        #                 KEY_FOR_RUSSIAN_COMMENT: "",
-        #                 KEY_FOR_ENGLISH_COMMENT: "",
-        #             }
-        #         ],
-        #         category_id=cat_id,
-        #         feature_id_to_add_after=feature_id_to_add_after,
-        #     )
-
-        #     write_csv(
-        #         rows=feature_profile_rows_with_new_features_inserted,
-        #         path_to_file=self.output_dir_with_feature_profiles / file.name,
-        #         overwrite=True,
-        #         delimiter=",",
-        #     )
-
+    
     def _add_feature_to_inventory_of_features(
         self,
         category_id: str,
@@ -224,15 +126,95 @@ class FeatureAdder(ObjectWithPaths):
 
         id_of_new_feature = "R-0"
 
+        print(
+            (
+                f"\nAdding feature {id_of_new_feature} ({new_feature_en} / {new_feature_ru}) to"
+                " list of features"
+            ),
+            end=" ",
+        )
+
+        row_to_add = {
+            KEY_FOR_ID: id_of_new_feature,
+            KEY_FOR_ENGLISH: new_feature_en,
+            KEY_FOR_RUSSIAN: new_feature_ru,
+        }
+
         return id_of_new_feature
 
+    def _add_values_of_new_feature_to_inventory_of_listed_values(
+        self,
+        category_id: str,
+        feature_id: str,
+        listed_values_to_add: list[dict[str, str]],
+    ) -> None:
+        print(f"\nAdding new values in {feature_id} to file with listed values")
+
+        rows_to_add_to_file_with_listed_values = []
+
+        for i, new_listed_value in enumerate(listed_values_to_add, start=1):
+            value_id = f"{feature_id}{ID_SEPARATOR}{i}"
+            print(f"Value ID {value_id} - {new_listed_value[KEY_FOR_RUSSIAN]} will be added")
+            rows_to_add_to_file_with_listed_values.append(
+                {
+                    KEY_FOR_ID: value_id,
+                    KEY_FOR_FEATURE_ID: feature_id,
+                    KEY_FOR_ENGLISH: new_listed_value[KEY_FOR_ENGLISH],
+                    KEY_FOR_RUSSIAN: new_listed_value[KEY_FOR_RUSSIAN],
+                }
+            )
+
+        # value_rows_with_new_values_inserted = self.insert_rows(
+        #     rows_before_insertion=read_dicts_from_csv(self.input_file_with_listed_values),
+        #     rows_to_add=rows_to_add_to_file_with_listed_values,
+        #     category_id=category_id,
+        #     feature_id_to_add_after=feature_id_to_add_after,
+        # )
+
+        # write_csv(
+        #     rows=value_rows_with_new_values_inserted,
+        #     path_to_file=self.output_file_with_listed_values,
+        #     overwrite=True,
+        #     delimiter=",",
+        # )
+    
     def _add_feature_to_feature_profiles(
         self,
-        new_feature_id: str,
+        feature_id: str,
         feature_ru: str,
     ) -> None:
         # I think this one will call two further methods -- first for updating value IDs and then for inserting the feature itself
-        pass
+        
+        print(
+            f"\nAdding feature {feature_id} to feature profiles with value type"
+            " 'not_stated'"
+        )
+
+        for file in self.input_feature_profiles:
+            pass
+            # feature_profile_rows_with_new_features_inserted = self.insert_rows(
+            #     rows_before_insertion=read_dicts_from_csv(file),
+            #     rows_to_add=[
+            #         {
+            #             KEY_FOR_FEATURE_ID: feature_id,
+            #             KEY_FOR_RUSSIAN_NAME_OF_FEATURE: feature_ru,
+            #             KEY_FOR_VALUE_TYPE: "not_stated",
+            #             KEY_FOR_VALUE_ID: "",
+            #             KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
+            #             KEY_FOR_RUSSIAN_COMMENT: "",
+            #             KEY_FOR_ENGLISH_COMMENT: "",
+            #         }
+            #     ],
+            #     category_id=category_id,
+            #     feature_id_to_add_after=feature_id_to_add_after,
+            # )
+
+            # write_csv(
+            #     rows=feature_profile_rows_with_new_features_inserted,
+            #     path_to_file=self.output_dir_with_feature_profiles / file.name,
+            #     overwrite=True,
+            #     delimiter=",",
+            # )
 
     @staticmethod
     def insert_rows(
