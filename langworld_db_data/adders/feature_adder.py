@@ -6,15 +6,9 @@ from langworld_db_data.constants.literals import (
     AUX_ROW_MARKER,
     ID_SEPARATOR,
     KEY_FOR_ENGLISH,
-    KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_RUSSIAN,
-    KEY_FOR_RUSSIAN_COMMENT,
-    KEY_FOR_RUSSIAN_NAME_OF_FEATURE,
-    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
-    KEY_FOR_VALUE_ID,
-    KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import (
@@ -110,7 +104,7 @@ class FeatureAdder(ObjectWithPaths):
         category_id: str,
         new_feature_en: str,
         new_feature_ru: str,
-        index_to_assign: Union[int, None],
+        index_to_assign: Union[int, None] = None,
     ) -> str:
         """
         Add new feature to the inventory of features. Return ID of new feature.
@@ -201,7 +195,7 @@ class FeatureAdder(ObjectWithPaths):
                     KEY_FOR_ENGLISH: new_feature_en[0].upper() + new_feature_en[1:],
                     KEY_FOR_RUSSIAN: new_feature_ru[0].upper() + new_feature_ru[1:],
                     "description_formatted_en": "",
-                    "description_formatted_tu": "",
+                    "description_formatted_ru": "",
                     "is_multiselect": "",
                     "not_applicable_if": "",
                     "schema_sections": "",
@@ -217,7 +211,7 @@ class FeatureAdder(ObjectWithPaths):
 
         write_csv(
             rows_with_new_value_inserted,
-            path_to_file=self.output_file_with_listed_values,
+            path_to_file=self.output_file_with_features,
             overwrite=True,
             delimiter=",",
         )
@@ -324,7 +318,7 @@ class FeatureAdder(ObjectWithPaths):
                 row_where_id_must_be_incremented
             ][KEY_FOR_ID]
             rows_with_incremented_indices[row_where_id_must_be_incremented][KEY_FOR_ID] = (
-                f"{extract_category_id(feature_id_to_increment)}-"
+                f"{extract_category_id(feature_id_to_increment)}{ID_SEPARATOR}"
                 f"{extract_feature_index(feature_id_to_increment) + 1}"
             )
 
