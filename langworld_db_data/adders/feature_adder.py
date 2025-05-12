@@ -23,8 +23,13 @@ from langworld_db_data.tools.files.csv_xls import (
     write_csv,
 )
 from langworld_db_data.tools.files.txt import remove_extra_space
+from langworld_db_data.tools.value_ids.value_ids import (
+    extract_category_id,
+    extract_feature_index,
+)
 
-INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS = 100
+KEY_FOR_FEATURE_INDEX = "index"
+KEY_FOR_LINE_NUMBER = "line number"
 
 
 class FeatureAdderError(Exception):
@@ -123,8 +128,97 @@ class FeatureAdder(ObjectWithPaths):
             raise FeatureAdderError(
                 "English or Russian feature name is already present in list of features"
             )
+        
+        # To figure out the ID of the new feature (if index_to_assign is None)
+        # and to figure out the position of the new feature in inventory
+        # we should get feature indices and line numbers from rows.
+        # The same procedure is done by ListedValueAdder with a specific method.
 
-        id_of_new_feature = "R-0"
+        feature_indices_to_inventory_line_numbers: list[dict[str, int]] = []
+
+        for i, row in enumerate(rows):
+            if not category_id in row[KEY_FOR_ID]:
+                continue
+
+            feature_index = extract_feature_index(row[KEY_FOR_ID])
+            feature_indices_to_inventory_line_numbers.append(
+                {
+                    KEY_FOR_FEATURE_INDEX: feature_index,
+                    KEY_FOR_LINE_NUMBER: i,
+                }
+            )
+
+        # Check if passed index is valid
+        last_index_in_category = feature_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_INDEX]
+        # The range of numbers acceptable as index_to_assign consists of
+        # all the current indices in the given category and the next number after
+        # the current maximum. To include the maximum, we must add 1 to last_index_in_category.
+        # To include the number right after the maximum, we must again add 1.
+        # This results in adding 2 to the rightmost range border.
+        acceptable_indices_to_assign = set([None] + list(range(1, last_index_in_category + 2)))
+        # Here we add None to the list because None is the default value for appending
+        # feature to the end of category
+        if index_to_assign not in acceptable_indices_to_assign:
+            raise ValueError(
+                f"Invalid index_to assign (must be between 1 and {last_index_in_category + 1}, "
+                f"{index_to_assign} was given)"
+            )
+
+        if index_to_assign in (
+            None,
+            last_index_in_category + 1,
+        ):  # new feature is being added after the last one
+            id_of_new_feature = (
+                f"{category_id}{ID_SEPARATOR}"
+                f"{feature_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_INDEX] + 1}"
+            )
+            line_number_of_new_feature = (
+                feature_indices_to_inventory_line_numbers[-1][KEY_FOR_LINE_NUMBER] + 1
+            )
+            rows_with_updated_feature_indices = tuple(rows.copy())
+
+        else:  # new feature being inserted in the middle
+            id_of_new_feature = f"{category_id}{ID_SEPARATOR}{index_to_assign}"
+
+            # Go through features of the category, ignore indices less than index_to_assign,
+            # increment all other indices
+            rows_with_updated_feature_indices = self._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
+                rows=rows,
+                feature_indices_to_inventory_line_numbers=feature_indices_to_inventory_line_numbers,
+                index_to_assign=index_to_assign,
+            )
+
+            for feature_index_and_line_number in feature_indices_to_inventory_line_numbers:
+                if feature_index_and_line_number[KEY_FOR_FEATURE_INDEX] == index_to_assign:
+                    line_number_of_new_feature = feature_index_and_line_number[KEY_FOR_LINE_NUMBER]
+
+        row_with_new_feature = tuple(
+            [
+                {
+                    KEY_FOR_ID: id_of_new_feature,
+                    KEY_FOR_ENGLISH: new_feature_en[0].upper() + new_feature_en[1:],
+                    KEY_FOR_RUSSIAN: new_feature_ru[0].upper() + new_feature_ru[1:],
+                    "description_formatted_en": "",
+                    "description_formatted_tu": "",
+                    "is_multiselect": "",
+                    "not_applicable_if": "",
+                    "schema_sections": "",
+                }
+            ]
+        )
+
+        rows_with_new_value_inserted = (
+            rows_with_updated_feature_indices[:line_number_of_new_feature]
+            + row_with_new_feature
+            + rows_with_updated_feature_indices[line_number_of_new_feature:]
+        )
+
+        write_csv(
+            rows_with_new_value_inserted,
+            path_to_file=self.output_file_with_listed_values,
+            overwrite=True,
+            delimiter=",",
+        )
 
         print(
             (
@@ -133,12 +227,6 @@ class FeatureAdder(ObjectWithPaths):
             ),
             end=" ",
         )
-
-        row_to_add = {
-            KEY_FOR_ID: id_of_new_feature,
-            KEY_FOR_ENGLISH: new_feature_en,
-            KEY_FOR_RUSSIAN: new_feature_ru,
-        }
 
         return id_of_new_feature
 
@@ -212,6 +300,33 @@ class FeatureAdder(ObjectWithPaths):
             #     overwrite=True,
             #     delimiter=",",
             # )
+
+    @staticmethod
+    def _increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
+        rows: list[dict[str, str]],
+        feature_indices_to_inventory_line_numbers: tuple[dict[str, int], ...],
+        index_to_assign: int,
+    ) -> tuple[dict[str, str], ...]:
+        """
+        Increases by 1 index of every feature that will come after the feature passed for insertion.
+
+        Returns tuple of dictionaries with incremented indices and line numbers.
+        """
+
+        rows_with_incremented_indices = rows[:]
+        for feature_index_and_line_number in feature_indices_to_inventory_line_numbers:
+            if feature_index_and_line_number[KEY_FOR_FEATURE_INDEX] < index_to_assign:
+                continue
+            row_where_id_must_be_incremented = feature_index_and_line_number[KEY_FOR_LINE_NUMBER]
+            feature_id_to_increment = rows_with_incremented_indices[
+                row_where_id_must_be_incremented
+            ][KEY_FOR_ID]
+            rows_with_incremented_indices[row_where_id_must_be_incremented][KEY_FOR_ID] = (
+                f"{extract_category_id(feature_id_to_increment)}-"
+                f"{extract_feature_index(feature_id_to_increment) + 1}"
+            )
+
+        return tuple(rows_with_incremented_indices)
 
     @staticmethod
     def insert_rows(
