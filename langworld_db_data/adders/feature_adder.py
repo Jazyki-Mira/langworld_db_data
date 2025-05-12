@@ -156,7 +156,7 @@ class FeatureAdder(ObjectWithPaths):
         # feature to the end of category
         if index_to_assign not in acceptable_indices_to_assign:
             raise ValueError(
-                f"Invalid index_to assign (must be between 1 and {last_index_in_category + 1}, "
+                f"Invalid index_to_assign (must be between 1 and {last_index_in_category + 1}, "
                 f"{index_to_assign} was given)"
             )
 
