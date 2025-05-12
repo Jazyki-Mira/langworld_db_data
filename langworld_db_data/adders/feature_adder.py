@@ -99,7 +99,7 @@ class FeatureAdder(ObjectWithPaths):
             new_feature_id=feature_id,
             feature_ru=feat_ru,
         )
-    
+
     def _add_feature_to_inventory_of_features(
         self,
         category_id: str,
@@ -177,18 +177,15 @@ class FeatureAdder(ObjectWithPaths):
         #     overwrite=True,
         #     delimiter=",",
         # )
-    
+
     def _add_feature_to_feature_profiles(
         self,
         feature_id: str,
         feature_ru: str,
     ) -> None:
         # I think this one will call two further methods -- first for updating value IDs and then for inserting the feature itself
-        
-        print(
-            f"\nAdding feature {feature_id} to feature profiles with value type"
-            " 'not_stated'"
-        )
+
+        print(f"\nAdding feature {feature_id} to feature profiles with value type" " 'not_stated'")
 
         for file in self.input_feature_profiles:
             pass
