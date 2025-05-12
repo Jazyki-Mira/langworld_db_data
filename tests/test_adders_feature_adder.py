@@ -23,10 +23,12 @@ FILE_WITH_OUTPUT_FEATURES_INVENTORY = DIR_WITH_ADDERS_TEST_FILES / "features_out
 @pytest.fixture(scope="function")
 def test_feature_adder():
     return FeatureAdder(
-        file_with_categories=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER / "feature_categories.csv",
+        file_with_categories=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER
+        / "feature_categories.csv",
         input_file_with_features=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER / "features.csv",
         output_file_with_features=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
-        input_file_with_listed_values=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER / "features_listed_values",
+        input_file_with_listed_values=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER
+        / "features_listed_values",
         output_file_with_listed_values=DIR_WITH_ADDERS_TEST_FILES
         / "features_listed_values_output_feature_adder.csv",
         input_dir_with_feature_profiles=DIR_WITH_ADDERS_TEST_FILES / "feature_profiles",
@@ -152,7 +154,7 @@ def test__add_feature_to_inventory_of_features_in_the_middle_of_category(test_fe
         index_to_assign=14,
     )
     assert feature_id == "A-14"
-    
+
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
         gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_new_A_14.csv",
@@ -183,7 +185,6 @@ def test__add_feature_to_inventory_of_features_at_the_end_of_category_with_given
         index_to_assign=22,
     )
     assert feature_id == "A-22"
-
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
