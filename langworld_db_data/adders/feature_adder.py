@@ -55,7 +55,7 @@ class FeatureAdder(ObjectWithPaths):
         feature_en: str,
         feature_ru: str,
         listed_values_to_add: list[dict[str, str]],
-        index_to_assign: Union[int, None],
+        index_to_assign: Union[int, None] = None,
     ) -> None:
         _ = remove_extra_space
         cat_id, feat_en, feat_ru = _(category_id), _(feature_en), _(feature_ru)
