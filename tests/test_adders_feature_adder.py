@@ -192,7 +192,9 @@ def test__add_feature_to_inventory_of_features_at_the_end_of_category_with_given
     )
 
 
-def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(test_feature_adder):
+def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
+    test_feature_adder,
+):
     rows = [
         {"id": "A-1", "en": "Some feature", "ru": "Некий признак"},
         {"id": "A-2", "en": "Old feature", "ru": "Старый признак"},
@@ -204,10 +206,12 @@ def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
         {"index": 2, "line number": 1},
         {"index": 3, "line number": 2},
     )
-    rows = test_feature_adder._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
-        rows=rows,
-        feature_indices_to_inventory_line_numbers=feature_indices_to_inventory_line_numbers,
-        index_to_assign=2,
+    rows = (
+        test_feature_adder._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
+            rows=rows,
+            feature_indices_to_inventory_line_numbers=feature_indices_to_inventory_line_numbers,
+            index_to_assign=2,
+        )
     )
 
     gold_standard_rows = tuple(
@@ -220,6 +224,7 @@ def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
     )
 
     assert rows == gold_standard_rows
+
 
 # def test_add_feature_writes_good_output_files(test_feature_adder):
 #     features_to_add = (

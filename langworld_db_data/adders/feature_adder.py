@@ -128,7 +128,7 @@ class FeatureAdder(ObjectWithPaths):
             raise FeatureAdderError(
                 "English or Russian feature name is already present in list of features"
             )
-        
+
         # To figure out the ID of the new feature (if index_to_assign is None)
         # and to figure out the position of the new feature in inventory
         # we should get feature indices and line numbers from rows.
@@ -149,7 +149,9 @@ class FeatureAdder(ObjectWithPaths):
             )
 
         # Check if passed index is valid
-        last_index_in_category = feature_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_INDEX]
+        last_index_in_category = feature_indices_to_inventory_line_numbers[-1][
+            KEY_FOR_FEATURE_INDEX
+        ]
         # The range of numbers acceptable as index_to_assign consists of
         # all the current indices in the given category and the next number after
         # the current maximum. To include the maximum, we must add 1 to last_index_in_category.
