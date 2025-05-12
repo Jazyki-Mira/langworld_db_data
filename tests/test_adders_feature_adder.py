@@ -3,29 +3,34 @@ import pytest
 from langworld_db_data.adders.feature_adder import FeatureAdder, FeatureAdderError
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
-    DIR_WITH_ADDERS_FEATURE_PROFILES,
     DIR_WITH_ADDERS_TEST_FILES,
-    INPUT_FILE_WITH_LISTED_VALUES,
-    OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES,
 )
 
-dummy_values_to_add = [
+DUMMY_VALUES_TO_ADD = [
     {"ru": "Одно явление", "en": "One thing"},
     {"ru": "Одно, два и третье", "en": "One thing, second thing, and third thing"},
 ]
+
+DIR_WITH_FEATURE_ADDER_TEST_FILES = DIR_WITH_ADDERS_TEST_FILES / "feature_adder"
+
+DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER = DIR_WITH_FEATURE_ADDER_TEST_FILES / "inventories"
+
+DIR_WITH_GOLD_STANDARD_FILES = DIR_WITH_FEATURE_ADDER_TEST_FILES / "gold_standards"
+
+FILE_WITH_OUTPUT_FEATURES_INVENTORY = DIR_WITH_ADDERS_TEST_FILES / "features_output.csv"
 
 
 @pytest.fixture(scope="function")
 def test_feature_adder():
     return FeatureAdder(
-        file_with_categories=DIR_WITH_ADDERS_TEST_FILES / "feature_categories.csv",
-        input_file_with_features=DIR_WITH_ADDERS_TEST_FILES / "features.csv",
-        output_file_with_features=DIR_WITH_ADDERS_TEST_FILES / "features_output.csv",
-        input_file_with_listed_values=INPUT_FILE_WITH_LISTED_VALUES,
+        file_with_categories=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER / "feature_categories.csv",
+        input_file_with_features=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER / "features.csv",
+        output_file_with_features=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
+        input_file_with_listed_values=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER / "features_listed_values",
         output_file_with_listed_values=DIR_WITH_ADDERS_TEST_FILES
         / "features_listed_values_output_feature_adder.csv",
-        input_dir_with_feature_profiles=DIR_WITH_ADDERS_FEATURE_PROFILES,
-        output_dir_with_feature_profiles=OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES,
+        input_dir_with_feature_profiles=DIR_WITH_ADDERS_TEST_FILES / "feature_profiles",
+        output_dir_with_feature_profiles=DIR_WITH_ADDERS_TEST_FILES,
     )
 
 
@@ -35,19 +40,19 @@ def test_add_feature_fails_with_empty_arg(test_feature_adder):
             "category_id": "",
             "feature_ru": "раз",
             "feature_en": "one",
-            "listed_values_to_add": dummy_values_to_add,
+            "listed_values_to_add": DUMMY_VALUES_TO_ADD,
         },
         {
             "category_id": "A",
             "feature_ru": "",
             "feature_en": "one",
-            "listed_values_to_add": dummy_values_to_add,
+            "listed_values_to_add": DUMMY_VALUES_TO_ADD,
         },
         {
             "category_id": "A",
             "feature_ru": "раз",
             "feature_en": "",
-            "listed_values_to_add": dummy_values_to_add,
+            "listed_values_to_add": DUMMY_VALUES_TO_ADD,
         },
         {
             "category_id": "A",
@@ -91,7 +96,7 @@ def test_add_feature_fails_with_wrong_category_id(test_feature_adder):
             category_id="X",
             feature_ru="имя",
             feature_en="name",
-            listed_values_to_add=dummy_values_to_add,
+            listed_values_to_add=DUMMY_VALUES_TO_ADD,
         )
 
 
@@ -105,7 +110,7 @@ def test_add_feature_fails_with_existing_feature_name(test_feature_adder):
                 category_id="A",
                 feature_en=en,
                 feature_ru=ru,
-                listed_values_to_add=dummy_values_to_add,
+                listed_values_to_add=DUMMY_VALUES_TO_ADD,
             )
 
 
@@ -118,7 +123,7 @@ def test_add_feature_fails_with_non_existent_index_of_feature_to_insert_after(
                 category_id="A",
                 feature_en="Foo",
                 feature_ru="Фу",
-                listed_values_to_add=dummy_values_to_add,
+                listed_values_to_add=DUMMY_VALUES_TO_ADD,
                 insert_after_index=number,
             )
 
@@ -130,7 +135,13 @@ def test__add_feature_to_inventory_of_features_at_the_beginning_of_category(test
         new_feature_ru="Некий признак",
         index_to_assign=1,
     )
+    # I think this one and the similar subsequent ones should also check equivalence of output and gold standard
     assert feature_id == "A-1"
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_new_A_1.csv",
+    )
 
 
 def test__add_feature_to_inventory_of_features_in_the_middle_of_category(test_feature_adder):
@@ -141,6 +152,11 @@ def test__add_feature_to_inventory_of_features_in_the_middle_of_category(test_fe
         index_to_assign=14,
     )
     assert feature_id == "A-14"
+    
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_new_A_14.csv",
+    )
 
 
 def test__add_feature_to_inventory_of_features_at_the_end_of_category(test_feature_adder):
@@ -150,6 +166,11 @@ def test__add_feature_to_inventory_of_features_at_the_end_of_category(test_featu
         new_feature_ru="Некий признак",
     )
     assert feature_id == "A-22"
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_new_A_22.csv",
+    )
 
 
 def test__add_feature_to_inventory_of_features_at_the_end_of_category_with_given_index(
@@ -162,6 +183,12 @@ def test__add_feature_to_inventory_of_features_at_the_end_of_category_with_given
         index_to_assign=22,
     )
     assert feature_id == "A-22"
+
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_new_A_22.csv",
+    )
 
 
 # def test_add_feature_writes_good_output_files(test_feature_adder):
