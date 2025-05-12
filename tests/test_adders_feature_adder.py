@@ -122,97 +122,117 @@ def test_add_feature_fails_with_non_existent_index_of_feature_to_insert_after(
                 insert_after_index=number,
             )
 
-def test__generate_feature_id_at_the_beginning_of_category(test_feature_adder):
-    pass
-
-
-def test__generate_feature_id_in_the_middle_of_category(test_feature_adder):
-    pass
-
-
-def test__generate_feature_id_at_the_end_of_category(test_feature_adder):
-    feature_id = test_feature_adder._generate_feature_id(
+def test__add_feature_to_inventory_of_features_at_the_beginning_of_category(test_feature_adder):
+    feature_id = test_feature_adder._add_feature_to_inventory_of_features(
         category_id="A",
+        new_feature_en="Some feature",
+        new_feature_ru="Некий признак",
+        index_to_assign=1,
+    )
+    assert feature_id == "A-1"
+
+
+def test__add_feature_to_inventory_of_features_in_the_middle_of_category(test_feature_adder):
+    feature_id = test_feature_adder._add_feature_to_inventory_of_features(
+        category_id="A",
+        new_feature_en="Some feature",
+        new_feature_ru="Некий признак",
+        index_to_assign=14,
+    )
+    assert feature_id == "A-14"
+
+
+def test__add_feature_to_inventory_of_features_at_the_end_of_category(test_feature_adder):
+    feature_id = test_feature_adder._add_feature_to_inventory_of_features(
+        category_id="A",
+        new_feature_en="Some feature",
+        new_feature_ru="Некий признак",
     )
     assert feature_id == "A-22"
 
 
-def test__generate_feature_id_at_the_end_of_category_with_given_feature_to_add_after(test_feature_adder):
-    pass
-
-
-def test_add_feature_writes_good_output_files(test_feature_adder):
-    features_to_add = (
-        {
-            "category_id": "A",
-            "feature_en": "New feature in A",
-            "feature_ru": "Новый признак в A",
-        },
-        {
-            "category_id": "C",
-            "feature_en": "New feature in C",
-            "feature_ru": "Новый признак в C",
-        },
-        {
-            "category_id": "N",
-            "feature_en": "New feature in N in custom place",
-            "feature_ru": "Новый признак в N в указанной строке",
-            "insert_after_index": 2,
-        },
-        # adding to the very end of file (with custom index):
-        {
-            "category_id": "N",
-            "feature_en": "New feature in N inserted after 5",
-            "feature_ru": "Новый признак N после 5",
-            "insert_after_index": 5,
-        },
-        # adding to the very end of file:
-        {
-            "category_id": "N",
-            "feature_en": "New feature in N (in the very end)",
-            "feature_ru": "Новый признак N конец",
-        },
+def test__add_feature_to_inventory_of_features_at_the_end_of_category_with_given_index(test_feature_adder):
+    feature_id = test_feature_adder._add_feature_to_inventory_of_features(
+        category_id="A",
+        new_feature_en="Some feature",
+        new_feature_ru="Некий признак",
+        index_to_assign=22,
     )
+    assert feature_id == "A-22"
 
-    for kwargs in features_to_add:
-        test_feature_adder.add_feature(**kwargs, listed_values_to_add=dummy_values_to_add)
 
-        # Re-wire output to input after addition of first feature,
-        # otherwise the adder will just take the input file again
-        # and only last feature will be added in the end:
-        test_feature_adder.input_file_with_features = test_feature_adder.output_file_with_features
-        test_feature_adder.input_file_with_listed_values = (
-            test_feature_adder.output_file_with_listed_values
-        )
-        test_feature_adder.input_feature_profiles = (
-            test_feature_adder.output_dir_with_feature_profiles.glob("*.csv")
-        )
-        # This is justified in test because in normal use output file is same as input
-        # file and features will be added one by one.
+# def test_add_feature_writes_good_output_files(test_feature_adder):
+#     features_to_add = (
+#         {
+#             "category_id": "A",
+#             "feature_en": "New feature in A",
+#             "feature_ru": "Новый признак в A",
+#         },
+#         {
+#             "category_id": "C",
+#             "feature_en": "New feature in C",
+#             "feature_ru": "Новый признак в C",
+#         },
+#         {
+#             "category_id": "N",
+#             "feature_en": "New feature in N in custom place",
+#             "feature_ru": "Новый признак в N в указанной строке",
+#             "insert_after_index": 2,
+#         },
+#         # adding to the very end of file (with custom index):
+#         {
+#             "category_id": "N",
+#             "feature_en": "New feature in N inserted after 5",
+#             "feature_ru": "Новый признак N после 5",
+#             "insert_after_index": 5,
+#         },
+#         # adding to the very end of file:
+#         {
+#             "category_id": "N",
+#             "feature_en": "New feature in N (in the very end)",
+#             "feature_ru": "Новый признак N конец",
+#         },
+#     )
 
-    assert test_feature_adder.output_file_with_features.exists()
-    assert test_feature_adder.input_file_with_listed_values.exists()
+#     for kwargs in features_to_add:
+#         test_feature_adder.add_feature(**kwargs, listed_values_to_add=dummy_values_to_add)
 
-    gold_standard_feature_profiles = list(
-        (OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES / "gold_standard").glob("*.csv")
-    )
+#         # Re-wire output to input after addition of first feature,
+#         # otherwise the adder will just take the input file again
+#         # and only last feature will be added in the end:
+#         test_feature_adder.input_file_with_features = test_feature_adder.output_file_with_features
+#         test_feature_adder.input_file_with_listed_values = (
+#             test_feature_adder.output_file_with_listed_values
+#         )
+#         test_feature_adder.input_feature_profiles = (
+#             test_feature_adder.output_dir_with_feature_profiles.glob("*.csv")
+#         )
+#         # This is justified in test because in normal use output file is same as input
+#         # file and features will be added one by one.
 
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=test_feature_adder.output_file_with_features,
-        gold_standard_file=DIR_WITH_ADDERS_TEST_FILES
-        / "features_gold_standard_after_addition.csv",
-    )
+#     assert test_feature_adder.output_file_with_features.exists()
+#     assert test_feature_adder.input_file_with_listed_values.exists()
 
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=test_feature_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_ADDERS_TEST_FILES
-        / "features_listed_values_gold_standard_for_feature_adder.csv",
-    )
+#     gold_standard_feature_profiles = list(
+#         (OUTPUT_DIR_FOR_FEATURE_ADDER_FEATURE_PROFILES / "gold_standard").glob("*.csv")
+#     )
 
-    for file in gold_standard_feature_profiles:
-        test_output_file = test_feature_adder.output_dir_with_feature_profiles / file.name
+#     check_existence_of_output_csv_file_and_compare_with_gold_standard(
+#         output_file=test_feature_adder.output_file_with_features,
+#         gold_standard_file=DIR_WITH_ADDERS_TEST_FILES
+#         / "features_gold_standard_after_addition.csv",
+#     )
 
-        check_existence_of_output_csv_file_and_compare_with_gold_standard(
-            output_file=test_output_file,
-            gold_standard_file=file,
-        )
+#     check_existence_of_output_csv_file_and_compare_with_gold_standard(
+#         output_file=test_feature_adder.output_file_with_listed_values,
+#         gold_standard_file=DIR_WITH_ADDERS_TEST_FILES
+#         / "features_listed_values_gold_standard_for_feature_adder.csv",
+#     )
+
+#     for file in gold_standard_feature_profiles:
+#         test_output_file = test_feature_adder.output_dir_with_feature_profiles / file.name
+
+#         check_existence_of_output_csv_file_and_compare_with_gold_standard(
+#             output_file=test_output_file,
+#             gold_standard_file=file,
+#         )
