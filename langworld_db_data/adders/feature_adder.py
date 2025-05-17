@@ -6,9 +6,15 @@ from langworld_db_data.constants.literals import (
     AUX_ROW_MARKER,
     ID_SEPARATOR,
     KEY_FOR_ENGLISH,
+    KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_RUSSIAN,
+    KEY_FOR_RUSSIAN_COMMENT,
+    KEY_FOR_RUSSIAN_NAME_OF_FEATURE,
+    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
+    KEY_FOR_VALUE_ID,
+    KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import (
@@ -308,35 +314,68 @@ class FeatureAdder(ObjectWithPaths):
         feature_id: str,
         feature_ru: str,
     ) -> None:
-        # I think this one will call two further methods -- first for updating value IDs and then for inserting the feature itself
-
-        print(f"\nAdding feature {feature_id} to feature profiles with value type" " 'not_stated'")
+        
+        id_of_category_where_feature_is_inserted = extract_category_id(feature_id)
+        
+        row_to_add = {
+                        KEY_FOR_FEATURE_ID: feature_id,
+                        KEY_FOR_RUSSIAN_NAME_OF_FEATURE: feature_ru,
+                        KEY_FOR_VALUE_TYPE: "not_stated",
+                        KEY_FOR_VALUE_ID: "",
+                        KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
+                        KEY_FOR_RUSSIAN_COMMENT: "",
+                        KEY_FOR_ENGLISH_COMMENT: "",
+        }
 
         for file in self.input_feature_profiles:
-            pass
-            # feature_profile_rows_with_new_features_inserted = self.insert_rows(
-            #     rows_before_insertion=read_dicts_from_csv(file),
-            #     rows_to_add=[
-            #         {
-            #             KEY_FOR_FEATURE_ID: feature_id,
-            #             KEY_FOR_RUSSIAN_NAME_OF_FEATURE: feature_ru,
-            #             KEY_FOR_VALUE_TYPE: "not_stated",
-            #             KEY_FOR_VALUE_ID: "",
-            #             KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
-            #             KEY_FOR_RUSSIAN_COMMENT: "",
-            #             KEY_FOR_ENGLISH_COMMENT: "",
-            #         }
-            #     ],
-            #     category_id=category_id,
-            #     feature_id_to_add_after=feature_id_to_add_after,
-            # )
+            
+            rows_before_insertion = read_dicts_from_csv(file)
 
-            # write_csv(
-            #     rows=feature_profile_rows_with_new_features_inserted,
-            #     path_to_file=self.output_dir_with_feature_profiles / file.name,
-            #     overwrite=True,
-            #     delimiter=",",
-            # )
+            line_number_where_row_will_be_inserted = 0
+
+            line_number_to_insert_before_is_found = False
+
+            for i, row in enumerate(rows_before_insertion):
+                if (
+                    extract_category_id(row[KEY_FOR_FEATURE_ID])
+                    != id_of_category_where_feature_is_inserted
+                ):
+                    continue
+
+                if row[KEY_FOR_FEATURE_ID] == row_to_add[KEY_FOR_FEATURE_ID]:
+                    line_number_where_row_will_be_inserted = i
+                    line_number_to_insert_before_is_found = True
+
+                feature_index_of_current_row = extract_feature_index(row[KEY_FOR_FEATURE_ID])
+
+                if feature_index_of_current_row >= extract_feature_index(feature_id):
+                    # Same as in the previous method
+                    row[KEY_FOR_FEATURE_ID] = (
+                        f"{id_of_category_where_feature_is_inserted}{ID_SEPARATOR}{feature_index_of_current_row + 1}"
+                    )
+
+                    if row[KEY_FOR_VALUE_TYPE] == "listed":
+                        row[KEY_FOR_VALUE_ID] = (
+                            f"{row[KEY_FOR_FEATURE_ID]}{ID_SEPARATOR}{extract_value_index(row[KEY_FOR_VALUE_ID])}"
+                        )
+
+                if not line_number_to_insert_before_is_found:
+                    line_number_where_row_will_be_inserted = i + 1
+            
+            rows_after_insertion = (
+                rows_before_insertion[:line_number_where_row_will_be_inserted]
+                + [row_to_add]
+                + rows_before_insertion[line_number_where_row_will_be_inserted:]
+            )
+
+            write_csv(
+                rows=rows_after_insertion,
+                path_to_file=self.output_dir_with_feature_profiles / file.name,
+                overwrite=True,
+                delimiter=",",
+            )
+
+        print(f"\nAdding feature {feature_id} to feature profiles with value type" " 'not_stated'")
 
     @staticmethod
     def _increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
