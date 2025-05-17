@@ -1,9 +1,8 @@
 from pathlib import Path
-from typing import Optional, Union
+from typing import Union
 
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import (
-    AUX_ROW_MARKER,
     ID_SEPARATOR,
     KEY_FOR_ENGLISH,
     KEY_FOR_ENGLISH_COMMENT,
@@ -192,10 +191,14 @@ class FeatureAdder(ObjectWithPaths):
 
             # Go through features of the category, ignore indices less than index_to_assign,
             # increment all other indices
-            rows_with_updated_feature_indices = self._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
-                rows=rows,
-                feature_indices_to_inventory_line_numbers=feature_indices_to_inventory_line_numbers,
-                index_to_assign=index_to_assign,
+            rows_with_updated_feature_indices = (
+                self._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
+                    rows=rows,
+                    feature_indices_to_inventory_line_numbers=tuple(
+                        feature_indices_to_inventory_line_numbers
+                    ),
+                    index_to_assign=index_to_assign,
+                )
             )
 
             for feature_index_and_line_number in feature_indices_to_inventory_line_numbers:
@@ -455,7 +458,7 @@ class FeatureAdder(ObjectWithPaths):
 
 
 if __name__ == "__main__":
-    FeatureAdder.add_feature(
+    FeatureAdder().add_feature(
         category_id="",
         feature_en="",
         feature_ru="",
