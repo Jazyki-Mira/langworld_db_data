@@ -314,21 +314,21 @@ class FeatureAdder(ObjectWithPaths):
         feature_id: str,
         feature_ru: str,
     ) -> None:
-        
+
         id_of_category_where_feature_is_inserted = extract_category_id(feature_id)
-        
+
         row_to_add = {
-                        KEY_FOR_FEATURE_ID: feature_id,
-                        KEY_FOR_RUSSIAN_NAME_OF_FEATURE: feature_ru,
-                        KEY_FOR_VALUE_TYPE: "not_stated",
-                        KEY_FOR_VALUE_ID: "",
-                        KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
-                        KEY_FOR_RUSSIAN_COMMENT: "",
-                        KEY_FOR_ENGLISH_COMMENT: "",
+            KEY_FOR_FEATURE_ID: feature_id,
+            KEY_FOR_RUSSIAN_NAME_OF_FEATURE: feature_ru,
+            KEY_FOR_VALUE_TYPE: "not_stated",
+            KEY_FOR_VALUE_ID: "",
+            KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
+            KEY_FOR_RUSSIAN_COMMENT: "",
+            KEY_FOR_ENGLISH_COMMENT: "",
         }
 
         for file in self.input_feature_profiles:
-            
+
             rows_before_insertion = read_dicts_from_csv(file)
 
             line_number_where_row_will_be_inserted = 0
@@ -361,7 +361,7 @@ class FeatureAdder(ObjectWithPaths):
 
                 if not line_number_to_insert_before_is_found:
                     line_number_where_row_will_be_inserted = i + 1
-            
+
             rows_after_insertion = (
                 rows_before_insertion[:line_number_where_row_will_be_inserted]
                 + [row_to_add]
