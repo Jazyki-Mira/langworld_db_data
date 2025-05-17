@@ -31,7 +31,7 @@ def test_feature_adder():
         / "features_listed_values.csv",
         output_file_with_listed_values=DIR_WITH_FEATURE_ADDER_TEST_FILES
         / "features_output_feature_adder.csv",
-        input_dir_with_feature_profiles=DIR_WITH_ADDERS_TEST_FILES / "feature_profiles",
+        input_dir_with_feature_profiles=DIR_WITH_FEATURE_ADDER_TEST_FILES / "feature_profiles",
         output_dir_with_feature_profiles=DIR_WITH_FEATURE_ADDER_TEST_FILES,
     )
 
@@ -328,6 +328,63 @@ def test__add_values_of_new_feature_to_inventory_of_listed_values_at_the_end_of_
         gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES
         / "features_listed_values_new_last_feature.csv",
     )
+
+
+def test__add_feature_to_feature_profiles_to_the_beginning_of_category(test_feature_adder):
+    test_feature_adder._add_feature_to_feature_profiles(
+        feature_id="A-1",
+        feature_ru="Некий признак"
+    )
+
+    gold_standard_feature_profiles = list(
+        (DIR_WITH_GOLD_STANDARD_FILES / "feature_profiles_new_A_1").glob("*.csv")
+    )
+
+    for file in gold_standard_feature_profiles:
+        test_output_file = test_feature_adder.output_dir_with_feature_profiles / file.name
+
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=test_output_file,
+            gold_standard_file=file,
+        )
+
+
+def test__add_feature_to_feature_profiles_in_the_middle_of_category(test_feature_adder):
+    test_feature_adder._add_feature_to_feature_profiles(
+        feature_id="A-12",
+        feature_ru="Некий признак"
+    )
+
+    gold_standard_feature_profiles = list(
+        (DIR_WITH_GOLD_STANDARD_FILES / "feature_profiles_new_A_12").glob("*.csv")
+    )
+
+    for file in gold_standard_feature_profiles:
+        test_output_file = test_feature_adder.output_dir_with_feature_profiles / file.name
+
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=test_output_file,
+            gold_standard_file=file,
+        )
+
+
+def test__add_feature_to_feature_profiles_at_the_end_of_category(test_feature_adder):
+    test_feature_adder._add_feature_to_feature_profiles(
+        feature_id="A-14",
+        feature_ru="Некий признак"
+    )
+
+    gold_standard_feature_profiles = list(
+        (DIR_WITH_GOLD_STANDARD_FILES / "feature_profiles_new_A_14").glob("*.csv")
+    )
+
+    for file in gold_standard_feature_profiles:
+        test_output_file = test_feature_adder.output_dir_with_feature_profiles / file.name
+
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=test_output_file,
+            gold_standard_file=file,
+        )
 
 
 # def test_add_feature_writes_good_output_files(test_feature_adder):
