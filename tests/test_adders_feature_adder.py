@@ -332,8 +332,7 @@ def test__add_values_of_new_feature_to_inventory_of_listed_values_at_the_end_of_
 
 def test__add_feature_to_feature_profiles_to_the_beginning_of_category(test_feature_adder):
     test_feature_adder._add_feature_to_feature_profiles(
-        feature_id="A-1",
-        feature_ru="Некий признак"
+        feature_id="A-1", feature_ru="Некий признак"
     )
 
     gold_standard_feature_profiles = list(
@@ -351,8 +350,7 @@ def test__add_feature_to_feature_profiles_to_the_beginning_of_category(test_feat
 
 def test__add_feature_to_feature_profiles_in_the_middle_of_category(test_feature_adder):
     test_feature_adder._add_feature_to_feature_profiles(
-        feature_id="A-12",
-        feature_ru="Некий признак"
+        feature_id="A-12", feature_ru="Некий признак"
     )
 
     gold_standard_feature_profiles = list(
@@ -370,8 +368,7 @@ def test__add_feature_to_feature_profiles_in_the_middle_of_category(test_feature
 
 def test__add_feature_to_feature_profiles_at_the_end_of_category(test_feature_adder):
     test_feature_adder._add_feature_to_feature_profiles(
-        feature_id="A-14",
-        feature_ru="Некий признак"
+        feature_id="A-14", feature_ru="Некий признак"
     )
 
     gold_standard_feature_profiles = list(
