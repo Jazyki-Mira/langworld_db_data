@@ -325,7 +325,8 @@ def test__add_values_of_new_feature_to_inventory_of_listed_values_at_the_end_of_
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_feature_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_listed_values_new_last_feature.csv",
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES
+        / "features_listed_values_new_last_feature.csv",
     )
 
 

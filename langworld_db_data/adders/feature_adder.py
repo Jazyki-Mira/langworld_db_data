@@ -232,7 +232,7 @@ class FeatureAdder(ObjectWithPaths):
         feature_id: str,
         listed_values_to_add: list[dict[str, str]],
     ) -> None:
-        
+
         id_of_category_where_feature_is_inserted = extract_category_id(feature_id)
 
         rows_to_add_to_file_with_listed_values = []
@@ -258,21 +258,28 @@ class FeatureAdder(ObjectWithPaths):
         line_number_to_insert_before_is_found = False
 
         for i, row in enumerate(rows_before_insertion):
-            if extract_category_id(row[KEY_FOR_FEATURE_ID]) != id_of_category_where_feature_is_inserted:
-                continue # ignore all other categories
+            if (
+                extract_category_id(row[KEY_FOR_FEATURE_ID])
+                != id_of_category_where_feature_is_inserted
+            ):
+                continue  # ignore all other categories
 
             if row[KEY_FOR_ID] == rows_to_add_to_file_with_listed_values[0][KEY_FOR_ID]:
                 line_number_where_insertion_starts = i
                 line_number_to_insert_before_is_found = True
-            
+
             feature_index_of_current_row = extract_feature_index(row[KEY_FOR_FEATURE_ID])
             value_index_of_current_row = extract_value_index(row[KEY_FOR_ID])
 
             if feature_index_of_current_row >= extract_feature_index(feature_id):
                 # if feature index of the current value row is equal or more than the index of feature we are adding
                 # then increment feature index of the current row in both feature ID and value ID
-                row[KEY_FOR_FEATURE_ID] = f"{id_of_category_where_feature_is_inserted}{ID_SEPARATOR}{feature_index_of_current_row + 1}"
-                row[KEY_FOR_ID] = f"{row[KEY_FOR_FEATURE_ID]}{ID_SEPARATOR}{value_index_of_current_row}"
+                row[KEY_FOR_FEATURE_ID] = (
+                    f"{id_of_category_where_feature_is_inserted}{ID_SEPARATOR}{feature_index_of_current_row + 1}"
+                )
+                row[KEY_FOR_ID] = (
+                    f"{row[KEY_FOR_FEATURE_ID]}{ID_SEPARATOR}{value_index_of_current_row}"
+                )
 
             if not line_number_to_insert_before_is_found:
                 line_number_where_insertion_starts = i + 1
@@ -281,7 +288,11 @@ class FeatureAdder(ObjectWithPaths):
                 # then adding values will start at penultimate position of the category
                 # resulting in e.g. order C-3-1, C-3-2, C-3-3, C-2-5
 
-        rows_after_insertion = rows_before_insertion[:line_number_where_insertion_starts] + rows_to_add_to_file_with_listed_values + rows_before_insertion[line_number_where_insertion_starts:]
+        rows_after_insertion = (
+            rows_before_insertion[:line_number_where_insertion_starts]
+            + rows_to_add_to_file_with_listed_values
+            + rows_before_insertion[line_number_where_insertion_starts:]
+        )
 
         write_csv(
             rows=rows_after_insertion,
