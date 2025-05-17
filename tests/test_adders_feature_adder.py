@@ -28,7 +28,7 @@ def test_feature_adder():
         input_file_with_features=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER / "features.csv",
         output_file_with_features=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
         input_file_with_listed_values=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER
-        / "features_listed_values",
+        / "features_listed_values.csv",
         output_file_with_listed_values=DIR_WITH_FEATURE_ADDER_TEST_FILES
         / "features_output_feature_adder.csv",
         input_dir_with_feature_profiles=DIR_WITH_ADDERS_TEST_FILES / "feature_profiles",
@@ -299,6 +299,33 @@ def test__add_values_of_new_feature_to_inventory_of_listed_values_at_the_end_of_
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_feature_adder.output_file_with_listed_values,
         gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_listed_values_new_C_3.csv",
+    )
+
+
+def test__add_values_of_new_feature_to_inventory_of_listed_values_at_the_end_of_inventory(
+    test_feature_adder,
+):
+    test_feature_adder._add_values_of_new_feature_to_inventory_of_listed_values(
+        feature_id="N-6",
+        listed_values_to_add=[
+            {
+                "en": "One new value",
+                "ru": "Одно новое значение",
+            },
+            {
+                "en": "Another new value",
+                "ru": "Другое новое значение",
+            },
+            {
+                "en": "And one more value",
+                "ru": "И еще одно значение",
+            },
+        ],
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_feature_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_listed_values_new_last_feature.csv",
     )
 
 
