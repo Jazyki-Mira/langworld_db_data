@@ -144,12 +144,11 @@ def test__add_feature_to_inventory_of_features_in_the_middle_of_category(test_fe
     )
 
 
-def test__add_feature_to_inventory_of_features_throws_error_invalid_feature_id(
-        test_feature_adder
-):
+def test__add_feature_to_inventory_of_features_throws_error_invalid_feature_id(test_feature_adder):
     for bad_feature_id in (0, -7, 418):
-        with pytest.raises(ValueError,
-                        match="Invalid index_to_assign",
+        with pytest.raises(
+            ValueError,
+            match="Invalid index_to_assign",
         ):
             _ = test_feature_adder._add_feature_to_inventory_of_features(
                 category_id="C",
