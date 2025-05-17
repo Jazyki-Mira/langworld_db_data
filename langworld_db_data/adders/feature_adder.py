@@ -63,6 +63,14 @@ class FeatureAdder(ObjectWithPaths):
         listed_values_to_add: list[dict[str, str]],
         index_to_assign: Union[int, None] = None,
     ) -> None:
+        """
+        Add new feature to the feature inventory, listed value inventory and feature profiles.
+
+        index_to_assign means number that must be assigned to the new feature within the category, ex. 13 for A-13.
+        If no index_to_assign is given, the new feature will be added as the last one in the category.
+        index_to_assign must be greater than 0.
+        """
+
         _ = remove_extra_space
         cat_id, feat_en, feat_ru = _(category_id), _(feature_en), _(feature_ru)
 
@@ -237,6 +245,9 @@ class FeatureAdder(ObjectWithPaths):
         feature_id: str,
         listed_values_to_add: list[dict[str, str]],
     ) -> None:
+        """
+        Add values of the new feature to the inventory of listed values.
+        """
 
         id_of_category_where_feature_is_inserted = extract_category_id(feature_id)
 
@@ -290,7 +301,7 @@ class FeatureAdder(ObjectWithPaths):
                 line_number_where_insertion_starts = i + 1
                 # This is necessary in case when new values are added to the end of the category.
                 # If we leave line_number_where_insertion_starts to be equal to i,
-                # then adding values will start at penultimate position of the category
+                # then adding values will start at penultimate position of the feature
                 # resulting in e.g. order C-3-1, C-3-2, C-3-3, C-2-5
 
         rows_after_insertion = (
@@ -313,6 +324,9 @@ class FeatureAdder(ObjectWithPaths):
         feature_id: str,
         feature_ru: str,
     ) -> None:
+        """
+        Add feature to feature profiles. not_stated will be the value of the vew feature in each profile.
+        """
 
         id_of_category_where_feature_is_inserted = extract_category_id(feature_id)
 
