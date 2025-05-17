@@ -96,13 +96,12 @@ class FeatureAdder(ObjectWithPaths):
             raise FeatureAdderError(f"Failed to add new feature to inventory of features. {e}")
 
         self._add_values_of_new_feature_to_inventory_of_listed_values(
-            category_id=category_id,
             feature_id=feature_id,
             listed_values_to_add=listed_values_to_add,
         )
 
         self._add_feature_to_feature_profiles(
-            new_feature_id=feature_id,
+            feature_id=feature_id,
             feature_ru=feat_ru,
         )
 
