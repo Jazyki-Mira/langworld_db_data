@@ -228,7 +228,6 @@ class FeatureAdder(ObjectWithPaths):
 
     def _add_values_of_new_feature_to_inventory_of_listed_values(
         self,
-        category_id: str,
         feature_id: str,
         listed_values_to_add: list[dict[str, str]],
     ) -> None:
