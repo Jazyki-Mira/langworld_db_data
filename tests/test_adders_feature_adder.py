@@ -52,7 +52,7 @@ def test_add_feature(test_feature_adder):
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_feature_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_listed_values_new_H_5.csv"
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_listed_values_new_H_5.csv",
     )
 
     gold_standard_feature_profiles = list(
@@ -66,6 +66,7 @@ def test_add_feature(test_feature_adder):
             output_file=test_output_file,
             gold_standard_file=file,
         )
+
 
 def test_add_feature_fails_with_empty_arg(test_feature_adder):
     for incomplete_set_of_args in (
