@@ -68,6 +68,17 @@ def test_add_feature(test_feature_adder):
         )
 
 
+def test_add_feature_fails_with_invalid_index_to_assign(test_feature_adder):
+    with pytest.raises(FeatureAdderError, match="Failed to add new feature"):
+        test_feature_adder.add_feature(
+            category_id="C",
+            feature_en="Some feature",
+            feature_ru="Некий признак",
+            listed_values_to_add=DUMMY_VALUES_TO_ADD,
+            index_to_assign=418,
+        )
+
+
 def test_add_feature_fails_with_empty_arg(test_feature_adder):
     for incomplete_set_of_args in (
         {
