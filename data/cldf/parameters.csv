@@ -2,30 +2,28 @@ ID,Name,Description,ColumnSpec,Name_RU
 A-1,Number of degrees of vowel height,,,Количество степеней подъема
 A-2,Vowel height degrees,,,Подъемы гласных
 A-3,Opposition in openness/closedness for vowel height degrees,,,Противопоставление по открытости/закрытости в подъемах гласных
-A-4,Presence of degrees of vowel backness,,,Наличие рядов гласных
-A-5,Degrees of vowel backness,,,Ряды гласных
-A-6,Presence of length degrees,,,Наличие фонологических ступеней долготы
-A-7,Number of length degrees,,,Фонологические ступени долготы
-A-8,Presence of vowel opposition in labialization,,,Наличие противопоставления гласных по лабиализации
-A-9,Vowel opposition in labialization,,,Противопоставление гласных по лабиализации
-A-10,Vowel opposition in nasalization,,,Противопоставление гласных по назализации
-A-11,Vowel opposition in pharyngealization,,,Противопоставление гласных по фарингализации
-A-12,Vowel opposition in ATR,,,Противопоставление гласных по продвинутости корня языка
-A-13,Diphthongs and triphthongs,,,Наличие дифтонгов и трифтонгов
-A-14,Types of diphthongs,,,Типы дифтонгов
-A-15,Inventory of obstruents by laryngeal features,,,Инвентарь шумных согласных по ларингальным признакам
-A-16,Inventory of obstruents by manner of articulation,,,Типы шумных согласных по способу артикуляции
-A-17,Inventory of obstruents by place of articulation,,,Инвентарь шумных согласных по месту образования
-A-18,Inventory of labial obstruents by place of articulation,,,Типы шумных губных согласных по месту образования
-A-19,Inventory of coronal obstruents by place of articulation,,,Шумные переднеязычные согласные по месту образования
-A-20,Inventory of guttural obstruents by place of articulation,,,Типы шумных велярных и увулярных согласных по месту образования
-A-21,Presence of inventory of postuvular obstruents by place of articulation,,,Наличие типов шумных ларингальных согласных по месту образования
-A-22,Inventory of postuvular obstruents by place of articulation,,,Типы шумных ларингальных согласных по месту образования
-A-23,Additional articulatory oppositions of obstruents,,,Дополнительные артикуляционные противопоставления шумных согласных
-A-24,Inventory of sonorants by manner of articulation,,,Инвентарь сонорных согласных по способу артикуляции
-A-25,Inventory of sonorants by place of articulation,,,Инвентарь сонорных согласных по месту образования
-A-26,Additional articulatory oppositions of sonorants,,,Дополнительные противопоставления сонорных согласных
-A-27,Inventory of fricatives by place of articulation,,,Инвентарь фрикативных согласных по месту образования
+A-4,Degrees of vowel backness,,,Ряды гласных
+A-5,Presence of length degrees,,,Наличие фонологических ступеней долготы
+A-6,Number of length degrees,,,Фонологические ступени долготы
+A-7,Presence of vowel opposition in labialization,,,Наличие противопоставления гласных по лабиализации
+A-8,Vowel opposition in labialization,,,Противопоставление гласных по лабиализации
+A-9,Vowel opposition in nasalization,,,Противопоставление гласных по назализации
+A-10,Vowel opposition in pharyngealization,,,Противопоставление гласных по фарингализации
+A-11,Vowel opposition in ATR,,,Противопоставление гласных по продвинутости корня языка
+A-12,Diphthongs and triphthongs,,,Наличие дифтонгов и трифтонгов
+A-13,Types of diphthongs,,,Типы дифтонгов
+A-14,Inventory of obstruents by laryngeal features,,,Инвентарь шумных согласных по ларингальным признакам
+A-15,Inventory of obstruents by manner of articulation,,,Типы шумных согласных по способу артикуляции
+A-16,Inventory of obstruents by place of articulation,,,Инвентарь шумных согласных по месту образования
+A-17,Inventory of labial obstruents by place of articulation,,,Типы шумных губных согласных по месту образования
+A-18,Inventory of coronal obstruents by place of articulation,,,Шумные переднеязычные согласные по месту образования
+A-19,Inventory of guttural obstruents by place of articulation,,,Типы шумных велярных и увулярных согласных по месту образования
+A-20,Inventory of postuvular obstruents by place of articulation,,,Типы шумных ларингальных согласных по месту образования
+A-21,Additional articulatory oppositions of obstruents,,,Дополнительные артикуляционные противопоставления шумных согласных
+A-22,Inventory of sonorants by manner of articulation,,,Инвентарь сонорных согласных по способу артикуляции
+A-23,Inventory of sonorants by place of articulation,,,Инвентарь сонорных согласных по месту образования
+A-24,Additional articulatory oppositions of sonorants,,,Дополнительные противопоставления сонорных согласных
+A-25,Inventory of fricatives by place of articulation,,,Инвентарь фрикативных согласных по месту образования
 B-1,Stress character,,,Тип ударения
 B-2,Stress type,,,Вид ударения
 B-3,Stress carrier,,,Носитель ударения
