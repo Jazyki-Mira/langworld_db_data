@@ -1,9 +1,8 @@
 from pathlib import Path
-from typing import Optional
+from typing import Union
 
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import (
-    AUX_ROW_MARKER,
     ID_SEPARATOR,
     KEY_FOR_ENGLISH,
     KEY_FOR_ENGLISH_COMMENT,
@@ -23,8 +22,14 @@ from langworld_db_data.tools.files.csv_xls import (
     write_csv,
 )
 from langworld_db_data.tools.files.txt import remove_extra_space
+from langworld_db_data.tools.value_ids.value_ids import (
+    extract_category_id,
+    extract_feature_index,
+    extract_value_index,
+)
 
-INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS = 100
+KEY_FOR_FEATURE_INDEX = "index"
+KEY_FOR_LINE_NUMBER = "line number"
 
 
 class FeatureAdderError(Exception):
@@ -55,9 +60,16 @@ class FeatureAdder(ObjectWithPaths):
         feature_en: str,
         feature_ru: str,
         listed_values_to_add: list[dict[str, str]],
-        index_of_new_feature: Optional[int] = None,
-        insert_after_index: Optional[int] = None,
+        index_to_assign: Union[int, None] = None,
     ) -> None:
+        """
+        Add new feature to the feature inventory, listed value inventory and feature profiles.
+
+        index_to_assign means number that must be assigned to the new feature within the category, ex. 13 for A-13.
+        If no index_to_assign is given, the new feature will be added as the last one in the category.
+        index_to_assign must be greater than 0.
+        """
+
         _ = remove_extra_space
         cat_id, feat_en, feat_ru = _(category_id), _(feature_en), _(feature_ru)
 
@@ -80,220 +92,373 @@ class FeatureAdder(ObjectWithPaths):
                 f"Category ID <{cat_id}> not found in file" f" {self.file_with_categories.name}"
             )
 
-        rows_with_features = read_dicts_from_csv(self.input_file_with_features)
+        try:
+            feature_id = self._add_feature_to_inventory_of_features(
+                category_id=cat_id,
+                new_feature_en=feat_en,
+                new_feature_ru=feat_ru,
+                index_to_assign=index_to_assign,
+            )
+        except ValueError as e:
+            raise FeatureAdderError(f"Failed to add new feature to inventory of features. {e}")
 
-        if feat_en in [row[KEY_FOR_ENGLISH] for row in rows_with_features] or feat_ru.strip() in [
-            row[KEY_FOR_RUSSIAN] for row in rows_with_features
+        self._add_values_of_new_feature_to_inventory_of_listed_values(
+            feature_id=feature_id,
+            listed_values_to_add=listed_values_to_add,
+        )
+
+        self._add_feature_to_feature_profiles(
+            feature_id=feature_id,
+            feature_ru=feat_ru,
+        )
+
+    def _add_feature_to_inventory_of_features(
+        self,
+        category_id: str,
+        new_feature_en: str,
+        new_feature_ru: str,
+        index_to_assign: Union[int, None] = None,
+    ) -> str:
+        """
+        Add new feature to the inventory of features. Return ID of new feature.
+
+        index_to_assign means number that must be assigned to the new feature within the category, ex. 13 for A-13.
+        If no index_to_assign is given, the new feature will be added as the last one in the category.
+        index_to_assign must be greater than 0.
+        """
+        rows = read_dicts_from_csv(self.input_file_with_features)
+
+        if new_feature_en in [row[KEY_FOR_ENGLISH] for row in rows] or new_feature_ru in [
+            row[KEY_FOR_RUSSIAN] for row in rows
         ]:
             # note that this check should not be restricted to one feature category
             raise FeatureAdderError(
                 "English or Russian feature name is already present in list of features"
             )
 
-        feature_id_to_add_after = None
-        if insert_after_index is not None:
-            feature_id_to_add_after = f"{cat_id}{ID_SEPARATOR}{insert_after_index}"
+        # To figure out the ID of the new feature (if index_to_assign is None)
+        # and to figure out the position of the new feature in inventory
+        # we should get feature indices and line numbers from rows.
+        # The same procedure is done by ListedValueAdder with a specific method.
 
-            if feature_id_to_add_after not in [row[KEY_FOR_ID] for row in rows_with_features]:
-                raise FeatureAdderError(
-                    f"Cannot add feature after {cat_id}{ID_SEPARATOR}{insert_after_index}:"
-                    f" There is no feature with index {index_of_new_feature} in"
-                    f" category {cat_id}."
-                )
+        feature_indices_to_inventory_line_numbers: list[dict[str, int]] = []
 
-        id_of_new_feature = self._generate_feature_id(
-            category_id=cat_id,
-            custom_index_of_new_feature=index_of_new_feature,
-        )
+        for i, row in enumerate(rows):
+            if not category_id in row[KEY_FOR_ID]:
+                continue
 
-        print(
-            (
-                f"\nAdding feature {id_of_new_feature} ({feature_en} / {feature_ru}) to"
-                " list of features"
-            ),
-            end=" ",
-        )
-
-        row_to_add = {
-            KEY_FOR_ID: id_of_new_feature,
-            KEY_FOR_ENGLISH: feat_en,
-            KEY_FOR_RUSSIAN: feat_ru,
-        }
-
-        if insert_after_index is None:
-            print(f"after the last feature in category {cat_id}")
-            rows_to_write = (
-                [
-                    row
-                    for row in rows_with_features
-                    if row[KEY_FOR_ID].split(ID_SEPARATOR)[0] <= cat_id
-                ]
-                + [row_to_add]
-                + [
-                    row
-                    for row in rows_with_features
-                    if row[KEY_FOR_ID].split(ID_SEPARATOR)[0] > cat_id
-                ]
+            feature_index = extract_feature_index(row[KEY_FOR_ID])
+            feature_indices_to_inventory_line_numbers.append(
+                {
+                    KEY_FOR_FEATURE_INDEX: feature_index,
+                    KEY_FOR_LINE_NUMBER: i,
+                }
             )
-        else:
-            print(f"after feature {feature_id_to_add_after}")
-            rows_to_write = []
-            for row in rows_with_features:
-                rows_to_write.append(row)
-                if row[KEY_FOR_ID] == feature_id_to_add_after:
-                    rows_to_write.append(row_to_add)
+
+        # Check if passed index is valid
+        last_index_in_category = feature_indices_to_inventory_line_numbers[-1][
+            KEY_FOR_FEATURE_INDEX
+        ]
+        # The range of numbers acceptable as index_to_assign consists of
+        # all the current indices in the given category and the next number after
+        # the current maximum. To include the maximum, we must add 1 to last_index_in_category.
+        # To include the number right after the maximum, we must again add 1.
+        # This results in adding 2 to the rightmost range border.
+        acceptable_indices_to_assign = set([None] + list(range(1, last_index_in_category + 2)))
+        # Here we add None to the list because None is the default value for appending
+        # feature to the end of category
+        if index_to_assign not in acceptable_indices_to_assign:
+            raise ValueError(
+                f"Invalid index_to_assign (must be between 1 and {last_index_in_category + 1}, "
+                f"{index_to_assign} was given)"
+            )
+
+        if index_to_assign in (
+            None,
+            last_index_in_category + 1,
+        ):  # new feature is being added after the last one
+            id_of_new_feature = (
+                f"{category_id}{ID_SEPARATOR}"
+                f"{feature_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_INDEX] + 1}"
+            )
+            line_number_of_new_feature = (
+                feature_indices_to_inventory_line_numbers[-1][KEY_FOR_LINE_NUMBER] + 1
+            )
+            rows_with_updated_feature_indices = tuple(rows.copy())
+
+        else:  # new feature being inserted in the middle
+            id_of_new_feature = f"{category_id}{ID_SEPARATOR}{index_to_assign}"
+
+            # Go through features of the category, ignore indices less than index_to_assign,
+            # increment all other indices
+            rows_with_updated_feature_indices = (
+                self._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
+                    rows=rows,
+                    feature_indices_to_inventory_line_numbers=tuple(
+                        feature_indices_to_inventory_line_numbers
+                    ),
+                    index_to_assign=index_to_assign,
+                )
+            )
+
+            for feature_index_and_line_number in feature_indices_to_inventory_line_numbers:
+                if feature_index_and_line_number[KEY_FOR_FEATURE_INDEX] == index_to_assign:
+                    line_number_of_new_feature = feature_index_and_line_number[KEY_FOR_LINE_NUMBER]
+
+        row_with_new_feature = tuple(
+            [
+                {
+                    KEY_FOR_ID: id_of_new_feature,
+                    KEY_FOR_ENGLISH: new_feature_en[0].upper() + new_feature_en[1:],
+                    KEY_FOR_RUSSIAN: new_feature_ru[0].upper() + new_feature_ru[1:],
+                    "description_formatted_en": "",
+                    "description_formatted_ru": "",
+                    "is_multiselect": "",
+                    "not_applicable_if": "",
+                    "schema_sections": "",
+                }
+            ]
+        )
+
+        rows_with_new_value_inserted = (
+            rows_with_updated_feature_indices[:line_number_of_new_feature]
+            + row_with_new_feature
+            + rows_with_updated_feature_indices[line_number_of_new_feature:]
+        )
 
         write_csv(
-            rows=rows_to_write,
+            rows_with_new_value_inserted,
             path_to_file=self.output_file_with_features,
             overwrite=True,
             delimiter=",",
         )
 
-        print(f"\nAdding new values in {id_of_new_feature} to file with listed values")
+        print(
+            (
+                f"\nAdding feature {id_of_new_feature} ({new_feature_en} / {new_feature_ru}) to"
+                " list of features"
+            ),
+            end=" ",
+        )
+
+        return id_of_new_feature
+
+    def _add_values_of_new_feature_to_inventory_of_listed_values(
+        self,
+        feature_id: str,
+        listed_values_to_add: list[dict[str, str]],
+    ) -> None:
+        """
+        Add values of the new feature to the inventory of listed values.
+        """
+
+        id_of_category_where_feature_is_inserted = extract_category_id(feature_id)
 
         rows_to_add_to_file_with_listed_values = []
 
         for i, new_listed_value in enumerate(listed_values_to_add, start=1):
-            value_id = f"{id_of_new_feature}{ID_SEPARATOR}{i}"
+            value_id = f"{feature_id}{ID_SEPARATOR}{i}"
             print(f"Value ID {value_id} - {new_listed_value[KEY_FOR_RUSSIAN]} will be added")
             rows_to_add_to_file_with_listed_values.append(
                 {
                     KEY_FOR_ID: value_id,
-                    KEY_FOR_FEATURE_ID: id_of_new_feature,
+                    KEY_FOR_FEATURE_ID: feature_id,
                     KEY_FOR_ENGLISH: new_listed_value[KEY_FOR_ENGLISH],
                     KEY_FOR_RUSSIAN: new_listed_value[KEY_FOR_RUSSIAN],
+                    "description_formatted_en": "",
+                    "description_formatted_ru": "",
                 }
             )
 
-        value_rows_with_new_values_inserted = self.insert_rows(
-            rows_before_insertion=read_dicts_from_csv(self.input_file_with_listed_values),
-            rows_to_add=rows_to_add_to_file_with_listed_values,
-            category_id=cat_id,
-            feature_id_to_add_after=feature_id_to_add_after,
+        rows_before_insertion = read_dicts_from_csv(self.input_file_with_listed_values)
+
+        line_number_where_insertion_starts = 0
+
+        line_number_to_insert_before_is_found = False
+
+        for i, row in enumerate(rows_before_insertion):
+            if (
+                extract_category_id(row[KEY_FOR_FEATURE_ID])
+                != id_of_category_where_feature_is_inserted
+            ):
+                continue  # ignore all other categories
+
+            if row[KEY_FOR_ID] == rows_to_add_to_file_with_listed_values[0][KEY_FOR_ID]:
+                line_number_where_insertion_starts = i
+                line_number_to_insert_before_is_found = True
+
+            feature_index_of_current_row = extract_feature_index(row[KEY_FOR_FEATURE_ID])
+            value_index_of_current_row = extract_value_index(row[KEY_FOR_ID])
+
+            if feature_index_of_current_row >= extract_feature_index(feature_id):
+                # if feature index of the current value row is equal or more than the index of feature we are adding
+                # then increment feature index of the current row in both feature ID and value ID
+                row[KEY_FOR_FEATURE_ID] = (
+                    f"{id_of_category_where_feature_is_inserted}{ID_SEPARATOR}{feature_index_of_current_row + 1}"
+                )
+                row[KEY_FOR_ID] = (
+                    f"{row[KEY_FOR_FEATURE_ID]}{ID_SEPARATOR}{value_index_of_current_row}"
+                )
+
+            if not line_number_to_insert_before_is_found:
+                line_number_where_insertion_starts = i + 1
+                # This is necessary in case when new values are added to the end of the category.
+                # If we leave line_number_where_insertion_starts to be equal to i,
+                # then adding values will start at penultimate position of the feature
+                # resulting in e.g. order C-3-1, C-3-2, C-3-3, C-2-5
+
+        rows_after_insertion = (
+            rows_before_insertion[:line_number_where_insertion_starts]
+            + rows_to_add_to_file_with_listed_values
+            + rows_before_insertion[line_number_where_insertion_starts:]
         )
 
         write_csv(
-            rows=value_rows_with_new_values_inserted,
+            rows=rows_after_insertion,
             path_to_file=self.output_file_with_listed_values,
             overwrite=True,
             delimiter=",",
         )
 
-        print(
-            f"\nAdding feature {id_of_new_feature} to feature profiles with value type"
-            " 'not_stated'"
-        )
+        print(f"\nAdding new values in {feature_id} to file with listed values")
+
+    def _add_feature_to_feature_profiles(
+        self,
+        feature_id: str,
+        feature_ru: str,
+    ) -> None:
+        """
+        Add feature to feature profiles. not_stated will be the value of the vew feature in each profile.
+        """
+
+        id_of_category_where_feature_is_inserted = extract_category_id(feature_id)
+
+        row_to_add = {
+            KEY_FOR_FEATURE_ID: feature_id,
+            KEY_FOR_RUSSIAN_NAME_OF_FEATURE: feature_ru,
+            KEY_FOR_VALUE_TYPE: "not_stated",
+            KEY_FOR_VALUE_ID: "",
+            KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
+            KEY_FOR_RUSSIAN_COMMENT: "",
+            KEY_FOR_ENGLISH_COMMENT: "",
+        }
 
         for file in self.input_feature_profiles:
-            feature_profile_rows_with_new_features_inserted = self.insert_rows(
-                rows_before_insertion=read_dicts_from_csv(file),
-                rows_to_add=[
-                    {
-                        KEY_FOR_FEATURE_ID: id_of_new_feature,
-                        KEY_FOR_RUSSIAN_NAME_OF_FEATURE: feat_ru,
-                        KEY_FOR_VALUE_TYPE: "not_stated",
-                        KEY_FOR_VALUE_ID: "",
-                        KEY_FOR_RUSSIAN_NAME_OF_VALUE: "",
-                        KEY_FOR_RUSSIAN_COMMENT: "",
-                        KEY_FOR_ENGLISH_COMMENT: "",
-                    }
-                ],
-                category_id=cat_id,
-                feature_id_to_add_after=feature_id_to_add_after,
+
+            rows_before_insertion = read_dicts_from_csv(file)
+
+            line_number_where_row_will_be_inserted = 0
+
+            line_number_to_insert_before_is_found = False
+
+            for i, row in enumerate(rows_before_insertion):
+                if (
+                    extract_category_id(row[KEY_FOR_FEATURE_ID])
+                    != id_of_category_where_feature_is_inserted
+                ):
+                    continue
+
+                if row[KEY_FOR_FEATURE_ID] == row_to_add[KEY_FOR_FEATURE_ID]:
+                    line_number_where_row_will_be_inserted = i
+                    line_number_to_insert_before_is_found = True
+
+                feature_index_of_current_row = extract_feature_index(row[KEY_FOR_FEATURE_ID])
+
+                if feature_index_of_current_row >= extract_feature_index(feature_id):
+                    # Same as in the previous method
+                    row[KEY_FOR_FEATURE_ID] = (
+                        f"{id_of_category_where_feature_is_inserted}{ID_SEPARATOR}{feature_index_of_current_row + 1}"
+                    )
+
+                    if row[KEY_FOR_VALUE_TYPE] == "listed":
+                        row[KEY_FOR_VALUE_ID] = (
+                            f"{row[KEY_FOR_FEATURE_ID]}{ID_SEPARATOR}{extract_value_index(row[KEY_FOR_VALUE_ID])}"
+                        )
+
+                if not line_number_to_insert_before_is_found:
+                    line_number_where_row_will_be_inserted = i + 1
+
+            rows_after_insertion = (
+                rows_before_insertion[:line_number_where_row_will_be_inserted]
+                + [row_to_add]
+                + rows_before_insertion[line_number_where_row_will_be_inserted:]
             )
 
             write_csv(
-                rows=feature_profile_rows_with_new_features_inserted,
+                rows=rows_after_insertion,
                 path_to_file=self.output_dir_with_feature_profiles / file.name,
                 overwrite=True,
                 delimiter=",",
             )
 
-    def _generate_feature_id(
-        self,
-        category_id: str,
-        custom_index_of_new_feature: Optional[int],
-    ) -> str:
-        """
-        Generates feature ID. If custom feature index is given, tries to use it.
-        Otherwise, takes the largest feature ID that is **less than 100**
-        (to reserve indices that are higher than 100 for custom feature indices)
-        and produces feature ID with next index (plus one).
-        """
-        if (
-            custom_index_of_new_feature is not None
-            and custom_index_of_new_feature < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
-        ):
-            raise FeatureAdderError(
-                "For clarity, manual feature indices must be greater than"
-                f" {INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS} (you gave"
-                f" {custom_index_of_new_feature})."
-            )
-
-        rows_with_features = read_dicts_from_csv(self.input_file_with_features)
-        feature_ids_in_category = [
-            row[KEY_FOR_ID]
-            for row in rows_with_features
-            if row[KEY_FOR_ID].startswith(f"{category_id}{ID_SEPARATOR}")
-        ]
-
-        if custom_index_of_new_feature is None:
-            largest_index_under_100 = max(
-                int(feature_id.split(ID_SEPARATOR)[1])
-                for feature_id in feature_ids_in_category
-                if int(feature_id.split(ID_SEPARATOR)[1]) < INDEX_THRESHOLD_FOR_REGULAR_FEATURE_IDS
-            )
-            return f"{category_id}{ID_SEPARATOR}{largest_index_under_100 + 1}"
-
-        custom_index_str = str(custom_index_of_new_feature)
-
-        if f"{category_id}{ID_SEPARATOR}{custom_index_str}" in feature_ids_in_category:
-            raise FeatureAdderError(
-                f"Feature index {custom_index_str} already in use in category" f" {category_id}"
-            )
-        else:
-            return f"{category_id}{ID_SEPARATOR}{custom_index_str}"
+        print(f"\nAdding feature {feature_id} to feature profiles with value type" " 'not_stated'")
 
     @staticmethod
-    def insert_rows(
-        rows_before_insertion: list[dict[str, str]],
-        rows_to_add: list[dict[str, str]],
-        category_id: str,
-        feature_id_to_add_after: Optional[str],
-    ) -> list[dict[str, str]]:
-        rows = rows_before_insertion[:]
+    def _increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
+        rows: list[dict[str, str]],
+        feature_indices_to_inventory_line_numbers: tuple[dict[str, int], ...],
+        index_to_assign: int,
+    ) -> tuple[dict[str, str], ...]:
+        """
+        Increases by 1 index of every feature that will come after the feature passed for insertion.
 
-        if feature_id_to_add_after is None:
-            for row_index, row in enumerate(rows):
-                if (
-                    row[KEY_FOR_FEATURE_ID].split(ID_SEPARATOR)[0] > category_id
-                    or row[KEY_FOR_FEATURE_ID] == AUX_ROW_MARKER
-                ):
-                    return rows[:row_index] + rows_to_add + rows[row_index:]
-            else:  # we have reached end of file
-                return rows + rows_to_add
-        else:
-            found_feature_to_add_after = False
-            for row_index, row in enumerate(rows):
-                if (
-                    row[KEY_FOR_FEATURE_ID] == feature_id_to_add_after
-                    and not found_feature_to_add_after
-                ):
-                    # found beginning of block of values for relevant feature
-                    found_feature_to_add_after = True
-                elif (
-                    row[KEY_FOR_FEATURE_ID] != feature_id_to_add_after
-                    and found_feature_to_add_after
-                ):
-                    # found end of block
-                    return rows[:row_index] + rows_to_add + rows[row_index:]
-            else:
-                return rows + rows_to_add
+        Returns tuple of dictionaries with incremented indices and line numbers.
+        """
+
+        rows_with_incremented_indices = rows[:]
+        for feature_index_and_line_number in feature_indices_to_inventory_line_numbers:
+            if feature_index_and_line_number[KEY_FOR_FEATURE_INDEX] < index_to_assign:
+                continue
+            row_where_id_must_be_incremented = feature_index_and_line_number[KEY_FOR_LINE_NUMBER]
+            feature_id_to_increment = rows_with_incremented_indices[
+                row_where_id_must_be_incremented
+            ][KEY_FOR_ID]
+            rows_with_incremented_indices[row_where_id_must_be_incremented][KEY_FOR_ID] = (
+                f"{extract_category_id(feature_id_to_increment)}{ID_SEPARATOR}"
+                f"{extract_feature_index(feature_id_to_increment) + 1}"
+            )
+
+        return tuple(rows_with_incremented_indices)
+
+    # @staticmethod
+    # def insert_rows(
+    #     rows_before_insertion: list[dict[str, str]],
+    #     rows_to_add: list[dict[str, str]],
+    #     category_id: str,
+    #     feature_id_to_add_after: Optional[str],
+    # ) -> list[dict[str, str]]:
+    #     rows = rows_before_insertion[:]
+
+    #     if feature_id_to_add_after is None:
+    #         for row_index, row in enumerate(rows):
+    #             if (
+    #                 row[KEY_FOR_FEATURE_ID].split(ID_SEPARATOR)[0] > category_id
+    #                 or row[KEY_FOR_FEATURE_ID] == AUX_ROW_MARKER
+    #             ):
+    #                 return rows[:row_index] + rows_to_add + rows[row_index:]
+    #         else:  # we have reached end of file
+    #             return rows + rows_to_add
+    #     else:
+    #         found_feature_to_add_after = False
+    #         for row_index, row in enumerate(rows):
+    #             if (
+    #                 row[KEY_FOR_FEATURE_ID] == feature_id_to_add_after
+    #                 and not found_feature_to_add_after
+    #             ):
+    #                 # found beginning of block of values for relevant feature
+    #                 found_feature_to_add_after = True
+    #             elif (
+    #                 row[KEY_FOR_FEATURE_ID] != feature_id_to_add_after
+    #                 and found_feature_to_add_after
+    #             ):
+    #                 # found end of block
+    #                 return rows[:row_index] + rows_to_add + rows[row_index:]
+    #         else:
+    #             return rows + rows_to_add
 
 
 if __name__ == "__main__":
-    FeatureAdder.add_feature(
+    FeatureAdder().add_feature(
         category_id="",
         feature_en="",
         feature_ru="",
