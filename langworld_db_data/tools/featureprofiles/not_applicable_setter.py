@@ -14,17 +14,19 @@ from langworld_db_data.validators.feature_profile_validator import (
 
 
 class NotApplicableSetter:
-    """A class for setting value type to `not_applicable`
-    in feature profiles according to rules listed in YAML file.
+    """A class for setting value type to `not_applicable` in feature profiles based on feature dependencies.
 
-    If a certain feature has a certain value ID, all dependent
-    features that have value type 'not_stated' (because the curator
-    forgot to put 'not_applicable' when filling out the questionnaire)
-    will get value type 'not_applicable'.
+    This class automatically sets value type to 'not_applicable' for features that should not be applicable
+    when certain other features have specific values. The dependency rules are stored in the features.csv file
+    in the 'not_applicable_if' column, which specifies which feature values trigger the 'not_applicable' status
+    in dependent features.
 
-    Note that this class will not change values in dependent features
-    that are wrong (i.e. not of type 'not_stated' and/or have some value text).
-    It is a job of a validator to alert about such cases.
+    For example, if feature A has a value that makes feature B irrelevant, feature B will be automatically
+    set to 'not_applicable' if it was previously marked as 'not_stated'.
+
+    Note that this class will not modify features that have already been filled with actual values or
+    have been explicitly marked as something other than 'not_stated'. It is the responsibility of the
+    validator to check for such cases and alert about potential issues.
     """
 
     def __init__(
