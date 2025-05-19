@@ -12,19 +12,22 @@ from langworld_db_data.tools.featureprofiles.feature_profile_writer_from_diction
 
 VALUE_ABSENCE_ID_MAP = {
     "A-6": {
-        "absense_id_in_old_feature": "A-6-1",
+        "absence_id_in_old_feature": "A-6-1",
         "new_feature_for_presence_marking": "A-5",
-        "absense_id_in_new_feature": "A-5-2",
+        "absence_id_in_new_feature": "A-5-2",
+        "presence_id_in_new_feature": "A-5-1",
     },
     "A-8": {
-        "absense_id_in_old_feature": "A-8-1",
+        "absence_id_in_old_feature": "A-8-1",
         "new_feature_for_presence_marking": "A-7",
-        "absense_id_in_new_feature": "A-7-2",
+        "absence_id_in_new_feature": "A-7-2",
+        "presence_id_in_new_feature": "A-7-1",
     },
     "A-10": {
-        "absense_id_in_old_feature": "A-10-1",
+        "absence_id_in_old_feature": "A-10-1",
         "new_feature_for_presence_marking": "A-9",
-        "absense_id_in_new_feature": "A-9-2",
+        "absence_id_in_new_feature": "A-9-2",
+        "presence_id_in_new_feature": "A-9-1",
     },
 }
 
@@ -78,7 +81,7 @@ class AbsenceValueHandler:
             # Check if current feature has absence value
             if (
                 amended_profile[feature_id].value_type == "listed"
-                and amended_profile[feature_id].value_id == mapping["absense_id_in_old_feature"]
+                and amended_profile[feature_id].value_id == mapping["absence_id_in_old_feature"]
             ):
 
                 print(f"Found absence value in {feature_id}")
@@ -86,7 +89,40 @@ class AbsenceValueHandler:
 
                 # Set presence feature to absence value
                 presence_feature = mapping["new_feature_for_presence_marking"]
-                presence_value_id = mapping["absense_id_in_new_feature"]
+                presence_value_id = mapping["absence_id_in_new_feature"]
+
+            # Check if current feature has presence value
+            elif (
+                amended_profile[feature_id].value_type == "listed"
+                and amended_profile[feature_id].value_id != mapping["absence_id_in_old_feature"]
+            ):
+
+                print(f"Found presence value in {feature_id}")
+                changes_made = True
+
+                # Set presence feature to presence value
+                presence_feature = mapping["new_feature_for_presence_marking"]
+                presence_value_id = mapping["presence_id_in_new_feature"]
+
+            else:
+                continue
+
+            value_name = get_value_name_for_id(presence_value_id)
+            if not value_name:
+                print(f"Warning: Could not find value name for ID {presence_value_id}")
+                continue
+
+            print(f"Setting {presence_feature} to {presence_value_id} ({value_name})")
+            amended_profile[presence_feature].value_type = "listed"
+            amended_profile[presence_feature].value_id = presence_value_id
+            amended_profile[presence_feature].value_ru = value_name
+
+            # Set current feature to not_applicable only if it was absence value
+            if amended_profile[feature_id].value_id == mapping["absence_id_in_old_feature"]:
+                print(f"Setting {feature_id} to not_applicable")
+                amended_profile[feature_id].value_type = "not_applicable"
+                amended_profile[feature_id].value_id = ""
+                amended_profile[feature_id].value_ru = ""
 
                 value_name = get_value_name_for_id(presence_value_id)
                 if not value_name:
