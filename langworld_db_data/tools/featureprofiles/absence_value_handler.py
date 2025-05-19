@@ -35,7 +35,11 @@ def get_value_name_for_id(value_id: str) -> Optional[str]:
         for line in f:
             if not line.strip():
                 continue
-            id_, _, en_name, _, _, _ = line.strip().split(",")
+            # Split and remove empty columns
+            columns = [col for col in line.strip().split(",") if col]
+            if len(columns) < 3:  # We need at least ID and name
+                continue
+            id_, _, en_name = columns[:3]  # Take first three non-empty columns
             if id_ == value_id:
                 return en_name
     return None
@@ -98,7 +102,7 @@ class AbsenceValueHandler:
                 print(f"Setting {feature_id} to not_applicable")
                 amended_profile[feature_id].value_type = "not_applicable"
                 amended_profile[feature_id].value_id = ""
-                amended_profile[feature_id].value_name = ""
+                amended_profile[feature_id].value_ru = ""
 
         if changes_made:
             self.writer.write(feature_dict=amended_profile, output_path=file)
