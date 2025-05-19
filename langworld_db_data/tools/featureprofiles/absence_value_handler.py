@@ -54,8 +54,8 @@ class AbsenceValueHandler:
     3. Set the original feature to not_applicable
     """
 
-    def __init__(self, feature_profile_path: Path):
-        self.feature_profile = feature_profile_path
+    def __init__(self, dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR):
+        self.feature_profiles = sorted(list(dir_with_feature_profiles.glob("*.csv")))
         self.reader = FeatureProfileReader()
         self.writer = FeatureProfileWriterFromDictionary
 
@@ -110,11 +110,12 @@ class AbsenceValueHandler:
 
         return changes_made
 
-    def process_one_profile(self) -> None:
-        """Process a single feature profile."""
-        self.process_feature_profile(self.feature_profile)
+    def process_all_profiles(self) -> None:
+        """Process all feature profiles in the directory."""
+        for file in self.feature_profiles:
+            self.process_feature_profile(file)
 
 
 if __name__ == "__main__":
-    handler = AbsenceValueHandler(feature_profile_path=Path("data/feature_profiles/bashkardi.csv"))
-    handler.process_one_profile()
+    handler = AbsenceValueHandler()
+    handler.process_all_profiles()
