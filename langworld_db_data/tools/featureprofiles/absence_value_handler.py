@@ -37,11 +37,11 @@ def get_value_name_for_id(value_id: str) -> Optional[str]:
                 continue
             # Split and remove empty columns
             columns = [col for col in line.strip().split(",") if col]
-            if len(columns) < 3:  # We need at least ID and name
+            if len(columns) < 4:  # We need at least ID and name
                 continue
-            id_, _, en_name = columns[:3]  # Take first three non-empty columns
+            id_, _, _, ru_name = columns[:4]  # Take first four non-empty columns
             if id_ == value_id:
-                return en_name
+                return ru_name
     return None
 
 
