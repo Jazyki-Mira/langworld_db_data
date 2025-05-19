@@ -22,9 +22,9 @@ VALUE_ABSENCE_ID_MAP = {
         "absense_id_in_new_feature": "A-7-2",
     },
     "A-10": {
-        "absense_id_in_new_feature": "A-10-1",
+        "absense_id_in_old_feature": "A-10-1",
         "new_feature_for_presence_marking": "A-9",
-        "absense_id_in_old_feature": "A-9-2",
+        "absense_id_in_new_feature": "A-9-2",
     },
 }
 
@@ -50,8 +50,8 @@ class AbsenceValueHandler:
     3. Set the original feature to not_applicable
     """
 
-    def __init__(self, dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR):
-        self.feature_profiles = sorted(list(dir_with_feature_profiles.glob("*.csv")))
+    def __init__(self, feature_profile_path: Path):
+        self.feature_profile = feature_profile_path
         self.reader = FeatureProfileReader()
         self.writer = FeatureProfileWriterFromDictionary
 
@@ -73,16 +73,16 @@ class AbsenceValueHandler:
         for feature_id, mapping in VALUE_ABSENCE_ID_MAP.items():
             # Check if current feature has absence value
             if (
-                profile[feature_id].value_type == "listed"
-                and profile[feature_id].value_id == mapping["absence_id"]
+                amended_profile[feature_id].value_type == "listed"
+                and amended_profile[feature_id].value_id == mapping["absense_id_in_old_feature"]
             ):
 
                 print(f"Found absence value in {feature_id}")
                 changes_made = True
 
                 # Set presence feature to absence value
-                presence_feature = mapping["presence_feature"]
-                presence_value_id = mapping["presence_id"]
+                presence_feature = mapping["new_feature_for_presence_marking"]
+                presence_value_id = mapping["absense_id_in_new_feature"]
 
                 value_name = get_value_name_for_id(presence_value_id)
                 if not value_name:
@@ -106,12 +106,11 @@ class AbsenceValueHandler:
 
         return changes_made
 
-    def process_all_profiles(self) -> None:
-        """Process all feature profiles in the directory."""
-        for file in self.feature_profiles:
-            self.process_feature_profile(file)
+    def process_one_profile(self) -> None:
+        """Process a single feature profile."""
+        self.process_feature_profile(self.feature_profile)
 
 
 if __name__ == "__main__":
-    handler = AbsenceValueHandler()
-    handler.process_all_profiles()
+    handler = AbsenceValueHandler(feature_profile_path=Path("data/feature_profiles/bashkardi.csv"))
+    handler.process_one_profile()
