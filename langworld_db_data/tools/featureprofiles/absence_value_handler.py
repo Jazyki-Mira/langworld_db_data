@@ -96,7 +96,7 @@ class AbsenceValueHandler:
                 print(f"Setting {presence_feature} to {presence_value_id} ({value_name})")
                 amended_profile[presence_feature].value_type = "listed"
                 amended_profile[presence_feature].value_id = presence_value_id
-                amended_profile[presence_feature].value_name = value_name
+                amended_profile[presence_feature].value_ru = value_name
 
                 # Set current feature to not_applicable
                 print(f"Setting {feature_id} to not_applicable")
