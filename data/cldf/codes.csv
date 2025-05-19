@@ -20,29 +20,26 @@ A-4-2,A-4,Front and back,,Передний и непередний / задни�
 A-4-3,A-4,"Front, central and back",,"Передний, средний (смешанный) и задний"
 A-5-1,A-5,Present,,Присутствуют
 A-5-2,A-5,Absent,,Отсутствуют
-A-6-1,A-6,No length degrees,,Фонологические ступени долготы отсутствуют
-A-6-2,A-6,Two,,Две ступени
-A-6-3,A-6,Three,,Три ступени
+A-6-1,A-6,Two,,Две ступени
+A-6-2,A-6,Three,,Три ступени
 A-7-1,A-7,Present,,Присутствует
 A-7-2,A-7,Absent,,Отсутствует
-A-8-1,A-8,No vowel opposition in labialization,,Противопоставление гласных по лабиализации отсутствует
-A-8-2,A-8,Present for front vowels,,В переднем ряду
-A-8-3,A-8,Present for central vowels,,В среднем ряду
-A-8-4,A-8,Present for back vowels,,В заднем ряду
-A-8-5,A-8,Present for front and central vowels,,В переднем и среднем рядах
-A-8-6,A-8,Present for front and back vowels,,В переднем и заднем / непереднем рядах
-A-8-7,A-8,Present for central and back vowels,,В среднем и заднем рядах
-A-8-8,A-8,"Present for front, central and back vowels",,"В переднем, среднем и заднем рядах / во всех рядах"
+A-8-1,A-8,Present for front vowels,,В переднем ряду
+A-8-2,A-8,Present for central vowels,,В среднем ряду
+A-8-3,A-8,Present for back vowels,,В заднем ряду
+A-8-4,A-8,Present for front and central vowels,,В переднем и среднем рядах
+A-8-5,A-8,Present for front and back vowels,,В переднем и заднем / непереднем рядах
+A-8-6,A-8,Present for central and back vowels,,В среднем и заднем рядах
+A-8-7,A-8,"Present for front, central and back vowels",,"В переднем, среднем и заднем рядах / во всех рядах"
 A-9-1,A-9,Present,,Присутствует
 A-9-2,A-9,Absent,,Отсутствует
-A-10-1,A-10,No vowel opposition in nasalization,,Противопоставление гласных по назализации отсутствует
-A-10-2,A-10,Present for front vowels,,В переднем ряду
-A-10-3,A-10,Present for central vowels,,В среднем ряду
-A-10-4,A-10,Present for back vowels,,В заднем ряду
-A-10-5,A-10,Present for front and central vowels,,В переднем и среднем рядах
-A-10-6,A-10,Present for front and back vowels,,В переднем и заднем / непереднем рядах
-A-10-7,A-10,Present for central and back vowels,,В среднем и заднем рядах
-A-10-8,A-10,"Present for front, central and back vowels",,"В переднем, среднем и заднем рядах / во всех рядах"
+A-10-1,A-10,Present for front vowels,,В переднем ряду
+A-10-2,A-10,Present for central vowels,,В среднем ряду
+A-10-3,A-10,Present for back vowels,,В заднем ряду
+A-10-4,A-10,Present for front and central vowels,,В переднем и среднем рядах
+A-10-5,A-10,Present for front and back vowels,,В переднем и заднем / непереднем рядах
+A-10-6,A-10,Present for central and back vowels,,В среднем и заднем рядах
+A-10-7,A-10,"Present for front, central and back vowels",,"В переднем, среднем и заднем рядах / во всех рядах"
 A-11-1,A-11,No vowel opposition in pharyngealization,,Противопоставление гласных по фарингализации отсутствует
 A-11-2,A-11,Present for front vowels,,В переднем ряду
 A-11-3,A-11,Present for central vowels,,В среднем ряду
