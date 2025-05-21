@@ -15691,7 +15691,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15690,milyan,A-14,Falling (descending),A-14-2,,,Нисходящие,
 15691,milyan,A-15,Opposition by presence and absence of voice,A-15-1,,,Противопоставление по звонкости/глухости,
 15692,milyan,A-16,"Plosives, fricatives and affricates",A-16-3,,,"Взрывные, фрикативные и аффрикаты",
-15693,milyan,A-17,"Labial, dental-alveolar, palatal, velar and labialized velar",A-17-6,,,"Лабиальные, дентально-альвеолярные, палатальные, велярные и велярные огубленные",
+15693,milyan,A-17,"Labial, coronal, dorsal and guttural",A-17-3,,,"Губные, переднеязычные, палатальные и велярные/увулярные",
 15694,milyan,A-18,Only bilabial,A-18-1,,,Только губно-губные,
 15695,milyan,A-19,Dental-alveolar and palatal,A-19-21,,,Дентально-альвеолярные и палатальные,
 15696,milyan,A-20,Velar,A-20-1,,,Велярные,
