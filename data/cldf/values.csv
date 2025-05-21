@@ -8249,7 +8249,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8248,hattic,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 8249,hattic,A-4,"Front, central and back",A-4-3,,,"Передний, средний (смешанный) и задний",
 8250,hattic,A-16,"Plosives, fricatives and affricates",A-16-3,,,"Взрывные, фрикативные и аффрикаты",
-8251,hattic,A-17,"Labial, coronal, dorsal and postuvular",A-17-4,,,"Лабиальные, переднеязычные, среднеязычные и постувулярные",
+8251,hattic,A-17,"Labial, coronal, guttural and postuvular",A-17-5,,,"Губные, переднеязычные, велярные/увулярные и ларингальные",
 8252,hattic,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
 8253,hattic,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",
 8254,hattic,A-24,"Labial, coronal and dorsal",A-24-14,,,"Лабиальные, переднеязычные и среднеязычные",
@@ -11197,7 +11197,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11196,kerek,A-12,No vowel opposition in ATR,A-12-1,,,Противопоставление гласных по продвинутости корня языка отсутствует,
 11197,kerek,A-13,No diphthongs and triphthongs,A-13-1,,,Дифтонги и трифтонги отсутствуют,
 11198,kerek,A-16,"Plosives, fricatives and affricates",A-16-3,,,"Взрывные, фрикативные и аффрикаты",смычные и щелевые
-11199,kerek,A-17,"Labial, coronal, dorsal and postuvular",A-17-4,,,"Лабиальные, переднеязычные, среднеязычные и постувулярные",
+11199,kerek,A-17,"Labial, coronal, guttural and postuvular",A-17-5,,,"Губные, переднеязычные, велярные/увулярные и ларингальные",
 11200,kerek,A-18,Only bilabial,A-18-1,,,Только губно-губные,
 11201,kerek,A-19,Dental,A-19-1,,,Дентальные,
 11202,kerek,A-23,"Occlusive, approximant and pharyngeal",A-23-14,,,"Смычные, аппроксиманты и фарингальные",
