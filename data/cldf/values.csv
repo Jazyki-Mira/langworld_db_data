@@ -22967,7 +22967,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22965,standard_eastern_armenian,A-14,Rising (ascending),A-14-1,,,Восходящие,
 22966,standard_eastern_armenian,A-15,Opposition by voice presence/absence and by aspiration,A-15-6,,,Противопоставления по звонкости/глухости и по аспирации,
 22967,standard_eastern_armenian,A-16,"Plosives, fricatives and affricates",A-16-3,,,"Взрывные, фрикативные и аффрикаты",
-22968,standard_eastern_armenian,A-17,"Labial, coronal, dorsal, velar-uvular and laringal",A-17-10,,,"Лабиальные, переднеязычные, среднеязычные, велярно-увулярные и гортанные",
+22968,standard_eastern_armenian,A-17,"Labial, coronal, dorsal, guttural and postuvular",A-17-2,,,"Губные, переднеязычные, палатальные, велярные/увулярные и ларингальные",
 22969,standard_eastern_armenian,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
 22970,standard_eastern_armenian,A-19,"Dental, alveolar and alveo-palatal",A-19-27,,,"Дентальные, альвеолярные и альвео-палатальные",
 22971,standard_eastern_armenian,A-23,"Nasal, vibrant, lateral and liquid",A-23-15,,,"Назальные, вибранты, латеральные и плавные",
