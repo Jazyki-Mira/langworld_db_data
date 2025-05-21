@@ -9519,7 +9519,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9518,itelmen,A-13,No diphthongs and triphthongs,A-13-1,,,Дифтонги и трифтонги отсутствуют,
 9519,itelmen,A-15,Opposition by presence and absence of voice,A-15-1,,,Противопоставление по звонкости/глухости,также противопоставляются абруптивные и неабруптивные согласные
 9520,itelmen,A-16,"Plosives, fricatives and affricates",A-16-3,,,"Взрывные, фрикативные и аффрикаты",
-9521,itelmen,A-17,"Labial, coronal, dorsal, guttural and uvular",A-17-8,,,"Лабиальные, переднеязычные, среднеязычные, заднеязычные и увулярные",
+9521,itelmen,A-17,"Labial, coronal, dorsal and guttural",A-17-3,,,"Губные, переднеязычные, палатальные и велярные/увулярные",
 9522,itelmen,A-18,Only bilabial,A-18-1,,,Только губно-губные,
 9523,itelmen,A-20,Velar and uvular,A-20-3,,,Велярные и увулярные,
 9524,itelmen,A-23,"Nasal, vibrant and lateral",A-23-12,,,"Назальные, вибранты и латеральные",
@@ -19782,7 +19782,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19780,rajbanshi_nepal,A-13,Only diphthongs present,A-13-2,,,Только дифтонги,
 19781,rajbanshi_nepal,A-15,Opposition by voice presence/absence and by aspiration,A-15-6,,,Противопоставления по звонкости/глухости и по аспирации,
 19782,rajbanshi_nepal,A-16,"Plosives, fricatives and affricates",A-16-3,,,"Взрывные, фрикативные и аффрикаты",
-19783,rajbanshi_nepal,A-17,"Labial, coronal, dorsal, guttural and uvular",A-17-8,,,"Лабиальные, переднеязычные, среднеязычные, заднеязычные и увулярные",
+19783,rajbanshi_nepal,A-17,"Labial, coronal, dorsal and guttural",A-17-3,,,"Губные, переднеязычные, палатальные и велярные/увулярные",
 19784,rajbanshi_nepal,A-18,Only bilabial,A-18-1,,,Только губно-губные,
 19785,rajbanshi_nepal,A-19,"Dental, alveolar and alveo-palatal",A-19-27,,,"Дентальные, альвеолярные и альвео-палатальные",
 19786,rajbanshi_nepal,A-20,Velar,A-20-1,,,Велярные,
