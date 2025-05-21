@@ -3752,7 +3752,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3751,chukchi,A-11,No vowel opposition in pharyngealization,A-11-1,,,Противопоставление гласных по фарингализации отсутствует,
 3752,chukchi,A-13,No diphthongs and triphthongs,A-13-1,,,Дифтонги и трифтонги отсутствуют,
 3753,chukchi,A-16,"Plosives, fricatives and affricates",A-16-3,,,"Взрывные, фрикативные и аффрикаты",
-3754,chukchi,A-17,"Bilabial, coronal, dorsal, guttural, uvular and laringal",A-17-7,,,"Билабиальные, переднеязычные, среднеязычные, заднеязычные, увулярные и гортанные",
+3754,chukchi,A-17,"Labial, coronal and guttural",A-17-1,,,"Губные, переднеязычные и велярные/увулярные",
 3755,chukchi,A-18,Only bilabial,A-18-1,,,Только губно-губные,
 3756,chukchi,A-22,Absent,A-22-1,,,Отсутствуют,
 3757,chukchi,A-23,Nasal and approximant,A-23-9,,,Назальные и аппроксиманты,
