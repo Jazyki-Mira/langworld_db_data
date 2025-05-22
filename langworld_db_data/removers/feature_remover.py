@@ -1,11 +1,12 @@
 from pathlib import Path
 
 from langworld_db_data import ObjectWithPaths
-
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
+
 
 class FeatureRemoverError(Exception):
     pass
+
 
 class FeatureRemover(ObjectWithPaths):
     def __init__(
