@@ -78,4 +78,4 @@ class FeatureRemover(ObjectWithPaths):
                 line_number_of_row_to_remove = i
                 break
 
-        return rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove+1:]
+        return rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove + 1 :]
