@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Literal, Union
 
 from langworld_db_data import ObjectWithPaths
 
@@ -50,4 +51,12 @@ class FeatureRemover(ObjectWithPaths):
         Two sub-tasks: remove lines with target feature values and update feature indices
         of features and their values that follow it
         """
+        pass
+
+    @staticmethod
+    def _remove_one_line(
+        flag_type: Literal["feature_id", "feature_index", "value_id", "value_index"],
+        flag_content: str,
+        rows: list[dict[str, str]],
+    ) -> list[dict[str, str]]:
         pass
