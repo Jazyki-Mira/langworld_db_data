@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Literal, Union
+from typing import Literal
 
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
@@ -55,9 +55,27 @@ class FeatureRemover(ObjectWithPaths):
         pass
 
     @staticmethod
-    def _remove_one_line(
-        flag_type: Literal["feature_id", "feature_index", "value_id", "value_index"],
-        flag_content: str,
+    def _remove_one_row(
+        match_column_name: Literal["feature_id", "id", "value_id"],
+        match_content: str,
         rows: list[dict[str, str]],
     ) -> list[dict[str, str]]:
-        pass
+        """
+        Removes one row from given rows (be it an inventory or a feature profile)
+        which has specified content.
+        match_type denotes if we want to delete a row with certain feature or value properties
+        (e.g. feature index or value ID).
+        match_content is argument of type 'str'. The first row which has it as an argument
+        of the kind denoted by match_type will be removed.
+        """
+        # This method is written in such way that in the future it can be made universal
+        # for all removers.
+
+        line_number_of_row_to_remove = 0
+
+        for i, row in enumerate(rows):
+            if row[match_column_name] == match_content:
+                line_number_of_row_to_remove = i
+                break
+
+        return rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove+1:]
