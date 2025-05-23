@@ -3,6 +3,7 @@ from typing import Literal
 
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
+from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv
 
 
 class FeatureRemoverError(Exception):
@@ -27,18 +28,37 @@ class FeatureRemover(ObjectWithPaths):
         self.input_file_with_features = input_file_with_features
         self.output_file_with_features = output_file_with_features
 
-    def remove_feature():
+    def remove_feature(
+        self,
+        feature_id: str,
+    ):
         """
         Consists of removing from features inventory, from listed values inventory
         and from feature profiles (same as in FeatureAdder).
         """
-        pass
+        self._remove_from_inventory_of_features(
+            feature_id=feature_id,
+        )
+        self._remove_from_inventory_of_listed_values()
+        self._remove_from_feature_profiles()
 
-    def _remove_from_inventory_of_features():
+    def _remove_from_inventory_of_features(
+        self,
+        feature_id: str,
+    ):
         """
         Two sub-tasks: remove line with target feature and update feature indices that follow it
         """
-        pass
+
+        rows = read_dicts_from_csv(
+            path_to_file=self.input_file_with_features,
+        )
+
+        rows_with_removed_line = self._remove_one_row(
+            match_column_name="id",
+            match_content=feature_id,
+            rows=rows
+        )
 
     def _remove_from_inventory_of_listed_values():
         """
@@ -47,7 +67,7 @@ class FeatureRemover(ObjectWithPaths):
         """
         pass
 
-    def _remove_from_feature_profiles_and_update_ids_whose_indices_are_greater_than_one_of_removed_value():
+    def _remove_from_feature_profiles():
         """
         Two sub-tasks: remove lines with target feature values and update feature indices
         of features and their values that follow it
@@ -55,18 +75,18 @@ class FeatureRemover(ObjectWithPaths):
         pass
 
     @staticmethod
-    def _remove_one_row(
-        match_column_name: Literal["feature_id", "id", "value_id"],
+    def _remove_one_row_and_return_its_line_number(
+        match_column_name: Literal["feature_id", "id"],
         match_content: str,
         rows: list[dict[str, str]],
-    ) -> list[dict[str, str]]:
+    ) -> tuple[list[dict[str, str]], int]:
         """
-        Removes one row from given rows (be it an inventory or a feature profile)
+        Removes exactly one row from given rows (be it an inventory or a feature profile)
         which has specified content.
-        match_type denotes if we want to delete a row with certain feature or value properties
-        (e.g. feature index or value ID).
-        match_content is argument of type 'str'. The first row which has it as an argument
-        of the kind denoted by match_type will be removed.
+        match_column_name denotes the name of column where search must be performed.
+        match_content is argument of type 'str'. The first row which displays it as an argument
+        of the kind denoted by match_column_name will be removed.
+        For removing more rows, please use _remove_several_rows.
         """
         # This method is written in such way that in the future it can be made universal
         # for all removers.
@@ -83,4 +103,29 @@ class FeatureRemover(ObjectWithPaths):
                 f"Row with given properties not found. Perhaps match_content is invalid: {match_content}"
             )
 
-        return rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove + 1 :]
+        return (rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove + 1 :], i)
+    
+    @staticmethod
+    def _remove_several_rows(
+        match_column_name: Literal["feature_id", "id"],
+        match_content: str,
+        rows: list[dict[str, str]],
+    ) -> list[dict[str, str]]:
+        """
+        Removes more than one row from given rows (be it an inventory or a feature profile)
+        which has specified content.
+        match_column_name denotes the name of column where search must be performed.
+        match_content is argument of type 'str'. All the rows which display it as an argument
+        of the kind denoted by match_column_name will be removed.
+        For removing exactly one row, please use _remove_one_row.
+        """
+        pass
+
+    @staticmethod
+    def _update_indices(
+        match_column_name: Literal["feature_id", "id"],
+        match_type: Literal["category", "feature"],
+        match_content: str,
+        rows: list[dict[str, str]],
+    ) -> list[dict[str, str]]:
+        pass
