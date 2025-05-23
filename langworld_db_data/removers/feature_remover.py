@@ -78,4 +78,7 @@ class FeatureRemover(ObjectWithPaths):
                 line_number_of_row_to_remove = i
                 break
 
+        if line_number_of_row_to_remove == 0:
+            raise Exception(f"Row with given properties not found. Perhaps match_content is invalid: {match_content}")
+
         return rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove + 1 :]
