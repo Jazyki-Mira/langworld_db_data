@@ -132,7 +132,9 @@ def test_remover():
     )
 
 
-def test__remove_one_row_and_return_its_line_number_remove_from_inventory_of_features(test_remover):
+def test__remove_one_row_and_return_its_line_number_remove_from_inventory_of_features(
+    test_remover,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -162,10 +164,12 @@ def test__remove_one_row_and_return_its_line_number_remove_from_inventory_of_fea
         },
     )
 
-    rows_with_one_line_removed, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
-        match_column_name="id",
-        match_content="A-3",
-        rows=DUMMY_ROWS_OF_FEATURES,
+    rows_with_one_line_removed, line_number_of_removed_row = (
+        test_remover._remove_one_row_and_return_its_line_number(
+            match_column_name="id",
+            match_content="A-3",
+            rows=DUMMY_ROWS_OF_FEATURES,
+        )
     )
 
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
@@ -208,10 +212,12 @@ def test__remove_one_row_from_inventory_of_listed_values(test_remover):
         },
     )
 
-    rows_with_one_line_removed, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
-        match_column_name="id",
-        match_content="A-1-2",
-        rows=DUMMY_ROWS_OF_LISTED_VALUES,
+    rows_with_one_line_removed, line_number_of_removed_row = (
+        test_remover._remove_one_row_and_return_its_line_number(
+            match_column_name="id",
+            match_content="A-1-2",
+            rows=DUMMY_ROWS_OF_LISTED_VALUES,
+        )
     )
 
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
@@ -242,10 +248,12 @@ def test__remove_one_row_from_a_feature_profile(test_remover):
         },
     )
 
-    rows_with_one_line_removed, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
-        match_column_name="feature_id",
-        match_content="B-1",
-        rows=DUMMY_ROWS_OF_FEATURE_PROFILE,
+    rows_with_one_line_removed, line_number_of_removed_row = (
+        test_remover._remove_one_row_and_return_its_line_number(
+            match_column_name="feature_id",
+            match_content="B-1",
+            rows=DUMMY_ROWS_OF_FEATURE_PROFILE,
+        )
     )
 
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
@@ -276,10 +284,12 @@ def test__remove_one_row_remove_last_row(test_remover):
         },
     )
 
-    rows_with_one_line_removed, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
-        match_column_name="feature_id",
-        match_content="C-1",
-        rows=DUMMY_ROWS_OF_FEATURE_PROFILE,
+    rows_with_one_line_removed, line_number_of_removed_row = (
+        test_remover._remove_one_row_and_return_its_line_number(
+            match_column_name="feature_id",
+            match_content="C-1",
+            rows=DUMMY_ROWS_OF_FEATURE_PROFILE,
+        )
     )
 
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS

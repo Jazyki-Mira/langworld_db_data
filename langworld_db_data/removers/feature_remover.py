@@ -55,9 +55,7 @@ class FeatureRemover(ObjectWithPaths):
         )
 
         rows_with_removed_line = self._remove_one_row(
-            match_column_name="id",
-            match_content=feature_id,
-            rows=rows
+            match_column_name="id", match_content=feature_id, rows=rows
         )
 
     def _remove_from_inventory_of_listed_values():
@@ -104,7 +102,7 @@ class FeatureRemover(ObjectWithPaths):
             )
 
         return (rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove + 1 :], i)
-    
+
     @staticmethod
     def _remove_several_rows(
         match_column_name: Literal["feature_id", "id"],
