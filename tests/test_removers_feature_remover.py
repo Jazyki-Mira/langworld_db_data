@@ -247,11 +247,10 @@ def test__remove_one_row_from_a_feature_profile(test_remover):
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
 
 
-
 def test__remove_one_row_remove_last_row(test_remover):
 
     GOLD_STANDARD_DUMMY_ROWS = (
-            {
+        {
             "feature_id": "A-1",
             "feature_name_ru": "Некий признак",
             "value_type": "listed",
@@ -278,7 +277,6 @@ def test__remove_one_row_remove_last_row(test_remover):
     )
 
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
-
 
 
 def test__remove_one_row_throws_exception_invalid_match_content(test_remover):
