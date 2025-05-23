@@ -102,8 +102,14 @@ DUMMY_ROWS_OF_FEATURE_PROFILE = (
         "value_id": "A-2-1",
     },
     {
+        "feature_id": "A-3",
+        "feature_name_ru": "Еще один признак",
+        "value_type": "listed",
+        "value_id": "A-3-3",
+    },
+    {
         "feature_id": "B-1",
-        "feature_name_ru": "Третий признак",
+        "feature_name_ru": "Четвертый признак",
         "value_type": "listed",
         "value_id": "B-1-3",
     },
@@ -241,6 +247,12 @@ def test__remove_one_row_from_a_feature_profile(test_remover):
             "value_id": "A-2-1",
         },
         {
+            "feature_id": "A-3",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-3-3",
+        },
+        {
             "feature_id": "C-1",
             "feature_name_ru": "И еще признак",
             "value_type": "listed",
@@ -258,7 +270,7 @@ def test__remove_one_row_from_a_feature_profile(test_remover):
 
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
 
-    assert line_number_of_removed_row == 2
+    assert line_number_of_removed_row == 3
 
 
 def test__remove_one_row_remove_last_row(test_remover):
@@ -277,8 +289,14 @@ def test__remove_one_row_remove_last_row(test_remover):
             "value_id": "A-2-1",
         },
         {
+            "feature_id": "A-3",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-3-3",
+        },
+        {
             "feature_id": "B-1",
-            "feature_name_ru": "Третий признак",
+            "feature_name_ru": "Четвертый признак",
             "value_type": "listed",
             "value_id": "B-1-3",
         },
@@ -294,7 +312,7 @@ def test__remove_one_row_remove_last_row(test_remover):
 
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
 
-    assert line_number_of_removed_row == 3
+    assert line_number_of_removed_row == 4
 
 
 def test__remove_one_row_throws_exception_invalid_match_content(test_remover):
@@ -307,6 +325,188 @@ def test__remove_one_row_throws_exception_invalid_match_content(test_remover):
                 match_content=bad_arg,
                 rows=DUMMY_ROWS_OF_LISTED_VALUES,
             )
+
+
+def test__update_indices_after_given_line_number_if_necessary_in_features_update_is_necessary(test_remover):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "A-1",
+            "en": "Subject",
+            "ru": "Подлежащее",
+        },
+        {
+            "id": "A-2",
+            "en": "Predicate",
+            "ru": "Сказуемое",
+        },
+        {
+            "id": "B-1",
+            "en": "Collocation",
+            "ru": "Коллокация",
+        },
+        {
+            "id": "B-2",
+            "en": "Grammatical core",
+            "ru": "Грамматическая основа",
+        },
+        {
+            "id": "С-1",
+            "en": "Sentence",
+            "ru": "Предложение",
+        },
+    )
+    
+    rows_without_A_2, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
+        match_column_name="id",
+        match_content="A-2",
+        rows=DUMMY_ROWS_OF_FEATURES,
+    )
+
+    rows_without_A_2_with_updated_feature_indices = test_remover._update_indices_after_given_line_number_if_necessary(
+        match_column_name="id",
+        match_content="A",
+        line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+        rows=rows_without_A_2,
+    )
+
+    assert rows_without_A_2_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
+
+
+def test__update_indices_after_given_line_number_if_necessary_in_features_update_is_not_necessary(test_remover):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "A-1",
+            "en": "Subject",
+            "ru": "Подлежащее",
+        },
+        {
+            "id": "A-2",
+            "en": "Object",
+            "ru": "Прямое дополнение",
+        },
+        {
+            "id": "B-1",
+            "en": "Collocation",
+            "ru": "Коллокация",
+        },
+        {
+            "id": "B-2",
+            "en": "Grammatical core",
+            "ru": "Грамматическая основа",
+        },
+        {
+            "id": "С-1",
+            "en": "Sentence",
+            "ru": "Предложение",
+        },
+    )
+    
+    rows_without_last_feature_in_category_A, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
+        match_column_name="id",
+        match_content="A-3",
+        rows=DUMMY_ROWS_OF_FEATURES,
+    )
+
+    rows_without_last_feature_in_category_A_with_updated_feature_indices = test_remover._update_indices_after_given_line_number_if_necessary(
+        match_column_name="id",
+        match_content="A",
+        line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+        rows=rows_without_last_feature_in_category_A,
+    )
+
+    assert rows_without_last_feature_in_category_A_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
+
+
+def test__update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_necessary(test_remover):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "feature_id": "A-1",
+            "feature_name_ru": "Некий признак",
+            "value_type": "listed",
+            "value_id": "A-1-3",
+        },
+        {
+            "feature_id": "A-2",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-2-1",
+        },
+        {
+            "feature_id": "B-1",
+            "feature_name_ru": "Четвертый признак",
+            "value_type": "listed",
+            "value_id": "B-1-3",
+        },
+        {
+            "feature_id": "C-1",
+            "feature_name_ru": "И еще признак",
+            "value_type": "listed",
+            "value_id": "C-1-6",
+        },
+    )
+    
+    rows_without_A_2, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
+        match_column_name="feature_id",
+        match_content="A-2",
+        rows=DUMMY_ROWS_OF_FEATURES,
+    )
+
+    rows_without_A_2_with_updated_feature_indices = test_remover._update_indices_after_given_line_number_if_necessary(
+        match_column_name="feature_id",
+        match_content="A",
+        line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+        rows=rows_without_A_2,
+    )
+
+    assert rows_without_A_2_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
+
+
+def test__update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_not_necessary(test_remover):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "feature_id": "A-1",
+            "feature_name_ru": "Некий признак",
+            "value_type": "listed",
+            "value_id": "A-1-3",
+        },
+        {
+            "feature_id": "A-2",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-2-1",
+        },
+        {
+            "feature_id": "B-1",
+            "feature_name_ru": "Четвертый признак",
+            "value_type": "listed",
+            "value_id": "B-1-3",
+        },
+        {
+            "feature_id": "C-1",
+            "feature_name_ru": "И еще признак",
+            "value_type": "listed",
+            "value_id": "C-1-6",
+        },
+    )
+    
+    rows_without_last_feature_in_category_A, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
+        match_column_name="feature_id",
+        match_content="A-3",
+        rows=DUMMY_ROWS_OF_FEATURES,
+    )
+
+    rows_without_last_feature_in_category_A_with_updated_feature_indices = test_remover._update_indices_after_given_line_number_if_necessary(
+        match_column_name="feature_id",
+        match_content="A",
+        line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+        rows=rows_without_last_feature_in_category_A,
+    )
+
+    assert rows_without_last_feature_in_category_A_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
 def test__remove_from_inventory_of_features_remove_from_the_middle_of_category(test_remover):
