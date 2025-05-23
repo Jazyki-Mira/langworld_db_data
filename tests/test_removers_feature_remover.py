@@ -17,7 +17,7 @@ DIR_WITH_TEST_FEATURE_PROFILES = DIR_WITH_REMOVERS_TEST_FILES / "feature_profile
 
 
 DUMMY_ROWS_OF_FEATURES = (
-        {
+    {
         "id": "A-1",
         "en": "Subject",
         "ru": "Подлежащее",
@@ -50,7 +50,7 @@ DUMMY_ROWS_OF_FEATURES = (
 )
 
 DUMMY_ROWS_OF_LISTED_VALUES = (
-        {
+    {
         "id": "A-1-1",
         "feature_id": "A-1",
         "en": "Nominative",
@@ -89,7 +89,7 @@ DUMMY_ROWS_OF_LISTED_VALUES = (
 )
 
 DUMMY_ROWS_OF_FEATURE_PROFILE = (
-        {
+    {
         "feature_id": "A-1",
         "feature_name_ru": "Некий признак",
         "value_type": "listed",
@@ -161,7 +161,7 @@ def test__remove_one_row_from_inventory_of_features(test_remover):
             "ru": "Предложение",
         },
     ]
-    
+
     rows_with_one_line_removed = test_remover._remove_one_row(
         match_column_name="id",
         match_content="A-3",
