@@ -247,6 +247,40 @@ def test__remove_one_row_from_a_feature_profile(test_remover):
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
 
 
+
+def test__remove_one_row_remove_last_row(test_remover):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+            {
+            "feature_id": "A-1",
+            "feature_name_ru": "Некий признак",
+            "value_type": "listed",
+            "value_id": "A-1-3",
+        },
+        {
+            "feature_id": "A-2",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-2-1",
+        },
+        {
+            "feature_id": "B-1",
+            "feature_name_ru": "Третий признак",
+            "value_type": "listed",
+            "value_id": "B-1-3",
+        },
+    )
+
+    rows_with_one_line_removed = test_remover._remove_one_row(
+        match_column_name="feature_id",
+        match_content="C-1",
+        rows=DUMMY_ROWS_OF_FEATURE_PROFILE,
+    )
+
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
+
+
+
 def test__remove_one_row_throws_exception_invalid_match_content(test_remover):
 
     for bad_arg in ("abc", "A-189"):
