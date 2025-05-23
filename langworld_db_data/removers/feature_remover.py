@@ -3,7 +3,8 @@ from typing import Literal
 
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
-from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv
+from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
+from langworld_db_data.tools.value_ids.value_ids import extract_category_id
 
 
 class FeatureRemoverError(Exception):
@@ -54,8 +55,21 @@ class FeatureRemover(ObjectWithPaths):
             path_to_file=self.input_file_with_features,
         )
 
-        rows_with_removed_line = self._remove_one_row(
+        rows_with_removed_line, line_number_of_removed_row = self._remove_one_row(
             match_column_name="id", match_content=feature_id, rows=rows
+        )
+
+        rows_with_removed_line_and_updated_indices = self._update_indices_after_given_line_number_if_necessary(
+            match_column_name="id",
+            match_content=extract_category_id(feature_id),
+            line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+            rows=rows_with_removed_line,
+        )
+
+        write_csv(
+            rows=rows_with_removed_line_and_updated_indices,
+            path_to_file=self.output_file_with_features,
+            delimiter=",",
         )
 
     def _remove_from_inventory_of_listed_values():
@@ -79,8 +93,9 @@ class FeatureRemover(ObjectWithPaths):
         rows: list[dict[str, str]],
     ) -> tuple[list[dict[str, str]], int]:
         """
-        Removes exactly one row from given rows (be it an inventory or a feature profile)
+        Remove exactly one row from given rows (be it an inventory or a feature profile)
         which has specified content.
+        Return rows without the target row and the line number of the removed row.
         match_column_name denotes the name of column where search must be performed.
         match_content is argument of type 'str'. The first row which displays it as an argument
         of the kind denoted by match_column_name will be removed.
@@ -104,13 +119,13 @@ class FeatureRemover(ObjectWithPaths):
         return (rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove + 1 :], i)
 
     @staticmethod
-    def _remove_several_rows(
+    def _remove_several_rows_and_return_their_line_numbers(
         match_column_name: Literal["feature_id", "id"],
         match_content: str,
         rows: list[dict[str, str]],
-    ) -> list[dict[str, str]]:
+    ) -> tuple[list[dict[str, str]], list[int]]:
         """
-        Removes more than one row from given rows (be it an inventory or a feature profile)
+        Remove more than one row from given rows (be it an inventory or a feature profile)
         which has specified content.
         match_column_name denotes the name of column where search must be performed.
         match_content is argument of type 'str'. All the rows which display it as an argument
@@ -120,10 +135,10 @@ class FeatureRemover(ObjectWithPaths):
         pass
 
     @staticmethod
-    def _update_indices(
+    def _update_indices_after_given_line_number_if_necessary(
         match_column_name: Literal["feature_id", "id"],
-        match_type: Literal["category", "feature"],
         match_content: str,
+        line_number_after_which_rows_must_be_updated: int,
         rows: list[dict[str, str]],
     ) -> list[dict[str, str]]:
         pass
