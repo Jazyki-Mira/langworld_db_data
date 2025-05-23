@@ -327,7 +327,9 @@ def test__remove_one_row_throws_exception_invalid_match_content(test_remover):
             )
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_features_update_is_necessary(test_remover):
+def test__update_indices_after_given_line_number_if_necessary_in_features_update_is_necessary(
+    test_remover,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -356,24 +358,30 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
             "ru": "Предложение",
         },
     )
-    
-    rows_without_A_2, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
-        match_column_name="id",
-        match_content="A-2",
-        rows=DUMMY_ROWS_OF_FEATURES,
+
+    rows_without_A_2, line_number_of_removed_row = (
+        test_remover._remove_one_row_and_return_its_line_number(
+            match_column_name="id",
+            match_content="A-2",
+            rows=DUMMY_ROWS_OF_FEATURES,
+        )
     )
 
-    rows_without_A_2_with_updated_feature_indices = test_remover._update_indices_after_given_line_number_if_necessary(
-        match_column_name="id",
-        match_content="A",
-        line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
-        rows=rows_without_A_2,
+    rows_without_A_2_with_updated_feature_indices = (
+        test_remover._update_indices_after_given_line_number_if_necessary(
+            match_column_name="id",
+            match_content="A",
+            line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+            rows=rows_without_A_2,
+        )
     )
 
     assert rows_without_A_2_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_features_update_is_not_necessary(test_remover):
+def test__update_indices_after_given_line_number_if_necessary_in_features_update_is_not_necessary(
+    test_remover,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -402,24 +410,33 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
             "ru": "Предложение",
         },
     )
-    
-    rows_without_last_feature_in_category_A, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
-        match_column_name="id",
-        match_content="A-3",
-        rows=DUMMY_ROWS_OF_FEATURES,
+
+    rows_without_last_feature_in_category_A, line_number_of_removed_row = (
+        test_remover._remove_one_row_and_return_its_line_number(
+            match_column_name="id",
+            match_content="A-3",
+            rows=DUMMY_ROWS_OF_FEATURES,
+        )
     )
 
-    rows_without_last_feature_in_category_A_with_updated_feature_indices = test_remover._update_indices_after_given_line_number_if_necessary(
-        match_column_name="id",
-        match_content="A",
-        line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
-        rows=rows_without_last_feature_in_category_A,
+    rows_without_last_feature_in_category_A_with_updated_feature_indices = (
+        test_remover._update_indices_after_given_line_number_if_necessary(
+            match_column_name="id",
+            match_content="A",
+            line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+            rows=rows_without_last_feature_in_category_A,
+        )
     )
 
-    assert rows_without_last_feature_in_category_A_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
+    assert (
+        rows_without_last_feature_in_category_A_with_updated_feature_indices
+        == GOLD_STANDARD_DUMMY_ROWS
+    )
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_necessary(test_remover):
+def test__update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_necessary(
+    test_remover,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -447,24 +464,30 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
             "value_id": "C-1-6",
         },
     )
-    
-    rows_without_A_2, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
-        match_column_name="feature_id",
-        match_content="A-2",
-        rows=DUMMY_ROWS_OF_FEATURES,
+
+    rows_without_A_2, line_number_of_removed_row = (
+        test_remover._remove_one_row_and_return_its_line_number(
+            match_column_name="feature_id",
+            match_content="A-2",
+            rows=DUMMY_ROWS_OF_FEATURES,
+        )
     )
 
-    rows_without_A_2_with_updated_feature_indices = test_remover._update_indices_after_given_line_number_if_necessary(
-        match_column_name="feature_id",
-        match_content="A",
-        line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
-        rows=rows_without_A_2,
+    rows_without_A_2_with_updated_feature_indices = (
+        test_remover._update_indices_after_given_line_number_if_necessary(
+            match_column_name="feature_id",
+            match_content="A",
+            line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+            rows=rows_without_A_2,
+        )
     )
 
     assert rows_without_A_2_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_not_necessary(test_remover):
+def test__update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_not_necessary(
+    test_remover,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -492,21 +515,28 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
             "value_id": "C-1-6",
         },
     )
-    
-    rows_without_last_feature_in_category_A, line_number_of_removed_row = test_remover._remove_one_row_and_return_its_line_number(
-        match_column_name="feature_id",
-        match_content="A-3",
-        rows=DUMMY_ROWS_OF_FEATURES,
+
+    rows_without_last_feature_in_category_A, line_number_of_removed_row = (
+        test_remover._remove_one_row_and_return_its_line_number(
+            match_column_name="feature_id",
+            match_content="A-3",
+            rows=DUMMY_ROWS_OF_FEATURES,
+        )
     )
 
-    rows_without_last_feature_in_category_A_with_updated_feature_indices = test_remover._update_indices_after_given_line_number_if_necessary(
-        match_column_name="feature_id",
-        match_content="A",
-        line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
-        rows=rows_without_last_feature_in_category_A,
+    rows_without_last_feature_in_category_A_with_updated_feature_indices = (
+        test_remover._update_indices_after_given_line_number_if_necessary(
+            match_column_name="feature_id",
+            match_content="A",
+            line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+            rows=rows_without_last_feature_in_category_A,
+        )
     )
 
-    assert rows_without_last_feature_in_category_A_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
+    assert (
+        rows_without_last_feature_in_category_A_with_updated_feature_indices
+        == GOLD_STANDARD_DUMMY_ROWS
+    )
 
 
 def test__remove_from_inventory_of_features_remove_from_the_middle_of_category(test_remover):

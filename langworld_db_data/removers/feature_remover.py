@@ -59,11 +59,13 @@ class FeatureRemover(ObjectWithPaths):
             match_column_name="id", match_content=feature_id, rows=rows
         )
 
-        rows_with_removed_line_and_updated_indices = self._update_indices_after_given_line_number_if_necessary(
-            match_column_name="id",
-            match_content=extract_category_id(feature_id),
-            line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
-            rows=rows_with_removed_line,
+        rows_with_removed_line_and_updated_indices = (
+            self._update_indices_after_given_line_number_if_necessary(
+                match_column_name="id",
+                match_content=extract_category_id(feature_id),
+                line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+                rows=rows_with_removed_line,
+            )
         )
 
         write_csv(
