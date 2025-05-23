@@ -16,6 +16,106 @@ DIR_WITH_GOLD_STANDARD_FILES = DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_REMOVER 
 DIR_WITH_TEST_FEATURE_PROFILES = DIR_WITH_REMOVERS_TEST_FILES / "feature_profiles"
 
 
+DUMMY_ROWS_OF_FEATURES = (
+        {
+        "id": "A-1",
+        "en": "Subject",
+        "ru": "Подлежащее",
+    },
+    {
+        "id": "A-2",
+        "en": "Object",
+        "ru": "Прямое дополнение",
+    },
+    {
+        "id": "A-3",
+        "en": "Predicate",
+        "ru": "Сказуемое",
+    },
+    {
+        "id": "B-1",
+        "en": "Collocation",
+        "ru": "Коллокация",
+    },
+    {
+        "id": "B-2",
+        "en": "Grammatical core",
+        "ru": "Грамматическая основа",
+    },
+    {
+        "id": "С-1",
+        "en": "Sentence",
+        "ru": "Предложение",
+    },
+)
+
+DUMMY_ROWS_OF_LISTED_VALUES = (
+        {
+        "id": "A-1-1",
+        "feature_id": "A-1",
+        "en": "Nominative",
+        "ru": "Номинатив",
+    },
+    {
+        "id": "A-1-2",
+        "feature_id": "A-1",
+        "en": "Ergative",
+        "ru": "Эргатив",
+    },
+    {
+        "id": "A-1-3",
+        "feature_id": "A-1",
+        "en": "DSM",
+        "ru": "Дифференцированное маркирование субъекта",
+    },
+    {
+        "id": "B-1-1",
+        "feature_id": "B-1",
+        "en": "Agreement",
+        "ru": "Согласование",
+    },
+    {
+        "id": "B-1-2",
+        "feature_id": "B-1",
+        "en": "Word order",
+        "ru": "Порядок слов",
+    },
+    {
+        "id": "B-2-1",
+        "feature_id": "B-2",
+        "en": "Coordination",
+        "ru": "Координация",
+    },
+)
+
+DUMMY_ROWS_OF_FEATURE_PROFILE = (
+        {
+        "feature_id": "A-1",
+        "feature_name_ru": "Некий признак",
+        "value_type": "listed",
+        "value_id": "A-1-3",
+    },
+    {
+        "feature_id": "A-2",
+        "feature_name_ru": "Еще один признак",
+        "value_type": "listed",
+        "value_id": "A-2-1",
+    },
+    {
+        "feature_id": "B-1",
+        "feature_name_ru": "Третий признак",
+        "value_type": "listed",
+        "value_id": "B-1-3",
+    },
+    {
+        "feature_id": "C-1",
+        "feature_name_ru": "И еще признак",
+        "value_type": "listed",
+        "value_id": "C-1-6",
+    },
+)
+
+
 @pytest.fixture(scope="function")
 def test_remover():
     return FeatureRemover(
@@ -34,79 +134,129 @@ def test_remover():
 
 def test__remove_one_row_from_inventory_of_features(test_remover):
 
-    rows = read_dicts_from_csv(DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_REMOVER / "features.csv")
-
+    GOLD_STANDARD_DUMMY_ROWS = [
+        {
+            "id": "A-1",
+            "en": "Subject",
+            "ru": "Подлежащее",
+        },
+        {
+            "id": "A-2",
+            "en": "Object",
+            "ru": "Прямое дополнение",
+        },
+        {
+            "id": "B-1",
+            "en": "Collocation",
+            "ru": "Коллокация",
+        },
+        {
+            "id": "B-2",
+            "en": "Grammatical core",
+            "ru": "Грамматическая основа",
+        },
+        {
+            "id": "С-1",
+            "en": "Sentence",
+            "ru": "Предложение",
+        },
+    ]
+    
     rows_with_one_line_removed = test_remover._remove_one_row(
         match_column_name="id",
-        match_content="B-3",
-        rows=rows,
+        match_content="A-3",
+        rows=DUMMY_ROWS_OF_FEATURES,
     )
 
-    write_csv(
-        rows=rows_with_one_line_removed,
-        path_to_file=test_remover.output_file_with_features,
-        overwrite=True,
-        delimiter=",",
-    )
-
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=test_remover.output_file_with_features,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES
-        / "remove_one_row"
-        / "features_without_B_3.csv",
-    )
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
 
 
 def test__remove_one_row_from_inventory_of_listed_values(test_remover):
 
-    rows = read_dicts_from_csv(
-        DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_REMOVER / "features_listed_values.csv"
-    )
+    GOLD_STANDARD_DUMMY_ROWS = [
+        {
+            "id": "A-1-1",
+            "feature_id": "A-1",
+            "en": "Nominative",
+            "ru": "Номинатив",
+        },
+        {
+            "id": "A-1-3",
+            "feature_id": "A-1",
+            "en": "DSM",
+            "ru": "Дифференцированное маркирование субъекта",
+        },
+        {
+            "id": "B-1-1",
+            "feature_id": "B-1",
+            "en": "Agreement",
+            "ru": "Согласование",
+        },
+        {
+            "id": "B-1-2",
+            "feature_id": "B-1",
+            "en": "Word order",
+            "ru": "Порядок слов",
+        },
+        {
+            "id": "B-2-1",
+            "feature_id": "B-2",
+            "en": "Coordination",
+            "ru": "Координация",
+        },
+    ]
 
     rows_with_one_line_removed = test_remover._remove_one_row(
         match_column_name="id",
-        match_content="A-3-2",
-        rows=rows,
+        match_content="A-1-2",
+        rows=DUMMY_ROWS_OF_LISTED_VALUES,
     )
 
-    write_csv(
-        rows=rows_with_one_line_removed,
-        path_to_file=test_remover.output_file_with_listed_values,
-        overwrite=True,
-        delimiter=",",
-    )
-
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=test_remover.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES
-        / "remove_one_row"
-        / "features_listed_values_without_A_3_2.csv",
-    )
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
 
 
 def test__remove_one_row_from_a_feature_profile(test_remover):
 
-    rows = read_dicts_from_csv(DIR_WITH_TEST_FEATURE_PROFILES / "corsican.csv")
+    GOLD_STANDARD_DUMMY_ROWS = [
+        {
+            "feature_id": "A-1",
+            "feature_name_ru": "Некий признак",
+            "value_type": "listed",
+            "value_id": "A-1-3",
+        },
+        {
+            "feature_id": "A-2",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-2-1",
+        },
+        {
+            "feature_id": "C-1",
+            "feature_name_ru": "И еще признак",
+            "value_type": "listed",
+            "value_id": "C-1-6",
+        },
+    ]
 
     rows_with_one_line_removed = test_remover._remove_one_row(
         match_column_name="feature_id",
-        match_content="B-3",
-        rows=rows,
+        match_content="B-1",
+        rows=DUMMY_ROWS_OF_FEATURE_PROFILE,
     )
 
-    write_csv(
-        rows=rows_with_one_line_removed,
-        path_to_file=DIR_WITH_REMOVERS_TEST_FILES / "corsican.csv",
-        overwrite=True,
-        delimiter=",",
-    )
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
 
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=test_remover.output_file_with_features,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES
-        / "remove_one_row"
-        / "corsican_without_A_12.csv",
-    )
+
+def test__remove_one_row_throws_exception_invalid_match_content(test_remover):
+
+    for bad_arg in ("abc", "A-189"):
+        with pytest.raises(Exception, match="Row with given properties not found"):
+
+            _ = test_remover._remove_one_row(
+                match_column_name="id",
+                match_content=bad_arg,
+                rows=DUMMY_ROWS_OF_LISTED_VALUES,
+            )
 
 
 def test__remove_from_inventory_of_features_remove_from_the_middle_of_category(test_remover):
