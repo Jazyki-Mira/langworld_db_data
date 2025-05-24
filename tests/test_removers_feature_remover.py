@@ -566,7 +566,9 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
     )
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_necessary(test_remover):
+def test__update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_necessary(
+    test_remover,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -595,35 +597,43 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
         },
     )
 
-    rows_without_B_1, range_of_line_numbers_of_removed_rows = test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-        match_content="B-1",
-        rows=DUMMY_ROWS_OF_LISTED_VALUES,
+    rows_without_B_1, range_of_line_numbers_of_removed_rows = (
+        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+            match_content="B-1",
+            rows=DUMMY_ROWS_OF_LISTED_VALUES,
+        )
     )
 
     line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
 
-    rows_without_B_1_with_updated_value_indices = test_remover._update_indices_after_given_line_number_if_necessary(
-        match_column_name="id",
-        match_content="B",
-        id_type_that_must_be_updated="value",
-        index_type_that_must_be_updated="feature",
-        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
-        rows=rows_without_B_1,
+    rows_without_B_1_with_updated_value_indices = (
+        test_remover._update_indices_after_given_line_number_if_necessary(
+            match_column_name="id",
+            match_content="B",
+            id_type_that_must_be_updated="value",
+            index_type_that_must_be_updated="feature",
+            line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+            rows=rows_without_B_1,
+        )
     )
 
-    rows_without_B_1_with_updated_feature_and_value_indices = test_remover._update_indices_after_given_line_number_if_necessary(
-        match_column_name="feature_id",
-        match_content="B",
-        id_type_that_must_be_updated="feature",
-        index_type_that_must_be_updated="feature",
-        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
-        rows=rows_without_B_1_with_updated_value_indices,
+    rows_without_B_1_with_updated_feature_and_value_indices = (
+        test_remover._update_indices_after_given_line_number_if_necessary(
+            match_column_name="feature_id",
+            match_content="B",
+            id_type_that_must_be_updated="feature",
+            index_type_that_must_be_updated="feature",
+            line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+            rows=rows_without_B_1_with_updated_value_indices,
+        )
     )
 
     assert rows_without_B_1_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_not_necessary(test_remover):
+def test__update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_not_necessary(
+    test_remover,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -658,29 +668,35 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
         },
     )
 
-    rows_without_B_2, range_of_line_numbers_of_removed_rows = test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-        match_content="B-2",
-        rows=DUMMY_ROWS_OF_LISTED_VALUES,
+    rows_without_B_2, range_of_line_numbers_of_removed_rows = (
+        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+            match_content="B-2",
+            rows=DUMMY_ROWS_OF_LISTED_VALUES,
+        )
     )
 
     line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
 
-    rows_without_B_2_with_updated_value_indices = test_remover._update_indices_after_given_line_number_if_necessary(
-        match_column_name="id",
-        match_content="B",
-        id_type_that_must_be_updated="value",
-        index_type_that_must_be_updated="feature",
-        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
-        rows=rows_without_B_2,
+    rows_without_B_2_with_updated_value_indices = (
+        test_remover._update_indices_after_given_line_number_if_necessary(
+            match_column_name="id",
+            match_content="B",
+            id_type_that_must_be_updated="value",
+            index_type_that_must_be_updated="feature",
+            line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+            rows=rows_without_B_2,
+        )
     )
 
-    rows_without_B_2_with_updated_feature_and_value_indices = test_remover._update_indices_after_given_line_number_if_necessary(
-        match_column_name="feature_id",
-        match_content="B",
-        id_type_that_must_be_updated="feature",
-        index_type_that_must_be_updated="feature",
-        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
-        rows=rows_without_B_2_with_updated_value_indices,
+    rows_without_B_2_with_updated_feature_and_value_indices = (
+        test_remover._update_indices_after_given_line_number_if_necessary(
+            match_column_name="feature_id",
+            match_content="B",
+            id_type_that_must_be_updated="feature",
+            index_type_that_must_be_updated="feature",
+            line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+            rows=rows_without_B_2_with_updated_value_indices,
+        )
     )
 
     assert rows_without_B_2_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
@@ -849,7 +865,7 @@ def test__remove_from_inventory_of_listed_values_remove_from_the_beginning_of_ca
     test_remover,
 ):
     test_remover._remove_from_inventory_of_listed_values(
-        feature_id = "C-1",
+        feature_id="C-1",
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -860,7 +876,7 @@ def test__remove_from_inventory_of_listed_values_remove_from_the_beginning_of_ca
 
 def test__remove_from_inventory_of_listed_values_remove_from_the_end_of_category(test_remover):
     test_remover._remove_from_inventory_of_listed_values(
-        feature_id = "D-8",
+        feature_id="D-8",
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(

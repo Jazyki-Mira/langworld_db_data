@@ -278,7 +278,7 @@ class FeatureRemover(ObjectWithPaths):
                 continue
 
             current_feature_index = extract_feature_index(row[match_column_name])
-            
+
             if id_type_that_must_be_updated == "value":
                 if index_type_that_must_be_updated == "feature":
                     current_value_index = extract_value_index(row["id"])
@@ -292,8 +292,8 @@ class FeatureRemover(ObjectWithPaths):
                     )
             elif id_type_that_must_be_updated == "feature":
                 row[match_column_name] = (
-                        f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}"
-                    )
+                    f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}"
+                )
 
             if rows_are_a_feature_profile:
                 if row["value_type"] == "listed":
@@ -303,7 +303,7 @@ class FeatureRemover(ObjectWithPaths):
                         f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
                     )
             nothing_is_changed = False
-        
+
         if nothing_is_changed:
             print("Warning: no rows have been changed.")
         else:
