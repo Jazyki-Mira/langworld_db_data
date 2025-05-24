@@ -237,13 +237,13 @@ def test__remove_one_row_from_a_feature_profile(test_remover):
             "feature_id": "A-1",
             "feature_name_ru": "Некий признак",
             "value_type": "listed",
-            "value_id": "A-1-3",
+            "value_id": "A-1-1",
         },
         {
             "feature_id": "A-2",
             "feature_name_ru": "Еще один признак",
             "value_type": "listed",
-            "value_id": "A-2-1",
+            "value_id": "A-2-2",
         },
         {
             "feature_id": "A-3",
@@ -255,7 +255,7 @@ def test__remove_one_row_from_a_feature_profile(test_remover):
             "feature_id": "C-1",
             "feature_name_ru": "И еще признак",
             "value_type": "listed",
-            "value_id": "C-1-6",
+            "value_id": "C-1-1",
         },
     )
 
@@ -279,13 +279,13 @@ def test__remove_one_row_remove_last_row(test_remover):
             "feature_id": "A-1",
             "feature_name_ru": "Некий признак",
             "value_type": "listed",
-            "value_id": "A-1-3",
+            "value_id": "A-1-1",
         },
         {
             "feature_id": "A-2",
             "feature_name_ru": "Еще один признак",
             "value_type": "listed",
-            "value_id": "A-2-1",
+            "value_id": "A-2-2",
         },
         {
             "feature_id": "A-3",
@@ -297,7 +297,7 @@ def test__remove_one_row_remove_last_row(test_remover):
             "feature_id": "B-1",
             "feature_name_ru": "Четвертый признак",
             "value_type": "listed",
-            "value_id": "B-1-3",
+            "value_id": "B-1-1",
         },
     )
 
