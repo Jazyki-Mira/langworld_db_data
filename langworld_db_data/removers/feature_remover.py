@@ -56,8 +56,10 @@ class FeatureRemover(ObjectWithPaths):
             path_to_file=self.input_file_with_features,
         )
 
-        rows_with_removed_line, line_number_of_removed_row = self._remove_one_matching_row_and_return_its_line_number(
-            match_column_name="id", match_content=feature_id, rows=rows
+        rows_with_removed_line, line_number_of_removed_row = (
+            self._remove_one_matching_row_and_return_its_line_number(
+                match_column_name="id", match_content=feature_id, rows=rows
+            )
         )
 
         rows_with_removed_line_and_updated_indices = (
