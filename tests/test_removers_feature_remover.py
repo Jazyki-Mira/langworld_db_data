@@ -920,7 +920,7 @@ def test__remove_from_feature_profiles_remove_from_the_middle_of_category(test_r
             gold_standard_file=file,
         )
 
-    
+
 def test__remove_from_feature_profiles_remove_from_the_end_of_category(test_remover):
     test_remover._remove_from_feature_profiles(
         feature_id="D-8",
