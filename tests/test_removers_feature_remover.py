@@ -327,8 +327,10 @@ def test__remove_one_row_throws_exception_invalid_match_content(test_remover):
             )
 
 
-def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_values_of_A_1(test_remover):
-    
+def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_values_of_A_1(
+    test_remover,
+):
+
     GOLD_STANDARD_DUMMY_ROWS = (
         {
             "id": "B-1-1",
@@ -350,9 +352,11 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
         },
     )
 
-    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-        match_content="A-1",
-        rows=DUMMY_ROWS_OF_LISTED_VALUES,
+    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
+        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+            match_content="A-1",
+            rows=DUMMY_ROWS_OF_LISTED_VALUES,
+        )
     )
 
     assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
@@ -360,7 +364,9 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
     assert range_of_lin_numbers_of_removed_rows == (0, 2)
 
 
-def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_values_of_B_1(test_remover):
+def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_values_of_B_1(
+    test_remover,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -389,9 +395,11 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
         },
     )
 
-    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-        match_content="B-1",
-        rows=DUMMY_ROWS_OF_LISTED_VALUES,
+    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
+        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+            match_content="B-1",
+            rows=DUMMY_ROWS_OF_LISTED_VALUES,
+        )
     )
 
     assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
@@ -399,7 +407,9 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
     assert range_of_lin_numbers_of_removed_rows == (3, 4)
 
 
-def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_value_of_B_2(test_remover):
+def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_value_of_B_2(
+    test_remover,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -434,9 +444,11 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
         },
     )
 
-    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-        match_content="B-2",
-        rows=DUMMY_ROWS_OF_LISTED_VALUES,
+    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
+        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+            match_content="B-2",
+            rows=DUMMY_ROWS_OF_LISTED_VALUES,
+        )
     )
 
     assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS

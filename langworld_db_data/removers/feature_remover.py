@@ -150,12 +150,14 @@ class FeatureRemover(ObjectWithPaths):
             raise Exception(
                 f"Rows with given properties not found. Perhaps match_content is invalid: {match_content}"
             )
-        
+
         first_line_number = line_numbers_of_removed_rows[0]
         last_line_number = line_numbers_of_removed_rows[-1]
 
-        return (rows[:first_line_number] + rows[last_line_number + 1 :], 
-                (first_line_number, last_line_number))
+        return (
+            rows[:first_line_number] + rows[last_line_number + 1 :],
+            (first_line_number, last_line_number),
+        )
 
     @staticmethod
     def _update_indices_after_given_line_number_if_necessary(
