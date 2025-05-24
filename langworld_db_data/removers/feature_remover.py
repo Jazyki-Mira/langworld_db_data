@@ -46,8 +46,12 @@ class FeatureRemover(ObjectWithPaths):
         self._remove_from_inventory_of_features(
             feature_id=feature_id,
         )
-        self._remove_from_inventory_of_listed_values()
-        self._remove_from_feature_profiles()
+        self._remove_from_inventory_of_listed_values(
+            feature_id=feature_id,
+        )
+        self._remove_from_feature_profiles(
+            feature_id=feature_id,
+        )
 
     def _remove_from_inventory_of_features(
         self,
