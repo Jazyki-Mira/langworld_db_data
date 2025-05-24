@@ -2,7 +2,6 @@ from pathlib import Path
 from typing import Literal
 
 from langworld_db_data import ObjectWithPaths
-from langworld_db_data.constants.literals import ID_SEPARATOR
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.tools.value_ids.value_ids import extract_category_id
@@ -130,7 +129,7 @@ class FeatureRemover(ObjectWithPaths):
     def _remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
         match_content: str,
         rows: list[dict[str, str]],
-    ) -> tuple[list[dict[str, str]], list[int]]:
+    ) -> tuple[list[dict[str, str]], tuple[int]]:
         """
         Remove more than one row from given rows (typically from listed values inventory)
         which contain specified ID.
@@ -141,19 +140,22 @@ class FeatureRemover(ObjectWithPaths):
         match_content is argument of type 'str'. All the rows which contain it in their IDs will be removed.
         For removing exactly one row, please use _remove_one_row_and_return_its_line_number.
         """
-        range_of_line_numbers_of_removed_rows = []
+        line_numbers_of_removed_rows = []
 
         for i, row in enumerate(rows):
-            if row[match_column_name] == match_content:
-                line_number_of_row_to_remove = i
-                break
+            if row["feature_id"] == match_content:
+                line_numbers_of_removed_rows.append(i)
 
-        if line_number_of_row_to_remove == 0:
+        if len(line_numbers_of_removed_rows) == 0:
             raise Exception(
-                f"Row with given properties not found. Perhaps match_content is invalid: {match_content}"
+                f"Rows with given properties not found. Perhaps match_content is invalid: {match_content}"
             )
+        
+        first_line_number = line_numbers_of_removed_rows[0]
+        last_line_number = line_numbers_of_removed_rows[-1]
 
-        return (rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove + 1 :], i)
+        return (rows[:first_line_number] + rows[last_line_number + 1 :], 
+                (first_line_number, last_line_number))
 
     @staticmethod
     def _update_indices_after_given_line_number_if_necessary(
