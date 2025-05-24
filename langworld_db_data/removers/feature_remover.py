@@ -152,13 +152,13 @@ class FeatureRemover(ObjectWithPaths):
 
             rows_with_removed_row, line_number_of_removed_row = (
                 self._remove_one_matching_row_and_return_its_line_number(
-                    match_column_name="id", match_content=feature_id, rows=rows
+                    match_column_name="feature_id", match_content=feature_id, rows=rows
                 )
             )
 
             rows_with_removed_row_and_updated_indices = (
                 self._update_indices_after_given_line_number_if_necessary(
-                    match_column_name="id",
+                    match_column_name="feature_id",
                     match_content=extract_category_id(feature_id),
                     id_type_that_must_be_updated="feature",
                     index_type_that_must_be_updated="feature",
@@ -170,7 +170,7 @@ class FeatureRemover(ObjectWithPaths):
 
             write_csv(
                 rows=rows_with_removed_row_and_updated_indices,
-                path_to_file=self.output_file_with_features,
+                path_to_file=self.output_dir_with_feature_profiles / feature_profile.name,
                 overwrite=True,
                 delimiter=",",
             )
