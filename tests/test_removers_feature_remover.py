@@ -1,7 +1,6 @@
 import pytest
 
 from langworld_db_data.removers.feature_remover import FeatureRemover, FeatureRemoverError
-from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
     DIR_WITH_REMOVERS_TEST_FILES,
@@ -11,7 +10,7 @@ DIR_WITH_REMOVERS_TEST_FILES = DIR_WITH_REMOVERS_TEST_FILES / "feature_remover"
 
 DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_REMOVER = DIR_WITH_REMOVERS_TEST_FILES / "inventories"
 
-DIR_WITH_GOLD_STANDARD_FILES = DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_REMOVER / "gold_standard"
+DIR_WITH_GOLD_STANDARD_FILES = DIR_WITH_REMOVERS_TEST_FILES / "gold_standard"
 
 DIR_WITH_TEST_FEATURE_PROFILES = DIR_WITH_REMOVERS_TEST_FILES / "feature_profiles"
 
@@ -500,6 +499,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
         test_remover._update_indices_after_given_line_number_if_necessary(
             match_column_name="id",
             match_content="A",
+            id_type_that_must_be_updated="feature",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
             index_type_that_must_be_updated="feature",
             rows=rows_without_A_2,
@@ -553,6 +553,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
         test_remover._update_indices_after_given_line_number_if_necessary(
             match_column_name="id",
             match_content="A",
+            id_type_that_must_be_updated="feature",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
             index_type_that_must_be_updated="feature",
             rows=rows_without_last_feature_in_category_A,
@@ -563,6 +564,126 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
         rows_without_last_feature_in_category_A_with_updated_feature_indices
         == GOLD_STANDARD_DUMMY_ROWS
     )
+
+
+def test__update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_necessary(test_remover):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "A-1-1",
+            "feature_id": "A-1",
+            "en": "Nominative",
+            "ru": "Номинатив",
+        },
+        {
+            "id": "A-1-2",
+            "feature_id": "A-1",
+            "en": "Ergative",
+            "ru": "Эргатив",
+        },
+        {
+            "id": "A-1-3",
+            "feature_id": "A-1",
+            "en": "DSM",
+            "ru": "Дифференцированное маркирование субъекта",
+        },
+        {
+            "id": "B-1-1",
+            "feature_id": "B-1",
+            "en": "Coordination",
+            "ru": "Координация",
+        },
+    )
+
+    rows_without_B_1, range_of_line_numbers_of_removed_rows = test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+        match_content="B-1",
+        rows=DUMMY_ROWS_OF_LISTED_VALUES,
+    )
+
+    line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
+
+    rows_without_B_1_with_updated_value_indices = test_remover._update_indices_after_given_line_number_if_necessary(
+        match_column_name="id",
+        match_content="B",
+        id_type_that_must_be_updated="value",
+        index_type_that_must_be_updated="feature",
+        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+        rows=rows_without_B_1,
+    )
+
+    rows_without_B_1_with_updated_feature_and_value_indices = test_remover._update_indices_after_given_line_number_if_necessary(
+        match_column_name="feature_id",
+        match_content="B",
+        id_type_that_must_be_updated="feature",
+        index_type_that_must_be_updated="feature",
+        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+        rows=rows_without_B_1_with_updated_value_indices,
+    )
+
+    assert rows_without_B_1_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
+
+
+def test__update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_not_necessary(test_remover):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "A-1-1",
+            "feature_id": "A-1",
+            "en": "Nominative",
+            "ru": "Номинатив",
+        },
+        {
+            "id": "A-1-2",
+            "feature_id": "A-1",
+            "en": "Ergative",
+            "ru": "Эргатив",
+        },
+        {
+            "id": "A-1-3",
+            "feature_id": "A-1",
+            "en": "DSM",
+            "ru": "Дифференцированное маркирование субъекта",
+        },
+        {
+            "id": "B-1-1",
+            "feature_id": "B-1",
+            "en": "Agreement",
+            "ru": "Согласование",
+        },
+        {
+            "id": "B-1-2",
+            "feature_id": "B-1",
+            "en": "Word order",
+            "ru": "Порядок слов",
+        },
+    )
+
+    rows_without_B_2, range_of_line_numbers_of_removed_rows = test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+        match_content="B-2",
+        rows=DUMMY_ROWS_OF_LISTED_VALUES,
+    )
+
+    line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
+
+    rows_without_B_2_with_updated_value_indices = test_remover._update_indices_after_given_line_number_if_necessary(
+        match_column_name="id",
+        match_content="B",
+        id_type_that_must_be_updated="value",
+        index_type_that_must_be_updated="feature",
+        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+        rows=rows_without_B_2,
+    )
+
+    rows_without_B_2_with_updated_feature_and_value_indices = test_remover._update_indices_after_given_line_number_if_necessary(
+        match_column_name="feature_id",
+        match_content="B",
+        id_type_that_must_be_updated="feature",
+        index_type_that_must_be_updated="feature",
+        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+        rows=rows_without_B_2_with_updated_value_indices,
+    )
+
+    assert rows_without_B_2_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
 def test__update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_necessary(
@@ -608,6 +729,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
         test_remover._update_indices_after_given_line_number_if_necessary(
             match_column_name="feature_id",
             match_content="A",
+            id_type_that_must_be_updated="feature",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
             index_type_that_must_be_updated="feature",
             rows=rows_without_A_2,
@@ -664,6 +786,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
         test_remover._update_indices_after_given_line_number_if_necessary(
             match_column_name="feature_id",
             match_content="A",
+            id_type_that_must_be_updated="feature",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
             index_type_that_must_be_updated="feature",
             rows=rows_without_last_feature_in_category_A,
@@ -689,7 +812,9 @@ def test__remove_from_inventory_of_features_remove_from_the_middle_of_category(t
 
 
 def test__remove_from_inventory_of_features_remove_from_the_beginning_of_category(test_remover):
-    test_remover._remove_from_inventory_of_features()
+    test_remover._remove_from_inventory_of_features(
+        feature_id="C-1",
+    )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_remover.output_file_with_features,
@@ -698,7 +823,9 @@ def test__remove_from_inventory_of_features_remove_from_the_beginning_of_categor
 
 
 def test__remove_from_inventory_of_features_remove_from_the_end_of_category(test_remover):
-    test_remover._remove_from_inventory_of_features()
+    test_remover._remove_from_inventory_of_features(
+        feature_id="D-8",
+    )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_remover.output_file_with_features,
@@ -707,7 +834,9 @@ def test__remove_from_inventory_of_features_remove_from_the_end_of_category(test
 
 
 def test__remove_from_inventory_of_listed_values_remove_from_the_middle_of_category(test_remover):
-    test_remover._remove_from_inventory_of_listed_values()
+    test_remover._remove_from_inventory_of_listed_values(
+        feature_id="A-20",
+    )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_remover.output_file_with_listed_values,
@@ -719,7 +848,9 @@ def test__remove_from_inventory_of_listed_values_remove_from_the_middle_of_categ
 def test__remove_from_inventory_of_listed_values_remove_from_the_beginning_of_category(
     test_remover,
 ):
-    test_remover._remove_from_inventory_of_listed_values()
+    test_remover._remove_from_inventory_of_listed_values(
+        feature_id = "C-1",
+    )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_remover.output_file_with_listed_values,
@@ -728,7 +859,9 @@ def test__remove_from_inventory_of_listed_values_remove_from_the_beginning_of_ca
 
 
 def test__remove_from_inventory_of_listed_values_remove_from_the_end_of_category(test_remover):
-    test_remover._remove_from_inventory_of_listed_values()
+    test_remover._remove_from_inventory_of_listed_values(
+        feature_id = "D-8",
+    )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_remover.output_file_with_listed_values,
