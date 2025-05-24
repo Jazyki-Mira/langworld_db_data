@@ -105,7 +105,9 @@ class FeatureRemover(ObjectWithPaths):
                 match_column_name="id",
                 match_content=extract_feature_id(feature_id),
                 index_type_that_must_be_updated="value",
-                line_number_after_which_rows_must_be_updated=range_of_line_numbers_of_removed_rows[0],
+                line_number_after_which_rows_must_be_updated=range_of_line_numbers_of_removed_rows[
+                    0
+                ],
                 rows=rows_with_removed_row,
             )
         )
@@ -250,19 +252,25 @@ class FeatureRemover(ObjectWithPaths):
 
             if f"{match_content}{ID_SEPARATOR}" not in row[match_column_name]:
                 continue
-            
+
             current_feature_index = extract_feature_index(row[match_column_name])
 
             if index_type_that_must_be_updated == "feature":
-                row[match_column_name] = f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}"
-            
+                row[match_column_name] = (
+                    f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}"
+                )
+
             elif index_type_that_must_be_updated == "value":
-                row[match_column_name] = f"{match_content}{ID_SEPARATOR}{extract_value_index(row[match_column_name]) - 1}"
-            
+                row[match_column_name] = (
+                    f"{match_content}{ID_SEPARATOR}{extract_value_index(row[match_column_name]) - 1}"
+                )
+
             if rows_are_a_feature_profile:
                 if row["value_type"] == "listed":
 
                     current_value_index = extract_value_index(row["value_id"])
-                    row["value_id"] = f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
-        
+                    row["value_id"] = (
+                        f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
+                    )
+
         return rows
