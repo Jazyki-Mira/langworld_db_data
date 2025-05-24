@@ -93,13 +93,13 @@ DUMMY_ROWS_OF_FEATURE_PROFILE = (
         "feature_id": "A-1",
         "feature_name_ru": "Некий признак",
         "value_type": "listed",
-        "value_id": "A-1-3",
+        "value_id": "A-1-1",
     },
     {
         "feature_id": "A-2",
         "feature_name_ru": "Еще один признак",
         "value_type": "listed",
-        "value_id": "A-2-1",
+        "value_id": "A-2-2",
     },
     {
         "feature_id": "A-3",
@@ -111,13 +111,13 @@ DUMMY_ROWS_OF_FEATURE_PROFILE = (
         "feature_id": "B-1",
         "feature_name_ru": "Четвертый признак",
         "value_type": "listed",
-        "value_id": "B-1-3",
+        "value_id": "B-1-1",
     },
     {
         "feature_id": "C-1",
         "feature_name_ru": "И еще признак",
         "value_type": "listed",
-        "value_id": "C-1-6",
+        "value_id": "C-1-1",
     },
 )
 
@@ -320,7 +320,7 @@ def test__remove_one_row_throws_exception_invalid_match_content(test_remover):
     for bad_arg in ("abc", "A-189"):
         with pytest.raises(Exception, match="Row with given properties not found"):
 
-            _, _ = test_remover._remove_one_row_and_return_its_line_number(
+            _, _ = test_remover._remove_one_matching_row_and_return_its_line_number(
                 match_column_name="id",
                 match_content=bad_arg,
                 rows=DUMMY_ROWS_OF_LISTED_VALUES,
@@ -489,7 +489,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
     )
 
     rows_without_A_2, line_number_of_removed_row = (
-        test_remover._remove_one_row_and_return_its_line_number(
+        test_remover._remove_one_matching_row_and_return_its_line_number(
             match_column_name="id",
             match_content="A-2",
             rows=DUMMY_ROWS_OF_FEATURES,
@@ -501,6 +501,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
             match_column_name="id",
             match_content="A",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+            index_type_that_must_be_updated="feature",
             rows=rows_without_A_2,
         )
     )
@@ -541,7 +542,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
     )
 
     rows_without_last_feature_in_category_A, line_number_of_removed_row = (
-        test_remover._remove_one_row_and_return_its_line_number(
+        test_remover._remove_one_matching_row_and_return_its_line_number(
             match_column_name="id",
             match_content="A-3",
             rows=DUMMY_ROWS_OF_FEATURES,
@@ -553,6 +554,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
             match_column_name="id",
             match_content="A",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+            index_type_that_must_be_updated="feature",
             rows=rows_without_last_feature_in_category_A,
         )
     )
@@ -572,33 +574,33 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
             "feature_id": "A-1",
             "feature_name_ru": "Некий признак",
             "value_type": "listed",
-            "value_id": "A-1-3",
+            "value_id": "A-1-1",
         },
         {
             "feature_id": "A-2",
             "feature_name_ru": "Еще один признак",
             "value_type": "listed",
-            "value_id": "A-2-1",
+            "value_id": "A-2-3",
         },
         {
             "feature_id": "B-1",
             "feature_name_ru": "Четвертый признак",
             "value_type": "listed",
-            "value_id": "B-1-3",
+            "value_id": "B-1-1",
         },
         {
             "feature_id": "C-1",
             "feature_name_ru": "И еще признак",
             "value_type": "listed",
-            "value_id": "C-1-6",
+            "value_id": "C-1-1",
         },
     )
 
     rows_without_A_2, line_number_of_removed_row = (
-        test_remover._remove_one_row_and_return_its_line_number(
+        test_remover._remove_one_matching_row_and_return_its_line_number(
             match_column_name="feature_id",
             match_content="A-2",
-            rows=DUMMY_ROWS_OF_FEATURES,
+            rows=DUMMY_ROWS_OF_FEATURE_PROFILE,
         )
     )
 
@@ -607,9 +609,14 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
             match_column_name="feature_id",
             match_content="A",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+            index_type_that_must_be_updated="feature",
             rows=rows_without_A_2,
+            rows_are_a_feature_profile=True,
         )
     )
+
+    for row in rows_without_A_2_with_updated_feature_indices:
+        print(row)
 
     assert rows_without_A_2_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
 
@@ -623,33 +630,33 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
             "feature_id": "A-1",
             "feature_name_ru": "Некий признак",
             "value_type": "listed",
-            "value_id": "A-1-3",
+            "value_id": "A-1-1",
         },
         {
             "feature_id": "A-2",
             "feature_name_ru": "Еще один признак",
             "value_type": "listed",
-            "value_id": "A-2-1",
+            "value_id": "A-2-2",
         },
         {
             "feature_id": "B-1",
             "feature_name_ru": "Четвертый признак",
             "value_type": "listed",
-            "value_id": "B-1-3",
+            "value_id": "B-1-1",
         },
         {
             "feature_id": "C-1",
             "feature_name_ru": "И еще признак",
             "value_type": "listed",
-            "value_id": "C-1-6",
+            "value_id": "C-1-1",
         },
     )
 
     rows_without_last_feature_in_category_A, line_number_of_removed_row = (
-        test_remover._remove_one_row_and_return_its_line_number(
+        test_remover._remove_one_matching_row_and_return_its_line_number(
             match_column_name="feature_id",
             match_content="A-3",
-            rows=DUMMY_ROWS_OF_FEATURES,
+            rows=DUMMY_ROWS_OF_FEATURE_PROFILE,
         )
     )
 
@@ -658,7 +665,9 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
             match_column_name="feature_id",
             match_content="A",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+            index_type_that_must_be_updated="feature",
             rows=rows_without_last_feature_in_category_A,
+            rows_are_a_feature_profile=True,
         )
     )
 
@@ -669,7 +678,9 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
 
 
 def test__remove_from_inventory_of_features_remove_from_the_middle_of_category(test_remover):
-    test_remover._remove_from_inventory_of_features()
+    test_remover._remove_from_inventory_of_features(
+        feature_id="A-10",
+    )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_remover.output_file_with_features,
