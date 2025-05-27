@@ -1,3 +1,4 @@
+from copy import deepcopy
 from pathlib import Path
 from typing import Literal
 
@@ -274,9 +275,11 @@ class FeatureRemover(ObjectWithPaths):
         """
         # So far it is only used to decrement indices, but it can be slightly rewritten to do either decrement or increment
 
+        copied_rows = deepcopy(rows)
+
         nothing_is_changed = True
 
-        for row in rows[line_number_after_which_rows_must_be_updated:]:
+        for row in copied_rows[line_number_after_which_rows_must_be_updated:]:
 
             if f"{match_content}{ID_SEPARATOR}" not in row[match_column_name]:
                 continue
@@ -313,4 +316,4 @@ class FeatureRemover(ObjectWithPaths):
         else:
             print("Successfully updated IDs.")
 
-        return rows
+        return copied_rows
