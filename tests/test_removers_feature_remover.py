@@ -328,7 +328,7 @@ def test__remove_one_row_throws_exception_invalid_match_content(
 ):
 
     for bad_arg in ("abc", "A-189"):
-        with pytest.raises(Exception, match="Row with given properties not found"):
+        with pytest.raises(ValueError, match="Row with given properties not found"):
 
             _, _ = test_remover._remove_one_matching_row_and_return_its_line_number(
                 match_column_name="id",
@@ -982,4 +982,12 @@ def test_remove_feature(test_remover):
         check_existence_of_output_csv_file_and_compare_with_gold_standard(
             output_file=test_output_file,
             gold_standard_file=file,
+        )
+
+
+def test_remove_feature_throws_exception_with_invalid_feature_ID(test_remover):
+
+    with pytest.raises(FeatureRemoverError, match="Failed to remove feature"):
+        test_remover.remove_feature(
+            feature_id="X-1",
         )
