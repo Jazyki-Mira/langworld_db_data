@@ -179,7 +179,7 @@ class FeatureRemover(ObjectWithPaths):
         """
         Remove exactly one row from given rows (be it an inventory or a feature profile)
         which contains specified ID. Return rows without the target row and the line number of the removed row.
-        
+
         For example, if asked to remove A-2 from the list of A-1, A-2 and A-3,
         return the list of A-1 and A-3 and line number 1.
         match_column_name denotes the name of column where search must be performed.
