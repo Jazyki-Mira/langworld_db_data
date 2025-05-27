@@ -8,7 +8,6 @@ from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NA
 from langworld_db_data.tools.files.csv_xls import read_dicts_from_csv, write_csv
 from langworld_db_data.tools.value_ids.value_ids import (
     extract_category_id,
-    extract_feature_id,
     extract_feature_index,
     extract_value_index,
 )
@@ -41,8 +40,8 @@ class FeatureRemover(ObjectWithPaths):
         feature_id: str,
     ):
         """
-        Consists of removing from features inventory, from listed values inventory
-        and from feature profiles (same as in FeatureAdder).
+        Remove feature from features inventory, from listed values inventory
+        and from feature profiles.
         """
         self._remove_from_inventory_of_features(
             feature_id=feature_id,
@@ -58,9 +57,6 @@ class FeatureRemover(ObjectWithPaths):
         self,
         feature_id: str,
     ):
-        """
-        Two sub-tasks: remove line with target feature and update feature indices that follow it
-        """
 
         rows = read_dicts_from_csv(
             path_to_file=self.input_file_with_features,
@@ -94,10 +90,7 @@ class FeatureRemover(ObjectWithPaths):
         self,
         feature_id: str,
     ):
-        """
-        Two sub-tasks: remove lines with target feature values and update feature indices
-        of values that follow it
-        """
+
         rows = read_dicts_from_csv(
             path_to_file=self.input_file_with_listed_values,
         )
@@ -145,10 +138,7 @@ class FeatureRemover(ObjectWithPaths):
         self,
         feature_id: str,
     ):
-        """
-        Two sub-tasks: remove lines with target feature values and update feature indices
-        of features and their values that follow it
-        """
+
         feature_profiles = self.input_dir_with_feature_profiles.glob("*.csv")
 
         for feature_profile in feature_profiles:
@@ -188,15 +178,13 @@ class FeatureRemover(ObjectWithPaths):
     ) -> tuple[list[dict[str, str]], int]:
         """
         Remove exactly one row from given rows (be it an inventory or a feature profile)
-        which contains specified ID.
-
-        Return rows without the target row and the line number of the removed row.
+        which contains specified ID. Return rows without the target row and the line number of the removed row.
+        
         For example, if asked to remove A-2 from the list of A-1, A-2 and A-3,
         return the list of A-1 and A-3 and line number 1.
         match_column_name denotes the name of column where search must be performed.
-        match_content is argument of type 'str'. The first row which displays it as an argument
-        of the kind denoted by match_column_name will be removed.
-        For removing more rows, please use _remove_multiple_rows_and_return_range_of_their_line_numbers.
+        match_content is the sequence to search in the given column in the given rows.
+        For removing more than one row, please use _remove_multiple_rows_and_return_range_of_their_line_numbers.
         """
         # This method is written in such way that in the future it can be made universal
         # for all removers.
@@ -222,13 +210,12 @@ class FeatureRemover(ObjectWithPaths):
     ) -> tuple[list[dict[str, str]], tuple[int]]:
         """
         Remove more than one row from given rows (typically from listed values inventory)
-        which contain specified ID.
+        which contain specified ID. Return rows without the target rows and the tuple line
+        numbers of the first and the last removed rows.
 
-        Return rows without the target rows and thea range of line number of the removed rows,
-        that is a tuple with line number of the first removed row and the last removed row.
         For example, if asked to remove all A-2 values from the list of A-1-1, A-2-1, A-2-2, A-2-3 and A-3-1,
         return the list of A-1-1 and A-3-1 and line numbers 1 (initial) and 3 (final).
-        match_content is argument of type 'str'. All the rows which contain it in their IDs will be removed.
+        match_content is the sequence to search in the given column in the given rows.
         For removing exactly one row, please use _remove_one_row_and_return_its_line_number.
         """
         # This one is designed specifically for FeatureRemover because ListedValueRemover has only to remove one row at a time
@@ -267,9 +254,11 @@ class FeatureRemover(ObjectWithPaths):
 
         Search rows with matching content and decrement feature or value indices in the given column.
         match_column_name denotes the name of column where search must be performed.
-        match_content is argument of type 'str'. The first row which displays it as an argument
-        of the kind denoted by match_column_name will be removed.
-        index_type_that_must_be_updated can be either 'feature' or 'value'.
+        match_content is the sequence to search in the given column in the given rows.
+        id_type_that_must_be_updated denotes what kind of ID must be decremented, feature ID or value ID.
+        index_type_that_must_be_updated denotes what kind of index must be decremented, feature or value.
+        This is needed to specify what kind of change must be done for value IDs
+        (naturally, for feature IDs, only feature index can be updated).
         Update is only performed on rows whose line number is equal or greater than line_number_after_which_rows_must_be_updated.
         If rows_are_a_feature_profile is True, the method also scans value types and decrements feature indices in listed value IDs.
         """
