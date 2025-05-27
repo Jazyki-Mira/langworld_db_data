@@ -43,15 +43,18 @@ class FeatureRemover(ObjectWithPaths):
         Remove feature from features inventory, from listed values inventory
         and from feature profiles.
         """
-        self._remove_from_inventory_of_features(
-            feature_id=feature_id,
-        )
-        self._remove_from_inventory_of_listed_values(
-            feature_id=feature_id,
-        )
-        self._remove_from_feature_profiles(
-            feature_id=feature_id,
-        )
+        try:
+            self._remove_from_inventory_of_features(
+                feature_id=feature_id,
+            )
+            self._remove_from_inventory_of_listed_values(
+                feature_id=feature_id,
+            )
+            self._remove_from_feature_profiles(
+                feature_id=feature_id,
+            )
+        except ValueError as e:
+            raise FeatureRemoverError(f"Failed to remove feature. {e}")
 
     def _remove_from_inventory_of_features(
         self,
@@ -197,7 +200,7 @@ class FeatureRemover(ObjectWithPaths):
                 break
 
         if line_number_of_row_to_remove == 0:
-            raise Exception(
+            raise ValueError(
                 f"Row with given properties not found. Perhaps match_content is invalid: {match_content}"
             )
 
@@ -227,7 +230,7 @@ class FeatureRemover(ObjectWithPaths):
                 line_numbers_of_removed_rows.append(i)
 
         if len(line_numbers_of_removed_rows) == 0:
-            raise Exception(
+            raise ValueError(
                 f"Rows with given properties not found. Perhaps match_content is invalid: {match_content}"
             )
 
