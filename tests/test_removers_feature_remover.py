@@ -30,6 +30,7 @@ def test_remover():
         output_dir_with_feature_profiles=DIR_WITH_REMOVERS_TEST_FILES,
     )
 
+
 @pytest.fixture(scope="function")
 def dummy_rows_of_features():
     return (
@@ -322,7 +323,9 @@ def test__remove_one_row_remove_last_row(test_remover, dummy_rows_of_feature_pro
     assert line_number_of_removed_row == 4
 
 
-def test__remove_one_row_throws_exception_invalid_match_content(test_remover, dummy_rows_of_lised_values):
+def test__remove_one_row_throws_exception_invalid_match_content(
+    test_remover, dummy_rows_of_lised_values
+):
 
     for bad_arg in ("abc", "A-189"):
         with pytest.raises(Exception, match="Row with given properties not found"):
@@ -553,7 +556,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
             "ru": "Предложение",
         },
     )
-    
+
     rows_without_last_feature_in_category_A, line_number_of_removed_row = (
         test_remover._remove_one_matching_row_and_return_its_line_number(
             match_column_name="id",
