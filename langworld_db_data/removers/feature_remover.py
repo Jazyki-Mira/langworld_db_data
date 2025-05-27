@@ -38,7 +38,7 @@ class FeatureRemover(ObjectWithPaths):
     def remove_feature(
         self,
         feature_id: str,
-    ):
+    ) -> None:
         """
         Remove feature from features inventory, from listed values inventory
         and from feature profiles.
@@ -59,7 +59,7 @@ class FeatureRemover(ObjectWithPaths):
     def _remove_from_inventory_of_features(
         self,
         feature_id: str,
-    ):
+    ) -> None:
 
         rows = read_dicts_from_csv(
             path_to_file=self.input_file_with_features,
@@ -92,7 +92,7 @@ class FeatureRemover(ObjectWithPaths):
     def _remove_from_inventory_of_listed_values(
         self,
         feature_id: str,
-    ):
+    ) -> None:
 
         rows = read_dicts_from_csv(
             path_to_file=self.input_file_with_listed_values,
@@ -140,7 +140,7 @@ class FeatureRemover(ObjectWithPaths):
     def _remove_from_feature_profiles(
         self,
         feature_id: str,
-    ):
+    ) -> None:
 
         feature_profiles = self.input_dir_with_feature_profiles.glob("*.csv")
 
