@@ -304,8 +304,8 @@ class FeatureRemover(ObjectWithPaths):
             nothing_is_changed = False
 
         if nothing_is_changed:
-            print("Warning: no rows have been changed.")
+            logging.warning("No rows have been changed.")
         else:
-            print("Successfully updated IDs.")
+            logging.info("Successfully updated IDs.")
 
         return copied_rows
