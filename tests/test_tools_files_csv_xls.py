@@ -15,6 +15,7 @@ from langworld_db_data.tools.files.csv_xls import (
     read_dicts_from_csv,
     read_dicts_from_xls,
     read_plain_rows_from_csv,
+    remove_one_matching_row_and_return_its_line_number,
     write_csv,
 )
 from langworld_db_data.tools.files.txt import read_plain_text_from_file
@@ -24,6 +25,120 @@ from tests.paths import (
     PATH_TO_TEST_OUTPUT_TXT_FILE,
 )
 from tests.test_helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
+
+
+@pytest.fixture(scope="function")
+def dummy_rows_of_features():
+    return (
+        {
+            "id": "A-1",
+            "en": "Subject",
+            "ru": "Подлежащее",
+        },
+        {
+            "id": "A-2",
+            "en": "Object",
+            "ru": "Прямое дополнение",
+        },
+        {
+            "id": "A-3",
+            "en": "Predicate",
+            "ru": "Сказуемое",
+        },
+        {
+            "id": "B-1",
+            "en": "Collocation",
+            "ru": "Коллокация",
+        },
+        {
+            "id": "B-2",
+            "en": "Grammatical core",
+            "ru": "Грамматическая основа",
+        },
+        {
+            "id": "С-1",
+            "en": "Sentence",
+            "ru": "Предложение",
+        },
+    )
+
+
+@pytest.fixture(scope="function")
+def dummy_rows_of_listed_values():
+    return (
+        {
+            "id": "A-1-1",
+            "feature_id": "A-1",
+            "en": "Nominative",
+            "ru": "Номинатив",
+        },
+        {
+            "id": "A-1-2",
+            "feature_id": "A-1",
+            "en": "Ergative",
+            "ru": "Эргатив",
+        },
+        {
+            "id": "A-1-3",
+            "feature_id": "A-1",
+            "en": "DSM",
+            "ru": "Дифференцированное маркирование субъекта",
+        },
+        {
+            "id": "B-1-1",
+            "feature_id": "B-1",
+            "en": "Agreement",
+            "ru": "Согласование",
+        },
+        {
+            "id": "B-1-2",
+            "feature_id": "B-1",
+            "en": "Word order",
+            "ru": "Порядок слов",
+        },
+        {
+            "id": "B-2-1",
+            "feature_id": "B-2",
+            "en": "Coordination",
+            "ru": "Координация",
+        },
+    )
+
+
+@pytest.fixture(scope="function")
+def dummy_rows_of_feature_profile():
+    return (
+        {
+            "feature_id": "A-1",
+            "feature_name_ru": "Некий признак",
+            "value_type": "listed",
+            "value_id": "A-1-1",
+        },
+        {
+            "feature_id": "A-2",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-2-2",
+        },
+        {
+            "feature_id": "A-3",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-3-3",
+        },
+        {
+            "feature_id": "B-1",
+            "feature_name_ru": "Четвертый признак",
+            "value_type": "listed",
+            "value_id": "B-1-1",
+        },
+        {
+            "feature_id": "C-1",
+            "feature_name_ru": "И еще признак",
+            "value_type": "listed",
+            "value_id": "C-1-1",
+        },
+    )
 
 
 def test_convert_xls_to_csv():
@@ -299,3 +414,194 @@ def test_append_empty_column_to_csv_raises_exception_with_existing_column():
         )
 
     assert not output_file.exists()
+
+
+def test__remove_one_row_and_return_its_line_number_remove_from_inventory_of_features(
+    dummy_rows_of_features,
+):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "A-1",
+            "en": "Subject",
+            "ru": "Подлежащее",
+        },
+        {
+            "id": "A-2",
+            "en": "Object",
+            "ru": "Прямое дополнение",
+        },
+        {
+            "id": "B-1",
+            "en": "Collocation",
+            "ru": "Коллокация",
+        },
+        {
+            "id": "B-2",
+            "en": "Grammatical core",
+            "ru": "Грамматическая основа",
+        },
+        {
+            "id": "С-1",
+            "en": "Sentence",
+            "ru": "Предложение",
+        },
+    )
+
+    rows_with_one_line_removed, line_number_of_removed_row = (
+        remove_one_matching_row_and_return_its_line_number(
+            match_column_name="id",
+            match_content="A-3",
+            rows=dummy_rows_of_features,
+        )
+    )
+
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_number_of_removed_row == 2
+
+
+def test__remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_values):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "A-1-1",
+            "feature_id": "A-1",
+            "en": "Nominative",
+            "ru": "Номинатив",
+        },
+        {
+            "id": "A-1-3",
+            "feature_id": "A-1",
+            "en": "DSM",
+            "ru": "Дифференцированное маркирование субъекта",
+        },
+        {
+            "id": "B-1-1",
+            "feature_id": "B-1",
+            "en": "Agreement",
+            "ru": "Согласование",
+        },
+        {
+            "id": "B-1-2",
+            "feature_id": "B-1",
+            "en": "Word order",
+            "ru": "Порядок слов",
+        },
+        {
+            "id": "B-2-1",
+            "feature_id": "B-2",
+            "en": "Coordination",
+            "ru": "Координация",
+        },
+    )
+
+    rows_with_one_line_removed, line_number_of_removed_row = (
+        remove_one_matching_row_and_return_its_line_number(
+            match_column_name="id",
+            match_content="A-1-2",
+            rows=dummy_rows_of_listed_values,
+        )
+    )
+
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_number_of_removed_row == 1
+
+
+def test__remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "feature_id": "A-1",
+            "feature_name_ru": "Некий признак",
+            "value_type": "listed",
+            "value_id": "A-1-1",
+        },
+        {
+            "feature_id": "A-2",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-2-2",
+        },
+        {
+            "feature_id": "A-3",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-3-3",
+        },
+        {
+            "feature_id": "C-1",
+            "feature_name_ru": "И еще признак",
+            "value_type": "listed",
+            "value_id": "C-1-1",
+        },
+    )
+
+    rows_with_one_line_removed, line_number_of_removed_row = (
+        remove_one_matching_row_and_return_its_line_number(
+            match_column_name="feature_id",
+            match_content="B-1",
+            rows=dummy_rows_of_feature_profile,
+        )
+    )
+
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_number_of_removed_row == 3
+
+
+def test__remove_one_row_remove_last_row(dummy_rows_of_feature_profile):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "feature_id": "A-1",
+            "feature_name_ru": "Некий признак",
+            "value_type": "listed",
+            "value_id": "A-1-1",
+        },
+        {
+            "feature_id": "A-2",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-2-2",
+        },
+        {
+            "feature_id": "A-3",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-3-3",
+        },
+        {
+            "feature_id": "B-1",
+            "feature_name_ru": "Четвертый признак",
+            "value_type": "listed",
+            "value_id": "B-1-1",
+        },
+    )
+
+    rows_with_one_line_removed, line_number_of_removed_row = (
+        remove_one_matching_row_and_return_its_line_number(
+            match_column_name="feature_id",
+            match_content="C-1",
+            rows=dummy_rows_of_feature_profile,
+        )
+    )
+
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_number_of_removed_row == 4
+
+
+def test__remove_one_row_throws_exception_invalid_match_content(
+    dummy_rows_of_listed_values,
+):
+
+    for bad_arg in ("abc", "A-189"):
+        with pytest.raises(ValueError, match="Row with given properties not found"):
+
+            _, _ = remove_one_matching_row_and_return_its_line_number(
+                match_column_name="id",
+                match_content=bad_arg,
+                rows=dummy_rows_of_listed_values,
+            )
