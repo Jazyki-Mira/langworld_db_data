@@ -188,7 +188,6 @@ class FeatureRemover(ObjectWithPaths):
                 delimiter=",",
             )
 
-
     @staticmethod
     def _remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
         match_content: str,
