@@ -2,6 +2,7 @@ import pytest
 
 from langworld_db_data.removers.feature_remover import FeatureRemover, FeatureRemoverError
 from langworld_db_data.tools.files.csv_xls import (
+    remove_multiple_matching_rows_and_return_range_of_their_line_numbers,
     remove_one_matching_row_and_return_its_line_number,
 )
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
@@ -146,150 +147,6 @@ def dummy_rows_of_feature_profile():
             "value_id": "C-1-1",
         },
     )
-
-
-def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_values_of_A_1(
-    test_remover,
-    dummy_rows_of_listed_values,
-):
-
-    GOLD_STANDARD_DUMMY_ROWS = (
-        {
-            "id": "B-1-1",
-            "feature_id": "B-1",
-            "en": "Agreement",
-            "ru": "Согласование",
-        },
-        {
-            "id": "B-1-2",
-            "feature_id": "B-1",
-            "en": "Word order",
-            "ru": "Порядок слов",
-        },
-        {
-            "id": "B-2-1",
-            "feature_id": "B-2",
-            "en": "Coordination",
-            "ru": "Координация",
-        },
-    )
-
-    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
-        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-            match_content="A-1",
-            rows=dummy_rows_of_listed_values,
-        )
-    )
-
-    assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
-
-    assert range_of_lin_numbers_of_removed_rows == (0, 2)
-
-
-def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_values_of_B_1(
-    test_remover,
-    dummy_rows_of_listed_values,
-):
-
-    GOLD_STANDARD_DUMMY_ROWS = (
-        {
-            "id": "A-1-1",
-            "feature_id": "A-1",
-            "en": "Nominative",
-            "ru": "Номинатив",
-        },
-        {
-            "id": "A-1-2",
-            "feature_id": "A-1",
-            "en": "Ergative",
-            "ru": "Эргатив",
-        },
-        {
-            "id": "A-1-3",
-            "feature_id": "A-1",
-            "en": "DSM",
-            "ru": "Дифференцированное маркирование субъекта",
-        },
-        {
-            "id": "B-2-1",
-            "feature_id": "B-2",
-            "en": "Coordination",
-            "ru": "Координация",
-        },
-    )
-
-    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
-        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-            match_content="B-1",
-            rows=dummy_rows_of_listed_values,
-        )
-    )
-
-    assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
-
-    assert range_of_lin_numbers_of_removed_rows == (3, 4)
-
-
-def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_value_of_B_2(
-    test_remover,
-    dummy_rows_of_listed_values,
-):
-
-    GOLD_STANDARD_DUMMY_ROWS = (
-        {
-            "id": "A-1-1",
-            "feature_id": "A-1",
-            "en": "Nominative",
-            "ru": "Номинатив",
-        },
-        {
-            "id": "A-1-2",
-            "feature_id": "A-1",
-            "en": "Ergative",
-            "ru": "Эргатив",
-        },
-        {
-            "id": "A-1-3",
-            "feature_id": "A-1",
-            "en": "DSM",
-            "ru": "Дифференцированное маркирование субъекта",
-        },
-        {
-            "id": "B-1-1",
-            "feature_id": "B-1",
-            "en": "Agreement",
-            "ru": "Согласование",
-        },
-        {
-            "id": "B-1-2",
-            "feature_id": "B-1",
-            "en": "Word order",
-            "ru": "Порядок слов",
-        },
-    )
-
-    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
-        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-            match_content="B-2",
-            rows=dummy_rows_of_listed_values,
-        )
-    )
-
-    assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
-
-    assert range_of_lin_numbers_of_removed_rows == (5, 5)
-
-
-def test__remove_multiple_matching_rows_throws_exception_invalid_feature_id(
-    test_remover,
-    dummy_rows_of_listed_values,
-):
-
-    with pytest.raises(ValueError, match="Rows with given properties not found"):
-        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-            match_content="X-1",
-            rows=dummy_rows_of_listed_values,
-        )
 
 
 def test__update_indices_after_given_line_number_if_necessary_in_features_update_is_necessary(
@@ -438,7 +295,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
     )
 
     rows_without_B_1, range_of_line_numbers_of_removed_rows = (
-        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+        remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
             match_content="B-1",
             rows=dummy_rows_of_listed_values,
         )
@@ -510,7 +367,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
     )
 
     rows_without_B_2, range_of_line_numbers_of_removed_rows = (
-        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+        remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
             match_content="B-2",
             rows=dummy_rows_of_listed_values,
         )
