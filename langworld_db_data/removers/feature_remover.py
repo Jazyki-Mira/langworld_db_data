@@ -189,7 +189,6 @@ class FeatureRemover(ObjectWithPaths):
                 delimiter=",",
             )
 
-
     @staticmethod
     def _update_indices_after_given_line_number_if_necessary(
         match_column_name: Literal["feature_id", "id"],
