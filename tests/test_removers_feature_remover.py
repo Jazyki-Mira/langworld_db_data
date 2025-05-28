@@ -923,7 +923,7 @@ def test__remove_from_feature_profiles_remove_from_the_beginning_of_category(tes
     )
 
     gold_standard_feature_profiles = list(
-        (DIR_WITH_GOLD_STANDARD_FILES / "feature_profiles_without_C_1").glob("*.csv")
+        (DIR_WITH_GOLD_STANDARD_FILES / "feature_profiles_after_deletion_of_C_1").glob("*.csv")
     )
 
     for file in gold_standard_feature_profiles:
@@ -941,7 +941,7 @@ def test__remove_from_feature_profiles_remove_from_the_middle_of_category(test_r
     )
 
     gold_standard_feature_profiles = list(
-        (DIR_WITH_GOLD_STANDARD_FILES / "feature_profiles_without_D_7").glob("*.csv")
+        (DIR_WITH_GOLD_STANDARD_FILES / "feature_profiles_after_deletion_of_D_7").glob("*.csv")
     )
 
     for file in gold_standard_feature_profiles:
@@ -959,7 +959,7 @@ def test__remove_from_feature_profiles_remove_from_the_end_of_category(test_remo
     )
 
     gold_standard_feature_profiles = list(
-        (DIR_WITH_GOLD_STANDARD_FILES / "feature_profiles_without_D_8").glob("*.csv")
+        (DIR_WITH_GOLD_STANDARD_FILES / "feature_profiles_after_deletion_of_D_8").glob("*.csv")
     )
 
     for file in gold_standard_feature_profiles:
@@ -985,7 +985,7 @@ def test_remove_feature(test_remover):
     )
 
     gold_standard_feature_profiles = list(
-        (DIR_WITH_GOLD_STANDARD_FILES / "feature_profiles_without_N_3").glob("*.csv")
+        (DIR_WITH_GOLD_STANDARD_FILES / "feature_profiles_after_deletion_of_N_3").glob("*.csv")
     )
 
     for file in gold_standard_feature_profiles:
