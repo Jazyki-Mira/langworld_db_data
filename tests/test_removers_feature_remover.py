@@ -469,6 +469,18 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
     assert range_of_lin_numbers_of_removed_rows == (5, 5)
 
 
+def test__remove_multiple_matching_rows_throws_exception_invalid_feature_id(
+        test_remover,
+        dummy_rows_of_lised_values,
+):
+    
+    with pytest.raises(ValueError, match="Rows with given properties not found"):
+        test_remover._remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+            match_content="X-1",
+            rows=dummy_rows_of_lised_values,
+        )
+
+
 def test__update_indices_after_given_line_number_if_necessary_in_features_update_is_necessary(
     test_remover,
     dummy_rows_of_features,
