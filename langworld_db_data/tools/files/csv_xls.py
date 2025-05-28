@@ -335,3 +335,36 @@ def write_csv(
 
         writer.writerows(rows_to_write)  # type: ignore
         print(f"Written {len(rows_to_write)} rows")
+
+
+def remove_one_matching_row_and_return_its_line_number(
+    match_column_name: Literal["feature_id", "id"],
+    match_content: str,
+    rows: list[dict[str, str]],
+) -> tuple[list[dict[str, str]], int]:
+    """
+    Remove exactly one row from given rows (be it an inventory or a feature profile)
+    which contains specified ID. Return rows without the target row and the line number of the removed row.
+
+    For example, if asked to remove A-2 from the list of A-1, A-2 and A-3,
+    return the list of A-1 and A-3 and line number 1.
+    match_column_name denotes the name of column where search must be performed.
+    match_content is the sequence to search in the given column in the given rows.
+    For removing more than one row, please use _remove_multiple_rows_and_return_range_of_their_line_numbers.
+    """
+    # This method is written in such way that in the future it can be made universal
+    # for all removers.
+
+    line_number_of_row_to_remove = 0
+
+    for i, row in enumerate(rows):
+        if row[match_column_name] == match_content:
+            line_number_of_row_to_remove = i
+            break
+
+    if line_number_of_row_to_remove == 0:
+        raise ValueError(
+            f"Row with given properties not found. Perhaps match_content is invalid: {match_content}"
+        )
+
+    return (rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove + 1 :], i)
