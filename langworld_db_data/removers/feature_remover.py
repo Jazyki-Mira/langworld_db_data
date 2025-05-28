@@ -58,9 +58,13 @@ class FeatureRemover(ObjectWithPaths):
         except ValueError as e:
             raise FeatureRemoverError(f"Failed to remove feature. {e}")
 
-        self._remove_from_feature_profiles(
+        
+        try:
+            self._remove_from_feature_profiles(
             feature_id=feature_id,
-        )
+            )
+        except ValueError as e:
+            raise FeatureRemoverError(f"Failed to remove feature. {e}")
 
     def _remove_from_inventory_of_features(
         self,
