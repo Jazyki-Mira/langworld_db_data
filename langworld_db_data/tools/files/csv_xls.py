@@ -364,7 +364,9 @@ def remove_one_matching_row_and_return_its_line_number(
     # for all removers.
 
     if type(match_content) not in (int, str):
-        raise TypeError(f"match_content must be of type <str> or <int>, <{type(match_content)}> was given.")
+        raise TypeError(
+            f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
+        )
 
     line_number_of_row_to_remove = 0
 
@@ -396,7 +398,9 @@ def remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
     # This one is designed specifically for FeatureRemover because ListedValueRemover has only to remove one row at a time
 
     if type(match_content) not in (int, str):
-        raise TypeError(f"match_content must be of type <str> or <int>, <{type(match_content)}> was given.")
+        raise TypeError(
+            f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
+        )
 
     line_numbers_of_removed_rows = []
 
