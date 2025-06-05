@@ -1,7 +1,9 @@
 import csv
+import logging
 from collections import Counter
 from collections.abc import Generator
 from contextlib import contextmanager
+from copy import deepcopy
 from pathlib import Path
 from typing import Any, Iterable, Literal, NamedTuple, Optional, Union
 
@@ -11,6 +13,12 @@ import _csv  # for typing only
 import openpyxl.cell
 import openpyxl.worksheet.worksheet
 from openpyxl import load_workbook
+
+from langworld_db_data.constants.literals import ID_SEPARATOR
+from langworld_db_data.tools.value_ids.value_ids import (
+    extract_feature_index,
+    extract_value_index,
+)
 
 CSVDelimiter = Literal[",", ";"]
 
@@ -335,3 +343,144 @@ def write_csv(
 
         writer.writerows(rows_to_write)  # type: ignore
         print(f"Written {len(rows_to_write)} rows")
+
+
+def remove_one_matching_row_and_return_its_line_number(
+    match_column_name: Literal["feature_id", "id"],
+    match_content: str,
+    rows: list[dict[str, str]],
+) -> tuple[list[dict[str, str]], int]:
+    """
+    Remove exactly one row from given rows (be it an inventory or a feature profile)
+    which contains specified ID. Return rows without the target row and the line number of the removed row.
+
+    For example, if asked to remove A-2 from the list of A-1, A-2 and A-3,
+    return the list of A-1 and A-3 and line number 1.
+    match_column_name denotes the name of column where search must be performed.
+    match_content is the sequence to search in the given column in the given rows.
+    For removing more than one row, please use _remove_multiple_rows_and_return_range_of_their_line_numbers.
+    """
+    # This method is written in such way that in the future it can be made universal
+    # for all removers.
+
+    if type(match_content) not in (int, str):
+        raise TypeError(
+            f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
+        )
+
+    line_number_of_row_to_remove = 0
+
+    for i, row in enumerate(rows):
+        if row[match_column_name] == match_content:
+            line_number_of_row_to_remove = i
+            break
+
+    if line_number_of_row_to_remove == 0:
+        logging.warning("No rows have been removed")
+
+    return (rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove + 1 :], i)
+
+
+def remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+    match_content: str,
+    rows: list[dict[str, str]],
+) -> tuple[list[dict[str, str]], tuple[int]]:
+    """
+    Remove more than one row from given rows (typically from listed values inventory)
+    which contain specified ID. Return rows without the target rows and the tuple line
+    numbers of the first and the last removed rows.
+
+    For example, if asked to remove all A-2 values from the list of A-1-1, A-2-1, A-2-2, A-2-3 and A-3-1,
+    return the list of A-1-1 and A-3-1 and line numbers 1 (initial) and 3 (final).
+    match_content is the sequence to search in the given column in the given rows.
+    For removing exactly one row, please use _remove_one_row_and_return_its_line_number.
+    """
+    # This one is designed specifically for FeatureRemover because ListedValueRemover has only to remove one row at a time
+
+    if type(match_content) not in (int, str):
+        raise TypeError(
+            f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
+        )
+
+    line_numbers_of_removed_rows = []
+
+    for i, row in enumerate(rows):
+        if row["feature_id"] == match_content:
+            line_numbers_of_removed_rows.append(i)
+
+    if len(line_numbers_of_removed_rows) == 0:
+        logging.warning("No rows have been removed")
+
+    first_line_number = line_numbers_of_removed_rows[0]
+    last_line_number = line_numbers_of_removed_rows[-1]
+
+    return (
+        rows[:first_line_number] + rows[last_line_number + 1 :],
+        (first_line_number, last_line_number),
+    )
+
+
+def update_indices_after_given_line_number_if_necessary(
+    match_column_name: Literal["feature_id", "id"],
+    match_content: str,
+    id_type_that_must_be_updated: Literal["feature", "value"],
+    index_type_that_must_be_updated: Literal["feature", "value"],
+    line_number_after_which_rows_must_be_updated: int,
+    rows: list[dict[str, str]],
+    rows_are_a_feature_profile: bool = False,
+) -> list[dict[str, str]]:
+    """
+    Decrement indices of features or values. Return rows with updated indices or intact rows if update is not necessary.
+
+    Search rows with matching content and decrement feature or value indices in the given column.
+    match_column_name denotes the name of column where search must be performed.
+    match_content is the sequence to search in the given column in the given rows.
+    id_type_that_must_be_updated denotes what kind of ID must be decremented, feature ID or value ID.
+    index_type_that_must_be_updated denotes what kind of index must be decremented, feature or value.
+    This is needed to specify what kind of change must be done for value IDs
+    (naturally, for feature IDs, only feature index can be updated).
+    Update is only performed on rows whose line number is equal or greater than line_number_after_which_rows_must_be_updated.
+    If rows_are_a_feature_profile is True, the method also scans value types and decrements feature indices in listed value IDs.
+    """
+    # So far it is only used to decrement indices, but it can be slightly rewritten to do either decrement or increment
+
+    copied_rows = deepcopy(rows)
+
+    nothing_is_changed = True
+
+    for row in copied_rows[line_number_after_which_rows_must_be_updated:]:
+
+        if f"{match_content}{ID_SEPARATOR}" not in row[match_column_name]:
+            continue
+
+        current_feature_index = extract_feature_index(row[match_column_name])
+
+        if id_type_that_must_be_updated == "value":
+            if index_type_that_must_be_updated == "feature":
+                current_value_index = extract_value_index(row["id"])
+                row[match_column_name] = (
+                    f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
+                )
+
+            elif index_type_that_must_be_updated == "value":
+                row[match_column_name] = (
+                    f"{match_content}{ID_SEPARATOR}{extract_value_index(row[match_column_name]) - 1}"
+                )
+        elif id_type_that_must_be_updated == "feature":
+            row[match_column_name] = f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}"
+
+        if rows_are_a_feature_profile:
+            if row["value_type"] == "listed":
+
+                current_value_index = extract_value_index(row["value_id"])
+                row["value_id"] = (
+                    f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
+                )
+        nothing_is_changed = False
+
+    if nothing_is_changed:
+        logging.warning("No rows have been changed.")
+    else:
+        logging.info("Successfully updated IDs.")
+
+    return copied_rows
