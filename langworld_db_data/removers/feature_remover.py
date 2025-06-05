@@ -49,13 +49,13 @@ class FeatureRemover(ObjectWithPaths):
             path_to_file=self.input_file_with_features, column_name=KEY_FOR_ID
         ):
             raise FeatureRemoverError(
-                f"Feature ID <{feature_id}> not found in file" f" {self.input_file_with_features.name}"
+                f"Feature ID <{feature_id}> not found in file"
+                f" {self.input_file_with_features.name}"
             )
-        
+
         self._remove_from_inventory_of_features(feature_id=feature_id)
         self._remove_from_inventory_of_listed_values(feature_id=feature_id)
         self._remove_from_feature_profiles(feature_id=feature_id)
-        
 
     def _remove_from_inventory_of_features(
         self,
