@@ -15,7 +15,6 @@ from langworld_db_data.tools.files.csv_xls import (
 from langworld_db_data.tools.value_ids.value_ids import extract_category_id
 
 
-
 class FeatureRemoverError(Exception):
     pass
 

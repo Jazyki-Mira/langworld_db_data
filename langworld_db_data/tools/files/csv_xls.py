@@ -15,7 +15,6 @@ import openpyxl.worksheet.worksheet
 from openpyxl import load_workbook
 
 from langworld_db_data.constants.literals import ID_SEPARATOR
-
 from langworld_db_data.tools.value_ids.value_ids import (
     extract_feature_index,
     extract_value_index,
@@ -462,9 +461,7 @@ def update_indices_after_given_line_number_if_necessary(
                     f"{match_content}{ID_SEPARATOR}{extract_value_index(row[match_column_name]) - 1}"
                 )
         elif id_type_that_must_be_updated == "feature":
-            row[match_column_name] = (
-                f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}"
-            )
+            row[match_column_name] = f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}"
 
         if rows_are_a_feature_profile:
             if row["value_type"] == "listed":
