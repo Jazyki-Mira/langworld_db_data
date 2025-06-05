@@ -599,8 +599,8 @@ def test__remove_one_row_throws_exception_invalid_match_content(
     dummy_rows_of_listed_values,
 ):
 
-    for bad_arg in ("abc", "A-189"):
-        with pytest.raises(ValueError, match="Row with given properties not found"):
+    for bad_arg in (True, [1, 2]):
+        with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
 
             _, _ = remove_one_matching_row_and_return_its_line_number(
                 match_column_name="id",
@@ -742,9 +742,9 @@ def test__remove_multiple_matching_rows_throws_exception_invalid_feature_id(
     dummy_rows_of_listed_values,
 ):
 
-    with pytest.raises(ValueError, match="Rows with given properties not found"):
+    with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
         remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-            match_content="X-1",
+            match_content=False,
             rows=dummy_rows_of_listed_values,
         )
 

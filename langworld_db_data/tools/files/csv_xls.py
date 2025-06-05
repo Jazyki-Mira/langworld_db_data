@@ -363,6 +363,9 @@ def remove_one_matching_row_and_return_its_line_number(
     # This method is written in such way that in the future it can be made universal
     # for all removers.
 
+    if type(match_content) not in (int, str):
+        raise TypeError(f"match_content must be of type <str> or <int>, <{type(match_content)}> was given.")
+
     line_number_of_row_to_remove = 0
 
     for i, row in enumerate(rows):
@@ -371,9 +374,7 @@ def remove_one_matching_row_and_return_its_line_number(
             break
 
     if line_number_of_row_to_remove == 0:
-        raise ValueError(
-            f"Row with given properties not found. Perhaps match_content is invalid: {match_content}"
-        )
+        logging.warning("No rows have been removed")
 
     return (rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove + 1 :], i)
 
@@ -394,6 +395,9 @@ def remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
     """
     # This one is designed specifically for FeatureRemover because ListedValueRemover has only to remove one row at a time
 
+    if type(match_content) not in (int, str):
+        raise TypeError(f"match_content must be of type <str> or <int>, <{type(match_content)}> was given.")
+
     line_numbers_of_removed_rows = []
 
     for i, row in enumerate(rows):
@@ -401,9 +405,7 @@ def remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
             line_numbers_of_removed_rows.append(i)
 
     if len(line_numbers_of_removed_rows) == 0:
-        raise ValueError(
-            f"Rows with given properties not found. Perhaps match_content is invalid: {match_content}"
-        )
+        logging.warning("No rows have been removed")
 
     first_line_number = line_numbers_of_removed_rows[0]
     last_line_number = line_numbers_of_removed_rows[-1]
