@@ -1,11 +1,10 @@
-import logging
-from copy import deepcopy
 from pathlib import Path
-from typing import Literal
 
 from langworld_db_data import ObjectWithPaths
+from langworld_db_data.constants.literals import KEY_FOR_ID
 from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import (
+    read_column_from_csv,
     read_dicts_from_csv,
     remove_multiple_matching_rows_and_return_range_of_their_line_numbers,
     remove_one_matching_row_and_return_its_line_number,
@@ -45,28 +44,18 @@ class FeatureRemover(ObjectWithPaths):
         Remove feature from features inventory, from listed values inventory
         and from feature profiles.
         """
-        try:
-            self._remove_from_inventory_of_features(
-                feature_id=feature_id,
-            )
-        except ValueError as e:
-            raise FeatureRemoverError(f"Failed to remove feature from features inventory. {e}")
 
-        try:
-            self._remove_from_inventory_of_listed_values(
-                feature_id=feature_id,
-            )
-        except ValueError as e:
+        if feature_id not in read_column_from_csv(
+            path_to_file=self.input_file_with_features, column_name=KEY_FOR_ID
+        ):
             raise FeatureRemoverError(
-                f"Failed to remove feature from listed values inventory. {e}"
+                f"Feature ID <{feature_id}> not found in file" f" {self.input_file_with_features.name}"
             )
-
-        try:
-            self._remove_from_feature_profiles(
-                feature_id=feature_id,
-            )
-        except ValueError as e:
-            raise FeatureRemoverError(f"Failed to remove feature from feature profiles. {e}")
+        
+        self._remove_from_inventory_of_features(feature_id=feature_id)
+        self._remove_from_inventory_of_listed_values(feature_id=feature_id)
+        self._remove_from_feature_profiles(feature_id=feature_id)
+        
 
     def _remove_from_inventory_of_features(
         self,

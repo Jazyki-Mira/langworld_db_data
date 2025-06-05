@@ -300,7 +300,7 @@ def test_remove_feature(test_remover):
 
 def test_remove_feature_throws_exception_with_invalid_feature_ID(test_remover):
 
-    with pytest.raises(FeatureRemoverError, match="Failed to remove feature"):
+    with pytest.raises(FeatureRemoverError, match="Feature ID <X-1> not found in file"):
         test_remover.remove_feature(
             feature_id="X-1",
         )
