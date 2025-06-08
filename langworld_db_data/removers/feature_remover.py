@@ -4,8 +4,8 @@ from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import KEY_FOR_ID
 from langworld_db_data.constants.paths import (
     FEATURE_PROFILES_DIR,
-    FILE_WITH_LISTED_VALUES,
     FILE_WITH_CATEGORIES,
+    FILE_WITH_LISTED_VALUES,
     FILE_WITH_NAMES_OF_FEATURES,
 )
 from langworld_db_data.tools.files.csv_xls import (
