@@ -2,7 +2,12 @@ from pathlib import Path
 
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import KEY_FOR_ID
-from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
+from langworld_db_data.constants.paths import (
+    FEATURE_PROFILES_DIR,
+    FILE_WITH_LISTED_VALUES,
+    FILE_WITH_CATEGORIES,
+    FILE_WITH_NAMES_OF_FEATURES,
+)
 from langworld_db_data.tools.files.csv_xls import (
     read_column_from_csv,
     read_dicts_from_csv,
@@ -24,17 +29,19 @@ class FeatureRemover(ObjectWithPaths):
         *,
         file_with_categories: Path = FILE_WITH_CATEGORIES,
         input_file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
-        # ability to give a different output file is mostly for testing:
         output_file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
-        **kwargs,
+        input_file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
+        output_file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
+        input_dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
+        output_dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
     ):
-        # I know **kwargs removes argument hinting, but to repeat all arguments will
-        # make too many lines. All arguments are keyword-only, so the wrong/mistyped
-        # argument cannot be passed.
-        super().__init__(**kwargs)
         self.file_with_categories = file_with_categories
         self.input_file_with_features = input_file_with_features
         self.output_file_with_features = output_file_with_features
+        self.input_file_with_listed_values = input_file_with_listed_values
+        self.output_file_with_listed_values = output_file_with_listed_values
+        self.input_dir_with_feature_profiles = input_dir_with_feature_profiles
+        self.output_dir_with_feature_profiles = output_dir_with_feature_profiles
 
     def remove_feature(
         self,
