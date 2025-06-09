@@ -1,7 +1,3 @@
-from pathlib import Path
-
-import pytest
-
 from langworld_db_data.tools.files.csv_xls import (
     remove_multiple_matching_rows,
     remove_one_matching_row,
@@ -9,7 +5,7 @@ from langworld_db_data.tools.files.csv_xls import (
 from langworld_db_data.tools.ids.update import update_indices_after_given_line_number_if_necessary
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_features_update_is_necessary(
+def test_update_indices_after_given_line_number_if_necessary_in_features_update_is_necessary(
     dummy_rows_of_features,
 ):
 
@@ -49,7 +45,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
 
     rows_without_A_2_with_updated_feature_indices = (
         update_indices_after_given_line_number_if_necessary(
-            match_column_name="id",
+            lookup_column="id",
             match_content="A",
             id_type_that_must_be_updated="feature",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
@@ -61,7 +57,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
     assert rows_without_A_2_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_features_update_is_not_necessary(
+def test_update_indices_after_given_line_number_if_necessary_in_features_update_is_not_necessary(
     dummy_rows_of_features,
 ):
 
@@ -101,7 +97,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
 
     rows_without_last_feature_in_category_A_with_updated_feature_indices = (
         update_indices_after_given_line_number_if_necessary(
-            match_column_name="id",
+            lookup_column="id",
             match_content="A",
             id_type_that_must_be_updated="feature",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
@@ -116,7 +112,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_features_update
     )
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_necessary(
+def test_update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_necessary(
     dummy_rows_of_listed_values,
 ):
 
@@ -157,7 +153,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
 
     rows_without_B_1_with_updated_value_indices = (
         update_indices_after_given_line_number_if_necessary(
-            match_column_name="id",
+            lookup_column="id",
             match_content="B",
             id_type_that_must_be_updated="value",
             index_type_that_must_be_updated="feature",
@@ -168,7 +164,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
 
     rows_without_B_1_with_updated_feature_and_value_indices = (
         update_indices_after_given_line_number_if_necessary(
-            match_column_name="feature_id",
+            lookup_column="feature_id",
             match_content="B",
             id_type_that_must_be_updated="feature",
             index_type_that_must_be_updated="feature",
@@ -180,7 +176,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
     assert rows_without_B_1_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_not_necessary(
+def test_update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_not_necessary(
     dummy_rows_of_listed_values,
 ):
 
@@ -227,7 +223,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
 
     rows_without_B_2_with_updated_value_indices = (
         update_indices_after_given_line_number_if_necessary(
-            match_column_name="id",
+            lookup_column="id",
             match_content="B",
             id_type_that_must_be_updated="value",
             index_type_that_must_be_updated="feature",
@@ -238,7 +234,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
 
     rows_without_B_2_with_updated_feature_and_value_indices = (
         update_indices_after_given_line_number_if_necessary(
-            match_column_name="feature_id",
+            lookup_column="feature_id",
             match_content="B",
             id_type_that_must_be_updated="feature",
             index_type_that_must_be_updated="feature",
@@ -250,7 +246,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
     assert rows_without_B_2_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_necessary(
+def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_necessary(
     dummy_rows_of_feature_profile,
 ):
 
@@ -289,7 +285,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
 
     rows_without_A_2_with_updated_feature_indices = (
         update_indices_after_given_line_number_if_necessary(
-            match_column_name="feature_id",
+            lookup_column="feature_id",
             match_content="A",
             id_type_that_must_be_updated="feature",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
@@ -305,7 +301,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
     assert rows_without_A_2_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test__update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_not_necessary(
+def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_not_necessary(
     dummy_rows_of_feature_profile,
 ):
 
@@ -344,7 +340,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_feature_profile
 
     rows_without_last_feature_in_category_A_with_updated_feature_indices = (
         update_indices_after_given_line_number_if_necessary(
-            match_column_name="feature_id",
+            lookup_column="feature_id",
             match_content="A",
             id_type_that_must_be_updated="feature",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,

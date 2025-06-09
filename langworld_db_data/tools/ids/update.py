@@ -10,7 +10,7 @@ from langworld_db_data.tools.ids.extract import (
 
 
 def update_indices_after_given_line_number_if_necessary(
-    match_column_name: Literal["feature_id", "id"],
+    lookup_column: Literal["feature_id", "id"],
     match_content: str,
     id_type_that_must_be_updated: Literal["feature", "value"],
     index_type_that_must_be_updated: Literal["feature", "value"],
@@ -39,24 +39,24 @@ def update_indices_after_given_line_number_if_necessary(
 
     for row in copied_rows[line_number_after_which_rows_must_be_updated:]:
 
-        if f"{match_content}{ID_SEPARATOR}" not in row[match_column_name]:
+        if f"{match_content}{ID_SEPARATOR}" not in row[lookup_column]:
             continue
 
-        current_feature_index = extract_feature_index(row[match_column_name])
+        current_feature_index = extract_feature_index(row[lookup_column])
 
         if id_type_that_must_be_updated == "value":
             if index_type_that_must_be_updated == "feature":
                 current_value_index = extract_value_index(row["id"])
-                row[match_column_name] = (
+                row[lookup_column] = (
                     f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
                 )
 
             elif index_type_that_must_be_updated == "value":
-                row[match_column_name] = (
-                    f"{match_content}{ID_SEPARATOR}{extract_value_index(row[match_column_name]) - 1}"
+                row[lookup_column] = (
+                    f"{match_content}{ID_SEPARATOR}{extract_value_index(row[lookup_column]) - 1}"
                 )
         elif id_type_that_must_be_updated == "feature":
-            row[match_column_name] = f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}"
+            row[lookup_column] = f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}"
 
         if rows_are_a_feature_profile:
             if row["value_type"] == "listed":
