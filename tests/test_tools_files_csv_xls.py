@@ -487,6 +487,15 @@ def test_remove_one_row_throws_exception_invalid_match_content(
             )
 
 
+def test_remove_one_row_throws_exception_empty_rows():
+    with pytest.raises(ValueError, match="The list of rows is empty. Cannot remove a row"):
+        _, _ = remove_one_matching_row(
+            lookup_column="id",
+            match_content="some_value",
+            rows=[],
+        )
+
+
 def test_remove_multiple_matching_rows_remove_values_of_A_1(
     dummy_rows_of_listed_values,
 ):

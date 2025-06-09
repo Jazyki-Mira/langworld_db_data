@@ -372,6 +372,9 @@ def remove_one_matching_row(
         - The function only removes the first matching row
         - For removing multiple rows, use remove_multiple_matching_rows
     """
+    if not rows:
+        raise ValueError("The list of rows is empty. Cannot remove a row")
+
     if lookup_column not in rows[0]:
         raise KeyError(f"{lookup_column=} not found. Cannot remove a row")
 
