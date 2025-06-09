@@ -1,5 +1,4 @@
 import csv
-import logging
 from collections import Counter
 from collections.abc import Generator
 from contextlib import contextmanager
@@ -356,37 +355,46 @@ def remove_one_matching_row(
         dictionaries in the list are not changed, and new ones are returned.
 
     Args:
+        rows: List of dictionaries representing rows
         lookup_column: Name of the column to search in
         match_content: Content to search for in the specified column
-        rows: List of dictionaries representing rows
 
     Returns:
         tuple: (modified_rows, index_of_removed_row)
 
     Raises:
         TypeError: If match_content is not str or int
+        KeyError:
+            - If the specified lookup_column is not found in the rows
+            - If no rows match the specified match_content in the lookup_column
 
     Note:
         - The function only removes the first matching row
-        - If no match is found, returns rows and index 0
         - For removing multiple rows, use remove_multiple_matching_rows
     """
-    copied_rows = deepcopy(rows)
+    if lookup_column not in rows[0]:
+        # TODO add test
+        raise KeyError(f"{lookup_column=} not found. Cannot remove a row")
 
     if type(match_content) not in (int, str):
         raise TypeError(
             f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
         )
 
-    index_of_row_to_remove = 0
+    index_of_row_to_remove: Union[int, None] = None
+
+    copied_rows = deepcopy(rows)
 
     for i, row in enumerate(copied_rows):
+
         if row[lookup_column] == match_content:
             index_of_row_to_remove = i
             break
 
-    if index_of_row_to_remove == 0:
-        logging.warning("No rows have been removed")
+    if index_of_row_to_remove is None:
+        raise KeyError(
+            f"{match_content=} not found in column {lookup_column=}. Cannot remove a row"
+        )
 
     return (
         copied_rows[:index_of_row_to_remove] + copied_rows[index_of_row_to_remove + 1 :],
@@ -409,20 +417,22 @@ def remove_multiple_matching_rows(
         dictionaries in the list are not changed, and new ones are returned.
 
     Args:
+        rows: List of dictionaries representing rows
         lookup_column: Name of the column to search in
         match_content: Content to search for in the specified column
-        rows: List of dictionaries representing rows (will be modified)
 
     Returns:
         tuple: (modified_rows, (first_removed_index, last_removed_index))
 
     Raises:
         TypeError: If match_content is not str or int
+        KeyError:
+            - If the specified lookup_column is not found in the rows
+            - If no rows match the specified match_content in the lookup_column
 
     Note:
         - Indices are 0-based
         - For removing exactly one row, use remove_one_matching_row
-        - The function assumes all rows have the specified column
     """
 
     if type(match_content) not in (int, str):
@@ -430,15 +440,22 @@ def remove_multiple_matching_rows(
             f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
         )
 
-    copied_rows = deepcopy(rows)
+    if lookup_column not in rows[0]:
+        # TODO add test
+        raise KeyError(f"{lookup_column=} not found. Cannot remove rows")
+
     line_numbers_of_removed_rows = []
+
+    copied_rows = deepcopy(rows)
 
     for i, row in enumerate(copied_rows):
         if row[lookup_column] == match_content:
             line_numbers_of_removed_rows.append(i)
 
     if len(line_numbers_of_removed_rows) == 0:
-        logging.warning("No rows have been removed")
+        raise KeyError(
+            f"{match_content=} not found in column {lookup_column=}. Couldn't remove rows"
+        )
 
     first_line_number = line_numbers_of_removed_rows[0]
     last_line_number = line_numbers_of_removed_rows[-1]
