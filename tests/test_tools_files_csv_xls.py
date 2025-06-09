@@ -633,7 +633,7 @@ def test_remove_multiple_matching_rows_throws_exception_invalid_feature_id(
 
 def test_remove_matching_rows_remove_one_row_from_inventory_of_features(dummy_rows_of_features):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1",
             "en": "Subject",
@@ -659,7 +659,7 @@ def test_remove_matching_rows_remove_one_row_from_inventory_of_features(dummy_ro
             "en": "Sentence",
             "ru": "Предложение",
         },
-    )
+    ]
 
     rows_with_one_line_removed, line_number_of_removed_row = remove_matching_rows(
         lookup_column="id",
@@ -674,7 +674,7 @@ def test_remove_matching_rows_remove_one_row_from_inventory_of_features(dummy_ro
 
 def test_remove_matching_rows_remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_values):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1-1",
             "feature_id": "A-1",
@@ -705,7 +705,7 @@ def test_remove_matching_rows_remove_one_row_from_inventory_of_listed_values(dum
             "en": "Coordination",
             "ru": "Координация",
         },
-    )
+    ]
 
     rows_with_one_line_removed, line_number_of_removed_row = remove_matching_rows(
         lookup_column="id",
@@ -720,7 +720,7 @@ def test_remove_matching_rows_remove_one_row_from_inventory_of_listed_values(dum
 
 def test_remove_matching_rows_remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "feature_id": "A-1",
             "feature_name_ru": "Некий признак",
@@ -745,7 +745,7 @@ def test_remove_matching_rows_remove_one_row_from_a_feature_profile(dummy_rows_o
             "value_type": "listed",
             "value_id": "C-1-1",
         },
-    )
+    ]
 
     rows_with_one_line_removed, line_number_of_removed_row = remove_matching_rows(
         lookup_column="feature_id",
@@ -760,7 +760,7 @@ def test_remove_matching_rows_remove_one_row_from_a_feature_profile(dummy_rows_o
 
 def test_remove_matching_rows_remove_last_row(dummy_rows_of_feature_profile):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "feature_id": "A-1",
             "feature_name_ru": "Некий признак",
@@ -785,7 +785,7 @@ def test_remove_matching_rows_remove_last_row(dummy_rows_of_feature_profile):
             "value_type": "listed",
             "value_id": "B-1-1",
         },
-    )
+    ]
 
     rows_with_one_line_removed, line_number_of_removed_row = remove_matching_rows(
         lookup_column="feature_id",
@@ -802,7 +802,7 @@ def test_remove_matching_rows_remove_multiple_subsequent_values_of_A_1(
     dummy_rows_of_listed_values,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "B-1-1",
             "feature_id": "B-1",
@@ -821,7 +821,7 @@ def test_remove_matching_rows_remove_multiple_subsequent_values_of_A_1(
             "en": "Coordination",
             "ru": "Координация",
         },
-    )
+    ]
 
     rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
         remove_matching_rows(
@@ -840,7 +840,7 @@ def test_remove_matching_rows_remove_multiple_subsequent_values_of_B_1(
     dummy_rows_of_listed_values,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1-1",
             "feature_id": "A-1",
@@ -865,7 +865,7 @@ def test_remove_matching_rows_remove_multiple_subsequent_values_of_B_1(
             "en": "Coordination",
             "ru": "Координация",
         },
-    )
+    ]
 
     rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
         remove_matching_rows(
@@ -884,7 +884,7 @@ def test_remove_matching_rows_remove_multiple_subsequent_values_of_B_2(
     dummy_rows_of_listed_values,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1-1",
             "feature_id": "A-1",
@@ -915,7 +915,7 @@ def test_remove_matching_rows_remove_multiple_subsequent_values_of_B_2(
             "en": "Word order",
             "ru": "Порядок слов",
         },
-    )
+    ]
 
     rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
         remove_matching_rows(
@@ -932,7 +932,7 @@ def test_remove_matching_rows_remove_multiple_subsequent_values_of_B_2(
 
 def test_remove_matching_rows_remove_multiple_scattered_rows_with_type_variable(dummy_rows_with_scattered_values):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "17",
             "domain": "morphology",
@@ -953,7 +953,7 @@ def test_remove_matching_rows_remove_multiple_scattered_rows_with_type_variable(
             "domain": "morphology",
             "type": "constant",
         },
-    )
+    ]
 
     rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
         remove_matching_rows(
@@ -970,7 +970,7 @@ def test_remove_matching_rows_remove_multiple_scattered_rows_with_type_variable(
 
 def test_remove_matching_rows_remove_multiple_scattered_rows_with_domain_morphology(dummy_rows_with_scattered_values):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "19",
             "domain": "syntax",
@@ -986,7 +986,7 @@ def test_remove_matching_rows_remove_multiple_scattered_rows_with_domain_morphol
             "domain": "syntax",
             "type": "variable",
         },
-    )
+    ]
 
     rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
         remove_matching_rows(
