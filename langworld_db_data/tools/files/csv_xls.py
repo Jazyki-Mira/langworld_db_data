@@ -258,6 +258,84 @@ def read_plain_rows_from_csv(
     return rows
 
 
+def remove_rows_with_given_content_in_lookup_column(
+    rows: list[dict[str, str]],
+    lookup_column: str,
+    match_content: str,
+) -> tuple[list[dict[str, str]], tuple[int, ...]]:
+    """
+    Remove all rows from a list of dictionaries where the specified column
+    matches the given content. There may be single relevant row or
+    several rows which may form a sequence or be distributed across
+    the given list.
+
+    Return the modified list of dictionaries and the
+    0-based index of the removed row.
+
+    This function can be combined with `read_dicts_from_csv()`
+    and then `write_csv()` to remove rows from a file.
+
+    Important!
+        Incoming list is deepcopied, which means that original
+        dictionaries in the list are not changed, and new ones are returned.
+
+    Args:
+        rows: List of dictionaries representing rows
+        lookup_column: Name of the column to search in
+        match_content: Content to search for in the specified column
+
+    Returns:
+        tuple: (modified_rows, line_numbers_of_removed_rows)
+
+    Raises:
+        TypeError: If match_content is not str or int
+        KeyError:
+            - If the specified lookup_column is not found in the rows
+            - If no rows match the specified match_content in the lookup_column
+
+    Note:
+        - The function only removes the first matching row
+        - For removing multiple rows, use remove_multiple_matching_rows
+    """
+
+    if not rows:
+        raise ValueError("The list of rows is empty. Cannot remove a row")
+
+    if lookup_column not in rows[0]:
+        raise KeyError(f"{lookup_column=} not found. Cannot remove a row")
+
+    if type(match_content) not in (int, str):
+        raise TypeError(
+            f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
+        )
+
+    line_numbers_of_removed_rows = []
+
+    copied_rows = deepcopy(rows)
+
+    for i, row in enumerate(copied_rows):
+        if row[lookup_column] == match_content:
+            line_numbers_of_removed_rows.append(i)
+
+    if len(line_numbers_of_removed_rows) == 0:
+        raise KeyError(
+            f"{match_content=} not found in column {lookup_column=}. Couldn't remove rows"
+        )
+
+    new_rows = []
+
+    for i, row in enumerate(copied_rows):
+        if i in line_numbers_of_removed_rows:
+            continue
+
+        new_rows.append(row)
+
+    return (
+        new_rows,
+        tuple(line_numbers_of_removed_rows),
+    )
+
+
 def write_csv(
     # can't use Iterable because mypy says it's not indexable
     rows: Union[
@@ -336,78 +414,3 @@ def write_csv(
 
         writer.writerows(rows_to_write)  # type: ignore
         print(f"Written {len(rows_to_write)} rows")
-
-
-def remove_rows_with_given_content_in_lookup_column(
-    rows: list[dict[str, str]],
-    lookup_column: str,
-    match_content: str,
-) -> tuple[list[dict[str, str]], tuple[int, ...]]:
-    """
-    Remove all rows from a list of dictionaries where the specified column
-    matches the given content. There may be single relevant row or
-    several rows which may form a sequence or be distributed across
-    the given list.
-
-    Return the modified list of dictionaries and the
-    0-based index of the removed row.
-
-    Important!
-        Incoming list is deepcopied, which means that original
-        dictionaries in the list are not changed, and new ones are returned.
-
-    Args:
-        rows: List of dictionaries representing rows
-        lookup_column: Name of the column to search in
-        match_content: Content to search for in the specified column
-
-    Returns:
-        tuple: (modified_rows, line_numbers_of_removed_rows)
-
-    Raises:
-        TypeError: If match_content is not str or int
-        KeyError:
-            - If the specified lookup_column is not found in the rows
-            - If no rows match the specified match_content in the lookup_column
-
-    Note:
-        - The function only removes the first matching row
-        - For removing multiple rows, use remove_multiple_matching_rows
-    """
-
-    if not rows:
-        raise ValueError("The list of rows is empty. Cannot remove a row")
-
-    if lookup_column not in rows[0]:
-        raise KeyError(f"{lookup_column=} not found. Cannot remove a row")
-
-    if type(match_content) not in (int, str):
-        raise TypeError(
-            f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
-        )
-
-    line_numbers_of_removed_rows = []
-
-    copied_rows = deepcopy(rows)
-
-    for i, row in enumerate(copied_rows):
-        if row[lookup_column] == match_content:
-            line_numbers_of_removed_rows.append(i)
-
-    if len(line_numbers_of_removed_rows) == 0:
-        raise KeyError(
-            f"{match_content=} not found in column {lookup_column=}. Couldn't remove rows"
-        )
-
-    new_rows = []
-
-    for i, row in enumerate(copied_rows):
-        if i in line_numbers_of_removed_rows:
-            continue
-
-        new_rows.append(row)
-
-    return (
-        new_rows,
-        tuple(line_numbers_of_removed_rows),
-    )
