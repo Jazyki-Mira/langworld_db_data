@@ -394,30 +394,41 @@ def remove_one_matching_row(
     )
 
 
-def remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+def remove_multiple_matching_rows(
     match_content: str,
     rows: list[dict[str, str]],
 ) -> tuple[list[dict[str, str]], tuple[int]]:
     """
-    Remove more than one row from given rows (typically from listed values inventory)
-    which contain specified ID. Return rows without the target rows and the tuple line
-    numbers of the first and the last removed rows.
+    Remove all rows from a list of dictionaries where the feature_id column matches
+    the given content. Returns the modified list of dictionaries and a tuple containing
+    the 0-based indices of the first and last removed rows.
 
-    For example, if asked to remove all A-2 values from the list of A-1-1, A-2-1, A-2-2, A-2-3 and A-3-1,
-    return the list of A-1-1 and A-3-1 and line numbers 1 (initial) and 3 (final).
-    match_content is the sequence to search in the given column in the given rows.
-    For removing exactly one row, please use _remove_one_row_and_return_its_line_number.
+    Args:
+        match_content: Content to search for in the feature_id column
+        rows: List of dictionaries representing rows (will be modified)
+
+    Returns:
+        tuple: (modified_rows, (first_removed_index, last_removed_index))
+
+    Raises:
+        TypeError: If match_content is not str or int
+
+    Note:
+        - Incoming list must be pre-copied (use deepcopy) before passing to this function
+        - Indices are 0-based
+        - For removing exactly one row, use remove_one_matching_row
+        - The function assumes all rows have a 'feature_id' column
     """
-    # This one is designed specifically for FeatureRemover because ListedValueRemover has only to remove one row at a time
 
     if type(match_content) not in (int, str):
         raise TypeError(
             f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
         )
 
+    copied_rows = deepcopy(rows)
     line_numbers_of_removed_rows = []
 
-    for i, row in enumerate(rows):
+    for i, row in enumerate(copied_rows):
         if row["feature_id"] == match_content:
             line_numbers_of_removed_rows.append(i)
 
@@ -428,6 +439,6 @@ def remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
     last_line_number = line_numbers_of_removed_rows[-1]
 
     return (
-        rows[:first_line_number] + rows[last_line_number + 1 :],
+        copied_rows[:first_line_number] + copied_rows[last_line_number + 1 :],
         (first_line_number, last_line_number),
     )

@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 
 from langworld_db_data.tools.files.csv_xls import (
-    remove_multiple_matching_rows_and_return_range_of_their_line_numbers,
+    remove_multiple_matching_rows,
     remove_one_matching_row,
 )
 from langworld_db_data.tools.ids.update import update_indices_after_given_line_number_if_necessary
@@ -147,11 +147,9 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
         },
     )
 
-    rows_without_B_1, range_of_line_numbers_of_removed_rows = (
-        remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-            match_content="B-1",
-            rows=dummy_rows_of_listed_values,
-        )
+    rows_without_B_1, range_of_line_numbers_of_removed_rows = remove_multiple_matching_rows(
+        match_content="B-1",
+        rows=dummy_rows_of_listed_values,
     )
 
     line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
@@ -218,11 +216,9 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
         },
     )
 
-    rows_without_B_2, range_of_line_numbers_of_removed_rows = (
-        remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-            match_content="B-2",
-            rows=dummy_rows_of_listed_values,
-        )
+    rows_without_B_2, range_of_line_numbers_of_removed_rows = remove_multiple_matching_rows(
+        match_content="B-2",
+        rows=dummy_rows_of_listed_values,
     )
 
     line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]

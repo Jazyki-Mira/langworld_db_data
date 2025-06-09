@@ -9,7 +9,7 @@ from langworld_db_data.constants.paths import (
 from langworld_db_data.tools.files.csv_xls import (
     read_column_from_csv,
     read_dicts_from_csv,
-    remove_multiple_matching_rows_and_return_range_of_their_line_numbers,
+    remove_multiple_matching_rows,
     remove_one_matching_row,
     write_csv,
 )
@@ -87,9 +87,7 @@ class FeatureRemover(ObjectWithPaths):
         )
 
         rows_with_removed_rows, range_of_line_numbers_of_removed_rows = (
-            remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
-                match_content=feature_id, rows=rows
-            )
+            remove_multiple_matching_rows(match_content=feature_id, rows=rows)
         )
 
         line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]

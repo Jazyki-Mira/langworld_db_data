@@ -15,7 +15,7 @@ from langworld_db_data.tools.files.csv_xls import (
     read_dicts_from_csv,
     read_dicts_from_xls,
     read_plain_rows_from_csv,
-    remove_multiple_matching_rows_and_return_range_of_their_line_numbers,
+    remove_multiple_matching_rows,
     remove_one_matching_row,
     write_csv,
 )
@@ -512,7 +512,7 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
     )
 
     rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
-        remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+        remove_multiple_matching_rows(
             match_content="A-1",
             rows=dummy_rows_of_listed_values,
         )
@@ -555,7 +555,7 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
     )
 
     rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
-        remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+        remove_multiple_matching_rows(
             match_content="B-1",
             rows=dummy_rows_of_listed_values,
         )
@@ -604,7 +604,7 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
     )
 
     rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
-        remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+        remove_multiple_matching_rows(
             match_content="B-2",
             rows=dummy_rows_of_listed_values,
         )
@@ -620,7 +620,7 @@ def test__remove_multiple_matching_rows_throws_exception_invalid_feature_id(
 ):
 
     with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
-        remove_multiple_matching_rows_and_return_range_of_their_line_numbers(
+        remove_multiple_matching_rows(
             match_content=False,
             rows=dummy_rows_of_listed_values,
         )
