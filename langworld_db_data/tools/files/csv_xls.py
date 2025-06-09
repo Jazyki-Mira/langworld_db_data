@@ -270,13 +270,13 @@ def remove_rows_with_given_content_in_lookup_column(
     the given list.
 
     Return the modified list of dictionaries and the
-    0-based index of the removed row.
+    0-based indices of the removed rows.
 
     This function can be combined with `read_dicts_from_csv()`
     and then `write_csv()` to remove rows from a file.
 
     Important!
-        Incoming list is deepcopied, which means that original
+        Incoming list is deep-copied, which means that original
         dictionaries in the list are not changed, and new ones are returned.
 
     Args:
