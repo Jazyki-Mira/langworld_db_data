@@ -346,7 +346,7 @@ def remove_rows_with_given_content_in_lookup_column(
     """
     Remove all rows from a list of dictionaries where the specified column
     matches the given content. There may be single relevant row or
-    several rows which may form a sequence or be disctributed across
+    several rows which may form a sequence or be distributed across
     the given list.
 
     Return the modified list of dictionaries and the
