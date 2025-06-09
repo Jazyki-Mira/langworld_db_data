@@ -373,7 +373,6 @@ def remove_one_matching_row(
         - For removing multiple rows, use remove_multiple_matching_rows
     """
     if lookup_column not in rows[0]:
-        # TODO add test
         raise KeyError(f"{lookup_column=} not found. Cannot remove a row")
 
     if type(match_content) not in (int, str):
@@ -441,7 +440,6 @@ def remove_multiple_matching_rows(
         )
 
     if lookup_column not in rows[0]:
-        # TODO add test
         raise KeyError(f"{lookup_column=} not found. Cannot remove rows")
 
     line_numbers_of_removed_rows = []
@@ -531,9 +529,6 @@ def remove_matching_rows(
             continue
 
         new_rows.append(row)
-
-    for row in new_rows:
-        print(row)
 
     return (
         new_rows,
