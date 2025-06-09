@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Union
 
 from langworld_db_data import ObjectWithPaths
@@ -15,7 +14,6 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
-from langworld_db_data.constants.paths import FILE_WITH_CATEGORIES, FILE_WITH_NAMES_OF_FEATURES
 from langworld_db_data.tools.files.csv_xls import (
     read_column_from_csv,
     read_dicts_from_csv,
@@ -37,22 +35,6 @@ class FeatureAdderError(Exception):
 
 
 class FeatureAdder(ObjectWithPaths):
-    def __init__(
-        self,
-        *,
-        file_with_categories: Path = FILE_WITH_CATEGORIES,
-        input_file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
-        # ability to give a different output file is mostly for testing:
-        output_file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
-        **kwargs,
-    ):
-        # I know **kwargs removes argument hinting, but to repeat all arguments will
-        # make too many lines. All arguments are keyword-only, so the wrong/mistyped
-        # argument cannot be passed.
-        super().__init__(**kwargs)
-        self.file_with_categories = file_with_categories
-        self.input_file_with_features = input_file_with_features
-        self.output_file_with_features = output_file_with_features
 
     def add_feature(
         self,
