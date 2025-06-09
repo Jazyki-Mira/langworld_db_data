@@ -16,7 +16,7 @@ from langworld_db_data.tools.files.csv_xls import (
     update_indices_after_given_line_number_if_necessary,
     write_csv,
 )
-from langworld_db_data.tools.value_ids.value_ids import extract_category_id
+from langworld_db_data.tools.value_ids.extract import extract_category_id
 
 
 class FeatureRemoverError(Exception):

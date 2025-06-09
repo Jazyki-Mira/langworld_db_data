@@ -22,7 +22,7 @@ from langworld_db_data.tools.files.csv_xls import (
     write_csv,
 )
 from langworld_db_data.tools.files.txt import remove_extra_space
-from langworld_db_data.tools.value_ids.value_ids import (
+from langworld_db_data.tools.value_ids.extract import (
     extract_category_id,
     extract_feature_index,
     extract_value_index,
