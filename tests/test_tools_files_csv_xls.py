@@ -999,3 +999,13 @@ def test_remove_matching_rows_remove_multiple_scattered_rows_with_domain_morphol
     assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
 
     assert line_numbers_of_removed_rows == (0, 1, 5)
+
+
+def test_remove_matching_rows_throws_error_lookup_column_absent_from_rows(dummy_rows_with_scattered_values):
+
+    with pytest.raises(KeyError, match="<relevance> not found. Cannot remove a row"):
+        remove_matching_rows(
+            lookup_column="relevance",
+            match_content="high",
+            rows=dummy_rows_with_scattered_values,
+        )
