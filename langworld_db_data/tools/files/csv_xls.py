@@ -292,10 +292,6 @@ def remove_rows_with_given_content_in_lookup_column(
         KeyError:
             - If the specified lookup_column is not found in the rows
             - If no rows match the specified match_content in the lookup_column
-
-    Note:
-        - The function only removes the first matching row
-        - For removing multiple rows, use remove_multiple_matching_rows
     """
 
     if not rows:
