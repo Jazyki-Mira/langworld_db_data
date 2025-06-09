@@ -15,6 +15,7 @@ from langworld_db_data.tools.files.csv_xls import (
     read_dicts_from_csv,
     read_dicts_from_xls,
     read_plain_rows_from_csv,
+    remove_matching_rows,
     remove_multiple_matching_rows,
     remove_one_matching_row,
     write_csv,
@@ -303,7 +304,7 @@ def test_append_empty_column_to_csv_raises_exception_with_existing_column():
     assert not output_file.exists()
 
 
-def test__remove_one_row_and_return_its_line_number_remove_from_inventory_of_features(
+def test_remove_one_row_and_return_its_line_number_remove_from_inventory_of_features(
     dummy_rows_of_features,
 ):
 
@@ -346,7 +347,7 @@ def test__remove_one_row_and_return_its_line_number_remove_from_inventory_of_fea
     assert line_number_of_removed_row == 2
 
 
-def test__remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_values):
+def test_remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_values):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -392,7 +393,7 @@ def test__remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_va
     assert line_number_of_removed_row == 1
 
 
-def test__remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
+def test_remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -432,7 +433,7 @@ def test__remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
     assert line_number_of_removed_row == 3
 
 
-def test__remove_one_row_remove_last_row(dummy_rows_of_feature_profile):
+def test_remove_one_row_remove_last_row(dummy_rows_of_feature_profile):
 
     GOLD_STANDARD_DUMMY_ROWS = (
         {
@@ -472,7 +473,7 @@ def test__remove_one_row_remove_last_row(dummy_rows_of_feature_profile):
     assert line_number_of_removed_row == 4
 
 
-def test__remove_one_row_throws_exception_invalid_match_content(
+def test_remove_one_row_throws_exception_invalid_match_content(
     dummy_rows_of_listed_values,
 ):
 
@@ -486,7 +487,7 @@ def test__remove_one_row_throws_exception_invalid_match_content(
             )
 
 
-def test__remove_multiple_matching_rows_remove_values_of_A_1(
+def test_remove_multiple_matching_rows_remove_values_of_A_1(
     dummy_rows_of_listed_values,
 ):
 
@@ -524,7 +525,7 @@ def test__remove_multiple_matching_rows_remove_values_of_A_1(
     assert range_of_lin_numbers_of_removed_rows == (0, 2)
 
 
-def test__remove_multiple_matching_rows_remove_values_of_B_1(
+def test_remove_multiple_matching_rows_remove_values_of_B_1(
     dummy_rows_of_listed_values,
 ):
 
@@ -568,7 +569,7 @@ def test__remove_multiple_matching_rows_remove_values_of_B_1(
     assert range_of_lin_numbers_of_removed_rows == (3, 4)
 
 
-def test__remove_multiple_matching_rows_remove_value_of_B_2(
+def test_remove_multiple_matching_rows_remove_value_of_B_2(
     dummy_rows_of_listed_values,
 ):
 
@@ -618,7 +619,7 @@ def test__remove_multiple_matching_rows_remove_value_of_B_2(
     assert range_of_lin_numbers_of_removed_rows == (5, 5)
 
 
-def test__remove_multiple_matching_rows_throws_exception_invalid_feature_id(
+def test_remove_multiple_matching_rows_throws_exception_invalid_feature_id(
     dummy_rows_of_listed_values,
 ):
 
@@ -628,3 +629,5 @@ def test__remove_multiple_matching_rows_throws_exception_invalid_feature_id(
             match_content=False,
             rows=dummy_rows_of_listed_values,
         )
+
+
