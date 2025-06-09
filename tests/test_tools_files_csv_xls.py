@@ -1021,3 +1021,15 @@ def test_remove_matching_rows_throws_error_lookup_column_absent_from_rows(
             match_content="high",
             rows=dummy_rows_with_scattered_values,
         )
+
+
+def test_remove_matching_rows_throws_error_match_content_not_found(
+    dummy_rows_with_scattered_values,
+):
+
+    with pytest.raises(KeyError, match="not found in column"):
+        _, _ = remove_matching_rows(
+            lookup_column="domain",
+            match_content="phonology",
+            rows=dummy_rows_with_scattered_values,
+        )
