@@ -22,7 +22,7 @@ def update_indices_after_given_line_number_if_necessary(
     Decrement indices of features or values. Return rows with updated indices or intact rows if update is not necessary.
 
     Search rows with matching content and decrement feature or value indices in the given column.
-    match_column_name denotes the name of column where search must be performed.
+    lookup_column denotes the name of column where search must be performed.
     match_content is the sequence to search in the given column in the given rows.
     id_type_that_must_be_updated denotes what kind of ID must be decremented, feature ID or value ID.
     index_type_that_must_be_updated denotes what kind of index must be decremented, feature or value.
