@@ -1001,10 +1001,24 @@ def test_remove_matching_rows_remove_multiple_scattered_rows_with_domain_morphol
     assert line_numbers_of_removed_rows == (0, 1, 5)
 
 
+def test_remove_matching_rows_throws_exception_invalid_match_content(
+    dummy_rows_of_listed_values,
+):
+
+    for bad_arg in (True, [1, 2]):
+        with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
+
+            _, _ = remove_matching_rows(
+                lookup_column="id",
+                match_content=bad_arg,
+                rows=dummy_rows_of_listed_values,
+            )
+
+
 def test_remove_matching_rows_throws_error_lookup_column_absent_from_rows(dummy_rows_with_scattered_values):
 
     with pytest.raises(KeyError, match="<relevance> not found. Cannot remove a row"):
-        remove_matching_rows(
+        _, _ = remove_matching_rows(
             lookup_column="relevance",
             match_content="high",
             rows=dummy_rows_with_scattered_values,
