@@ -302,7 +302,7 @@ def test_append_empty_column_to_csv_raises_exception_with_existing_column():
     assert not output_file.exists()
 
 
-def test_remove_one_row_and_return_its_line_number_remove_from_inventory_of_features(
+def test_remove_rows_with_given_content_in_lookup_column_remove_from_inventory_of_features(
     dummy_rows_of_features,
 ):
 
@@ -347,7 +347,9 @@ def test_remove_one_row_and_return_its_line_number_remove_from_inventory_of_feat
     assert line_number_of_removed_row == 2
 
 
-def test_remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_values):
+def test_remove_rows_with_given_content_in_lookup_column_remove_one_row_from_inventory_of_listed_values(
+    dummy_rows_of_listed_values,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = [
         {
@@ -395,7 +397,9 @@ def test_remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_val
     assert line_number_of_removed_row == 1
 
 
-def test_remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
+def test_remove_rows_with_given_content_in_lookup_column_remove_one_row_from_a_feature_profile(
+    dummy_rows_of_feature_profile,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = [
         {
@@ -437,7 +441,9 @@ def test_remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
     assert line_number_of_removed_row == 3
 
 
-def test_remove_one_row_remove_last_row(dummy_rows_of_feature_profile):
+def test_remove_rows_with_given_content_in_lookup_column_remove_last_row(
+    dummy_rows_of_feature_profile,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = [
         {
@@ -479,7 +485,7 @@ def test_remove_one_row_remove_last_row(dummy_rows_of_feature_profile):
     assert line_number_of_removed_row == 4
 
 
-def test_remove_one_row_throws_exception_invalid_match_content(
+def test_remove_rows_with_given_content_in_lookup_column_row_throws_exception_invalid_match_content(
     dummy_rows_of_listed_values,
 ):
 
@@ -493,7 +499,7 @@ def test_remove_one_row_throws_exception_invalid_match_content(
             )
 
 
-def test_remove_one_row_throws_exception_empty_rows():
+def test_remove_rows_with_given_content_in_lookup_column_throws_exception_empty_rows():
     with pytest.raises(ValueError, match="The list of rows is empty. Cannot remove a row"):
         _, _ = remove_rows_with_given_content_in_lookup_column(
             lookup_column="id",
@@ -502,7 +508,7 @@ def test_remove_one_row_throws_exception_empty_rows():
         )
 
 
-def test_remove_multiple_matching_rows_remove_values_of_A_1(
+def test_remove_rows_with_given_content_in_lookup_column_remove_values_of_A_1(
     dummy_rows_of_listed_values,
 ):
 
@@ -540,7 +546,7 @@ def test_remove_multiple_matching_rows_remove_values_of_A_1(
     assert numbers_of_removed_rows == (0, 1, 2)
 
 
-def test_remove_multiple_matching_rows_remove_values_of_B_1(
+def test_remove_rows_with_given_content_in_lookup_column_remove_values_of_B_1(
     dummy_rows_of_listed_values,
 ):
 
@@ -584,7 +590,7 @@ def test_remove_multiple_matching_rows_remove_values_of_B_1(
     assert range_of_lin_numbers_of_removed_rows == (3, 4)
 
 
-def test_remove_multiple_matching_rows_remove_value_of_B_2(
+def test_remove_rows_with_given_content_in_lookup_column_remove_value_of_B_2(
     dummy_rows_of_listed_values,
 ):
 
@@ -634,7 +640,7 @@ def test_remove_multiple_matching_rows_remove_value_of_B_2(
     assert numbers_of_removed_rows == (5,)
 
 
-def test_remove_multiple_matching_rows_throws_exception_invalid_feature_id(
+def test_remove_rows_with_given_content_in_lookup_column_throws_exception_invalid_feature_id(
     dummy_rows_of_listed_values,
 ):
 
@@ -689,7 +695,7 @@ def test_remove_matching_rows_remove_one_row_from_inventory_of_features(dummy_ro
     assert line_number_of_removed_row == (2,)
 
 
-def test_remove_matching_rows_remove_one_row_from_inventory_of_listed_values(
+def test_remove_rows_with_given_content_in_lookup_column_remove_one_row_from_inventory_of_listed_values(
     dummy_rows_of_listed_values,
 ):
 
@@ -739,7 +745,9 @@ def test_remove_matching_rows_remove_one_row_from_inventory_of_listed_values(
     assert line_number_of_removed_row == (1,)
 
 
-def test_remove_matching_rows_remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
+def test_remove_rows_with_given_content_in_lookup_column_remove_one_row_from_a_feature_profile(
+    dummy_rows_of_feature_profile,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = [
         {
@@ -781,7 +789,9 @@ def test_remove_matching_rows_remove_one_row_from_a_feature_profile(dummy_rows_o
     assert line_number_of_removed_row == (3,)
 
 
-def test_remove_matching_rows_remove_last_row(dummy_rows_of_feature_profile):
+def test_remove_rows_with_given_content_in_lookup_column_remove_last_row(
+    dummy_rows_of_feature_profile,
+):
 
     GOLD_STANDARD_DUMMY_ROWS = [
         {
@@ -823,7 +833,7 @@ def test_remove_matching_rows_remove_last_row(dummy_rows_of_feature_profile):
     assert line_number_of_removed_row == (4,)
 
 
-def test_remove_matching_rows_remove_multiple_subsequent_values_of_A_1(
+def test_remove_rows_with_given_content_in_lookup_column_remove_multiple_subsequent_values_of_A_1(
     dummy_rows_of_listed_values,
 ):
 
@@ -861,7 +871,7 @@ def test_remove_matching_rows_remove_multiple_subsequent_values_of_A_1(
     assert line_numbers_of_removed_rows == (0, 1, 2)
 
 
-def test_remove_matching_rows_remove_multiple_subsequent_values_of_B_1(
+def test_remove_rows_with_given_content_in_lookup_column_remove_multiple_subsequent_values_of_B_1(
     dummy_rows_of_listed_values,
 ):
 
@@ -905,7 +915,7 @@ def test_remove_matching_rows_remove_multiple_subsequent_values_of_B_1(
     assert line_numbers_of_removed_rows == (3, 4)
 
 
-def test_remove_matching_rows_remove_multiple_subsequent_values_of_B_2(
+def test_remove_rows_with_given_content_in_lookup_column_remove_multiple_subsequent_values_of_B_2(
     dummy_rows_of_listed_values,
 ):
 
@@ -955,7 +965,7 @@ def test_remove_matching_rows_remove_multiple_subsequent_values_of_B_2(
     assert line_numbers_of_removed_rows == (5,)
 
 
-def test_remove_matching_rows_remove_multiple_scattered_rows_with_type_variable(
+def test_remove_rows_with_given_content_in_lookup_column_remove_multiple_scattered_rows_with_type_variable(
     dummy_rows_with_scattered_values,
 ):
 
@@ -995,7 +1005,7 @@ def test_remove_matching_rows_remove_multiple_scattered_rows_with_type_variable(
     assert line_numbers_of_removed_rows == (1, 4)
 
 
-def test_remove_matching_rows_remove_multiple_scattered_rows_with_domain_morphology(
+def test_remove_rows_with_given_content_in_lookup_column_remove_multiple_scattered_rows_with_domain_morphology(
     dummy_rows_with_scattered_values,
 ):
 
@@ -1030,7 +1040,7 @@ def test_remove_matching_rows_remove_multiple_scattered_rows_with_domain_morphol
     assert line_numbers_of_removed_rows == (0, 1, 5)
 
 
-def test_remove_matching_rows_throws_exception_invalid_match_content(
+def test_remove_rows_with_given_content_in_lookup_column_throws_exception_invalid_match_content(
     dummy_rows_of_listed_values,
 ):
 
@@ -1044,7 +1054,7 @@ def test_remove_matching_rows_throws_exception_invalid_match_content(
             )
 
 
-def test_remove_matching_rows_throws_error_lookup_column_absent_from_rows(
+def test_remove_rows_with_given_content_in_lookup_column_throws_error_lookup_column_absent_from_rows(
     dummy_rows_with_scattered_values,
 ):
 
@@ -1056,7 +1066,7 @@ def test_remove_matching_rows_throws_error_lookup_column_absent_from_rows(
         )
 
 
-def test_remove_matching_rows_throws_error_match_content_not_found(
+def test_remove_rows_with_given_content_in_lookup_column_throws_error_match_content_not_found(
     dummy_rows_with_scattered_values,
 ):
 
