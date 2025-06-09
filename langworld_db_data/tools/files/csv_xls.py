@@ -300,7 +300,7 @@ def remove_rows_with_given_content_in_lookup_column(
     if lookup_column not in rows[0]:
         raise KeyError(f"{lookup_column=} not found. Cannot remove a row")
 
-    if type(match_content) not in (int, str):
+    if not isinstance(match_content, (int, str)):
         raise TypeError(
             f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
         )
