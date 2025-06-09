@@ -261,7 +261,7 @@ def read_plain_rows_from_csv(
 def remove_rows_with_given_content_in_lookup_column(
     rows: list[dict[str, str]],
     lookup_column: str,
-    match_content: str,
+    match_value: str,
 ) -> tuple[list[dict[str, str]], tuple[int, ...]]:
     """
     Remove all rows from a list of dictionaries where the specified column
@@ -282,16 +282,16 @@ def remove_rows_with_given_content_in_lookup_column(
     Args:
         rows: List of dictionaries representing rows
         lookup_column: Name of the column to search in
-        match_content: Content to search for in the specified column
+        match_value: Content to search for in the specified column
 
     Returns:
         tuple: (modified_rows, line_numbers_of_removed_rows)
 
     Raises:
-        TypeError: If match_content is not str or int
+        TypeError: If match_value is not str or int
         KeyError:
             - If the specified lookup_column is not found in the rows
-            - If no rows match the specified match_content in the lookup_column
+            - If no rows match the specified match_value in the lookup_column
     """
 
     if not rows:
@@ -300,9 +300,9 @@ def remove_rows_with_given_content_in_lookup_column(
     if lookup_column not in rows[0]:
         raise KeyError(f"{lookup_column=} not found. Cannot remove a row")
 
-    if not isinstance(match_content, (int, str)):
+    if type(match_value) not in (str, int):
         raise TypeError(
-            f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
+            f"match_value must be of type <str> or <int>, <{type(match_value)}> was given."
         )
 
     line_numbers_of_removed_rows = []
@@ -310,12 +310,12 @@ def remove_rows_with_given_content_in_lookup_column(
     copied_rows = deepcopy(rows)
 
     for i, row in enumerate(copied_rows):
-        if row[lookup_column] == match_content:
+        if row[lookup_column] == match_value:
             line_numbers_of_removed_rows.append(i)
 
     if len(line_numbers_of_removed_rows) == 0:
         raise KeyError(
-            f"{match_content=} not found in column {lookup_column=}. Couldn't remove rows"
+            f"{match_value=} not found in column {lookup_column=}. Couldn't remove rows"
         )
 
     new_rows = []

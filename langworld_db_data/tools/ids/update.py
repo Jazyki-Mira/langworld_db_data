@@ -11,7 +11,7 @@ from langworld_db_data.tools.ids.extract import (
 
 def update_indices_after_given_line_number_if_necessary(
     lookup_column: Literal["feature_id", "id"],
-    match_content: str,
+    match_value: str,
     id_type_that_must_be_updated: Literal["feature", "value"],
     index_type_that_must_be_updated: Literal["feature", "value"],
     line_number_after_which_rows_must_be_updated: int,
@@ -23,7 +23,7 @@ def update_indices_after_given_line_number_if_necessary(
 
     Search rows with matching content and decrement feature or value indices in the given column.
     lookup_column denotes the name of column where search must be performed.
-    match_content is the sequence to search in the given column in the given rows.
+    match_value is the sequence to search in the given column in the given rows.
     id_type_that_must_be_updated denotes what kind of ID must be decremented, feature ID or value ID.
     index_type_that_must_be_updated denotes what kind of index must be decremented, feature or value.
     This is needed to specify what kind of change must be done for value IDs
@@ -39,7 +39,7 @@ def update_indices_after_given_line_number_if_necessary(
 
     for row in copied_rows[line_number_after_which_rows_must_be_updated:]:
 
-        if f"{match_content}{ID_SEPARATOR}" not in row[lookup_column]:
+        if f"{match_value}{ID_SEPARATOR}" not in row[lookup_column]:
             continue
 
         current_feature_index = extract_feature_index(row[lookup_column])
@@ -48,22 +48,22 @@ def update_indices_after_given_line_number_if_necessary(
             if index_type_that_must_be_updated == "feature":
                 current_value_index = extract_value_index(row["id"])
                 row[lookup_column] = (
-                    f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
+                    f"{match_value}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
                 )
 
             elif index_type_that_must_be_updated == "value":
                 row[lookup_column] = (
-                    f"{match_content}{ID_SEPARATOR}{extract_value_index(row[lookup_column]) - 1}"
+                    f"{match_value}{ID_SEPARATOR}{extract_value_index(row[lookup_column]) - 1}"
                 )
         elif id_type_that_must_be_updated == "feature":
-            row[lookup_column] = f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}"
+            row[lookup_column] = f"{match_value}{ID_SEPARATOR}{current_feature_index - 1}"
 
         if rows_are_a_feature_profile:
             if row["value_type"] == "listed":
 
                 current_value_index = extract_value_index(row["value_id"])
                 row["value_id"] = (
-                    f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
+                    f"{match_value}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
                 )
 
         changes_made += 1

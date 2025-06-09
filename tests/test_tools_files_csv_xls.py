@@ -337,7 +337,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_from_inventory_o
     rows_with_one_line_removed, (line_number_of_removed_row,) = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="id",
-            match_content="A-3",
+            match_value="A-3",
             rows=dummy_rows_of_features,
         )
     )
@@ -387,7 +387,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_one_row_from_inv
     rows_with_one_line_removed, (line_number_of_removed_row,) = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="id",
-            match_content="A-1-2",
+            match_value="A-1-2",
             rows=dummy_rows_of_listed_values,
         )
     )
@@ -431,7 +431,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_one_row_from_a_f
     rows_with_one_line_removed, (line_number_of_removed_row,) = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="feature_id",
-            match_content="B-1",
+            match_value="B-1",
             rows=dummy_rows_of_feature_profile,
         )
     )
@@ -475,7 +475,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_last_row(
     rows_with_one_line_removed, (line_number_of_removed_row,) = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="feature_id",
-            match_content="C-1",
+            match_value="C-1",
             rows=dummy_rows_of_feature_profile,
         )
     )
@@ -485,16 +485,16 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_last_row(
     assert line_number_of_removed_row == 4
 
 
-def test_remove_rows_with_given_content_in_lookup_column_row_throws_exception_invalid_match_content(
+def test_remove_rows_with_given_content_in_lookup_column_row_throws_exception_invalid_match_value(
     dummy_rows_of_listed_values,
 ):
 
     for bad_arg in (True, [1, 2]):
-        with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
+        with pytest.raises(TypeError, match="match_value must be of type <str> or <int>"):
 
             _, _ = remove_rows_with_given_content_in_lookup_column(
                 lookup_column="id",
-                match_content=bad_arg,
+                match_value=bad_arg,
                 rows=dummy_rows_of_listed_values,
             )
 
@@ -503,7 +503,7 @@ def test_remove_rows_with_given_content_in_lookup_column_throws_exception_empty_
     with pytest.raises(ValueError, match="The list of rows is empty. Cannot remove a row"):
         _, _ = remove_rows_with_given_content_in_lookup_column(
             lookup_column="id",
-            match_content="some_value",
+            match_value="some_value",
             rows=[],
         )
 
@@ -536,7 +536,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_values_of_A_1(
     rows_with_multiple_rows_removed, numbers_of_removed_rows = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="feature_id",
-            match_content="A-1",
+            match_value="A-1",
             rows=dummy_rows_of_listed_values,
         )
     )
@@ -580,7 +580,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_values_of_B_1(
     rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="feature_id",
-            match_content="B-1",
+            match_value="B-1",
             rows=dummy_rows_of_listed_values,
         )
     )
@@ -630,7 +630,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_value_of_B_2(
     rows_with_multiple_rows_removed, numbers_of_removed_rows = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="feature_id",
-            match_content="B-2",
+            match_value="B-2",
             rows=dummy_rows_of_listed_values,
         )
     )
@@ -644,10 +644,10 @@ def test_remove_rows_with_given_content_in_lookup_column_throws_exception_invali
     dummy_rows_of_listed_values,
 ):
 
-    with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
+    with pytest.raises(TypeError, match="match_value must be of type <str> or <int>"):
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="feature_id",
-            match_content=False,
+            match_value=False,
             rows=dummy_rows_of_listed_values,
         )
 
@@ -685,7 +685,7 @@ def test_remove_matching_rows_remove_one_row_from_inventory_of_features(dummy_ro
     rows_with_one_line_removed, line_number_of_removed_row = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="id",
-            match_content="A-3",
+            match_value="A-3",
             rows=dummy_rows_of_features,
         )
     )
@@ -735,7 +735,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_one_row_from_inv
     rows_with_one_line_removed, line_number_of_removed_row = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="id",
-            match_content="A-1-2",
+            match_value="A-1-2",
             rows=dummy_rows_of_listed_values,
         )
     )
@@ -779,7 +779,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_one_row_from_a_f
     rows_with_one_line_removed, line_number_of_removed_row = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="feature_id",
-            match_content="B-1",
+            match_value="B-1",
             rows=dummy_rows_of_feature_profile,
         )
     )
@@ -823,7 +823,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_last_row(
     rows_with_one_line_removed, line_number_of_removed_row = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="feature_id",
-            match_content="C-1",
+            match_value="C-1",
             rows=dummy_rows_of_feature_profile,
         )
     )
@@ -861,7 +861,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_multiple_subsequ
     rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="feature_id",
-            match_content="A-1",
+            match_value="A-1",
             rows=dummy_rows_of_listed_values,
         )
     )
@@ -905,7 +905,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_multiple_subsequ
     rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="feature_id",
-            match_content="B-1",
+            match_value="B-1",
             rows=dummy_rows_of_listed_values,
         )
     )
@@ -955,7 +955,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_multiple_subsequ
     rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="feature_id",
-            match_content="B-2",
+            match_value="B-2",
             rows=dummy_rows_of_listed_values,
         )
     )
@@ -995,7 +995,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_multiple_scatter
     rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="type",
-            match_content="variable",
+            match_value="variable",
             rows=dummy_rows_with_scattered_values,
         )
     )
@@ -1030,7 +1030,7 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_multiple_scatter
     rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
         remove_rows_with_given_content_in_lookup_column(
             lookup_column="domain",
-            match_content="morphology",
+            match_value="morphology",
             rows=dummy_rows_with_scattered_values,
         )
     )
@@ -1040,16 +1040,16 @@ def test_remove_rows_with_given_content_in_lookup_column_remove_multiple_scatter
     assert line_numbers_of_removed_rows == (0, 1, 5)
 
 
-def test_remove_rows_with_given_content_in_lookup_column_throws_exception_invalid_match_content(
+def test_remove_rows_with_given_content_in_lookup_column_throws_exception_invalid_match_value(
     dummy_rows_of_listed_values,
 ):
 
     for bad_arg in (True, [1, 2]):
-        with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
+        with pytest.raises(TypeError, match="match_value must be of type <str> or <int>"):
 
             _, _ = remove_rows_with_given_content_in_lookup_column(
                 lookup_column="id",
-                match_content=bad_arg,
+                match_value=bad_arg,
                 rows=dummy_rows_of_listed_values,
             )
 
@@ -1061,18 +1061,18 @@ def test_remove_rows_with_given_content_in_lookup_column_throws_error_lookup_col
     with pytest.raises(KeyError, match="'relevance' not found. Cannot remove a row"):
         _, _ = remove_rows_with_given_content_in_lookup_column(
             lookup_column="relevance",
-            match_content="high",
+            match_value="high",
             rows=dummy_rows_with_scattered_values,
         )
 
 
-def test_remove_rows_with_given_content_in_lookup_column_throws_error_match_content_not_found(
+def test_remove_rows_with_given_content_in_lookup_column_throws_error_match_value_not_found(
     dummy_rows_with_scattered_values,
 ):
 
     with pytest.raises(KeyError, match="not found in column"):
         _, _ = remove_rows_with_given_content_in_lookup_column(
             lookup_column="domain",
-            match_content="phonology",
+            match_value="phonology",
             rows=dummy_rows_with_scattered_values,
         )

@@ -50,14 +50,14 @@ class FeatureRemover(ObjectWithPaths):
 
         rows_with_removed_row, (line_number_of_removed_row,) = (
             remove_rows_with_given_content_in_lookup_column(
-                lookup_column="id", match_content=feature_id, rows=rows
+                lookup_column="id", match_value=feature_id, rows=rows
             )
         )
 
         rows_with_removed_row_and_updated_indices = (
             update_indices_after_given_line_number_if_necessary(
                 lookup_column="id",
-                match_content=extract_category_id(feature_id),
+                match_value=extract_category_id(feature_id),
                 id_type_that_must_be_updated="feature",
                 index_type_that_must_be_updated="feature",
                 line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
@@ -83,7 +83,7 @@ class FeatureRemover(ObjectWithPaths):
 
         rows_with_removed_rows, range_of_line_numbers_of_removed_rows = (
             remove_rows_with_given_content_in_lookup_column(
-                lookup_column="feature_id", match_content=feature_id, rows=rows
+                lookup_column="feature_id", match_value=feature_id, rows=rows
             )
         )
 
@@ -94,7 +94,7 @@ class FeatureRemover(ObjectWithPaths):
         rows_with_removed_rows_and_updated_value_indices = (
             update_indices_after_given_line_number_if_necessary(
                 lookup_column="id",
-                match_content=category_id_where_feature_is_removed,
+                match_value=category_id_where_feature_is_removed,
                 id_type_that_must_be_updated="value",
                 index_type_that_must_be_updated="feature",
                 line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
@@ -105,7 +105,7 @@ class FeatureRemover(ObjectWithPaths):
         rows_with_removed_rows_and_updated_feature_and_value_indices = (
             update_indices_after_given_line_number_if_necessary(
                 lookup_column="feature_id",
-                match_content=category_id_where_feature_is_removed,
+                match_value=category_id_where_feature_is_removed,
                 id_type_that_must_be_updated="feature",
                 index_type_that_must_be_updated="feature",
                 line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
@@ -133,14 +133,14 @@ class FeatureRemover(ObjectWithPaths):
 
             rows_with_removed_row, (line_number_of_removed_row,) = (
                 remove_rows_with_given_content_in_lookup_column(
-                    lookup_column="feature_id", match_content=feature_id, rows=rows
+                    lookup_column="feature_id", match_value=feature_id, rows=rows
                 )
             )
 
             rows_with_removed_row_and_updated_indices = (
                 update_indices_after_given_line_number_if_necessary(
                     lookup_column="feature_id",
-                    match_content=extract_category_id(feature_id),
+                    match_value=extract_category_id(feature_id),
                     id_type_that_must_be_updated="feature",
                     index_type_that_must_be_updated="feature",
                     line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
