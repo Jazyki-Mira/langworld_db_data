@@ -339,40 +339,59 @@ def write_csv(
         print(f"Written {len(rows_to_write)} rows")
 
 
-def remove_one_matching_row_and_return_its_line_number(
+def remove_one_matching_row(
     match_column_name: Literal["feature_id", "id"],
     match_content: str,
     rows: list[dict[str, str]],
 ) -> tuple[list[dict[str, str]], int]:
     """
-    Remove exactly one row from given rows (be it an inventory or a feature profile)
-    which contains specified ID. Return rows without the target row and the line number of the removed row.
+    Remove exactly one row from a list of dictionaries where the specified column
+    matches the given content.
 
-    For example, if asked to remove A-2 from the list of A-1, A-2 and A-3,
-    return the list of A-1 and A-3 and line number 1.
-    match_column_name denotes the name of column where search must be performed.
-    match_content is the sequence to search in the given column in the given rows.
-    For removing more than one row, please use _remove_multiple_rows_and_return_range_of_their_line_numbers.
+    Return the modified list of dictionaries and the
+    0-based index of the removed row.
+
+    Important!
+        Incoming list is deepcopied, which means that original
+        dictionaries in the list are not changed, and new ones are returned.
+
+    Args:
+        match_column_name: Name of the column to search in
+        match_content: Content to search for in the specified column
+        rows: List of dictionaries representing rows
+
+    Returns:
+        tuple: (modified_rows, index_of_removed_row)
+
+    Raises:
+        TypeError: If match_content is not str or int
+
+    Note:
+        - The function only removes the first matching row
+        - If no match is found, returns the original rows and index 0
+        - For removing multiple rows, use remove_multiple_matching_rows_and_return_range_of_their_line_numbers
     """
-    # This method is written in such way that in the future it can be made universal
-    # for all removers.
+    copied_rows = deepcopy(rows)
 
     if type(match_content) not in (int, str):
         raise TypeError(
             f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
         )
 
-    line_number_of_row_to_remove = 0
+    index_of_row_to_remove = 0
 
-    for i, row in enumerate(rows):
+    for i, row in enumerate(copied_rows):
         if row[match_column_name] == match_content:
-            line_number_of_row_to_remove = i
+            index_of_row_to_remove = i
             break
 
-    if line_number_of_row_to_remove == 0:
+    if index_of_row_to_remove == 0:
         logging.warning("No rows have been removed")
 
-    return (rows[:line_number_of_row_to_remove] + rows[line_number_of_row_to_remove + 1 :], i)
+    return (
+        copied_rows[:index_of_row_to_remove] + copied_rows[index_of_row_to_remove + 1 :],
+        index_of_row_to_remove,
+    )
 
 
 def remove_multiple_matching_rows_and_return_range_of_their_line_numbers(

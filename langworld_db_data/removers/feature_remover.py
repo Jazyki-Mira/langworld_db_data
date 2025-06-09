@@ -10,7 +10,7 @@ from langworld_db_data.tools.files.csv_xls import (
     read_column_from_csv,
     read_dicts_from_csv,
     remove_multiple_matching_rows_and_return_range_of_their_line_numbers,
-    remove_one_matching_row_and_return_its_line_number,
+    remove_one_matching_row,
     write_csv,
 )
 from langworld_db_data.tools.ids.extract import extract_category_id
@@ -55,10 +55,8 @@ class FeatureRemover(ObjectWithPaths):
             path_to_file=self.input_file_with_features,
         )
 
-        rows_with_removed_row, line_number_of_removed_row = (
-            remove_one_matching_row_and_return_its_line_number(
-                match_column_name="id", match_content=feature_id, rows=rows
-            )
+        rows_with_removed_row, line_number_of_removed_row = remove_one_matching_row(
+            match_column_name="id", match_content=feature_id, rows=rows
         )
 
         rows_with_removed_row_and_updated_indices = (
@@ -138,10 +136,8 @@ class FeatureRemover(ObjectWithPaths):
 
             rows = read_dicts_from_csv(feature_profile)
 
-            rows_with_removed_row, line_number_of_removed_row = (
-                remove_one_matching_row_and_return_its_line_number(
-                    match_column_name="feature_id", match_content=feature_id, rows=rows
-                )
+            rows_with_removed_row, line_number_of_removed_row = remove_one_matching_row(
+                match_column_name="feature_id", match_content=feature_id, rows=rows
             )
 
             rows_with_removed_row_and_updated_indices = (

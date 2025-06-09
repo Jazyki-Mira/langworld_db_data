@@ -16,7 +16,7 @@ from langworld_db_data.tools.files.csv_xls import (
     read_dicts_from_xls,
     read_plain_rows_from_csv,
     remove_multiple_matching_rows_and_return_range_of_their_line_numbers,
-    remove_one_matching_row_and_return_its_line_number,
+    remove_one_matching_row,
     write_csv,
 )
 from langworld_db_data.tools.files.txt import read_plain_text_from_file
@@ -335,12 +335,10 @@ def test__remove_one_row_and_return_its_line_number_remove_from_inventory_of_fea
         },
     )
 
-    rows_with_one_line_removed, line_number_of_removed_row = (
-        remove_one_matching_row_and_return_its_line_number(
-            match_column_name="id",
-            match_content="A-3",
-            rows=dummy_rows_of_features,
-        )
+    rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
+        match_column_name="id",
+        match_content="A-3",
+        rows=dummy_rows_of_features,
     )
 
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
@@ -383,12 +381,10 @@ def test__remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_va
         },
     )
 
-    rows_with_one_line_removed, line_number_of_removed_row = (
-        remove_one_matching_row_and_return_its_line_number(
-            match_column_name="id",
-            match_content="A-1-2",
-            rows=dummy_rows_of_listed_values,
-        )
+    rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
+        match_column_name="id",
+        match_content="A-1-2",
+        rows=dummy_rows_of_listed_values,
     )
 
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
@@ -425,12 +421,10 @@ def test__remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
         },
     )
 
-    rows_with_one_line_removed, line_number_of_removed_row = (
-        remove_one_matching_row_and_return_its_line_number(
-            match_column_name="feature_id",
-            match_content="B-1",
-            rows=dummy_rows_of_feature_profile,
-        )
+    rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
+        match_column_name="feature_id",
+        match_content="B-1",
+        rows=dummy_rows_of_feature_profile,
     )
 
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
@@ -467,12 +461,10 @@ def test__remove_one_row_remove_last_row(dummy_rows_of_feature_profile):
         },
     )
 
-    rows_with_one_line_removed, line_number_of_removed_row = (
-        remove_one_matching_row_and_return_its_line_number(
-            match_column_name="feature_id",
-            match_content="C-1",
-            rows=dummy_rows_of_feature_profile,
-        )
+    rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
+        match_column_name="feature_id",
+        match_content="C-1",
+        rows=dummy_rows_of_feature_profile,
     )
 
     assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
@@ -487,7 +479,7 @@ def test__remove_one_row_throws_exception_invalid_match_content(
     for bad_arg in (True, [1, 2]):
         with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
 
-            _, _ = remove_one_matching_row_and_return_its_line_number(
+            _, _ = remove_one_matching_row(
                 match_column_name="id",
                 match_content=bad_arg,
                 rows=dummy_rows_of_listed_values,
