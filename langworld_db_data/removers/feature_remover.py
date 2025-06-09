@@ -24,24 +24,6 @@ class FeatureRemoverError(Exception):
 
 
 class FeatureRemover(ObjectWithPaths):
-    def __init__(
-        self,
-        *,
-        file_with_categories: Path = FILE_WITH_CATEGORIES,
-        input_file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
-        output_file_with_features: Path = FILE_WITH_NAMES_OF_FEATURES,
-        input_file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
-        output_file_with_listed_values: Path = FILE_WITH_LISTED_VALUES,
-        input_dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
-        output_dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR,
-    ):
-        self.file_with_categories = file_with_categories
-        self.input_file_with_features = input_file_with_features
-        self.output_file_with_features = output_file_with_features
-        self.input_file_with_listed_values = input_file_with_listed_values
-        self.output_file_with_listed_values = output_file_with_listed_values
-        self.input_dir_with_feature_profiles = input_dir_with_feature_profiles
-        self.output_dir_with_feature_profiles = output_dir_with_feature_profiles
 
     def remove_feature(
         self,
