@@ -631,3 +631,371 @@ def test_remove_multiple_matching_rows_throws_exception_invalid_feature_id(
         )
 
 
+def test_remove_matching_rows_remove_one_row_from_inventory_of_features(dummy_rows_of_features):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "A-1",
+            "en": "Subject",
+            "ru": "Подлежащее",
+        },
+        {
+            "id": "A-2",
+            "en": "Object",
+            "ru": "Прямое дополнение",
+        },
+        {
+            "id": "B-1",
+            "en": "Collocation",
+            "ru": "Коллокация",
+        },
+        {
+            "id": "B-2",
+            "en": "Grammatical core",
+            "ru": "Грамматическая основа",
+        },
+        {
+            "id": "С-1",
+            "en": "Sentence",
+            "ru": "Предложение",
+        },
+    )
+
+    rows_with_one_line_removed, line_number_of_removed_row = remove_matching_rows(
+        lookup_column="id",
+        match_content="A-3",
+        rows=dummy_rows_of_features,
+    )
+
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_number_of_removed_row == (2,)
+
+
+def test_remove_matching_rows_remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_values):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "A-1-1",
+            "feature_id": "A-1",
+            "en": "Nominative",
+            "ru": "Номинатив",
+        },
+        {
+            "id": "A-1-3",
+            "feature_id": "A-1",
+            "en": "DSM",
+            "ru": "Дифференцированное маркирование субъекта",
+        },
+        {
+            "id": "B-1-1",
+            "feature_id": "B-1",
+            "en": "Agreement",
+            "ru": "Согласование",
+        },
+        {
+            "id": "B-1-2",
+            "feature_id": "B-1",
+            "en": "Word order",
+            "ru": "Порядок слов",
+        },
+        {
+            "id": "B-2-1",
+            "feature_id": "B-2",
+            "en": "Coordination",
+            "ru": "Координация",
+        },
+    )
+
+    rows_with_one_line_removed, line_number_of_removed_row = remove_matching_rows(
+        lookup_column="id",
+        match_content="A-1-2",
+        rows=dummy_rows_of_listed_values,
+    )
+
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_number_of_removed_row == (1,)
+
+
+def test_remove_matching_rows_remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "feature_id": "A-1",
+            "feature_name_ru": "Некий признак",
+            "value_type": "listed",
+            "value_id": "A-1-1",
+        },
+        {
+            "feature_id": "A-2",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-2-2",
+        },
+        {
+            "feature_id": "A-3",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-3-3",
+        },
+        {
+            "feature_id": "C-1",
+            "feature_name_ru": "И еще признак",
+            "value_type": "listed",
+            "value_id": "C-1-1",
+        },
+    )
+
+    rows_with_one_line_removed, line_number_of_removed_row = remove_matching_rows(
+        lookup_column="feature_id",
+        match_content="B-1",
+        rows=dummy_rows_of_feature_profile,
+    )
+
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_number_of_removed_row == (3,)
+
+
+def test_remove_matching_rows_remove_last_row(dummy_rows_of_feature_profile):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "feature_id": "A-1",
+            "feature_name_ru": "Некий признак",
+            "value_type": "listed",
+            "value_id": "A-1-1",
+        },
+        {
+            "feature_id": "A-2",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-2-2",
+        },
+        {
+            "feature_id": "A-3",
+            "feature_name_ru": "Еще один признак",
+            "value_type": "listed",
+            "value_id": "A-3-3",
+        },
+        {
+            "feature_id": "B-1",
+            "feature_name_ru": "Четвертый признак",
+            "value_type": "listed",
+            "value_id": "B-1-1",
+        },
+    )
+
+    rows_with_one_line_removed, line_number_of_removed_row = remove_matching_rows(
+        lookup_column="feature_id",
+        match_content="C-1",
+        rows=dummy_rows_of_feature_profile,
+    )
+
+    assert rows_with_one_line_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_number_of_removed_row == (4,)
+
+
+def test_remove_matching_rows_remove_multiple_subsequent_values_of_A_1(
+    dummy_rows_of_listed_values,
+):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "B-1-1",
+            "feature_id": "B-1",
+            "en": "Agreement",
+            "ru": "Согласование",
+        },
+        {
+            "id": "B-1-2",
+            "feature_id": "B-1",
+            "en": "Word order",
+            "ru": "Порядок слов",
+        },
+        {
+            "id": "B-2-1",
+            "feature_id": "B-2",
+            "en": "Coordination",
+            "ru": "Координация",
+        },
+    )
+
+    rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
+        remove_matching_rows(
+            lookup_column="feature_id",
+            match_content="A-1",
+            rows=dummy_rows_of_listed_values,
+        )
+    )
+
+    assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_numbers_of_removed_rows == (0, 1, 2)
+
+
+def test_remove_matching_rows_remove_multiple_subsequent_values_of_B_1(
+    dummy_rows_of_listed_values,
+):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "A-1-1",
+            "feature_id": "A-1",
+            "en": "Nominative",
+            "ru": "Номинатив",
+        },
+        {
+            "id": "A-1-2",
+            "feature_id": "A-1",
+            "en": "Ergative",
+            "ru": "Эргатив",
+        },
+        {
+            "id": "A-1-3",
+            "feature_id": "A-1",
+            "en": "DSM",
+            "ru": "Дифференцированное маркирование субъекта",
+        },
+        {
+            "id": "B-2-1",
+            "feature_id": "B-2",
+            "en": "Coordination",
+            "ru": "Координация",
+        },
+    )
+
+    rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
+        remove_matching_rows(
+            lookup_column="feature_id",
+            match_content="B-1",
+            rows=dummy_rows_of_listed_values,
+        )
+    )
+
+    assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_numbers_of_removed_rows == (3, 4)
+
+
+def test_remove_matching_rows_remove_multiple_subsequent_values_of_B_2(
+    dummy_rows_of_listed_values,
+):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "A-1-1",
+            "feature_id": "A-1",
+            "en": "Nominative",
+            "ru": "Номинатив",
+        },
+        {
+            "id": "A-1-2",
+            "feature_id": "A-1",
+            "en": "Ergative",
+            "ru": "Эргатив",
+        },
+        {
+            "id": "A-1-3",
+            "feature_id": "A-1",
+            "en": "DSM",
+            "ru": "Дифференцированное маркирование субъекта",
+        },
+        {
+            "id": "B-1-1",
+            "feature_id": "B-1",
+            "en": "Agreement",
+            "ru": "Согласование",
+        },
+        {
+            "id": "B-1-2",
+            "feature_id": "B-1",
+            "en": "Word order",
+            "ru": "Порядок слов",
+        },
+    )
+
+    rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
+        remove_matching_rows(
+            lookup_column="feature_id",
+            match_content="B-2",
+            rows=dummy_rows_of_listed_values,
+        )
+    )
+
+    assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_numbers_of_removed_rows == (5,)
+
+
+def test_remove_matching_rows_remove_multiple_scattered_rows_with_type_variable(dummy_rows_with_scattered_values):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "17",
+            "domain": "morphology",
+            "type": "constant",
+        },
+        {
+            "id": "19",
+            "domain": "syntax",
+            "type": "constant",
+        },
+        {
+            "id": "20",
+            "domain": "syntax",
+            "type": "constant",
+        },
+        {
+            "id": "22",
+            "domain": "morphology",
+            "type": "constant",
+        },
+    )
+
+    rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
+        remove_matching_rows(
+            lookup_column="type",
+            match_content="variable",
+            rows=dummy_rows_with_scattered_values,
+        )
+    )
+
+    assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_numbers_of_removed_rows == (1, 4)
+
+
+def test_remove_matching_rows_remove_multiple_scattered_rows_with_domain_morphology(dummy_rows_with_scattered_values):
+
+    GOLD_STANDARD_DUMMY_ROWS = (
+        {
+            "id": "19",
+            "domain": "syntax",
+            "type": "constant",
+        },
+        {
+            "id": "20",
+            "domain": "syntax",
+            "type": "constant",
+        },
+        {
+            "id": "21",
+            "domain": "syntax",
+            "type": "variable",
+        },
+    )
+
+    rows_with_multiple_rows_removed, line_numbers_of_removed_rows = (
+        remove_matching_rows(
+            lookup_column="domain",
+            match_content="morphology",
+            rows=dummy_rows_with_scattered_values,
+        )
+    )
+
+    assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
+
+    assert line_numbers_of_removed_rows == (0, 1, 5)
