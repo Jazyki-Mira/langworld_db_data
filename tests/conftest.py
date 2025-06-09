@@ -113,3 +113,39 @@ def dummy_rows_of_feature_profile():
             "value_id": "C-1-1",
         },
     )
+
+
+@pytest.fixture(scope="function")
+def dummy_rows_with_scattered_values():
+    return (
+        {
+            "id": "17",
+            "domain": "morphology",
+            "type": "constant",
+        },
+        {
+            "id": "18",
+            "domain": "morphology",
+            "type": "variable",
+        },
+        {
+            "id": "19",
+            "domain": "syntax",
+            "type": "constant",
+        },
+        {
+            "id": "20",
+            "domain": "syntax",
+            "type": "constant",
+        },
+        {
+            "id": "21",
+            "domain": "syntax",
+            "type": "variable",
+        },
+        {
+            "id": "22",
+            "domain": "morphology",
+            "type": "constant",
+        },
+    )
