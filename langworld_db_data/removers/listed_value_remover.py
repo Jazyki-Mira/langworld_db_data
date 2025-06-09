@@ -1,5 +1,6 @@
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import (
+    ID_SEPARATOR,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_ID,
     KEY_FOR_VALUE_ID,

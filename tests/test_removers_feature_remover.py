@@ -1,10 +1,6 @@
 import pytest
 
 from langworld_db_data.removers.feature_remover import FeatureRemover, FeatureRemoverError
-from langworld_db_data.tools.files.csv_xls import (
-    remove_multiple_matching_rows_and_return_range_of_their_line_numbers,
-    remove_one_matching_row_and_return_its_line_number,
-)
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
     DIR_WITH_REMOVERS_TEST_FILES,
