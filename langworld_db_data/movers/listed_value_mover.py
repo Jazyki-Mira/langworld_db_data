@@ -7,7 +7,7 @@ from langworld_db_data.constants.literals import (
 )
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
 from langworld_db_data.removers.listed_value_remover import ListedValueRemover
-from langworld_db_data.tools.value_ids.value_ids import extract_value_index
+from langworld_db_data.tools.ids.extract import extract_value_index
 
 
 class ListedValueMoverError(Exception):
