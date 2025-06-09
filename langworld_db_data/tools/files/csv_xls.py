@@ -507,7 +507,7 @@ def remove_matching_rows(
         raise TypeError(
             f"match_content must be of type <str> or <int>, <{type(match_content)}> was given."
         )
-    
+
     if lookup_column not in rows[0]:
         raise KeyError(f"Column <{lookup_column}> not found. Cannot remove a row")
 
@@ -523,7 +523,7 @@ def remove_matching_rows(
         raise KeyError(
             f"{match_content=} not found in column {lookup_column=}. Couldn't remove rows"
         )
-    
+
     new_rows = []
 
     for i, row in enumerate(copied_rows):
