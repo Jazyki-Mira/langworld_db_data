@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import KEY_FOR_ID
 from langworld_db_data.constants.paths import (
@@ -15,8 +13,8 @@ from langworld_db_data.tools.files.csv_xls import (
     remove_one_matching_row_and_return_its_line_number,
     write_csv,
 )
-from langworld_db_data.tools.value_ids.extract import extract_category_id
-from langworld_db_data.tools.value_ids.update import (
+from langworld_db_data.tools.ids.extract import extract_category_id
+from langworld_db_data.tools.ids.update import (
     update_indices_after_given_line_number_if_necessary,
 )
 

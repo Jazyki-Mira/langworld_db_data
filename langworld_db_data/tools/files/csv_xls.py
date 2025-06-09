@@ -14,12 +14,6 @@ import openpyxl.cell
 import openpyxl.worksheet.worksheet
 from openpyxl import load_workbook
 
-from langworld_db_data.constants.literals import ID_SEPARATOR
-from langworld_db_data.tools.value_ids.extract import (
-    extract_feature_index,
-    extract_value_index,
-)
-
 CSVDelimiter = Literal[",", ";"]
 
 
