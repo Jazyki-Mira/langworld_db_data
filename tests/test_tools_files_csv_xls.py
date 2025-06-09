@@ -336,7 +336,7 @@ def test__remove_one_row_and_return_its_line_number_remove_from_inventory_of_fea
     )
 
     rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
-        match_column_name="id",
+        lookup_column="id",
         match_content="A-3",
         rows=dummy_rows_of_features,
     )
@@ -382,7 +382,7 @@ def test__remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_va
     )
 
     rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
-        match_column_name="id",
+        lookup_column="id",
         match_content="A-1-2",
         rows=dummy_rows_of_listed_values,
     )
@@ -422,7 +422,7 @@ def test__remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
     )
 
     rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
-        match_column_name="feature_id",
+        lookup_column="feature_id",
         match_content="B-1",
         rows=dummy_rows_of_feature_profile,
     )
@@ -462,7 +462,7 @@ def test__remove_one_row_remove_last_row(dummy_rows_of_feature_profile):
     )
 
     rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
-        match_column_name="feature_id",
+        lookup_column="feature_id",
         match_content="C-1",
         rows=dummy_rows_of_feature_profile,
     )
@@ -480,7 +480,7 @@ def test__remove_one_row_throws_exception_invalid_match_content(
         with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
 
             _, _ = remove_one_matching_row(
-                match_column_name="id",
+                lookup_column="id",
                 match_content=bad_arg,
                 rows=dummy_rows_of_listed_values,
             )
@@ -513,7 +513,7 @@ def test__remove_multiple_matching_rows_remove_values_of_A_1(
 
     rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
         remove_multiple_matching_rows(
-            match_column_name="feature_id",
+            lookup_column="feature_id",
             match_content="A-1",
             rows=dummy_rows_of_listed_values,
         )
@@ -557,7 +557,7 @@ def test__remove_multiple_matching_rows_remove_values_of_B_1(
 
     rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
         remove_multiple_matching_rows(
-            match_column_name="feature_id",
+            lookup_column="feature_id",
             match_content="B-1",
             rows=dummy_rows_of_listed_values,
         )
@@ -607,7 +607,7 @@ def test__remove_multiple_matching_rows_remove_value_of_B_2(
 
     rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
         remove_multiple_matching_rows(
-            match_column_name="feature_id",
+            lookup_column="feature_id",
             match_content="B-2",
             rows=dummy_rows_of_listed_values,
         )
@@ -624,7 +624,7 @@ def test__remove_multiple_matching_rows_throws_exception_invalid_feature_id(
 
     with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
         remove_multiple_matching_rows(
-            match_column_name="feature_id",
+            lookup_column="feature_id",
             match_content=False,
             rows=dummy_rows_of_listed_values,
         )

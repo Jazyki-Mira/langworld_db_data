@@ -340,9 +340,9 @@ def write_csv(
 
 
 def remove_one_matching_row(
-    match_column_name: str,
-    match_content: str,
     rows: list[dict[str, str]],
+    lookup_column: str,
+    match_content: str,
 ) -> tuple[list[dict[str, str]], int]:
     """
     Remove exactly one row from a list of dictionaries where the specified column
@@ -356,7 +356,7 @@ def remove_one_matching_row(
         dictionaries in the list are not changed, and new ones are returned.
 
     Args:
-        match_column_name: Name of the column to search in
+        lookup_column: Name of the column to search in
         match_content: Content to search for in the specified column
         rows: List of dictionaries representing rows
 
@@ -368,7 +368,7 @@ def remove_one_matching_row(
 
     Note:
         - The function only removes the first matching row
-        - If no match is found, returns the original rows and index 0
+        - If no match is found, returns rows and index 0
         - For removing multiple rows, use remove_multiple_matching_rows
     """
     copied_rows = deepcopy(rows)
@@ -381,7 +381,7 @@ def remove_one_matching_row(
     index_of_row_to_remove = 0
 
     for i, row in enumerate(copied_rows):
-        if row[match_column_name] == match_content:
+        if row[lookup_column] == match_content:
             index_of_row_to_remove = i
             break
 
@@ -395,17 +395,21 @@ def remove_one_matching_row(
 
 
 def remove_multiple_matching_rows(
-    match_column_name: str,
-    match_content: str,
     rows: list[dict[str, str]],
+    lookup_column: str,
+    match_content: str,
 ) -> tuple[list[dict[str, str]], tuple[int]]:
     """
     Remove all rows from a list of dictionaries where the specified column matches
     the given content. Returns the modified list of dictionaries and a tuple containing
     the 0-based indices of the first and last removed rows.
 
+    Important!
+        Incoming list is deepcopied, which means that original
+        dictionaries in the list are not changed, and new ones are returned.
+
     Args:
-        match_column_name: Name of the column to search in
+        lookup_column: Name of the column to search in
         match_content: Content to search for in the specified column
         rows: List of dictionaries representing rows (will be modified)
 
@@ -416,7 +420,6 @@ def remove_multiple_matching_rows(
         TypeError: If match_content is not str or int
 
     Note:
-        - Incoming list must be pre-copied (use deepcopy) before passing to this function
         - Indices are 0-based
         - For removing exactly one row, use remove_one_matching_row
         - The function assumes all rows have the specified column
@@ -431,7 +434,7 @@ def remove_multiple_matching_rows(
     line_numbers_of_removed_rows = []
 
     for i, row in enumerate(copied_rows):
-        if row[match_column_name] == match_content:
+        if row[lookup_column] == match_content:
             line_numbers_of_removed_rows.append(i)
 
     if len(line_numbers_of_removed_rows) == 0:

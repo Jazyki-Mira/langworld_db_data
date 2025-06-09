@@ -56,7 +56,7 @@ class FeatureRemover(ObjectWithPaths):
         )
 
         rows_with_removed_row, line_number_of_removed_row = remove_one_matching_row(
-            match_column_name="id", match_content=feature_id, rows=rows
+            lookup_column="id", match_content=feature_id, rows=rows
         )
 
         rows_with_removed_row_and_updated_indices = (
@@ -88,7 +88,7 @@ class FeatureRemover(ObjectWithPaths):
 
         rows_with_removed_rows, range_of_line_numbers_of_removed_rows = (
             remove_multiple_matching_rows(
-                match_column_name="feature_id", match_content=feature_id, rows=rows
+                lookup_column="feature_id", match_content=feature_id, rows=rows
             )
         )
 
@@ -137,7 +137,7 @@ class FeatureRemover(ObjectWithPaths):
             rows = read_dicts_from_csv(feature_profile)
 
             rows_with_removed_row, line_number_of_removed_row = remove_one_matching_row(
-                match_column_name="feature_id", match_content=feature_id, rows=rows
+                lookup_column="feature_id", match_content=feature_id, rows=rows
             )
 
             rows_with_removed_row_and_updated_indices = (
