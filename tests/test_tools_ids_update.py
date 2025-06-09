@@ -148,6 +148,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
     )
 
     rows_without_B_1, range_of_line_numbers_of_removed_rows = remove_multiple_matching_rows(
+        match_column_name="feature_id",
         match_content="B-1",
         rows=dummy_rows_of_listed_values,
     )
@@ -217,6 +218,7 @@ def test__update_indices_after_given_line_number_if_necessary_in_listed_values_u
     )
 
     rows_without_B_2, range_of_line_numbers_of_removed_rows = remove_multiple_matching_rows(
+        match_column_name="feature_id",
         match_content="B-2",
         rows=dummy_rows_of_listed_values,
     )

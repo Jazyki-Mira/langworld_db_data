@@ -87,7 +87,9 @@ class FeatureRemover(ObjectWithPaths):
         )
 
         rows_with_removed_rows, range_of_line_numbers_of_removed_rows = (
-            remove_multiple_matching_rows(match_content=feature_id, rows=rows)
+            remove_multiple_matching_rows(
+                match_column_name="feature_id", match_content=feature_id, rows=rows
+            )
         )
 
         line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]

@@ -486,7 +486,7 @@ def test__remove_one_row_throws_exception_invalid_match_content(
             )
 
 
-def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_values_of_A_1(
+def test__remove_multiple_matching_rows_remove_values_of_A_1(
     dummy_rows_of_listed_values,
 ):
 
@@ -513,6 +513,7 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
 
     rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
         remove_multiple_matching_rows(
+            match_column_name="feature_id",
             match_content="A-1",
             rows=dummy_rows_of_listed_values,
         )
@@ -523,7 +524,7 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
     assert range_of_lin_numbers_of_removed_rows == (0, 2)
 
 
-def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_values_of_B_1(
+def test__remove_multiple_matching_rows_remove_values_of_B_1(
     dummy_rows_of_listed_values,
 ):
 
@@ -556,6 +557,7 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
 
     rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
         remove_multiple_matching_rows(
+            match_column_name="feature_id",
             match_content="B-1",
             rows=dummy_rows_of_listed_values,
         )
@@ -566,7 +568,7 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
     assert range_of_lin_numbers_of_removed_rows == (3, 4)
 
 
-def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_remove_value_of_B_2(
+def test__remove_multiple_matching_rows_remove_value_of_B_2(
     dummy_rows_of_listed_values,
 ):
 
@@ -605,6 +607,7 @@ def test__remove_multiple_matching_rows_and_return_range_of_their_line_numbers_r
 
     rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
         remove_multiple_matching_rows(
+            match_column_name="feature_id",
             match_content="B-2",
             rows=dummy_rows_of_listed_values,
         )
@@ -621,6 +624,7 @@ def test__remove_multiple_matching_rows_throws_exception_invalid_feature_id(
 
     with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
         remove_multiple_matching_rows(
+            match_column_name="feature_id",
             match_content=False,
             rows=dummy_rows_of_listed_values,
         )
