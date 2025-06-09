@@ -1,16 +1,9 @@
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.constants.literals import KEY_FOR_ID
-from langworld_db_data.constants.paths import (
-    FEATURE_PROFILES_DIR,
-    FILE_WITH_CATEGORIES,
-    FILE_WITH_LISTED_VALUES,
-    FILE_WITH_NAMES_OF_FEATURES,
-)
 from langworld_db_data.tools.files.csv_xls import (
     read_column_from_csv,
     read_dicts_from_csv,
-    remove_multiple_matching_rows,
-    remove_one_matching_row,
+    remove_matching_rows,
     write_csv,
 )
 from langworld_db_data.tools.ids.extract import extract_category_id
@@ -55,7 +48,7 @@ class FeatureRemover(ObjectWithPaths):
             path_to_file=self.input_file_with_features,
         )
 
-        rows_with_removed_row, line_number_of_removed_row = remove_one_matching_row(
+        rows_with_removed_row, (line_number_of_removed_row,) = remove_matching_rows(
             lookup_column="id", match_content=feature_id, rows=rows
         )
 
@@ -86,10 +79,8 @@ class FeatureRemover(ObjectWithPaths):
             path_to_file=self.input_file_with_listed_values,
         )
 
-        rows_with_removed_rows, range_of_line_numbers_of_removed_rows = (
-            remove_multiple_matching_rows(
-                lookup_column="feature_id", match_content=feature_id, rows=rows
-            )
+        rows_with_removed_rows, range_of_line_numbers_of_removed_rows = remove_matching_rows(
+            lookup_column="feature_id", match_content=feature_id, rows=rows
         )
 
         line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
@@ -136,7 +127,7 @@ class FeatureRemover(ObjectWithPaths):
 
             rows = read_dicts_from_csv(feature_profile)
 
-            rows_with_removed_row, line_number_of_removed_row = remove_one_matching_row(
+            rows_with_removed_row, (line_number_of_removed_row,) = remove_matching_rows(
                 lookup_column="feature_id", match_content=feature_id, rows=rows
             )
 

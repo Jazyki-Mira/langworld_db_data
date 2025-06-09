@@ -16,8 +16,6 @@ from langworld_db_data.tools.files.csv_xls import (
     read_dicts_from_xls,
     read_plain_rows_from_csv,
     remove_matching_rows,
-    remove_multiple_matching_rows,
-    remove_one_matching_row,
     write_csv,
 )
 from langworld_db_data.tools.files.txt import read_plain_text_from_file
@@ -308,7 +306,7 @@ def test_remove_one_row_and_return_its_line_number_remove_from_inventory_of_feat
     dummy_rows_of_features,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1",
             "en": "Subject",
@@ -334,9 +332,9 @@ def test_remove_one_row_and_return_its_line_number_remove_from_inventory_of_feat
             "en": "Sentence",
             "ru": "Предложение",
         },
-    )
+    ]
 
-    rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
+    rows_with_one_line_removed, (line_number_of_removed_row,) = remove_matching_rows(
         lookup_column="id",
         match_content="A-3",
         rows=dummy_rows_of_features,
@@ -349,7 +347,7 @@ def test_remove_one_row_and_return_its_line_number_remove_from_inventory_of_feat
 
 def test_remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_values):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1-1",
             "feature_id": "A-1",
@@ -380,9 +378,9 @@ def test_remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_val
             "en": "Coordination",
             "ru": "Координация",
         },
-    )
+    ]
 
-    rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
+    rows_with_one_line_removed, (line_number_of_removed_row,) = remove_matching_rows(
         lookup_column="id",
         match_content="A-1-2",
         rows=dummy_rows_of_listed_values,
@@ -395,7 +393,7 @@ def test_remove_one_row_from_inventory_of_listed_values(dummy_rows_of_listed_val
 
 def test_remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "feature_id": "A-1",
             "feature_name_ru": "Некий признак",
@@ -420,9 +418,9 @@ def test_remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
             "value_type": "listed",
             "value_id": "C-1-1",
         },
-    )
+    ]
 
-    rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
+    rows_with_one_line_removed, (line_number_of_removed_row,) = remove_matching_rows(
         lookup_column="feature_id",
         match_content="B-1",
         rows=dummy_rows_of_feature_profile,
@@ -435,7 +433,7 @@ def test_remove_one_row_from_a_feature_profile(dummy_rows_of_feature_profile):
 
 def test_remove_one_row_remove_last_row(dummy_rows_of_feature_profile):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "feature_id": "A-1",
             "feature_name_ru": "Некий признак",
@@ -460,9 +458,9 @@ def test_remove_one_row_remove_last_row(dummy_rows_of_feature_profile):
             "value_type": "listed",
             "value_id": "B-1-1",
         },
-    )
+    ]
 
-    rows_with_one_line_removed, line_number_of_removed_row = remove_one_matching_row(
+    rows_with_one_line_removed, (line_number_of_removed_row,) = remove_matching_rows(
         lookup_column="feature_id",
         match_content="C-1",
         rows=dummy_rows_of_feature_profile,
@@ -480,7 +478,7 @@ def test_remove_one_row_throws_exception_invalid_match_content(
     for bad_arg in (True, [1, 2]):
         with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
 
-            _, _ = remove_one_matching_row(
+            _, _ = remove_matching_rows(
                 lookup_column="id",
                 match_content=bad_arg,
                 rows=dummy_rows_of_listed_values,
@@ -489,7 +487,7 @@ def test_remove_one_row_throws_exception_invalid_match_content(
 
 def test_remove_one_row_throws_exception_empty_rows():
     with pytest.raises(ValueError, match="The list of rows is empty. Cannot remove a row"):
-        _, _ = remove_one_matching_row(
+        _, _ = remove_matching_rows(
             lookup_column="id",
             match_content="some_value",
             rows=[],
@@ -500,7 +498,7 @@ def test_remove_multiple_matching_rows_remove_values_of_A_1(
     dummy_rows_of_listed_values,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "B-1-1",
             "feature_id": "B-1",
@@ -519,26 +517,24 @@ def test_remove_multiple_matching_rows_remove_values_of_A_1(
             "en": "Coordination",
             "ru": "Координация",
         },
-    )
+    ]
 
-    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
-        remove_multiple_matching_rows(
-            lookup_column="feature_id",
-            match_content="A-1",
-            rows=dummy_rows_of_listed_values,
-        )
+    rows_with_multiple_rows_removed, numbers_of_removed_rows = remove_matching_rows(
+        lookup_column="feature_id",
+        match_content="A-1",
+        rows=dummy_rows_of_listed_values,
     )
 
     assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
 
-    assert range_of_lin_numbers_of_removed_rows == (0, 2)
+    assert numbers_of_removed_rows == (0, 1, 2)
 
 
 def test_remove_multiple_matching_rows_remove_values_of_B_1(
     dummy_rows_of_listed_values,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1-1",
             "feature_id": "A-1",
@@ -563,14 +559,12 @@ def test_remove_multiple_matching_rows_remove_values_of_B_1(
             "en": "Coordination",
             "ru": "Координация",
         },
-    )
+    ]
 
-    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
-        remove_multiple_matching_rows(
-            lookup_column="feature_id",
-            match_content="B-1",
-            rows=dummy_rows_of_listed_values,
-        )
+    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = remove_matching_rows(
+        lookup_column="feature_id",
+        match_content="B-1",
+        rows=dummy_rows_of_listed_values,
     )
 
     assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
@@ -582,7 +576,7 @@ def test_remove_multiple_matching_rows_remove_value_of_B_2(
     dummy_rows_of_listed_values,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1-1",
             "feature_id": "A-1",
@@ -613,19 +607,17 @@ def test_remove_multiple_matching_rows_remove_value_of_B_2(
             "en": "Word order",
             "ru": "Порядок слов",
         },
-    )
+    ]
 
-    rows_with_multiple_rows_removed, range_of_lin_numbers_of_removed_rows = (
-        remove_multiple_matching_rows(
-            lookup_column="feature_id",
-            match_content="B-2",
-            rows=dummy_rows_of_listed_values,
-        )
+    rows_with_multiple_rows_removed, numbers_of_removed_rows = remove_matching_rows(
+        lookup_column="feature_id",
+        match_content="B-2",
+        rows=dummy_rows_of_listed_values,
     )
 
     assert rows_with_multiple_rows_removed == GOLD_STANDARD_DUMMY_ROWS
 
-    assert range_of_lin_numbers_of_removed_rows == (5, 5)
+    assert numbers_of_removed_rows == (5,)
 
 
 def test_remove_multiple_matching_rows_throws_exception_invalid_feature_id(
@@ -633,7 +625,7 @@ def test_remove_multiple_matching_rows_throws_exception_invalid_feature_id(
 ):
 
     with pytest.raises(TypeError, match="match_content must be of type <str> or <int>"):
-        remove_multiple_matching_rows(
+        remove_matching_rows(
             lookup_column="feature_id",
             match_content=False,
             rows=dummy_rows_of_listed_values,
@@ -1024,7 +1016,7 @@ def test_remove_matching_rows_throws_error_lookup_column_absent_from_rows(
     dummy_rows_with_scattered_values,
 ):
 
-    with pytest.raises(KeyError, match="<relevance> not found. Cannot remove a row"):
+    with pytest.raises(KeyError, match="'relevance' not found. Cannot remove a row"):
         _, _ = remove_matching_rows(
             lookup_column="relevance",
             match_content="high",

@@ -1,7 +1,4 @@
-from langworld_db_data.tools.files.csv_xls import (
-    remove_multiple_matching_rows,
-    remove_one_matching_row,
-)
+from langworld_db_data.tools.files.csv_xls import remove_matching_rows
 from langworld_db_data.tools.ids.update import update_indices_after_given_line_number_if_necessary
 
 
@@ -9,7 +6,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_features_update_
     dummy_rows_of_features,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1",
             "en": "Subject",
@@ -35,9 +32,9 @@ def test_update_indices_after_given_line_number_if_necessary_in_features_update_
             "en": "Sentence",
             "ru": "Предложение",
         },
-    )
+    ]
 
-    rows_without_A_2, line_number_of_removed_row = remove_one_matching_row(
+    rows_without_A_2, (line_number_of_removed_row,) = remove_matching_rows(
         lookup_column="id",
         match_content="A-2",
         rows=dummy_rows_of_features,
@@ -61,7 +58,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_features_update_
     dummy_rows_of_features,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1",
             "en": "Subject",
@@ -87,9 +84,9 @@ def test_update_indices_after_given_line_number_if_necessary_in_features_update_
             "en": "Sentence",
             "ru": "Предложение",
         },
-    )
+    ]
 
-    rows_without_last_feature_in_category_A, line_number_of_removed_row = remove_one_matching_row(
+    rows_without_last_feature_in_category_A, (line_number_of_removed_row,) = remove_matching_rows(
         lookup_column="id",
         match_content="A-3",
         rows=dummy_rows_of_features,
@@ -116,7 +113,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_listed_values_up
     dummy_rows_of_listed_values,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1-1",
             "feature_id": "A-1",
@@ -141,9 +138,9 @@ def test_update_indices_after_given_line_number_if_necessary_in_listed_values_up
             "en": "Coordination",
             "ru": "Координация",
         },
-    )
+    ]
 
-    rows_without_B_1, range_of_line_numbers_of_removed_rows = remove_multiple_matching_rows(
+    rows_without_B_1, range_of_line_numbers_of_removed_rows = remove_matching_rows(
         lookup_column="feature_id",
         match_content="B-1",
         rows=dummy_rows_of_listed_values,
@@ -180,7 +177,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_listed_values_up
     dummy_rows_of_listed_values,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1-1",
             "feature_id": "A-1",
@@ -211,9 +208,9 @@ def test_update_indices_after_given_line_number_if_necessary_in_listed_values_up
             "en": "Word order",
             "ru": "Порядок слов",
         },
-    )
+    ]
 
-    rows_without_B_2, range_of_line_numbers_of_removed_rows = remove_multiple_matching_rows(
+    rows_without_B_2, range_of_line_numbers_of_removed_rows = remove_matching_rows(
         lookup_column="feature_id",
         match_content="B-2",
         rows=dummy_rows_of_listed_values,
@@ -250,7 +247,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_
     dummy_rows_of_feature_profile,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "feature_id": "A-1",
             "feature_name_ru": "Некий признак",
@@ -275,9 +272,9 @@ def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_
             "value_type": "listed",
             "value_id": "C-1-1",
         },
-    )
+    ]
 
-    rows_without_A_2, line_number_of_removed_row = remove_one_matching_row(
+    rows_without_A_2, (line_number_of_removed_row,) = remove_matching_rows(
         lookup_column="feature_id",
         match_content="A-2",
         rows=dummy_rows_of_feature_profile,
@@ -305,7 +302,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_
     dummy_rows_of_feature_profile,
 ):
 
-    GOLD_STANDARD_DUMMY_ROWS = (
+    GOLD_STANDARD_DUMMY_ROWS = [
         {
             "feature_id": "A-1",
             "feature_name_ru": "Некий признак",
@@ -330,9 +327,9 @@ def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_
             "value_type": "listed",
             "value_id": "C-1-1",
         },
-    )
+    ]
 
-    rows_without_last_feature_in_category_A, line_number_of_removed_row = remove_one_matching_row(
+    rows_without_last_feature_in_category_A, (line_number_of_removed_row,) = remove_matching_rows(
         lookup_column="feature_id",
         match_content="A-3",
         rows=dummy_rows_of_feature_profile,
