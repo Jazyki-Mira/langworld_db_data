@@ -35,7 +35,7 @@ def update_indices_after_given_line_number_if_necessary(
 
     copied_rows = deepcopy(rows)
 
-    nothing_is_changed = True
+    changes_made = 0
 
     for row in copied_rows[line_number_after_which_rows_must_be_updated:]:
 
@@ -65,11 +65,12 @@ def update_indices_after_given_line_number_if_necessary(
                 row["value_id"] = (
                     f"{match_content}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
                 )
-        nothing_is_changed = False
 
-    if nothing_is_changed:
+        changes_made += 1
+
+    if not changes_made:
         logging.warning("No rows have been changed.")
     else:
-        logging.info("Successfully updated IDs.")
+        logging.info(f"Successfully updated IDs: {changes_made} changes were made.")
 
     return copied_rows
