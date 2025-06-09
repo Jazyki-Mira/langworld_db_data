@@ -30,7 +30,7 @@ def dummy_rows_of_features():
             "ru": "Грамматическая основа",
         },
         {
-            "id": "С-1",
+            "id": "C-1",
             "en": "Sentence",
             "ru": "Предложение",
         },

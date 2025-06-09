@@ -28,7 +28,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_features_update_
             "ru": "Грамматическая основа",
         },
         {
-            "id": "С-1",
+            "id": "C-1",
             "en": "Sentence",
             "ru": "Предложение",
         },
@@ -82,7 +82,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_features_update_
             "ru": "Грамматическая основа",
         },
         {
-            "id": "С-1",
+            "id": "C-1",
             "en": "Sentence",
             "ru": "Предложение",
         },

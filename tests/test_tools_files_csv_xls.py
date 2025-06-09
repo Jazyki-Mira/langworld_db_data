@@ -328,7 +328,7 @@ def test_remove_one_row_and_return_its_line_number_remove_from_inventory_of_feat
             "ru": "Грамматическая основа",
         },
         {
-            "id": "С-1",
+            "id": "C-1",
             "en": "Sentence",
             "ru": "Предложение",
         },
@@ -670,7 +670,7 @@ def test_remove_matching_rows_remove_one_row_from_inventory_of_features(dummy_ro
             "ru": "Грамматическая основа",
         },
         {
-            "id": "С-1",
+            "id": "C-1",
             "en": "Sentence",
             "ru": "Предложение",
         },
