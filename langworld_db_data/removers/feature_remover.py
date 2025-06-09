@@ -13,10 +13,12 @@ from langworld_db_data.tools.files.csv_xls import (
     read_dicts_from_csv,
     remove_multiple_matching_rows_and_return_range_of_their_line_numbers,
     remove_one_matching_row_and_return_its_line_number,
-    update_indices_after_given_line_number_if_necessary,
     write_csv,
 )
 from langworld_db_data.tools.value_ids.extract import extract_category_id
+from langworld_db_data.tools.value_ids.update import (
+    update_indices_after_given_line_number_if_necessary,
+)
 
 
 class FeatureRemoverError(Exception):
