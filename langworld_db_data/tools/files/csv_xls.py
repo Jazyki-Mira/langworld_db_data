@@ -338,7 +338,7 @@ def write_csv(
         print(f"Written {len(rows_to_write)} rows")
 
 
-def remove_matching_rows(
+def remove_rows_with_given_content_in_lookup_column(
     rows: list[dict[str, str]],
     lookup_column: str,
     match_content: str,

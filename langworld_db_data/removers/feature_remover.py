@@ -3,7 +3,7 @@ from langworld_db_data.constants.literals import KEY_FOR_ID
 from langworld_db_data.tools.files.csv_xls import (
     read_column_from_csv,
     read_dicts_from_csv,
-    remove_matching_rows,
+    remove_rows_with_given_content_in_lookup_column,
     write_csv,
 )
 from langworld_db_data.tools.ids.extract import extract_category_id
@@ -48,8 +48,10 @@ class FeatureRemover(ObjectWithPaths):
             path_to_file=self.input_file_with_features,
         )
 
-        rows_with_removed_row, (line_number_of_removed_row,) = remove_matching_rows(
-            lookup_column="id", match_content=feature_id, rows=rows
+        rows_with_removed_row, (line_number_of_removed_row,) = (
+            remove_rows_with_given_content_in_lookup_column(
+                lookup_column="id", match_content=feature_id, rows=rows
+            )
         )
 
         rows_with_removed_row_and_updated_indices = (
@@ -79,8 +81,10 @@ class FeatureRemover(ObjectWithPaths):
             path_to_file=self.input_file_with_listed_values,
         )
 
-        rows_with_removed_rows, range_of_line_numbers_of_removed_rows = remove_matching_rows(
-            lookup_column="feature_id", match_content=feature_id, rows=rows
+        rows_with_removed_rows, range_of_line_numbers_of_removed_rows = (
+            remove_rows_with_given_content_in_lookup_column(
+                lookup_column="feature_id", match_content=feature_id, rows=rows
+            )
         )
 
         line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
@@ -127,8 +131,10 @@ class FeatureRemover(ObjectWithPaths):
 
             rows = read_dicts_from_csv(feature_profile)
 
-            rows_with_removed_row, (line_number_of_removed_row,) = remove_matching_rows(
-                lookup_column="feature_id", match_content=feature_id, rows=rows
+            rows_with_removed_row, (line_number_of_removed_row,) = (
+                remove_rows_with_given_content_in_lookup_column(
+                    lookup_column="feature_id", match_content=feature_id, rows=rows
+                )
             )
 
             rows_with_removed_row_and_updated_indices = (
