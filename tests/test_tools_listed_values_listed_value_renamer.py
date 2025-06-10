@@ -1,6 +1,6 @@
 import pytest
 
-from langworld_db_data.tools.featureprofiles.value_renamer import ValueRenamer, ValueRenamerError
+from langworld_db_data.tools.listed_values import ListedValueRenamer, ListedValueRenamerError
 from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
 from tests.test_helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 
@@ -21,7 +21,7 @@ DIR_WITH_OUTPUT_GOLD_STANDARD_INVENTORIES = DIR_WITH_OUTPUT_GOLD_STANDARD_FILES 
 
 @pytest.fixture(scope="class")
 def value_renamer():
-    return ValueRenamer(
+    return ListedValueRenamer(
         input_feature_profiles_dir=DIR_WITH_INPUT_FEATURE_PROFILES,
         output_feature_profiles_dir=DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES,
         input_inventories_dir=DIR_WITH_INPUT_INVENTORIES,
@@ -112,7 +112,7 @@ def test_update_first_value_in_features_listed_values(value_renamer):
 
 
 def test_set_empty_name_for_value(value_renamer):
-    with pytest.raises(ValueRenamerError, match="a null string passed as new value name"):
+    with pytest.raises(ListedValueRenamerError, match="a null string passed as new value name"):
         value_renamer.rename_value_in_profiles_and_inventories(
             id_of_value_to_rename="A-9-2",
             new_value_name="",
@@ -121,7 +121,7 @@ def test_set_empty_name_for_value(value_renamer):
 
 def test_rename_value_whose_id_does_not_exist(value_renamer):
     id_of_value_to_rename = "A-99-2"
-    with pytest.raises(ValueRenamerError, match=f"{id_of_value_to_rename} does not exist"):
+    with pytest.raises(ListedValueRenamerError, match=f"{id_of_value_to_rename} does not exist"):
         value_renamer.rename_value_in_profiles_and_inventories(
             id_of_value_to_rename=id_of_value_to_rename,
             new_value_name="Представлены исключительно дифтонги",
@@ -130,7 +130,9 @@ def test_rename_value_whose_id_does_not_exist(value_renamer):
 
 def test_current_value_name_is_equal_to_new_value_name(value_renamer):
     new_value_name = "Только дифтонги"
-    with pytest.raises(ValueRenamerError, match=f"Value is already called '{new_value_name}'"):
+    with pytest.raises(
+        ListedValueRenamerError, match=f"Value is already called '{new_value_name}'"
+    ):
         value_renamer.rename_value_in_profiles_and_inventories(
             id_of_value_to_rename="A-9-2",
             new_value_name=new_value_name,

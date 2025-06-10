@@ -12,11 +12,11 @@ from langworld_db_data.tools.common.files.csv_xls import read_dicts_from_csv, wr
 from langworld_db_data.tools.common.files.txt import remove_extra_space
 
 
-class ValueRenamerError(Exception):
+class ListedValueRenamerError(Exception):
     pass
 
 
-class ValueRenamer:
+class ListedValueRenamer:
     def __init__(
         self,
         input_feature_profiles_dir: Path = FEATURE_PROFILES_DIR,
@@ -42,13 +42,13 @@ class ValueRenamer:
         Also works with elementary values in multiselect features.
         """
         if remove_extra_space(new_value_name) == "":
-            raise ValueRenamerError("a null string passed as new value name")
+            raise ListedValueRenamerError("a null string passed as new value name")
         if not self._value_id_exists(id_of_value_to_rename):
-            raise ValueRenamerError(f"{id_of_value_to_rename} does not exist")
+            raise ListedValueRenamerError(f"{id_of_value_to_rename} does not exist")
         if self._current_value_name_is_equal_to_new_value_name(
             id_of_value_to_rename=id_of_value_to_rename, new_value_name=new_value_name
         ):
-            raise ValueRenamerError(f"Value is already called '{new_value_name}'")
+            raise ListedValueRenamerError(f"Value is already called '{new_value_name}'")
         if not self.output_inventories_dir.exists():
             self.output_inventories_dir.mkdir(parents=True, exist_ok=True)
         self._update_features_listed_values(
@@ -161,7 +161,7 @@ class ValueRenamer:
 
 
 if __name__ == "__main__":
-    ValueRenamer().rename_value_in_profiles_and_inventories(
+    ListedValueRenamer().rename_value_in_profiles_and_inventories(
         id_of_value_to_rename="",
         new_value_name="",
     )
