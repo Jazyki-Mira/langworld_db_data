@@ -1,8 +1,10 @@
-from langworld_db_data.tools.files.csv_xls import remove_rows_with_given_content_in_lookup_column
-from langworld_db_data.tools.ids.update import update_indices_after_given_line_number_if_necessary
+from langworld_db_data.tools.common.files.csv_xls import (
+    remove_rows_with_given_content_in_lookup_column,
+)
+from langworld_db_data.tools.common.ids import decrement_indices_after_deletion
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_features_update_is_necessary(
+def test_decrement_indices_after_deletion_in_features_update_is_necessary(
     dummy_rows_of_features,
 ):
 
@@ -42,21 +44,19 @@ def test_update_indices_after_given_line_number_if_necessary_in_features_update_
         )
     )
 
-    rows_without_A_2_with_updated_feature_indices = (
-        update_indices_after_given_line_number_if_necessary(
-            lookup_column="id",
-            match_value="A",
-            id_type_that_must_be_updated="feature",
-            line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
-            index_type_that_must_be_updated="feature",
-            rows=rows_without_A_2,
-        )
+    rows_without_A_2_with_updated_feature_indices = decrement_indices_after_deletion(
+        lookup_column="id",
+        match_value="A",
+        type_of_id="feature",
+        line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+        type_of_index="feature",
+        rows=rows_without_A_2,
     )
 
     assert rows_without_A_2_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_features_update_is_not_necessary(
+def test_decrement_indices_after_deletion_in_features_update_is_not_necessary(
     dummy_rows_of_features,
 ):
 
@@ -97,12 +97,12 @@ def test_update_indices_after_given_line_number_if_necessary_in_features_update_
     )
 
     rows_without_last_feature_in_category_A_with_updated_feature_indices = (
-        update_indices_after_given_line_number_if_necessary(
+        decrement_indices_after_deletion(
             lookup_column="id",
             match_value="A",
-            id_type_that_must_be_updated="feature",
+            type_of_id="feature",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
-            index_type_that_must_be_updated="feature",
+            type_of_index="feature",
             rows=rows_without_last_feature_in_category_A,
         )
     )
@@ -113,7 +113,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_features_update_
     )
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_necessary(
+def test_decrement_indices_after_deletion_in_listed_values_update_is_necessary(
     dummy_rows_of_listed_values,
 ):
 
@@ -154,32 +154,28 @@ def test_update_indices_after_given_line_number_if_necessary_in_listed_values_up
 
     line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
 
-    rows_without_B_1_with_updated_value_indices = (
-        update_indices_after_given_line_number_if_necessary(
-            lookup_column="id",
-            match_value="B",
-            id_type_that_must_be_updated="value",
-            index_type_that_must_be_updated="feature",
-            line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
-            rows=rows_without_B_1,
-        )
+    rows_without_B_1_with_updated_value_indices = decrement_indices_after_deletion(
+        lookup_column="id",
+        match_value="B",
+        type_of_id="value",
+        type_of_index="feature",
+        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+        rows=rows_without_B_1,
     )
 
-    rows_without_B_1_with_updated_feature_and_value_indices = (
-        update_indices_after_given_line_number_if_necessary(
-            lookup_column="feature_id",
-            match_value="B",
-            id_type_that_must_be_updated="feature",
-            index_type_that_must_be_updated="feature",
-            line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
-            rows=rows_without_B_1_with_updated_value_indices,
-        )
+    rows_without_B_1_with_updated_feature_and_value_indices = decrement_indices_after_deletion(
+        lookup_column="feature_id",
+        match_value="B",
+        type_of_id="feature",
+        type_of_index="feature",
+        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+        rows=rows_without_B_1_with_updated_value_indices,
     )
 
     assert rows_without_B_1_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_not_necessary(
+def test_decrement_indices_after_deletion_in_listed_values_update_is_not_necessary(
     dummy_rows_of_listed_values,
 ):
 
@@ -226,32 +222,28 @@ def test_update_indices_after_given_line_number_if_necessary_in_listed_values_up
 
     line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
 
-    rows_without_B_2_with_updated_value_indices = (
-        update_indices_after_given_line_number_if_necessary(
-            lookup_column="id",
-            match_value="B",
-            id_type_that_must_be_updated="value",
-            index_type_that_must_be_updated="feature",
-            line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
-            rows=rows_without_B_2,
-        )
+    rows_without_B_2_with_updated_value_indices = decrement_indices_after_deletion(
+        lookup_column="id",
+        match_value="B",
+        type_of_id="value",
+        type_of_index="feature",
+        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+        rows=rows_without_B_2,
     )
 
-    rows_without_B_2_with_updated_feature_and_value_indices = (
-        update_indices_after_given_line_number_if_necessary(
-            lookup_column="feature_id",
-            match_value="B",
-            id_type_that_must_be_updated="feature",
-            index_type_that_must_be_updated="feature",
-            line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
-            rows=rows_without_B_2_with_updated_value_indices,
-        )
+    rows_without_B_2_with_updated_feature_and_value_indices = decrement_indices_after_deletion(
+        lookup_column="feature_id",
+        match_value="B",
+        type_of_id="feature",
+        type_of_index="feature",
+        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+        rows=rows_without_B_2_with_updated_value_indices,
     )
 
     assert rows_without_B_2_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_necessary(
+def test_decrement_indices_after_deletion_in_feature_profile_update_is_necessary(
     dummy_rows_of_feature_profile,
 ):
 
@@ -290,16 +282,14 @@ def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_
         )
     )
 
-    rows_without_A_2_with_updated_feature_indices = (
-        update_indices_after_given_line_number_if_necessary(
-            lookup_column="feature_id",
-            match_value="A",
-            id_type_that_must_be_updated="feature",
-            line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
-            index_type_that_must_be_updated="feature",
-            rows=rows_without_A_2,
-            rows_are_a_feature_profile=True,
-        )
+    rows_without_A_2_with_updated_feature_indices = decrement_indices_after_deletion(
+        lookup_column="feature_id",
+        match_value="A",
+        type_of_id="feature",
+        line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+        type_of_index="feature",
+        rows=rows_without_A_2,
+        rows_are_a_feature_profile=True,
     )
 
     for row in rows_without_A_2_with_updated_feature_indices:
@@ -308,7 +298,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_
     assert rows_without_A_2_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_not_necessary(
+def test_decrement_indices_after_deletion_in_feature_profile_update_is_not_necessary(
     dummy_rows_of_feature_profile,
 ):
 
@@ -348,12 +338,12 @@ def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_
     )
 
     rows_without_last_feature_in_category_A_with_updated_feature_indices = (
-        update_indices_after_given_line_number_if_necessary(
+        decrement_indices_after_deletion(
             lookup_column="feature_id",
             match_value="A",
-            id_type_that_must_be_updated="feature",
+            type_of_id="feature",
             line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
-            index_type_that_must_be_updated="feature",
+            type_of_index="feature",
             rows=rows_without_last_feature_in_category_A,
             rows_are_a_feature_profile=True,
         )

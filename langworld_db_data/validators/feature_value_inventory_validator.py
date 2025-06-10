@@ -5,7 +5,7 @@ from pathlib import Path
 from langworld_db_data.constants.iterables import LOCALES
 from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID, KEY_FOR_ID
 from langworld_db_data.constants.paths import FILE_WITH_LISTED_VALUES, FILE_WITH_NAMES_OF_FEATURES
-from langworld_db_data.tools.files.csv_xls import (
+from langworld_db_data.tools.common.files.csv_xls import (
     check_csv_for_malformed_rows,
     check_csv_for_repetitions_in_column,
     read_dicts_from_csv,

@@ -1,4 +1,4 @@
-from langworld_db_data.tools.ids.extract import (
+from langworld_db_data.tools.common.ids import (
     _split_value_id,
     extract_category_id,
     extract_feature_id,
