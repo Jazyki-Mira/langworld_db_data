@@ -86,7 +86,7 @@ class ValueRenamer:
                 continue
             if line[KEY_FOR_RUSSIAN] == new_value_name:
                 return True
-            return False
+        return False
 
     def _update_features_listed_values(
         self,
