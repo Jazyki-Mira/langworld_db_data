@@ -1,6 +1,6 @@
 import pytest
 
-from langworld_db_data.removers.listed_value_remover import (
+from langworld_db_data.tools.listed_values.listed_value_remover import (
     ListedValueRemover,
     ListedValueRemoverError,
 )
