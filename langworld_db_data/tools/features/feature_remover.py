@@ -8,7 +8,7 @@ from langworld_db_data.tools.common.files.csv_xls import (
 )
 from langworld_db_data.tools.common.ids.extract import extract_category_id
 from langworld_db_data.tools.common.ids.update import (
-    update_indices_after_given_line_number_if_necessary,
+    decrement_indices_after_deletion,
 )
 
 
@@ -54,15 +54,13 @@ class FeatureRemover(ObjectWithPaths):
             )
         )
 
-        rows_with_removed_row_and_updated_indices = (
-            update_indices_after_given_line_number_if_necessary(
-                lookup_column="id",
-                match_value=extract_category_id(feature_id),
-                id_type_that_must_be_updated="feature",
-                index_type_that_must_be_updated="feature",
-                line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
-                rows=rows_with_removed_row,
-            )
+        rows_with_removed_row_and_updated_indices = decrement_indices_after_deletion(
+            lookup_column="id",
+            match_value=extract_category_id(feature_id),
+            type_of_id="feature",
+            type_of_index="feature",
+            line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+            rows=rows_with_removed_row,
         )
 
         write_csv(
@@ -91,23 +89,21 @@ class FeatureRemover(ObjectWithPaths):
 
         category_id_where_feature_is_removed = extract_category_id(feature_id)
 
-        rows_with_removed_rows_and_updated_value_indices = (
-            update_indices_after_given_line_number_if_necessary(
-                lookup_column="id",
-                match_value=category_id_where_feature_is_removed,
-                id_type_that_must_be_updated="value",
-                index_type_that_must_be_updated="feature",
-                line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
-                rows=rows_with_removed_rows,
-            )
+        rows_with_removed_rows_and_updated_value_indices = decrement_indices_after_deletion(
+            lookup_column="id",
+            match_value=category_id_where_feature_is_removed,
+            type_of_id="value",
+            type_of_index="feature",
+            line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+            rows=rows_with_removed_rows,
         )
 
         rows_with_removed_rows_and_updated_feature_and_value_indices = (
-            update_indices_after_given_line_number_if_necessary(
+            decrement_indices_after_deletion(
                 lookup_column="feature_id",
                 match_value=category_id_where_feature_is_removed,
-                id_type_that_must_be_updated="feature",
-                index_type_that_must_be_updated="feature",
+                type_of_id="feature",
+                type_of_index="feature",
                 line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
                 rows=rows_with_removed_rows_and_updated_value_indices,
             )
@@ -137,16 +133,14 @@ class FeatureRemover(ObjectWithPaths):
                 )
             )
 
-            rows_with_removed_row_and_updated_indices = (
-                update_indices_after_given_line_number_if_necessary(
-                    lookup_column="feature_id",
-                    match_value=extract_category_id(feature_id),
-                    id_type_that_must_be_updated="feature",
-                    index_type_that_must_be_updated="feature",
-                    line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
-                    rows=rows_with_removed_row,
-                    rows_are_a_feature_profile=True,
-                )
+            rows_with_removed_row_and_updated_indices = decrement_indices_after_deletion(
+                lookup_column="feature_id",
+                match_value=extract_category_id(feature_id),
+                type_of_id="feature",
+                type_of_index="feature",
+                line_number_after_which_rows_must_be_updated=line_number_of_removed_row,
+                rows=rows_with_removed_row,
+                rows_are_a_feature_profile=True,
             )
 
             write_csv(

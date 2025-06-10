@@ -8,30 +8,38 @@ from langworld_db_data.tools.common.ids.extract import (
     extract_value_index,
 )
 
+FeatureOrValue = Literal["feature", "value"]
 
-def update_indices_after_given_line_number_if_necessary(
+
+def decrement_indices_after_deletion(
+    rows: list[dict[str, str]],
+    line_number_after_which_rows_must_be_updated: int,
     lookup_column: Literal["feature_id", "id"],
     match_value: str,
-    id_type_that_must_be_updated: Literal["feature", "value"],
-    index_type_that_must_be_updated: Literal["feature", "value"],
-    line_number_after_which_rows_must_be_updated: int,
-    rows: list[dict[str, str]],
+    type_of_id: FeatureOrValue,
+    type_of_index: FeatureOrValue,
     rows_are_a_feature_profile: bool = False,
 ) -> list[dict[str, str]]:
     """
-    Decrement indices of features or values. Return rows with updated indices or intact rows if update is not necessary.
+    Decrements feature or value indices in IDs after a deletion operation.
 
-    Search rows with matching content and decrement feature or value indices in the given column.
-    lookup_column denotes the name of column where search must be performed.
-    match_value is the sequence to search in the given column in the given rows.
-    id_type_that_must_be_updated denotes what kind of ID must be decremented, feature ID or value ID.
-    index_type_that_must_be_updated denotes what kind of index must be decremented, feature or value.
-    This is needed to specify what kind of change must be done for value IDs
-    (naturally, for feature IDs, only feature index can be updated).
-    Update is only performed on rows whose line number is equal or greater than line_number_after_which_rows_must_be_updated.
-    If rows_are_a_feature_profile is True, the method also scans value types and decrements feature indices in listed value IDs.
+    Args:
+        rows: Input rows
+        lookup_column: Column name to search for matching rows
+        match_value: Value to match in the lookup_column
+        type_of_id: Type of ID to update ('feature' or 'value')
+        type_of_index: Type of index to decrement ('feature' or 'value')
+        line_number_after_which_rows_must_be_updated: Only update rows at or after this line number
+        rows_are_a_feature_profile: If True, also updates feature indices in listed value IDs
+
+    Returns:
+        List of rows with updated indices. Rows not requiring updates remain unchanged.
+
+    Notes:
+        - For value IDs, both feature and value indices can be updated
+        - For feature IDs, only feature indices can be updated
+        - The function preserves rows that don't require index updates
     """
-    # So far it is only used to decrement indices, but it can be slightly rewritten to do either decrement or increment
 
     copied_rows = deepcopy(rows)
 
@@ -44,18 +52,18 @@ def update_indices_after_given_line_number_if_necessary(
 
         current_feature_index = extract_feature_index(row[lookup_column])
 
-        if id_type_that_must_be_updated == "value":
-            if index_type_that_must_be_updated == "feature":
+        if type_of_id == "value":
+            if type_of_index == "feature":
                 current_value_index = extract_value_index(row["id"])
                 row[lookup_column] = (
                     f"{match_value}{ID_SEPARATOR}{current_feature_index - 1}{ID_SEPARATOR}{current_value_index}"
                 )
 
-            elif index_type_that_must_be_updated == "value":
+            elif type_of_index == "value":
                 row[lookup_column] = (
                     f"{match_value}{ID_SEPARATOR}{extract_value_index(row[lookup_column]) - 1}"
                 )
-        elif id_type_that_must_be_updated == "feature":
+        elif type_of_id == "feature":
             row[lookup_column] = f"{match_value}{ID_SEPARATOR}{current_feature_index - 1}"
 
         if rows_are_a_feature_profile:

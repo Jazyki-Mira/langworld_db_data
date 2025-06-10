@@ -5,12 +5,12 @@ from .extract import (
     extract_feature_index,
     extract_value_index,
 )
-from .update import update_indices_after_given_line_number_if_necessary
+from .update import decrement_indices_after_deletion
 
 __all__ = [
     "extract_feature_id",
     "extract_feature_index",
     "extract_value_index",
     "extract_category_id",
-    "update_indices_after_given_line_number_if_necessary",
+    "decrement_indices_after_deletion",
 ]
