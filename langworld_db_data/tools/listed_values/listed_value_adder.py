@@ -13,7 +13,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.tools.common.files.csv_xls import read_dicts_from_csv, write_csv
-from langworld_db_data.tools.ids.extract import extract_feature_id, extract_value_index
+from langworld_db_data.tools.common.ids.extract import extract_feature_id, extract_value_index
 
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
 KEY_FOR_LINE_NUMBER = "line number"

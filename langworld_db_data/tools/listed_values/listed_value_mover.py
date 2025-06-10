@@ -5,7 +5,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_RUSSIAN,
 )
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, FILE_WITH_LISTED_VALUES
-from langworld_db_data.tools.ids.extract import extract_value_index
+from langworld_db_data.tools.common.ids.extract import extract_value_index
 from langworld_db_data.tools.listed_values.listed_value_adder import ListedValueAdder
 from langworld_db_data.tools.listed_values.listed_value_remover import ListedValueRemover
 

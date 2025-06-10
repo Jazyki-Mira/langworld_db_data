@@ -3,7 +3,7 @@ from copy import deepcopy
 from typing import Literal
 
 from langworld_db_data.constants.literals import ID_SEPARATOR
-from langworld_db_data.tools.ids.extract import (
+from langworld_db_data.tools.common.ids.extract import (
     extract_feature_index,
     extract_value_index,
 )

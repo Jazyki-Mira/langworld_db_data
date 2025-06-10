@@ -6,8 +6,8 @@ from langworld_db_data.tools.common.files.csv_xls import (
     remove_rows_with_given_content_in_lookup_column,
     write_csv,
 )
-from langworld_db_data.tools.ids.extract import extract_category_id
-from langworld_db_data.tools.ids.update import (
+from langworld_db_data.tools.common.ids.extract import extract_category_id
+from langworld_db_data.tools.common.ids.update import (
     update_indices_after_given_line_number_if_necessary,
 )
 
