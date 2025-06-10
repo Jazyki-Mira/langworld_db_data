@@ -4,7 +4,7 @@ from langworld_db_data.tools.common.files.csv_xls import (
 from langworld_db_data.tools.common.ids import decrement_indices_after_deletion
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_features_update_is_necessary(
+def test_decrement_indices_after_deletion_in_features_update_is_necessary(
     dummy_rows_of_features,
 ):
 
@@ -56,7 +56,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_features_update_
     assert rows_without_A_2_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_features_update_is_not_necessary(
+def test_decrement_indices_after_deletion_in_features_update_is_not_necessary(
     dummy_rows_of_features,
 ):
 
@@ -113,7 +113,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_features_update_
     )
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_necessary(
+def test_decrement_indices_after_deletion_in_listed_values_update_is_necessary(
     dummy_rows_of_listed_values,
 ):
 
@@ -175,7 +175,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_listed_values_up
     assert rows_without_B_1_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_listed_values_update_is_not_necessary(
+def test_decrement_indices_after_deletion_in_listed_values_update_is_not_necessary(
     dummy_rows_of_listed_values,
 ):
 
@@ -243,7 +243,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_listed_values_up
     assert rows_without_B_2_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_necessary(
+def test_decrement_indices_after_deletion_in_feature_profile_update_is_necessary(
     dummy_rows_of_feature_profile,
 ):
 
@@ -298,7 +298,7 @@ def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_
     assert rows_without_A_2_with_updated_feature_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test_update_indices_after_given_line_number_if_necessary_in_feature_profile_update_is_not_necessary(
+def test_decrement_indices_after_deletion_in_feature_profile_update_is_not_necessary(
     dummy_rows_of_feature_profile,
 ):
 
