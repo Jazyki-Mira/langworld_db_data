@@ -4,7 +4,7 @@ from typing import NamedTuple
 import pytest
 
 # noinspection PyProtectedMember
-from langworld_db_data.tools.files.csv_xls import (
+from langworld_db_data.tools.common.files.csv_xls import (
     CSVDelimiter,
     append_empty_column_to_csv,
     check_csv_for_malformed_rows,
@@ -18,7 +18,7 @@ from langworld_db_data.tools.files.csv_xls import (
     remove_rows_with_given_content_in_lookup_column,
     write_csv,
 )
-from langworld_db_data.tools.files.txt import read_plain_text_from_file
+from langworld_db_data.tools.common.files.txt import read_plain_text_from_file
 from tests.paths import (
     DIR_WITH_FILETOOLS_TEST_FILES,
     PATH_TO_TEST_OUTPUT_CSV_FILE,

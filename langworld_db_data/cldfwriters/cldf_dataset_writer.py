@@ -23,7 +23,10 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NAMES_OF_FEATURES,
 )
-from langworld_db_data.tools.files.csv_xls import read_dict_from_2_csv_columns, read_dicts_from_csv
+from langworld_db_data.tools.common.files.csv_xls import (
+    read_dict_from_2_csv_columns,
+    read_dicts_from_csv,
+)
 
 KEY_FOR_ID_IN_CLDF = "ID"
 KEY_FOR_RUSSIAN_NAME_IN_CLDF = "Name_RU"

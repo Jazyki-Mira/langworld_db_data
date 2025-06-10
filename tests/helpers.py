@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from langworld_db_data.tools.files.csv_xls import read_plain_rows_from_csv
-from langworld_db_data.tools.files.txt import read_non_empty_lines_from_txt_file
+from langworld_db_data.tools.common.files.csv_xls import read_plain_rows_from_csv
+from langworld_db_data.tools.common.files.txt import read_non_empty_lines_from_txt_file
 
 
 def check_existence_of_output_csv_file_and_compare_with_gold_standard(
