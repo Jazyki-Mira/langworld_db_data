@@ -3,7 +3,7 @@ from pathlib import Path
 
 from langworld_db_data.constants.literals import KEY_FOR_FEATURE_ID
 from langworld_db_data.tools.common.files.csv_xls import write_csv
-from langworld_db_data.tools.featureprofiles.data_structures import (
+from langworld_db_data.tools.featureprofiles import (
     ValueForFeatureProfileDictionary,
 )
 

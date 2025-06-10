@@ -12,7 +12,7 @@ from langworld_db_data.constants.literals import (
 from langworld_db_data.constants.paths import CONFIG_DIR
 from langworld_db_data.tools.common.files.csv_xls import read_dicts_from_xls
 from langworld_db_data.tools.common.files.json_toml_yaml import read_json_toml_yaml
-from langworld_db_data.tools.featureprofiles.data_structures import (
+from langworld_db_data.tools.featureprofiles import (
     ValueForFeatureProfileDictionary,
 )
 from langworld_db_data.tools.featureprofiles.feature_profile_writer_from_dictionary import (  # noqa E501

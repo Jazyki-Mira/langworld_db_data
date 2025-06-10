@@ -1,6 +1,6 @@
 import pytest
 
-from langworld_db_data.tools.featureprofiles.data_structures import (
+from langworld_db_data.tools.featureprofiles import (
     ValueForFeatureProfileDictionary,
 )
 from langworld_db_data.tools.featureprofiles.feature_profile_writer_from_dictionary import (  # noqa E501

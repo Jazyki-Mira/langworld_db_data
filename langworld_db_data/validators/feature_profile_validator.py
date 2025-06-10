@@ -22,7 +22,7 @@ from langworld_db_data.tools.common.files.csv_xls import (
     check_csv_for_repetitions_in_column,
     read_dict_from_2_csv_columns,
 )
-from langworld_db_data.tools.featureprofiles.data_structures import (
+from langworld_db_data.tools.featureprofiles import (
     ValueForFeatureProfileDictionary,
 )
 from langworld_db_data.tools.featureprofiles.feature_profile_reader import FeatureProfileReader
