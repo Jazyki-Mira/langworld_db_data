@@ -1,6 +1,6 @@
 import pytest
 
-from langworld_db_data.removers.feature_remover import FeatureRemover, FeatureRemoverError
+from langworld_db_data.tools.features.feature_remover import FeatureRemover, FeatureRemoverError
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
     DIR_WITH_REMOVERS_TEST_FILES,
