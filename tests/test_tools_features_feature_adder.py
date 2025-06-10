@@ -1,6 +1,6 @@
 import pytest
 
-from langworld_db_data.adders.feature_adder import FeatureAdder, FeatureAdderError
+from langworld_db_data.tools.features.feature_adder import FeatureAdder, FeatureAdderError
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
     DIR_WITH_ADDERS_TEST_FILES,
