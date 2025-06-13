@@ -13,6 +13,7 @@ from langworld_db_data.validators.feature_value_inventory_validator import (
     FeatureValueInventoryValidator,
 )
 from langworld_db_data.validators.genealogy_validator import GenealogyValidator
+from langworld_db_data.validators.html_validator import HTMLValidator
 
 
 def main() -> None:
@@ -35,6 +36,8 @@ def main() -> None:
     DoculectInventoryValidator().validate()
     GenealogyValidator().validate()
     FeatureValueInventoryValidator().validate()
+    HTMLValidator().validate()
+    #
     # By default, exception will be thrown if value name does not match value name in an
     # inventory for given value ID.  Value name in feature profile is only there for
     # readability, so I could disable this behavior, but for now it seems OK for the
