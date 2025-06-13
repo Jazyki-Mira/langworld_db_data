@@ -2,13 +2,29 @@ from pathlib import Path
 from typing import Union
 
 from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR
+from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
 from langworld_db_data.tools.featureprofiles.feature_profile_reader import FeatureProfileReader
 from langworld_db_data.tools.featureprofiles.feature_profile_writer_from_dictionary import (
     FeatureProfileWriterFromDictionary,
 )
 
 
-def sort_compound_listed_values(
+def sort_compound_listed_values_in_feature_profiles(
+    dir_with_feature_profiles: Path = FEATURE_PROFILES_DIR, output_dir: Path = None
+) -> None:
+    output_dir = output_dir or dir_with_feature_profiles
+    if not output_dir.exists():
+        output_dir.mkdir()
+
+    for path_to_feature_profile in dir_with_feature_profiles.glob("*.csv"):
+        _sort_compound_listed_values_in_one_profile(
+            path_to_input_feature_profile=path_to_feature_profile,
+            path_to_output_feature_profile=output_dir / path_to_feature_profile.name,
+        )
+    return None
+
+
+def _sort_compound_listed_values_in_one_profile(
     path_to_input_feature_profile: Path, path_to_output_feature_profile: Union[Path, None] = None
 ) -> None:
     """
