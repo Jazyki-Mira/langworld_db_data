@@ -3,6 +3,7 @@ from typing import Union
 
 from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
+from langworld_db_data.tools.common.ids import extract_value_index
 from langworld_db_data.tools.featureprofiles.feature_profile_reader import FeatureProfileReader
 from langworld_db_data.tools.featureprofiles.feature_profile_writer_from_dictionary import (
     FeatureProfileWriterFromDictionary,
@@ -51,7 +52,10 @@ def _sort_compound_listed_values_in_one_profile(
                     value.value_ru.split(ATOMIC_VALUE_SEPARATOR),
                 )
             )
-            sorted_pairs = sorted(pairs, key=lambda x: x[0])
+
+            # make sure to sort by integer, not string
+            sorted_pairs = sorted(pairs, key=lambda x: extract_value_index(x[0]))
+
             value.value_id = ATOMIC_VALUE_SEPARATOR.join([pair[0] for pair in sorted_pairs])
             value.value_ru = ATOMIC_VALUE_SEPARATOR.join([pair[1] for pair in sorted_pairs])
             if sorted_pairs != pairs:
