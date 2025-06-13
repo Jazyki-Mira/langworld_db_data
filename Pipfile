@@ -24,7 +24,6 @@ ruff = "*"
 isort = "*"
 pre-commit = "*"
 langworld-db-data = {editable = true, path = "."}
-pandas = "*"
 
 [requires]
 python_version = "3.9"
