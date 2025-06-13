@@ -15,7 +15,8 @@ class HTMLValidator(ObjectWithPaths, Validator):
     """Validator for ensuring HTML content adheres to specific formatting rules.
 
     This validator enforces the following rules:
-    - Only allows <p>, <ul>, <ol>, and <li> tags
+    - Only allows block tags (<p>, <ul>, <ol>, <li>) and inline formatting tags
+      (<a>, <i>, <b>, <em>, <strong>, <u>, <sup>, <sub>)
     - Ensures proper nesting and structure of lists
     - Validates against empty or whitespace-only paragraphs
     - Prevents nested paragraphs
