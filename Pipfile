@@ -11,6 +11,7 @@ pycldf = "==1.42.0"
 pyperclip = "~=1.9.0"
 setuptools = "~= 80.9.0"
 certifi = "~=2025.4.26"
+beautifulsoup4 = "*"
 
 [dev-packages]
 black = "*"
@@ -23,6 +24,7 @@ ruff = "*"
 isort = "*"
 pre-commit = "*"
 langworld-db-data = {editable = true, path = "."}
+pandas = "*"
 
 [requires]
 python_version = "3.9"
