@@ -58,20 +58,20 @@ INVALID_HTML_CASES = [
 @pytest.mark.parametrize("html", VALID_HTML_CASES)
 def test_validate_html_valid(html):
     """Test that valid HTML passes validation."""
-    HTMLValidator(html).validate()
+    HTMLValidator()._validate_html(html, is_text_at_root_level_allowed=False)
 
 
 @pytest.mark.parametrize("html,expected_error", INVALID_HTML_CASES)
 def test_validate_html_invalid(html, expected_error):
     """Test that invalid HTML raises the expected error."""
     with pytest.raises(HTMLValidatorError) as excinfo:
-        HTMLValidator(html).validate()
+        HTMLValidator()._validate_html(html, is_text_at_root_level_allowed=False).validate()
     assert expected_error in str(excinfo.value)
 
 
 def test_validate_html_with_allowed_text_at_root_level():
     # Text at root level
-    HTMLValidator(html="Text not in paragraph", is_text_at_root_level_allowed=True).validate()
+    HTMLValidator()._validate_html(html="Text", is_text_at_root_level_allowed=True)
 
 
 def test_html_validation_error():

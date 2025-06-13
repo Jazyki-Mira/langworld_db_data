@@ -67,7 +67,7 @@ class HTMLValidator(ObjectWithPaths, Validator):
         soup = BeautifulSoup(html, "html.parser")
 
         # Check for disallowed tags
-        allowed_tags = {"p", "ul", "ol", "li", "i", "b", "em", "strong", "u", "sup", "sub"}
+        allowed_tags = {"p", "ul", "ol", "li", "a", "i", "b", "em", "strong", "u", "sup", "sub"}
         for tag in soup.find_all(True):
             if tag.name not in allowed_tags:
                 raise HTMLValidatorError(
@@ -85,7 +85,7 @@ class HTMLValidator(ObjectWithPaths, Validator):
                 if isinstance(child, Tag) and child.name != "li":
                     raise HTMLValidatorError(
                         f"<{list_tag.name}> can only contain <li> elements, "
-                        f"found <{child.name}>"
+                        f"found <{child.name}>: {child}"
                     )
 
         # Check that <li> elements are direct children of <ul> or <ol>
@@ -94,7 +94,7 @@ class HTMLValidator(ObjectWithPaths, Validator):
             if parent.name not in ["ul", "ol"]:
                 raise HTMLValidatorError(
                     f"<li> must be a direct child of <ul> or <ol>, "
-                    f"found inside <{parent.name}>"
+                    f"found inside <{parent.name}>: {li}"
                 )
 
         # Check for empty paragraphs
@@ -105,7 +105,7 @@ class HTMLValidator(ObjectWithPaths, Validator):
         # Check for nested paragraphs
         for p in soup.find_all("p"):
             if p.find("p"):
-                raise HTMLValidatorError("Nested <p> tags are not allowed")
+                raise HTMLValidatorError(f"Nested <p> tags are not allowed: {p}")
 
         # Check for text nodes at root level
         if not is_text_at_root_level_allowed:
