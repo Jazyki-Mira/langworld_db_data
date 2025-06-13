@@ -1,5 +1,7 @@
 from bs4 import BeautifulSoup, Tag
 
+from langworld_db_data import ObjectWithPaths
+from langworld_db_data.tools.common.files.csv_xls import read_dicts_from_csv
 from langworld_db_data.validators.validator import Validator
 
 
@@ -9,7 +11,7 @@ class HTMLValidatorError(ValueError):
     pass
 
 
-class HTMLValidator(Validator):
+class HTMLValidator(ObjectWithPaths, Validator):
     """Validator for ensuring HTML content adheres to specific formatting rules.
 
     This validator enforces the following rules:
@@ -17,19 +19,31 @@ class HTMLValidator(Validator):
     - Ensures proper nesting and structure of lists
     - Validates against empty or whitespace-only paragraphs
     - Prevents nested paragraphs
-    - Optionally allows/disallows text at the root level
-
-    Args:
-        html: The HTML string to validate
-        is_text_at_root_level_allowed: If True, allows text nodes at the root level.
-            If False (default), all text must be wrapped in block elements.
+    - Depending on file, allows/disallows text at the root level
     """
 
-    def __init__(self, html: str, is_text_at_root_level_allowed: bool = False):
-        self.html = html
-        self.is_text_at_root_level_allowed = is_text_at_root_level_allowed
-
     def validate(self) -> None:
+        print("Validating HTML descriptions of features")
+        features_data = read_dicts_from_csv(self.input_file_with_features)
+        for row in features_data:
+            # Feature descriptions are often multi-paragraph and contain lists,
+            # so text at root level is not allowed.
+            for locale in ("en", "ru"):
+                self._validate_html(
+                    row[f"description_formatted_{locale}"], is_text_at_root_level_allowed=False
+                )
+
+        print("Validating HTML descriptions of listed values")
+        values_data = read_dicts_from_csv(self.input_file_with_listed_values)
+        for row in values_data:
+            # Value descriptions can have text at root level.
+            for locale in ("en", "ru"):
+                self._validate_html(
+                    row[f"description_formatted_{locale}"], is_text_at_root_level_allowed=True
+                )
+
+    @staticmethod
+    def _validate_html(html: str, is_text_at_root_level_allowed: bool):
         """
         Validate that HTML conforms to our requirements.
 
@@ -47,13 +61,13 @@ class HTMLValidator(Validator):
         Raises:
             HTMLValidationError: If the HTML doesn't conform to the requirements
         """
-        if not self.html:
+        if not html:
             return  # Empty string is valid
 
-        soup = BeautifulSoup(self.html, "html.parser")
+        soup = BeautifulSoup(html, "html.parser")
 
         # Check for disallowed tags
-        allowed_tags = {"p", "ul", "ol", "li"}
+        allowed_tags = {"p", "ul", "ol", "li", "i", "b", "em", "strong", "u", "sup", "sub"}
         for tag in soup.find_all(True):
             if tag.name not in allowed_tags:
                 raise HTMLValidatorError(
@@ -94,7 +108,7 @@ class HTMLValidator(Validator):
                 raise HTMLValidatorError("Nested <p> tags are not allowed")
 
         # Check for text nodes at root level
-        if not self.is_text_at_root_level_allowed:
+        if not is_text_at_root_level_allowed:
             for child in soup.children:
                 if isinstance(child, str) and child.strip():
                     raise HTMLValidatorError(
@@ -113,3 +127,7 @@ class HTMLValidator(Validator):
             # Check for unescaped &, < or > that aren't part of an HTML entity
             if ("<" in text and not text.lstrip().startswith("<")) or ">" in text or "&" in text:
                 raise HTMLValidatorError(f"Text contains unescaped HTML: {text[:50]}...")
+
+
+if __name__ == "__main__":
+    HTMLValidator().validate()
