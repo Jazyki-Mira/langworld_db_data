@@ -18,7 +18,8 @@ class FeatureProfileWriterFromDictionary:
     some other functionality that manipulates feature profile data.
 
     If you already have rows of data ready to be written to CSV,
-    you do not need this class. Just write them to CSV with `filetools`.
+    you do not need this class. Just write them to CSV
+    with `tools.common.files.csv_xls` module.
     """
 
     @staticmethod
