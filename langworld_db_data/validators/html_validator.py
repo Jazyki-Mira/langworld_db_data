@@ -43,8 +43,7 @@ class HTMLValidator(ObjectWithPaths, Validator):
                     row[f"description_formatted_{locale}"], is_text_at_root_level_allowed=True
                 )
 
-    @staticmethod
-    def _validate_html(html: str, is_text_at_root_level_allowed: bool):
+    def _validate_html(self, html: str, is_text_at_root_level_allowed: bool) -> None:
         """
         Validate that HTML conforms to our requirements.
 
@@ -60,14 +59,24 @@ class HTMLValidator(ObjectWithPaths, Validator):
         - No unescaped & characters
 
         Raises:
-            HTMLValidationError: If the HTML doesn't conform to the requirements
+            HTMLValidatorError: If the HTML doesn't conform to the requirements
         """
         if not html:
             return  # Empty string is valid
 
         soup = BeautifulSoup(html, "html.parser")
+        self._validate_tags(soup)
+        self._validate_br_tags(soup)
+        self._validate_list_structure(soup)
+        self._validate_paragraphs(soup)
 
-        # Check for disallowed tags
+        if not is_text_at_root_level_allowed:
+            self._validate_root_level_text(soup)
+
+        self._validate_absence_of_unescaped_html(html)
+
+    def _validate_tags(self, soup: BeautifulSoup) -> None:
+        """Validate that only allowed tags are present in the HTML."""
         allowed_tags = {"p", "ul", "ol", "li", "a", "i", "b", "em", "strong", "u", "sup", "sub"}
         for tag in soup.find_all(True):
             if tag.name not in allowed_tags:
@@ -76,10 +85,13 @@ class HTMLValidator(ObjectWithPaths, Validator):
                     f"Only {', '.join(f'<{t}>' for t in sorted(allowed_tags))} are allowed."
                 )
 
-        # Check for <br> tags (should have been converted to paragraphs)
-        for _ in soup.find_all("br"):
+    def _validate_br_tags(self, soup: BeautifulSoup) -> None:
+        """Validate that no <br> tags are present."""
+        if soup.find("br"):
             raise HTMLValidatorError("<br> tags are not allowed. Use paragraphs instead.")
 
+    def _validate_list_structure(self, soup: BeautifulSoup) -> None:
+        """Validate the structure of lists and list items."""
         # Check list structure
         for list_tag in soup.find_all(["ul", "ol"]):
             for child in list_tag.children:
@@ -98,66 +110,79 @@ class HTMLValidator(ObjectWithPaths, Validator):
                     f"found inside <{parent.name}>: {li}"
                 )
 
+    def _validate_paragraphs(self, soup: BeautifulSoup) -> None:
+        """Validate paragraph structure and content."""
+        paragraphs = soup.find_all("p")
+
         # Check for empty paragraphs
-        for p in soup.find_all("p"):
+        for p in paragraphs:
             if not p.get_text(strip=True):
                 raise HTMLValidatorError("Empty <p> tags are not allowed")
 
         # Check for nested paragraphs
-        for p in soup.find_all("p"):
-            if p.find("p"):
-                raise HTMLValidatorError(f"Nested <p> tags are not allowed: {p}")
+        for p in paragraphs:
+            if p.find_parent("p"):
+                raise HTMLValidatorError("Nested <p> tags are not allowed")
 
-        # Check for text nodes at root level
-        if not is_text_at_root_level_allowed:
-            for child in soup.children:
-                if isinstance(child, str) and child.strip():
-                    raise HTMLValidatorError(
-                        f"Text must be wrapped in a block element, found: {child[:50]}..."
-                    )
+    def _validate_root_level_text(self, soup: BeautifulSoup) -> None:
+        """Validate that there's no text at the root level."""
+        for child in soup.children:
+            if isinstance(child, str) and child.strip():
+                raise HTMLValidatorError(
+                    f"Text must be wrapped in a block element, found: {child[:50]}..."
+                )
 
-        # Check for unescaped HTML in the original string
-        # We need to check the original string because BeautifulSoup converts entities
-        i = 0
+    def _validate_absence_of_unescaped_html(self, html: str) -> None:
+        """
+        Validate that there are no unescaped HTML special characters.
+
+        We need to check the original string because BeautifulSoup converts entities.
+        """
+        position = 0
         n = len(html)
         in_tag = False
 
-        while i < n:
-            if html[i] == "<":
+        while position < n:
+            if html[position] == "<":
                 # Skip until the end of the tag
                 in_tag = True
-                i = html.find(">", i) + 1
-                if i == 0:  # No closing '>' found
-                    i = n
+                position = html.find(">", position) + 1
+                if position == 0:  # No closing '>' found
+                    position = n
                 in_tag = False
-            elif html[i] == "&":
-                # Check if it's a valid HTML entity
-                semicolon_pos = html.find(";", i + 1)
-                if semicolon_pos == -1:
-                    # No semicolon found, this is an unescaped &
-                    raise HTMLValidatorError(f"Text contains unescaped &: {html[i:i+50]}...")
-
-                entity = html[i + 1 : semicolon_pos]
-                # Check if it's a valid entity
-                if not (entity.startswith("#") and entity[1:].isdigit()) and entity not in [
-                    "amp",
-                    "lt",
-                    "gt",
-                    "quot",
-                    "apos",
-                ]:
-                    raise HTMLValidatorError(
-                        f"Invalid HTML entity: &{entity}; in: {html[i:i+50]}..."
-                    )
-
-                i = semicolon_pos + 1
-            elif html[i] in (">", '"', "'") and not in_tag:
+            elif html[position] == "&":
+                self._validate_html_entity_with_ampersand(html, position)
+                position = html.find(";", position + 1) + 1
+                if position == 0:  # Shouldn't happen as _validate_html_entity would have raised
+                    position = n
+            elif html[position] in (">", '"', "'") and not in_tag:
                 # These characters should be escaped outside of tags
                 raise HTMLValidatorError(
-                    f"Text contains unescaped {html[i]}: {html[i-20:i+30]}..."
+                    f"Text contains unescaped {html[position]}: {html[position-20:position+30]}..."
                 )
             else:
-                i += 1
+                position += 1
+
+    @staticmethod
+    def _validate_html_entity_with_ampersand(html: str, position: int) -> None:
+        """Validate that an HTML entity is properly formatted."""
+        semicolon_pos = html.find(";", position + 1)
+        if semicolon_pos == -1:
+            raise HTMLValidatorError(
+                f"Text contains unescaped &: {html[position:position + 50]}..."
+            )
+
+        entity = html[position + 1 : semicolon_pos]
+        if not (entity.startswith("#") and entity[1:].isdigit()) and entity not in [
+            "amp",
+            "lt",
+            "gt",
+            "quot",
+            "apos",
+        ]:
+            raise HTMLValidatorError(
+                f"Invalid HTML entity: &{entity}; in: {html[position:position + 50]}..."
+            )
 
 
 if __name__ == "__main__":
