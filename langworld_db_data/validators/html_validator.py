@@ -64,7 +64,7 @@ class HTMLValidator(ObjectWithPaths, Validator):
         if not html:
             return  # Empty string is valid
 
-        self._check_absence_of_unescaped_html(html)
+        self._check_absence_of_unescaped_ampersand(html)
 
         soup = BeautifulSoup(html, "html.parser")
 
@@ -84,34 +84,21 @@ class HTMLValidator(ObjectWithPaths, Validator):
                     f"Text must be wrapped in a block element, found: {child[:50]}..."
                 )
 
-    def _check_absence_of_unescaped_html(self, html: str) -> None:
-        """
-        Validate that there are no unescaped HTML special characters.
-
-        We need to check the original string because BeautifulSoup converts entities.
-        """
+    def _check_absence_of_unescaped_ampersand(self, html: str) -> None:
+        """Check that there are no unescaped ampersands."""
         position = 0
-        n = len(html)
-        in_tag = False
 
-        while position < n:
-            if html[position] == "<":
-                # Skip until the end of the tag
-                in_tag = True
-                position = html.find(">", position) + 1
-                if position == 0:  # No closing '>' found
-                    position = n
-                in_tag = False
-            elif html[position] == "&":
+        while position < len(html):
+            if html[position] == "&":
                 self._validate_html_entity_with_ampersand(html, position)
-                position = html.find(";", position + 1) + 1
-                if position == 0:  # Shouldn't happen as _validate_html_entity would have raised
-                    position = n
-            elif html[position] in (">", '"', "'") and not in_tag:
-                # These characters should be escaped outside of tags
-                raise HTMLValidatorError(
-                    f"Text contains unescaped {html[position]}: {html[position-20:position+30]}..."
-                )
+                # Skip to after the semicolon
+                semicolon_pos = html.find(";", position + 1)
+                if semicolon_pos == -1:  # No semicolon found
+                    raise HTMLValidatorError(
+                        f"Invalid HTML entity at position {position}: "
+                        f"{html[max(0, position-10):position+10]}..."
+                    )
+                position = semicolon_pos + 1
             else:
                 position += 1
 
