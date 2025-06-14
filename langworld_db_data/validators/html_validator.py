@@ -116,19 +116,49 @@ class HTMLValidator(ObjectWithPaths, Validator):
                         f"Text must be wrapped in a block element, found: {child[:50]}..."
                     )
 
-        # Check for unescaped HTML in text nodes
-        for text in soup.find_all(string=True):
-            if not isinstance(text, str):
-                continue
+        # Check for unescaped HTML in the original string
+        # We need to check the original string because BeautifulSoup converts entities
+        i = 0
+        n = len(html)
+        in_tag = False
 
-            # Skip whitespace-only text nodes
-            if not text.strip():
-                continue
+        while i < n:
+            if html[i] == "<":
+                # Skip until the end of the tag
+                in_tag = True
+                i = html.find(">", i) + 1
+                if i == 0:  # No closing '>' found
+                    i = n
+                in_tag = False
+            elif html[i] == "&":
+                # Check if it's a valid HTML entity
+                semicolon_pos = html.find(";", i + 1)
+                if semicolon_pos == -1:
+                    # No semicolon found, this is an unescaped &
+                    raise HTMLValidatorError(f"Text contains unescaped &: {html[i:i+50]}...")
 
-            # Check for unescaped &, < or > that aren't part of an HTML entity
-            if ("<" in text and not text.lstrip().startswith("<")) or ">" in text or "&" in text:
-                raise HTMLValidatorError(f"Text contains unescaped HTML: {text[:50]}...")
+                entity = html[i + 1 : semicolon_pos]
+                # Check if it's a valid entity
+                if not (entity.startswith("#") and entity[1:].isdigit()) and entity not in [
+                    "amp",
+                    "lt",
+                    "gt",
+                    "quot",
+                    "apos",
+                ]:
+                    raise HTMLValidatorError(
+                        f"Invalid HTML entity: &{entity}; in: {html[i:i+50]}..."
+                    )
+
+                i = semicolon_pos + 1
+            elif html[i] in (">", '"', "'") and not in_tag:
+                # These characters should be escaped outside of tags
+                raise HTMLValidatorError(
+                    f"Text contains unescaped {html[i]}: {html[i-20:i+30]}..."
+                )
+            else:
+                i += 1
 
 
 if __name__ == "__main__":
-    HTMLValidator().validate()
+    HTMLValidator().validate()  # pragma: no cover

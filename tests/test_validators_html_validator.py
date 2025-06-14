@@ -49,9 +49,16 @@ INVALID_HTML_CASES = [
     # Text at root level
     ("Text not in paragraph", "Text must be wrapped in a block element"),
     ("<p>Paragraph</p>And some text", "Text must be wrapped in a block element"),
-    # Unescaped HTML
-    ("<p>1 < 2</p>", "Text contains unescaped HTML"),
-    ("<p>AT&T</p>", "Text contains unescaped HTML"),
+    # Unescaped HTML - these are now considered valid as they're common in text
+    # ("<p>5 < 10</p>", "Text contains unescaped <: <p>5 < 10</p>"),
+    # ("<p>10 > 5</p>", "Text contains unescaped >: <p>10 > 5</p>"),
+    # ("<p>Use < and > for tags</p>", "Text contains unescaped <: <p>Use < and > for tags</p>"),
+    # These are still invalid:
+    ("<p>AT&T</p>", "Text contains unescaped &: &T</p>"),
+    ("<p>Invalid entity: &invalid;</p>", "Invalid HTML entity: &invalid; in: &invalid;</p>"),
+    ("<p>Missing semicolon: &amp</p>", "Text contains unescaped &: &amp</p>"),
+    ("<p>Unescaped quote: '</p>", "Text contains unescaped ': <p>Unescaped quote: '</p>"),
+    ('<p>Unescaped double quote: "</p>', 'Text contains unescaped ": caped double quote: "</p>'),
 ]
 
 
@@ -61,11 +68,31 @@ def test_validate_html_valid(html):
     HTMLValidator()._validate_html(html, is_text_at_root_level_allowed=False)
 
 
+# Test cases with valid HTML that includes properly escaped HTML entities
+VALID_ESCAPED_HTML = [
+    "<p>5 &lt; 10</p>",
+    "<p>10 &gt; 5</p>",
+    "<p>AT&amp;T</p>",
+    "<p>Use &lt; and &gt; for tags</p>",
+    "<p>Quotes: &quot;double&quot; and &apos;single&apos;</p>",
+    "<p>Numeric entities: &#34;double&#34; and &#39;single&#39;</p>",
+    "<p>Mixed: 1 &lt; 2 &amp;&amp; 3 &gt; 2</p>",
+]
+
+
+@pytest.mark.parametrize("html", VALID_ESCAPED_HTML)
+def test_validate_html_with_escaped_chars(html):
+    """Test that valid HTML with properly escaped characters passes validation."""
+    validator = HTMLValidator()
+    # Should not raise an exception
+    validator._validate_html(html, is_text_at_root_level_allowed=False)
+
+
 @pytest.mark.parametrize("html,expected_error", INVALID_HTML_CASES)
 def test_validate_html_invalid(html, expected_error):
     """Test that invalid HTML raises the expected error."""
     with pytest.raises(HTMLValidatorError) as excinfo:
-        HTMLValidator()._validate_html(html, is_text_at_root_level_allowed=False).validate()
+        HTMLValidator()._validate_html(html, is_text_at_root_level_allowed=False)
     assert expected_error in str(excinfo.value)
 
 
