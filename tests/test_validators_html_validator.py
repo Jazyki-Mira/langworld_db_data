@@ -3,6 +3,7 @@
 import pytest
 
 from langworld_db_data.validators.html_validator import HTMLValidator, HTMLValidatorError
+from tests.paths import DIR_WITH_VALIDATORS_TEST_FILES
 
 # Valid HTML test cases
 VALID_HTML_CASES = [
@@ -128,6 +129,16 @@ def test_validate_html_with_unescaped_ampersand_without_semicolon():
     with pytest.raises(HTMLValidatorError) as excinfo:
         HTMLValidator()._validate_html(invalid_html, is_text_at_root_level_allowed=False)
     assert "Text contains unescaped &: &" in str(excinfo.value)
+
+
+def test_validate_with_good_files():
+    validator = HTMLValidator(
+        input_file_with_features=DIR_WITH_VALIDATORS_TEST_FILES
+        / "features_for_html_validator.csv",
+        input_file_with_listed_values=DIR_WITH_VALIDATORS_TEST_FILES
+        / "features_listed_values_for_html_validator.csv",
+    )
+    validator.validate()
 
 
 def test_html_validation_error():
