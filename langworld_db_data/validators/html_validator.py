@@ -90,14 +90,7 @@ class HTMLValidator(ObjectWithPaths, Validator):
 
         while position < len(html):
             if html[position] == "&":
-                self._validate_html_entity_with_ampersand(html, position)
-                # Skip to after the semicolon
-                semicolon_pos = html.find(";", position + 1)
-                if semicolon_pos == -1:  # No semicolon found
-                    raise HTMLValidatorError(
-                        f"Invalid HTML entity at position {position}: "
-                        f"{html[max(0, position-10):position+10]}..."
-                    )
+                semicolon_pos = self._validate_html_entity_with_ampersand(html, position)
                 position = semicolon_pos + 1
             else:
                 position += 1
@@ -150,8 +143,10 @@ class HTMLValidator(ObjectWithPaths, Validator):
                 raise HTMLValidatorError("Nested <p> tags are not allowed")
 
     @staticmethod
-    def _validate_html_entity_with_ampersand(html: str, position: int) -> None:
-        """Validate that an HTML entity is properly formatted."""
+    def _validate_html_entity_with_ampersand(html: str, position: int) -> int:
+        """Validate that an HTML entity is properly formatted.
+        Return the position of the semicolon that closes the entity.
+        """
         semicolon_pos = html.find(";", position + 1)
         if semicolon_pos == -1:
             raise HTMLValidatorError(
@@ -169,6 +164,8 @@ class HTMLValidator(ObjectWithPaths, Validator):
             raise HTMLValidatorError(
                 f"Invalid HTML entity: &{entity}; in: {html[position:position + 50]}..."
             )
+
+        return semicolon_pos
 
 
 if __name__ == "__main__":

@@ -115,6 +115,21 @@ def test_validate_html_with_unclosed_angle_bracket():
     assert "Tag 'invalid' is not allowed" in str(excinfo.value)
 
 
+def test_validate_html_with_unescaped_ampersand_without_semicolon():
+    """Test that an unescaped ampersand without a semicolon raises an error."""
+    # Test with an ampersand not followed by a semicolon
+    invalid_html = "<p>This is a test with an unescaped ampersand: &invalid</p>"
+    with pytest.raises(HTMLValidatorError) as excinfo:
+        HTMLValidator()._validate_html(invalid_html, is_text_at_root_level_allowed=False)
+    assert "Text contains unescaped &: &invalid" in str(excinfo.value)
+
+    # Test with an ampersand at the end of the string
+    invalid_html = "<p>Ends with ampersand &"
+    with pytest.raises(HTMLValidatorError) as excinfo:
+        HTMLValidator()._validate_html(invalid_html, is_text_at_root_level_allowed=False)
+    assert "Text contains unescaped &: &" in str(excinfo.value)
+
+
 def test_html_validation_error():
     # Test the HTMLValidationError exception.
     with pytest.raises(HTMLValidatorError) as excinfo:
