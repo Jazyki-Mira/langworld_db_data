@@ -125,4 +125,4 @@ class GenealogyValidator(Validator):
 
 
 if __name__ == "__main__":
-    GenealogyValidator().validate()
+    GenealogyValidator().validate()  # pragma: no cover
