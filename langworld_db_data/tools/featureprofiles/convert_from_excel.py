@@ -2,6 +2,7 @@ from functools import partial
 from pathlib import Path
 
 from langworld_db_data.constants.literals import (
+    ATOMIC_VALUE_SEPARATOR,
     KEY_FOR_ENGLISH_COMMENT,
     KEY_FOR_FEATURE_ID,
     KEY_FOR_RUSSIAN_COMMENT,
@@ -85,8 +86,8 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
             processed_feature_ids.add(feature_id)
         else:
             # otherwise add the value to the existing dictionary entry
-            value_for_feature_id[feature_id].value_id += f"&{value_id}"
-            value_for_feature_id[feature_id].value_ru += f"&{value_ru}"
+            value_for_feature_id[feature_id].value_id += f"{ATOMIC_VALUE_SEPARATOR}{value_id}"
+            value_for_feature_id[feature_id].value_ru += f"{ATOMIC_VALUE_SEPARATOR}{value_ru}"
 
     output_path = path_to_input_excel.parent / f"{path_to_input_excel.stem}.csv"
     print(f"Saving converted Excel file as {output_path}")
