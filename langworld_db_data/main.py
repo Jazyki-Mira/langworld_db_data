@@ -6,6 +6,9 @@ from langworld_db_data.mdlisters.custom_value_lister import CustomValueLister
 from langworld_db_data.mdlisters.listed_value_lister import ListedValueLister
 from langworld_db_data.tools.common.files.csv_xls import check_csv_for_malformed_rows
 from langworld_db_data.tools.common.files.json_toml_yaml import check_yaml_file
+from langworld_db_data.tools.featureprofiles.sort_compound_listed_values import (
+    sort_compound_listed_values_in_feature_profiles,
+)
 from langworld_db_data.validators.asset_validator import AssetValidator
 from langworld_db_data.validators.doculect_inventory_validator import DoculectInventoryValidator
 from langworld_db_data.validators.feature_profile_validator import FeatureProfileValidator
@@ -37,6 +40,7 @@ def main() -> None:
     GenealogyValidator().validate()
     FeatureValueInventoryValidator().validate()
     HTMLValidator().validate()
+    sort_compound_listed_values_in_feature_profiles()
     FeatureProfileValidator().validate()
     # In this last validator, exception will be thrown if value name does not match
     # value name in an inventory for given value ID.
