@@ -339,4 +339,4 @@ if __name__ == "__main__":
         feature_id="",
         new_value_en="",
         new_value_ru="",
-    )
+    )  # pragma: no cover

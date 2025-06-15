@@ -203,7 +203,7 @@ class FeatureProfileValidator(Validator):
                 if self.must_throw_error_at_feature_or_value_name_mismatch:
                     raise FeatureProfileValidatorError(message)
                 else:
-                    print(message)
+                    print(message)  # pragma: no cover
 
     def check_all_features_that_may_need_not_applicable_type(
         self,

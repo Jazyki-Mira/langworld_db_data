@@ -405,8 +405,5 @@ class FeatureAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     FeatureAdder().add_feature(
-        category_id="",
-        feature_en="",
-        feature_ru="",
-        listed_values_to_add=[],
-    )
+        category_id="", feature_en="", feature_ru="", listed_values_to_add=[]
+    )  # pragma: no cover

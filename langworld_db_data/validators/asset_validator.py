@@ -67,4 +67,4 @@ class AssetValidator(Validator):
 
 
 if __name__ == "__main__":
-    AssetValidator().validate()
+    AssetValidator().validate()  # pragma: no cover
