@@ -16,6 +16,7 @@ from langworld_db_data.validators.feature_value_inventory_validator import (
     FeatureValueInventoryValidator,
 )
 from langworld_db_data.validators.genealogy_validator import GenealogyValidator
+from langworld_db_data.validators.html_validator import HTMLValidator
 
 
 def main() -> None:
@@ -38,16 +39,16 @@ def main() -> None:
     DoculectInventoryValidator().validate()
     GenealogyValidator().validate()
     FeatureValueInventoryValidator().validate()
-
+    HTMLValidator().validate()
     sort_compound_listed_values_in_feature_profiles()
-
-    # 1. By default, exception will be thrown if value name in feature profile does not match
-    # value name in an inventory for given value ID.
-    # Although value name in feature profile is only there for readability,
-    # It seems OK for the exception to be thrown.
-    # 2. Argument `must_throw_error_at_not_applicable_rule_breach`
-    # can be set to True at a later stage.
     FeatureProfileValidator().validate()
+    # In this last validator, exception will be thrown if value name does not match
+    # value name in an inventory for given value ID.
+    # Value name in feature profile is only there for readability, so this behavior
+    # is not required, but for now it seems OK for the exception to be thrown.
+    # In an opposite way, rules for `not_applicable` are not strictly enforced yet.
+    # Argument `must_throw_error_at_not_applicable_rule_breach`
+    # can be set to True at a later stage.
 
     print("\nWriting Markdown files")
     CustomValueLister().write_grouped_by_feature()
