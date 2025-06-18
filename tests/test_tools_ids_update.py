@@ -246,7 +246,7 @@ def test_decrement_indices_after_deletion_of_feature_in_listed_values_update_is_
 def test_decrement_indices_after_deletion_of_value_in_listed_values_update_is_necessary(
     dummy_rows_of_listed_values,
 ):
-    
+
     GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1-1",
@@ -287,7 +287,7 @@ def test_decrement_indices_after_deletion_of_value_in_listed_values_update_is_ne
             rows=dummy_rows_of_listed_values,
         )
     )
-    
+
     line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
 
     rows_without_A_1_2_with_updated_value_indices = decrement_indices_after_deletion(
@@ -305,7 +305,7 @@ def test_decrement_indices_after_deletion_of_value_in_listed_values_update_is_ne
 def test_decrement_indices_after_deletion_of_value_in_listed_values_update_is_not_necessary(
     dummy_rows_of_listed_values,
 ):
-    
+
     GOLD_STANDARD_DUMMY_ROWS = [
         {
             "id": "A-1-1",
@@ -346,7 +346,7 @@ def test_decrement_indices_after_deletion_of_value_in_listed_values_update_is_no
             rows=dummy_rows_of_listed_values,
         )
     )
-    
+
     line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
 
     rows_without_A_1_3_with_updated_value_indices = decrement_indices_after_deletion(
