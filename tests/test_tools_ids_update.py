@@ -113,7 +113,7 @@ def test_decrement_indices_after_deletion_in_features_update_is_not_necessary(
     )
 
 
-def test_decrement_indices_after_deletion_in_listed_values_update_is_necessary(
+def test_decrement_indices_after_deletion_of_feature_in_listed_values_update_is_necessary(
     dummy_rows_of_listed_values,
 ):
 
@@ -175,7 +175,7 @@ def test_decrement_indices_after_deletion_in_listed_values_update_is_necessary(
     assert rows_without_B_1_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
-def test_decrement_indices_after_deletion_in_listed_values_update_is_not_necessary(
+def test_decrement_indices_after_deletion_of_feature_in_listed_values_update_is_not_necessary(
     dummy_rows_of_listed_values,
 ):
 
@@ -241,6 +241,124 @@ def test_decrement_indices_after_deletion_in_listed_values_update_is_not_necessa
     )
 
     assert rows_without_B_2_with_updated_feature_and_value_indices == GOLD_STANDARD_DUMMY_ROWS
+
+
+def test_decrement_indices_after_deletion_of_value_in_listed_values_update_is_necessary(
+    dummy_rows_of_listed_values,
+):
+    
+    GOLD_STANDARD_DUMMY_ROWS = [
+        {
+            "id": "A-1-1",
+            "feature_id": "A-1",
+            "en": "Nominative",
+            "ru": "Номинатив",
+        },
+        {
+            "id": "A-1-2",
+            "feature_id": "A-1",
+            "en": "DSM",
+            "ru": "Дифференцированное маркирование субъекта",
+        },
+        {
+            "id": "B-1-1",
+            "feature_id": "B-1",
+            "en": "Agreement",
+            "ru": "Согласование",
+        },
+        {
+            "id": "B-1-2",
+            "feature_id": "B-1",
+            "en": "Word order",
+            "ru": "Порядок слов",
+        },
+        {
+            "id": "B-2-1",
+            "feature_id": "B-2",
+            "en": "Coordination",
+            "ru": "Координация",
+        },
+    ]
+
+    rows_without_A_1_2, range_of_line_numbers_of_removed_rows = (
+        remove_rows_with_given_content_in_lookup_column(
+            lookup_column="id",
+            match_value="A-1-2",
+            rows=dummy_rows_of_listed_values,
+        )
+    )
+    
+    line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
+
+    rows_without_A_1_2_with_updated_value_indices = decrement_indices_after_deletion(
+        lookup_column="id",
+        match_value="A-1",
+        type_of_id="value",
+        type_of_index="value",
+        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+        rows=rows_without_A_1_2,
+    )
+
+    assert rows_without_A_1_2_with_updated_value_indices == GOLD_STANDARD_DUMMY_ROWS
+
+
+def test_decrement_indices_after_deletion_of_value_in_listed_values_update_is_not_necessary(
+    dummy_rows_of_listed_values,
+):
+    
+    GOLD_STANDARD_DUMMY_ROWS = [
+        {
+            "id": "A-1-1",
+            "feature_id": "A-1",
+            "en": "Nominative",
+            "ru": "Номинатив",
+        },
+        {
+            "id": "A-1-2",
+            "feature_id": "A-1",
+            "en": "Ergative",
+            "ru": "Эргатив",
+        },
+        {
+            "id": "B-1-1",
+            "feature_id": "B-1",
+            "en": "Agreement",
+            "ru": "Согласование",
+        },
+        {
+            "id": "B-1-2",
+            "feature_id": "B-1",
+            "en": "Word order",
+            "ru": "Порядок слов",
+        },
+        {
+            "id": "B-2-1",
+            "feature_id": "B-2",
+            "en": "Coordination",
+            "ru": "Координация",
+        },
+    ]
+
+    rows_without_A_1_3, range_of_line_numbers_of_removed_rows = (
+        remove_rows_with_given_content_in_lookup_column(
+            lookup_column="id",
+            match_value="A-1-3",
+            rows=dummy_rows_of_listed_values,
+        )
+    )
+    
+    line_number_of_first_removed_value = range_of_line_numbers_of_removed_rows[0]
+
+    rows_without_A_1_3_with_updated_value_indices = decrement_indices_after_deletion(
+        lookup_column="id",
+        match_value="A-1",
+        type_of_id="value",
+        type_of_index="value",
+        line_number_after_which_rows_must_be_updated=line_number_of_first_removed_value,
+        rows=rows_without_A_1_3,
+    )
+
+    assert rows_without_A_1_3_with_updated_value_indices == GOLD_STANDARD_DUMMY_ROWS
 
 
 def test_decrement_indices_after_deletion_in_feature_profile_update_is_necessary(
