@@ -10,7 +10,6 @@ setup(
         "langworld_db_data.tools.featureprofiles",
         "langworld_db_data.tools.listed_values",
         "langworld_db_data.tools.common",
-        "langworld_db_data.tools.common.files",
         "langworld_db_data.tools.common.ids",
         "langworld_db_data.constants",
         "langworld_db_data.validators",
