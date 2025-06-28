@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup, Tag
+from tinybear.csv_xls import read_dicts_from_csv
 
 from langworld_db_data import ObjectWithPaths
-from langworld_db_data.tools.common.files.csv_xls import read_dicts_from_csv
 from langworld_db_data.validators.validator import Validator
 
 
