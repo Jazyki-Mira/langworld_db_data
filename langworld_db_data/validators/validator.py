@@ -1,8 +1,9 @@
 from abc import ABC, abstractmethod
 from pathlib import Path
 
+from tinybear.csv_xls import read_column_from_csv
+
 from langworld_db_data.constants.literals import KEY_FOR_ID
-from langworld_db_data.tools.common.files.csv_xls import read_column_from_csv
 
 
 class ValidatorError(ValueError):

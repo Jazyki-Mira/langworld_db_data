@@ -1,6 +1,12 @@
 import re
 from pathlib import Path
 
+from tinybear.csv_xls import (
+    check_csv_for_malformed_rows,
+    check_csv_for_repetitions_in_column,
+    read_dict_from_2_csv_columns,
+)
+
 from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     AUX_ROW_MARKER,
@@ -16,11 +22,6 @@ from langworld_db_data.constants.paths import (
     FILE_WITH_LISTED_VALUES,
     FILE_WITH_NAMES_OF_FEATURES,
     FILE_WITH_VALUE_TYPES,
-)
-from langworld_db_data.tools.common.files.csv_xls import (
-    check_csv_for_malformed_rows,
-    check_csv_for_repetitions_in_column,
-    read_dict_from_2_csv_columns,
 )
 from langworld_db_data.tools.featureprofiles import (
     ValueForFeatureProfileDictionary,

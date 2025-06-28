@@ -1,5 +1,8 @@
 from pathlib import Path
 
+from tinybear.csv_xls import read_dicts_from_csv, write_csv
+from tinybear.txt import remove_extra_space
+
 from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     KEY_FOR_ID,
@@ -8,8 +11,6 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_VALUE_ID,
 )
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR, INVENTORIES_DIR
-from langworld_db_data.tools.common.files.csv_xls import read_dicts_from_csv, write_csv
-from langworld_db_data.tools.common.files.txt import remove_extra_space
 
 
 class ListedValueRenamerError(Exception):

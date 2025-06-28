@@ -1,6 +1,9 @@
 from functools import partial
 from pathlib import Path
 
+from tinybear.csv_xls import read_dicts_from_xls
+from tinybear.json_toml_yaml import read_json_toml_yaml
+
 from langworld_db_data.constants.literals import (
     ATOMIC_VALUE_SEPARATOR,
     KEY_FOR_ENGLISH_COMMENT,
@@ -11,8 +14,6 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import CONFIG_DIR
-from langworld_db_data.tools.common.files.csv_xls import read_dicts_from_xls
-from langworld_db_data.tools.common.files.json_toml_yaml import read_json_toml_yaml
 from langworld_db_data.tools.featureprofiles import (
     ValueForFeatureProfileDictionary,
 )

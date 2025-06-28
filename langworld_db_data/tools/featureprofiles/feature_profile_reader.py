@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import pyperclip
+from tinybear.csv_xls import read_dicts_from_csv
 
 from langworld_db_data.constants.literals import (
     KEY_FOR_FEATURE_ID,
@@ -10,7 +11,6 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_VALUE_TYPE,
 )
 from langworld_db_data.constants.paths import FEATURE_PROFILES_DIR
-from langworld_db_data.tools.common.files.csv_xls import read_dicts_from_csv
 from langworld_db_data.tools.featureprofiles import (
     ValueForFeatureProfileDictionary,
 )

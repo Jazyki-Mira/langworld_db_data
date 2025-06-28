@@ -1,7 +1,0 @@
-id,type,is_extinct,is_multiple,name_en,name_ru,custom_title_en,custom_title_ru,family_id,iso_639_3,glottocode,latitude,longitude,main_country_id,encyclopedia_volume_id,page,encyclopedia_map_id,has_feature_profile,comment
-aragonese,language/dialect,0,0,Aragonese,арагонский,,,ibero_rom,arg,arag1245,42.2935,-0.4394,esp,11,550,11-4,1,
-aromanian,language/dialect,0,0,Aromanian,арумынский,,,east_rom,rup,arom1237,40.62,21.20,grc,11,636,11-6,1,
-asturian,language,0,0,Asturian,астурийский,,,ibero_rom,ast,astu1245,42.7954,-5.6689,esp,11,535,11-4,1,
-asturian,language,0,0,Asturian,другой астурийский,,,ibero_rom,ast,astu1245,42.7954,-5.6689,esp,11,535,11-4,1,
-catalan,language,0,0,Catalan,каталонский,,,occit_rom,cat,stan1289,41.6666,2,esp,11,492,"11-4, 11-10",1,
-catalan,language/dialect,0,0,Corsican,корсиканский,,,italo_rom,cos,cors1241,41.70,9.26,fra,11,146,"11-10, 11-3",1,
