@@ -397,7 +397,7 @@ tsakhur,language,0,0,Tsakhur,цахурский,,,"Tsaxur, Caxur",,lezg,tkr,tsak
 archi,language,0,0,Archi,арчинский,,,ARCHIB,арчибский,lezg,aqc,arch1244,arc,arch1244,arch1244,41.9839,46.8127,rus,,,0,,
 kryz,language,0,0,Kryz,крызский,,,Kryc,крыцский,lezg,kry,kryt1240,krz,kryt1240,,41.1455,48.164,aze,,,0,,
 budukh,language,0,0,Budukh,будухский,,,Budugh,будугский,lezg,bdk,budu1248,bdk,budu1248,,41.1207,48.3233,aze,,,0,,
-udi,language,0,0,Udi,удинсткий,,,,удийский,lezg,udi,udii1243,udi,udii1243,,41.8818,46.9171,rus,,,0,,
+udi,language,0,0,Udi,удинсткий,,,,удийский,lezg,udi,udii1243,udi,udii1243,,41.8818,46.9171,rus,,,1,,
 khinalug,language,0,0,Khinalug,хиналугский,,,"Khinalig, Khinalugi, Xinalug(h), Xinaliq, Khinalugh",кештский,north_east_cauc,kjj,khin1240,khi,khin1240,,41.1777,48.1297,aze,,,0,,
 bamana,language,0,0,Bamana,бамана,,,,,manding_east,bam,bamb1269,bam,bamb1269,bamb1269,12.9,-7.65,mli,21,46,1,,
 kpelle,language,0,0,Kpelle,кпелле,,,,,south_west_mande,kpe,kpel1252,kpe,,,7.75,-8.8167,gin,21,284,1,,
