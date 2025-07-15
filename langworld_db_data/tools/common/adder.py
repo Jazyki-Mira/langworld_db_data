@@ -36,8 +36,8 @@ class Adder(ObjectWithPaths):
 
     def _make_id_for_new_feature_or_value(
         self,
-        feature_or_value: FeatureOrValue,
-        new_feature_or_value_id: str,
+        category_or_feature: CategoryOrFeature,
+        category_or_feature_id: str,
         index_to_assign: int,
     ) -> str:
         pass
@@ -46,6 +46,7 @@ class Adder(ObjectWithPaths):
         self,
         feature_or_value: FeatureOrValue,
         args_of_new_feature_or_value: tuple[str],
+        for_feature_profile: bool = False,
     ) -> dict[str, str]:
         pass
 
