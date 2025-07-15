@@ -163,11 +163,14 @@ def test__make_id_for_new_feature_or_value_make_for_feature(test_adder):
     )
 
     for category_id_to_index in category_ids_to_indices:
-        assert test_adder._make_id_for_new_feature_or_value(
-            category_or_feature="category",
-            category_or_feature_id=category_id_to_index["category_id"],
-            index_to_assign=category_id_to_index["index_to_validate"],
-        ) == category_id_to_index["resulting_id"]
+        assert (
+            test_adder._make_id_for_new_feature_or_value(
+                category_or_feature="category",
+                category_or_feature_id=category_id_to_index["category_id"],
+                index_to_assign=category_id_to_index["index_to_validate"],
+            )
+            == category_id_to_index["resulting_id"]
+        )
 
 
 def test__make_id_for_new_feature_or_value_make_for_value(test_adder):
@@ -191,8 +194,11 @@ def test__make_id_for_new_feature_or_value_make_for_value(test_adder):
     )
 
     for feature_id_to_index in feature_ids_to_indices:
-        assert test_adder._make_id_for_new_feature_or_value(
-            category_or_feature="feature",
-            category_or_feature_id=feature_id_to_index["feature_id"],
-            index_to_assign=feature_id_to_index["index_to_validate"],
-        ) == feature_id_to_index["resulting_id"]
+        assert (
+            test_adder._make_id_for_new_feature_or_value(
+                category_or_feature="feature",
+                category_or_feature_id=feature_id_to_index["feature_id"],
+                index_to_assign=feature_id_to_index["index_to_validate"],
+            )
+            == feature_id_to_index["resulting_id"]
+        )
