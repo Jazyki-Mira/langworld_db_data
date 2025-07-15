@@ -20,7 +20,6 @@ class Adder(ObjectWithPaths):
     def _validate_arguments() -> bool:
         pass
 
-
     def _check_if_index_to_assign_is_in_list_of_applicable_indices(
         self,
         index_to_validate: int,
@@ -29,14 +28,12 @@ class Adder(ObjectWithPaths):
     ) -> bool:
         pass
 
-
     def _get_range_of_currently_existing_indices(
         self,
         category_or_feature: CategoryOrFeature,
         category_or_feature_id: str,
     ) -> tuple[int]:
         pass
-
 
     def _make_id_for_new_feature_or_value(
         self,
@@ -46,14 +43,12 @@ class Adder(ObjectWithPaths):
     ) -> str:
         pass
 
-
     def _compose_new_row(
         self,
         feature_or_value: FeatureOrValue,
         args_of_new_feature_or_value: tuple[str],
     ) -> dict[str, str]:
         pass
-
 
     def _get_line_number_where_to_insert(
         self,
