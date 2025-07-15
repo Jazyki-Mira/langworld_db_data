@@ -140,3 +140,59 @@ def test__get_range_of_currently_existing_indices_in_listed_values_inventory(tes
         category_or_feature_id="A-6",
     ) == (1, 2, 3, 4, 5, 6, 7)
     # Should we also add None here?
+
+
+def test__make_id_for_new_feature_or_value_make_for_feature(test_adder):
+
+    category_ids_to_indices = (
+        {
+            "category_id": "F",
+            "index_to_validate": None,
+            "resulting_id": "F-10",
+        },
+        {
+            "category_id": "G",
+            "index_to_validate": 8,
+            "resulting_id": "G-8",
+        },
+        {
+            "category_id": "G",
+            "index_to_validate": 7,
+            "resulting_id": "G-7",
+        },
+    )
+
+    for category_id_to_index in category_ids_to_indices:
+        assert test_adder._make_id_for_new_feature_or_value(
+            category_or_feature="category",
+            category_or_feature_id=category_id_to_index["category_id"],
+            index_to_assign=category_id_to_index["index_to_validate"],
+        ) == category_id_to_index["resulting_id"]
+
+
+def test__make_id_for_new_feature_or_value_make_for_value(test_adder):
+
+    feature_ids_to_indices = (
+        {
+            "feature_id": "I-10",
+            "index_to_validate": None,
+            "resulting_id": "I-10-12",
+        },
+        {
+            "feature_id": "H-6",
+            "index_to_validate": 37,
+            "resulting_id": "H-6-37",
+        },
+        {
+            "feature_id": "H-6",
+            "index_to_validate": 30,
+            "resulting_id": "H-6-30",
+        },
+    )
+
+    for feature_id_to_index in feature_ids_to_indices:
+        assert test_adder._make_id_for_new_feature_or_value(
+            category_or_feature="feature",
+            category_or_feature_id=feature_id_to_index["feature_id"],
+            index_to_assign=feature_id_to_index["index_to_validate"],
+        ) == feature_id_to_index["resulting_id"]
