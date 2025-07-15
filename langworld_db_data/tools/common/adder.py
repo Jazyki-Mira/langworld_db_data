@@ -6,7 +6,6 @@ from langworld_db_data.tools.common.ids.compose import (
     compose_value_id_from_scratch,
 )
 
-
 FeatureOrValue = Literal["feature", "value"]
 CategoryOrFeature = Literal["category", "feature"]
 

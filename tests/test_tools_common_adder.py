@@ -13,10 +13,12 @@ def test_adder():
     return Adder(
         file_with_categories=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER / "feature_categories.csv",
         input_file_with_features=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER / "features.csv",
-        input_file_with_listed_values=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER / "features_listed_values.csv",
+        input_file_with_listed_values=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER
+        / "features_listed_values.csv",
         input_dir_with_feature_profiles=DIR_WITH_FEATURE_PROFILES_FOR_TESTING_ADDER,
         output_file_with_features=DIR_WITH_OUTPUT_FILES_FOR_TESTING_ADDER / "features.csv",
-        output_file_with_listed_values=DIR_WITH_OUTPUT_FILES_FOR_TESTING_ADDER / "features_listed_values.csv",
+        output_file_with_listed_values=DIR_WITH_OUTPUT_FILES_FOR_TESTING_ADDER
+        / "features_listed_values.csv",
         output_dir_with_feature_profiles=DIR_WITH_OUTPUT_FILES_FOR_TESTING_ADDER,
     )
 
@@ -34,7 +36,7 @@ def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_feature
             "index_to_validate": 8,
         },
     )
-    
+
     for category_id_to_index in category_ids_to_indices:
         assert test_adder._check_if_index_to_assign_is_in_list_of_applicable_indices(
             index_to_validate=category_id_to_index["index_to_validate"],
@@ -46,7 +48,7 @@ def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_feature
 def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_features_inventory_index_not_available(
     test_adder,
 ):
-    
+
     category_ids_to_indices = (
         {
             "category_id": "J",
@@ -84,7 +86,7 @@ def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_values_
             "index_to_validate": 27,
         },
     )
-    
+
     for feature_id_to_index in feature_ids_to_indices:
         assert test_adder._check_if_index_to_assign_is_in_list_of_applicable_indices(
             index_to_validate=feature_id_to_index["index_to_validate"],
@@ -96,7 +98,7 @@ def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_values_
 def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_values_inventory_index_not_available(
     test_adder,
 ):
-    
+
     feature_ids_to_indices = (
         {
             "feature_id": "J-1",
