@@ -23,6 +23,141 @@ def test_adder():
     )
 
 
+def test__validate_arguments_for_adding_feature_some_args_are_missing(test_adder):
+    
+    for set_of_bad_args in (
+        {
+            "category_id": "",
+            "feature_en": "feature",
+            "feature_ru": "признак",
+            "listed_values_to_add": [
+                {
+                    "en": "value",
+                    "ru": "значение",
+                }
+            ],
+        },
+        {
+            "category_id": "C",
+            "feature_en": "",
+            "feature_ru": "признак",
+            "listed_values_to_add": [
+                {
+                    "en": "value",
+                    "ru": "значение",
+                }
+            ],
+        },
+        {
+            "category_id": "C",
+            "feature_en": "feature",
+            "feature_ru": "",
+            "listed_values_to_add": [
+                {
+                    "en": "value",
+                    "ru": "значение",
+                }
+            ],
+        },
+        {
+            "category_id": "C",
+            "feature_en": "feature",
+            "feature_ru": "признак",
+            "listed_values_to_add": [],
+        },
+        {
+            "category_id": "C",
+            "feature_en": "feature",
+            "feature_ru": "признак",
+            "listed_values_to_add": [
+                {
+                    "en": "",
+                    "ru": "",
+                }
+            ],
+        },
+    ):
+        with pytest.raises(AdderError, match="Some of the values passed are empty:"):
+            test_adder._validate_arguments(set_of_bad_args)
+
+
+def test__validate_arguments_for_adding_feature_invalid_keys_in_listed_values_to_add(test_adder):
+    args = {
+        "category_id": "A",
+        "feature_ru": "раз",
+        "feature_en": "one",
+        "listed_values_to_add": [
+            {"ru": "раз", "en": "this is fine"},
+            {"this": "should fail", "en": "this is fine"},
+        ],
+    }
+    with pytest.raises(
+        AdderError,
+        match=(
+            "must have keys 'en' and 'ru'. Your value: {'this': 'should fail', 'en':"
+            " 'this is fine'}"
+        ),
+    ):
+        test_adder._validate_arguments(**args)
+
+
+def test__validate_arguments_for_adding_feature_category_id_absent_from_inventory(test_adder):
+    with pytest.raises(
+        AdderError,
+        match=(
+            "Category ID <X> not found in file" f" {test_adder.file_with_categories.name}"
+        ),
+    ):
+        test_adder._validate_arguments(
+            category_id="X",
+            feature_ru="имя",
+            feature_en="name",
+            listed_values_to_add=[
+                {
+                    "en": "value",
+                    "ru": "значение",
+                }
+            ],
+        )
+
+
+def test__validate_arguments_for_adding_feature_en_or_ru_name_of_feature_already_occupied(test_adder):
+    for en, ru in (
+        ("Stress character ", "Новый признак"),
+        ("New  feature", "Типы фонации"),
+    ):
+        with pytest.raises(AdderError, match="English or Russian feature name is already"):
+            test_adder._validate_arguments(
+                category_id="A",
+                feature_en=en,
+                feature_ru=ru,
+                listed_values_to_add=[
+                    {
+                        "en": "value",
+                        "ru": "значение",
+                    }
+                ],
+            )
+
+
+def test__validate_arguments_for_adding_feature_invalid_feature_index(test_adder):
+    for bad_feature_index in (0, -7, 418):
+        with pytest.raises(
+            ValueError,
+            match="Invalid index_to_assign",
+        ):
+            test_adder._validate_arguments(
+                category_id="C",
+                new_feature_en="Something",
+                new_feature_ru="Что-нибудь",
+                index_to_assign=bad_feature_index,
+            )
+
+
+def test__validate_arguments_for_adding_value(test_adder):
+    pass
+
+
 def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_features_inventory_index_available(
     test_adder,
 ):
