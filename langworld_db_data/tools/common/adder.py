@@ -1,4 +1,4 @@
-from typing import Literal
+from typing import Literal, Union
 
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.tools.common.ids.compose import (
@@ -16,7 +16,11 @@ class AdderError(Exception):
 
 class Adder(ObjectWithPaths):
 
-    def _validate_arguments() -> bool:
+    def _validate_arguments(
+        self,
+        feature_or_value: FeatureOrValue,
+        args_of_new_feature_or_value: dict[str, Union[str, int, None]],
+    ) -> bool:
         pass
 
     def _check_if_index_to_assign_is_in_list_of_applicable_indices(
@@ -54,7 +58,6 @@ class Adder(ObjectWithPaths):
         self,
         feature_or_value: FeatureOrValue,
         new_feature_or_value_id: str,
-        category_or_feature: CategoryOrFeature,
-        category_or_feature_id: str,
+        for_feature_profile: bool = False,
     ) -> int:
         pass
