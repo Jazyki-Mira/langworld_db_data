@@ -1,5 +1,6 @@
-from tinybear.csv_xls import read_column_from_csv, read_dicts_from_csv
 from typing import Literal, Union
+
+from tinybear.csv_xls import read_column_from_csv, read_dicts_from_csv
 
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.tools.common.ids.extract import (
@@ -22,7 +23,6 @@ class Adder(ObjectWithPaths):
         feature_or_value: FeatureOrValue,
         args_to_validate: dict[str, Union[str, int, None]],
     ) -> bool:
-        
         """
         Validate arguments passed for adding new feature or value.
 
@@ -34,10 +34,12 @@ class Adder(ObjectWithPaths):
         # First: check that all obligatory args are not empty
         feature_or_value_to_args_that_must_not_be_empty = {
             "feature": ("category_id", "feature_en", "feature_ru", "listed_values_to_add"),
-            "value": ("feature_id", "value_en", "value_ru")
+            "value": ("feature_id", "value_en", "value_ru"),
         }
 
-        args_that_must_not_be_empty = feature_or_value_to_args_that_must_not_be_empty[feature_or_value]
+        args_that_must_not_be_empty = feature_or_value_to_args_that_must_not_be_empty[
+            feature_or_value
+        ]
         for arg in args_that_must_not_be_empty:
             if not args_to_validate[arg]:
                 raise AdderError(
@@ -61,9 +63,15 @@ class Adder(ObjectWithPaths):
             },
         }
 
-        level_of_check = feature_or_value_to_arg_that_must_exist[feature_or_value]["level_of_check"]
-        file_to_check_against = feature_or_value_to_arg_that_must_exist[feature_or_value]["file_to_check_against"]
-        name_of_arg_that_must_exist = feature_or_value_to_arg_that_must_exist[feature_or_value]["arg"]
+        level_of_check = feature_or_value_to_arg_that_must_exist[feature_or_value][
+            "level_of_check"
+        ]
+        file_to_check_against = feature_or_value_to_arg_that_must_exist[feature_or_value][
+            "file_to_check_against"
+        ]
+        name_of_arg_that_must_exist = feature_or_value_to_arg_that_must_exist[feature_or_value][
+            "arg"
+        ]
         arg_that_must_exist = args_to_validate[name_of_arg_that_must_exist]
 
         if arg_that_must_exist not in read_column_from_csv(
@@ -82,15 +90,17 @@ class Adder(ObjectWithPaths):
                 "en": "feature_en",
                 "ru": "feature_ru",
                 "file_to_check_against": self.input_file_with_features,
-                },
+            },
             "value": {
                 "en": "value_en",
                 "ru": "value_ru",
                 "file_to_check_against": self.input_file_with_listed_values,
-                },
+            },
         }
 
-        args_that_must_not_be_occupied = feature_or_value_to_args_that_must_not_be_occupied[feature_or_value]
+        args_that_must_not_be_occupied = feature_or_value_to_args_that_must_not_be_occupied[
+            feature_or_value
+        ]
         english_name = args_that_must_not_be_occupied["en"]
         russian_name = args_that_must_not_be_occupied["ru"]
         file_to_check_against = args_that_must_not_be_occupied["file_to_check_against"]
@@ -98,8 +108,7 @@ class Adder(ObjectWithPaths):
             path_to_file=file_to_check_against,
             column_name="en",
         ) or args_to_validate[russian_name] in read_column_from_csv(
-            path_to_file=file_to_check_against,
-            column_name="ru"
+            path_to_file=file_to_check_against, column_name="ru"
         ):
             raise AdderError(
                 f"English or Russian {feature_or_value} name is already present in {file_to_check_against.name}: "
@@ -127,7 +136,7 @@ class Adder(ObjectWithPaths):
             elif feature_or_value == "value":
                 category_or_feature = "feature"
                 category_or_feature_id = args_to_validate["feature_id"]
-            
+
             if not self._check_if_index_to_assign_is_in_list_of_applicable_indices(
                 index_to_validate=args_to_validate["index_to_assign"],
                 category_or_feature=category_or_feature,
@@ -138,28 +147,26 @@ class Adder(ObjectWithPaths):
                     "It is either less than 1 or greater than the current allowed maximum."
                 )
 
-
     def _check_if_index_to_assign_is_in_list_of_applicable_indices(
         self,
         index_to_validate: int,
         category_or_feature: CategoryOrFeature,
         category_or_feature_id: str,
     ) -> bool:
-        
+
         existing_indices = self._get_tuple_of_currently_existing_indices(
             category_or_feature=category_or_feature,
             category_or_feature_id=category_or_feature_id,
         )
 
         return index_to_validate in existing_indices
-        
 
     def _get_tuple_of_currently_existing_indices(
         self,
         category_or_feature: CategoryOrFeature,
         category_or_feature_id: str,
     ) -> tuple[int]:
-        
+
         if category_or_feature == "category":
             file_to_check_against = self.input_file_with_features
             extract_last_index = extract_feature_index
@@ -182,7 +189,6 @@ class Adder(ObjectWithPaths):
         existing_indices.append(existing_indices[-1] + 1)
 
         return tuple(existing_indices)
-
 
     def _make_id_for_new_feature_or_value(
         self,
