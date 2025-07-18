@@ -154,14 +154,14 @@ class Adder(ObjectWithPaths):
         category_or_feature_id: str,
     ) -> bool:
 
-        existing_indices = self._get_tuple_of_currently_existing_indices(
+        existing_indices = self._get_tuple_of_currently_available_indices(
             category_or_feature=category_or_feature,
             category_or_feature_id=category_or_feature_id,
         )
 
         return index_to_validate in existing_indices
 
-    def _get_tuple_of_currently_existing_indices(
+    def _get_tuple_of_currently_available_indices(
         self,
         category_or_feature: CategoryOrFeature,
         category_or_feature_id: str,

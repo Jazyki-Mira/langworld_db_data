@@ -430,18 +430,18 @@ def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_values_
         )
 
 
-def test__get_tuple_of_currently_existing_indices_in_features_inventory(test_adder):
+def test__get_tuple_of_currently_available_indices_in_features_inventory(test_adder):
 
-    assert test_adder._get_tuple_of_currently_existing_indices(
+    assert test_adder._get_tuple_of_currently_available_indices(
         category_or_feature="category",
         category_or_feature_id="J",
     ) == (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     # Nine indices occupied, tenth is free
 
 
-def test__get_tuple_of_currently_existing_indices_in_listed_values_inventory(test_adder):
+def test__get_tuple_of_currently_available_indices_in_listed_values_inventory(test_adder):
 
-    assert test_adder._get_tuple_of_currently_existing_indices(
+    assert test_adder._get_tuple_of_currently_available_indices(
         category_or_feature="feature",
         category_or_feature_id="A-6",
     ) == (1, 2, 3, 4, 5, 6, 7)
