@@ -3,6 +3,10 @@ from typing import Literal, Union
 from tinybear.csv_xls import read_column_from_csv, read_dicts_from_csv
 
 from langworld_db_data import ObjectWithPaths
+from langworld_db_data.tools.common.ids.compose import (
+    compose_feature_id,
+    compose_value_id_based_on_feature_id,
+)
 from langworld_db_data.tools.common.ids.extract import (
     extract_feature_index,
     extract_value_index,
@@ -196,7 +200,35 @@ class Adder(ObjectWithPaths):
         category_or_feature_id: str,
         index_to_assign: int,
     ) -> str:
-        pass
+        
+        if index_to_assign is None:
+            existing_indices = self._get_tuple_of_currently_available_indices(
+                category_or_feature=category_or_feature,
+                category_or_feature_id=category_or_feature_id,
+            )
+            last_available_index = existing_indices[-1]
+            if category_or_feature == "category":
+                id_of_new_feature_or_value = compose_feature_id(
+                    category_id=category_or_feature_id,
+                    feature_index=last_available_index,
+                )
+            elif category_or_feature == "feature":
+                id_of_new_feature_or_value = compose_value_id_based_on_feature_id(
+                    feature_id=category_or_feature_id,
+                    value_index=last_available_index,
+                )
+        else:
+            if category_or_feature == "category":
+                id_of_new_feature_or_value = compose_feature_id(
+                    category_id=category_or_feature_id,
+                    feature_index=index_to_assign,
+                )
+            elif category_or_feature == "feature":
+                id_of_new_feature_or_value = compose_value_id_based_on_feature_id(
+                    feature_id=category_or_feature_id,
+                    value_index=index_to_assign,
+                )
+        return id_of_new_feature_or_value
 
     def _compose_new_row(
         self,
@@ -213,3 +245,4 @@ class Adder(ObjectWithPaths):
         for_feature_profile: bool = False,
     ) -> int:
         pass
+
