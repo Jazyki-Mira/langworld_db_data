@@ -23,212 +23,336 @@ def test_adder():
     )
 
 
-# def test__validate_arguments_for_adding_feature_passes_with_default_index_to_assign(test_adder):
+def test__validate_arguments_for_adding_feature_passes_with_default_index_to_assign(test_adder):
     
-#     test_adder._validate_arguments(
-#         category_id="C",
-#         feature_en="feature",
-#         feature_ru="признак",
-#         listed_values_to_add=[
-#             {
-#                 "en": "value",
-#                 "ru": "значение",
-#             }
-#         ]
-#     )
+    test_adder._validate_arguments(
+        feature_or_value="feature",
+        args_of_new_feature_or_value={       
+            "category_id": "C",
+            "feature_en": "feature",
+            "feature_ru": "признак",
+            "listed_values_to_add": [
+                {
+                    "en": "value",
+                    "ru": "значение",
+                },
+            ],
+        },
+    )
 
 
-# def test__validate_arguments_for_adding_feature_passes_with_given_index_to_assign(test_adder):
+def test__validate_arguments_for_adding_feature_passes_with_given_index_to_assign(test_adder):
     
-#     for set_of_good_args in (
-#         {
-#             "category_id": "C",
-#             "feature_en": "feature",
-#             "feature_ru": "признак",
-#             "listed_values_to_add": [
-#                 {
-#                     "en": "value",
-#                     "ru": "значение",
-#                 }
-#             ],
-#             "index_to_assign": None,
-#         },
-#         {
-#             "category_id": "C",
-#             "feature_en": "feature",
-#             "feature_ru": "признак",
-#             "listed_values_to_add": [
-#                 {
-#                     "en": "value",
-#                     "ru": "значение",
-#                 }
-#             ],
-#             "index_to_assign": 3,
-#         },
-#         {
-#             "category_id": "C",
-#             "feature_en": "feature",
-#             "feature_ru": "признак",
-#             "listed_values_to_add": [
-#                 {
-#                     "en": "value",
-#                     "ru": "значение",
-#                 }
-#             ],
-#             "index_to_assign": 1,
-#         },
-#     ):
-#         test_adder._validate_arguments(
-#             category_id=set_of_good_args["category_id"],
-#             feature_en=set_of_good_args["feature_en"],
-#             feature_ru=set_of_good_args["feature_ru"],
-#             listed_values_to_add=set_of_good_args["listed_values_to_add"],
-#             index_to_assign=set_of_good_args["index_to_assign"],
-#         )
+    for set_of_good_args in (
+        {
+            "category_id": "C",
+            "feature_en": "feature",
+            "feature_ru": "признак",
+            "listed_values_to_add": [
+                {
+                    "en": "value",
+                    "ru": "значение",
+                },
+            ],
+            "index_to_assign": None,
+        },
+        {
+            "category_id": "C",
+            "feature_en": "feature",
+            "feature_ru": "признак",
+            "listed_values_to_add": [
+                {
+                    "en": "value",
+                    "ru": "значение",
+                },
+            ],
+            "index_to_assign": 3,
+        },
+        {
+            "category_id": "C",
+            "feature_en": "feature",
+            "feature_ru": "признак",
+            "listed_values_to_add": [
+                {
+                    "en": "value",
+                    "ru": "значение",
+                },
+            ],
+            "index_to_assign": 1,
+        },
+    ):
+        test_adder._validate_arguments(
+            feature_or_value="feature",
+            args_of_new_feature_or_value=set_of_good_args,
+        )
 
 
-# def test__validate_arguments_for_adding_feature_fails_with_some_args_are_missing(test_adder):
+def test__validate_arguments_for_adding_feature_fails_with_some_obligatory_args_are_missing(test_adder):
     
-#     for set_of_bad_args in (
-#         {
-#             "category_id": "",
-#             "feature_en": "feature",
-#             "feature_ru": "признак",
-#             "listed_values_to_add": [
-#                 {
-#                     "en": "value",
-#                     "ru": "значение",
-#                 }
-#             ],
-#         },
-#         {
-#             "category_id": "C",
-#             "feature_en": "",
-#             "feature_ru": "признак",
-#             "listed_values_to_add": [
-#                 {
-#                     "en": "value",
-#                     "ru": "значение",
-#                 }
-#             ],
-#         },
-#         {
-#             "category_id": "C",
-#             "feature_en": "feature",
-#             "feature_ru": "",
-#             "listed_values_to_add": [
-#                 {
-#                     "en": "value",
-#                     "ru": "значение",
-#                 }
-#             ],
-#         },
-#         {
-#             "category_id": "C",
-#             "feature_en": "feature",
-#             "feature_ru": "признак",
-#             "listed_values_to_add": [],
-#         },
-#         {
-#             "category_id": "C",
-#             "feature_en": "feature",
-#             "feature_ru": "признак",
-#             "listed_values_to_add": [
-#                 {
-#                     "en": "",
-#                     "ru": "",
-#                 }
-#             ],
-#         },
-#     ):
-#         with pytest.raises(AdderError, match="Some of the values passed are empty:"):
-#             test_adder._validate_arguments(
-#                 category_id=set_of_bad_args["category_id"],
-#                 feature_en=set_of_bad_args["feature_en"],
-#                 feature_ru=set_of_bad_args["feature_ru"],
-#                 listed_values_to_add=set_of_bad_args["listed_values_to_add"],
-#                 index_to_assign=set_of_bad_args["index_to_assign"],
-#             )
+    for set_of_bad_args in (
+        {
+            "category_id": "",
+            "feature_en": "feature",
+            "feature_ru": "признак",
+            "listed_values_to_add": [
+                {
+                    "en": "value",
+                    "ru": "значение",
+                },
+            ],
+        },
+        {
+            "category_id": "C",
+            "feature_en": "",
+            "feature_ru": "признак",
+            "listed_values_to_add": [
+                {
+                    "en": "value",
+                    "ru": "значение",
+                },
+            ],
+        },
+        {
+            "category_id": "C",
+            "feature_en": "feature",
+            "feature_ru": "",
+            "listed_values_to_add": [
+                {
+                    "en": "value",
+                    "ru": "значение",
+                },
+            ],
+        },
+        {
+            "category_id": "C",
+            "feature_en": "feature",
+            "feature_ru": "признак",
+            "listed_values_to_add": [],
+        },
+        {
+            "category_id": "C",
+            "feature_en": "feature",
+            "feature_ru": "признак",
+            "listed_values_to_add": [
+                {
+                    "en": "",
+                    "ru": "",
+                },
+            ],
+        },
+    ):
+        with pytest.raises(AdderError, match="Some of the values passed are empty:"):
+            test_adder._validate_arguments(
+                feature_or_value="feature",
+                args_of_new_feature_or_value=set_of_bad_args,
+            )
 
 
-# def test__validate_arguments_for_adding_feature_fails_with_invalid_keys_in_listed_values_to_add(test_adder):
-#     with pytest.raises(
-#         AdderError,
-#         match=(
-#             "must have keys 'en' and 'ru'. Your value: {'this': 'should fail', 'en':"
-#             " 'this is fine'}"
-#         ),
-#     ):
-#         test_adder._validate_arguments(
-#             category_id="A",
-#             feature_ru="раз",
-#             feature_en="one",
-#             listed_values_to_add=[
-#                 {"ru": "раз", "en": "this is fine"},
-#                 {"this": "should fail", "en": "this is fine"},
-#             ],
-#         )
+def test__validate_arguments_for_adding_feature_fails_with_invalid_keys_in_listed_values_to_add(test_adder):
+
+    with pytest.raises(
+        AdderError,
+        match=(
+            "must have keys 'en' and 'ru'. Your value: {'this': 'should fail', 'en':"
+            " 'this is fine'}"
+        ),
+    ):
+        test_adder._validate_arguments(
+            feature_or_value="feature",
+            args_of_new_feature_or_value={
+                "category_id": "A",
+                "feature_ru": "раз",
+                "feature_en": "one",
+                "listed_values_to_add": [
+                    {"ru": "раз", "en": "this is fine"},
+                    {"this": "should fail", "en": "this is fine"},
+                ],
+            },
+        )
 
 
-# def test__validate_arguments_for_adding_feature_fails_with_category_id_absent_from_inventory(test_adder):
-#     with pytest.raises(
-#         AdderError,
-#         match=(
-#             "Category ID <X> not found in file" f" {test_adder.file_with_categories.name}"
-#         ),
-#     ):
-#         test_adder._validate_arguments(
-#             category_id="X",
-#             feature_ru="имя",
-#             feature_en="name",
-#             listed_values_to_add=[
-#                 {
-#                     "en": "value",
-#                     "ru": "значение",
-#                 }
-#             ],
-#         )
+def test__validate_arguments_for_adding_feature_fails_with_category_id_absent_from_inventory(test_adder):
+
+    with pytest.raises(
+        AdderError,
+        match=(
+            "Category ID <X> not found in file" f" {test_adder.file_with_categories.name}"
+        ),
+    ):
+        test_adder._validate_arguments(
+            feature_or_value="feature",
+            args_of_new_feature_or_value={
+                "category_id": "X",
+                "feature_ru": "имя",
+                "feature_en": "name",
+                "listed_values_to_add": [
+                    {
+                        "en": "value",
+                        "ru": "значение",
+                    },
+                ],
+            },
+        )
 
 
-# def test__validate_arguments_for_adding_feature_fails_with_en_or_ru_name_of_feature_already_occupied(test_adder):
-#     for en, ru in (
-#         ("Stress character ", "Новый признак"),
-#         ("New  feature", "Типы фонации"),
-#     ):
-#         with pytest.raises(AdderError, match="English or Russian feature name is already"):
-#             test_adder._validate_arguments(
-#                 category_id="A",
-#                 feature_en=en,
-#                 feature_ru=ru,
-#                 listed_values_to_add=[
-#                     {
-#                         "en": "value",
-#                         "ru": "значение",
-#                     }
-#                 ],
-#             )
+def test__validate_arguments_for_adding_feature_fails_with_en_or_ru_name_of_feature_already_occupied(test_adder):
+
+    for en, ru in (
+        ("Stress character ", "Новый признак"),
+        ("New  feature", "Типы фонации"),
+    ):
+        with pytest.raises(AdderError, match="English or Russian feature name is already"):
+            test_adder._validate_arguments(
+                feature_or_value="feature",
+                args_of_new_feature_or_value={
+                    "category_id": "A",
+                    "feature_en": en,
+                    "feature_ru": ru,
+                    "listed_values_to_add": [
+                        {
+                            "en": "value",
+                            "ru": "значение",
+                        },
+                    ],
+                },
+            )
 
 
-# def test__validate_arguments_for_adding_feature_fails_with_invalid_feature_index(test_adder):
-#     for bad_feature_index in (0, -7, 418):
-#         with pytest.raises(
-#             ValueError,
-#             match="Invalid index_to_assign",
-#         ):
-#             test_adder._validate_arguments(
-#                 category_id="C",
-#                 new_feature_en="Something",
-#                 new_feature_ru="Что-нибудь",
-#                 index_to_assign=bad_feature_index,
-#             )
+def test__validate_arguments_for_adding_feature_fails_with_invalid_feature_index(test_adder):
+
+    for bad_feature_index in (0, -7, 418):
+        with pytest.raises(
+            ValueError,
+            match="Invalid index_to_assign",
+        ):
+            test_adder._validate_arguments(
+                feature_or_value="feature",
+                args_of_new_feature_or_value={
+                    "category_id": "C",
+                    "feature_en": "Something",
+                    "feature_ru": "Что-нибудь",
+                    "index_to_assign": bad_feature_index,
+                },
+            )
 
 
-# def test__validate_arguments_for_adding_value_fails_with_some_args_missing(test_adder):
-#     pass
+def test__validate_arguments_for_adding_value_passes_with_default_index_to_assign(test_adder):
+
+    test_adder._validate_arguments(
+        feature_or_value="value",
+        args_of_new_feature_or_value={       
+            "feature_id": "A-8",
+            "value_en": "Special feature",
+            "value_ru": "Особый признак",
+        },
+    )
 
 
-# def test__validate_arguments_for_adding_value(test_adder):
-#     pass
+def test__validate_arguments_for_adding_value_passes_with_given_index_to_assign(test_adder):
+
+    for set_of_good_args in (
+        {
+            "feature_id": "A-20",
+            "value_en": "Special feature",
+            "value_ru": "Особый признак",
+            "index_to_assign": None,
+        },
+        {
+            "feature_id": "A-20",
+            "value_en": "Special feature",
+            "value_ru": "Особый признак",
+            "index_to_assign": 19,
+        },
+        {
+            "feature_id": "A-20",
+            "value_en": "Special feature",
+            "value_ru": "Особый признак",
+            "index_to_assign": 14,
+        },
+    ):
+        test_adder._validate_arguments(
+            feature_or_value="value",
+            args_of_new_feature_or_value=set_of_good_args,
+        )
+
+
+def test__validate_arguments_for_adding_value_fails_with_some_obligatory_args_missing(test_adder):
+
+    for set_of_bad_args in (
+        {
+            "feature_id": "",
+            "value_en": "value",
+            "value_ru": "значение",
+        },
+        {
+            "feature_id": "C",
+            "value_en": "",
+            "value_ru": "значение",
+        },
+        {
+            "feature_id": "C",
+            "value_en": "value",
+            "value_ru": "",
+        },
+    ):
+        with pytest.raises(AdderError, match="Some of the values passed are empty:"):
+            test_adder._validate_arguments(
+                feature_or_value="value",
+                args_of_new_feature_or_value=set_of_bad_args,
+            )
+
+
+def test__validate_arguments_for_adding_value_fails_with_feature_id_absent_from_inventory(test_adder):
+
+    with pytest.raises(
+        AdderError,
+        match=(
+            "Feature ID <X-68> not found in file" f" {test_adder.file_with_categories.name}"
+        ),
+    ):
+        test_adder._validate_arguments(
+            feature_or_value="feature",
+            args_of_new_feature_or_value={
+                "feature_id": "X-68",
+                "value_en": "name",
+                "value_ru": "имя",
+            },
+        )
+
+
+def test__validate_arguments_for_adding_value_fails_with_en_or_ru_name_of_value_already_occupied(test_adder):
+
+    for en, ru in (
+        ("Uvular", "Новое значение"),
+        ("New  value", "Увулярные"),
+    ):
+        with pytest.raises(AdderError, match="English or Russian feature name is already"):
+            test_adder._validate_arguments(
+                feature_or_value="value",
+                args_of_new_feature_or_value={
+                    "feature_id": "G-3",
+                    "value_en": en,
+                    "value_ru": ru,
+                },
+            )
+
+
+def test__validate_arguments_for_adding_value_fails_with_invalid_index_to_assign(test_adder):
+
+    for bad_feature_index in (0, -7, 418):
+        with pytest.raises(
+            ValueError,
+            match="Invalid index_to_assign",
+        ):
+            test_adder._validate_arguments(
+                feature_or_value="feature",
+                args_of_new_feature_or_value={
+                    "feature_id": "C-1",
+                    "value_en": "Something",
+                    "value_ru": "Что-нибудь",
+                    "index_to_assign": bad_feature_index,
+                },
+            )
 
 
 def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_features_inventory_index_available(
