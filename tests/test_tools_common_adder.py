@@ -24,10 +24,10 @@ def test_adder():
 
 
 def test__validate_arguments_for_adding_feature_passes_with_default_index_to_assign(test_adder):
-    
+
     test_adder._validate_arguments(
         feature_or_value="feature",
-        args_of_new_feature_or_value={       
+        args_of_new_feature_or_value={
             "category_id": "C",
             "feature_en": "feature",
             "feature_ru": "признак",
@@ -42,7 +42,7 @@ def test__validate_arguments_for_adding_feature_passes_with_default_index_to_ass
 
 
 def test__validate_arguments_for_adding_feature_passes_with_given_index_to_assign(test_adder):
-    
+
     for set_of_good_args in (
         {
             "category_id": "C",
@@ -87,8 +87,10 @@ def test__validate_arguments_for_adding_feature_passes_with_given_index_to_assig
         )
 
 
-def test__validate_arguments_for_adding_feature_fails_with_some_obligatory_args_are_missing(test_adder):
-    
+def test__validate_arguments_for_adding_feature_fails_with_some_obligatory_args_are_missing(
+    test_adder,
+):
+
     for set_of_bad_args in (
         {
             "category_id": "",
@@ -148,7 +150,9 @@ def test__validate_arguments_for_adding_feature_fails_with_some_obligatory_args_
             )
 
 
-def test__validate_arguments_for_adding_feature_fails_with_invalid_keys_in_listed_values_to_add(test_adder):
+def test__validate_arguments_for_adding_feature_fails_with_invalid_keys_in_listed_values_to_add(
+    test_adder,
+):
 
     with pytest.raises(
         AdderError,
@@ -171,13 +175,13 @@ def test__validate_arguments_for_adding_feature_fails_with_invalid_keys_in_liste
         )
 
 
-def test__validate_arguments_for_adding_feature_fails_with_category_id_absent_from_inventory(test_adder):
+def test__validate_arguments_for_adding_feature_fails_with_category_id_absent_from_inventory(
+    test_adder,
+):
 
     with pytest.raises(
         AdderError,
-        match=(
-            "Category ID <X> not found in file" f" {test_adder.file_with_categories.name}"
-        ),
+        match=("Category ID <X> not found in file" f" {test_adder.file_with_categories.name}"),
     ):
         test_adder._validate_arguments(
             feature_or_value="feature",
@@ -195,7 +199,9 @@ def test__validate_arguments_for_adding_feature_fails_with_category_id_absent_fr
         )
 
 
-def test__validate_arguments_for_adding_feature_fails_with_en_or_ru_name_of_feature_already_occupied(test_adder):
+def test__validate_arguments_for_adding_feature_fails_with_en_or_ru_name_of_feature_already_occupied(
+    test_adder,
+):
 
     for en, ru in (
         ("Stress character ", "Новый признак"),
@@ -240,7 +246,7 @@ def test__validate_arguments_for_adding_value_passes_with_default_index_to_assig
 
     test_adder._validate_arguments(
         feature_or_value="value",
-        args_of_new_feature_or_value={       
+        args_of_new_feature_or_value={
             "feature_id": "A-8",
             "value_en": "Special feature",
             "value_ru": "Особый признак",
@@ -302,13 +308,13 @@ def test__validate_arguments_for_adding_value_fails_with_some_obligatory_args_mi
             )
 
 
-def test__validate_arguments_for_adding_value_fails_with_feature_id_absent_from_inventory(test_adder):
+def test__validate_arguments_for_adding_value_fails_with_feature_id_absent_from_inventory(
+    test_adder,
+):
 
     with pytest.raises(
         AdderError,
-        match=(
-            "Feature ID <X-68> not found in file" f" {test_adder.file_with_categories.name}"
-        ),
+        match=("Feature ID <X-68> not found in file" f" {test_adder.file_with_categories.name}"),
     ):
         test_adder._validate_arguments(
             feature_or_value="feature",
@@ -320,7 +326,9 @@ def test__validate_arguments_for_adding_value_fails_with_feature_id_absent_from_
         )
 
 
-def test__validate_arguments_for_adding_value_fails_with_en_or_ru_name_of_value_already_occupied(test_adder):
+def test__validate_arguments_for_adding_value_fails_with_en_or_ru_name_of_value_already_occupied(
+    test_adder,
+):
 
     for en, ru in (
         ("Uvular", "Новое значение"),
@@ -540,7 +548,7 @@ def test__make_id_for_new_feature_or_value_make_for_value(test_adder):
 
 
 def test__compose_new_row_for_feature_in_inventory_without_descriptions(test_adder):
-    
+
     GOLD_STANDARD_ROW = {
         "id": "A-2",
         "en": "Yet another feature",
@@ -552,19 +560,22 @@ def test__compose_new_row_for_feature_in_inventory_without_descriptions(test_add
         "schema_sections": "",
     }
 
-    assert test_adder._compose_new_row(
-        feature_or_value="feature",
-        args_of_new_feature_or_value=(
-            "A-2",
-            "Yet another feature",
-            "Еще один признак",
-        ),
-        for_feature_profile=False,
-    ) == GOLD_STANDARD_ROW
+    assert (
+        test_adder._compose_new_row(
+            feature_or_value="feature",
+            args_of_new_feature_or_value=(
+                "A-2",
+                "Yet another feature",
+                "Еще один признак",
+            ),
+            for_feature_profile=False,
+        )
+        == GOLD_STANDARD_ROW
+    )
 
 
 def test__compose_new_row_for_feature_in_inventory_with_descriptions(test_adder):
-    
+
     GOLD_STANDARD_ROW = {
         "id": "A-2",
         "en": "Yet another feature",
@@ -576,21 +587,24 @@ def test__compose_new_row_for_feature_in_inventory_with_descriptions(test_adder)
         "schema_sections": "",
     }
 
-    assert test_adder._compose_new_row(
-        feature_or_value="feature",
-        args_of_new_feature_or_value=(
-            "A-2",
-            "Yet another feature",
-            "Еще один признак",
-            "Important feature",
-            "Важный признак",
-        ),
-        for_feature_profile=False,
-    ) == GOLD_STANDARD_ROW
+    assert (
+        test_adder._compose_new_row(
+            feature_or_value="feature",
+            args_of_new_feature_or_value=(
+                "A-2",
+                "Yet another feature",
+                "Еще один признак",
+                "Important feature",
+                "Важный признак",
+            ),
+            for_feature_profile=False,
+        )
+        == GOLD_STANDARD_ROW
+    )
 
 
 def test__compose_new_row_for_value_without_descriptions(test_adder):
-    
+
     GOLD_STANDARD_ROW = {
         "id": "A-2-3",
         "feature_id": "A-2",
@@ -600,20 +614,23 @@ def test__compose_new_row_for_value_without_descriptions(test_adder):
         "description_formatted_ru": "",
     }
 
-    assert test_adder._compose_new_row(
-        feature_or_value="value",
-        args_of_new_feature_or_value=(
-            "A-2-3",
-            "A-2",
-            "Additional value",
-            "Дополнительное значение",
-        ),
-        for_feature_profile=False,
-    ) == GOLD_STANDARD_ROW
+    assert (
+        test_adder._compose_new_row(
+            feature_or_value="value",
+            args_of_new_feature_or_value=(
+                "A-2-3",
+                "A-2",
+                "Additional value",
+                "Дополнительное значение",
+            ),
+            for_feature_profile=False,
+        )
+        == GOLD_STANDARD_ROW
+    )
 
 
 def test__compose_new_row_for_value_with_descriptions(test_adder):
-    
+
     GOLD_STANDARD_ROW = {
         "id": "A-2-3",
         "feature_id": "A-2",
@@ -623,22 +640,25 @@ def test__compose_new_row_for_value_with_descriptions(test_adder):
         "description_formatted_ru": "Важное значение",
     }
 
-    assert test_adder._compose_new_row(
-        feature_or_value="value",
-        args_of_new_feature_or_value=(
-            "A-2-3",
-            "A-2",
-            "Additional value",
-            "Дополнительное значение",
-            "Important value",
-            "Важное значение",
-        ),
-        for_feature_profile=False,
-    ) == GOLD_STANDARD_ROW
+    assert (
+        test_adder._compose_new_row(
+            feature_or_value="value",
+            args_of_new_feature_or_value=(
+                "A-2-3",
+                "A-2",
+                "Additional value",
+                "Дополнительное значение",
+                "Important value",
+                "Важное значение",
+            ),
+            for_feature_profile=False,
+        )
+        == GOLD_STANDARD_ROW
+    )
 
 
 def test__compose_new_row_for_feature_in_feature_profile(test_adder):
-    
+
     GOLD_STANDARD_ROW = {
         "feature_id": "A-2",
         "feature_name_ru": "Важный признак",
@@ -653,65 +673,92 @@ def test__compose_new_row_for_feature_in_feature_profile(test_adder):
     # which, for each profile, will be filled with a value (and, perhaps, a description)
     # manually
 
-    assert test_adder._compose_new_row(
-        feature_or_value="feature",
-        args_of_new_feature_or_value=(
-            "A-2",
-            "Важный признак",
-        ),
-        for_feature_profile=True,
-    ) == GOLD_STANDARD_ROW
+    assert (
+        test_adder._compose_new_row(
+            feature_or_value="feature",
+            args_of_new_feature_or_value=(
+                "A-2",
+                "Важный признак",
+            ),
+            for_feature_profile=True,
+        )
+        == GOLD_STANDARD_ROW
+    )
 
 
 def test__get_line_number_where_to_insert_feature_in_inventory_not_last_in_category(test_adder):
-    
-    assert test_adder._get_line_number_where_to_insert(
-        feature_or_value="feature",
-        new_feature_or_value_id="A-17",
-        for_feature_profile=False,
-    ) == 18
+
+    assert (
+        test_adder._get_line_number_where_to_insert(
+            feature_or_value="feature",
+            new_feature_or_value_id="A-17",
+            for_feature_profile=False,
+        )
+        == 18
+    )
 
 
 def test__get_line_number_where_to_insert_feature_in_inventory_last_in_category(test_adder):
-    
-    assert test_adder._get_line_number_where_to_insert(
-        feature_or_value="feature",
-        new_feature_or_value_id="C-3",
-        for_feature_profile=False,
-    ) == 39
+
+    assert (
+        test_adder._get_line_number_where_to_insert(
+            feature_or_value="feature",
+            new_feature_or_value_id="C-3",
+            for_feature_profile=False,
+        )
+        == 39
+    )
 
 
-def test__get_line_number_where_to_insert_one_listed_value_in_inventory_not_last_in_feature(test_adder):
+def test__get_line_number_where_to_insert_one_listed_value_in_inventory_not_last_in_feature(
+    test_adder,
+):
 
-    assert test_adder._get_line_number_where_to_insert(
-        feature_or_value="value",
-        new_feature_or_value_id="A-7-2",
-        for_feature_profile=False,
-    ) == 34
-
-
-def test__get_line_number_where_to_insert_one_listed_value_in_inventory_last_in_feature(test_adder):
-
-    assert test_adder._get_line_number_where_to_insert(
-        feature_or_value="value",
-        new_feature_or_value_id="A-21-17",
-        for_feature_profile=False,
-    ) == 170
+    assert (
+        test_adder._get_line_number_where_to_insert(
+            feature_or_value="value",
+            new_feature_or_value_id="A-7-2",
+            for_feature_profile=False,
+        )
+        == 34
+    )
 
 
-def test__get_line_number_where_to_insert_several_listed_values_in_inventory_not_last_in_category(test_adder):
+def test__get_line_number_where_to_insert_one_listed_value_in_inventory_last_in_feature(
+    test_adder,
+):
 
-    assert test_adder._get_line_number_where_to_insert(
-        feature_or_value="feature",
-        new_feature_or_value_id="D-3",
-        for_feature_profile=True,
-    ) == 19
+    assert (
+        test_adder._get_line_number_where_to_insert(
+            feature_or_value="value",
+            new_feature_or_value_id="A-21-17",
+            for_feature_profile=False,
+        )
+        == 170
+    )
+
+
+def test__get_line_number_where_to_insert_several_listed_values_in_inventory_not_last_in_category(
+    test_adder,
+):
+
+    assert (
+        test_adder._get_line_number_where_to_insert(
+            feature_or_value="feature",
+            new_feature_or_value_id="D-3",
+            for_feature_profile=True,
+        )
+        == 19
+    )
 
 
 def test__get_line_number_where_to_insert_feature_in_feature_profiles_last_in_category(test_adder):
 
-    assert test_adder._get_line_number_where_to_insert(
-        feature_or_value="feature",
-        new_feature_or_value_id="H-10",
-        for_feature_profile=True,
-    ) == 34
+    assert (
+        test_adder._get_line_number_where_to_insert(
+            feature_or_value="feature",
+            new_feature_or_value_id="H-10",
+            for_feature_profile=True,
+        )
+        == 34
+    )
