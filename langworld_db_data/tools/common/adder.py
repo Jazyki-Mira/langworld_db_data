@@ -200,7 +200,7 @@ class Adder(ObjectWithPaths):
         category_or_feature_id: str,
         index_to_assign: int,
     ) -> str:
-        
+
         if index_to_assign is None:
             existing_indices = self._get_tuple_of_currently_available_indices(
                 category_or_feature=category_or_feature,
@@ -245,4 +245,3 @@ class Adder(ObjectWithPaths):
         for_feature_profile: bool = False,
     ) -> int:
         pass
-
