@@ -23,25 +23,7 @@ def test_adder():
     )
 
 
-def test__validate_arguments_for_adding_feature_passes_with_default_index_to_assign(test_adder):
-
-    test_adder._validate_arguments(
-        feature_or_value="feature",
-        args_of_new_feature_or_value={
-            "category_id": "C",
-            "feature_en": "feature",
-            "feature_ru": "признак",
-            "listed_values_to_add": [
-                {
-                    "en": "value",
-                    "ru": "значение",
-                },
-            ],
-        },
-    )
-
-
-def test__validate_arguments_for_adding_feature_passes_with_given_index_to_assign(test_adder):
+def test__validate_arguments_for_adding_feature_passes(test_adder):
 
     for set_of_good_args in (
         {
@@ -83,11 +65,11 @@ def test__validate_arguments_for_adding_feature_passes_with_given_index_to_assig
     ):
         test_adder._validate_arguments(
             feature_or_value="feature",
-            args_of_new_feature_or_value=set_of_good_args,
+            args_to_validate=set_of_good_args,
         )
 
 
-def test__validate_arguments_for_adding_feature_fails_with_some_obligatory_args_are_missing(
+def test__validate_arguments_for_adding_feature_fails_with_some_obligatory_args_missing(
     test_adder,
 ):
 
@@ -131,22 +113,11 @@ def test__validate_arguments_for_adding_feature_fails_with_some_obligatory_args_
             "feature_ru": "признак",
             "listed_values_to_add": [],
         },
-        {
-            "category_id": "C",
-            "feature_en": "feature",
-            "feature_ru": "признак",
-            "listed_values_to_add": [
-                {
-                    "en": "",
-                    "ru": "",
-                },
-            ],
-        },
     ):
-        with pytest.raises(AdderError, match="Some of the values passed are empty:"):
+        with pytest.raises(AdderError, match="None of the following arguments"):
             test_adder._validate_arguments(
                 feature_or_value="feature",
-                args_of_new_feature_or_value=set_of_bad_args,
+                args_to_validate=set_of_bad_args,
             )
 
 
@@ -163,7 +134,7 @@ def test__validate_arguments_for_adding_feature_fails_with_invalid_keys_in_liste
     ):
         test_adder._validate_arguments(
             feature_or_value="feature",
-            args_of_new_feature_or_value={
+            args_to_validate={
                 "category_id": "A",
                 "feature_ru": "раз",
                 "feature_en": "one",
@@ -181,11 +152,11 @@ def test__validate_arguments_for_adding_feature_fails_with_category_id_absent_fr
 
     with pytest.raises(
         AdderError,
-        match=("Category ID <X> not found in file" f" {test_adder.file_with_categories.name}"),
+        match=("Category ID X not found in file" f" {test_adder.file_with_categories.name}"),
     ):
         test_adder._validate_arguments(
             feature_or_value="feature",
-            args_of_new_feature_or_value={
+            args_to_validate={
                 "category_id": "X",
                 "feature_ru": "имя",
                 "feature_en": "name",
@@ -204,13 +175,13 @@ def test__validate_arguments_for_adding_feature_fails_with_en_or_ru_name_of_feat
 ):
 
     for en, ru in (
-        ("Stress character ", "Новый признак"),
+        ("Types of phonation", "Новый признак"),
         ("New  feature", "Типы фонации"),
     ):
-        with pytest.raises(AdderError, match="English or Russian feature name is already"):
+        with pytest.raises(AdderError, match="name is already present in"):
             test_adder._validate_arguments(
                 feature_or_value="feature",
-                args_of_new_feature_or_value={
+                args_to_validate={
                     "category_id": "A",
                     "feature_en": en,
                     "feature_ru": ru,
@@ -229,29 +200,23 @@ def test__validate_arguments_for_adding_feature_fails_with_invalid_feature_index
     for bad_feature_index in (0, -7, 418):
         with pytest.raises(
             ValueError,
-            match="Invalid index_to_assign",
+            match="Invalid index to assign",
         ):
             test_adder._validate_arguments(
                 feature_or_value="feature",
-                args_of_new_feature_or_value={
+                args_to_validate={
                     "category_id": "C",
                     "feature_en": "Something",
                     "feature_ru": "Что-нибудь",
+                    "listed_values_to_add": [
+                        {
+                            "en": "some value",
+                            "ru": "некое значение",
+                        },
+                    ],
                     "index_to_assign": bad_feature_index,
                 },
             )
-
-
-def test__validate_arguments_for_adding_value_passes_with_default_index_to_assign(test_adder):
-
-    test_adder._validate_arguments(
-        feature_or_value="value",
-        args_of_new_feature_or_value={
-            "feature_id": "A-8",
-            "value_en": "Special feature",
-            "value_ru": "Особый признак",
-        },
-    )
 
 
 def test__validate_arguments_for_adding_value_passes_with_given_index_to_assign(test_adder):
@@ -278,7 +243,7 @@ def test__validate_arguments_for_adding_value_passes_with_given_index_to_assign(
     ):
         test_adder._validate_arguments(
             feature_or_value="value",
-            args_of_new_feature_or_value=set_of_good_args,
+            args_to_validate=set_of_good_args,
         )
 
 
@@ -301,10 +266,10 @@ def test__validate_arguments_for_adding_value_fails_with_some_obligatory_args_mi
             "value_ru": "",
         },
     ):
-        with pytest.raises(AdderError, match="Some of the values passed are empty:"):
+        with pytest.raises(AdderError, match="must be empty, but an empty"):
             test_adder._validate_arguments(
                 feature_or_value="value",
-                args_of_new_feature_or_value=set_of_bad_args,
+                args_to_validate=set_of_bad_args,
             )
 
 
@@ -314,11 +279,11 @@ def test__validate_arguments_for_adding_value_fails_with_feature_id_absent_from_
 
     with pytest.raises(
         AdderError,
-        match=("Feature ID <X-68> not found in file" f" {test_adder.file_with_categories.name}"),
+        match=("Feature ID X-68 not found in file" f" {test_adder.input_file_with_features.name}"),
     ):
         test_adder._validate_arguments(
-            feature_or_value="feature",
-            args_of_new_feature_or_value={
+            feature_or_value="value",
+            args_to_validate={
                 "feature_id": "X-68",
                 "value_en": "name",
                 "value_ru": "имя",
@@ -334,10 +299,10 @@ def test__validate_arguments_for_adding_value_fails_with_en_or_ru_name_of_value_
         ("Uvular", "Новое значение"),
         ("New  value", "Увулярные"),
     ):
-        with pytest.raises(AdderError, match="English or Russian feature name is already"):
+        with pytest.raises(AdderError, match="name is already present in"):
             test_adder._validate_arguments(
                 feature_or_value="value",
-                args_of_new_feature_or_value={
+                args_to_validate={
                     "feature_id": "G-3",
                     "value_en": en,
                     "value_ru": ru,
@@ -350,11 +315,11 @@ def test__validate_arguments_for_adding_value_fails_with_invalid_index_to_assign
     for bad_feature_index in (0, -7, 418):
         with pytest.raises(
             ValueError,
-            match="Invalid index_to_assign",
+            match="Invalid index to assign",
         ):
             test_adder._validate_arguments(
-                feature_or_value="feature",
-                args_of_new_feature_or_value={
+                feature_or_value="value",
+                args_to_validate={
                     "feature_id": "C-1",
                     "value_en": "Something",
                     "value_ru": "Что-нибудь",
@@ -406,13 +371,12 @@ def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_feature
         },
     )
 
-    with pytest.raises(AdderError, match="invalid index to assign"):
-        for category_id_to_index in category_ids_to_indices:
-            test_adder._check_if_index_to_assign_is_in_list_of_applicable_indices(
-                index_to_validate=category_id_to_index["index_to_validate"],
-                category_or_feature="category",
-                category_or_feature_id=category_id_to_index["category_id"],
-            )
+    for category_id_to_index in category_ids_to_indices:
+        assert not test_adder._check_if_index_to_assign_is_in_list_of_applicable_indices(
+            index_to_validate=category_id_to_index["index_to_validate"],
+            category_or_feature="category",
+            category_or_feature_id=category_id_to_index["category_id"],
+        )
 
 
 def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_values_inventory_index_available(
@@ -458,27 +422,26 @@ def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_values_
         },
     )
 
-    with pytest.raises(AdderError, match="invalid index to assign"):
-        for feature_id_to_index in feature_ids_to_indices:
-            test_adder._check_if_index_to_assign_is_in_list_of_applicable_indices(
-                index_to_validate=feature_id_to_index["index_to_validate"],
-                category_or_feature="feature",
-                category_or_feature_id=feature_id_to_index["feature_id"],
-            )
+    for feature_id_to_index in feature_ids_to_indices:
+        assert not test_adder._check_if_index_to_assign_is_in_list_of_applicable_indices(
+            index_to_validate=feature_id_to_index["index_to_validate"],
+            category_or_feature="feature",
+            category_or_feature_id=feature_id_to_index["feature_id"],
+        )
 
 
-def test__get_range_of_currently_existing_indices_in_features_inventory(test_adder):
+def test__get_tuple_of_currently_existing_indices_in_features_inventory(test_adder):
 
-    assert test_adder._get_range_of_currently_existing_indices(
+    assert test_adder._get_tuple_of_currently_existing_indices(
         category_or_feature="category",
         category_or_feature_id="J",
     ) == (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     # Nine indices occupied, tenth is free
 
 
-def test__get_range_of_currently_existing_indices_in_listed_values_inventory(test_adder):
+def test__get_tuple_of_currently_existing_indices_in_listed_values_inventory(test_adder):
 
-    assert test_adder._get_range_of_currently_existing_indices(
+    assert test_adder._get_tuple_of_currently_existing_indices(
         category_or_feature="feature",
         category_or_feature_id="A-6",
     ) == (1, 2, 3, 4, 5, 6, 7)
