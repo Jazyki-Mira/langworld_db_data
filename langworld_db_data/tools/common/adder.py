@@ -233,10 +233,57 @@ class Adder(ObjectWithPaths):
     def _compose_new_row(
         self,
         feature_or_value: FeatureOrValue,
-        args_of_new_feature_or_value: tuple[str],
+        args: dict[str, str],
         for_feature_profile: bool = False,
     ) -> dict[str, str]:
-        pass
+        
+        feature_or_value_to_form_of_row = {
+            "feature": {
+                "for_inventory": {
+                    "id": "",
+                    "en": "",
+                    "ru": "",
+                    "description_formatted_en": "",
+                    "description_formatted_ru": "",
+                    "is_multiselect": "",
+                    "not_applicable_if": "",
+                    "schema_sections": "",
+                },
+                "for_feature_profile": {
+                        "feature_id": "",
+                        "feature_name_ru": "",
+                        "value_type": "not_stated",
+                        "value_id": "",
+                        "value_ru": "",
+                        "comment_ru": "",
+                        "comment_en": "",
+                        "page_numbers": "",
+                }
+            },
+            "value": {
+                "for_inventory": {
+                    "id": "",
+                    "feature_id": "",
+                    "en": "",
+                    "ru": "",
+                    "description_formatted_en": "",
+                    "description_formatted_ru": "",
+                }
+            }
+        }
+
+        if for_feature_profile:
+            form_of_row = feature_or_value_to_form_of_row[feature_or_value]["for_feature_profile"]
+        elif not for_feature_profile:
+            form_of_row = feature_or_value_to_form_of_row[feature_or_value]["for_inventory"]
+        
+        for key in form_of_row.keys():
+            if key not in args.keys():
+                continue
+
+            form_of_row[key] = args[key]
+
+        return form_of_row
 
     def _get_line_number_where_to_insert(
         self,

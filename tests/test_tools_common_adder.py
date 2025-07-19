@@ -526,11 +526,11 @@ def test__compose_new_row_for_feature_in_inventory_without_descriptions(test_add
     assert (
         test_adder._compose_new_row(
             feature_or_value="feature",
-            args_of_new_feature_or_value=(
-                "A-2",
-                "Yet another feature",
-                "Еще один признак",
-            ),
+            args={
+                "id": "A-2",
+                "en": "Yet another feature",
+                "ru": "Еще один признак",
+            },
             for_feature_profile=False,
         )
         == GOLD_STANDARD_ROW
@@ -553,13 +553,13 @@ def test__compose_new_row_for_feature_in_inventory_with_descriptions(test_adder)
     assert (
         test_adder._compose_new_row(
             feature_or_value="feature",
-            args_of_new_feature_or_value=(
-                "A-2",
-                "Yet another feature",
-                "Еще один признак",
-                "Important feature",
-                "Важный признак",
-            ),
+            args={
+                "id": "A-2",
+                "en": "Yet another feature",
+                "ru": "Еще один признак",
+                "description_formatted_en": "Important feature",
+                "description_formatted_ru": "Важный признак",
+            },
             for_feature_profile=False,
         )
         == GOLD_STANDARD_ROW
@@ -580,12 +580,12 @@ def test__compose_new_row_for_value_without_descriptions(test_adder):
     assert (
         test_adder._compose_new_row(
             feature_or_value="value",
-            args_of_new_feature_or_value=(
-                "A-2-3",
-                "A-2",
-                "Additional value",
-                "Дополнительное значение",
-            ),
+            args={
+                "id": "A-2-3",
+                "feature_id": "A-2",
+                "en": "Additional value",
+                "ru": "Дополнительное значение",
+            },
             for_feature_profile=False,
         )
         == GOLD_STANDARD_ROW
@@ -606,14 +606,14 @@ def test__compose_new_row_for_value_with_descriptions(test_adder):
     assert (
         test_adder._compose_new_row(
             feature_or_value="value",
-            args_of_new_feature_or_value=(
-                "A-2-3",
-                "A-2",
-                "Additional value",
-                "Дополнительное значение",
-                "Important value",
-                "Важное значение",
-            ),
+            args={
+                "id": "A-2-3",
+                "feature_id": "A-2",
+                "en": "Additional value",
+                "ru": "Дополнительное значение",
+                "description_formatted_en": "Important value",
+                "description_formatted_ru": "Важное значение",
+            },
             for_feature_profile=False,
         )
         == GOLD_STANDARD_ROW
@@ -639,10 +639,10 @@ def test__compose_new_row_for_feature_in_feature_profile(test_adder):
     assert (
         test_adder._compose_new_row(
             feature_or_value="feature",
-            args_of_new_feature_or_value=(
-                "A-2",
-                "Важный признак",
-            ),
+            args={
+                "feature_id": "A-2",
+                "feature_name_ru": "Важный признак",
+            },
             for_feature_profile=True,
         )
         == GOLD_STANDARD_ROW
