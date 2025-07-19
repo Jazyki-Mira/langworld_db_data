@@ -236,7 +236,7 @@ class Adder(ObjectWithPaths):
         args: dict[str, str],
         for_feature_profile: bool = False,
     ) -> dict[str, str]:
-        
+
         feature_or_value_to_form_of_row = {
             "feature": {
                 "for_inventory": {
@@ -250,15 +250,15 @@ class Adder(ObjectWithPaths):
                     "schema_sections": "",
                 },
                 "for_feature_profile": {
-                        "feature_id": "",
-                        "feature_name_ru": "",
-                        "value_type": "not_stated",
-                        "value_id": "",
-                        "value_ru": "",
-                        "comment_ru": "",
-                        "comment_en": "",
-                        "page_numbers": "",
-                }
+                    "feature_id": "",
+                    "feature_name_ru": "",
+                    "value_type": "not_stated",
+                    "value_id": "",
+                    "value_ru": "",
+                    "comment_ru": "",
+                    "comment_en": "",
+                    "page_numbers": "",
+                },
             },
             "value": {
                 "for_inventory": {
@@ -269,14 +269,14 @@ class Adder(ObjectWithPaths):
                     "description_formatted_en": "",
                     "description_formatted_ru": "",
                 }
-            }
+            },
         }
 
         if for_feature_profile:
             form_of_row = feature_or_value_to_form_of_row[feature_or_value]["for_feature_profile"]
         elif not for_feature_profile:
             form_of_row = feature_or_value_to_form_of_row[feature_or_value]["for_inventory"]
-        
+
         for key in form_of_row.keys():
             if key not in args.keys():
                 continue
