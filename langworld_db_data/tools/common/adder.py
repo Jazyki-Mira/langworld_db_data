@@ -101,7 +101,6 @@ class Adder(ObjectWithPaths):
                     f" - must be empty, but an empty {arg} was given"
                 )
 
-
     def _check_that_category_or_feature_where_to_add_exists(
         self,
         feature_or_value: FeatureOrValue,
@@ -139,7 +138,6 @@ class Adder(ObjectWithPaths):
                 f"{level_of_check} ID {arg_that_must_exist} not found in file"
                 f" {file_to_check_against.name}"
             )
-    
 
     def _check_that_en_and_ru_are_not_already_used(
         self,
@@ -176,7 +174,6 @@ class Adder(ObjectWithPaths):
                 f"{args_to_validate[english_name]}"
             )
 
-
     def _check_validity_of_keys_in_passed_listed_values(
         self,
         listed_values_to_add: list[dict[str, str]],
@@ -187,7 +184,6 @@ class Adder(ObjectWithPaths):
                     f"Each listed value must have keys 'en' and 'ru'. Your value: {item}"
                 )
 
-    
     def _check_if_index_to_assign_is_in_list_of_applicable_indices(
         self,
         index_to_validate: int,
