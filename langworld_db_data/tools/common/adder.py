@@ -26,7 +26,7 @@ class Adder(ObjectWithPaths):
         self,
         feature_or_value: FeatureOrValue,
         args_to_validate: dict[str, Union[str, int, None]],
-    ) -> bool:
+    ) -> None:
         """
         Validate arguments passed for adding new feature or value.
 
@@ -35,7 +35,56 @@ class Adder(ObjectWithPaths):
         values.
         """
 
-        # First: check that all obligatory args are not empty
+        self._check_that_all_obligatory_args_are_not_empty(
+            feature_or_value=feature_or_value,
+            args_to_validate=args_to_validate,
+        )
+
+        self._check_that_category_or_feature_where_to_add_exists(
+            feature_or_value=feature_or_value,
+            args_to_validate=args_to_validate,
+        )
+
+        self._check_that_en_and_ru_are_not_already_used(
+            feature_or_value=feature_or_value,
+            args_to_validate=args_to_validate,
+        )
+
+        # Additional check for adding features only is checking well-formedness of
+        # listed values to add
+        if feature_or_value == "feature":
+            self._check_validity_of_keys_in_passed_listed_values(
+                listed_values_to_add=args_to_validate["listed_values_to_add"],
+            )
+
+        # Fourth: check validity of index_to_assign
+        if args_to_validate["index_to_assign"] is not None:
+            category_or_feature = None
+            category_or_feature_id = ""
+
+            if feature_or_value == "feature":
+                category_or_feature = "category"
+                category_or_feature_id = args_to_validate["category_id"]
+
+            elif feature_or_value == "value":
+                category_or_feature = "feature"
+                category_or_feature_id = args_to_validate["feature_id"]
+
+            if not self._check_if_index_to_assign_is_in_list_of_applicable_indices(
+                index_to_validate=args_to_validate["index_to_assign"],
+                category_or_feature=category_or_feature,
+                category_or_feature_id=category_or_feature_id,
+            ):
+                raise ValueError(
+                    f"Invalid index to assign: {args_to_validate['index_to_assign']}. "
+                    "It is either less than 1 or greater than the current allowed maximum."
+                )
+
+    def _check_that_all_obligatory_args_are_not_empty(
+        self,
+        feature_or_value: FeatureOrValue,
+        args_to_validate: dict[str, Union[str, int, None]],
+    ) -> None:
         feature_or_value_to_args_that_must_not_be_empty = {
             "feature": ("category_id", "feature_en", "feature_ru", "listed_values_to_add"),
             "value": ("feature_id", "value_en", "value_ru"),
@@ -52,8 +101,12 @@ class Adder(ObjectWithPaths):
                     f" - must be empty, but an empty {arg} was given"
                 )
 
-        # Second: check the presence of category where the new feature
-        # will be added or of feature where the new value will be added
+
+    def _check_that_category_or_feature_where_to_add_exists(
+        self,
+        feature_or_value: FeatureOrValue,
+        args_to_validate: dict[str, Union[str, int, None]],
+    ) -> None:
         feature_or_value_to_arg_that_must_exist = {
             "feature": {
                 "level_of_check": "Category",
@@ -86,9 +139,13 @@ class Adder(ObjectWithPaths):
                 f"{level_of_check} ID {arg_that_must_exist} not found in file"
                 f" {file_to_check_against.name}"
             )
+    
 
-        # Third: check that English and Russian names of new feature/value are
-        # not already used by some other feature/value
+    def _check_that_en_and_ru_are_not_already_used(
+        self,
+        feature_or_value: FeatureOrValue,
+        args_to_validate: dict[str, Union[str, int, None]],
+    ) -> None:
         feature_or_value_to_args_that_must_not_be_occupied = {
             "feature": {
                 "en": "feature_en",
@@ -119,38 +176,18 @@ class Adder(ObjectWithPaths):
                 f"{args_to_validate[english_name]}"
             )
 
-        # Additional check for adding features only is checking well-formedness of
-        # listed values to add
-        if feature_or_value == "feature":
-            for item in args_to_validate["listed_values_to_add"]:
-                if not ("en" in item and "ru" in item):
-                    raise AdderError(
-                        f"{feature_or_value.title()} must have keys 'en' and 'ru'. Your value: {item}"
-                    )
 
-        # Fourth: check validity of index_to_assign
-        if args_to_validate["index_to_assign"] is not None:
-            category_or_feature = None
-            category_or_feature_id = ""
-
-            if feature_or_value == "feature":
-                category_or_feature = "category"
-                category_or_feature_id = args_to_validate["category_id"]
-
-            elif feature_or_value == "value":
-                category_or_feature = "feature"
-                category_or_feature_id = args_to_validate["feature_id"]
-
-            if not self._check_if_index_to_assign_is_in_list_of_applicable_indices(
-                index_to_validate=args_to_validate["index_to_assign"],
-                category_or_feature=category_or_feature,
-                category_or_feature_id=category_or_feature_id,
-            ):
-                raise ValueError(
-                    f"Invalid index to assign: {args_to_validate['index_to_assign']}. "
-                    "It is either less than 1 or greater than the current allowed maximum."
+    def _check_validity_of_keys_in_passed_listed_values(
+        self,
+        listed_values_to_add: list[dict[str, str]],
+    ) -> None:
+        for item in listed_values_to_add:
+            if not ("en" in item and "ru" in item):
+                raise AdderError(
+                    f"Each listed value must have keys 'en' and 'ru'. Your value: {item}"
                 )
 
+    
     def _check_if_index_to_assign_is_in_list_of_applicable_indices(
         self,
         index_to_validate: int,

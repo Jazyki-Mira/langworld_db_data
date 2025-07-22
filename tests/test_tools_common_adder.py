@@ -69,7 +69,7 @@ def test__validate_arguments_for_adding_feature_passes(test_adder):
         )
 
 
-def test__validate_arguments_for_adding_feature_fails_with_some_obligatory_args_missing(
+def test__check_that_all_obligatory_args_are_not_empty_for_feature_fails(
     test_adder,
 ):
 
@@ -115,7 +115,7 @@ def test__validate_arguments_for_adding_feature_fails_with_some_obligatory_args_
         },
     ):
         with pytest.raises(AdderError, match="None of the following arguments"):
-            test_adder._validate_arguments(
+            test_adder._check_that_all_obligatory_args_are_not_empty(
                 feature_or_value="feature",
                 args_to_validate=set_of_bad_args,
             )
@@ -128,12 +128,11 @@ def test__validate_arguments_for_adding_feature_fails_with_invalid_keys_in_liste
     with pytest.raises(
         AdderError,
         match=(
-            "must have keys 'en' and 'ru'. Your value: {'this': 'should fail', 'en':"
-            " 'this is fine'}"
+            "Each listed value must have keys 'en' and 'ru'. Your "
+            "value: {'this': 'should fail', 'en': 'this is fine'}"
         ),
     ):
-        test_adder._validate_arguments(
-            feature_or_value="feature",
+        test_adder._check_validity_of_keys_in_passed_listed_values(
             args_to_validate={
                 "category_id": "A",
                 "feature_ru": "раз",
@@ -146,7 +145,7 @@ def test__validate_arguments_for_adding_feature_fails_with_invalid_keys_in_liste
         )
 
 
-def test__validate_arguments_for_adding_feature_fails_with_category_id_absent_from_inventory(
+def test__check_that_category_or_feature_where_to_add_exists_fails_with_non_existing_category(
     test_adder,
 ):
 
@@ -154,7 +153,7 @@ def test__validate_arguments_for_adding_feature_fails_with_category_id_absent_fr
         AdderError,
         match=("Category ID X not found in file" f" {test_adder.file_with_categories.name}"),
     ):
-        test_adder._validate_arguments(
+        test_adder._check_that_category_or_feature_where_to_add_exists(
             feature_or_value="feature",
             args_to_validate={
                 "category_id": "X",
@@ -170,7 +169,7 @@ def test__validate_arguments_for_adding_feature_fails_with_category_id_absent_fr
         )
 
 
-def test__validate_arguments_for_adding_feature_fails_with_en_or_ru_name_of_feature_already_occupied(
+def test__check_that_en_and_ru_are_not_already_used_in_features_inventory_fails(
     test_adder,
 ):
 
@@ -179,7 +178,7 @@ def test__validate_arguments_for_adding_feature_fails_with_en_or_ru_name_of_feat
         ("New  feature", "Типы фонации"),
     ):
         with pytest.raises(AdderError, match="name is already present in"):
-            test_adder._validate_arguments(
+            test_adder._check_that_en_and_ru_are_not_already_used(
                 feature_or_value="feature",
                 args_to_validate={
                     "category_id": "A",
@@ -219,7 +218,7 @@ def test__validate_arguments_for_adding_feature_fails_with_invalid_feature_index
             )
 
 
-def test__validate_arguments_for_adding_value_passes_with_given_index_to_assign(test_adder):
+def test__validate_arguments_for_adding_value_passes(test_adder):
 
     for set_of_good_args in (
         {
@@ -247,7 +246,7 @@ def test__validate_arguments_for_adding_value_passes_with_given_index_to_assign(
         )
 
 
-def test__validate_arguments_for_adding_value_fails_with_some_obligatory_args_missing(test_adder):
+def test__check_that_all_obligatory_args_are_not_empty_for_value_fails(test_adder):
 
     for set_of_bad_args in (
         {
@@ -267,13 +266,13 @@ def test__validate_arguments_for_adding_value_fails_with_some_obligatory_args_mi
         },
     ):
         with pytest.raises(AdderError, match="must be empty, but an empty"):
-            test_adder._validate_arguments(
+            test_adder._check_that_all_obligatory_args_are_not_empty(
                 feature_or_value="value",
                 args_to_validate=set_of_bad_args,
             )
 
 
-def test__validate_arguments_for_adding_value_fails_with_feature_id_absent_from_inventory(
+def test__check_that_category_or_feature_where_to_add_exists_fails_with_non_existing_feature(
     test_adder,
 ):
 
@@ -281,7 +280,7 @@ def test__validate_arguments_for_adding_value_fails_with_feature_id_absent_from_
         AdderError,
         match=("Feature ID X-68 not found in file" f" {test_adder.input_file_with_features.name}"),
     ):
-        test_adder._validate_arguments(
+        test_adder._check_that_category_or_feature_where_to_add_exists(
             feature_or_value="value",
             args_to_validate={
                 "feature_id": "X-68",
@@ -291,7 +290,7 @@ def test__validate_arguments_for_adding_value_fails_with_feature_id_absent_from_
         )
 
 
-def test__validate_arguments_for_adding_value_fails_with_en_or_ru_name_of_value_already_occupied(
+def test__check_that_en_and_ru_are_not_already_used_in_values_inventory_fails(
     test_adder,
 ):
 
@@ -300,7 +299,7 @@ def test__validate_arguments_for_adding_value_fails_with_en_or_ru_name_of_value_
         ("New  value", "Увулярные"),
     ):
         with pytest.raises(AdderError, match="name is already present in"):
-            test_adder._validate_arguments(
+            test_adder._check_that_en_and_ru_are_not_already_used(
                 feature_or_value="value",
                 args_to_validate={
                     "feature_id": "G-3",
@@ -326,6 +325,9 @@ def test__validate_arguments_for_adding_value_fails_with_invalid_index_to_assign
                     "index_to_assign": bad_feature_index,
                 },
             )
+
+
+# End of tests for validation
 
 
 def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_features_inventory_index_available(
