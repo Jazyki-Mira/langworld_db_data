@@ -121,7 +121,7 @@ def test__check_that_all_obligatory_args_are_not_empty_for_feature_fails(
             )
 
 
-def test__validate_arguments_for_adding_feature_fails_with_invalid_keys_in_listed_values_to_add(
+def test__check_validity_of_keys_in_passed_listed_values_fails(
     test_adder,
 ):
 
@@ -133,15 +133,10 @@ def test__validate_arguments_for_adding_feature_fails_with_invalid_keys_in_liste
         ),
     ):
         test_adder._check_validity_of_keys_in_passed_listed_values(
-            args_to_validate={
-                "category_id": "A",
-                "feature_ru": "раз",
-                "feature_en": "one",
-                "listed_values_to_add": [
-                    {"ru": "раз", "en": "this is fine"},
-                    {"this": "should fail", "en": "this is fine"},
-                ],
-            },
+            listed_values_to_add=[
+                {"ru": "раз", "en": "this is fine"},
+                {"this": "should fail", "en": "this is fine"},
+            ]
         )
 
 
@@ -194,14 +189,14 @@ def test__check_that_en_and_ru_are_not_already_used_in_features_inventory_fails(
             )
 
 
-def test__validate_arguments_for_adding_feature_fails_with_invalid_feature_index(test_adder):
+def test__check_validity_of_index_to_assign_for_feature_fails(test_adder):
 
     for bad_feature_index in (0, -7, 418):
         with pytest.raises(
             ValueError,
             match="Invalid index to assign",
         ):
-            test_adder._validate_arguments(
+            test_adder._check_validity_of_index_to_assign(
                 feature_or_value="feature",
                 args_to_validate={
                     "category_id": "C",
@@ -309,7 +304,7 @@ def test__check_that_en_and_ru_are_not_already_used_in_values_inventory_fails(
             )
 
 
-def test__validate_arguments_for_adding_value_fails_with_invalid_index_to_assign(test_adder):
+def test__check_validity_of_index_to_assign_for_value_invalid(test_adder):
 
     for bad_feature_index in (0, -7, 418):
         with pytest.raises(
@@ -325,9 +320,6 @@ def test__validate_arguments_for_adding_value_fails_with_invalid_index_to_assign
                     "index_to_assign": bad_feature_index,
                 },
             )
-
-
-# End of tests for validation
 
 
 def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_features_inventory_index_available(

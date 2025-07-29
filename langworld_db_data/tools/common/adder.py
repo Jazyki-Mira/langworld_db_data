@@ -50,35 +50,15 @@ class Adder(ObjectWithPaths):
             args_to_validate=args_to_validate,
         )
 
-        # Additional check for adding features only is checking well-formedness of
-        # listed values to add
         if feature_or_value == "feature":
             self._check_validity_of_keys_in_passed_listed_values(
                 listed_values_to_add=args_to_validate["listed_values_to_add"],
             )
 
-        # Fourth: check validity of index_to_assign
-        if args_to_validate["index_to_assign"] is not None:
-            category_or_feature = None
-            category_or_feature_id = ""
-
-            if feature_or_value == "feature":
-                category_or_feature = "category"
-                category_or_feature_id = args_to_validate["category_id"]
-
-            elif feature_or_value == "value":
-                category_or_feature = "feature"
-                category_or_feature_id = args_to_validate["feature_id"]
-
-            if not self._check_if_index_to_assign_is_in_list_of_applicable_indices(
-                index_to_validate=args_to_validate["index_to_assign"],
-                category_or_feature=category_or_feature,
-                category_or_feature_id=category_or_feature_id,
-            ):
-                raise ValueError(
-                    f"Invalid index to assign: {args_to_validate['index_to_assign']}. "
-                    "It is either less than 1 or greater than the current allowed maximum."
-                )
+        self._check_validity_of_index_to_assign(
+            feature_or_value=feature_or_value,
+            args_to_validate=args_to_validate,
+        )
 
     def _check_that_all_obligatory_args_are_not_empty(
         self,
@@ -182,6 +162,34 @@ class Adder(ObjectWithPaths):
             if not ("en" in item and "ru" in item):
                 raise AdderError(
                     f"Each listed value must have keys 'en' and 'ru'. Your value: {item}"
+                )
+
+    def _check_validity_of_index_to_assign(
+        self,
+        feature_or_value: FeatureOrValue,
+        args_to_validate: dict[str, Union[str, int, None]],
+    ) -> None:
+        
+        if args_to_validate["index_to_assign"] is not None:
+            category_or_feature = None
+            category_or_feature_id = ""
+
+            if feature_or_value == "feature":
+                category_or_feature = "category"
+                category_or_feature_id = args_to_validate["category_id"]
+
+            elif feature_or_value == "value":
+                category_or_feature = "feature"
+                category_or_feature_id = args_to_validate["feature_id"]
+
+            if not self._check_if_index_to_assign_is_in_list_of_applicable_indices(
+                index_to_validate=args_to_validate["index_to_assign"],
+                category_or_feature=category_or_feature,
+                category_or_feature_id=category_or_feature_id,
+            ):
+                raise ValueError(
+                    f"Invalid index to assign: {args_to_validate['index_to_assign']}. "
+                    "It is either less than 1 or greater than the current allowed maximum."
                 )
 
     def _check_if_index_to_assign_is_in_list_of_applicable_indices(
