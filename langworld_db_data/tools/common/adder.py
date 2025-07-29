@@ -169,7 +169,7 @@ class Adder(ObjectWithPaths):
         feature_or_value: FeatureOrValue,
         args_to_validate: dict[str, Union[str, int, None]],
     ) -> None:
-        
+
         if args_to_validate["index_to_assign"] is not None:
             category_or_feature = None
             category_or_feature_id = ""
