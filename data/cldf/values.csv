@@ -16074,10 +16074,10 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16073,moghol,A-12,No vowel opposition in ATR,A-12-1,,,Противопоставление гласных по продвинутости корня языка отсутствует,
 16074,moghol,A-13,Only diphthongs present,A-13-2,,,Только дифтонги,
 16075,moghol,A-16,"Plosives, fricatives and affricates",A-16-3,,,"Взрывные, фрикативные и аффрикаты",
-16076,moghol,A-17,"Labial, coronal, palatal, guttural and laryngeal",A-17-2,,,"Губные, переднеязычные, палатальные, велярные/увулярные и ларингальные",?
+16076,moghol,A-17,"Labial, coronal, palatal, guttural and laryngeal",A-17-2,,,"Губные, переднеязычные, палатальные, велярные/увулярные и ларингальные","Вместо термина ""велярные"" используется термин ""постпалатальные""."
 16077,moghol,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
 16078,moghol,A-19,Alveolar and postalveolar,A-19-16,,,Альвеолярные и постальвеолярные,
-16079,moghol,A-20,Velar and uvular,A-20-3,,,Велярные и увулярные,?
+16079,moghol,A-20,Velar and uvular,A-20-3,,,Велярные и увулярные,
 16080,moghol,A-21,Only glottal,A-21-2,,,Только глоттальные,
 16081,moghol,A-22,Absent,A-22-1,,,Отсутствуют,
 16082,moghol,A-23,"Nasal, liquid and vibrant",A-23-2,,,"Назальные, плавные и вибранты",
