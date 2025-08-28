@@ -102,6 +102,8 @@ oroch,language,0,0,Oroch,орочский,,,,,south_east_tung,oac,oroc1248,orc,o
 orok,language,0,0,Orok,орокский,,,,"ороцко, орунчун, голунчун, элунчун, ороньчо, орокко, орокхо, ороко, оронта, олочи, ульча, орныр, тозунг, тазунг, орочанский, ульчан, ульчар, нани",south_east_tung,oaa,orok1265,ork,orok1265,,52.3437,143.0557,rus,3,201,1,,
 pao_an,language,0,0,Pao-an,баоаньский,,,,,mongol,peh,bona1250,bao,bona1250,bona1250,35.7102,102.8889,chn,3,29,1,,
 santa,language,0,0,Dongxiang,дунсянский,,,,"санта, саньта",mongol,sce,dong1285,sta,dong1285,dong1285,36.0333,103.8,chn,3,60,1,,
+issyk_kul_kalmyk,language,0,0,Issyk-kul Kalmyk,иссык-кульских калмыков,,,,"кара-калмак, сарт-калмак, язык каракольских калмыков, язык иссык-кульских сарт-калмаков, язык иссык-кульских калмыков",mongol,,sart1247,kiq,,,42.42,78.33,kgz,3,67,1,,
+kidan,language,1,0,Kidan,киданьский,,,,,mongol,zkt,kita1247,,,,44.38,115.99,chn,3,87,1,,
 shira_yugur,language,0,0,East Yugur,шира югуров,,,,шираюгурский,mongol,yuy,east2337,shy,,east2337,39.1002,99.2065,chn,3,148,1,,
 solon,language,0,0,Solon,солонский,,,,,north_tung,,solo1263,sol,,,48.166,119.4873,chn,3,226,1,,
 udihe,language,0,0,Udihe,удэгейский,,,"Udihe, Udekhe, Udeghe",,south_east_tung,ude,udih1248,udh,udih1248,udih1248,47.6209,136.0903,rus,3,236,1,,
