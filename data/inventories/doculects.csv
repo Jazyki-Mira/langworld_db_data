@@ -270,7 +270,7 @@ yurt_tatar,language,0,0,Yurt Tatar,юртовских татар,,,,ногайс
 bojnurdi,language,0,0,Bojnurdi,боджнурди,,,"turki, turki bojnurdi",,oghuz_turk,,,,32.48,58.11,irn,2,216,1,,
 krymchak,language,0,0,Krymchak,крымчакский,,,,чагатай,kipchak,jct,krym1236,kym,34.10,34.51,rus,2,309,1,,
 baraba_tatar,language,0,0,Baraba Tatar,барабинских татар,,,,"барабинский диалект татарского языка, барабинское наречие",kipchak,tat,bara1273,ttb,55.33,78.33,rus,2,199,1,,
-chulym_turkic,language,0,0,Chulym Turkic,чулымско-тюркский,,,,"чулымское наречие, язык чулымских татар",,,chul1246,,56.87, 86.59,rus,2,491,1,,
+chulym_turkic,language,0,0,Chulym Turkic,чулымско-тюркский,,,,"чулымское наречие, язык чулымских татар",sayan_turk,,chul1246,,56.87, 86.59,rus,2,491,1,,
 khazar,language,1,0,Khazar,хазарский,,,,,oghur,zkz,,,45.41,47.51,rus,2,138,1,,
 hunnish,language,1,0,Hunnish,гуннов,,,Chunni/Hunni,хунны,oghur,xhc,,,44.54,19.01,hun,2,52,1,,
 jurchen,language,1,0,Jurchen,чжурчжэньский,,,,,south_tung,juc,jurc1239,jur,33.0071,114.3624,chn,,,0,,
