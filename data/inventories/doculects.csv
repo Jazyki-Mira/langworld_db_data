@@ -195,6 +195,7 @@ adyghe,language,0,0,Adyghe,адыгейский,,,"Lower-Adyghe, Kiach","ниж�
 agul,language,0,0,Aghul,агульский,,,,,lezg,agx,aghu1253,agl,41.7518,47.6875,rus,9,398,1,,
 akhvakh,language,0,0,Akhvakh,ахвахский,,,,,andi,akv,akhv1239,axv,42.472,46.3238,rus,9,252,1,,
 andi,language,0,0,Andi,андийский,,,,,andi,ani,andi1255,anx,42.7308,46.2963,rus,9,220,1,,
+agvan,language,1,0,Agvan,агванский,,,,кавказско-албанский,lezg,,,,40.37,47.13,rus,9,459,1,,
 avar,language,0,0,Avar,аварский,,,,,avar_andi,ava,avar1256,ava,42.4801,46.8017,rus,9,203,1,,
 bagvalal,language,0,0,Bagvalal,багвалинский,,,Bagulal,"багваланьский, багулальский, кванадинский",andi,kva,bagv1239,bgv,42.5247,46.192,rus,9,269,1,,
 bats,language,0,0,Bats,бацбийский,,,"Batsi, Batsbi, Batsb, Batsaw, Tsova-Tush","цовский, цоватуншинский, бадоевский",nakh,bbl,bats1242,ttu,42.0982,45.0878,geo,9,196,1,,
