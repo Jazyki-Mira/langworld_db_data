@@ -332,22 +332,16 @@ class Adder(ObjectWithPaths):
         new_feature_or_value_id: str,
         for_feature_profile: bool = False,
     ) -> int:
-        
+
         if feature_or_value == "feature":
-            rows = read_dicts_from_csv(
-                path_to_file=self.input_file_with_features
-            )
+            rows = read_dicts_from_csv(path_to_file=self.input_file_with_features)
         else:
-            rows = read_dicts_from_csv(
-                path_to_file=self.input_file_with_listed_values
-            )
-        
+            rows = read_dicts_from_csv(path_to_file=self.input_file_with_listed_values)
+
         lookup_column = "id"
         if for_feature_profile:
             lookup_column = "feature_id"
-        
+
         for row in rows:
             if row[lookup_column] != new_feature_or_value_id:
                 continue
-
-            
