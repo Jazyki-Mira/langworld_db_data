@@ -195,6 +195,7 @@ adyghe,Adyghe,,44.9181,39.7485,adyg1241,ady,адыгейский
 agul,Aghul,,41.7518,47.6875,aghu1253,agx,агульский
 akhvakh,Akhvakh,,42.472,46.3238,akhv1239,akv,ахвахский
 andi,Andi,,42.7308,46.2963,andi1255,ani,андийский
+agvan,Agvan,,40.37,47.13,,,агванский
 avar,Avar,,42.4801,46.8017,avar1256,ava,аварский
 bagvalal,Bagvalal,,42.5247,46.192,bagv1239,kva,багвалинский
 bats,Bats,,42.0982,45.0878,bats1242,bbl,бацбийский
@@ -267,6 +268,12 @@ fuyu_kyrgyz,Fuyu Kyrgyz,,47.8,124.2,,,фуюйских кыргызов
 khalaj,Khalaj,,34.3751,50.3063,turk1303,klj,халаджский
 khorasani_turkic,Khorasani Turkic,,36.6596,57.854,khor1269,kmz,хорасано-тюркский
 yurt_tatar,Yurt Tatar,,46.3943,48.3288,yurt1234,,юртовских татар
+bojnurdi,Bojnurdi,,32.48,58.11,,,боджнурди
+krymchak,Krymchak,,34.10,34.51,krym1236,jct,крымчакский
+baraba_tatar,Baraba Tatar,,55.33,78.33,bara1273,tat,барабинских татар
+chulym_turkic,Chulym Turkic,,56.87, 86.59,chul1246,,чулымско-тюркский
+khazar,Khazar,,45.41,47.51,,zkz,хазарский
+hunnish,Hunnish,,44.54,19.01,,xhc,гуннов
 jurchen,Jurchen,,33.0071,114.3624,jurc1239,juc,чжурчжэньский
 tamil,Tamil,,10.520219,78.825989,tami1289,tam,тамильский
 irula,Irula,,11.4369,76.5032,irul1243,iru,ирула
@@ -398,7 +405,6 @@ archi,Archi,,41.9839,46.8127,arch1244,aqc,арчинский
 kryz,Kryz,,41.1455,48.164,kryt1240,kry,крызский
 budukh,Budukh,,41.1207,48.3233,budu1248,bdk,будухский
 udi,Udi,,41.8818,46.9171,udii1243,udi,удинский
-agvan,Agvan,,40.37,47.13,aghw1237,xag,агванский
 khinalug,Khinalug,,41.1777,48.1297,khin1240,kjj,хиналугский
 bamana,Bamana,,12.9,-7.65,bamb1269,bam,бамана
 kpelle,Kpelle,,7.75,-8.8167,kpel1252,kpe,кпелле
