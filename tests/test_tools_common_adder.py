@@ -1,6 +1,7 @@
 import pytest
 
 from langworld_db_data.tools.common.adder import Adder, AdderError
+from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
     DIR_WITH_FEATURE_PROFILES_FOR_TESTING_ADDER,
     DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER,
@@ -726,29 +727,145 @@ def test__insert_new_row_at_given_line_number_in_features_inventory_not_last_in_
     test_adder,
 ):
 
-    pass
+    NEW_ROW = {
+        "id": "A-17",
+        "en": "Some feature",
+        "ru": "Некий признак",
+        "description_formatted_en": "",
+        "description_formatted_ru": "",
+        "is_multiselect": "",
+        "not_applicable_if": "",
+        "schema_sections": "",
+    }
+
+    test_adder._insert_new_row_at_given_line_number(
+        new_row=NEW_ROW,
+        line_number_to_insert_into=16,
+        feature_or_value="feature",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_features,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "features_with_new_A_17.csv"
+    )
 
 
 def test__insert_new_row_at_given_line_number_in_features_inventory_last_in_category(test_adder):
 
-    pass
+    NEW_ROW = {
+        "id": "C-3",
+        "en": "Some feature",
+        "ru": "Некий признак",
+        "description_formatted_en": "",
+        "description_formatted_ru": "",
+        "is_multiselect": "",
+        "not_applicable_if": "",
+        "schema_sections": "",
+    }
+
+    test_adder._insert_new_row_at_given_line_number(
+        new_row=NEW_ROW,
+        line_number_to_insert_into=37,
+        feature_or_value="feature",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_features,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "features_with_new_C_3.csv"
+    )
 
 
 def test__insert_new_row_at_given_line_number_in_values_inventory_not_last_in_feature(test_adder):
 
-    pass
+    NEW_ROW = {
+        "id": "A-7-2",
+        "feature_id": "A-7",
+        "en": "Some value",
+        "ru": "Некое значение",
+        "description_formatted_en": "",
+        "description_formatted_ru": "",
+    }
+
+    test_adder._insert_new_row_at_given_line_number(
+        new_row=NEW_ROW,
+        line_number_to_insert_into=32,
+        feature_or_value="value",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_features,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "features_listed_values_with_new_A_7_2.csv"
+    )
 
 
 def test__insert_new_row_at_given_line_number_in_values_inventory_last_in_feature(test_adder):
 
-    pass
+    NEW_ROW = {
+        "id": "A-21-17",
+        "feature_id": "A-21",
+        "en": "Some value",
+        "ru": "Некое значение",
+        "description_formatted_en": "",
+        "description_formatted_ru": "",
+    }
+
+    test_adder._insert_new_row_at_given_line_number(
+        new_row=NEW_ROW,
+        line_number_to_insert_into=168,
+        feature_or_value="value",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_features,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "features_listed_values_with_new_A_21_17.csv"
+    )
 
 
 def test__insert_new_row_at_given_line_number_in_feature_profile_not_last_in_category(test_adder):
 
-    pass
+    NEW_ROW = {
+        "feature_id": "D-3",
+        "feature_name_ru": "Некий признак",
+        "value_type": "not_stated",
+        "value_id": "",
+        "value_ru": "",
+        "comment_ru": "",
+        "comment_en": "",
+        "page_numbers": "",
+    }
+
+    test_adder._insert_new_row_at_given_line_number(
+        new_row=NEW_ROW,
+        line_number_to_insert_into=17,
+        feature_or_value="feature",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_features,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "feature_profile_with_new_D_3.csv"
+    )
 
 
 def test__insert_new_row_at_given_line_number_in_feature_profile_last_in_category(test_adder):
 
-    pass
+    NEW_ROW = {
+        "feature_id": "H-10",
+        "feature_name_ru": "Некий признак",
+        "value_type": "not_stated",
+        "value_id": "",
+        "value_ru": "",
+        "comment_ru": "",
+        "comment_en": "",
+        "page_numbers": "",
+    }
+
+    test_adder._insert_new_row_at_given_line_number(
+        new_row=NEW_ROW,
+        line_number_to_insert_into=32,
+        feature_or_value="feature",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_features,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "feature_profile_with_new_H_10.csv"
+    )
