@@ -346,13 +346,17 @@ class Adder(ObjectWithPaths):
 
         # Default values of two important arguments:
         lookup_column = "id"
-        category_or_feature_id_of_new_feature_or_value = extract_category_id(new_feature_or_value_id)
+        category_or_feature_id_of_new_feature_or_value = extract_category_id(
+            new_feature_or_value_id
+        )
 
         # Some of them might change depending on whether we work with a value or feature and
         # whether it must be inserted into a feature profile or into an inventory
         if feature_or_value == "value":
             rows = read_dicts_from_csv(path_to_file=self.input_file_with_listed_values)
-            category_or_feature_id_of_new_feature_or_value = extract_feature_id(new_feature_or_value_id)
+            category_or_feature_id_of_new_feature_or_value = extract_feature_id(
+                new_feature_or_value_id
+            )
         elif for_feature_profile:
             feature_profiles = list(self.input_dir_with_feature_profiles.glob("*.csv"))
             rows = read_dicts_from_csv(path_to_file=feature_profiles[0])
@@ -364,12 +368,14 @@ class Adder(ObjectWithPaths):
 
         for i, row in enumerate(rows):
 
-            print(f"Comparing {new_feature_or_value_id} to {row[lookup_column]} with line number {i}")
+            print(
+                f"Comparing {new_feature_or_value_id} to {row[lookup_column]} with line number {i}"
+            )
             if row[lookup_column] == new_feature_or_value_id:
                 line_number_where_row_will_be_inserted = i
                 exact_line_number_is_found = True
                 break
-    
+
             if category_or_feature_id_of_new_feature_or_value in row[lookup_column]:
                 line_number_where_row_will_be_inserted = i
 
@@ -380,6 +386,8 @@ class Adder(ObjectWithPaths):
             # We should add right AFTER this line number, that is why the returned
             # line number is NOT exact and must be incremented.
             line_number_where_row_will_be_inserted += 1
-            print(f"Exact line number not found. Reconstructing: {line_number_where_row_will_be_inserted}")
+            print(
+                f"Exact line number not found. Reconstructing: {line_number_where_row_will_be_inserted}"
+            )
 
         return line_number_where_row_will_be_inserted
