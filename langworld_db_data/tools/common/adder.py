@@ -401,15 +401,15 @@ class Adder(ObjectWithPaths):
         feature_or_value: FeatureOrValue,
         for_feature_profile: bool = False,
     ) -> None:
-        
+
         rows_before_insertion = read_dicts_from_csv(path_to_file=file_to_insert_into)
 
         rows_after_insertion = (
             rows_before_insertion[:line_number_to_insert_into]
             + [new_row]
             + rows_before_insertion[line_number_to_insert_into:]
-            )
-        
+        )
+
         if feature_or_value == "value":
             output_file = self.output_file_with_listed_values
         elif for_feature_profile:
