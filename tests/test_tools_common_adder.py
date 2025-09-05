@@ -3,6 +3,7 @@ import pytest
 from langworld_db_data.tools.common.adder import Adder, AdderError
 from tests.paths import (
     DIR_WITH_FEATURE_PROFILES_FOR_TESTING_ADDER,
+    DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER,
     DIR_WITH_INVENTORIES_FOR_TESTING_ADDER,
     DIR_WITH_OUTPUT_FILES_FOR_TESTING_ADDER,
 )
@@ -719,3 +720,33 @@ def test__get_line_number_where_to_insert_feature_in_feature_profiles_last_in_ca
         )
         == 32
     )
+
+
+def test__insert_new_row_at_given_line_number_in_features_inventory_not_last_in_category(test_adder):
+
+    pass
+
+
+def test__insert_new_row_at_given_line_number_in_features_inventory_last_in_category(test_adder):
+
+    pass
+
+
+def test__insert_new_row_at_given_line_number_in_values_inventory_not_last_in_feature(test_adder):
+
+    pass
+
+
+def test__insert_new_row_at_given_line_number_in_values_inventory_last_in_feature(test_adder):
+
+    pass
+
+
+def test__insert_new_row_at_given_line_number_in_feature_profile_not_last_in_category(test_adder):
+
+    pass
+
+
+def test__insert_new_row_at_given_line_number_in_feature_profile_last_in_category(test_adder):
+
+    pass
