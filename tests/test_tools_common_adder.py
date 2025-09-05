@@ -742,6 +742,7 @@ def test__insert_new_row_at_given_line_number_in_features_inventory_not_last_in_
         new_row=NEW_ROW,
         line_number_to_insert_into=16,
         file_to_insert_into=test_adder.input_file_with_features,
+        feature_or_value="feature",
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -768,6 +769,7 @@ def test__insert_new_row_at_given_line_number_in_features_inventory_last_in_cate
         new_row=NEW_ROW,
         line_number_to_insert_into=37,
         file_to_insert_into=test_adder.input_file_with_features,
+        feature_or_value="feature",
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -792,6 +794,7 @@ def test__insert_new_row_at_given_line_number_in_values_inventory_not_last_in_fe
         new_row=NEW_ROW,
         line_number_to_insert_into=32,
         file_to_insert_into=test_adder.input_file_with_listed_values,
+        feature_or_value="value",
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -816,6 +819,7 @@ def test__insert_new_row_at_given_line_number_in_values_inventory_last_in_featur
         new_row=NEW_ROW,
         line_number_to_insert_into=168,
         file_to_insert_into=test_adder.input_file_with_listed_values,
+        feature_or_value="value",
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -842,6 +846,8 @@ def test__insert_new_row_at_given_line_number_in_feature_profile_not_last_in_cat
         new_row=NEW_ROW,
         line_number_to_insert_into=17,
         file_to_insert_into=test_adder.input_dir_with_feature_profiles / "catalan.csv",
+        feature_or_value="feature",
+        for_feature_profile=True,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -868,6 +874,8 @@ def test__insert_new_row_at_given_line_number_in_feature_profile_last_in_categor
         new_row=NEW_ROW,
         line_number_to_insert_into=32,
         file_to_insert_into=test_adder.input_dir_with_feature_profiles / "catalan.csv",
+        feature_or_value="feature",
+        for_feature_profile=True,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
