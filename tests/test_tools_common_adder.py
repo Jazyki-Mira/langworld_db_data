@@ -838,6 +838,7 @@ def test__insert_new_row_at_given_line_number_in_feature_profile_not_last_in_cat
         new_row=NEW_ROW,
         line_number_to_insert_into=17,
         feature_or_value="feature",
+        for_feature_profile=True,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -863,6 +864,7 @@ def test__insert_new_row_at_given_line_number_in_feature_profile_last_in_categor
         new_row=NEW_ROW,
         line_number_to_insert_into=32,
         feature_or_value="feature",
+        for_feature_profile=True,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
