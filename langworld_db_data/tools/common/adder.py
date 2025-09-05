@@ -8,6 +8,8 @@ from langworld_db_data.tools.common.ids.compose import (
     compose_value_id_based_on_feature_id,
 )
 from langworld_db_data.tools.common.ids.extract import (
+    extract_category_id,
+    extract_feature_id,
     extract_feature_index,
     extract_value_index,
 )
@@ -332,16 +334,52 @@ class Adder(ObjectWithPaths):
         new_feature_or_value_id: str,
         for_feature_profile: bool = False,
     ) -> int:
+        """
+        Find line number in given CSV file where the new calue or feature must be inserted.
 
-        if feature_or_value == "feature":
-            rows = read_dicts_from_csv(path_to_file=self.input_file_with_features)
-        else:
-            rows = read_dicts_from_csv(path_to_file=self.input_file_with_listed_values)
+        This method tries to find a row that contains exactly the given value or feature
+        ID. If it does not succeed, it acts as if the new value or feature must be appended
+        to  the end of its feature or category respectively. It finds line number of last value
+        in this feature or, alternatively, last feature in this category, adds 1 to it and
+        returns the number as a result.
+        """
 
+        # Default values of two important arguments:
         lookup_column = "id"
-        if for_feature_profile:
-            lookup_column = "feature_id"
+        category_or_feature_id_of_new_feature_or_value = extract_category_id(new_feature_or_value_id)
 
-        for row in rows:
-            if row[lookup_column] != new_feature_or_value_id:
-                continue
+        # Some of them might change depending on whether we work with a value or feature and
+        # whether it must be inserted into a feature profile or into an inventory
+        if feature_or_value == "value":
+            rows = read_dicts_from_csv(path_to_file=self.input_file_with_listed_values)
+            category_or_feature_id_of_new_feature_or_value = extract_feature_id(new_feature_or_value_id)
+        elif for_feature_profile:
+            feature_profiles = list(self.input_dir_with_feature_profiles.glob("*.csv"))
+            rows = read_dicts_from_csv(path_to_file=feature_profiles[0])
+            lookup_column = "feature_id"
+        else:
+            rows = read_dicts_from_csv(path_to_file=self.input_file_with_features)
+
+        exact_line_number_is_found = False
+
+        for i, row in enumerate(rows):
+
+            print(f"Comparing {new_feature_or_value_id} to {row[lookup_column]} with line number {i}")
+            if row[lookup_column] == new_feature_or_value_id:
+                line_number_where_row_will_be_inserted = i
+                exact_line_number_is_found = True
+                break
+    
+            if category_or_feature_id_of_new_feature_or_value in row[lookup_column]:
+                line_number_where_row_will_be_inserted = i
+
+        if not exact_line_number_is_found:
+            # In this case we have feature or value that must be appended at the end
+            # of feature or category, but the previous loop returns line number of last
+            # value in feature or last feature in category, respectively.
+            # We should add right AFTER this line number, that is why the returned
+            # line number is NOT exact and must be incremented.
+            line_number_where_row_will_be_inserted += 1
+            print(f"Exact line number not found. Reconstructing: {line_number_where_row_will_be_inserted}")
+
+        return line_number_where_row_will_be_inserted
