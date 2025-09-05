@@ -651,7 +651,7 @@ def test__get_line_number_where_to_insert_feature_in_inventory_not_last_in_categ
             new_feature_or_value_id="A-17",
             for_feature_profile=False,
         )
-        == 18
+        == 16
     )
 
 
@@ -663,7 +663,7 @@ def test__get_line_number_where_to_insert_feature_in_inventory_last_in_category(
             new_feature_or_value_id="C-3",
             for_feature_profile=False,
         )
-        == 39
+        == 37
     )
 
 
@@ -677,7 +677,7 @@ def test__get_line_number_where_to_insert_one_listed_value_in_inventory_not_last
             new_feature_or_value_id="A-7-2",
             for_feature_profile=False,
         )
-        == 34
+        == 32
     )
 
 
@@ -691,11 +691,11 @@ def test__get_line_number_where_to_insert_one_listed_value_in_inventory_last_in_
             new_feature_or_value_id="A-21-17",
             for_feature_profile=False,
         )
-        == 170
+        == 168
     )
 
 
-def test__get_line_number_where_to_insert_several_listed_values_in_inventory_not_last_in_category(
+def test__get_line_number_where_to_insert_feature_in_feature_profile_not_last_in_category(
     test_adder,
 ):
 
@@ -705,7 +705,7 @@ def test__get_line_number_where_to_insert_several_listed_values_in_inventory_not
             new_feature_or_value_id="D-3",
             for_feature_profile=True,
         )
-        == 19
+        == 17
     )
 
 
@@ -717,5 +717,5 @@ def test__get_line_number_where_to_insert_feature_in_feature_profiles_last_in_ca
             new_feature_or_value_id="H-10",
             for_feature_profile=True,
         )
-        == 34
+        == 32
     )
