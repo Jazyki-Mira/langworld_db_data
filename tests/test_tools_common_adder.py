@@ -885,16 +885,22 @@ def test__insert_new_row_at_given_line_number_in_feature_profile_last_in_categor
     )
 
 
-def test__update_indices_of_features_or_values_that_come_after_inserted_one_in_features_inventory(test_adder):
+def test__update_indices_of_features_or_values_that_come_after_inserted_one_in_features_inventory(
+    test_adder,
+):
 
     pass
 
 
-def test__update_indices_of_features_or_values_that_come_after_inserted_one_in_listed_values_inventory(test_adder):
+def test__update_indices_of_features_or_values_that_come_after_inserted_one_in_listed_values_inventory(
+    test_adder,
+):
 
     pass
 
 
-def test__update_indices_of_features_or_values_that_come_after_inserted_one_in_feature_profile(test_adder):
+def test__update_indices_of_features_or_values_that_come_after_inserted_one_in_feature_profile(
+    test_adder,
+):
 
     pass
