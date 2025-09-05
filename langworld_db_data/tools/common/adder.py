@@ -1,6 +1,7 @@
+from pathlib import Path
 from typing import Literal, Union
 
-from tinybear.csv_xls import read_column_from_csv, read_dicts_from_csv
+from tinybear.csv_xls import read_column_from_csv, read_dicts_from_csv, write_csv
 
 from langworld_db_data import ObjectWithPaths
 from langworld_db_data.tools.common.ids.compose import (
@@ -396,10 +397,33 @@ class Adder(ObjectWithPaths):
         self,
         new_row: dict[str, str],
         line_number_to_insert_into: int,
+        file_to_insert_into: Path,
         feature_or_value: FeatureOrValue,
         for_feature_profile: bool = False,
     ) -> None:
-        pass
+        
+        rows_before_insertion = read_dicts_from_csv(path_to_file=file_to_insert_into)
+
+        rows_after_insertion = (
+            rows_before_insertion[:line_number_to_insert_into]
+            + [new_row]
+            + rows_before_insertion[line_number_to_insert_into:]
+            )
+        
+        if feature_or_value == "value":
+            output_file = self.output_file_with_listed_values
+        elif for_feature_profile:
+            file_name = file_to_insert_into.name
+            output_file = self.output_dir_with_feature_profiles / file_name
+        else:
+            output_file = self.output_file_with_features
+
+        write_csv(
+            rows=rows_after_insertion,
+            path_to_file=output_file,
+            delimiter=",",
+            overwrite=True,
+        )
 
     def _update_indices_of_features_or_values_that_come_after_inserted_one(
         self,
