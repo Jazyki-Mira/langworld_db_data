@@ -746,7 +746,8 @@ def test__insert_new_row_at_given_line_number_in_features_inventory_not_last_in_
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_features,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "features_with_new_A_17.csv"
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "features_with_new_A_17.csv",
     )
 
 
@@ -771,7 +772,8 @@ def test__insert_new_row_at_given_line_number_in_features_inventory_last_in_cate
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_features,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "features_with_new_C_3.csv"
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "features_with_new_C_3.csv",
     )
 
 
@@ -794,7 +796,8 @@ def test__insert_new_row_at_given_line_number_in_values_inventory_not_last_in_fe
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_features,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "features_listed_values_with_new_A_7_2.csv"
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "features_listed_values_with_new_A_7_2.csv",
     )
 
 
@@ -817,7 +820,8 @@ def test__insert_new_row_at_given_line_number_in_values_inventory_last_in_featur
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_features,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "features_listed_values_with_new_A_21_17.csv"
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "features_listed_values_with_new_A_21_17.csv",
     )
 
 
@@ -843,7 +847,8 @@ def test__insert_new_row_at_given_line_number_in_feature_profile_not_last_in_cat
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_features,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "feature_profile_with_new_D_3.csv"
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "feature_profile_with_new_D_3.csv",
     )
 
 
@@ -869,5 +874,6 @@ def test__insert_new_row_at_given_line_number_in_feature_profile_last_in_categor
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_features,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "feature_profile_with_new_H_10.csv"
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "feature_profile_with_new_H_10.csv",
     )
