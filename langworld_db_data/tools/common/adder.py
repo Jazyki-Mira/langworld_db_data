@@ -396,6 +396,8 @@ class Adder(ObjectWithPaths):
         self,
         new_row: dict[str, str],
         line_number_to_insert_into: int,
+        feature_or_value: FeatureOrValue,
+        for_feature_profile: bool = False,
     ) -> None:
         pass
 
