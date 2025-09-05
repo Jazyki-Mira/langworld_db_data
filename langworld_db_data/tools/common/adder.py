@@ -391,7 +391,6 @@ class Adder(ObjectWithPaths):
             )
 
         return line_number_where_row_will_be_inserted
-    
 
     def _insert_new_row_at_given_line_number(
         self,
@@ -399,7 +398,6 @@ class Adder(ObjectWithPaths):
         line_number_to_insert_into: int,
     ) -> None:
         pass
-
 
     def _update_indices_of_features_or_values_that_come_after_inserted_one(
         self,
