@@ -741,7 +741,7 @@ def test__insert_new_row_at_given_line_number_in_features_inventory_not_last_in_
     test_adder._insert_new_row_at_given_line_number(
         new_row=NEW_ROW,
         line_number_to_insert_into=16,
-        feature_or_value="feature",
+        file_to_insert_into=test_adder.input_file_with_features,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -767,7 +767,7 @@ def test__insert_new_row_at_given_line_number_in_features_inventory_last_in_cate
     test_adder._insert_new_row_at_given_line_number(
         new_row=NEW_ROW,
         line_number_to_insert_into=37,
-        feature_or_value="feature",
+        file_to_insert_into=test_adder.input_file_with_features,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -791,7 +791,7 @@ def test__insert_new_row_at_given_line_number_in_values_inventory_not_last_in_fe
     test_adder._insert_new_row_at_given_line_number(
         new_row=NEW_ROW,
         line_number_to_insert_into=32,
-        feature_or_value="value",
+        file_to_insert_into=test_adder.input_file_with_listed_values,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -815,7 +815,7 @@ def test__insert_new_row_at_given_line_number_in_values_inventory_last_in_featur
     test_adder._insert_new_row_at_given_line_number(
         new_row=NEW_ROW,
         line_number_to_insert_into=168,
-        feature_or_value="value",
+        file_to_insert_into=test_adder.input_file_with_listed_values,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -841,8 +841,7 @@ def test__insert_new_row_at_given_line_number_in_feature_profile_not_last_in_cat
     test_adder._insert_new_row_at_given_line_number(
         new_row=NEW_ROW,
         line_number_to_insert_into=17,
-        feature_or_value="feature",
-        for_feature_profile=True,
+        file_to_insert_into=test_adder.input_dir_with_feature_profiles / "catalan.csv",
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -868,8 +867,7 @@ def test__insert_new_row_at_given_line_number_in_feature_profile_last_in_categor
     test_adder._insert_new_row_at_given_line_number(
         new_row=NEW_ROW,
         line_number_to_insert_into=32,
-        feature_or_value="feature",
-        for_feature_profile=True,
+        file_to_insert_into=test_adder.input_dir_with_feature_profiles / "catalan.csv",
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
