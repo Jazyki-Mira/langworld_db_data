@@ -427,5 +427,6 @@ class Adder(ObjectWithPaths):
 
     def _update_indices_of_features_or_values_that_come_after_inserted_one(
         self,
+        filepath: Path,
     ) -> None:
         pass
