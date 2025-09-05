@@ -722,7 +722,9 @@ def test__get_line_number_where_to_insert_feature_in_feature_profiles_last_in_ca
     )
 
 
-def test__insert_new_row_at_given_line_number_in_features_inventory_not_last_in_category(test_adder):
+def test__insert_new_row_at_given_line_number_in_features_inventory_not_last_in_category(
+    test_adder,
+):
 
     pass
 
