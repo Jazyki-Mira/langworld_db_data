@@ -920,25 +920,6 @@ def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_li
     )
 
 
-def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_listed_values_inventory_while_adding_new_feature(
-    test_adder,
-):
-
-    test_adder._align_indices_of_features_or_values_that_come_after_inserted_one(
-        input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER
-        / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14.csv",
-        output_filepath=test_adder.output_file_with_listed_values,
-        line_number_of_insertion=267,
-        adding_first_value_of_new_feature=True,
-    )
-
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
-        / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14_and_aligned_indices.csv",
-    )
-
-
 def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_feature_profile(
     test_adder,
 ):
@@ -957,4 +938,22 @@ def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_fe
         / "feature_profile_with_new_D_3.csv",
         gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
         / "feature_profile_with_new_D_3_and_aligned_indices.csv",
+    )
+
+
+def test__increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature(
+    test_adder,
+):
+
+    test_adder._increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature(
+        input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER
+        / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14.csv",
+        output_filepath=test_adder.output_file_with_listed_values,
+        line_number_of_insertion=267,
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14_and_aligned_indices.csv",
     )
