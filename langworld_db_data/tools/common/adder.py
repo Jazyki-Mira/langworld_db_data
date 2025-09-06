@@ -425,8 +425,23 @@ class Adder(ObjectWithPaths):
             overwrite=True,
         )
 
-    def _update_indices_of_features_or_values_that_come_after_inserted_one(
+    def _align_indices_of_features_or_values_that_come_after_inserted_one(
         self,
-        filepath: Path,
+        input_filepath: Path,
+        output_filepath: Path,
+        for_feature_profile: bool = False,
     ) -> None:
-        pass
+        
+        lookup_column = "id"
+        if for_feature_profile:
+            lookup_column = "feature_id"
+
+        rows = read_dicts_from_csv(
+            path_to_file=input_filepath,
+        )
+
+        reference_id = rows[0][lookup_column]
+
+        for row in rows[1:]:
+            if row[lookup_column] == reference_id:
+                row[lookup_column]
