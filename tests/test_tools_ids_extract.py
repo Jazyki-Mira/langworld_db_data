@@ -1,6 +1,7 @@
 from langworld_db_data.tools.common.ids import (
     _split_value_id,
     extract_category_id,
+    extract_last_index,
     extract_feature_id,
     extract_feature_index,
     extract_value_index,
@@ -52,3 +53,9 @@ def test_extract_feature_index():
     gold_standard = (1, 7, 12, 14)
     for value_id_to_gold_standard in zip(IDS_FOR_EXTRACTION, gold_standard):
         assert extract_feature_index(value_id_to_gold_standard[0]) == value_id_to_gold_standard[1]
+
+
+def test_extract_last_index():
+
+    assert extract_last_index("A-2") == 2
+    assert extract_last_index("A-2-3") == 3
