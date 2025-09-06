@@ -45,3 +45,12 @@ def extract_value_index(
     Value index is the ordinal number of the value within its feature, the third component of value ID
     """
     return int(_split_value_id(value_id)[2])
+
+
+def extract_last_index(
+    feature_or_value_id: int,
+) -> int:
+    """
+    Return index that is last in the given ID. Works with both feature and value IDs
+    """
+    return int(_split_value_id(feature_or_value_id)[-1])
