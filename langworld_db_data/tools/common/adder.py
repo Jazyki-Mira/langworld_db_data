@@ -438,7 +438,7 @@ class Adder(ObjectWithPaths):
 
         This method tries to find a row that contains exactly the given
         feature / listed value ID. If it does not succeed, it acts as if
-        the new feature / listed value must be appended to the end of its 
+        the new feature / listed value must be appended to the end of its
         category / feature. It finds line number of last value in this
         feature or, alternatively, last feature in this category, adds 1
         to it and returns the number as a result.
