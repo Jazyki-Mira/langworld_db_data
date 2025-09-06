@@ -1,9 +1,9 @@
 from langworld_db_data.tools.common.ids import (
     _split_value_id,
     extract_category_id,
-    extract_last_index,
     extract_feature_id,
     extract_feature_index,
+    extract_last_index,
     extract_value_index,
 )
 

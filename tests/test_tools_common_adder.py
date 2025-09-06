@@ -896,7 +896,8 @@ def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_fe
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_features,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "features_with_new_A_17_and_aligned_indices.csv"
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "features_with_new_A_17_and_aligned_indices.csv",
     )
 
 
@@ -911,7 +912,8 @@ def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_li
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "features_with_new_A_7_2_and_aligned_indices.csv"
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "features_with_new_A_7_2_and_aligned_indices.csv",
     )
 
 
@@ -921,11 +923,13 @@ def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_fe
 
     test_adder._align_indices_of_features_or_values_that_come_after_inserted_one(
         input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER / "feature_profile_with_new_D_3.csv",
-        output_filepath=test_adder.output_dir_with_feature_profiles / "feature_profile_with_new_D_3.csv",
+        output_filepath=test_adder.output_dir_with_feature_profiles
+        / "feature_profile_with_new_D_3.csv",
         for_feature_profile=True,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values / "feature_profile_with_new_D_3.csv",
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER / "feature_profile_with_new_D_3_and_aligned_indices.csv"
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "feature_profile_with_new_D_3_and_aligned_indices.csv",
     )

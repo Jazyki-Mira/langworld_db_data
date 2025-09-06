@@ -431,7 +431,7 @@ class Adder(ObjectWithPaths):
         output_filepath: Path,
         for_feature_profile: bool = False,
     ) -> None:
-        
+
         lookup_column = "id"
         if for_feature_profile:
             lookup_column = "feature_id"
