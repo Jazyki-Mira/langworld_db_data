@@ -13,7 +13,6 @@ from langworld_db_data.tools.common.ids.extract import (
     extract_category_id,
     extract_feature_id,
     extract_feature_index,
-    extract_last_index,
     extract_value_index,
 )
 
@@ -26,6 +25,37 @@ class AdderError(Exception):
 
 
 class Adder(ObjectWithPaths):
+    """
+    In this class, all methods are applicable to both feature adding
+    and listed value adding into both inventories and feature profiles.
+    It contains the following methods:
+
+    - Argument validation, works with all args of features and listed values
+    that must be checked before adding. This method consists of calling several
+    specific methods that check, for example, presence and uniqueness of passed
+    characteristics of feature / listed value.
+
+    - Getting tuple of existing indices. Necessary for automatic generation of
+    feature / listed value ID and checking validity of passed index to assign.
+
+    - Creating ID for new feature / listed value.
+
+    - Composing a well-formed row with all relevant information. Inside this method,
+    there are three so-called 'forms': one for features inventory, one for listed
+    values inventory and one for feature profiles. The method takes the right form
+    and fills it with characteristics of new feature / listed value.
+
+    - Calculating line number where feature / value must be inserted in a specific
+    document, be it an inventory or a feature profile.
+
+    - Inserting the ready row into the calculated position in the document.
+
+    - Indices alignment, replesented by two distinct methods. One is used when we
+    add a new feature into features inventory or a feature profile AND when we add
+    a new value into an existing feature in listed values inventory. Another one is
+    used when we add a new feature and its first value must be inserted into the
+    listed values inventory.
+    """
 
     def _validate_arguments(
         self,
@@ -33,11 +63,25 @@ class Adder(ObjectWithPaths):
         args_to_validate: dict[str, Union[str, int, None]],
     ) -> None:
         """
-        Validate arguments passed for adding new feature or value.
+        Validate arguments passed for adding new feature / listed value.
 
-        For both features and values checks have quite similar logic, the main
-        difference is that for feature we must also check the passed list of
-        values.
+        Both features and values checks have quite similar logic:
+
+        - All obligatory args must be present.
+
+        - The category / feature, where the new feature / listed
+        value will be added, must exist.
+
+        - English and Russian names of feature / listed value must
+        not be already present in inventories.
+
+        - If a numeric index to assign is passed, it must also be
+        checked, e.g. 32 is an invalid index if we are adding a
+        feature to a category which has only 5 features. This
+        validator also detects zero and negative numbers.
+
+        For adding feature, we must also check well-formedness of
+        the passed list of values.
         """
 
         self._check_that_all_obligatory_args_are_not_empty(
@@ -55,21 +99,33 @@ class Adder(ObjectWithPaths):
             args_to_validate=args_to_validate,
         )
 
-        if feature_or_value == "feature":
-            self._check_validity_of_keys_in_passed_listed_values(
-                listed_values_to_add=args_to_validate["listed_values_to_add"],
-            )
-
         self._check_validity_of_index_to_assign(
             feature_or_value=feature_or_value,
             args_to_validate=args_to_validate,
         )
+
+        if feature_or_value == "feature":
+            self._check_validity_of_keys_in_passed_listed_values(
+                listed_values_to_add=args_to_validate["listed_values_to_add"],
+            )
 
     def _check_that_all_obligatory_args_are_not_empty(
         self,
         feature_or_value: FeatureOrValue,
         args_to_validate: dict[str, Union[str, int, None]],
     ) -> None:
+        """
+        For a feature, we check the following args:
+        - category ID,
+        - English name,
+        - Russian name,
+        - list of values.
+
+        For a listed value, we check:
+        - feature ID,
+        - English name,
+        - Russian name.
+        """
         feature_or_value_to_args_that_must_not_be_empty = {
             "feature": ("category_id", "feature_en", "feature_ru", "listed_values_to_add"),
             "value": ("feature_id", "value_en", "value_ru"),
@@ -91,6 +147,7 @@ class Adder(ObjectWithPaths):
         feature_or_value: FeatureOrValue,
         args_to_validate: dict[str, Union[str, int, None]],
     ) -> None:
+
         feature_or_value_to_arg_that_must_exist = {
             "feature": {
                 "level_of_check": "Category",
@@ -129,6 +186,11 @@ class Adder(ObjectWithPaths):
         feature_or_value: FeatureOrValue,
         args_to_validate: dict[str, Union[str, int, None]],
     ) -> None:
+        """
+        In the right inventory, read the columns with English
+        and Russian names and try to find the passed names in
+        them.
+        """
         feature_or_value_to_args_that_must_not_be_occupied = {
             "feature": {
                 "en": "feature_en",
@@ -163,6 +225,12 @@ class Adder(ObjectWithPaths):
         self,
         listed_values_to_add: list[dict[str, str]],
     ) -> None:
+        """
+        The list of values must contain only dicts
+        each of which contains only two keys, 'en' and
+        'ru' for English and Russian name of the new
+        value. Any other structure causes an error.
+        """
         for item in listed_values_to_add:
             if not ("en" in item and "ru" in item):
                 raise AdderError(
@@ -174,28 +242,41 @@ class Adder(ObjectWithPaths):
         feature_or_value: FeatureOrValue,
         args_to_validate: dict[str, Union[str, int, None]],
     ) -> None:
+        """
+        In each category / feature, a list of valid indices includes
+        indices of all of its features / listed values and the index
+        next to the currently present biggest index, e.g. if category
+        A has only features with IDs A-1, A-2 and A-3, thein its
+        list of valid (= currently avaliable) indices is [1, 2, 3, 4]
+        because we must also be able to add a new feature right after A-3.
+        This method checks only numeric index_to_assign and does nothing
+        if it is None. For a numeric index, it checks whether this
+        index belongs to the tuple of valid indices and raises error
+        if it does not.
+        """
+        if args_to_validate["index_to_assign"] is None:
+            return None
 
-        if args_to_validate["index_to_assign"] is not None:
-            category_or_feature = None
-            category_or_feature_id = ""
+        category_or_feature = None
+        category_or_feature_id = ""
 
-            if feature_or_value == "feature":
-                category_or_feature = "category"
-                category_or_feature_id = args_to_validate["category_id"]
+        if feature_or_value == "feature":
+            category_or_feature = "category"
+            category_or_feature_id = args_to_validate["category_id"]
 
-            elif feature_or_value == "value":
-                category_or_feature = "feature"
-                category_or_feature_id = args_to_validate["feature_id"]
+        elif feature_or_value == "value":
+            category_or_feature = "feature"
+            category_or_feature_id = args_to_validate["feature_id"]
 
-            if not self._check_if_index_to_assign_is_in_list_of_applicable_indices(
-                index_to_validate=args_to_validate["index_to_assign"],
-                category_or_feature=category_or_feature,
-                category_or_feature_id=category_or_feature_id,
-            ):
-                raise ValueError(
-                    f"Invalid index to assign: {args_to_validate['index_to_assign']}. "
-                    "It is either less than 1 or greater than the current allowed maximum."
-                )
+        if not self._check_if_index_to_assign_is_in_list_of_applicable_indices(
+            index_to_validate=args_to_validate["index_to_assign"],
+            category_or_feature=category_or_feature,
+            category_or_feature_id=category_or_feature_id,
+        ):
+            raise ValueError(
+                f"Invalid index to assign: {args_to_validate['index_to_assign']}. "
+                "It is either less than 1 or greater than the current allowed maximum."
+            )
 
     def _check_if_index_to_assign_is_in_list_of_applicable_indices(
         self,
@@ -203,7 +284,6 @@ class Adder(ObjectWithPaths):
         category_or_feature: CategoryOrFeature,
         category_or_feature_id: str,
     ) -> bool:
-
         existing_indices = self._get_tuple_of_currently_available_indices(
             category_or_feature=category_or_feature,
             category_or_feature_id=category_or_feature_id,
@@ -216,7 +296,16 @@ class Adder(ObjectWithPaths):
         category_or_feature: CategoryOrFeature,
         category_or_feature_id: str,
     ) -> tuple[int]:
+        """
+        Read features / listed values inventory, collect
+        indices of all features / listed values in the given
+        category / feature, and add the index that is next after
+        the current maximum.
 
+        This method is used in validating index_to_assign and
+        generating index for feature / listed value if no
+        index_to_assign is passed.
+        """
         if category_or_feature == "category":
             file_to_check_against = self.input_file_with_features
             extract_last_index = extract_feature_index
@@ -246,7 +335,10 @@ class Adder(ObjectWithPaths):
         category_or_feature_id: str,
         index_to_assign: int,
     ) -> str:
-
+        """
+        Compose ID for a feature / listed value with
+        numeric index_to_assign or without it.
+        """
         if index_to_assign is None:
             existing_indices = self._get_tuple_of_currently_available_indices(
                 category_or_feature=category_or_feature,
@@ -282,7 +374,10 @@ class Adder(ObjectWithPaths):
         args: dict[str, str],
         for_feature_profile: bool = False,
     ) -> dict[str, str]:
-
+        """
+        Take relevant form of row and fill it with
+        args of new feature / value
+        """
         feature_or_value_to_form_of_row = {
             "feature": {
                 "for_inventory": {
@@ -338,13 +433,15 @@ class Adder(ObjectWithPaths):
         for_feature_profile: bool = False,
     ) -> int:
         """
-        Find line number in given CSV file where the new calue or feature must be inserted.
+        Find line number in given CSV file where the new
+        feature / listed value must be inserted.
 
-        This method tries to find a row that contains exactly the given value or feature
-        ID. If it does not succeed, it acts as if the new value or feature must be appended
-        to  the end of its feature or category respectively. It finds line number of last value
-        in this feature or, alternatively, last feature in this category, adds 1 to it and
-        returns the number as a result.
+        This method tries to find a row that contains exactly the given
+        feature / listed value ID. If it does not succeed, it acts as if
+        the new feature / listed value must be appended to the end of its 
+        category / feature. It finds line number of last value in this
+        feature or, alternatively, last feature in this category, adds 1
+        to it and returns the number as a result.
         """
 
         # Default values of two important arguments:
@@ -352,7 +449,6 @@ class Adder(ObjectWithPaths):
         category_or_feature_id_of_new_feature_or_value = extract_category_id(
             new_feature_or_value_id
         )
-
         # Some of them might change depending on whether we work with a value or feature and
         # whether it must be inserted into a feature profile or into an inventory
         if feature_or_value == "value":
@@ -428,7 +524,19 @@ class Adder(ObjectWithPaths):
         line_number_of_insertion: int,
         for_feature_profile: bool = False,
     ) -> None:
+        """
+        When we add feature / listed value not to the end of
+        category / feature, we have to align indices of
+        features / listed values within the same category / feature
+        which come after the inserted one. Their final indices
+        must be incremented.
 
+        This method does NOT work in cases when we add a new value
+        into listed values inventory and the value belongs to a brand
+        new feature not yet represented in the listed values
+        inventory. For this case, please use
+        _increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature.
+        """
         lookup_column = "id"
         if for_feature_profile:
             lookup_column = "feature_id"
@@ -463,7 +571,21 @@ class Adder(ObjectWithPaths):
         line_number_of_insertion: int,
         for_feature_profile: bool = False,
     ) -> None:
+        """
+        When we add a new feature we have to insert its first
+        value into the listed values inventory. If the feature is
+        not final in its category, then its first value will
+        cause IDs of all subsequent values within the same category
+        to increment their feature indices. E.g. if we have a category
+        A consisting of features A-1 and A-2 (which has values A-2-1
+        and A-2-2) and we want to add a new A-2 feature, then in listed
+        values its value A-2-1 will cause the existing values A-2-1
+        and A-2-2 to become A-3-1 and A-3-2. This is what this method
+        does.
 
+        For any other index increments, please use
+        _align_indices_of_features_or_values_that_come_after_inserted_one.
+        """
         lookup_column = "id"
         if for_feature_profile:
             lookup_column = "feature_id"
