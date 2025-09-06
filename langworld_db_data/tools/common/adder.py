@@ -7,11 +7,13 @@ from langworld_db_data import ObjectWithPaths
 from langworld_db_data.tools.common.ids.compose import (
     compose_feature_id,
     compose_value_id_based_on_feature_id,
+    compose_value_id_from_scratch,
 )
 from langworld_db_data.tools.common.ids.extract import (
     extract_category_id,
     extract_feature_id,
     extract_feature_index,
+    extract_last_index,
     extract_value_index,
 )
 
@@ -423,8 +425,14 @@ class Adder(ObjectWithPaths):
         self,
         input_filepath: Path,
         output_filepath: Path,
+        line_number_of_insertion: int,
         for_feature_profile: bool = False,
+        adding_first_value_of_new_feature: bool = False,
     ) -> None:
+        """
+        This must work for adding a value both to an existing feature and
+        to a brand new one.
+        """
 
         lookup_column = "id"
         if for_feature_profile:
@@ -434,8 +442,49 @@ class Adder(ObjectWithPaths):
             path_to_file=input_filepath,
         )
 
-        reference_id = rows[0][lookup_column]
+        if adding_first_value_of_new_feature:
+            reference_id =rows[line_number_of_insertion][lookup_column]
+            print(reference_id)
 
-        for row in rows[1:]:
-            if row[lookup_column] == reference_id:
-                row[lookup_column]
+            for row in rows[line_number_of_insertion + 1:]:
+                current_id = row[lookup_column]
+                current_category_id = extract_category_id(current_id)
+                if current_category_id != extract_category_id(reference_id):
+                    continue
+
+                current_feature_index = extract_feature_index(current_id)
+                current_feature_index_after_alignment = current_feature_index + 1
+                row[lookup_column] = compose_value_id_from_scratch(
+                    category_id=current_category_id,
+                    feature_index=current_feature_index_after_alignment,
+                    value_index=extract_value_index(current_id),
+                )
+                row["feature_id"] = compose_feature_id(
+                    category_id=current_category_id,
+                    feature_index=current_feature_index_after_alignment,
+                )
+        
+        else:
+            reference_id = rows[line_number_of_insertion][lookup_column]
+
+            for row in rows[line_number_of_insertion + 1:]:
+                current_id = row[lookup_column]
+                if current_id != reference_id:
+                    continue
+
+                elements_of_current_id = current_id.split("-")
+                for i in range(1,len(elements_of_current_id)):
+                    elements_of_current_id[i] = int(elements_of_current_id[i])
+                elements_of_current_id[-1] += 1
+                for i in range(1,len(elements_of_current_id)):
+                    elements_of_current_id[i] = str(elements_of_current_id[i])
+                current_id_after_alignment = "-".join(elements_of_current_id)
+                row[lookup_column] = current_id_after_alignment
+                reference_id = current_id_after_alignment
+
+        write_csv(
+            rows=rows,
+            path_to_file=output_filepath,
+            delimiter=",",
+            overwrite=True
+        )
