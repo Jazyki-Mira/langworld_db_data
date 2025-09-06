@@ -907,7 +907,8 @@ def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_li
 ):
 
     test_adder._align_indices_of_features_or_values_that_come_after_inserted_one(
-        input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER / "features_listed_values_with_new_A_7_2.csv",
+        input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER
+        / "features_listed_values_with_new_A_7_2.csv",
         output_filepath=test_adder.output_file_with_listed_values,
         line_number_of_insertion=32,
     )
@@ -924,7 +925,8 @@ def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_li
 ):
 
     test_adder._align_indices_of_features_or_values_that_come_after_inserted_one(
-        input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14.csv",
+        input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER
+        / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14.csv",
         output_filepath=test_adder.output_file_with_listed_values,
         line_number_of_insertion=267,
         adding_first_value_of_new_feature=True,
@@ -942,7 +944,8 @@ def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_fe
 ):
 
     test_adder._align_indices_of_features_or_values_that_come_after_inserted_one(
-        input_filepath=DIR_WITH_FEATURE_PROFILES_FOR_TESTING_ADDER / "feature_profile_with_new_D_3.csv",
+        input_filepath=DIR_WITH_FEATURE_PROFILES_FOR_TESTING_ADDER
+        / "feature_profile_with_new_D_3.csv",
         output_filepath=test_adder.output_dir_with_feature_profiles
         / "feature_profile_with_new_D_3.csv",
         line_number_of_insertion=17,
@@ -950,7 +953,8 @@ def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_fe
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=test_adder.output_dir_with_feature_profiles / "feature_profile_with_new_D_3.csv",
+        output_file=test_adder.output_dir_with_feature_profiles
+        / "feature_profile_with_new_D_3.csv",
         gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
         / "feature_profile_with_new_D_3_and_aligned_indices.csv",
     )

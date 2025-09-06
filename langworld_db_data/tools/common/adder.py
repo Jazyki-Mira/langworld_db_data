@@ -443,10 +443,10 @@ class Adder(ObjectWithPaths):
         )
 
         if adding_first_value_of_new_feature:
-            reference_id =rows[line_number_of_insertion][lookup_column]
+            reference_id = rows[line_number_of_insertion][lookup_column]
             print(reference_id)
 
-            for row in rows[line_number_of_insertion + 1:]:
+            for row in rows[line_number_of_insertion + 1 :]:
                 current_id = row[lookup_column]
                 current_category_id = extract_category_id(current_id)
                 if current_category_id != extract_category_id(reference_id):
@@ -463,28 +463,23 @@ class Adder(ObjectWithPaths):
                     category_id=current_category_id,
                     feature_index=current_feature_index_after_alignment,
                 )
-        
+
         else:
             reference_id = rows[line_number_of_insertion][lookup_column]
 
-            for row in rows[line_number_of_insertion + 1:]:
+            for row in rows[line_number_of_insertion + 1 :]:
                 current_id = row[lookup_column]
                 if current_id != reference_id:
                     continue
 
                 elements_of_current_id = current_id.split("-")
-                for i in range(1,len(elements_of_current_id)):
+                for i in range(1, len(elements_of_current_id)):
                     elements_of_current_id[i] = int(elements_of_current_id[i])
                 elements_of_current_id[-1] += 1
-                for i in range(1,len(elements_of_current_id)):
+                for i in range(1, len(elements_of_current_id)):
                     elements_of_current_id[i] = str(elements_of_current_id[i])
                 current_id_after_alignment = "-".join(elements_of_current_id)
                 row[lookup_column] = current_id_after_alignment
                 reference_id = current_id_after_alignment
 
-        write_csv(
-            rows=rows,
-            path_to_file=output_filepath,
-            delimiter=",",
-            overwrite=True
-        )
+        write_csv(rows=rows, path_to_file=output_filepath, delimiter=",", overwrite=True)
