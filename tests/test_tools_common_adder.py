@@ -25,7 +25,7 @@ def test_adder():
     )
 
 
-def test__validate_arguments_for_adding_feature_passes(test_adder):
+def test__validate_args_for_adding_feature_passes(test_adder):
 
     for set_of_good_args in (
         {
@@ -65,7 +65,7 @@ def test__validate_arguments_for_adding_feature_passes(test_adder):
             "index_to_assign": 1,
         },
     ):
-        test_adder._validate_arguments(
+        test_adder._validate_args(
             feature_or_value="feature",
             args_to_validate=set_of_good_args,
         )
@@ -215,7 +215,7 @@ def test__check_validity_of_index_to_assign_for_feature_fails(test_adder):
             )
 
 
-def test__validate_arguments_for_adding_value_passes(test_adder):
+def test__validate_args_for_adding_value_passes(test_adder):
 
     for set_of_good_args in (
         {
@@ -237,7 +237,7 @@ def test__validate_arguments_for_adding_value_passes(test_adder):
             "index_to_assign": 14,
         },
     ):
-        test_adder._validate_arguments(
+        test_adder._validate_args(
             feature_or_value="value",
             args_to_validate=set_of_good_args,
         )
@@ -313,7 +313,7 @@ def test__check_validity_of_index_to_assign_for_value_invalid(test_adder):
             ValueError,
             match="Invalid index to assign",
         ):
-            test_adder._validate_arguments(
+            test_adder._validate_args(
                 feature_or_value="value",
                 args_to_validate={
                     "feature_id": "C-1",

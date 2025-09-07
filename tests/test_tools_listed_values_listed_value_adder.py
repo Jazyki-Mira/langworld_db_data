@@ -12,7 +12,7 @@ from tests.paths import (
     OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES,
 )
 
-GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE = (
+GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_FEATURE = (
     DIR_WITH_ADDERS_TEST_FILES / "features_listed_values_gold_standard_for_listed_value_adder.csv"
 )
 GS_FILE_WITH_LISTED_VALUES_INSERTION_OF_A_2_3 = (
@@ -81,7 +81,7 @@ def test_add_listed_value_append_to_end_with_custom_values(test_adder):
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_FEATURE,
     )
 
     for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
@@ -217,19 +217,17 @@ def test_add_listed_value_throws_exception_with_invalid_index_to_assign(test_add
 # _add_to_inventory_of_listed_values
 # Normal cases
 def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_adder):
-    new_value_id = test_adder._add_to_inventory_of_listed_values(
+    test_adder._add_listed_value_to_inventory_of_listed_values(
+        value_id="A-11-15",
         feature_id="A-11",
         new_value_en="New value, listed with a comma",
         new_value_ru="Есть первые, вторые и третьи",
-        index_to_assign=None,
     )
-    assert new_value_id == "A-11-15"
-
-    assert test_adder.output_file_with_listed_values.exists()
+    print(test_adder.output_file_with_listed_values)
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_FEATURE,
     )
 
 
@@ -296,7 +294,7 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_VALUE,
+        gold_standard_file=GS_FILE_WITH_LISTED_VALUES_ADDITION_TO_THE_END_OF_FEATURE,
     )
 
 

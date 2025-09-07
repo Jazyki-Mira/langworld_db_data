@@ -57,7 +57,7 @@ class Adder(ObjectWithPaths):
     listed values inventory.
     """
 
-    def _validate_arguments(
+    def _validate_args(
         self,
         feature_or_value: FeatureOrValue,
         args_to_validate: dict[str, Union[str, int, None]],
@@ -333,7 +333,7 @@ class Adder(ObjectWithPaths):
         self,
         category_or_feature: CategoryOrFeature,
         category_or_feature_id: str,
-        index_to_assign: int,
+        index_to_assign: Union[int, None],
     ) -> str:
         """
         Compose ID for a feature / listed value with
@@ -422,6 +422,9 @@ class Adder(ObjectWithPaths):
             if key not in args.keys():
                 continue
 
+            if args[key] is None:
+                continue
+
             form_of_row[key] = args[key]
 
         return form_of_row
@@ -495,7 +498,6 @@ class Adder(ObjectWithPaths):
     ) -> None:
 
         rows_before_insertion = read_dicts_from_csv(path_to_file=file_to_insert_into)
-
         rows_after_insertion = (
             rows_before_insertion[:line_number_to_insert_into]
             + [new_row]
@@ -509,6 +511,9 @@ class Adder(ObjectWithPaths):
             output_file = self.output_dir_with_feature_profiles / file_name
         else:
             output_file = self.output_file_with_features
+
+        print(rows_after_insertion[60:70])
+        print(output_file)
 
         write_csv(
             rows=rows_after_insertion,
