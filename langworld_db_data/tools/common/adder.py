@@ -512,7 +512,8 @@ class Adder(ObjectWithPaths):
         else:
             output_file = self.output_file_with_features
 
-        print(rows_after_insertion[60:70])
+        for row in rows_after_insertion[60:70]:
+            print(row)
         print(output_file)
 
         write_csv(
