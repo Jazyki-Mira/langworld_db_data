@@ -3,7 +3,6 @@ from typing import Optional, Union
 
 from tinybear.csv_xls import read_dicts_from_csv, write_csv
 
-from langworld_db_data.tools.common.adder import Adder
 from langworld_db_data.constants.literals import (
     ID_SEPARATOR,
     KEY_FOR_ENGLISH,
@@ -14,6 +13,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
+from langworld_db_data.tools.common.adder import Adder
 from langworld_db_data.tools.common.ids.extract import extract_feature_id, extract_value_index
 
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
@@ -36,7 +36,7 @@ class ListedValueAdder(Adder):
         description_formatted_en: Optional[str] = None,
         description_formatted_ru: Optional[str] = None,
     ) -> None:
-        
+
         args_to_validate = {
             "feature_id": feature_id,
             "new_value_en": new_value_en,
@@ -63,7 +63,6 @@ class ListedValueAdder(Adder):
             description_formatted_ru=description_formatted_ru,
         )
 
-    
     def _add_listed_value_to_inventory_of_listed_values(
         self,
         value_id: str,
@@ -73,7 +72,7 @@ class ListedValueAdder(Adder):
         description_formatted_en: Optional[str] = None,
         description_formatted_ru: Optional[str] = None,
     ) -> None:
-        
+
         args = {
             "id": value_id,
             "feature_id": feature_id,
@@ -105,7 +104,6 @@ class ListedValueAdder(Adder):
             output_filepath=self.output_file_with_listed_values,
             line_number_of_insertion=line_number_to_insert_into,
         )
-
 
     # def add_listed_value(
     #     self,
