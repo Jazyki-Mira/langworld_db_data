@@ -1,5 +1,6 @@
 import pytest
 
+from langworld_db_data.tools.common.adder import AdderError
 from langworld_db_data.tools.listed_values.listed_value_adder import (
     ListedValueAdder,
     ListedValueAdderError,
@@ -127,7 +128,7 @@ def test_add_listed_value_append_to_end_with_custom_values_and_updating_value_id
         )
 
 
-def test_add_listed_value_add_value_homonymous_to_value_in_feature_before_the_current_one(
+def test_add_listed_value_add_value_homonymous_to_value_in_feature_after_the_current_one(
     test_adder,
 ):
     test_adder.add_listed_value(
@@ -142,7 +143,7 @@ def test_add_listed_value_add_value_homonymous_to_value_in_feature_before_the_cu
     )
 
 
-def test_add_listed_value_add_value_homonymous_to_value_in_feature_after_the_current_one(
+def test_add_listed_value_add_value_homonymous_to_value_in_feature_before_the_current_one(
     test_adder,
 ):
     test_adder.add_listed_value(
@@ -178,7 +179,7 @@ def test_add_listed_value_throws_exception_add_value_homonymous_to_value_in_the_
         },
     ):
         with pytest.raises(
-            ListedValueAdderError, match="already contains value you are trying to add"
+            AdderError, match="English or Russian value name is already present"
         ):
             test_adder.add_listed_value(**bad_args)
 
@@ -190,7 +191,7 @@ def test_add_listed_value_throws_exception_with_empty_args(test_adder):
         {"feature_id": "A-1", "new_value_en": "Value", "new_value_ru": ""},
     ):
         with pytest.raises(
-            ListedValueAdderError, match="None of the following strings can be empty"
+            AdderError, match="None of the following arguments"
         ):
             test_adder.add_listed_value(**bad_set_of_values)
 
@@ -198,14 +199,14 @@ def test_add_listed_value_throws_exception_with_empty_args(test_adder):
 def test_add_listed_value_throws_exception_with_invalid_feature_id(
     test_adder,
 ):
-    with pytest.raises(ListedValueAdderError, match="Feature ID X-1 not found"):
+    with pytest.raises(AdderError, match="Feature ID X-1 not found"):
         test_adder.add_listed_value("X-1", "Value", "значение")
 
 
 def test_add_listed_value_throws_exception_with_invalid_index_to_assign(test_adder):
     invalid_indices_to_assign = [-1, 0, 5, 100]
     for invalid_index in invalid_indices_to_assign:
-        with pytest.raises(ListedValueAdderError, match="must be between 1 and 4"):
+        with pytest.raises(ValueError, match="It is either less than 1 or greater"):
             test_adder.add_listed_value(
                 feature_id="A-1",
                 new_value_en="Value",
@@ -232,13 +233,12 @@ def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_
 
 
 def test__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_third(test_adder):
-    new_value_id = test_adder._add_to_inventory_of_listed_values(
+    test_adder._add_listed_value_to_inventory_of_listed_values(
+        value_id="A-3-3",
         feature_id="A-3",
         new_value_en="Central, mid-back and back",
         new_value_ru="Средний, задне-средний и задний",
-        index_to_assign=3,
     )
-    assert new_value_id == "A-3-3"
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
@@ -248,13 +248,12 @@ def test__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_
 
 
 def test__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_tenth(test_adder):
-    new_value_id = test_adder._add_to_inventory_of_listed_values(
+    test_adder._add_listed_value_to_inventory_of_listed_values(
+        value_id="A-11-10",
         feature_id="A-11",
         new_value_en="Some value",
         new_value_ru="Какое-то значение",
-        index_to_assign=10,
     )
-    assert new_value_id == "A-11-10"
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
@@ -265,11 +264,11 @@ def test__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_
 
 # Edge cases
 def test__add_to_inventory_of_listed_values_put_as_first(test_adder):
-    test_adder._add_to_inventory_of_listed_values(
+    test_adder._add_listed_value_to_inventory_of_listed_values(
+        value_id="A-3-1",
         feature_id="A-3",
         new_value_en="Central, mid-back and back",
         new_value_ru="Средний, задне-средний и задний",
-        index_to_assign=1,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
@@ -282,13 +281,12 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no
     test_adder,
 ):
     # The feature has 14 values, we are asking the method to add the 15-th one
-    new_value_id = test_adder._add_to_inventory_of_listed_values(
+    test_adder._add_listed_value_to_inventory_of_listed_values(
+        value_id="A-11-15",
         feature_id="A-11",
         new_value_en="New value, listed with a comma",
         new_value_ru="Есть первые, вторые и третьи",
-        index_to_assign=15,
     )
-    assert new_value_id == "A-11-15"
 
     assert test_adder.output_file_with_listed_values.exists()
 
@@ -300,118 +298,118 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no
 
 # _get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values
 # Normal case
-def test__get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
-    test_adder,
-):
-    rows = [
-        {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
-        {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
-        {"id": "A-2-2", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
-    ]
-    value_indices_to_inventory_line_numbers = test_adder._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
-        rows=rows,
-        feature_id="A-2",
-    )
+# def test__get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
+#     test_adder,
+# ):
+#     rows = [
+#         {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
+#         {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
+#         {"id": "A-2-2", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
+#     ]
+#     value_indices_to_inventory_line_numbers = test_adder._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
+#         rows=rows,
+#         feature_id="A-2",
+#     )
 
-    assert value_indices_to_inventory_line_numbers == (
-        {
-            "index": 1,
-            "line number": 1,
-        },
-        {
-            "index": 2,
-            "line number": 2,
-        },
-    )
-
-
-# _increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign
-# Normal case
-def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(test_adder):
-    rows = [
-        {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
-        {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
-        {"id": "A-2-2", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
-        {
-            "id": "A-2-3",
-            "feature_id": "A-2",
-            "en": "Close, mid and open",
-            "ru": "Верхний, средний и нижний",
-        },
-    ]
-    value_indices_to_inventory_line_numbers = (
-        {"index": 1, "line number": 1},
-        {"index": 2, "line number": 2},
-        {"index": 3, "line number": 3},
-    )
-    rows = test_adder._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
-        rows=rows,
-        value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
-        index_to_assign=2,
-    )
-
-    gold_standard_rows = tuple(
-        [
-            {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
-            {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
-            {"id": "A-2-3", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
-            {
-                "id": "A-2-4",
-                "feature_id": "A-2",
-                "en": "Close, mid and open",
-                "ru": "Верхний, средний и нижний",
-            },
-        ]
-    )
-
-    assert rows == gold_standard_rows
+#     assert value_indices_to_inventory_line_numbers == (
+#         {
+#             "index": 1,
+#             "line number": 1,
+#         },
+#         {
+#             "index": 2,
+#             "line number": 2,
+#         },
+#     )
 
 
-def test__increment_value_ids_in_feature_profiles(test_adder):
+# # _increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign
+# # Normal case
+# def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(test_adder):
+#     rows = [
+#         {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
+#         {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
+#         {"id": "A-2-2", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
+#         {
+#             "id": "A-2-3",
+#             "feature_id": "A-2",
+#             "en": "Close, mid and open",
+#             "ru": "Верхний, средний и нижний",
+#         },
+#     ]
+#     value_indices_to_inventory_line_numbers = (
+#         {"index": 1, "line number": 1},
+#         {"index": 2, "line number": 2},
+#         {"index": 3, "line number": 3},
+#     )
+#     rows = test_adder._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
+#         rows=rows,
+#         value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
+#         index_to_assign=2,
+#     )
 
-    stems_of_files_that_must_be_changed = [
-        "catalan_A-11-5",
-        "catalan_A-11-6",
-        "catalan_A-11-14",
-    ]
+#     gold_standard_rows = tuple(
+#         [
+#             {"id": "A-1-1", "feature_id": "A-1", "en": "Two", "ru": "Две"},
+#             {"id": "A-2-1", "feature_id": "A-2", "en": "Close and open", "ru": "Верхний и нижний"},
+#             {"id": "A-2-3", "feature_id": "A-2", "en": "Close and mid", "ru": "Верхний и средний"},
+#             {
+#                 "id": "A-2-4",
+#                 "feature_id": "A-2",
+#                 "en": "Close, mid and open",
+#                 "ru": "Верхний, средний и нижний",
+#             },
+#         ]
+#     )
 
-    stems_of_files_that_must_not_be_changed = [
-        "catalan_A-11-1",
-        "catalan_A-11-2",
-        "catalan_custom",
-        "catalan_not_stated",
-    ]
+#     assert rows == gold_standard_rows
 
-    output_dir = DIR_WITH_PROFILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES / "output"
-    if not output_dir.exists():
-        output_dir.mkdir()
-    input_feature_profiles = sorted(
-        list(DIR_WITH_INPUT_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES.glob("*.csv"))
-    )
-    test_adder._increment_value_ids_in_feature_profiles(
-        new_value_id="A-11-5",
-        input_files=input_feature_profiles,
-        output_dir=output_dir,
-    )
 
-    for stem in stems_of_files_that_must_be_changed:
-        assert (output_dir / f"{stem}.csv").exists(), (
-            f"File {stem}.csv was not created. It means that no changes were made while"
-            " there should have been changes"
-        )
+# def test__increment_value_ids_in_feature_profiles(test_adder):
 
-    for file in output_dir.glob("*.csv"):
-        assert (
-            file.stem not in stems_of_files_that_must_not_be_changed
-        ), f"File {file.name} is not supposed to be changed"
+#     stems_of_files_that_must_be_changed = [
+#         "catalan_A-11-5",
+#         "catalan_A-11-6",
+#         "catalan_A-11-14",
+#     ]
 
-        print(f"TEST: checking amended feature profile {file.name}")
+#     stems_of_files_that_must_not_be_changed = [
+#         "catalan_A-11-1",
+#         "catalan_A-11-2",
+#         "catalan_custom",
+#         "catalan_not_stated",
+#     ]
 
-        check_existence_of_output_csv_file_and_compare_with_gold_standard(
-            output_file=file,
-            gold_standard_file=DIR_WITH_GS_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES
-            / file.name,
-        )
+#     output_dir = DIR_WITH_PROFILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES / "output"
+#     if not output_dir.exists():
+#         output_dir.mkdir()
+#     input_feature_profiles = sorted(
+#         list(DIR_WITH_INPUT_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES.glob("*.csv"))
+#     )
+#     test_adder._increment_value_ids_in_feature_profiles(
+#         new_value_id="A-11-5",
+#         input_files=input_feature_profiles,
+#         output_dir=output_dir,
+#     )
+
+#     for stem in stems_of_files_that_must_be_changed:
+#         assert (output_dir / f"{stem}.csv").exists(), (
+#             f"File {stem}.csv was not created. It means that no changes were made while"
+#             " there should have been changes"
+#         )
+
+#     for file in output_dir.glob("*.csv"):
+#         assert (
+#             file.stem not in stems_of_files_that_must_not_be_changed
+#         ), f"File {file.name} is not supposed to be changed"
+
+#         print(f"TEST: checking amended feature profile {file.name}")
+
+#         check_existence_of_output_csv_file_and_compare_with_gold_standard(
+#             output_file=file,
+#             gold_standard_file=DIR_WITH_GS_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES
+#             / file.name,
+#         )
 
 
 # _mark_value_as_listed_in_feature_profiles

@@ -4,6 +4,7 @@ from typing import Literal, Union
 from tinybear.csv_xls import read_column_from_csv, read_dicts_from_csv, write_csv
 
 from langworld_db_data import ObjectWithPaths
+from langworld_db_data.constants.literals import ID_SEPARATOR
 from langworld_db_data.tools.common.ids.compose import (
     compose_feature_id,
     compose_value_id_based_on_feature_id,
@@ -94,7 +95,7 @@ class Adder(ObjectWithPaths):
             args_to_validate=args_to_validate,
         )
 
-        self._check_that_en_and_ru_are_not_already_used(
+        self._check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature(
             feature_or_value=feature_or_value,
             args_to_validate=args_to_validate,
         )
@@ -181,7 +182,7 @@ class Adder(ObjectWithPaths):
                 f" {file_to_check_against.name}"
             )
 
-    def _check_that_en_and_ru_are_not_already_used(
+    def _check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature(
         self,
         feature_or_value: FeatureOrValue,
         args_to_validate: dict[str, Union[str, int, None]],
@@ -196,11 +197,15 @@ class Adder(ObjectWithPaths):
                 "en": "feature_en",
                 "ru": "feature_ru",
                 "file_to_check_against": self.input_file_with_features,
+                "upper_domain_id": "category_id",
+                "function_for_getting_id_of_upper_domain": extract_category_id,
             },
             "value": {
                 "en": "value_en",
                 "ru": "value_ru",
                 "file_to_check_against": self.input_file_with_listed_values,
+                "upper_domain_id": "feature_id",
+                "function_for_getting_id_of_upper_domain": extract_feature_id,
             },
         }
 
@@ -210,16 +215,19 @@ class Adder(ObjectWithPaths):
         english_name = args_that_must_not_be_occupied["en"]
         russian_name = args_that_must_not_be_occupied["ru"]
         file_to_check_against = args_that_must_not_be_occupied["file_to_check_against"]
-        if args_to_validate[english_name] in read_column_from_csv(
-            path_to_file=file_to_check_against,
-            column_name="en",
-        ) or args_to_validate[russian_name] in read_column_from_csv(
-            path_to_file=file_to_check_against, column_name="ru"
-        ):
-            raise AdderError(
-                f"English or Russian {feature_or_value} name is already present in {file_to_check_against.name}: "
-                f"{args_to_validate[english_name]}"
-            )
+        extract_id_of_upper_domain = args_that_must_not_be_occupied["function_for_getting_id_of_upper_domain"]
+        upper_domain_id = args_that_must_not_be_occupied["upper_domain_id"]
+
+        rows = read_dicts_from_csv(path_to_file=file_to_check_against)
+        for row in rows:
+            if extract_id_of_upper_domain(row["id"]) != args_to_validate[upper_domain_id]:
+                continue
+
+            if row["en"] == args_to_validate[english_name] or row["ru"] == args_to_validate[russian_name]:
+                raise AdderError(
+                    f"English or Russian {feature_or_value} name is already present in {file_to_check_against.name}: "
+                    f"{args_to_validate[english_name]}"
+                )
 
     def _check_validity_of_keys_in_passed_listed_values(
         self,
@@ -267,6 +275,8 @@ class Adder(ObjectWithPaths):
         elif feature_or_value == "value":
             category_or_feature = "feature"
             category_or_feature_id = args_to_validate["feature_id"]
+        
+        print(category_or_feature)
 
         if not self._check_if_index_to_assign_is_in_list_of_applicable_indices(
             index_to_validate=args_to_validate["index_to_assign"],
@@ -284,12 +294,14 @@ class Adder(ObjectWithPaths):
         category_or_feature: CategoryOrFeature,
         category_or_feature_id: str,
     ) -> bool:
-        existing_indices = self._get_tuple_of_currently_available_indices(
+        avaliable_indices = self._get_tuple_of_currently_available_indices(
             category_or_feature=category_or_feature,
             category_or_feature_id=category_or_feature_id,
         )
+        print(avaliable_indices)
+        print(index_to_validate)
 
-        return index_to_validate in existing_indices
+        return index_to_validate in avaliable_indices
 
     def _get_tuple_of_currently_available_indices(
         self,
@@ -320,7 +332,7 @@ class Adder(ObjectWithPaths):
         )
         for row in rows:
             id = row["id"]
-            if not id.startswith(category_or_feature_id):
+            if not id.startswith(f"{category_or_feature_id}{ID_SEPARATOR}"):
                 continue
             existing_indices.append(extract_last_index(id))
 
@@ -511,10 +523,6 @@ class Adder(ObjectWithPaths):
             output_file = self.output_dir_with_feature_profiles / file_name
         else:
             output_file = self.output_file_with_features
-
-        for row in rows_after_insertion[60:70]:
-            print(row)
-        print(output_file)
 
         write_csv(
             rows=rows_after_insertion,

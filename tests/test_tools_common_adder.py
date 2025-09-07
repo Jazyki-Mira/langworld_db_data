@@ -166,7 +166,7 @@ def test__check_that_category_or_feature_where_to_add_exists_fails_with_non_exis
         )
 
 
-def test__check_that_en_and_ru_are_not_already_used_in_features_inventory_fails(
+def test__check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature_in_features_inventory_fails(
     test_adder,
 ):
 
@@ -175,10 +175,10 @@ def test__check_that_en_and_ru_are_not_already_used_in_features_inventory_fails(
         ("New  feature", "Типы фонации"),
     ):
         with pytest.raises(AdderError, match="name is already present in"):
-            test_adder._check_that_en_and_ru_are_not_already_used(
+            test_adder._check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature(
                 feature_or_value="feature",
                 args_to_validate={
-                    "category_id": "A",
+                    "category_id": "B",
                     "feature_en": en,
                     "feature_ru": ru,
                     "listed_values_to_add": [
@@ -191,9 +191,34 @@ def test__check_that_en_and_ru_are_not_already_used_in_features_inventory_fails(
             )
 
 
+def test__check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature_in_features_inventory_ok(
+    test_adder,
+):
+
+    for en, ru in (
+        ("Types of phonation", "Новый признак"),
+        ("New  feature", "Типы фонации"),
+        ("Number of degrees of vowel height", "Количество степеней подъема"),
+    ):
+        test_adder._check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature(
+            feature_or_value="feature",
+            args_to_validate={
+                "category_id": "D",
+                "feature_en": en,
+                "feature_ru": ru,
+                "listed_values_to_add": [
+                    {
+                        "en": "value",
+                        "ru": "значение",
+                    },
+                ],
+            },
+        )
+
+
 def test__check_validity_of_index_to_assign_for_feature_fails(test_adder):
 
-    for bad_feature_index in (0, -7, 418):
+    for bad_feature_index in (0, -7, 4, 418):
         with pytest.raises(
             ValueError,
             match="Invalid index to assign",
@@ -287,7 +312,7 @@ def test__check_that_category_or_feature_where_to_add_exists_fails_with_non_exis
         )
 
 
-def test__check_that_en_and_ru_are_not_already_used_in_values_inventory_fails(
+def test__check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature_fails(
     test_adder,
 ):
 
@@ -296,19 +321,38 @@ def test__check_that_en_and_ru_are_not_already_used_in_values_inventory_fails(
         ("New  value", "Увулярные"),
     ):
         with pytest.raises(AdderError, match="name is already present in"):
-            test_adder._check_that_en_and_ru_are_not_already_used(
+            test_adder._check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature(
                 feature_or_value="value",
                 args_to_validate={
-                    "feature_id": "G-3",
+                    "feature_id": "A-16",
                     "value_en": en,
                     "value_ru": ru,
                 },
             )
 
 
+def test__check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature_ok(
+    test_adder,
+):
+
+    for en, ru in (
+        ("Uvular", "Новое значение"),
+        ("New  value", "Увулярные"),
+        ("Two","Две"),
+    ):
+        test_adder._check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature(
+            feature_or_value="value",
+            args_to_validate={
+                "feature_id": "G-3",
+                "value_en": en,
+                "value_ru": ru,
+            },
+        )
+
+
 def test__check_validity_of_index_to_assign_for_value_invalid(test_adder):
 
-    for bad_feature_index in (0, -7, 418):
+    for bad_feature_index in (0, -7, 7, 418):
         with pytest.raises(
             ValueError,
             match="Invalid index to assign",
@@ -414,7 +458,7 @@ def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_values_
         },
         {
             "feature_id": "A-1",
-            "index_to_validate": 0,
+            "index_to_validate": 5,
         },
     )
 

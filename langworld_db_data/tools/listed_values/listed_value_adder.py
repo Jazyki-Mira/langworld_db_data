@@ -13,14 +13,14 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
-from langworld_db_data.tools.common.adder import Adder
+from langworld_db_data.tools.common.adder import Adder, AdderError
 from langworld_db_data.tools.common.ids.extract import extract_feature_id, extract_value_index
 
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
 KEY_FOR_LINE_NUMBER = "line number"
 
 
-class ListedValueAdderError(Exception):
+class ListedValueAdderError(AdderError):
     pass
 
 
@@ -39,8 +39,8 @@ class ListedValueAdder(Adder):
 
         args_to_validate = {
             "feature_id": feature_id,
-            "new_value_en": new_value_en,
-            "new_value_ru": new_value_ru,
+            "value_en": new_value_en,
+            "value_ru": new_value_ru,
             "index_to_assign": index_to_assign,
         }
         self._validate_args(
@@ -61,6 +61,12 @@ class ListedValueAdder(Adder):
             new_value_ru=new_value_ru,
             description_formatted_en=description_formatted_en,
             description_formatted_ru=description_formatted_ru,
+        )
+        self._mark_value_as_listed_in_feature_profiles(
+            feature_id=feature_id,
+            new_value_id=value_id,
+            new_value_ru=new_value_ru,
+            custom_values_to_rename=custom_values_to_rename,
         )
 
     def _add_listed_value_to_inventory_of_listed_values(
@@ -100,7 +106,7 @@ class ListedValueAdder(Adder):
         )
 
         self._align_indices_of_features_or_values_that_come_after_inserted_one(
-            input_filepath=self.input_file_with_listed_values,
+            input_filepath=self.output_file_with_listed_values,
             output_filepath=self.output_file_with_listed_values,
             line_number_of_insertion=line_number_to_insert_into,
         )
