@@ -338,7 +338,7 @@ def test__check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_
     for en, ru in (
         ("Uvular", "Новое значение"),
         ("New  value", "Увулярные"),
-        ("Two","Две"),
+        ("Two", "Две"),
     ):
         test_adder._check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature(
             feature_or_value="value",

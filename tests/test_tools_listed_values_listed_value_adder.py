@@ -178,9 +178,7 @@ def test_add_listed_value_throws_exception_add_value_homonymous_to_value_in_the_
             "new_value_ru": "Что-то новое",
         },
     ):
-        with pytest.raises(
-            AdderError, match="English or Russian value name is already present"
-        ):
+        with pytest.raises(AdderError, match="English or Russian value name is already present"):
             test_adder.add_listed_value(**bad_args)
 
 
@@ -190,9 +188,7 @@ def test_add_listed_value_throws_exception_with_empty_args(test_adder):
         {"feature_id": "A-1", "new_value_en": "", "new_value_ru": "Значение"},
         {"feature_id": "A-1", "new_value_en": "Value", "new_value_ru": ""},
     ):
-        with pytest.raises(
-            AdderError, match="None of the following arguments"
-        ):
+        with pytest.raises(AdderError, match="None of the following arguments"):
             test_adder.add_listed_value(**bad_set_of_values)
 
 

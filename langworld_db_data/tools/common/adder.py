@@ -215,7 +215,9 @@ class Adder(ObjectWithPaths):
         english_name = args_that_must_not_be_occupied["en"]
         russian_name = args_that_must_not_be_occupied["ru"]
         file_to_check_against = args_that_must_not_be_occupied["file_to_check_against"]
-        extract_id_of_upper_domain = args_that_must_not_be_occupied["function_for_getting_id_of_upper_domain"]
+        extract_id_of_upper_domain = args_that_must_not_be_occupied[
+            "function_for_getting_id_of_upper_domain"
+        ]
         upper_domain_id = args_that_must_not_be_occupied["upper_domain_id"]
 
         rows = read_dicts_from_csv(path_to_file=file_to_check_against)
@@ -223,7 +225,10 @@ class Adder(ObjectWithPaths):
             if extract_id_of_upper_domain(row["id"]) != args_to_validate[upper_domain_id]:
                 continue
 
-            if row["en"] == args_to_validate[english_name] or row["ru"] == args_to_validate[russian_name]:
+            if (
+                row["en"] == args_to_validate[english_name]
+                or row["ru"] == args_to_validate[russian_name]
+            ):
                 raise AdderError(
                     f"English or Russian {feature_or_value} name is already present in {file_to_check_against.name}: "
                     f"{args_to_validate[english_name]}"
@@ -275,7 +280,7 @@ class Adder(ObjectWithPaths):
         elif feature_or_value == "value":
             category_or_feature = "feature"
             category_or_feature_id = args_to_validate["feature_id"]
-        
+
         print(category_or_feature)
 
         if not self._check_if_index_to_assign_is_in_list_of_applicable_indices(
@@ -487,7 +492,10 @@ class Adder(ObjectWithPaths):
                 exact_line_number_is_found = True
                 break
 
-            if f"{category_or_feature_id_of_new_feature_or_value}{ID_SEPARATOR}" in row[lookup_column]:
+            if (
+                f"{category_or_feature_id_of_new_feature_or_value}{ID_SEPARATOR}"
+                in row[lookup_column]
+            ):
                 line_number_where_row_will_be_inserted = i
 
         if not exact_line_number_is_found:
