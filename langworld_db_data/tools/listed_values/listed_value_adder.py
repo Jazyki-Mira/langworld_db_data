@@ -47,12 +47,14 @@ class ListedValueAdder(Adder):
             feature_or_value="value",
             args_to_validate=args_to_validate,
         )
+        print("Validated args")
 
         value_id = self._make_id_for_new_feature_or_value(
             category_or_feature="feature",
             category_or_feature_id=feature_id,
             index_to_assign=index_to_assign,
         )
+        print(f"New value ID will be {value_id}")
 
         self._add_listed_value_to_inventory_of_listed_values(
             value_id=value_id,
@@ -62,6 +64,7 @@ class ListedValueAdder(Adder):
             description_formatted_en=description_formatted_en,
             description_formatted_ru=description_formatted_ru,
         )
+        print("Added value to inventory if listed values")
         self._mark_value_as_listed_in_feature_profiles(
             feature_id=feature_id,
             new_value_id=value_id,
@@ -92,11 +95,13 @@ class ListedValueAdder(Adder):
             feature_or_value="value",
             args=args,
         )
+        print(f"New row is {new_row}")
 
         line_number_to_insert_into = self._get_line_number_where_to_insert(
             feature_or_value="value",
             new_feature_or_value_id=value_id,
         )
+        print(f"I will insert this row into number {line_number_to_insert_into}")
 
         self._insert_new_row_at_given_line_number(
             new_row=new_row,

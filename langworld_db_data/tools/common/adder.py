@@ -487,7 +487,7 @@ class Adder(ObjectWithPaths):
                 exact_line_number_is_found = True
                 break
 
-            if category_or_feature_id_of_new_feature_or_value in row[lookup_column]:
+            if f"{category_or_feature_id_of_new_feature_or_value}{ID_SEPARATOR}" in row[lookup_column]:
                 line_number_where_row_will_be_inserted = i
 
         if not exact_line_number_is_found:
