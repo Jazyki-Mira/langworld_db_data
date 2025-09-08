@@ -65,6 +65,7 @@ class ListedValueAdder(Adder):
             description_formatted_ru=description_formatted_ru,
         )
         print("Added value to inventory if listed values")
+        
         self._mark_value_as_listed_in_feature_profiles(
             feature_id=feature_id,
             new_value_id=value_id,
@@ -115,6 +116,34 @@ class ListedValueAdder(Adder):
             output_filepath=self.output_file_with_listed_values,
             line_number_of_insertion=line_number_to_insert_into,
         )
+
+    
+    def _update_value_types_and_ids_in_feature_profiles(
+        self,
+        feature_id: str,
+        value_id: str,
+        custom_values_to_rename: Optional[list[str]] = None,
+    ) -> None:
+        
+        for feature_profile in self.input_feature_profiles:
+
+            self._update_value_type_and_id_in_one_feature_profile(
+                feature_profile=feature_profile,
+                feature_id=feature_id,
+                value_id=value_id,
+                custom_values_to_rename=custom_values_to_rename,
+            )
+
+    
+    def _update_value_type_and_id_in_one_feature_profile(
+        feature_profile: Path,
+        feature_id: str,
+        value_id: str,
+        custom_values_to_rename: Optional[list[str]] = None,
+    ) -> None:
+        
+        pass
+
 
     # def add_listed_value(
     #     self,
