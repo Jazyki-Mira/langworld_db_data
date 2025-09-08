@@ -66,7 +66,7 @@ class ListedValueAdder(Adder):
             description_formatted_ru=description_formatted_ru,
         )
         print("Added value to inventory if listed values")
-        
+
         self._update_value_ids_and_types_in_feature_profiles_if_necessary(
             feature_id=feature_id,
             value_id=value_id,
@@ -124,7 +124,6 @@ class ListedValueAdder(Adder):
             line_number_of_insertion=line_number_to_insert_into,
         )
 
-    
     def _update_value_ids_and_types_in_feature_profiles_if_necessary(
         self,
         feature_id: str,
@@ -132,7 +131,7 @@ class ListedValueAdder(Adder):
         value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
     ) -> None:
-        
+
         line_number_of_row_to_check = self._find_line_number_of_feature_in_feature_profile(
             feature_profile=self.input_feature_profiles[0],
             feature_id=feature_id,
@@ -148,13 +147,12 @@ class ListedValueAdder(Adder):
                 custom_values_to_rename=custom_values_to_rename,
             )
 
-    
     def _find_line_number_of_feature_in_feature_profile(
         self,
         feature_profile: Path,
         feature_id: str,
     ) -> int:
-        
+
         rows = read_dicts_from_csv(path_to_file=feature_profile)
 
         for i, row in enumerate(rows):
@@ -162,7 +160,6 @@ class ListedValueAdder(Adder):
                 continue
 
             return i
-    
 
     def _update_value_id_and_type_in_one_feature_profile_if_necessary(
         self,
@@ -172,24 +169,30 @@ class ListedValueAdder(Adder):
         value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
     ) -> None:
-        
+
         rows = read_dicts_from_csv(feature_profile)
-        
+
         if rows[line_number_of_row_to_check]["value_type"] == "listed":
 
-            rows[line_number_of_row_to_check] = self._increment_value_id_in_line_number_to_check_if_necessary(
-                row=rows[line_number_of_row_to_check],
-                value_id=value_id,
+            rows[line_number_of_row_to_check] = (
+                self._increment_value_id_in_line_number_to_check_if_necessary(
+                    row=rows[line_number_of_row_to_check],
+                    value_id=value_id,
+                )
             )
             print("Done")
 
-        elif rows[line_number_of_row_to_check]["value_type"] == "custom" and custom_values_to_rename:
+        elif (
+            rows[line_number_of_row_to_check]["value_type"] == "custom" and custom_values_to_rename
+        ):
 
-            rows[line_number_of_row_to_check] = self._mark_value_type_as_listed_and_rename_it_if_necessary(
-                row=rows[line_number_of_row_to_check],
-                new_value_ru=value_ru,
-                value_id=value_id,
-                custom_values_to_rename=custom_values_to_rename,
+            rows[line_number_of_row_to_check] = (
+                self._mark_value_type_as_listed_and_rename_it_if_necessary(
+                    row=rows[line_number_of_row_to_check],
+                    new_value_ru=value_ru,
+                    value_id=value_id,
+                    custom_values_to_rename=custom_values_to_rename,
+                )
             )
             print("And this one done")
             print(rows[line_number_of_row_to_check])
@@ -201,13 +204,12 @@ class ListedValueAdder(Adder):
             overwrite=True,
         )
 
-
     def _increment_value_id_in_line_number_to_check_if_necessary(
         self,
         row: dict[str, str],
         value_id: str,
     ) -> dict[str, str]:
-            
+
         value_id_of_row_to_check = row["value_id"]
         value_index_to_check = int(extract_value_index(value_id_of_row_to_check))
         if value_index_to_check >= int(extract_value_index(value_id)):
@@ -215,9 +217,8 @@ class ListedValueAdder(Adder):
                 feature_id=extract_feature_id(value_id_of_row_to_check),
                 value_index=value_index_to_check + 1,
             )
-        
+
         return row
-    
 
     def _mark_value_type_as_listed_and_rename_it_if_necessary(
         self,
@@ -237,12 +238,11 @@ class ListedValueAdder(Adder):
 
         return row
 
-
     def _generate_variants_of_custom_value_name(
         self,
         value_name: str,
     ) -> list[str]:
-        
+
         value_name = value_name.strip()
 
         variants = [value_name]
@@ -255,7 +255,6 @@ class ListedValueAdder(Adder):
             variants.append(value_name.lower())
 
         return variants
-
 
     def _mark_value_as_listed_in_feature_profiles(
         self,

@@ -11,13 +11,19 @@ from tests.paths import (
 )
 
 DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES = DIR_WITH_ADDERS_TEST_FILES / "listed_value_adder"
-DIR_WITH_GOLD_STANDARD_LISTED_VALUES_INVENTORIES_FOR_VARIOUS_TESTS = DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES / "gold_standard_inventories"
-DIR_WITH_GOLD_STANDARD_FEATURE_PROFILES = DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES / "gold_standard_feature_profiles"
+DIR_WITH_GOLD_STANDARD_LISTED_VALUES_INVENTORIES_FOR_VARIOUS_TESTS = (
+    DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES / "gold_standard_inventories"
+)
+DIR_WITH_GOLD_STANDARD_FEATURE_PROFILES = (
+    DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES / "gold_standard_feature_profiles"
+)
 
 DIR_WITH_OUTPUT_FILES = DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES / "output_files"
 
 INPUT_DIR_WITH_FEATURE_PROFILES = DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES / "input_feature_profiles"
-INPUT_FILE_WITH_LISTED_VALUES = DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES / "input_inventories" / "features_listed_values.csv"
+INPUT_FILE_WITH_LISTED_VALUES = (
+    DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES / "input_inventories" / "features_listed_values.csv"
+)
 OUTPUT_DIR_FOR_LISTED_VALUE_ADDER_FEATURE_PROFILES = (
     DIR_WITH_ADDERS_FEATURE_PROFILES / "output_listed_value_adder"
 )
@@ -42,18 +48,17 @@ DIR_WITH_GS_FILES_FOR_INCREMENT_VALUE_IDS_IN_FEATURE_PROFILES = (
 
 
 CUSTOM_VALUES_TO_RENAME = [
-        "Одно кастомное значение",
-        "Еще одно кастомное значение",
-        "Особое употребление относительных местоимений и опущение предлогов перед союзами, вводящими придаточное дополнительное",
-    ]
+    "Одно кастомное значение",
+    "Еще одно кастомное значение",
+    "Особое употребление относительных местоимений и опущение предлогов перед союзами, вводящими придаточное дополнительное",
+]
 
 
 @pytest.fixture(scope="function")
 def test_adder():
     return ListedValueAdder(
         input_file_with_listed_values=INPUT_FILE_WITH_LISTED_VALUES,
-        output_file_with_listed_values=DIR_WITH_OUTPUT_FILES
-        / "features_listed_values.csv",
+        output_file_with_listed_values=DIR_WITH_OUTPUT_FILES / "features_listed_values.csv",
         input_dir_with_feature_profiles=INPUT_DIR_WITH_FEATURE_PROFILES,
         output_dir_with_feature_profiles=DIR_WITH_OUTPUT_FILES,
     )
@@ -61,12 +66,15 @@ def test_adder():
 
 # add_listed_value
 def test_add_listed_value_append_to_end_with_custom_values(test_adder):
-    
+
     # STEMS_OF_EXPECTED_OUTPUT_FILES = ("catalan", "corsican", "franco_provencal")
     # STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED = ("pashto", "ukrainian")
 
-    GS_DIR = DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES / "gs_add_listed_value_append_to_end_with_custom_values"
-    
+    GS_DIR = (
+        DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_add_listed_value_append_to_end_with_custom_values"
+    )
+
     test_adder.add_listed_value(
         feature_id="A-11",
         new_value_en="New value, listed with a comma",
@@ -103,8 +111,11 @@ def test_add_listed_value_append_to_end_with_custom_values(test_adder):
 
 def test_add_listed_value_append_to_end_with_custom_values_and_updating_value_ids(test_adder):
 
-    GS_DIR = DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES / "gs_add_listed_value_append_to_end_with_custom_values_and_updating_value_ids"
-    
+    GS_DIR = (
+        DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_add_listed_value_append_to_end_with_custom_values_and_updating_value_ids"
+    )
+
     test_adder.add_listed_value(
         feature_id="A-2",
         new_value_en="Four degrees",
@@ -138,8 +149,8 @@ def test_add_listed_value_add_value_homonymous_to_value_in_feature_after_the_cur
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES /
-        "gs_flv_add_listed_value_add_value_homonymous_to_value_in_feature_after_the_current_one.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_flv_add_listed_value_add_value_homonymous_to_value_in_feature_after_the_current_one.csv",
     )
 
 
@@ -154,8 +165,8 @@ def test_add_listed_value_add_value_homonymous_to_value_in_feature_before_the_cu
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES /
-        "gs_flv_add_listed_value_add_value_homonymous_to_value_in_feature_before_the_current_one.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_flv_add_listed_value_add_value_homonymous_to_value_in_feature_before_the_current_one.csv",
     )
 
 
@@ -223,8 +234,8 @@ def test__add_to_inventory_of_listed_values_append_to_end_no_custom_values(test_
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES /
-        "gs_flv__add_to_inventory_of_listed_values_append_to_end_no_custom_values.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_flv__add_to_inventory_of_listed_values_append_to_end_no_custom_values.csv",
     )
 
 
@@ -238,8 +249,8 @@ def test__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES /
-        "gs_flv__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_third.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_flv__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_third.csv",
     )
 
 
@@ -253,8 +264,8 @@ def test__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES /
-        "gs_flv__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_tenth.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_flv__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_tenth.csv",
     )
 
 
@@ -268,8 +279,8 @@ def test__add_to_inventory_of_listed_values_put_as_first(test_adder):
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES /
-        "gs_flv__add_to_inventory_of_listed_values_put_as_first.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_flv__add_to_inventory_of_listed_values_put_as_first.csv",
     )
 
 
@@ -288,17 +299,20 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES /
-        "gs_flv__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no_custom_values.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_flv__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no_custom_values.csv",
     )
 
 
 def test__find_line_number_of_feature_in_feature_profile(test_adder):
 
-    assert test_adder._find_line_number_of_feature_in_feature_profile(
-        feature_profile=DIR_WITH_ADDERS_FEATURE_PROFILES / "catalan.csv",
-        feature_id="A-8",
-    ) == 7
+    assert (
+        test_adder._find_line_number_of_feature_in_feature_profile(
+            feature_profile=DIR_WITH_ADDERS_FEATURE_PROFILES / "catalan.csv",
+            feature_id="A-8",
+        )
+        == 7
+    )
 
 
 def test__increment_value_id_in_line_number_to_check_if_necessary(test_adder):
@@ -323,10 +337,13 @@ def test__increment_value_id_in_line_number_to_check_if_necessary(test_adder):
         "comment_en": "",
     }
 
-    assert test_adder._increment_value_id_in_line_number_to_check_if_necessary(
-        row=input_row,
-        value_id="A-3-3",
-    ) == GOLD_STANDARD_ROW
+    assert (
+        test_adder._increment_value_id_in_line_number_to_check_if_necessary(
+            row=input_row,
+            value_id="A-3-3",
+        )
+        == GOLD_STANDARD_ROW
+    )
 
 
 def test__increment_value_id_in_line_number_to_check_if_necessary_does_nothing(test_adder):
@@ -351,10 +368,13 @@ def test__increment_value_id_in_line_number_to_check_if_necessary_does_nothing(t
         "comment_en": "",
     }
 
-    assert test_adder._increment_value_id_in_line_number_to_check_if_necessary(
-        row=input_row,
-        value_id="A-3-11",
-    ) == GOLD_STANDARD_ROW
+    assert (
+        test_adder._increment_value_id_in_line_number_to_check_if_necessary(
+            row=input_row,
+            value_id="A-3-11",
+        )
+        == GOLD_STANDARD_ROW
+    )
 
 
 def test__mark_value_type_as_listed_and_rename_it_if_necessary(test_adder):
@@ -379,15 +399,18 @@ def test__mark_value_type_as_listed_and_rename_it_if_necessary(test_adder):
         "comment_en": "",
     }
 
-    assert test_adder._mark_value_type_as_listed_and_rename_it_if_necessary(
-        row=input_row,
-        new_value_ru="Некое значение",
-        value_id="A-3-8",
-        custom_values_to_rename=[
-            "Подозрительно пусто",
-            "Очень подозрительно пусто",
-        ]
-    ) ==GOLD_STANDARD_ROW
+    assert (
+        test_adder._mark_value_type_as_listed_and_rename_it_if_necessary(
+            row=input_row,
+            new_value_ru="Некое значение",
+            value_id="A-3-8",
+            custom_values_to_rename=[
+                "Подозрительно пусто",
+                "Очень подозрительно пусто",
+            ],
+        )
+        == GOLD_STANDARD_ROW
+    )
 
 
 def test__mark_value_type_as_listed_and_rename_it_if_necessary_does_nothing(test_adder):
@@ -412,18 +435,23 @@ def test__mark_value_type_as_listed_and_rename_it_if_necessary_does_nothing(test
         "comment_en": "",
     }
 
-    assert test_adder._mark_value_type_as_listed_and_rename_it_if_necessary(
-        row=input_row,
-        new_value_ru="Некое значение",
-        value_id="A-3-8",
-        custom_values_to_rename=[
-            "Подозрительно пусто",
-            "Очень подозрительно пусто",
-        ]
-    ) ==GOLD_STANDARD_ROW
+    assert (
+        test_adder._mark_value_type_as_listed_and_rename_it_if_necessary(
+            row=input_row,
+            new_value_ru="Некое значение",
+            value_id="A-3-8",
+            custom_values_to_rename=[
+                "Подозрительно пусто",
+                "Очень подозрительно пусто",
+            ],
+        )
+        == GOLD_STANDARD_ROW
+    )
 
 
-def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_type(test_adder):
+def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_type(
+    test_adder,
+):
 
     test_adder._update_value_id_and_type_in_one_feature_profile_if_necessary(
         feature_profile=test_adder.input_dir_with_feature_profiles / "catalan.csv",
@@ -435,12 +463,14 @@ def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_v
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=DIR_WITH_OUTPUT_FILES / "catalan.csv",
-        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES /
-        "gs_catalan__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_type.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_catalan__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_type.csv",
     )
 
 
-def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_id(test_adder):
+def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_id(
+    test_adder,
+):
 
     test_adder._update_value_id_and_type_in_one_feature_profile_if_necessary(
         feature_profile=test_adder.input_dir_with_feature_profiles / "catalan.csv",
@@ -452,8 +482,8 @@ def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_v
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=DIR_WITH_OUTPUT_FILES / "catalan.csv",
-        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES /
-        "gs_catalan__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_id.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_catalan__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_id.csv",
     )
 
 
@@ -464,7 +494,10 @@ def test__update_value_ids_and_types_in_feature_profiles_if_necessary(test_adder
         "And one moooooore thing",
     ]
 
-    GS_DIR = DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES / "gs__update_value_ids_and_types_in_feature_profiles_if_necessary"
+    GS_DIR = (
+        DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs__update_value_ids_and_types_in_feature_profiles_if_necessary"
+    )
 
     test_adder._update_value_ids_and_types_in_feature_profiles_if_necessary(
         feature_id="A-2",
@@ -483,14 +516,19 @@ def test__update_value_ids_and_types_in_feature_profiles_if_necessary(test_adder
 
 def test__generate_variants_of_custom_value_name(test_adder):
 
-    GS_VARIANTS = set([
-        "Есть первые, вторые и третьи.",
-        "Есть первые, вторые и третьи",
-        "есть первые, вторые и третьи.",
-        "есть первые, вторые и третьи",
-    ])
+    GS_VARIANTS = set(
+        [
+            "Есть первые, вторые и третьи.",
+            "Есть первые, вторые и третьи",
+            "есть первые, вторые и третьи.",
+            "есть первые, вторые и третьи",
+        ]
+    )
 
-    assert set(test_adder._generate_variants_of_custom_value_name("Есть первые, вторые и третьи.")) == GS_VARIANTS
+    assert (
+        set(test_adder._generate_variants_of_custom_value_name("Есть первые, вторые и третьи."))
+        == GS_VARIANTS
+    )
 
 
 # def test__mark_value_as_listed_in_feature_profiles(test_adder):
