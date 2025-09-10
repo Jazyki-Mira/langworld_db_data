@@ -170,6 +170,24 @@ class ListedValueAdder(Adder):
         custom_values_to_rename: Optional[list[str]] = None,
     ) -> None:
 
+        # Add value_ru and its variants with capital letter and
+        # with / without full stop to custom_values_to_rename
+        if custom_values_to_rename is None:
+            custom_values_to_rename = []
+        custom_values_to_rename_with_all_their_variants = []
+        custom_values_to_rename.append(value_ru)
+        for value in custom_values_to_rename:
+            variants_of_value = self._generate_variants_of_russian_value_name(value)
+            for variant in variants_of_value:
+                custom_values_to_rename_with_all_their_variants.append(variant)
+
+        print(custom_values_to_rename)
+        
+        # Remove repetitions in custom_values_to_rename
+        custom_values_to_rename_with_all_their_variants = list(set(custom_values_to_rename_with_all_their_variants))
+        for variant in custom_values_to_rename_with_all_their_variants:
+            print(variant)
+
         rows = read_dicts_from_csv(feature_profile)
 
         if rows[line_number_of_row_to_check]["value_type"] == "listed":
@@ -182,16 +200,14 @@ class ListedValueAdder(Adder):
             )
             print("Done")
 
-        elif (
-            rows[line_number_of_row_to_check]["value_type"] == "custom" and custom_values_to_rename
-        ):
+        elif rows[line_number_of_row_to_check]["value_type"] == "custom":
 
             rows[line_number_of_row_to_check] = (
                 self._mark_value_type_as_listed_and_rename_it_if_necessary(
                     row=rows[line_number_of_row_to_check],
                     new_value_ru=value_ru,
                     value_id=value_id,
-                    custom_values_to_rename=custom_values_to_rename,
+                    custom_values_to_rename=custom_values_to_rename_with_all_their_variants,
                 )
             )
             print("And this one done")
@@ -228,9 +244,7 @@ class ListedValueAdder(Adder):
         custom_values_to_rename: list[str],
     ) -> dict[str, str]:
 
-        for variant in self._generate_variants_of_custom_value_name(row["value_ru"]):
-            if variant not in custom_values_to_rename:
-                continue
+        if row["value_ru"].strip() in custom_values_to_rename:
 
             row["value_ru"] = new_value_ru
             row["value_id"] = value_id
@@ -238,68 +252,82 @@ class ListedValueAdder(Adder):
 
         return row
 
-    def _generate_variants_of_custom_value_name(
+    def _generate_variants_of_russian_value_name(
         self,
         value_name: str,
-    ) -> list[str]:
+    ) -> set[str]:
+        """
+        Create set of the following variants of Russian name of new value:
+        - starts with capital letter, ends with full stop,
+        - starts with capital letter, does not end with full stop,
+        - starts with small letter, ends with full stop,
+        - starts with small letter, does not end with full stop.
 
+        Set was chosen as output type because order of variants is not
+        important.
+        """
         value_name = value_name.strip()
+        
+        if value_name[0].isupper():
+            converse_variant_of_value_name = f"{value_name[0].lower()}{value_name[1:]}"
+        else:
+            converse_variant_of_value_name = f"{value_name[0].upper()}{value_name[1:]}"
 
-        variants = [value_name]
+        variants = [value_name, converse_variant_of_value_name]
 
         if value_name.endswith("."):
             variants.append(value_name[:-1])
-            variants.append(value_name[:-1].lower())
+            variants.append(converse_variant_of_value_name[:-1])
+        else:
+            variants.append(f"{value_name}.")
+            variants.append(f"{converse_variant_of_value_name}.")
 
-        if value_name.lower() not in variants:
-            variants.append(value_name.lower())
+        return set(variants)
 
-        return variants
+    # def _mark_value_as_listed_in_feature_profiles(
+    #     self,
+    #     feature_id: str,
+    #     new_value_id: str,
+    #     new_value_ru: str,
+    #     custom_values_to_rename: Optional[list[str]] = None,
+    # ) -> None:
+    #     for file in self.input_feature_profiles:
+    #         is_changed = False
+    #         rows = read_dicts_from_csv(file)
 
-    def _mark_value_as_listed_in_feature_profiles(
-        self,
-        feature_id: str,
-        new_value_id: str,
-        new_value_ru: str,
-        custom_values_to_rename: Optional[list[str]] = None,
-    ) -> None:
-        for file in self.input_feature_profiles:
-            is_changed = False
-            rows = read_dicts_from_csv(file)
+    #         for i, row in enumerate(rows):
+    #             if row[KEY_FOR_FEATURE_ID] == feature_id and row[KEY_FOR_VALUE_TYPE] == "custom":
+    #                 value_ru = row[KEY_FOR_RUSSIAN_NAME_OF_VALUE].strip()
+    #                 value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
 
-            for i, row in enumerate(rows):
-                if row[KEY_FOR_FEATURE_ID] == feature_id and row[KEY_FOR_VALUE_TYPE] == "custom":
-                    value_ru = row[KEY_FOR_RUSSIAN_NAME_OF_VALUE].strip()
-                    value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
+    #                 new_value_with_variants: list[str] = (
+    #                     [new_value_ru] + custom_values_to_rename
+    #                     if custom_values_to_rename
+    #                     else [new_value_ru]
+    #                 )
+    #                 new_value_with_variants = [v.lower() for v in new_value_with_variants]
 
-                    new_value_with_variants: list[str] = (
-                        [new_value_ru] + custom_values_to_rename
-                        if custom_values_to_rename
-                        else [new_value_ru]
-                    )
-                    new_value_with_variants = [v.lower() for v in new_value_with_variants]
+    #                 if value_ru.lower() not in new_value_with_variants:
+    #                     break
 
-                    if value_ru.lower() not in new_value_with_variants:
-                        break
+    #                 print(
+    #                     f"{file.name}: changing row {i + 2} (feature {feature_id}). "
+    #                     f"Custom value <{row[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}> will become listed value "
+    #                     f"<{new_value_ru}> ({new_value_id})"
+    #                 )
+    #                 row[KEY_FOR_VALUE_TYPE] = "listed"
+    #                 row[KEY_FOR_VALUE_ID] = new_value_id
+    #                 row[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_ru
+    #                 is_changed = True
+    #                 break
 
-                    print(
-                        f"{file.name}: changing row {i + 2} (feature {feature_id}). "
-                        f"Custom value <{row[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}> will become listed value "
-                        f"<{new_value_ru}> ({new_value_id})"
-                    )
-                    row[KEY_FOR_VALUE_TYPE] = "listed"
-                    row[KEY_FOR_VALUE_ID] = new_value_id
-                    row[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_ru
-                    is_changed = True
-                    break
-
-            if is_changed:
-                write_csv(
-                    rows,
-                    path_to_file=self.output_dir_with_feature_profiles / file.name,
-                    overwrite=True,
-                    delimiter=",",
-                )
+    #         if is_changed:
+    #             write_csv(
+    #                 rows,
+    #                 path_to_file=self.output_dir_with_feature_profiles / file.name,
+    #                 overwrite=True,
+    #                 delimiter=",",
+    #             )
 
 
 if __name__ == "__main__":

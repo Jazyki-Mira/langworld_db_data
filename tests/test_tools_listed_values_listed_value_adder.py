@@ -493,8 +493,14 @@ def test__update_value_ids_and_types_in_feature_profiles_if_necessary(test_adder
         )
 
 
-def test__generate_variants_of_custom_value_name(test_adder):
+def test__generate_variants_of_russian_value_name(test_adder):
 
+    VALUE_NAMES = [
+        "Есть первые, вторые и третьи.",
+        "Есть первые, вторые и третьи",
+        "есть первые, вторые и третьи.",
+        "есть первые, вторые и третьи",
+    ]
     GS_VARIANTS = set(
         [
             "Есть первые, вторые и третьи.",
@@ -503,11 +509,11 @@ def test__generate_variants_of_custom_value_name(test_adder):
             "есть первые, вторые и третьи",
         ]
     )
-
-    assert (
-        set(test_adder._generate_variants_of_custom_value_name("Есть первые, вторые и третьи."))
-        == GS_VARIANTS
-    )
+    for value_name in VALUE_NAMES:
+        assert (
+            test_adder._generate_variants_of_russian_value_name(value_name)
+            == GS_VARIANTS
+        )
 
 
 # def test__mark_value_as_listed_in_feature_profiles(test_adder):

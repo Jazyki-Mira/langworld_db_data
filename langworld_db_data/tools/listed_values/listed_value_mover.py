@@ -50,7 +50,6 @@ class ListedValueMover(ObjectWithPaths):
             new_value_en=value_to_move[KEY_FOR_ENGLISH],
             new_value_ru=value_to_move[KEY_FOR_RUSSIAN],
             index_to_assign=index_to_assign,
-            custom_values_to_rename=[value_to_move[KEY_FOR_RUSSIAN]],
             description_formatted_en=value_to_move["description_formatted_en"],
             description_formatted_ru=value_to_move["description_formatted_ru"],
         )
