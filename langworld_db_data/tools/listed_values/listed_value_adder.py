@@ -21,7 +21,7 @@ KEY_FOR_FEATURE_VALUE_INDEX = "index"
 KEY_FOR_LINE_NUMBER = "line number"
 
 
-class ListedValueAdderError(AdderError):
+class ListedValueAdderError(Exception):
     pass
 
 
@@ -38,9 +38,10 @@ class ListedValueAdder(Adder):
         description_formatted_ru: Optional[str] = None,
     ) -> None:
         """
-        Consists of two major steps:
-        1. Add listed value to inventory
-        2. Update feature profiles
+        Consists of three major steps:
+        1. Validate arguments
+        2. Add listed value to inventory
+        3. Update feature profiles
         """
         args_to_validate = {
             "feature_id": feature_id,

@@ -21,6 +21,7 @@ from langworld_db_data.constants.literals import (
     KEY_FOR_VALUE_ID,
     KEY_FOR_VALUE_TYPE,
 )
+from langworld_db_data.tools.common.adder import Adder
 from langworld_db_data.tools.common.ids.extract import (
     extract_category_id,
     extract_feature_index,
@@ -35,7 +36,7 @@ class FeatureAdderError(Exception):
     pass
 
 
-class FeatureAdder(ObjectWithPaths):
+class FeatureAdder(Adder):
 
     def add_feature(
         self,
@@ -54,32 +55,25 @@ class FeatureAdder(ObjectWithPaths):
         """
 
         _ = remove_extra_space
-        cat_id, feat_en, feat_ru = _(category_id), _(feature_en), _(feature_ru)
+        category_id, feature_en, feature_ru = _(category_id), _(feature_en), _(feature_ru)
 
-        if not (cat_id and feat_en and feat_ru and listed_values_to_add):
-            raise FeatureAdderError(
-                "Some of the values passed are empty: "
-                f"{cat_id=}, {feat_ru=}, {feat_en=}, {listed_values_to_add=}"
-            )
-
-        for item in listed_values_to_add:
-            if not (KEY_FOR_ENGLISH in item and KEY_FOR_RUSSIAN in item):
-                raise FeatureAdderError(
-                    f"Listed value must have keys 'en' and 'ru'. Your value: {item}"
-                )
-
-        if cat_id not in read_column_from_csv(
-            path_to_file=self.file_with_categories, column_name=KEY_FOR_ID
-        ):
-            raise FeatureAdderError(
-                f"Category ID <{cat_id}> not found in file" f" {self.file_with_categories.name}"
-            )
+        args_to_validate = {
+            "category_id": category_id,
+            "feature_en": feature_en,
+            "feature_ru": feature_ru,
+            "listed_values_to_add": listed_values_to_add,
+            "index_to_assign": index_to_assign,
+        }
+        self._validate_args(
+            feature_or_value="feature",
+            args_to_validate=args_to_validate,
+        )
 
         try:
             feature_id = self._add_feature_to_inventory_of_features(
-                category_id=cat_id,
-                new_feature_en=feat_en,
-                new_feature_ru=feat_ru,
+                category_id=category_id,
+                new_feature_en=feature_en,
+                new_feature_ru=feature_ru,
                 index_to_assign=index_to_assign,
             )
         except ValueError as e:
@@ -92,7 +86,7 @@ class FeatureAdder(ObjectWithPaths):
 
         self._add_feature_to_feature_profiles(
             feature_id=feature_id,
-            feature_ru=feat_ru,
+            feature_ru=feature_ru,
         )
 
     def _add_feature_to_inventory_of_features(

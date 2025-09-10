@@ -1,5 +1,6 @@
 import pytest
 
+from langworld_db_data.tools.common.adder import AdderError
 from langworld_db_data.tools.features.feature_adder import FeatureAdder, FeatureAdderError
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
@@ -69,7 +70,7 @@ def test_add_feature(test_feature_adder):
 
 
 def test_add_feature_fails_with_invalid_index_to_assign(test_feature_adder):
-    with pytest.raises(FeatureAdderError, match="Failed to add new feature"):
+    with pytest.raises(ValueError, match="Invalid index to assign"):
         test_feature_adder.add_feature(
             category_id="C",
             feature_en="Some feature",
@@ -106,7 +107,7 @@ def test_add_feature_fails_with_empty_arg(test_feature_adder):
             "listed_values_to_add": [],
         },
     ):
-        with pytest.raises(FeatureAdderError, match="Some of the values passed are empty"):
+        with pytest.raises(AdderError, match="None of the following arguments"):
             test_feature_adder.add_feature(**incomplete_set_of_args)
 
 
@@ -121,20 +122,17 @@ def test_add_feature_fails_with_wrong_new_listed_values(test_feature_adder):
         ],
     }
     with pytest.raises(
-        FeatureAdderError,
-        match=(
-            "must have keys 'en' and 'ru'. Your value: {'this': 'should fail', 'en':"
-            " 'this is fine'}"
-        ),
+        AdderError,
+        match=("Each listed value must have keys"),
     ):
         test_feature_adder.add_feature(**args)
 
 
 def test_add_feature_fails_with_wrong_category_id(test_feature_adder):
     with pytest.raises(
-        FeatureAdderError,
+        AdderError,
         match=(
-            "Category ID <X> not found in file" f" {test_feature_adder.file_with_categories.name}"
+            "Category ID X not found in file" f" {test_feature_adder.file_with_categories.name}"
         ),
     ):
         test_feature_adder.add_feature(

@@ -139,7 +139,7 @@ class Adder(ObjectWithPaths):
             if not args_to_validate[arg]:
                 raise AdderError(
                     f"None of the following arguments - "
-                    f"{feature_or_value_to_args_that_must_not_be_empty[feature_or_value]=}"
+                    f"{feature_or_value_to_args_that_must_not_be_empty[feature_or_value]}"
                     f" - must be empty, but an empty {arg} was given"
                 )
 
