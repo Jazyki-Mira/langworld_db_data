@@ -37,7 +37,11 @@ class ListedValueAdder(Adder):
         description_formatted_en: Optional[str] = None,
         description_formatted_ru: Optional[str] = None,
     ) -> None:
-
+        """
+        Consists of two major steps:
+        1. Add listed value to inventory
+        2. Update feature profiles
+        """
         args_to_validate = {
             "feature_id": feature_id,
             "value_en": new_value_en,
@@ -131,7 +135,16 @@ class ListedValueAdder(Adder):
         value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
     ) -> None:
+        """
+        Calculate line number of the feature to which we are
+        adding the new value. It is guaranteed that in all feature
+        profiles this line number will be the same.
 
+        Iterate through all feature profiles and check only the
+        rows with this exact line number. Increment value ID of
+        this feature or replace custom value with the listed
+        value that we are adding, if necessary.
+        """
         line_number_of_row_to_check = self._find_line_number_of_feature_in_feature_profile(
             feature_profile=self.input_feature_profiles[0],
             feature_id=feature_id,
@@ -152,7 +165,11 @@ class ListedValueAdder(Adder):
         feature_profile: Path,
         feature_id: str,
     ) -> int:
-
+        """
+        This is done in order to reduce iterations through
+        feature profile rows that are irrelevant to adding
+        the specific new listed value.
+        """
         rows = read_dicts_from_csv(path_to_file=feature_profile)
 
         for i, row in enumerate(rows):
@@ -169,7 +186,25 @@ class ListedValueAdder(Adder):
         value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
     ) -> None:
+        """
+        General method for updating value IDs in feature profiles.
 
+        First, expand the list of custom values to rename: add Russian name
+        of new value to it, then generate variants of each of the present
+        custom values with / without full stop and with / without
+        capitalization of the first letter, add all variants to the list and
+        remove repetitions.
+
+        Then we work only with feature to which we are adding a new value.
+
+        Second, if in the given feature profile this feature has a listed
+        value, then perhaps its ID needs to be incremented. Do it if
+        necessary.
+
+        Third, if in the given feature profile this feature has a custom
+        value, then it mae be necessary to replace it with the new listed
+        value.
+        """
         # Add value_ru and its variants with capital letter and
         # with / without full stop to custom_values_to_rename
         if custom_values_to_rename is None:
@@ -227,7 +262,10 @@ class ListedValueAdder(Adder):
         row: dict[str, str],
         value_id: str,
     ) -> dict[str, str]:
-
+        """
+        If value ID of the given row is equal to the ID of new value
+        or is greater than it, then it must be incremented.
+        """
         value_id_of_row_to_check = row["value_id"]
         value_index_to_check = int(extract_value_index(value_id_of_row_to_check))
         if value_index_to_check >= int(extract_value_index(value_id)):
@@ -245,7 +283,12 @@ class ListedValueAdder(Adder):
         value_id: str,
         custom_values_to_rename: list[str],
     ) -> dict[str, str]:
-
+        """
+        If Russian name of value in given row is in the list
+        of custom names that must be turned into listed, replace
+        this name with the new Russian name of value, change its type
+        to listed and enter its ID.
+        """
         if row["value_ru"].strip() in custom_values_to_rename:
 
             row["value_ru"] = new_value_ru
@@ -259,7 +302,7 @@ class ListedValueAdder(Adder):
         value_name: str,
     ) -> set[str]:
         """
-        Create set of the following variants of Russian name of new value:
+        Create set of the following variants of Russian name of value:
         - starts with capital letter, ends with full stop,
         - starts with capital letter, does not end with full stop,
         - starts with small letter, ends with full stop,
@@ -285,51 +328,6 @@ class ListedValueAdder(Adder):
             variants.append(f"{converse_variant_of_value_name}.")
 
         return set(variants)
-
-    # def _mark_value_as_listed_in_feature_profiles(
-    #     self,
-    #     feature_id: str,
-    #     new_value_id: str,
-    #     new_value_ru: str,
-    #     custom_values_to_rename: Optional[list[str]] = None,
-    # ) -> None:
-    #     for file in self.input_feature_profiles:
-    #         is_changed = False
-    #         rows = read_dicts_from_csv(file)
-
-    #         for i, row in enumerate(rows):
-    #             if row[KEY_FOR_FEATURE_ID] == feature_id and row[KEY_FOR_VALUE_TYPE] == "custom":
-    #                 value_ru = row[KEY_FOR_RUSSIAN_NAME_OF_VALUE].strip()
-    #                 value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
-
-    #                 new_value_with_variants: list[str] = (
-    #                     [new_value_ru] + custom_values_to_rename
-    #                     if custom_values_to_rename
-    #                     else [new_value_ru]
-    #                 )
-    #                 new_value_with_variants = [v.lower() for v in new_value_with_variants]
-
-    #                 if value_ru.lower() not in new_value_with_variants:
-    #                     break
-
-    #                 print(
-    #                     f"{file.name}: changing row {i + 2} (feature {feature_id}). "
-    #                     f"Custom value <{row[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}> will become listed value "
-    #                     f"<{new_value_ru}> ({new_value_id})"
-    #                 )
-    #                 row[KEY_FOR_VALUE_TYPE] = "listed"
-    #                 row[KEY_FOR_VALUE_ID] = new_value_id
-    #                 row[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_ru
-    #                 is_changed = True
-    #                 break
-
-    #         if is_changed:
-    #             write_csv(
-    #                 rows,
-    #                 path_to_file=self.output_dir_with_feature_profiles / file.name,
-    #                 overwrite=True,
-    #                 delimiter=",",
-    #             )
 
 
 if __name__ == "__main__":
