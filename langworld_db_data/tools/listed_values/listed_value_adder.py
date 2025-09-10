@@ -182,9 +182,11 @@ class ListedValueAdder(Adder):
                 custom_values_to_rename_with_all_their_variants.append(variant)
 
         print(custom_values_to_rename)
-        
+
         # Remove repetitions in custom_values_to_rename
-        custom_values_to_rename_with_all_their_variants = list(set(custom_values_to_rename_with_all_their_variants))
+        custom_values_to_rename_with_all_their_variants = list(
+            set(custom_values_to_rename_with_all_their_variants)
+        )
         for variant in custom_values_to_rename_with_all_their_variants:
             print(variant)
 
@@ -267,7 +269,7 @@ class ListedValueAdder(Adder):
         important.
         """
         value_name = value_name.strip()
-        
+
         if value_name[0].isupper():
             converse_variant_of_value_name = f"{value_name[0].lower()}{value_name[1:]}"
         else:

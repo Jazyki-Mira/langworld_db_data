@@ -510,10 +510,7 @@ def test__generate_variants_of_russian_value_name(test_adder):
         ]
     )
     for value_name in VALUE_NAMES:
-        assert (
-            test_adder._generate_variants_of_russian_value_name(value_name)
-            == GS_VARIANTS
-        )
+        assert test_adder._generate_variants_of_russian_value_name(value_name) == GS_VARIANTS
 
 
 # def test__mark_value_as_listed_in_feature_profiles(test_adder):
