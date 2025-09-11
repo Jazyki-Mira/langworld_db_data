@@ -1,3 +1,6 @@
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
 from pathlib import Path
 from typing import Literal, Union
 
@@ -16,6 +19,8 @@ from langworld_db_data.tools.common.ids.extract import (
     extract_feature_index,
     extract_value_index,
 )
+
+logger = logging.getLogger(__name__)
 
 FeatureOrValue = Literal["feature", "value"]
 CategoryOrFeature = Literal["category", "feature"]
@@ -142,6 +147,7 @@ class Adder(ObjectWithPaths):
                     f"{feature_or_value_to_args_that_must_not_be_empty[feature_or_value]}"
                     f" - must be empty, but an empty {arg} was given"
                 )
+        logger.debug(f"All obligatory args are not empty: {args_that_must_not_be_empty}")
 
     def _check_that_category_or_feature_where_to_add_exists(
         self,
@@ -181,6 +187,8 @@ class Adder(ObjectWithPaths):
                 f"{level_of_check} ID {arg_that_must_exist} not found in file"
                 f" {file_to_check_against.name}"
             )
+        
+        logger.debug(f"Category or feature ID exists: {arg_that_must_exist}")
 
     def _check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature(
         self,
@@ -233,6 +241,7 @@ class Adder(ObjectWithPaths):
                     f"English or Russian {feature_or_value} name is already present in {file_to_check_against.name}: "
                     f"{args_to_validate[english_name]}"
                 )
+        logger.debug(f"Russian and English names are unique: {args_to_validate[russian_name]} and {args_to_validate[english_name]}")
 
     def _check_validity_of_keys_in_passed_listed_values(
         self,

@@ -43,7 +43,6 @@ def test_adder():
     )
 
 
-# add_listed_value
 def test_add_listed_value_append_to_end_with_custom_values(test_adder):
 
     # STEMS_OF_EXPECTED_OUTPUT_FILES = ("catalan", "corsican", "franco_provencal")
