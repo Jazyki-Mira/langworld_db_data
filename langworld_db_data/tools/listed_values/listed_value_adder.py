@@ -1,4 +1,5 @@
 import logging
+
 logging.basicConfig(level=logging.DEBUG)
 
 from pathlib import Path
@@ -60,8 +61,7 @@ class ListedValueAdder(Adder):
             index_to_assign=index_to_assign,
         )
 
-        logger.debug(f"Adding new value with ID {value_id} "
-                     "to the inventory of listed values.")
+        logger.debug(f"Adding new value with ID {value_id} " "to the inventory of listed values.")
         self._add_listed_value_to_inventory_of_listed_values(
             value_id=value_id,
             feature_id=feature_id,
@@ -71,8 +71,10 @@ class ListedValueAdder(Adder):
             description_formatted_ru=description_formatted_ru,
         )
 
-        logger.debug("Rewriting feature profiles with insertion "
-                     f"of new value {value_id} where necessary.")
+        logger.debug(
+            "Rewriting feature profiles with insertion "
+            f"of new value {value_id} where necessary."
+        )
         self._update_value_ids_and_types_in_feature_profiles_if_necessary(
             feature_id=feature_id,
             value_id=value_id,
@@ -106,8 +108,7 @@ class ListedValueAdder(Adder):
         )
         logger.debug(f"New row: {new_row}.")
 
-        logger.debug("Finding line number in the inventory where "
-                     "the new row will be inserted.")
+        logger.debug("Finding line number in the inventory where " "the new row will be inserted.")
         line_number_to_insert_into = self._get_line_number_where_to_insert(
             feature_or_value="value",
             new_feature_or_value_id=value_id,
@@ -121,9 +122,11 @@ class ListedValueAdder(Adder):
             feature_or_value="value",
         )
 
-        logger.debug("Aligning indices of values within the same feature "
-                     "which are equal or greater than the index "
-                     "of new value.")
+        logger.debug(
+            "Aligning indices of values within the same feature "
+            "which are equal or greater than the index "
+            "of new value."
+        )
         self._align_indices_of_features_or_values_that_come_after_inserted_one(
             input_filepath=self.output_file_with_listed_values,
             output_filepath=self.output_file_with_listed_values,
@@ -281,13 +284,13 @@ class ListedValueAdder(Adder):
             )
 
         return row
-    
+
     def _increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(
         self,
         row: dict[str, str],
         value_id: str,
     ) -> dict[str, str]:
-        
+
         value_id_of_row_to_check = row["value_id"]
         atomic_value_ids = value_id_of_row_to_check.split(ATOMIC_VALUE_SEPARATOR)
         logger.debug(f"Multiselect value consists of {atomic_value_ids}.")

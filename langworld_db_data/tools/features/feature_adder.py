@@ -1,4 +1,5 @@
 import logging
+
 logging.basicConfig(level=logging.DEBUG)
 
 from typing import Union
@@ -83,8 +84,7 @@ class FeatureAdder(Adder):
             index_to_assign=index_to_assign,
         )
 
-        logger.debug(f"Adding new feature with ID {feature_id} "
-                     "to the inventory of features.")
+        logger.debug(f"Adding new feature with ID {feature_id} " "to the inventory of features.")
         self._add_feature_to_inventory_of_features(
             feature_id=feature_id,
             category_id=category_id,
@@ -92,15 +92,16 @@ class FeatureAdder(Adder):
             new_feature_ru=feature_ru,
         )
 
-        logger.debug(f"Adding values of new feature with ID {feature_id} "
-                     "to the inventory of listed_values.")
+        logger.debug(
+            f"Adding values of new feature with ID {feature_id} "
+            "to the inventory of listed_values."
+        )
         self._add_values_of_new_feature_to_inventory_of_listed_values(
             feature_id=feature_id,
             listed_values_to_add=listed_values_to_add,
         )
 
-        logger.debug(f"Adding new feature with ID {feature_id} "
-                     "to feature profiles.")
+        logger.debug(f"Adding new feature with ID {feature_id} " "to feature profiles.")
         self._add_feature_to_feature_profiles(
             feature_id=feature_id,
             feature_ru=feature_ru,
@@ -135,8 +136,7 @@ class FeatureAdder(Adder):
         )
         logger.debug(f"New row: {new_row}.")
 
-        logger.debug("Finding line number in the inventory where "
-                     "the new row will be inserted.")
+        logger.debug("Finding line number in the inventory where " "the new row will be inserted.")
         line_number_to_insert_into = self._get_line_number_where_to_insert(
             feature_or_value="feature",
             new_feature_or_value_id=feature_id,
@@ -150,9 +150,11 @@ class FeatureAdder(Adder):
             feature_or_value="feature",
         )
 
-        logger.debug("Aligning indices of features within the same category "
-                     "which are equal or greater than the index "
-                     "of new feature.")
+        logger.debug(
+            "Aligning indices of features within the same category "
+            "which are equal or greater than the index "
+            "of new feature."
+        )
         self._align_indices_of_features_or_values_that_come_after_inserted_one(
             input_filepath=self.output_file_with_features,
             output_filepath=self.output_file_with_features,
@@ -273,7 +275,6 @@ class FeatureAdder(Adder):
         #     ),
         #     end=" ",
         # )
-
 
     def _add_values_of_new_feature_to_inventory_of_listed_values(
         self,

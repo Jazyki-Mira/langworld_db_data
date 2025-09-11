@@ -1,4 +1,5 @@
 import logging
+
 logging.basicConfig(level=logging.DEBUG)
 
 from pathlib import Path
@@ -187,7 +188,7 @@ class Adder(ObjectWithPaths):
                 f"{level_of_check} ID {arg_that_must_exist} not found in file"
                 f" {file_to_check_against.name}"
             )
-        
+
         logger.debug(f"Category or feature ID exists: {arg_that_must_exist}")
 
     def _check_that_en_and_ru_are_not_already_used_within_the_same_category_ro_feature(
@@ -241,7 +242,9 @@ class Adder(ObjectWithPaths):
                     f"English or Russian {feature_or_value} name is already present in {file_to_check_against.name}: "
                     f"{args_to_validate[english_name]}"
                 )
-        logger.debug(f"Russian and English names are unique: {args_to_validate[russian_name]} and {args_to_validate[english_name]}")
+        logger.debug(
+            f"Russian and English names are unique: {args_to_validate[russian_name]} and {args_to_validate[english_name]}"
+        )
 
     def _check_validity_of_keys_in_passed_listed_values(
         self,

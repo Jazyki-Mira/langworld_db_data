@@ -338,7 +338,9 @@ def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_v
     )
 
 
-def test__update_value_ids_and_types_in_feature_profiles_if_necessary_updates_custom_values(test_adder):
+def test__update_value_ids_and_types_in_feature_profiles_if_necessary_updates_custom_values(
+    test_adder,
+):
 
     CUSTOM_VALUES_TO_RENAME_IN_A_2 = [
         "Верхний, средний (закрытые и открытые) и нижний",
@@ -458,7 +460,9 @@ def test__increment_value_id_in_line_number_to_check_if_necessary_does_nothing(t
     )
 
 
-def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(test_adder):
+def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(
+    test_adder,
+):
 
     input_row = {
         "feature_id": "A-3",
@@ -489,7 +493,9 @@ def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselec
     )
 
 
-def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values_amends_one_value(test_adder):
+def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values_amends_one_value(
+    test_adder,
+):
 
     input_row = {
         "feature_id": "A-3",
@@ -520,7 +526,9 @@ def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselec
     )
 
 
-def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values_does_nothing(test_adder):
+def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values_does_nothing(
+    test_adder,
+):
 
     input_row = {
         "feature_id": "A-3",

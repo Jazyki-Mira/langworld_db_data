@@ -25,8 +25,7 @@ def test_feature_adder():
         file_with_categories=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER
         / "feature_categories.csv",
         input_file_with_features=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER / "features.csv",
-        output_file_with_features=DIR_WITH_FEATURE_ADDER_TEST_FILES
-        / "features.csv",
+        output_file_with_features=DIR_WITH_FEATURE_ADDER_TEST_FILES / "features.csv",
         input_file_with_listed_values=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER
         / "features_listed_values.csv",
         output_file_with_listed_values=DIR_WITH_FEATURE_ADDER_TEST_FILES
