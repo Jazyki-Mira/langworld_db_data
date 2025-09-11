@@ -230,19 +230,20 @@ class ListedValueAdder(Adder):
         if rows[line_number_of_row_to_check]["value_type"] == "listed":
 
             if is_multiselect:
+                logger.debug("The value is multiselect.")
+                rows[line_number_of_row_to_check] = (
+                    self._increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(
+                        row=rows[line_number_of_row_to_check],
+                        value_id=value_id,
+                    )
+                )
+            else:
                 rows[line_number_of_row_to_check] = (
                     self._increment_value_id_in_line_number_to_check_if_necessary(
                         row=rows[line_number_of_row_to_check],
                         value_id=value_id,
                     )
                 )
-
-            rows[line_number_of_row_to_check] = (
-                self._increment_value_id_in_line_number_to_check_if_necessary(
-                    row=rows[line_number_of_row_to_check],
-                    value_id=value_id,
-                )
-            )
 
         elif rows[line_number_of_row_to_check]["value_type"] == "custom":
 
@@ -289,18 +290,15 @@ class ListedValueAdder(Adder):
         
         value_id_of_row_to_check = row["value_id"]
         atomic_value_ids = value_id_of_row_to_check.split(ATOMIC_VALUE_SEPARATOR)
-        logger.debug(f"The value IDs {atomic_value_ids} will be checked.")
+        logger.debug(f"Multiselect value consists of {atomic_value_ids}.")
         for i in range(len(atomic_value_ids)):
             value_index_of_atomic_id = int(extract_value_index(atomic_value_ids[i]))
-            logger.debug(f"Value ID {atomic_value_ids[i]} has value index {value_index_of_atomic_id}.")
+            logger.debug(value_index_of_atomic_id)
             if value_index_of_atomic_id >= int(extract_value_index(value_id)):
                 atomic_value_ids[i] = compose_value_id_based_on_feature_id(
                     feature_id=extract_feature_id(atomic_value_ids[i]),
                     value_index=value_index_of_atomic_id + 1,
                 )
-                logger.debug(f"New atomic ID is {atomic_value_ids[i]}.")
-
-        logger.debug(f"New list of atomic value IDs is {atomic_value_ids}.")
         row["value_id"] = ATOMIC_VALUE_SEPARATOR.join(atomic_value_ids)
 
         return row

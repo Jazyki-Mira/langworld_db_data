@@ -283,6 +283,109 @@ def test__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no
     )
 
 
+def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_type(
+    test_adder,
+):
+
+    test_adder._update_value_id_and_type_in_one_feature_profile_if_necessary(
+        feature_profile=test_adder.input_dir_with_feature_profiles / "catalan.csv",
+        line_number_of_row_to_check=24,
+        value_id="N-2-4",
+        value_ru="Непустое значение",
+        custom_values_to_rename=CUSTOM_VALUES_TO_RENAME,
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=DIR_WITH_OUTPUT_FILES / "catalan.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_catalan__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_type.csv",
+    )
+
+
+def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_id(
+    test_adder,
+):
+
+    test_adder._update_value_id_and_type_in_one_feature_profile_if_necessary(
+        feature_profile=test_adder.input_dir_with_feature_profiles / "catalan.csv",
+        line_number_of_row_to_check=12,
+        value_id="A-13-1",
+        value_ru="Непустое значение",
+        custom_values_to_rename=CUSTOM_VALUES_TO_RENAME,
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=DIR_WITH_OUTPUT_FILES / "catalan.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_catalan__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_id.csv",
+    )
+
+
+def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_id_in_multiselect_value(
+    test_adder,
+):
+
+    test_adder._update_value_id_and_type_in_one_feature_profile_if_necessary(
+        feature_profile=test_adder.input_dir_with_feature_profiles / "pashto.csv",
+        line_number_of_row_to_check=22,
+        value_id="D-8-1",
+        value_ru="Непустое значение",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=DIR_WITH_OUTPUT_FILES / "pashto.csv",
+        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs_pashto__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_id_in_multiselect_value.csv",
+    )
+
+
+def test__update_value_ids_and_types_in_feature_profiles_if_necessary_updates_custom_values(test_adder):
+
+    CUSTOM_VALUES_TO_RENAME_IN_A_2 = [
+        "Верхний, средний (закрытые и открытые) и нижний",
+        "And one moooooore thing",
+    ]
+
+    GS_DIR = (
+        DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
+        / "gs__update_value_ids_and_types_in_feature_profiles_if_necessary"
+    )
+
+    test_adder._update_value_ids_and_types_in_feature_profiles_if_necessary(
+        feature_id="A-2",
+        value_id="A-2-5",
+        value_ru="Определенное значение",
+        custom_values_to_rename=CUSTOM_VALUES_TO_RENAME_IN_A_2,
+    )
+
+    for file in test_adder.output_dir_with_feature_profiles.glob("*.csv"):
+
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=file,
+            gold_standard_file=GS_DIR / file.name,
+        )
+
+
+def test__generate_variants_of_russian_value_name(test_adder):
+
+    VALUE_NAMES = [
+        "Есть первые, вторые и третьи.",
+        "Есть первые, вторые и третьи",
+        "есть первые, вторые и третьи.",
+        "есть первые, вторые и третьи",
+    ]
+    GS_VARIANTS = set(
+        [
+            "Есть первые, вторые и третьи.",
+            "Есть первые, вторые и третьи",
+            "есть первые, вторые и третьи.",
+            "есть первые, вторые и третьи",
+        ]
+    )
+    for value_name in VALUE_NAMES:
+        assert test_adder._generate_variants_of_russian_value_name(value_name) == GS_VARIANTS
+
+
 def test__find_line_number_of_feature_in_feature_profile(test_adder):
 
     assert (
@@ -382,6 +485,37 @@ def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselec
         test_adder._increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(
             row=input_row,
             value_id="A-3-8",
+        )
+        == GOLD_STANDARD_ROW
+    )
+
+
+def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values_amends_one_value(test_adder):
+
+    input_row = {
+        "feature_id": "A-3",
+        "feature_name_ru": "Некий признак",
+        "value_type": "listed",
+        "value_id": "A-3-8&A-3-10&A-3-45",
+        "value_ru": "Некое значение",
+        "comment_ru": "",
+        "comment_en": "",
+    }
+
+    GOLD_STANDARD_ROW = {
+        "feature_id": "A-3",
+        "feature_name_ru": "Некий признак",
+        "value_type": "listed",
+        "value_id": "A-3-8&A-3-10&A-3-46",
+        "value_ru": "Некое значение",
+        "comment_ru": "",
+        "comment_en": "",
+    }
+
+    assert (
+        test_adder._increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(
+            row=input_row,
+            value_id="A-3-44",
         )
         == GOLD_STANDARD_ROW
     )
@@ -488,88 +622,3 @@ def test__mark_value_type_as_listed_and_rename_it_if_necessary_does_nothing(test
         )
         == GOLD_STANDARD_ROW
     )
-
-
-def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_type(
-    test_adder,
-):
-
-    test_adder._update_value_id_and_type_in_one_feature_profile_if_necessary(
-        feature_profile=test_adder.input_dir_with_feature_profiles / "catalan.csv",
-        line_number_of_row_to_check=24,
-        value_id="N-2-4",
-        value_ru="Непустое значение",
-        custom_values_to_rename=CUSTOM_VALUES_TO_RENAME,
-    )
-
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=DIR_WITH_OUTPUT_FILES / "catalan.csv",
-        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
-        / "gs_catalan__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_type.csv",
-    )
-
-
-def test__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_id(
-    test_adder,
-):
-
-    test_adder._update_value_id_and_type_in_one_feature_profile_if_necessary(
-        feature_profile=test_adder.input_dir_with_feature_profiles / "catalan.csv",
-        line_number_of_row_to_check=12,
-        value_id="A-13-1",
-        value_ru="Непустое значение",
-        custom_values_to_rename=CUSTOM_VALUES_TO_RENAME,
-    )
-
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=DIR_WITH_OUTPUT_FILES / "catalan.csv",
-        gold_standard_file=DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
-        / "gs_catalan__update_value_id_and_type_in_one_feature_profile_if_necessary_updates_value_id.csv",
-    )
-
-
-def test__update_value_ids_and_types_in_feature_profiles_if_necessary(test_adder):
-
-    CUSTOM_VALUES_TO_RENAME_IN_A_2 = [
-        "Верхний, средний (закрытые и открытые) и нижний",
-        "And one moooooore thing",
-    ]
-
-    GS_DIR = (
-        DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
-        / "gs__update_value_ids_and_types_in_feature_profiles_if_necessary"
-    )
-
-    test_adder._update_value_ids_and_types_in_feature_profiles_if_necessary(
-        feature_id="A-2",
-        value_id="A-2-5",
-        value_ru="Определенное значение",
-        custom_values_to_rename=CUSTOM_VALUES_TO_RENAME_IN_A_2,
-    )
-
-    for file in test_adder.output_dir_with_feature_profiles.glob("*.csv"):
-
-        check_existence_of_output_csv_file_and_compare_with_gold_standard(
-            output_file=file,
-            gold_standard_file=GS_DIR / file.name,
-        )
-
-
-def test__generate_variants_of_russian_value_name(test_adder):
-
-    VALUE_NAMES = [
-        "Есть первые, вторые и третьи.",
-        "Есть первые, вторые и третьи",
-        "есть первые, вторые и третьи.",
-        "есть первые, вторые и третьи",
-    ]
-    GS_VARIANTS = set(
-        [
-            "Есть первые, вторые и третьи.",
-            "Есть первые, вторые и третьи",
-            "есть первые, вторые и третьи.",
-            "есть первые, вторые и третьи",
-        ]
-    )
-    for value_name in VALUE_NAMES:
-        assert test_adder._generate_variants_of_russian_value_name(value_name) == GS_VARIANTS
