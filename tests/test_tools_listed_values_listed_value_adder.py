@@ -356,6 +356,68 @@ def test__increment_value_id_in_line_number_to_check_if_necessary_does_nothing(t
     )
 
 
+def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(test_adder):
+
+    input_row = {
+        "feature_id": "A-3",
+        "feature_name_ru": "Некий признак",
+        "value_type": "listed",
+        "value_id": "A-3-8&A-3-10",
+        "value_ru": "Некое значение",
+        "comment_ru": "",
+        "comment_en": "",
+    }
+
+    GOLD_STANDARD_ROW = {
+        "feature_id": "A-3",
+        "feature_name_ru": "Некий признак",
+        "value_type": "listed",
+        "value_id": "A-3-9&A-3-11",
+        "value_ru": "Некое значение",
+        "comment_ru": "",
+        "comment_en": "",
+    }
+
+    assert (
+        test_adder._increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(
+            row=input_row,
+            value_id="A-3-8",
+        )
+        == GOLD_STANDARD_ROW
+    )
+
+
+def test__increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values_does_nothing(test_adder):
+
+    input_row = {
+        "feature_id": "A-3",
+        "feature_name_ru": "Некий признак",
+        "value_type": "listed",
+        "value_id": "A-3-8&A-3-10",
+        "value_ru": "Некое значение",
+        "comment_ru": "",
+        "comment_en": "",
+    }
+
+    GOLD_STANDARD_ROW = {
+        "feature_id": "A-3",
+        "feature_name_ru": "Некий признак",
+        "value_type": "listed",
+        "value_id": "A-3-8&A-3-10",
+        "value_ru": "Некое значение",
+        "comment_ru": "",
+        "comment_en": "",
+    }
+
+    assert (
+        test_adder._increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(
+            row=input_row,
+            value_id="A-3-18",
+        )
+        == GOLD_STANDARD_ROW
+    )
+
+
 def test__mark_value_type_as_listed_and_rename_it_if_necessary(test_adder):
 
     input_row = {

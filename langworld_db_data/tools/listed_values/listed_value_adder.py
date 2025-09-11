@@ -1,24 +1,21 @@
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
 from pathlib import Path
 from typing import Optional, Union
 
 from tinybear.csv_xls import read_dicts_from_csv, write_csv
 
-from langworld_db_data.constants.literals import (
-    ID_SEPARATOR,
-    KEY_FOR_ENGLISH,
-    KEY_FOR_FEATURE_ID,
-    KEY_FOR_ID,
-    KEY_FOR_RUSSIAN,
-    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
-    KEY_FOR_VALUE_ID,
-    KEY_FOR_VALUE_TYPE,
-)
-from langworld_db_data.tools.common.adder import Adder, AdderError
+from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR
+from langworld_db_data.tools.common.adder import Adder
 from langworld_db_data.tools.common.ids.compose import compose_value_id_based_on_feature_id
 from langworld_db_data.tools.common.ids.extract import extract_feature_id, extract_value_index
 
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
 KEY_FOR_LINE_NUMBER = "line number"
+
+
+logger = logging.getLogger(__name__)
 
 
 class ListedValueAdderError(Exception):
@@ -38,10 +35,11 @@ class ListedValueAdder(Adder):
         description_formatted_ru: Optional[str] = None,
     ) -> None:
         """
-        Consists of three major steps:
+        Consists of four major steps:
         1. Validate arguments
-        2. Add listed value to inventory
-        3. Update feature profiles
+        2. Create ID for new value
+        3. Add listed value to inventory
+        4. Update feature profiles
         """
         args_to_validate = {
             "feature_id": feature_id,
@@ -49,17 +47,21 @@ class ListedValueAdder(Adder):
             "value_ru": new_value_ru,
             "index_to_assign": index_to_assign,
         }
+        logger.debug(f"Validating args: {args_to_validate.keys()}.")
         self._validate_args(
             feature_or_value="value",
             args_to_validate=args_to_validate,
         )
 
+        logger.debug("Generating ID for new value.")
         value_id = self._make_id_for_new_feature_or_value(
             category_or_feature="feature",
             category_or_feature_id=feature_id,
             index_to_assign=index_to_assign,
         )
 
+        logger.debug(f"Adding new value with ID {value_id} "
+                     "to the inventory of listed values.")
         self._add_listed_value_to_inventory_of_listed_values(
             value_id=value_id,
             feature_id=feature_id,
@@ -69,6 +71,8 @@ class ListedValueAdder(Adder):
             description_formatted_ru=description_formatted_ru,
         )
 
+        logger.debug("Rewriting feature profiles with insertion "
+                     f"of new value {value_id} where necessary.")
         self._update_value_ids_and_types_in_feature_profiles_if_necessary(
             feature_id=feature_id,
             value_id=value_id,
@@ -95,16 +99,21 @@ class ListedValueAdder(Adder):
             "description_formatted_ru": description_formatted_ru,
         }
 
+        logger.debug("Generating row with new value for the inventory.")
         new_row = self._compose_new_row(
             feature_or_value="value",
             args=args,
         )
+        logger.debug(f"New row: {new_row}.")
 
+        logger.debug("Finding line number in the inventory where "
+                     "the new row will be inserted.")
         line_number_to_insert_into = self._get_line_number_where_to_insert(
             feature_or_value="value",
             new_feature_or_value_id=value_id,
         )
 
+        logger.debug(f"Inserting new row at line number {line_number_to_insert_into}.")
         self._insert_new_row_at_given_line_number(
             new_row=new_row,
             line_number_to_insert_into=line_number_to_insert_into,
@@ -112,6 +121,9 @@ class ListedValueAdder(Adder):
             feature_or_value="value",
         )
 
+        logger.debug("Aligning indices of values within the same feature "
+                     "which are equal or greater than the index "
+                     "of new value.")
         self._align_indices_of_features_or_values_that_come_after_inserted_one(
             input_filepath=self.output_file_with_listed_values,
             output_filepath=self.output_file_with_listed_values,
@@ -213,7 +225,17 @@ class ListedValueAdder(Adder):
 
         rows = read_dicts_from_csv(feature_profile)
 
+        is_multiselect = ATOMIC_VALUE_SEPARATOR in rows[line_number_of_row_to_check]["value_id"]
+
         if rows[line_number_of_row_to_check]["value_type"] == "listed":
+
+            if is_multiselect:
+                rows[line_number_of_row_to_check] = (
+                    self._increment_value_id_in_line_number_to_check_if_necessary(
+                        row=rows[line_number_of_row_to_check],
+                        value_id=value_id,
+                    )
+                )
 
             rows[line_number_of_row_to_check] = (
                 self._increment_value_id_in_line_number_to_check_if_necessary(
@@ -256,6 +278,30 @@ class ListedValueAdder(Adder):
                 feature_id=extract_feature_id(value_id_of_row_to_check),
                 value_index=value_index_to_check + 1,
             )
+
+        return row
+    
+    def _increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(
+        self,
+        row: dict[str, str],
+        value_id: str,
+    ) -> dict[str, str]:
+        
+        value_id_of_row_to_check = row["value_id"]
+        atomic_value_ids = value_id_of_row_to_check.split(ATOMIC_VALUE_SEPARATOR)
+        logger.debug(f"The value IDs {atomic_value_ids} will be checked.")
+        for i in range(len(atomic_value_ids)):
+            value_index_of_atomic_id = int(extract_value_index(atomic_value_ids[i]))
+            logger.debug(f"Value ID {atomic_value_ids[i]} has value index {value_index_of_atomic_id}.")
+            if value_index_of_atomic_id >= int(extract_value_index(value_id)):
+                atomic_value_ids[i] = compose_value_id_based_on_feature_id(
+                    feature_id=extract_feature_id(atomic_value_ids[i]),
+                    value_index=value_index_of_atomic_id + 1,
+                )
+                logger.debug(f"New atomic ID is {atomic_value_ids[i]}.")
+
+        logger.debug(f"New list of atomic value IDs is {atomic_value_ids}.")
+        row["value_id"] = ATOMIC_VALUE_SEPARATOR.join(atomic_value_ids)
 
         return row
 

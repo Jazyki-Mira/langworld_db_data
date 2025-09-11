@@ -38,3 +38,7 @@ select = ["E", "F", "I", "N", "PL", "UP", "ERA", "A", "C4", "DTZ", "ISC", "T20",
 # Ignore: A003 (class attribute `id`/`type` is shadowing a python builtin) because class attributes don't really shadow Python builtins
 ignore = ["A003"]
 target-version = "py39"
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "WARNING"
