@@ -3,11 +3,13 @@ from .extract import (
     extract_category_id,
     extract_feature_id,
     extract_feature_index,
+    extract_last_index,
     extract_value_index,
 )
 from .update import decrement_indices_after_deletion
 
 __all__ = [
+    "extract_last_index",
     "extract_feature_id",
     "extract_feature_index",
     "extract_value_index",

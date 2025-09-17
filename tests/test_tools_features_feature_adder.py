@@ -1,5 +1,6 @@
 import pytest
 
+from langworld_db_data.tools.common.adder import AdderError
 from langworld_db_data.tools.features.feature_adder import FeatureAdder, FeatureAdderError
 from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 from tests.paths import (
@@ -17,8 +18,6 @@ DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER = DIR_WITH_FEATURE_ADDER_TEST_FIL
 
 DIR_WITH_GOLD_STANDARD_FILES = DIR_WITH_FEATURE_ADDER_TEST_FILES / "gold_standard"
 
-FILE_WITH_OUTPUT_FEATURES_INVENTORY = DIR_WITH_ADDERS_TEST_FILES / "features_output.csv"
-
 
 @pytest.fixture(scope="function")
 def test_feature_adder():
@@ -26,11 +25,11 @@ def test_feature_adder():
         file_with_categories=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER
         / "feature_categories.csv",
         input_file_with_features=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER / "features.csv",
-        output_file_with_features=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
+        output_file_with_features=DIR_WITH_FEATURE_ADDER_TEST_FILES / "features.csv",
         input_file_with_listed_values=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER
         / "features_listed_values.csv",
         output_file_with_listed_values=DIR_WITH_FEATURE_ADDER_TEST_FILES
-        / "features_output_feature_adder.csv",
+        / "features_listed_values.csv",
         input_dir_with_feature_profiles=DIR_WITH_FEATURE_ADDER_TEST_FILES / "feature_profiles",
         output_dir_with_feature_profiles=DIR_WITH_FEATURE_ADDER_TEST_FILES,
     )
@@ -69,7 +68,7 @@ def test_add_feature(test_feature_adder):
 
 
 def test_add_feature_fails_with_invalid_index_to_assign(test_feature_adder):
-    with pytest.raises(FeatureAdderError, match="Failed to add new feature"):
+    with pytest.raises(ValueError, match="Invalid index to assign"):
         test_feature_adder.add_feature(
             category_id="C",
             feature_en="Some feature",
@@ -106,7 +105,7 @@ def test_add_feature_fails_with_empty_arg(test_feature_adder):
             "listed_values_to_add": [],
         },
     ):
-        with pytest.raises(FeatureAdderError, match="Some of the values passed are empty"):
+        with pytest.raises(AdderError, match="None of the following arguments"):
             test_feature_adder.add_feature(**incomplete_set_of_args)
 
 
@@ -121,20 +120,17 @@ def test_add_feature_fails_with_wrong_new_listed_values(test_feature_adder):
         ],
     }
     with pytest.raises(
-        FeatureAdderError,
-        match=(
-            "must have keys 'en' and 'ru'. Your value: {'this': 'should fail', 'en':"
-            " 'this is fine'}"
-        ),
+        AdderError,
+        match=("Each listed value must have keys"),
     ):
         test_feature_adder.add_feature(**args)
 
 
 def test_add_feature_fails_with_wrong_category_id(test_feature_adder):
     with pytest.raises(
-        FeatureAdderError,
+        AdderError,
         match=(
-            "Category ID <X> not found in file" f" {test_feature_adder.file_with_categories.name}"
+            "Category ID X not found in file" f" {test_feature_adder.file_with_categories.name}"
         ),
     ):
         test_feature_adder.add_feature(
@@ -147,121 +143,120 @@ def test_add_feature_fails_with_wrong_category_id(test_feature_adder):
 
 def test_add_feature_fails_with_existing_feature_name(test_feature_adder):
     for en, ru in (
-        ("Stress character ", "Новый признак"),
-        ("New  feature", "Типы фонации"),
+        ("Syllable onset", "Новый признак"),
+        ("New  feature", "Начальный согласный в слоге"),
     ):
-        with pytest.raises(FeatureAdderError, match="English or Russian feature name is already"):
+        with pytest.raises(AdderError, match="English or Russian feature name is already"):
             test_feature_adder.add_feature(
-                category_id="A",
+                category_id="C",
                 feature_en=en,
                 feature_ru=ru,
                 listed_values_to_add=DUMMY_VALUES_TO_ADD,
             )
 
 
+def test_add_feature_is_ok_with_feature_name_existing_in_another_category(test_feature_adder):
+    for en, ru in (
+        ("Syllable onset", "Новый признак"),
+        ("New  feature", "Начальный согласный в слоге"),
+    ):
+        test_feature_adder.add_feature(
+            category_id="B",
+            feature_en=en,
+            feature_ru=ru,
+            listed_values_to_add=DUMMY_VALUES_TO_ADD,
+        )
+
+
 def test__add_feature_to_inventory_of_features_at_the_beginning_of_category(test_feature_adder):
     _ = test_feature_adder._add_feature_to_inventory_of_features(
+        feature_id="A-1",
         category_id="A",
         new_feature_en="Some feature",
         new_feature_ru="Некий признак",
-        index_to_assign=1,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
+        output_file=test_feature_adder.output_file_with_features,
         gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_new_A_1.csv",
     )
 
 
 def test__add_feature_to_inventory_of_features_in_the_middle_of_category(test_feature_adder):
     _ = test_feature_adder._add_feature_to_inventory_of_features(
+        feature_id="A-14",
         category_id="A",
         new_feature_en="Some feature",
         new_feature_ru="Некий признак",
-        index_to_assign=14,
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
+        output_file=test_feature_adder.output_file_with_features,
         gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_new_A_14.csv",
     )
 
 
-def test__add_feature_to_inventory_of_features_throws_error_invalid_feature_id(test_feature_adder):
+def test_add_feature_throws_error_invalid_feature_id(test_feature_adder):
     for bad_feature_id in (0, -7, 418):
         with pytest.raises(
             ValueError,
-            match="Invalid index_to_assign",
+            match="Invalid index to assign",
         ):
-            _ = test_feature_adder._add_feature_to_inventory_of_features(
+            _ = test_feature_adder.add_feature(
                 category_id="C",
-                new_feature_en="Something",
-                new_feature_ru="Что-нибудь",
+                feature_en="Something",
+                feature_ru="Что-нибудь",
                 index_to_assign=bad_feature_id,
+                listed_values_to_add=DUMMY_VALUES_TO_ADD,
             )
 
 
 def test__add_feature_to_inventory_of_features_at_the_end_of_category(test_feature_adder):
-    _ = test_feature_adder._add_feature_to_inventory_of_features(
+    test_feature_adder._add_feature_to_inventory_of_features(
+        feature_id="A-22",
         category_id="A",
         new_feature_en="Some feature",
         new_feature_ru="Некий признак",
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
+        output_file=test_feature_adder.output_file_with_features,
         gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_new_A_22.csv",
     )
 
 
-def test__add_feature_to_inventory_of_features_at_the_end_of_category_with_given_index(
-    test_feature_adder,
-):
-    _ = test_feature_adder._add_feature_to_inventory_of_features(
-        category_id="A",
-        new_feature_en="Some feature",
-        new_feature_ru="Некий признак",
-        index_to_assign=22,
-    )
+# def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
+#     test_feature_adder,
+# ):
+#     rows = [
+#         {"id": "A-1", "en": "Some feature", "ru": "Некий признак"},
+#         {"id": "A-2", "en": "Old feature", "ru": "Старый признак"},
+#         {"id": "A-3", "en": "Another feature", "ru": "Другой признак"},
+#         {"id": "B-1", "en": "Yet another one", "ru": "И еще один"},
+#     ]
+#     feature_indices_to_inventory_line_numbers = (
+#         {"index": 1, "line number": 0},
+#         {"index": 2, "line number": 1},
+#         {"index": 3, "line number": 2},
+#     )
+#     rows = (
+#         test_feature_adder._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
+#             rows=rows,
+#             feature_indices_to_inventory_line_numbers=feature_indices_to_inventory_line_numbers,
+#             index_to_assign=2,
+#         )
+#     )
 
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=FILE_WITH_OUTPUT_FEATURES_INVENTORY,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_new_A_22.csv",
-    )
+#     gold_standard_rows = tuple(
+#         [
+#             {"id": "A-1", "en": "Some feature", "ru": "Некий признак"},
+#             {"id": "A-3", "en": "Old feature", "ru": "Старый признак"},
+#             {"id": "A-4", "en": "Another feature", "ru": "Другой признак"},
+#             {"id": "B-1", "en": "Yet another one", "ru": "И еще один"},
+#         ]
+#     )
 
-
-def test__increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
-    test_feature_adder,
-):
-    rows = [
-        {"id": "A-1", "en": "Some feature", "ru": "Некий признак"},
-        {"id": "A-2", "en": "Old feature", "ru": "Старый признак"},
-        {"id": "A-3", "en": "Another feature", "ru": "Другой признак"},
-        {"id": "B-1", "en": "Yet another one", "ru": "И еще один"},
-    ]
-    feature_indices_to_inventory_line_numbers = (
-        {"index": 1, "line number": 0},
-        {"index": 2, "line number": 1},
-        {"index": 3, "line number": 2},
-    )
-    rows = (
-        test_feature_adder._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
-            rows=rows,
-            feature_indices_to_inventory_line_numbers=feature_indices_to_inventory_line_numbers,
-            index_to_assign=2,
-        )
-    )
-
-    gold_standard_rows = tuple(
-        [
-            {"id": "A-1", "en": "Some feature", "ru": "Некий признак"},
-            {"id": "A-3", "en": "Old feature", "ru": "Старый признак"},
-            {"id": "A-4", "en": "Another feature", "ru": "Другой признак"},
-            {"id": "B-1", "en": "Yet another one", "ru": "И еще один"},
-        ]
-    )
-
-    assert rows == gold_standard_rows
+#     assert rows == gold_standard_rows
 
 
 def test__add_values_of_new_feature_to_inventory_of_listed_values_at_the_beginning_of_category(
@@ -502,3 +497,55 @@ def test__add_feature_to_feature_profiles_at_the_end_of_category(test_feature_ad
 #             output_file=test_output_file,
 #             gold_standard_file=file,
 #         )
+
+
+def test__increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature(
+    test_feature_adder,
+):
+
+    test_feature_adder._increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature(
+        input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER
+        / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14.csv",
+        output_filepath=test_feature_adder.output_file_with_listed_values,
+        line_number_of_insertion=267,
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_feature_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES
+        / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14_and_aligned_indices.csv",
+    )
+
+
+def test__increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature_does_nothing(
+    test_feature_adder,
+):
+
+    test_feature_adder._increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature(
+        input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER
+        / "features_listed_values_with_new_A_22_1.csv",
+        output_filepath=test_feature_adder.output_file_with_listed_values,
+        line_number_of_insertion=168,
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_feature_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES
+        / "features_listed_values_with_new_A_22_1_no_changes.csv",
+    )
+
+
+def test__add_first_listed_value(test_feature_adder):
+
+    test_feature_adder._add_first_listed_value(
+        feature_id="C-3",
+        first_value={
+            "en": "New value",
+            "ru": "Новое значение",
+        },
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_feature_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_listed_values_new_C_3_1.csv",
+    )

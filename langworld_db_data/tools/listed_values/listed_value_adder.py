@@ -1,30 +1,30 @@
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
 from pathlib import Path
 from typing import Optional, Union
 
 from tinybear.csv_xls import read_dicts_from_csv, write_csv
 
-from langworld_db_data import ObjectWithPaths
-from langworld_db_data.constants.literals import (
-    ID_SEPARATOR,
-    KEY_FOR_ENGLISH,
-    KEY_FOR_FEATURE_ID,
-    KEY_FOR_ID,
-    KEY_FOR_RUSSIAN,
-    KEY_FOR_RUSSIAN_NAME_OF_VALUE,
-    KEY_FOR_VALUE_ID,
-    KEY_FOR_VALUE_TYPE,
-)
+from langworld_db_data.constants.literals import ATOMIC_VALUE_SEPARATOR
+from langworld_db_data.tools.common.adder import Adder
+from langworld_db_data.tools.common.ids.compose import compose_value_id_based_on_feature_id
 from langworld_db_data.tools.common.ids.extract import extract_feature_id, extract_value_index
 
 KEY_FOR_FEATURE_VALUE_INDEX = "index"
 KEY_FOR_LINE_NUMBER = "line number"
 
 
+logger = logging.getLogger(__name__)
+
+
 class ListedValueAdderError(Exception):
     pass
 
 
-class ListedValueAdder(ObjectWithPaths):
+class ListedValueAdder(Adder):
+
     def add_listed_value(
         self,
         feature_id: str,
@@ -35,304 +35,278 @@ class ListedValueAdder(ObjectWithPaths):
         description_formatted_en: Optional[str] = None,
         description_formatted_ru: Optional[str] = None,
     ) -> None:
-        """Adds listed value to the inventory and marks matching custom values
-        in feature profiles as listed. If one or more custom values
-        in feature profiles were formulated differently but now
-        have to be renamed to be the new `listed` value, these custom values
-        can be passed as a list.
-        If no id to assign is given, the new value will be appended after
-        the last present value, else the new value will receive ID based on the passed index.
         """
-
-        if not (feature_id and new_value_en and new_value_ru):
-            raise ListedValueAdderError(
-                "None of the following strings can be empty:"
-                "feature_id, new_value_id, new_value_ru."
-            )
-
-        try:
-            id_of_new_value = self._add_to_inventory_of_listed_values(
-                feature_id=feature_id,
-                new_value_en=new_value_en,
-                new_value_ru=new_value_ru,
-                index_to_assign=index_to_assign,
-                description_formatted_en=description_formatted_en,
-                description_formatted_ru=description_formatted_ru,
-            )
-        except ValueError as e:
-            raise ListedValueAdderError(
-                f"Failed to add new value to inventory of listed values. {e}"
-            )
-
-        self._increment_value_ids_in_feature_profiles(
-            new_value_id=id_of_new_value,
-            input_files=self.input_feature_profiles,
-            output_dir=self.output_dir_with_feature_profiles,
+        Consists of four major steps:
+        1. Validate arguments
+        2. Create ID for new value
+        3. Add listed value to inventory
+        4. Update feature profiles
+        """
+        args_to_validate = {
+            "feature_id": feature_id,
+            "value_en": new_value_en,
+            "value_ru": new_value_ru,
+            "index_to_assign": index_to_assign,
+        }
+        logger.debug(f"Validating args: {args_to_validate.keys()}.")
+        self._validate_args(
+            feature_or_value="value",
+            args_to_validate=args_to_validate,
         )
 
-        self._mark_value_as_listed_in_feature_profiles(
+        logger.debug("Generating ID for new value.")
+        value_id = self._make_id_for_new_feature_or_value(
+            category_or_feature="feature",
+            category_or_feature_id=feature_id,
+            index_to_assign=index_to_assign,
+        )
+
+        logger.debug(f"Adding new value with ID {value_id} " "to the inventory of listed values.")
+        self._add_listed_value_to_inventory_of_listed_values(
+            value_id=value_id,
             feature_id=feature_id,
-            new_value_id=id_of_new_value,
+            new_value_en=new_value_en,
             new_value_ru=new_value_ru,
+            description_formatted_en=description_formatted_en,
+            description_formatted_ru=description_formatted_ru,
+        )
+
+        logger.debug(
+            "Rewriting feature profiles with insertion "
+            f"of new value {value_id} where necessary."
+        )
+        self._update_value_ids_and_types_in_feature_profiles_if_necessary(
+            feature_id=feature_id,
+            value_id=value_id,
+            value_ru=new_value_ru,
             custom_values_to_rename=custom_values_to_rename,
         )
 
-    def _add_to_inventory_of_listed_values(
+    def _update_value_ids_and_types_in_feature_profiles_if_necessary(
         self,
         feature_id: str,
-        new_value_en: str,
-        new_value_ru: str,
-        index_to_assign: Union[int, None],
-        description_formatted_en: Optional[str] = None,
-        description_formatted_ru: Optional[str] = None,
-    ) -> str:
+        value_id: str,
+        value_ru: str,
+        custom_values_to_rename: Optional[list[str]] = None,
+    ) -> None:
         """
-        Add new value to the inventory of listed values. Return ID of new value.
+        Calculate line number of the feature to which we are
+        adding the new value. It is guaranteed that in all feature
+        profiles this line number will be the same.
 
-        index_to_assign means number that must be assigned to the new value within the feature, ex. 13 for A-2-13.
-        If no index_to_assign is given, the new value will be added as the last one in the feature.
-        index_to_assign must be greater than 0.
+        Iterate through all feature profiles and check only the
+        rows with this exact line number. Increment value ID of
+        this feature or replace custom value with the listed
+        value that we are adding, if necessary.
         """
-
-        rows = read_dicts_from_csv(self.input_file_with_listed_values)
-
-        if not [r for r in rows if r[KEY_FOR_FEATURE_ID] == feature_id]:
-            raise ListedValueAdderError(f"Feature ID {feature_id} not found")
-
-        # Collect all indices and line numbers of given feature.
-        #
-        # Indices are final parts of value IDs in the feature where new value is being added.
-        # Collecting is done to get index and line number of final value (if the new value itself is intended final)
-        # and to calculate line number for the new value (if it is intended non-final).
-
-        for row in rows:
-            if row[KEY_FOR_FEATURE_ID] != feature_id:
-                continue
-            if row[KEY_FOR_ENGLISH] == new_value_en or row[KEY_FOR_RUSSIAN] == new_value_ru:
-                raise ValueError(f"Row {row} already contains value you are trying to add")
-
-        value_indices_to_inventory_line_numbers = self._get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
-            rows=rows,
+        line_number_of_row_to_check = self._find_line_number_of_feature_in_feature_profile(
+            feature_profile=self.input_feature_profiles[0],
             feature_id=feature_id,
         )
 
-        # Check if passed index is valid
-        last_index_in_feature = value_indices_to_inventory_line_numbers[-1][
-            KEY_FOR_FEATURE_VALUE_INDEX
-        ]
-        # The range of numbers acceptable as index_to_assign consists of
-        # all the current indices in the given feature and the next number after
-        # the current maximum. To include the maximum, we must add 1 to last_index_in_feature.
-        # To include the number right after the maximum, we must again add 1.
-        # This results in adding 2 to the rightmost range border.
-        acceptable_indices_to_assign = set([None] + list(range(1, last_index_in_feature + 2)))
-        # Here we add None to the list because None is the default value for appending
-        # value to the end onf feature
-        if index_to_assign not in acceptable_indices_to_assign:
-            raise ValueError(
-                f"Invalid index_to assign (must be between 1 and {last_index_in_feature + 1}, "
-                f"{index_to_assign} was given)"
+        for feature_profile in self.input_feature_profiles:
+
+            self._update_value_id_and_type_in_one_feature_profile_if_necessary(
+                feature_profile=feature_profile,
+                line_number_of_row_to_check=line_number_of_row_to_check,
+                value_id=value_id,
+                value_ru=value_ru,
+                custom_values_to_rename=custom_values_to_rename,
             )
 
-        if index_to_assign in (
-            None,
-            last_index_in_feature + 1,
-        ):  # new value is being added after the last one
-            id_of_new_value = (
-                f"{feature_id}{ID_SEPARATOR}"
-                f"{value_indices_to_inventory_line_numbers[-1][KEY_FOR_FEATURE_VALUE_INDEX] + 1}"
-            )
-            line_number_of_new_value = (
-                value_indices_to_inventory_line_numbers[-1][KEY_FOR_LINE_NUMBER] + 1
-            )
-            rows_with_updated_value_indices = tuple(rows.copy())
-
-        # If value is inserted into range of values, IDs following it must be incremented
-        else:  # new value being inserted in the middle
-            id_of_new_value = f"{feature_id}{ID_SEPARATOR}{index_to_assign}"
-
-            # Go through values of the feature, ignore indices less than index_to_assign,
-            # increment all other indices
-            rows_with_updated_value_indices = self._increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
-                rows=rows,
-                value_indices_to_inventory_line_numbers=value_indices_to_inventory_line_numbers,
-                index_to_assign=index_to_assign,
-            )
-
-            for value_index_and_line_number in value_indices_to_inventory_line_numbers:
-                if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] == index_to_assign:
-                    line_number_of_new_value = value_index_and_line_number[KEY_FOR_LINE_NUMBER]
-
-        row_with_new_value = tuple(
-            [
-                {
-                    KEY_FOR_ID: id_of_new_value,
-                    KEY_FOR_FEATURE_ID: feature_id,
-                    KEY_FOR_ENGLISH: new_value_en[0].upper() + new_value_en[1:],
-                    KEY_FOR_RUSSIAN: new_value_ru[0].upper() + new_value_ru[1:],
-                    "description_formatted_en": description_formatted_en,
-                    "description_formatted_ru": description_formatted_ru,
-                }
-            ]
-        )
-
-        rows_with_new_value_inserted = (
-            rows_with_updated_value_indices[:line_number_of_new_value]
-            + row_with_new_value
-            + rows_with_updated_value_indices[line_number_of_new_value:]
-        )
-
-        write_csv(
-            rows_with_new_value_inserted,
-            path_to_file=self.output_file_with_listed_values,
-            overwrite=True,
-            delimiter=",",
-        )
-
-        return id_of_new_value
-
-    @staticmethod
-    def _get_indices_and_their_line_numbers_for_given_feature_in_inventory_of_listed_values(
-        rows: list[dict[str, str]],
+    def _find_line_number_of_feature_in_feature_profile(
+        self,
+        feature_profile: Path,
         feature_id: str,
-    ) -> tuple[dict[str, int], ...]:
+    ) -> int:
         """
-        Gather indices (last parts of value ID) and line numbers of feature into which new value will be inserted.
-
-        This method is used to calculate ID of the value being added and its place in rows of listed values inventory.
-
-        Returns tuple of dictionaries containing all indices and line numbers of values with given feature_id.
-
-        Example:
-        ``({KEY_FOR_FEATURE_VALUE_INDEX: 1, 'line number': 4},
-        {KEY_FOR_FEATURE_VALUE_INDEX: 2, 'line number': 5},
-        {KEY_FOR_FEATURE_VALUE_INDEX: 3, 'line number': 6} ...)``
+        This is done in order to reduce iterations through
+        feature profile rows that are irrelevant to adding
+        the specific new listed value.
         """
-
-        value_indices_to_inventory_line_numbers: list[dict[str, int]] = []
+        rows = read_dicts_from_csv(path_to_file=feature_profile)
 
         for i, row in enumerate(rows):
-            if row[KEY_FOR_FEATURE_ID] != feature_id:
+            if row["feature_id"] != feature_id:
                 continue
 
-            value_index = extract_value_index(row[KEY_FOR_ID])
-            value_indices_to_inventory_line_numbers.append(
-                {
-                    KEY_FOR_FEATURE_VALUE_INDEX: value_index,
-                    KEY_FOR_LINE_NUMBER: i,
-                }
-            )
+            return i
 
-        return tuple(value_indices_to_inventory_line_numbers)
-
-    @staticmethod
-    def _increment_ids_whose_indices_are_equal_or_greater_than_index_to_assign(
-        rows: list[dict[str, str]],
-        value_indices_to_inventory_line_numbers: tuple[dict[str, int], ...],
-        index_to_assign: int,
-    ) -> tuple[dict[str, str], ...]:
-        """
-        Increases by 1 index of every value that will come after the value passed for insertion.
-
-        Returns tuple of dictionaries with incremented indices and line numbers.
-        """
-
-        rows_with_incremented_indices = rows[:]
-        for value_index_and_line_number in value_indices_to_inventory_line_numbers:
-            if value_index_and_line_number[KEY_FOR_FEATURE_VALUE_INDEX] < index_to_assign:
-                continue
-            row_where_id_must_be_incremented = value_index_and_line_number[KEY_FOR_LINE_NUMBER]
-            value_id_to_increment = rows_with_incremented_indices[
-                row_where_id_must_be_incremented
-            ][KEY_FOR_ID]
-            rows_with_incremented_indices[row_where_id_must_be_incremented][KEY_FOR_ID] = (
-                f"{extract_feature_id(value_id_to_increment)}-"
-                f"{extract_value_index(value_id_to_increment) + 1}"
-            )
-
-        return tuple(rows_with_incremented_indices)
-
-    @staticmethod
-    def _increment_value_ids_in_feature_profiles(
-        new_value_id: str,
-        input_files: list[Path],
-        output_dir: Path,
-    ):
-        for file in input_files:
-            is_changed = False
-            rows = read_dicts_from_csv(file)
-
-            target_feature_id = extract_feature_id(new_value_id)
-            new_value_index = extract_value_index(new_value_id)
-            for row in rows:
-                if (
-                    row[KEY_FOR_FEATURE_ID] != target_feature_id
-                    or row[KEY_FOR_VALUE_TYPE] != "listed"
-                ):
-                    continue
-                current_value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
-                if current_value_index < new_value_index:
-                    continue
-
-                incremented_current_value_id = (
-                    f"{target_feature_id}{ID_SEPARATOR}{current_value_index + 1}"
-                )
-                row[KEY_FOR_VALUE_ID] = incremented_current_value_id
-                is_changed = True
-
-            if is_changed:
-                print(f"Writing new file for {file.stem}")
-                write_csv(
-                    rows,
-                    path_to_file=output_dir / file.name,
-                    overwrite=True,
-                    delimiter=",",
-                )
-
-    def _mark_value_as_listed_in_feature_profiles(
+    def _update_value_id_and_type_in_one_feature_profile_if_necessary(
         self,
-        feature_id: str,
-        new_value_id: str,
-        new_value_ru: str,
+        feature_profile: Path,
+        line_number_of_row_to_check: int,
+        value_id: str,
+        value_ru: str,
         custom_values_to_rename: Optional[list[str]] = None,
     ) -> None:
-        for file in self.input_feature_profiles:
-            is_changed = False
-            rows = read_dicts_from_csv(file)
+        """
+        General method for updating value IDs in feature profiles.
 
-            for i, row in enumerate(rows):
-                if row[KEY_FOR_FEATURE_ID] == feature_id and row[KEY_FOR_VALUE_TYPE] == "custom":
-                    value_ru = row[KEY_FOR_RUSSIAN_NAME_OF_VALUE].strip()
-                    value_ru = value_ru[:-1] if value_ru.endswith(".") else value_ru
+        First, expand the list of custom values to rename: add Russian name
+        of new value to it, then generate variants of each of the present
+        custom values with / without full stop and with / without
+        capitalization of the first letter, add all variants to the list and
+        remove repetitions.
 
-                    new_value_with_variants: list[str] = (
-                        [new_value_ru] + custom_values_to_rename
-                        if custom_values_to_rename
-                        else [new_value_ru]
+        Then we work only with feature to which we are adding a new value.
+
+        Second, if in the given feature profile this feature has a listed
+        value, then perhaps its ID needs to be incremented. Do it if
+        necessary.
+
+        Third, if in the given feature profile this feature has a custom
+        value, then it mae be necessary to replace it with the new listed
+        value.
+        """
+        # Add value_ru and its variants with capital letter and
+        # with / without full stop to the list of custom names
+        if custom_values_to_rename is None:
+            custom_values_to_rename = []
+        custom_values_to_rename_with_all_their_variants = []
+        custom_values_to_rename.append(value_ru)
+        for value in custom_values_to_rename:
+            variants_of_value = self._generate_variants_of_russian_value_name(value)
+            for variant in variants_of_value:
+                custom_values_to_rename_with_all_their_variants.append(variant)
+
+        # Remove repetitions in custom_values_to_rename
+        custom_values_to_rename_with_all_their_variants = list(
+            set(custom_values_to_rename_with_all_their_variants)
+        )
+
+        rows = read_dicts_from_csv(feature_profile)
+
+        is_multiselect = ATOMIC_VALUE_SEPARATOR in rows[line_number_of_row_to_check]["value_id"]
+
+        if rows[line_number_of_row_to_check]["value_type"] == "listed":
+
+            if is_multiselect:
+                logger.debug("The value is multiselect.")
+                rows[line_number_of_row_to_check] = (
+                    self._increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(
+                        row=rows[line_number_of_row_to_check],
+                        value_id=value_id,
                     )
-                    new_value_with_variants = [v.lower() for v in new_value_with_variants]
-
-                    if value_ru.lower() not in new_value_with_variants:
-                        break
-
-                    print(
-                        f"{file.name}: changing row {i + 2} (feature {feature_id}). "
-                        f"Custom value <{row[KEY_FOR_RUSSIAN_NAME_OF_VALUE]}> will become listed value "
-                        f"<{new_value_ru}> ({new_value_id})"
-                    )
-                    row[KEY_FOR_VALUE_TYPE] = "listed"
-                    row[KEY_FOR_VALUE_ID] = new_value_id
-                    row[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_ru
-                    is_changed = True
-                    break
-
-            if is_changed:
-                write_csv(
-                    rows,
-                    path_to_file=self.output_dir_with_feature_profiles / file.name,
-                    overwrite=True,
-                    delimiter=",",
                 )
+            else:
+                rows[line_number_of_row_to_check] = (
+                    self._increment_value_id_in_line_number_to_check_if_necessary(
+                        row=rows[line_number_of_row_to_check],
+                        value_id=value_id,
+                    )
+                )
+
+        elif rows[line_number_of_row_to_check]["value_type"] == "custom":
+
+            rows[line_number_of_row_to_check] = (
+                self._mark_value_type_as_listed_and_rename_it_if_necessary(
+                    row=rows[line_number_of_row_to_check],
+                    new_value_ru=value_ru,
+                    value_id=value_id,
+                    custom_values_to_rename=custom_values_to_rename_with_all_their_variants,
+                )
+            )
+
+        write_csv(
+            rows=rows,
+            path_to_file=self.output_dir_with_feature_profiles / feature_profile.name,
+            delimiter=",",
+            overwrite=True,
+        )
+
+    def _increment_value_id_in_line_number_to_check_if_necessary(
+        self,
+        row: dict[str, str],
+        value_id: str,
+    ) -> dict[str, str]:
+        """
+        If value ID of the given row is equal to the ID of new value
+        or is greater than it, then it must be incremented.
+        """
+        value_id_of_row_to_check = row["value_id"]
+        value_index_to_check = int(extract_value_index(value_id_of_row_to_check))
+        if value_index_to_check >= int(extract_value_index(value_id)):
+            row["value_id"] = compose_value_id_based_on_feature_id(
+                feature_id=extract_feature_id(value_id_of_row_to_check),
+                value_index=value_index_to_check + 1,
+            )
+
+        return row
+
+    def _increment_value_id_in_line_number_to_check_if_necessary_for_multiselect_values(
+        self,
+        row: dict[str, str],
+        value_id: str,
+    ) -> dict[str, str]:
+
+        value_id_of_row_to_check = row["value_id"]
+        atomic_value_ids = value_id_of_row_to_check.split(ATOMIC_VALUE_SEPARATOR)
+        logger.debug(f"Multiselect value consists of {atomic_value_ids}.")
+        for i in range(len(atomic_value_ids)):
+            value_index_of_atomic_id = int(extract_value_index(atomic_value_ids[i]))
+            logger.debug(value_index_of_atomic_id)
+            if value_index_of_atomic_id >= int(extract_value_index(value_id)):
+                atomic_value_ids[i] = compose_value_id_based_on_feature_id(
+                    feature_id=extract_feature_id(atomic_value_ids[i]),
+                    value_index=value_index_of_atomic_id + 1,
+                )
+        row["value_id"] = ATOMIC_VALUE_SEPARATOR.join(atomic_value_ids)
+
+        return row
+
+    def _mark_value_type_as_listed_and_rename_it_if_necessary(
+        self,
+        row: dict[str, str],
+        new_value_ru: str,
+        value_id: str,
+        custom_values_to_rename: list[str],
+    ) -> dict[str, str]:
+        """
+        If Russian name of value in given row is in the list
+        of custom names that must be turned into listed, replace
+        this name with the new Russian name of value, change its type
+        to listed and enter its ID.
+        """
+        if row["value_ru"].strip() in custom_values_to_rename:
+
+            row["value_ru"] = new_value_ru
+            row["value_id"] = value_id
+            row["value_type"] = "listed"
+
+        return row
+
+    def _generate_variants_of_russian_value_name(
+        self,
+        value_name: str,
+    ) -> set[str]:
+        """
+        Create set of the following variants of Russian name of value:
+        - starts with capital letter, ends with full stop,
+        - starts with capital letter, does not end with full stop,
+        - starts with small letter, ends with full stop,
+        - starts with small letter, does not end with full stop.
+
+        Set was chosen as output type because order of variants is not
+        important.
+        """
+        value_name = value_name.strip()
+
+        if value_name[0].isupper():
+            converse_variant_of_value_name = f"{value_name[0].lower()}{value_name[1:]}"
+        else:
+            converse_variant_of_value_name = f"{value_name[0].upper()}{value_name[1:]}"
+
+        variants = [value_name, converse_variant_of_value_name]
+
+        if value_name.endswith("."):
+            variants.append(value_name[:-1])
+            variants.append(converse_variant_of_value_name[:-1])
+        else:
+            variants.append(f"{value_name}.")
+            variants.append(f"{converse_variant_of_value_name}.")
+
+        return set(variants)
 
 
 if __name__ == "__main__":
