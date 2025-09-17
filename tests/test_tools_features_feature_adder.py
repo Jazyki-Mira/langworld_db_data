@@ -542,11 +542,10 @@ def test__add_first_listed_value(test_feature_adder):
         first_value={
             "en": "New value",
             "ru": "Новое значение",
-        }
+        },
     )
 
     check_existence_of_output_csv_file_and_compare_with_gold_standard(
         output_file=test_feature_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES
-        / "features_listed_values_new_C_3_1.csv",
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES / "features_listed_values_new_C_3_1.csv",
     )

@@ -470,7 +470,9 @@ def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_values_
         )
 
 
-def test__add_listed_value_to_inventory_of_listed_values_insert_after_non_final_value_put_as_third(test_adder):
+def test__add_listed_value_to_inventory_of_listed_values_insert_after_non_final_value_put_as_third(
+    test_adder,
+):
     test_adder._add_listed_value_to_inventory_of_listed_values(
         value_id="A-3-3",
         feature_id="A-3",
@@ -485,7 +487,9 @@ def test__add_listed_value_to_inventory_of_listed_values_insert_after_non_final_
     )
 
 
-def test__add_listed_value_to_inventory_of_listed_values_insert_after_non_final_value_put_as_tenth(test_adder):
+def test__add_listed_value_to_inventory_of_listed_values_insert_after_non_final_value_put_as_tenth(
+    test_adder,
+):
     test_adder._add_listed_value_to_inventory_of_listed_values(
         value_id="A-11-10",
         feature_id="A-11",

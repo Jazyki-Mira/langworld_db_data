@@ -29,7 +29,7 @@ from langworld_db_data.tools.common.ids.compose import (
     compose_feature_id,
     compose_value_id_based_on_feature_id,
     compose_value_id_from_scratch,
-    )
+)
 from langworld_db_data.tools.common.ids.extract import (
     extract_category_id,
     extract_feature_index,
@@ -186,11 +186,13 @@ class FeatureAdder(Adder):
             feature_id=feature_id,
             first_value=listed_values_to_add[0],
         )
-        logger.debug("Successfully inserted the first value of new feature and aligned indices " \
-        "for values of subsequent features within the same category.")
-        
+        logger.debug(
+            "Successfully inserted the first value of new feature and aligned indices "
+            "for values of subsequent features within the same category."
+        )
+
         if len(listed_values_to_add) > 1:
-            
+
             i = 2
             logger.debug("There are some more values to add.")
             logger.debug(f"Opening {self.output_file_with_listed_values}.")
@@ -208,7 +210,7 @@ class FeatureAdder(Adder):
                     new_value_en=listed_value["en"],
                     new_value_ru=listed_value["ru"],
                 )
-                i+=1
+                i += 1
 
         # id_of_category_where_feature_is_inserted = extract_category_id(feature_id)
 
@@ -285,14 +287,15 @@ class FeatureAdder(Adder):
         feature_id: str,
         first_value: dict[str, str],
     ) -> None:
-        
+
         id_of_first_listed_value = compose_value_id_based_on_feature_id(
             feature_id=feature_id,
             value_index=1,
         )
-        logger.debug(f"New value with ID {id_of_first_listed_value} will be added "
-                     "to the inventory.")
-        
+        logger.debug(
+            f"New value with ID {id_of_first_listed_value} will be added " "to the inventory."
+        )
+
         args_of_first_value = {
             "id": id_of_first_listed_value,
             "feature_id": feature_id,
@@ -444,7 +447,9 @@ class FeatureAdder(Adder):
                 delimiter=",",
             )
 
-        logger.info(f"Adding feature {feature_id} to feature profiles with value type" " 'not_stated'")
+        logger.info(
+            f"Adding feature {feature_id} to feature profiles with value type" " 'not_stated'"
+        )
 
 
 if __name__ == "__main__":

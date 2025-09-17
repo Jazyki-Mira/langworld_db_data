@@ -315,7 +315,7 @@ class Adder(ObjectWithPaths):
         )
 
         return index_to_validate in avaliable_indices
-    
+
     def _add_listed_value_to_inventory_of_listed_values(
         self,
         value_id: str,
@@ -401,8 +401,10 @@ class Adder(ObjectWithPaths):
             if not id.startswith(f"{category_or_feature_id}{ID_SEPARATOR}"):
                 continue
             existing_indices.append(extract_last_index(id))
-            
-        logger.debug(f"Currently existing indices within {category_or_feature} {category_or_feature_id}: {existing_indices}")
+
+        logger.debug(
+            f"Currently existing indices within {category_or_feature} {category_or_feature_id}: {existing_indices}"
+        )
         # Also append next index after current maximum
         existing_indices.append(existing_indices[-1] + 1)
 
@@ -553,7 +555,7 @@ class Adder(ObjectWithPaths):
             if row[lookup_column] == new_feature_or_value_id:
                 line_number_where_row_will_be_inserted = i
                 exact_line_number_is_found = True
-                
+
                 return line_number_where_row_will_be_inserted
 
             if (
@@ -563,8 +565,10 @@ class Adder(ObjectWithPaths):
                 line_number_where_row_will_be_inserted = i
 
         if not exact_line_number_is_found and not line_number_where_row_will_be_inserted:
-            logger.debug("No line number estimated. It means that new value " \
-            "belongs to new feature that will be last in its category.")
+            logger.debug(
+                "No line number estimated. It means that new value "
+                "belongs to new feature that will be last in its category."
+            )
 
             category_id_of_new_feature_or_value = extract_category_id(new_feature_or_value_id)
 
