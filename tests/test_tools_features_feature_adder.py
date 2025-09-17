@@ -497,3 +497,56 @@ def test__add_feature_to_feature_profiles_at_the_end_of_category(test_feature_ad
 #             output_file=test_output_file,
 #             gold_standard_file=file,
 #         )
+
+
+def test__increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature(
+    test_feature_adder,
+):
+
+    test_feature_adder._increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature(
+        input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER
+        / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14.csv",
+        output_filepath=test_feature_adder.output_file_with_listed_values,
+        line_number_of_insertion=267,
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_feature_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES
+        / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14_and_aligned_indices.csv",
+    )
+
+
+def test__increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature_does_nothing(
+    test_feature_adder,
+):
+
+    test_feature_adder._increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature(
+        input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_FEATURE_ADDER
+        / "features_listed_values_with_new_A_22_1.csv",
+        output_filepath=test_feature_adder.output_file_with_listed_values,
+        line_number_of_insertion=168,
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_feature_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES
+        / "features_listed_values_with_new_A_22_1_no_changes.csv",
+    )
+
+
+def test__add_first_listed_value(test_feature_adder):
+
+    test_feature_adder._add_first_listed_value(
+        feature_id="C-3",
+        first_value={
+            "en": "New value",
+            "ru": "Новое значение",
+        }
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_feature_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES
+        / "features_listed_values_new_C_3_1.csv",
+    )

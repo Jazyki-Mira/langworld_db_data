@@ -3,7 +3,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 from pathlib import Path
-from typing import Literal, Union
+from typing import Literal, Optional, Union
 
 from tinybear.csv_xls import read_column_from_csv, read_dicts_from_csv, write_csv
 
@@ -293,8 +293,6 @@ class Adder(ObjectWithPaths):
             category_or_feature = "feature"
             category_or_feature_id = args_to_validate["feature_id"]
 
-        print(category_or_feature)
-
         if not self._check_if_index_to_assign_is_in_list_of_applicable_indices(
             index_to_validate=args_to_validate["index_to_assign"],
             category_or_feature=category_or_feature,
@@ -315,10 +313,59 @@ class Adder(ObjectWithPaths):
             category_or_feature=category_or_feature,
             category_or_feature_id=category_or_feature_id,
         )
-        print(avaliable_indices)
-        print(index_to_validate)
 
         return index_to_validate in avaliable_indices
+    
+    def _add_listed_value_to_inventory_of_listed_values(
+        self,
+        value_id: str,
+        feature_id: str,
+        new_value_en: str,
+        new_value_ru: str,
+        description_formatted_en: Optional[str] = None,
+        description_formatted_ru: Optional[str] = None,
+    ) -> None:
+
+        args = {
+            "id": value_id,
+            "feature_id": feature_id,
+            "en": new_value_en,
+            "ru": new_value_ru,
+            "description_formatted_en": description_formatted_en,
+            "description_formatted_ru": description_formatted_ru,
+        }
+
+        logger.debug("Generating row with new value for the inventory.")
+        new_row = self._compose_new_row(
+            feature_or_value="value",
+            args=args,
+        )
+        logger.debug(f"New row: {new_row}.")
+
+        logger.debug("Finding line number in the inventory where the new row will be inserted.")
+        line_number_to_insert_into = self._get_line_number_where_to_insert(
+            feature_or_value="value",
+            new_feature_or_value_id=value_id,
+        )
+
+        logger.debug(f"Inserting new row at line number {line_number_to_insert_into}.")
+        self._insert_new_row_at_given_line_number(
+            new_row=new_row,
+            line_number_to_insert_into=line_number_to_insert_into,
+            file_to_insert_into=self.input_file_with_listed_values,
+            feature_or_value="value",
+        )
+
+        logger.debug(
+            "Aligning indices of values within the same feature "
+            "which are equal or greater than the index "
+            "of new value."
+        )
+        self._align_indices_of_features_or_values_that_come_after_inserted_one(
+            input_filepath=self.output_file_with_listed_values,
+            output_filepath=self.output_file_with_listed_values,
+            line_number_of_insertion=line_number_to_insert_into,
+        )
 
     def _get_tuple_of_currently_available_indices(
         self,
@@ -335,6 +382,7 @@ class Adder(ObjectWithPaths):
         generating index for feature / listed value if no
         index_to_assign is passed.
         """
+
         if category_or_feature == "category":
             file_to_check_against = self.input_file_with_features
             extract_last_index = extract_feature_index
@@ -347,12 +395,14 @@ class Adder(ObjectWithPaths):
         rows = read_dicts_from_csv(
             path_to_file=file_to_check_against,
         )
+        logger.debug(rows[-1]["id"])
         for row in rows:
             id = row["id"]
             if not id.startswith(f"{category_or_feature_id}{ID_SEPARATOR}"):
                 continue
             existing_indices.append(extract_last_index(id))
-
+            
+        logger.debug(f"Currently existing indices within {category_or_feature} {category_or_feature_id}: {existing_indices}")
         # Also append next index after current maximum
         existing_indices.append(existing_indices[-1] + 1)
 
@@ -362,7 +412,7 @@ class Adder(ObjectWithPaths):
         self,
         category_or_feature: CategoryOrFeature,
         category_or_feature_id: str,
-        index_to_assign: Union[int, None],
+        index_to_assign: Union[int, None] = None,
     ) -> str:
         """
         Compose ID for a feature / listed value with
@@ -496,18 +546,32 @@ class Adder(ObjectWithPaths):
             rows = read_dicts_from_csv(path_to_file=self.input_file_with_features)
 
         exact_line_number_is_found = False
+        line_number_where_row_will_be_inserted = 0
 
         for i, row in enumerate(rows):
 
             if row[lookup_column] == new_feature_or_value_id:
                 line_number_where_row_will_be_inserted = i
                 exact_line_number_is_found = True
-                break
+                
+                return line_number_where_row_will_be_inserted
 
             if (
                 f"{category_or_feature_id_of_new_feature_or_value}{ID_SEPARATOR}"
                 in row[lookup_column]
             ):
+                line_number_where_row_will_be_inserted = i
+
+        if not exact_line_number_is_found and not line_number_where_row_will_be_inserted:
+            logger.debug("No line number estimated. It means that new value " \
+            "belongs to new feature that will be last in its category.")
+
+            category_id_of_new_feature_or_value = extract_category_id(new_feature_or_value_id)
+
+            for i, row in enumerate(rows):
+                if category_id_of_new_feature_or_value not in row[lookup_column]:
+                    continue
+                logger.debug(f"Found same category ID in line number {i}. {row[lookup_column]}")
                 line_number_where_row_will_be_inserted = i
 
         if not exact_line_number_is_found:
@@ -595,58 +659,5 @@ class Adder(ObjectWithPaths):
             current_id_after_alignment = "-".join(elements_of_current_id)
             row[lookup_column] = current_id_after_alignment
             reference_id = current_id_after_alignment
-
-        write_csv(rows=rows, path_to_file=output_filepath, delimiter=",", overwrite=True)
-
-    def _increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature(
-        self,
-        input_filepath: Path,
-        output_filepath: Path,
-        line_number_of_insertion: int,
-        for_feature_profile: bool = False,
-    ) -> None:
-        """
-        When we add a new feature we have to insert its first
-        value into the listed values inventory. If the feature is
-        not final in its category, then its first value will
-        cause IDs of all subsequent values within the same category
-        to increment their feature indices. E.g. if we have a category
-        A consisting of features A-1 and A-2 (which has values A-2-1
-        and A-2-2) and we want to add a new A-2 feature, then in listed
-        values its value A-2-1 will cause the existing values A-2-1
-        and A-2-2 to become A-3-1 and A-3-2. This is what this method
-        does.
-
-        For any other index increments, please use
-        _align_indices_of_features_or_values_that_come_after_inserted_one.
-        """
-        lookup_column = "id"
-        if for_feature_profile:
-            lookup_column = "feature_id"
-
-        rows = read_dicts_from_csv(
-            path_to_file=input_filepath,
-        )
-
-        reference_id = rows[line_number_of_insertion][lookup_column]
-        print(reference_id)
-
-        for row in rows[line_number_of_insertion + 1 :]:
-            current_id = row[lookup_column]
-            current_category_id = extract_category_id(current_id)
-            if current_category_id != extract_category_id(reference_id):
-                continue
-
-            current_feature_index = extract_feature_index(current_id)
-            current_feature_index_after_alignment = current_feature_index + 1
-            row[lookup_column] = compose_value_id_from_scratch(
-                category_id=current_category_id,
-                feature_index=current_feature_index_after_alignment,
-                value_index=extract_value_index(current_id),
-            )
-            row["feature_id"] = compose_feature_id(
-                category_id=current_category_id,
-                feature_index=current_feature_index_after_alignment,
-            )
 
         write_csv(rows=rows, path_to_file=output_filepath, delimiter=",", overwrite=True)

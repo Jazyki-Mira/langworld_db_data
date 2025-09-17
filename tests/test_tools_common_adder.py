@@ -470,6 +470,71 @@ def test__check_if_index_to_assign_is_in_list_of_applicable_indices_from_values_
         )
 
 
+def test__add_listed_value_to_inventory_of_listed_values_insert_after_non_final_value_put_as_third(test_adder):
+    test_adder._add_listed_value_to_inventory_of_listed_values(
+        value_id="A-3-3",
+        feature_id="A-3",
+        new_value_en="Central, mid-back and back",
+        new_value_ru="Средний, задне-средний и задний",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "gs_flv__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_third.csv",
+    )
+
+
+def test__add_listed_value_to_inventory_of_listed_values_insert_after_non_final_value_put_as_tenth(test_adder):
+    test_adder._add_listed_value_to_inventory_of_listed_values(
+        value_id="A-11-10",
+        feature_id="A-11",
+        new_value_en="Some value",
+        new_value_ru="Какое-то значение",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "gs_flv__add_to_inventory_of_listed_values_insert_after_non_final_value_put_as_tenth.csv",
+    )
+
+
+def test__add_listed_value_to_inventory_of_listed_values_put_as_first(test_adder):
+    test_adder._add_listed_value_to_inventory_of_listed_values(
+        value_id="A-3-1",
+        feature_id="A-3",
+        new_value_en="Central, mid-back and back",
+        new_value_ru="Средний, задне-средний и задний",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "gs_flv__add_to_inventory_of_listed_values_put_as_first.csv",
+    )
+
+
+def test__add_listed_value_to_inventory_of_listed_values_append_to_end_no_custom_values(
+    test_adder,
+):
+    # The feature has 14 values, we are asking the method to add the 15-th one
+    test_adder._add_listed_value_to_inventory_of_listed_values(
+        value_id="A-11-15",
+        feature_id="A-11",
+        new_value_en="New value, listed with a comma",
+        new_value_ru="Есть первые, вторые и третьи",
+    )
+
+    assert test_adder.output_file_with_listed_values.exists()
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=test_adder.output_file_with_listed_values,
+        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
+        / "gs_flv__add_to_inventory_of_listed_values_append_to_end_with_explicit_index_no_custom_values.csv",
+    )
+
+
 def test__get_tuple_of_currently_available_indices_in_features_inventory(test_adder):
 
     assert test_adder._get_tuple_of_currently_available_indices(
@@ -713,6 +778,30 @@ def test__get_line_number_where_to_insert_feature_in_inventory_last_in_category(
     )
 
 
+def test__get_line_number_where_to_insert_feature_in_inventory_first_in_category(test_adder):
+
+    assert (
+        test_adder._get_line_number_where_to_insert(
+            feature_or_value="feature",
+            new_feature_or_value_id="D-1",
+            for_feature_profile=False,
+        )
+        == 37
+    )
+
+
+def test__get_line_number_where_to_insert_feature_in_inventory_into_absolute_beginning(test_adder):
+
+    assert (
+        test_adder._get_line_number_where_to_insert(
+            feature_or_value="feature",
+            new_feature_or_value_id="A-1",
+            for_feature_profile=False,
+        )
+        == 0
+    )
+
+
 def test__get_line_number_where_to_insert_one_listed_value_in_inventory_not_last_in_feature(
     test_adder,
 ):
@@ -724,6 +813,48 @@ def test__get_line_number_where_to_insert_one_listed_value_in_inventory_not_last
             for_feature_profile=False,
         )
         == 32
+    )
+
+
+def test__get_line_number_where_to_insert_one_listed_value_in_inventory_first_in_existing_feature(
+    test_adder,
+):
+
+    assert (
+        test_adder._get_line_number_where_to_insert(
+            feature_or_value="value",
+            new_feature_or_value_id="A-7-1",
+            for_feature_profile=False,
+        )
+        == 31
+    )
+
+
+def test__get_line_number_where_to_insert_one_listed_value_in_inventory_first_in_brand_new_feature_not_last_in_category(
+    test_adder,
+):
+
+    assert (
+        test_adder._get_line_number_where_to_insert(
+            feature_or_value="value",
+            new_feature_or_value_id="H-9-1",
+            for_feature_profile=False,
+        )
+        == 590
+    )
+
+
+def test__get_line_number_where_to_insert_one_listed_value_in_inventory_first_in_brand_new_feature_last_in_category(
+    test_adder,
+):
+
+    assert (
+        test_adder._get_line_number_where_to_insert(
+            feature_or_value="value",
+            new_feature_or_value_id="H-10-1",
+            for_feature_profile=False,
+        )
+        == 592
     )
 
 
@@ -982,22 +1113,4 @@ def test__align_indices_of_features_or_values_that_come_after_inserted_one_in_fe
         / "feature_profile_with_new_D_3.csv",
         gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
         / "feature_profile_with_new_D_3_and_aligned_indices.csv",
-    )
-
-
-def test__increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature(
-    test_adder,
-):
-
-    test_adder._increment_feature_indices_of_values_following_the_inserted_value_that_belongs_to_brand_new_feature(
-        input_filepath=DIR_WITH_INVENTORIES_FOR_TESTING_ADDER
-        / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14.csv",
-        output_filepath=test_adder.output_file_with_listed_values,
-        line_number_of_insertion=267,
-    )
-
-    check_existence_of_output_csv_file_and_compare_with_gold_standard(
-        output_file=test_adder.output_file_with_listed_values,
-        gold_standard_file=DIR_WITH_GOLD_STANDARD_FILES_FOR_TESTING_ADDER
-        / "features_listed_values_with_new_B_14_1_inside_new_feature_B_14_and_aligned_indices.csv",
     )

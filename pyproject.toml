@@ -40,5 +40,5 @@ ignore = ["A003"]
 target-version = "py39"
 
 [tool.pytest.ini_options]
-log_cli = false
+log_cli = true
 log_cli_level = "DEBUG"

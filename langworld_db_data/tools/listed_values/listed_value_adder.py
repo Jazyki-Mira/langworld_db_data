@@ -82,57 +82,6 @@ class ListedValueAdder(Adder):
             custom_values_to_rename=custom_values_to_rename,
         )
 
-    def _add_listed_value_to_inventory_of_listed_values(
-        self,
-        value_id: str,
-        feature_id: str,
-        new_value_en: str,
-        new_value_ru: str,
-        description_formatted_en: Optional[str] = None,
-        description_formatted_ru: Optional[str] = None,
-    ) -> None:
-
-        args = {
-            "id": value_id,
-            "feature_id": feature_id,
-            "en": new_value_en,
-            "ru": new_value_ru,
-            "description_formatted_en": description_formatted_en,
-            "description_formatted_ru": description_formatted_ru,
-        }
-
-        logger.debug("Generating row with new value for the inventory.")
-        new_row = self._compose_new_row(
-            feature_or_value="value",
-            args=args,
-        )
-        logger.debug(f"New row: {new_row}.")
-
-        logger.debug("Finding line number in the inventory where " "the new row will be inserted.")
-        line_number_to_insert_into = self._get_line_number_where_to_insert(
-            feature_or_value="value",
-            new_feature_or_value_id=value_id,
-        )
-
-        logger.debug(f"Inserting new row at line number {line_number_to_insert_into}.")
-        self._insert_new_row_at_given_line_number(
-            new_row=new_row,
-            line_number_to_insert_into=line_number_to_insert_into,
-            file_to_insert_into=self.input_file_with_listed_values,
-            feature_or_value="value",
-        )
-
-        logger.debug(
-            "Aligning indices of values within the same feature "
-            "which are equal or greater than the index "
-            "of new value."
-        )
-        self._align_indices_of_features_or_values_that_come_after_inserted_one(
-            input_filepath=self.output_file_with_listed_values,
-            output_filepath=self.output_file_with_listed_values,
-            line_number_of_insertion=line_number_to_insert_into,
-        )
-
     def _update_value_ids_and_types_in_feature_profiles_if_necessary(
         self,
         feature_id: str,
