@@ -126,6 +126,8 @@ latvian,language,0,0,Latvian,латышский,,,,,balt,lav,latv1249,lat,latv12
 lithuanian,language,0,0,Lithuanian,литовский,,,,,balt,lit,lith1251,lit,lith1251,lith1251,54.6775,25.3382,ltu,14,93,1,,
 prussian,language,1,0,Prussian,прусский,,,,древнепрусский,balt,prg,prus1238,,,,54.7319,20.4971,rus,14,50,1,,
 akkadian,language,1,0,Akkadian,аккадский,,,Assyro-Babylonian,"вавилоно-ассирийский, ассиро-вавилонский",east_sem,akk,akka1240,,akka1240,,33.1,44.1,irq,15,113,1,,
+old_akkadian,dialect,1,0,Old Akkadian,староаккадский (саргоновский),,,Sargonic Accadian,саргоновский,east_sem,,olda1247,,32.32,44.36,irq,15,178,1,,
+old_assyrian,dialect,1,0,Old Assyrian,староассирийский,,,,,east_sem,,olda1248,,35.27,43.15,irq,15,195,1,,
 ancient_hebrew,language,1,0,Ancient Hebrew,древнееврейский,,,,"еврейский, иврит, ханаанский, иудейский",canaan,hbo,anci1244,,anci1244,,31.7833,35.2333,isr,15,296,1,,
 classical_mandaic,language,1,0,Classical Mandaic,классический мандейский,,,Mandaic,мандейский,aram,myz,clas1253,,,,33.0479,44.3137,irq,15,626,1,,
 classical_syriac,language,1,0,Classical Syriac,классический сирийский,,,"Syriac, Syrian/Syriac Aramaic, Syro-Aramaic","сирийский, сирский",aram,syc,clas1252,,,,36,43.3,irq,15,562,1,,
