@@ -406,5 +406,26 @@ class FeatureAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     FeatureAdder().add_feature(
-        category_id="", feature_en="", feature_ru="", listed_values_to_add=[]
+        category_id="B",
+        feature_en="Fixed stress types",
+        feature_ru="Типы связанного ударения",
+        listed_values_to_add=[
+            {
+                "en": "Strictly fixed",
+                "ru": "Строго фиксированное",
+            },
+            {
+                "en": "Limited",
+                "ru": "Ограниченное",
+            },
+            {
+                "en": "Not stated",
+                "ru": "Нет данных",
+            },
+            {
+                "en": "Not applicable",
+                "ru": "Неприменимо",
+            },
+        ],
+        index_to_assign=6,
     )  # pragma: no cover
