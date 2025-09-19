@@ -407,16 +407,20 @@ class FeatureAdder(ObjectWithPaths):
 if __name__ == "__main__":
     FeatureAdder().add_feature(
         category_id="B",
-        feature_en="Fixed stress types",
-        feature_ru="Типы связанного ударения",
+        feature_en="Stress pattern in inflection",
+        feature_ru="Тип ударения при формообразовании (словоизменении)",
         listed_values_to_add=[
             {
-                "en": "Strictly fixed",
-                "ru": "Строго фиксированное",
+                "en": "Flexible",
+                "ru": "Подвижное",
             },
             {
-                "en": "Limited",
-                "ru": "Ограниченное",
+                "en": "Fixed",
+                "ru": "Неподвижное",
+            },
+            {
+                "en": "Flexible and fixed",
+                "ru": "Подвижное и неподвижное",
             },
             {
                 "en": "Not stated",
@@ -427,5 +431,5 @@ if __name__ == "__main__":
                 "ru": "Неприменимо",
             },
         ],
-        index_to_assign=6,
+        index_to_assign=7,
     )  # pragma: no cover
