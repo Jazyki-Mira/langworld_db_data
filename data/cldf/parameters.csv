@@ -34,14 +34,15 @@ B-6,Fixed stress types,,,Типы связанного ударения
 B-7,Stress pattern in inflection,,,Тип ударения при формообразовании (словоизменении)
 B-8,Strictly fixed stress type (by position in a word),,,Тип строго фиксированного ударения (по положению в слове)
 B-9,Number of tone levels,,,Количество уровней тонов
-B-10,Contour tone characteristics,,,Контурные признаки тона
-B-11,Tone carrier,,,Носитель тона
-B-12,Length character,,,Характер долготы
-B-13,Target of vowel harmony,,,Область гармонического уподобления гласных
-B-14,Feature of vowel harmony,,,Признак гармонического уподобления гласных
-B-15,Trigger of vowel harmony,,,Уподобляющий элемент при гармоническом уподоблении гласных
-B-16,Other suprasegmental phenomena,,,Прочие супрасегментные явления
-B-17,Types of phonation,,,Типы фонации
+B-10,Tonema types,,,Виды тонем
+B-11,Contour tone characteristics,,,Контурные признаки тона
+B-12,Tone carrier,,,Носитель тона
+B-13,Length character,,,Характер долготы
+B-14,Target of vowel harmony,,,Область гармонического уподобления гласных
+B-15,Feature of vowel harmony,,,Признак гармонического уподобления гласных
+B-16,Trigger of vowel harmony,,,Уподобляющий элемент при гармоническом уподоблении гласных
+B-17,Other suprasegmental phenomena,,,Прочие супрасегментные явления
+B-18,Types of phonation,,,Типы фонации
 C-1,Syllable onset,,,Начальный согласный в слоге
 C-2,Syllable coda,,,Конечный согласный в слоге
 D-1,Restrictions on the phonemic structure of segment morphemes in the initial position,,,Ограничения на фонемную структуру сегментных морфем в начальной позиции

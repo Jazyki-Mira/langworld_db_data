@@ -407,32 +407,32 @@ class FeatureAdder(ObjectWithPaths):
 if __name__ == "__main__":
     FeatureAdder().add_feature(
         category_id="B",
-        feature_en="Strictly fixed stress type (by position in a word)",
-        feature_ru="Тип строго фиксированного ударения (по положению в слове)",
+        feature_en="Tonema types",
+        feature_ru="Виды тонем",
         listed_values_to_add=[
             {
-                "en": "First syllable",
-                "ru": "На первом слоге от начала слова",
+                "en": "Level",
+                "ru": "Уровневые",
             },
             {
-                "en": "Second syllable",
-                "ru": "На втором слоге от начала слова",
+                "en": "Contour",
+                "ru": "Контурные",
             },
             {
-                "en": "Third syllable",
-                "ru": "На третьем слоге от начала слова",
+                "en": "Register and contour",
+                "ru": "Регистровые и контурные",
             },
             {
-                "en": "Antepenult",
-                "ru": "На третьем слоге от конца слова",
+                "en": "Combinatorial tones",
+                "ru": "Комбинаторные тоны",
             },
             {
-                "en": "Penult",
-                "ru": "На втором слоге от конца слова",
+                "en": "Broken tones",
+                "ru": "Ломаные тоны",
             },
             {
-                "en": "Ultima",
-                "ru": "На последнем слоге в слове",
+                "en": "Combination of tone and phonation features",
+                "ru": "Сочетание тона с фонационными характеристиками",
             },
             {
                 "en": "Not stated",
@@ -443,5 +443,5 @@ if __name__ == "__main__":
                 "ru": "Неприменимо",
             },
         ],
-        index_to_assign=8,
+        index_to_assign=10,
     )  # pragma: no cover
