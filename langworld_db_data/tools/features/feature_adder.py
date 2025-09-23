@@ -407,20 +407,32 @@ class FeatureAdder(ObjectWithPaths):
 if __name__ == "__main__":
     FeatureAdder().add_feature(
         category_id="B",
-        feature_en="Stress pattern in inflection",
-        feature_ru="Тип ударения при формообразовании (словоизменении)",
+        feature_en="Strictly fixed stress type (by position in a word)",
+        feature_ru="Тип строго фиксированного ударения (по положению в слове)",
         listed_values_to_add=[
             {
-                "en": "Flexible",
-                "ru": "Подвижное",
+                "en": "First syllable",
+                "ru": "На первом слоге от начала слова",
             },
             {
-                "en": "Fixed",
-                "ru": "Неподвижное",
+                "en": "Second syllable",
+                "ru": "На втором слоге от начала слова",
             },
             {
-                "en": "Flexible and fixed",
-                "ru": "Подвижное и неподвижное",
+                "en": "Third syllable",
+                "ru": "На третьем слоге от начала слова",
+            },
+            {
+                "en": "Antepenult",
+                "ru": "На третьем слоге от конца слова",
+            },
+            {
+                "en": "Penult",
+                "ru": "На втором слоге от конца слова",
+            },
+            {
+                "en": "Ultima",
+                "ru": "На последнем слоге в слове",
             },
             {
                 "en": "Not stated",
@@ -431,5 +443,5 @@ if __name__ == "__main__":
                 "ru": "Неприменимо",
             },
         ],
-        index_to_assign=7,
+        index_to_assign=8,
     )  # pragma: no cover

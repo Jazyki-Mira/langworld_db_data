@@ -242,89 +242,97 @@ B-7-2,B-7,Fixed,,Неподвижное
 B-7-3,B-7,Flexible and fixed,,Подвижное и неподвижное
 B-7-4,B-7,Not stated,,Нет данных
 B-7-5,B-7,Not applicable,,Неприменимо
-B-8-1,B-8,Two,,Два
-B-8-2,B-8,Three,,Три
-B-8-3,B-8,More than three,,Более трёх
-B-8-4,B-8,No tones,,Тоны отсутствуют
-B-9-1,B-9,Rising,,Восходящий
-B-9-2,B-9,Falling,,Нисходящий
-B-9-3,B-9,Rising and falling,,Восходящий и нисходящий
-B-9-4,B-9,Rising and falling-rising,,Восходящий и нисходяще-восходящий
-B-9-5,B-9,Flat and rising,,Ровный и восходящий
-B-9-6,B-9,Flat and falling,,Ровный и нисходящий
-B-9-7,B-9,"Flat, rising and falling",,"Ровный, восходящий и нисходящий"
-B-9-8,B-9,"Rising, falling and rising-falling",,"Восходящий, нисходящий и восходяще-нисходящий"
-B-9-9,B-9,"Rising, falling and falling-rising",,"Восходящий, нисходящий и нисходяще-восходящий"
-B-9-10,B-9,"Rising, falling, rising-falling and falling-rising",,"Восходящий, нисходящий, восходяще-нисходящий и нисходяще-восходящий"
-B-9-11,B-9,"Rising, rising-falling, flat and broken",,"Восходящий, восходяще-нисходящий, ровный и прерывистый"
-B-9-12,B-9,Flat and broken,,Ровный и прерывистый
-B-10-1,B-10,Syllable,,Слог
-B-10-2,B-10,Word,,Слово
-B-10-3,B-10,Syllable or word,,Слог или слово
-B-10-4,B-10,Phrase,,Фраза
-B-10-5,B-10,Foot,,Стопа
-B-11-1,B-11,Phonological,,Фонологическая
-B-11-2,B-11,Non-phonological,,Нефонологическая
-B-11-3,B-11,Rhythmic,,Ритмическая
-B-11-4,B-11,Phonological and non-phonological,,Фонологическая и нефонологическая
-B-11-5,B-11,Phonological and rhythmic,,Фонологическая и ритмическая
-B-11-6,B-11,Non-phonological and rhythmic,,Нефонологическая и ритмическая
-B-12-1,B-12,Phoneme,,Фонема
-B-12-2,B-12,Group of phonemes,,Группа фонем
-B-12-3,B-12,Affix,,Аффикс
-B-12-4,B-12,Group of affixes,,Группа аффиксов
-B-12-5,B-12,"Group of affixes, all vowels",,Группа слогов или все гласные слова
-B-12-6,B-12,All vowels,,Все гласные слова
-B-12-7,B-12,One vowel or all vowels,,Один гласный или все гласные слова
-B-12-8,B-12,Foot,,Стопа
-B-12-9,B-12,No vowel harmony,,Гармоническое уподобление гласных отсутствует
-B-13-1,B-13,Length,,Долгота
-B-13-2,B-13,Backness,,Ряд
-B-13-3,B-13,Height,,Подъем
-B-13-4,B-13,Labialization,,Лабиализация
-B-13-5,B-13,ATR,,Позиция корня языка
-B-13-6,B-13,Backness and height,,Ряд и подъем
-B-13-7,B-13,Backness and roundedness,,Ряд и лабиализация
-B-13-8,B-13,Height and roundedness,,Подъем и лабиализация
-B-13-9,B-13,Height and palatality,,Подъем и палатальность
-B-13-10,B-13,Roundedness and palatality,,Лабиализация и палатальность
-B-13-11,B-13,"Backness, height and roundedness",,"Ряд, подъем и лабиализация"
-B-13-12,B-13,"Height, length, and labialization",,"Подъем, долгота и лабиализация"
-B-13-13,B-13,Nasalization,,Назализация
-B-13-14,B-13,ATR and nasalization,,Степень продвинутости языка (ATR) и назализация
-B-13-15,B-13,Openness/closedness,,Открытость/закрытость
-B-13-16,B-13,Narrow and broad vowels,,Широкие и узкие гласные
-B-14-1,B-14,First vowel of word,,Первый гласный слова
-B-14-2,B-14,First vowel of affix,,Первый гласный аффикса
-B-14-3,B-14,First vowel of root,,Первый гласный корня
-B-14-4,B-14,Stressed vowel,,Ударный гласный
-B-14-5,B-14,Last vowel of stem,,Последний гласный основы
-B-14-6,B-14,First vowel of word (root),,Первый гласный слова (=корня)
-B-14-7,B-14,"Final syllable vowel, or first vowel of word, or stressed syllable of stem",,"Гласный финального слога, первый гласный слова или ударный гласный основы"
-B-14-8,B-14,First vowel of word or last vowel of stem,,Первый гласный слова или последний гласный основы
-B-14-9,B-14,First vowel of affix or first vowel of root,,Первый гласный аффикса или первый гласный корня
-B-14-10,B-14,Last vowel of word,,Последний гласный слова
-B-14-11,B-14,Vowel of flection,,Гласный флексии
-B-14-12,B-14,Vowel of next syllable,,Гласный следующего слога
-B-14-13,B-14,Vowel or diphthong of preceding syllable,,Гласный или дифтонг предшествующего слога
-B-15-1,B-15,Nasalization,,Назализация
-B-15-2,B-15,Palatalization,,Палатализация
-B-15-3,B-15,Pharyngealization,,Фарингализация
-B-15-4,B-15,Phonation,,Фонация
-B-15-5,B-15,Velarization and palatalization,,Веляризация и палатализация
-B-15-6,B-15,Pharyngealization and phonation,,Фарингализация и фонация
-B-15-7,B-15,Palatalization and nasalization,,Палатализация и назализация
-B-15-8,B-15,Labialization and glottal stop,,Лабиализация и гортанная смычка
-B-15-9,B-15,Aspiration and palatalization,,Аспирация и палатализация
-B-16-1,B-16,Creaky voice,,Скрипучая
-B-16-2,B-16,Stiff voice and slack voice,,Напряженная и слабая
-B-16-3,B-16,"Stiff voice, slack voice and creaky voice",,"Напряженная, слабая и скрипучая"
-B-16-4,B-16,Stiff voice and aspirated voice,,Напряженная и придыхательная
-B-16-5,B-16,"Stiff voice, modal voice and aspirated voice",,"Напряженная, модальная и придыхательная"
-B-16-6,B-16,Stiff voice,,Напряженная
-B-16-7,B-16,Aspirated voice,,Придыхательная
-B-16-8,B-16,Slack voice,,Слабая
-B-16-9,B-16,Slackened voice,,Ослабленная
+B-8-1,B-8,First syllable,,На первом слоге от начала слова
+B-8-2,B-8,Second syllable,,На втором слоге от начала слова
+B-8-3,B-8,Third syllable,,На третьем слоге от начала слова
+B-8-4,B-8,Antepenult,,На третьем слоге от конца слова
+B-8-5,B-8,Penult,,На втором слоге от конца слова
+B-8-6,B-8,Ultima,,На последнем слоге в слове
+B-8-7,B-8,Not stated,,Нет данных
+B-8-8,B-8,Not applicable,,Неприменимо
+B-9-1,B-9,Two,,Два
+B-9-2,B-9,Three,,Три
+B-9-3,B-9,More than three,,Более трёх
+B-9-4,B-9,No tones,,Тоны отсутствуют
+B-10-1,B-10,Rising,,Восходящий
+B-10-2,B-10,Falling,,Нисходящий
+B-10-3,B-10,Rising and falling,,Восходящий и нисходящий
+B-10-4,B-10,Rising and falling-rising,,Восходящий и нисходяще-восходящий
+B-10-5,B-10,Flat and rising,,Ровный и восходящий
+B-10-6,B-10,Flat and falling,,Ровный и нисходящий
+B-10-7,B-10,"Flat, rising and falling",,"Ровный, восходящий и нисходящий"
+B-10-8,B-10,"Rising, falling and rising-falling",,"Восходящий, нисходящий и восходяще-нисходящий"
+B-10-9,B-10,"Rising, falling and falling-rising",,"Восходящий, нисходящий и нисходяще-восходящий"
+B-10-10,B-10,"Rising, falling, rising-falling and falling-rising",,"Восходящий, нисходящий, восходяще-нисходящий и нисходяще-восходящий"
+B-10-11,B-10,"Rising, rising-falling, flat and broken",,"Восходящий, восходяще-нисходящий, ровный и прерывистый"
+B-10-12,B-10,Flat and broken,,Ровный и прерывистый
+B-11-1,B-11,Syllable,,Слог
+B-11-2,B-11,Word,,Слово
+B-11-3,B-11,Syllable or word,,Слог или слово
+B-11-4,B-11,Phrase,,Фраза
+B-11-5,B-11,Foot,,Стопа
+B-12-1,B-12,Phonological,,Фонологическая
+B-12-2,B-12,Non-phonological,,Нефонологическая
+B-12-3,B-12,Rhythmic,,Ритмическая
+B-12-4,B-12,Phonological and non-phonological,,Фонологическая и нефонологическая
+B-12-5,B-12,Phonological and rhythmic,,Фонологическая и ритмическая
+B-12-6,B-12,Non-phonological and rhythmic,,Нефонологическая и ритмическая
+B-13-1,B-13,Phoneme,,Фонема
+B-13-2,B-13,Group of phonemes,,Группа фонем
+B-13-3,B-13,Affix,,Аффикс
+B-13-4,B-13,Group of affixes,,Группа аффиксов
+B-13-5,B-13,"Group of affixes, all vowels",,Группа слогов или все гласные слова
+B-13-6,B-13,All vowels,,Все гласные слова
+B-13-7,B-13,One vowel or all vowels,,Один гласный или все гласные слова
+B-13-8,B-13,Foot,,Стопа
+B-13-9,B-13,No vowel harmony,,Гармоническое уподобление гласных отсутствует
+B-14-1,B-14,Length,,Долгота
+B-14-2,B-14,Backness,,Ряд
+B-14-3,B-14,Height,,Подъем
+B-14-4,B-14,Labialization,,Лабиализация
+B-14-5,B-14,ATR,,Позиция корня языка
+B-14-6,B-14,Backness and height,,Ряд и подъем
+B-14-7,B-14,Backness and roundedness,,Ряд и лабиализация
+B-14-8,B-14,Height and roundedness,,Подъем и лабиализация
+B-14-9,B-14,Height and palatality,,Подъем и палатальность
+B-14-10,B-14,Roundedness and palatality,,Лабиализация и палатальность
+B-14-11,B-14,"Backness, height and roundedness",,"Ряд, подъем и лабиализация"
+B-14-12,B-14,"Height, length, and labialization",,"Подъем, долгота и лабиализация"
+B-14-13,B-14,Nasalization,,Назализация
+B-14-14,B-14,ATR and nasalization,,Степень продвинутости языка (ATR) и назализация
+B-14-15,B-14,Openness/closedness,,Открытость/закрытость
+B-14-16,B-14,Narrow and broad vowels,,Широкие и узкие гласные
+B-15-1,B-15,First vowel of word,,Первый гласный слова
+B-15-2,B-15,First vowel of affix,,Первый гласный аффикса
+B-15-3,B-15,First vowel of root,,Первый гласный корня
+B-15-4,B-15,Stressed vowel,,Ударный гласный
+B-15-5,B-15,Last vowel of stem,,Последний гласный основы
+B-15-6,B-15,First vowel of word (root),,Первый гласный слова (=корня)
+B-15-7,B-15,"Final syllable vowel, or first vowel of word, or stressed syllable of stem",,"Гласный финального слога, первый гласный слова или ударный гласный основы"
+B-15-8,B-15,First vowel of word or last vowel of stem,,Первый гласный слова или последний гласный основы
+B-15-9,B-15,First vowel of affix or first vowel of root,,Первый гласный аффикса или первый гласный корня
+B-15-10,B-15,Last vowel of word,,Последний гласный слова
+B-15-11,B-15,Vowel of flection,,Гласный флексии
+B-15-12,B-15,Vowel of next syllable,,Гласный следующего слога
+B-15-13,B-15,Vowel or diphthong of preceding syllable,,Гласный или дифтонг предшествующего слога
+B-16-1,B-16,Nasalization,,Назализация
+B-16-2,B-16,Palatalization,,Палатализация
+B-16-3,B-16,Pharyngealization,,Фарингализация
+B-16-4,B-16,Phonation,,Фонация
+B-16-5,B-16,Velarization and palatalization,,Веляризация и палатализация
+B-16-6,B-16,Pharyngealization and phonation,,Фарингализация и фонация
+B-16-7,B-16,Palatalization and nasalization,,Палатализация и назализация
+B-16-8,B-16,Labialization and glottal stop,,Лабиализация и гортанная смычка
+B-16-9,B-16,Aspiration and palatalization,,Аспирация и палатализация
+B-17-1,B-17,Creaky voice,,Скрипучая
+B-17-2,B-17,Stiff voice and slack voice,,Напряженная и слабая
+B-17-3,B-17,"Stiff voice, slack voice and creaky voice",,"Напряженная, слабая и скрипучая"
+B-17-4,B-17,Stiff voice and aspirated voice,,Напряженная и придыхательная
+B-17-5,B-17,"Stiff voice, modal voice and aspirated voice",,"Напряженная, модальная и придыхательная"
+B-17-6,B-17,Stiff voice,,Напряженная
+B-17-7,B-17,Aspirated voice,,Придыхательная
+B-17-8,B-17,Slack voice,,Слабая
+B-17-9,B-17,Slackened voice,,Ослабленная
 C-1-1,C-1,No null onset,,Обязательно имеется
 C-1-2,C-1,Only null onset possible,,Запрещен
 C-1-3,C-1,Most syllables have a non-null onset,,Большинство слогов прикрытые
