@@ -352,6 +352,7 @@
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
 ## B-9: Количество уровней тонов
 
+- Более трёх: [гарви](../feature_profiles/garwi.csv), [боко](../feature_profiles/boko.csv), [дан](../feature_profiles/dan.csv), [гбан](../feature_profiles/gban.csv), [гоо](../feature_profiles/goo.csv), [кла-дан](../feature_profiles/kla_dan.csv), [локо](../feature_profiles/loko.csv), [тура](../feature_profiles/tura.csv), [яурэ](../feature_profiles/yaoure.csv)
 - Предположительно можно реконструировать фарингализованный тон - просодическая "эризация": [хотаносакский](../feature_profiles/khotanese.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
 ## B-11: Типы контурных (скользящих, модулярных, модулированных) тонем
