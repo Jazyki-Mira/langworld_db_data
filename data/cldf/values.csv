@@ -1246,7 +1246,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1245,assamese,B-3,Syllable,B-3-1,,,Слог,
 1246,assamese,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
 1247,assamese,B-5,First syllable or penult,B-5-12,Depending on a dialect,,Начальный слог или пенультима,В зависимости от диалекта
-1248,assamese,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+1248,assamese,B-9,Not applicable,B-9-3,,,Неприменимо,
 1249,assamese,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,
 1250,assamese,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 1251,assamese,B-19,,,,,Палатализация и дезаспирация,
@@ -1742,7 +1742,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1741,bactrian,A-24,Labial and coronal,A-24-7,,,Лабиальные и переднеязычные,Других данных нет.
 1742,bactrian,A-25,Absent,A-25-1,,,Отсутствуют,Других данных нет.
 1743,bactrian,B-1,,,,,Ударение в текстах не зафиксировано,
-1744,bactrian,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+1744,bactrian,B-9,Not applicable,B-9-3,,,Неприменимо,
 1745,bactrian,B-15,Non-phonological,B-15-2,,,Нефонологическая,Других данных нет.
 1746,bactrian,B-16,"Group of affixes, all vowels",B-16-5,,,Группа слогов или все гласные слова,Ассимиляция гласных зафиксирована только одним примером.
 1747,bactrian,B-17,Labialization,B-17-4,,,Лабиализация,
@@ -2669,7 +2669,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2668,bengali,B-3,Syllable,B-3-1,,,Слог,
 2669,bengali,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
 2670,bengali,B-5,First syllable of word,B-5-1,Initial syllable of rhythmical group,,Начальный слог,Начальный слог ритмической группы
-2671,bengali,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+2671,bengali,B-9,Not applicable,B-9-3,,,Неприменимо,
 2672,bengali,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,
 2673,bengali,B-16,One vowel or all vowels,B-16-7,,,Один гласный или все гласные слова,
 2674,bengali,B-17,Height,B-17-3,,,Подъем,
@@ -2811,7 +2811,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2810,bhojpuri,B-3,Syllable,B-3-1,,,Слог,
 2811,bhojpuri,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 2812,bhojpuri,B-5,Penult or antepenult,B-5-14,,,Пенультима или антепенультима,
-2813,bhojpuri,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+2813,bhojpuri,B-9,Not applicable,B-9-3,,,Неприменимо,
 2814,bhojpuri,B-15,Rhythmic,B-15-3,Length depends on a position within a word,,Ритмическая,Долгота зависит от позиции в слове
 2815,bhojpuri,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 2816,bhojpuri,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -5060,7 +5060,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5059,dari,B-3,Syllable,B-3-1,,,Слог,
 5060,dari,B-4,,,,,Неподвижное фиксированное,
 5061,dari,B-5,First syllable or ultima,B-5-11,,,Начальный или конечный слог,
-5062,dari,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+5062,dari,B-9,Not applicable,B-9-3,,,Неприменимо,
 5063,dari,B-15,Phonological and non-phonological,B-15-4,,,Фонологическая и нефонологическая,
 5064,dari,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 5065,dari,B-19,,,,,"Ассимиляция, оглушение и спирантизация, выпадение согласных, редукция и сужение гласных ",
@@ -5355,7 +5355,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5354,domari,B-3,Syllable,B-3-1,,,Слог,
 5355,domari,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 5356,domari,B-5,Any syllable of the word,B-5-19,Depends on accentological properties of morpheme,,Любой слог слова,Зависит от акцентуалогического статуса морфемы
-5357,domari,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+5357,domari,B-9,Not applicable,B-9-3,,,Неприменимо,
 5358,domari,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 5359,domari,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 5360,domari,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -7224,7 +7224,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7223,gawar,A-26,,,,,"Лабиальные, переднеязычные, среднеязычные, увулярные и ларингальные",Классификация отражает таблицу консонантизма в статье.
 7224,gawar,B-2,Dynamic,B-2-1,,,Динамическое,
 7225,gawar,B-4,,,,,Свободное,
-7226,gawar,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+7226,gawar,B-9,Not applicable,B-9-3,,,Неприменимо,
 7227,gawar,B-15,Phonological,B-15-1,,,Фонологическая,
 7228,gawar,E-1,Fusional with some agglutinative features,E-1-4,,,Флективный с элементами агглютинации,
 7229,gawar,E-2,,,,,Кумулятивность флексий,
@@ -8013,7 +8013,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8012,grangali,B-3,Syllable,B-3-1,,,Слог,
 8013,grangali,B-4,,,,,Неподвижное фиксированное,
 8014,grangali,B-5,Ultima,B-5-4,,,Конечный слог,
-8015,grangali,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+8015,grangali,B-9,Not applicable,B-9-3,,,Неприменимо,
 8016,grangali,B-15,Phonological,B-15-1,,,Фонологическая,
 8017,grangali,B-16,,,,,Гармоническое уподобление гласных отсутствует,
 8018,grangali,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -8105,7 +8105,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8104,gujarati,A-25,Absent,A-25-1,,,Отсутствуют,
 8105,gujarati,B-3,Syllable,B-3-1,,,Слог,
 8106,gujarati,B-4,Not fixed,B-4-2,,,Нефиксированное,
-8107,gujarati,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+8107,gujarati,B-9,Not applicable,B-9-3,,,Неприменимо,
 8108,gujarati,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 8109,gujarati,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 8110,gujarati,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -8425,7 +8425,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8424,hazaragi,B-3,Syllable,B-3-1,,,Слог,
 8425,hazaragi,B-4,,,,,Неподвижное фиксированное,
 8426,hazaragi,B-5,First syllable or ultima,B-5-11,,,Начальный или конечный слог,Есть основное и второстепенное ударение.
-8427,hazaragi,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+8427,hazaragi,B-9,Not applicable,B-9-3,,,Неприменимо,
 8428,hazaragi,B-15,Phonological,B-15-1,,,Фонологическая,
 8429,hazaragi,B-16,Phoneme,B-16-1,,,Фонема,Сингармонизм существует в видо-временных формах глагола с приставками.
 8430,hazaragi,B-17,Height,B-17-3,,,Подъем,
@@ -10235,7 +10235,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10234,kalasha,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды","Назальные определяются как смычные чистые носовые, плавные - как щелевые боковые. Глайды /w/ и /y/ определяются как щелевые срединные однофокусные согласные."
 10235,kalasha,A-24,"Labial, coronal, dorsal and guttural",A-24-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",Различаются нецеребральные и церебральные переднеязычные назальные и вибранты.
 10236,kalasha,A-26,,,,,"Лабиальные, переднеязычные, среднеязычные, увулярные и ларингальные",Классификация отражает таблицу консонантизма в статье.
-10237,kalasha,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+10237,kalasha,B-9,Not applicable,B-9-3,,,Неприменимо,
 10238,kalasha,B-19,,,,,"Оглушение, озвончение и ослабление согласных",
 10239,kalasha,D-1,Limited set of consonants possible,D-1-4,,,Ограниченный набор согласных,
 10240,kalasha,D-7,Distinctive,D-7-3,,,Смыслоразличительные,
@@ -10906,7 +10906,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10905,kashmiri,A-25,Absent,A-25-1,,,Отсутствуют,
 10906,kashmiri,A-26,,,,,"Лабиальные, переднеязычные, среднеязычные и ларингальные",Классификация отражает таблицу консонантизма в статье.
 10907,kashmiri,B-3,Syllable,B-3-1,,,Слог,
-10908,kashmiri,B-9,No tones,B-9-3,,,Тоны отсутствуют,Тоновые оппозиции не прослеживаются.
+10908,kashmiri,B-9,Not applicable,B-9-3,,,Неприменимо,Тоновые оппозиции не прослеживаются.
 10909,kashmiri,B-15,Phonological,B-15-1,,,Фонологическая,
 10910,kashmiri,B-16,Phoneme,B-16-1,,,Фонема,
 10911,kashmiri,B-17,Backness,B-17-2,,,Ряд,
@@ -11119,7 +11119,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11118,katarkalai,B-3,Syllable,B-3-1,,,Слог,
 11119,katarkalai,B-4,,,,,Неподвижное фиксированное,
 11120,katarkalai,B-5,Last syllable of stem,B-5-6,,,Конечный слог основы,Многосложные слова имеют второстепенное ударение.
-11121,katarkalai,B-9,No tones,B-9-3,,,Тоны отсутствуют,Тоновые оппозиции не прослеживаются. Отдельные слова имеют тоновые контуры.
+11121,katarkalai,B-9,Not applicable,B-9-3,,,Неприменимо,Тоновые оппозиции не прослеживаются. Отдельные слова имеют тоновые контуры.
 11122,katarkalai,B-15,Phonological,B-15-1,,,Фонологическая,
 11123,katarkalai,B-19,,,,,"Деаспирация и веляризация согласных, лабиализация и назализация гласных",
 11124,katarkalai,D-4,Differences in accentuation,D-4-3,,,Акцентные различия,
@@ -12494,7 +12494,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12493,konkani,B-3,Syllable,B-3-1,,,Слог,
 12494,konkani,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 12495,konkani,B-5,Any syllable of the word,B-5-19,Depends on the quality of syllable sequences,,Любой слог слова,Зависит от качества последовательности слогов
-12496,konkani,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+12496,konkani,B-9,Not applicable,B-9-3,,,Неприменимо,
 12497,konkani,B-16,,,,,Фонологическое слово,
 12498,konkani,B-17,Height,B-17-3,,,Подъем,
 12499,konkani,B-18,Vowel of next syllable,B-18-12,,,Гласный следующего слога,
@@ -13919,7 +13919,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13918,lomavren,B-3,Syllable,B-3-1,,,Слог,
 13919,lomavren,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
 13920,lomavren,B-5,Ultima,B-5-4,,,Конечный слог,
-13921,lomavren,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+13921,lomavren,B-9,Not applicable,B-9-3,,,Неприменимо,
 13922,lomavren,E-1,Agglutinative with some fusional features,E-1-2,,,Агглютинативный с элементами флективного,
 13923,lomavren,E-4,Synthetic,E-4-5,,,Синтетический,
 13924,lomavren,F-1,No agreement classes,F-1-1,There are remnant gender distinctions,,Согласовательные классы отсутствуют,Есть рудиментарные остатки родовых различий
@@ -14639,7 +14639,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14638,magahi,B-3,Syllable,B-3-1,,,Слог,
 14639,magahi,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 14640,magahi,B-5,Penult or antepenult,B-5-14,,,Пенультима или антепенультима,
-14641,magahi,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+14641,magahi,B-9,Not applicable,B-9-3,,,Неприменимо,
 14642,magahi,B-15,Phonological and rhythmic,B-15-5,,,Фонологическая и ритмическая,
 14643,magahi,B-16,All vowels,B-16-6,,,Все гласные слова,
 14644,magahi,B-17,Height,B-17-3,,,Подъем,
@@ -14714,7 +14714,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14713,maithili,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",
 14714,maithili,A-24,"Labial, coronal and dorsal",A-24-14,,,"Лабиальные, переднеязычные и среднеязычные",
 14715,maithili,A-25,Absent,A-25-1,,,Отсутствуют,
-14716,maithili,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+14716,maithili,B-9,Not applicable,B-9-3,,,Неприменимо,
 14717,maithili,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 14718,maithili,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 14719,maithili,D-1,Limitations on consonant sequences,D-1-13,,,Ограничения на последовательность согласных,
@@ -14896,7 +14896,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14895,maldivian_dhivehi,B-3,Syllable,B-3-1,,,Слог,
 14896,maldivian_dhivehi,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
 14897,maldivian_dhivehi,B-5,First syllable of word,B-5-1,,,Начальный слог,
-14898,maldivian_dhivehi,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+14898,maldivian_dhivehi,B-9,Not applicable,B-9-3,,,Неприменимо,
 14899,maldivian_dhivehi,B-15,Phonological,B-15-1,,,Фонологическая,
 14900,maldivian_dhivehi,B-16,All vowels,B-16-6,,,Все гласные слова,
 14901,maldivian_dhivehi,B-17,Height,B-17-3,,,Подъем,
@@ -15357,7 +15357,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15356,marathi,B-3,Syllable,B-3-1,,,Слог,
 15357,marathi,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
 15358,marathi,B-5,First syllable or penult,B-5-12,,,Начальный слог или пенультима,
-15359,marathi,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+15359,marathi,B-9,Not applicable,B-9-3,,,Неприменимо,
 15360,marathi,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 15361,marathi,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 15362,marathi,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -18060,7 +18060,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18059,oriya,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",
 18060,oriya,A-24,"Labial, coronal, dorsal and guttural",A-24-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 18061,oriya,A-25,By aspiration,A-25-19,,,По аспирации,
-18062,oriya,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+18062,oriya,B-9,Not applicable,B-9-3,,,Неприменимо,
 18063,oriya,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 18064,oriya,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 18065,oriya,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
@@ -18826,7 +18826,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18825,pashai,B-3,Syllable,B-3-1,,,Слог,
 18826,pashai,B-4,,,,,Неподвижное фиксированное,
 18827,pashai,B-5,Ultima,B-5-4,,,Конечный слог,Ударным обычно является последний долгий гласный слова.
-18828,pashai,B-9,No tones,B-9-3,,,Тоны отсутствуют,В юго-восточных диалектах отмечено наличие восходящего тона на гласном в соседстве с аспирированными согласными.
+18828,pashai,B-9,Not applicable,B-9-3,,,Неприменимо,В юго-восточных диалектах отмечено наличие восходящего тона на гласном в соседстве с аспирированными согласными.
 18829,pashai,B-15,Phonological,B-15-1,,,Фонологическая,
 18830,pashai,E-1,Fusional-agglutinative,E-1-5,,,Флективно-агглютинативный,
 18831,pashai,E-2,,,,,Кумулятивность флексий и наличие параллельных типов словоизмененения,
@@ -19099,7 +19099,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19098,phalura,B-3,Syllable,B-3-1,,,Слог,
 19099,phalura,B-4,,,,,Неподвижное фиксированное,
 19100,phalura,B-5,Ultima,B-5-4,,,Конечный слог,Ударение тяготеет к концу словоформы.
-19101,phalura,B-9,No tones,B-9-3,,,Тоны отсутствуют,Фонологически значимые тоновые оппозиции не прослежены.
+19101,phalura,B-9,Not applicable,B-9-3,,,Неприменимо,Фонологически значимые тоновые оппозиции не прослежены.
 19102,phalura,B-15,Phonological,B-15-1,,,Фонологическая,
 19103,phalura,E-1,Fusional,E-1-3,,,Флективный,
 19104,phalura,E-2,,,,,Кумулятивность флексий,
@@ -19975,7 +19975,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19973,rajbanshi_kamta,B-3,Syllable,B-3-1,,,Слог,
 19974,rajbanshi_kamta,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
 19975,rajbanshi_kamta,B-5,First syllable of word,B-5-1,,,Начальный слог,
-19976,rajbanshi_kamta,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+19976,rajbanshi_kamta,B-9,Not applicable,B-9-3,,,Неприменимо,
 19977,rajbanshi_kamta,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 19978,rajbanshi_kamta,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 19979,rajbanshi_kamta,B-19,Palatalization,B-19-2,,,Палатализация,
@@ -20046,7 +20046,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20044,rajbanshi_nepal,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",
 20045,rajbanshi_nepal,A-24,"Labial, coronal and guttural",A-24-16,,,"Лабиальные, переднеязычные и заднеязычные",
 20046,rajbanshi_nepal,A-25,Absent,A-25-1,,,Отсутствуют,
-20047,rajbanshi_nepal,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+20047,rajbanshi_nepal,B-9,Not applicable,B-9-3,,,Неприменимо,
 20048,rajbanshi_nepal,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 20049,rajbanshi_nepal,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 20050,rajbanshi_nepal,D-1,Limitations on consonant sequences,D-1-13,,,Ограничения на последовательность согласных,
@@ -20220,7 +20220,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20218,romani,B-2,Dynamic,B-2-1,,,Динамическое,
 20219,romani,B-3,Syllable,B-3-1,,,Слог,
 20220,romani,B-4,Movable flexible,B-4-4,,,Разноместное подвижное,
-20221,romani,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+20221,romani,B-9,Not applicable,B-9-3,,,Неприменимо,
 20222,romani,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 20223,romani,B-19,Palatalization,B-19-2,,,Палатализация,
 20224,romani,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -20764,7 +20764,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20762,sadani_sadri,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",
 20763,sadani_sadri,A-24,"Labial, coronal, dorsal and guttural",A-24-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 20764,sadani_sadri,A-25,By aspiration,A-25-19,,,По аспирации,
-20765,sadani_sadri,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+20765,sadani_sadri,B-9,Not applicable,B-9-3,,,Неприменимо,
 20766,sadani_sadri,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 20767,sadani_sadri,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 20768,sadani_sadri,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -21238,7 +21238,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21236,sariqoli,A-14,Falling (descending),A-14-2,,,Нисходящие,
 21237,sariqoli,A-15,Opposition by presence and absence of voice,A-15-1,,,Противопоставление по звонкости/глухости,Консонантная система характеризуется как часть Шугнано-рушанской группы яхыков.
 21238,sariqoli,B-1,,,,,Фонетический характер ударения не изучен,
-21239,sariqoli,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+21239,sariqoli,B-9,Not applicable,B-9-3,,,Неприменимо,
 21240,sariqoli,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 21241,sariqoli,C-2,Most syllables have a non-null coda,C-2-3,,,Большинство слогов закрытые,
 21242,sariqoli,D-4,Differences in accentuation,D-4-3,,,Акцентные различия,
@@ -21381,7 +21381,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21379,saurashtra,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",
 21380,saurashtra,A-24,"Labial, coronal and dorsal",A-24-14,,,"Лабиальные, переднеязычные и среднеязычные",
 21381,saurashtra,A-25,By aspiration,A-25-19,,,По аспирации,
-21382,saurashtra,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+21382,saurashtra,B-9,Not applicable,B-9-3,,,Неприменимо,
 21383,saurashtra,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 21384,saurashtra,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 21385,saurashtra,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -22316,7 +22316,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22314,sindhi,B-3,Syllable,B-3-1,,,Слог,
 22315,sindhi,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
 22316,sindhi,B-5,Penult,B-5-7,Additional research needed,,Пенультима,Вопрос изучен недостаточно
-22317,sindhi,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+22317,sindhi,B-9,Not applicable,B-9-3,,,Неприменимо,
 22318,sindhi,B-15,Phonological,B-15-1,,,Фонологическая,
 22319,sindhi,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 22320,sindhi,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -22408,7 +22408,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22406,sinhala,B-3,Syllable,B-3-1,,,Слог,
 22407,sinhala,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 22408,sinhala,B-5,Any syllable of the word,B-5-19,,,Любой слог слова,
-22409,sinhala,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+22409,sinhala,B-9,Not applicable,B-9-3,,,Неприменимо,
 22410,sinhala,B-16,All vowels,B-16-6,,,Все гласные слова,
 22411,sinhala,B-17,Height,B-17-3,,,Подъем,
 22412,sinhala,B-18,,,,,Первый гласный основы или последний гласный слова,
@@ -23958,7 +23958,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23956,tajik,B-3,Syllable,B-3-1,,,Слог,В потоке речи главным становится фразовое ударение на конец синтагмы.
 23957,tajik,B-4,,,,,Неподвижное фиксированное,
 23958,tajik,B-5,Ultima,B-5-4,,,Конечный слог,
-23959,tajik,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+23959,tajik,B-9,Not applicable,B-9-3,,,Неприменимо,
 23960,tajik,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 23961,tajik,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 23962,tajik,B-19,,,,,"Редукция и аккомодация гласных, озвончение, оглушение,  спирантизация, ослабление  и отпадение конечных согласных",
@@ -24229,7 +24229,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24227,tamil,B-2,,,,,Тонически-квантитативно-динамическое,
 24228,tamil,B-3,Syllable,B-3-1,,,Слог,
 24229,tamil,B-4,Not fixed,B-4-2,,,Нефиксированное,Подвижное свободное.
-24230,tamil,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+24230,tamil,B-9,Not applicable,B-9-3,,,Неприменимо,
 24231,tamil,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,Проявляется спорадически.
 24232,tamil,B-16,Phoneme,B-16-1,,,Фонема,
 24233,tamil,B-17,Height,B-17-3,,,Подъем,
@@ -24407,7 +24407,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24405,tati,B-3,Syllable,B-3-1,,,Слог,
 24406,tati,B-4,,,,,Неподвижное фиксированное,Есть второстепенное ударение.
 24407,tati,B-5,Any syllable of the word,B-5-19,,,Любой слог слова,
-24408,tati,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+24408,tati,B-9,Not applicable,B-9-3,,,Неприменимо,
 24409,tati,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,
 24410,tati,B-16,Affix,B-16-3,,,Аффикс,
 24411,tati,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
@@ -27412,7 +27412,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 27409,yazghulami,B-3,Syllable,B-3-1,,,Слог,
 27410,yazghulami,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
 27411,yazghulami,B-5,,,,,Конечный слог словоформы,
-27412,yazghulami,B-9,No tones,B-9-3,,,Тоны отсутствуют,
+27412,yazghulami,B-9,Not applicable,B-9-3,,,Неприменимо,
 27413,yazghulami,B-19,,,,,"Аспирация, палатализация, лабиализация, протеза и метатеза",
 27414,yazghulami,B-20,,,,,"Ослабленная, интенсивная и придыхательная",
 27415,yazghulami,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
