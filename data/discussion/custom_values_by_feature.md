@@ -350,7 +350,7 @@
 - Префикс или последний слог, кроме постпозитивных элементов: изафетного показателя, неопределенного артикля и энклитических местоимений: [зефреи](../feature_profiles/zefrei.csv)
 - Префиксы или последний слог, кроме постпозтивных элементов: изафетного показателя, показателя неопределенности/единичности и энклитических местоимений: [вонишуни](../feature_profiles/vonishuni.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
-## B-9: Количество уровней тонов
+## B-9: Количество уровневых тонов (уровней регистровых (ровных) тонов)
 
 - Более трёх: [гарви](../feature_profiles/garwi.csv), [боко](../feature_profiles/boko.csv), [дан](../feature_profiles/dan.csv), [гбан](../feature_profiles/gban.csv), [гоо](../feature_profiles/goo.csv), [кла-дан](../feature_profiles/kla_dan.csv), [локо](../feature_profiles/loko.csv), [тура](../feature_profiles/tura.csv), [яурэ](../feature_profiles/yaoure.csv)
 - Предположительно можно реконструировать фарингализованный тон - просодическая "эризация": [хотаносакский](../feature_profiles/khotanese.csv)
