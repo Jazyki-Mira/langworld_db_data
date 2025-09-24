@@ -281,73 +281,80 @@ B-12-4,B-12,Low,,Низкий
 B-12-5,B-12,Ultra-low,,Ультранизкий
 B-12-6,B-12,Not stated,,Нет данных
 B-12-7,B-12,Not applicable,,Неприменимо
-B-13-1,B-13,Syllable,,Слог
-B-13-2,B-13,Word,,Слово
-B-13-3,B-13,Syllable or word,,Слог или слово
-B-13-4,B-13,Phrase,,Фраза
-B-13-5,B-13,Foot,,Стопа
-B-14-1,B-14,Phonological,,Фонологическая
-B-14-2,B-14,Non-phonological,,Нефонологическая
-B-14-3,B-14,Rhythmic,,Ритмическая
-B-14-4,B-14,Phonological and non-phonological,,Фонологическая и нефонологическая
-B-14-5,B-14,Phonological and rhythmic,,Фонологическая и ритмическая
-B-14-6,B-14,Non-phonological and rhythmic,,Нефонологическая и ритмическая
-B-15-1,B-15,Phoneme,,Фонема
-B-15-2,B-15,Group of phonemes,,Группа фонем
-B-15-3,B-15,Affix,,Аффикс
-B-15-4,B-15,Group of affixes,,Группа аффиксов
-B-15-5,B-15,"Group of affixes, all vowels",,Группа слогов или все гласные слова
-B-15-6,B-15,All vowels,,Все гласные слова
-B-15-7,B-15,One vowel or all vowels,,Один гласный или все гласные слова
-B-15-8,B-15,Foot,,Стопа
-B-15-9,B-15,No vowel harmony,,Гармоническое уподобление гласных отсутствует
-B-16-1,B-16,Length,,Долгота
-B-16-2,B-16,Backness,,Ряд
-B-16-3,B-16,Height,,Подъем
-B-16-4,B-16,Labialization,,Лабиализация
-B-16-5,B-16,ATR,,Позиция корня языка
-B-16-6,B-16,Backness and height,,Ряд и подъем
-B-16-7,B-16,Backness and roundedness,,Ряд и лабиализация
-B-16-8,B-16,Height and roundedness,,Подъем и лабиализация
-B-16-9,B-16,Height and palatality,,Подъем и палатальность
-B-16-10,B-16,Roundedness and palatality,,Лабиализация и палатальность
-B-16-11,B-16,"Backness, height and roundedness",,"Ряд, подъем и лабиализация"
-B-16-12,B-16,"Height, length, and labialization",,"Подъем, долгота и лабиализация"
-B-16-13,B-16,Nasalization,,Назализация
-B-16-14,B-16,ATR and nasalization,,Степень продвинутости языка (ATR) и назализация
-B-16-15,B-16,Openness/closedness,,Открытость/закрытость
-B-16-16,B-16,Narrow and broad vowels,,Широкие и узкие гласные
-B-17-1,B-17,First vowel of word,,Первый гласный слова
-B-17-2,B-17,First vowel of affix,,Первый гласный аффикса
-B-17-3,B-17,First vowel of root,,Первый гласный корня
-B-17-4,B-17,Stressed vowel,,Ударный гласный
-B-17-5,B-17,Last vowel of stem,,Последний гласный основы
-B-17-6,B-17,First vowel of word (root),,Первый гласный слова (=корня)
-B-17-7,B-17,"Final syllable vowel, or first vowel of word, or stressed syllable of stem",,"Гласный финального слога, первый гласный слова или ударный гласный основы"
-B-17-8,B-17,First vowel of word or last vowel of stem,,Первый гласный слова или последний гласный основы
-B-17-9,B-17,First vowel of affix or first vowel of root,,Первый гласный аффикса или первый гласный корня
-B-17-10,B-17,Last vowel of word,,Последний гласный слова
-B-17-11,B-17,Vowel of flection,,Гласный флексии
-B-17-12,B-17,Vowel of next syllable,,Гласный следующего слога
-B-17-13,B-17,Vowel or diphthong of preceding syllable,,Гласный или дифтонг предшествующего слога
-B-18-1,B-18,Nasalization,,Назализация
-B-18-2,B-18,Palatalization,,Палатализация
-B-18-3,B-18,Pharyngealization,,Фарингализация
-B-18-4,B-18,Phonation,,Фонация
-B-18-5,B-18,Velarization and palatalization,,Веляризация и палатализация
-B-18-6,B-18,Pharyngealization and phonation,,Фарингализация и фонация
-B-18-7,B-18,Palatalization and nasalization,,Палатализация и назализация
-B-18-8,B-18,Labialization and glottal stop,,Лабиализация и гортанная смычка
-B-18-9,B-18,Aspiration and palatalization,,Аспирация и палатализация
-B-19-1,B-19,Creaky voice,,Скрипучая
-B-19-2,B-19,Stiff voice and slack voice,,Напряженная и слабая
-B-19-3,B-19,"Stiff voice, slack voice and creaky voice",,"Напряженная, слабая и скрипучая"
-B-19-4,B-19,Stiff voice and aspirated voice,,Напряженная и придыхательная
-B-19-5,B-19,"Stiff voice, modal voice and aspirated voice",,"Напряженная, модальная и придыхательная"
-B-19-6,B-19,Stiff voice,,Напряженная
-B-19-7,B-19,Aspirated voice,,Придыхательная
-B-19-8,B-19,Slack voice,,Слабая
-B-19-9,B-19,Slackened voice,,Ослабленная
+B-13-1,B-13,Two,,Два
+B-13-2,B-13,Three,,Три
+B-13-3,B-13,Four,,Четыре
+B-13-4,B-13,Five,,Пять
+B-13-5,B-13,More than five,,Больше пяти
+B-13-6,B-13,Not stated,,Нет данных
+B-13-7,B-13,Not applicable,,Неприменимо
+B-14-1,B-14,Syllable,,Слог
+B-14-2,B-14,Word,,Слово
+B-14-3,B-14,Syllable or word,,Слог или слово
+B-14-4,B-14,Phrase,,Фраза
+B-14-5,B-14,Foot,,Стопа
+B-15-1,B-15,Phonological,,Фонологическая
+B-15-2,B-15,Non-phonological,,Нефонологическая
+B-15-3,B-15,Rhythmic,,Ритмическая
+B-15-4,B-15,Phonological and non-phonological,,Фонологическая и нефонологическая
+B-15-5,B-15,Phonological and rhythmic,,Фонологическая и ритмическая
+B-15-6,B-15,Non-phonological and rhythmic,,Нефонологическая и ритмическая
+B-16-1,B-16,Phoneme,,Фонема
+B-16-2,B-16,Group of phonemes,,Группа фонем
+B-16-3,B-16,Affix,,Аффикс
+B-16-4,B-16,Group of affixes,,Группа аффиксов
+B-16-5,B-16,"Group of affixes, all vowels",,Группа слогов или все гласные слова
+B-16-6,B-16,All vowels,,Все гласные слова
+B-16-7,B-16,One vowel or all vowels,,Один гласный или все гласные слова
+B-16-8,B-16,Foot,,Стопа
+B-16-9,B-16,No vowel harmony,,Гармоническое уподобление гласных отсутствует
+B-17-1,B-17,Length,,Долгота
+B-17-2,B-17,Backness,,Ряд
+B-17-3,B-17,Height,,Подъем
+B-17-4,B-17,Labialization,,Лабиализация
+B-17-5,B-17,ATR,,Позиция корня языка
+B-17-6,B-17,Backness and height,,Ряд и подъем
+B-17-7,B-17,Backness and roundedness,,Ряд и лабиализация
+B-17-8,B-17,Height and roundedness,,Подъем и лабиализация
+B-17-9,B-17,Height and palatality,,Подъем и палатальность
+B-17-10,B-17,Roundedness and palatality,,Лабиализация и палатальность
+B-17-11,B-17,"Backness, height and roundedness",,"Ряд, подъем и лабиализация"
+B-17-12,B-17,"Height, length, and labialization",,"Подъем, долгота и лабиализация"
+B-17-13,B-17,Nasalization,,Назализация
+B-17-14,B-17,ATR and nasalization,,Степень продвинутости языка (ATR) и назализация
+B-17-15,B-17,Openness/closedness,,Открытость/закрытость
+B-17-16,B-17,Narrow and broad vowels,,Широкие и узкие гласные
+B-18-1,B-18,First vowel of word,,Первый гласный слова
+B-18-2,B-18,First vowel of affix,,Первый гласный аффикса
+B-18-3,B-18,First vowel of root,,Первый гласный корня
+B-18-4,B-18,Stressed vowel,,Ударный гласный
+B-18-5,B-18,Last vowel of stem,,Последний гласный основы
+B-18-6,B-18,First vowel of word (root),,Первый гласный слова (=корня)
+B-18-7,B-18,"Final syllable vowel, or first vowel of word, or stressed syllable of stem",,"Гласный финального слога, первый гласный слова или ударный гласный основы"
+B-18-8,B-18,First vowel of word or last vowel of stem,,Первый гласный слова или последний гласный основы
+B-18-9,B-18,First vowel of affix or first vowel of root,,Первый гласный аффикса или первый гласный корня
+B-18-10,B-18,Last vowel of word,,Последний гласный слова
+B-18-11,B-18,Vowel of flection,,Гласный флексии
+B-18-12,B-18,Vowel of next syllable,,Гласный следующего слога
+B-18-13,B-18,Vowel or diphthong of preceding syllable,,Гласный или дифтонг предшествующего слога
+B-19-1,B-19,Nasalization,,Назализация
+B-19-2,B-19,Palatalization,,Палатализация
+B-19-3,B-19,Pharyngealization,,Фарингализация
+B-19-4,B-19,Phonation,,Фонация
+B-19-5,B-19,Velarization and palatalization,,Веляризация и палатализация
+B-19-6,B-19,Pharyngealization and phonation,,Фарингализация и фонация
+B-19-7,B-19,Palatalization and nasalization,,Палатализация и назализация
+B-19-8,B-19,Labialization and glottal stop,,Лабиализация и гортанная смычка
+B-19-9,B-19,Aspiration and palatalization,,Аспирация и палатализация
+B-20-1,B-20,Creaky voice,,Скрипучая
+B-20-2,B-20,Stiff voice and slack voice,,Напряженная и слабая
+B-20-3,B-20,"Stiff voice, slack voice and creaky voice",,"Напряженная, слабая и скрипучая"
+B-20-4,B-20,Stiff voice and aspirated voice,,Напряженная и придыхательная
+B-20-5,B-20,"Stiff voice, modal voice and aspirated voice",,"Напряженная, модальная и придыхательная"
+B-20-6,B-20,Stiff voice,,Напряженная
+B-20-7,B-20,Aspirated voice,,Придыхательная
+B-20-8,B-20,Slack voice,,Слабая
+B-20-9,B-20,Slackened voice,,Ослабленная
 C-1-1,C-1,No null onset,,Обязательно имеется
 C-1-2,C-1,Only null onset possible,,Запрещен
 C-1-3,C-1,Most syllables have a non-null onset,,Большинство слогов прикрытые

@@ -407,28 +407,28 @@ class FeatureAdder(ObjectWithPaths):
 if __name__ == "__main__":
     FeatureAdder().add_feature(
         category_id="B",
-        feature_en="Level tone types",
-        feature_ru="Типы уровневого (регистрового, ровного) тона",
+        feature_en="Number of contour tone levels",
+        feature_ru="Количество уровней контурных тонов",
         listed_values_to_add=[
             {
-                "en": "Ultra-high",
-                "ru": "Сверхвысокий",
+                "en": "Two",
+                "ru": "Два",
             },
             {
-                "en": "High",
-                "ru": "Высокий",
+                "en": "Three",
+                "ru": "Три",
             },
             {
-                "en": "Middle",
-                "ru": "Средний",
+                "en": "Four",
+                "ru": "Четыре",
             },
             {
-                "en": "Low",
-                "ru": "Низкий",
+                "en": "Five",
+                "ru": "Пять",
             },
             {
-                "en": "Ultra-low",
-                "ru": "Ультранизкий",
+                "en": "More than five",
+                "ru": "Больше пяти",
             },
             {
                 "en": "Not stated",
@@ -439,5 +439,5 @@ if __name__ == "__main__":
                 "ru": "Неприменимо",
             },
         ],
-        index_to_assign=12,
+        index_to_assign=13,
     )  # pragma: no cover
