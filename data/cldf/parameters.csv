@@ -35,7 +35,7 @@ B-7,Stress pattern in inflection,,,Тип ударения при формооб
 B-8,Strictly fixed stress type (by position in a word),,,Тип строго фиксированного ударения (по положению в слове)
 B-9,Number of tone levels,,,Количество уровней тонов
 B-10,Tonema types,,,Виды тонем
-B-11,Contour tone characteristics,,,Контурные признаки тона
+B-11,Contour tonema types,,,"Типы контурных (скользящих, модулярных, модулированных) тонем"
 B-12,Level tone types,,,"Типы уровневого (регистрового, ровного) тона"
 B-13,Number of contour tone levels,,,Количество уровней контурных тонов
 B-14,Tone carrier,,,Носитель тона
