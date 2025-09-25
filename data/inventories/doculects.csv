@@ -237,7 +237,7 @@ hurrian,language,1,0,Hurrian,хурритский,,,,,hurro_urar,xhu,hurr1240,,h
 sumerian,language,1,0,Sumerian,шумерский,,,,,isolate,sux,sume1241,,sume1241,,31.3222,45.6361,irq,16,19,1,,
 urartian,language,1,0,Urartian,урартский,,,"Vannic, Chaldean",ванской клинописи язык,hurro_urar,xur,urar1245,,,,38.5027,43.1222,tur,16,149,1,,
 kassite,language,1,0,Kassite,касситский,,,,,isolate,,kass1244,,,,34.17,45.09,irn,16,184,1,,
-harappan,language,1,0,Harappan,хараппский,,,"Proto-Indian, Indus, Language of Indus valley civilization","протоиндийский, язык письменности долины Инда",,xiv,hara1272,,,,30.61,72.89,ind,16,187,1,,
+harappan,language,1,0,Harappan,хараппский,,,"Proto-Indian, Indus, Language of Indus valley civilization","протоиндийский, язык письменности долины Инда",isolate,xiv,hara1272,,,,30.61,72.89,ind,16,187,1,,
 amharic,language,0,0,Amharic,амхарский,,,,,ethio_sem,amh,amha1245,amh,amha1245,amha1245,9.03,38.74,eth,18,311,1,,
 argobba,language,0,0,Argobba,аргобба,,,,,ethio_sem,agj,argo1244,,argo1244,argo1244,10.6596,39.756,eth,18,375,1,,
 chaha,language,0,0,Chaha,чаха,,,,,ethio_sem,sgw,chah1248,chh,,chah1248,8.1667,38.25,eth,18,577,1,,
