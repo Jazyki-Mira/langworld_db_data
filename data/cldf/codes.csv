@@ -215,24 +215,11 @@ B-4-3,B-4,Movable fixed,,Разноместно фиксированное
 B-4-4,B-4,Movable flexible,,Разноместное подвижное
 B-4-5,B-4,Movable non-fixed,,Разноместное нефиксированное
 B-5-1,B-5,First syllable of word,,Начальный слог
-B-5-2,B-5,First syllable of root,,Начальный слог корня
-B-5-3,B-5,Second syllable,,Второй слог
-B-5-4,B-5,Ultima,,Конечный слог
-B-5-5,B-5,Last closed syllable,,Конечный закрытый слог
-B-5-6,B-5,Last syllable of stem,,Конечный слог основы
-B-5-7,B-5,Penult,,Пенультима
-B-5-8,B-5,Antepenult,,Антепенультима
-B-5-9,B-5,First or second syllable,,Начальный или второй слог
-B-5-10,B-5,"First, second or third syllable",,"Начальный, второй или третий слог"
-B-5-11,B-5,First syllable or ultima,,Начальный или конечный слог
-B-5-12,B-5,First syllable or penult,,Начальный слог или пенультима
-B-5-13,B-5,First or first long syllable,,Начальный слог или первый долгий слог
-B-5-14,B-5,Penult or antepenult,,Пенультима или антепенультима
-B-5-15,B-5,First syllable or antepenult,,Начальный слог или антепенультима
-B-5-16,B-5,Ultima or penult,,Конечный слог или пенультима
-B-5-17,B-5,"Ultima, penult or antepenult",,"Конечный слог, пенультима или антепенультима"
-B-5-18,B-5,"First syllable, penult or ultima",,"Начальный слог, пенультима или конечный слог"
-B-5-19,B-5,Any syllable of the word,,Любой слог слова
+B-5-2,B-5,Second syllable from beginning,,Второй слог от начала
+B-5-3,B-5,Ultima,,Конечный слог
+B-5-4,B-5,Penult,,Пенультима
+B-5-5,B-5,Antepenult,,Антепенультима
+B-5-6,B-5,Not applicable,,Неприменимо
 B-6-1,B-6,Strictly fixed,,Строго фиксированное
 B-6-2,B-6,Limited,,Ограниченное
 B-6-3,B-6,Not stated,,Нет данных
