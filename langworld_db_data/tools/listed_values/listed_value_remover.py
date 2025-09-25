@@ -106,10 +106,12 @@ class ListedValueRemover(ObjectWithPaths):
                     new_atomic_value_ids = []
                     for atomic_value_id in atomic_value_ids:
                         if extract_value_index(atomic_value_id) > extract_value_index(
-                        id_of_value_to_remove
+                            id_of_value_to_remove
                         ):
                             new_atomic_value_index = str(extract_value_index(atomic_value_id) - 1)
-                            new_atomic_value_ids.append(f"{extract_feature_id(row[KEY_FOR_VALUE_ID])}{ID_SEPARATOR}{new_atomic_value_index}")
+                            new_atomic_value_ids.append(
+                                f"{extract_feature_id(row[KEY_FOR_VALUE_ID])}{ID_SEPARATOR}{new_atomic_value_index}"
+                            )
                             is_changed = True
                         else:
                             new_atomic_value_ids.append(atomic_value_id)
