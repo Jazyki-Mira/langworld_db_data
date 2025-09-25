@@ -101,6 +101,21 @@ class ListedValueRemover(ObjectWithPaths):
                     print(f"Changing value type to custom in {file.stem}")
                     is_changed = True
                     break
+                elif "&" in row[KEY_FOR_VALUE_ID]:
+                    atomic_value_ids = row[KEY_FOR_VALUE_ID].split("&")
+                    new_atomic_value_ids = []
+                    for atomic_value_id in atomic_value_ids:
+                        if extract_value_index(atomic_value_id) > extract_value_index(
+                        id_of_value_to_remove
+                        ):
+                            new_atomic_value_index = str(extract_value_index(atomic_value_id) - 1)
+                            new_atomic_value_ids.append(f"{extract_feature_id(row[KEY_FOR_VALUE_ID])}{ID_SEPARATOR}{new_atomic_value_index}")
+                            is_changed = True
+                        else:
+                            new_atomic_value_ids.append(atomic_value_id)
+                        new_combined_value_ids = "&".join(new_atomic_value_ids)
+                        row[KEY_FOR_VALUE_ID] = new_combined_value_ids
+                        print(f"Updating atomic valie ids in {file.stem}")
                 elif extract_value_index(row[KEY_FOR_VALUE_ID]) > extract_value_index(
                     id_of_value_to_remove
                 ):
@@ -147,4 +162,4 @@ class ListedValueRemover(ObjectWithPaths):
 
 
 if __name__ == "__main__":
-    ListedValueRemover().remove_listed_value(id_of_value_to_remove="")  # pragma: no cover
+    ListedValueRemover().remove_listed_value(id_of_value_to_remove="B-5-2")  # pragma: no cover
