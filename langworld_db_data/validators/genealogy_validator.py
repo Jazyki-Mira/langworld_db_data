@@ -2,17 +2,18 @@ import re
 from collections import Counter
 from pathlib import Path
 
+from tinybear.csv_xls import (
+    check_csv_for_malformed_rows,
+    check_csv_for_repetitions_in_column,
+)
+from tinybear.json_toml_yaml import check_yaml_file
+from tinybear.txt import read_non_empty_lines_from_txt_file
+
 from langworld_db_data.constants.literals import KEY_FOR_ID
 from langworld_db_data.constants.paths import (
     FILE_WITH_GENEALOGY_HIERARCHY,
     FILE_WITH_GENEALOGY_NAMES,
 )
-from langworld_db_data.tools.common.files.csv_xls import (
-    check_csv_for_malformed_rows,
-    check_csv_for_repetitions_in_column,
-)
-from langworld_db_data.tools.common.files.json_toml_yaml import check_yaml_file
-from langworld_db_data.tools.common.files.txt import read_non_empty_lines_from_txt_file
 from langworld_db_data.validators.validator import Validator, ValidatorError
 
 
