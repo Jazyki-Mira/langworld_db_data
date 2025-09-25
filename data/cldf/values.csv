@@ -319,7 +319,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 318,aftari,B-2,Dynamic,B-2-1,,,Динамическое,
 319,aftari,B-3,Syllable,B-3-1,,,Слог,
 320,aftari,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-321,aftari,B-5,Ultima,B-5-3,,,Конечный слог,
+321,aftari,B-5,Ultima,B-5-4,,,Конечный слог,
 322,aftari,E-1,Fusional,E-1-3,,,Флективный,
 323,aftari,E-2,,,,,Кумулятивность аффиксов в системе глагола,
 324,aftari,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
@@ -540,7 +540,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 539,alabugat_tatar,A-22,Absent,A-22-1,,,Отсутствуют,Однако возможна позиционная палатализация согласного [ш] в окружении гласных переднего ряда.
 540,alabugat_tatar,B-2,Dynamic,B-2-1,,,Динамическое,
 541,alabugat_tatar,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-542,alabugat_tatar,B-5,Ultima,B-5-3,,,Конечный слог,
+542,alabugat_tatar,B-5,Ultima,B-5-4,,,Конечный слог,
 543,alabugat_tatar,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 544,alabugat_tatar,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 545,alabugat_tatar,E-1,Agglutinative,E-1-1,,,Агглютинативный,
@@ -623,7 +623,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 622,altai,B-2,Dynamic,B-2-1,,,Динамическое,
 623,altai,B-3,Syllable,B-3-1,,,Слог,
 624,altai,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-625,altai,B-5,Ultima,B-5-3,,,Конечный слог,
+625,altai,B-5,Ultima,B-5-4,,,Конечный слог,
 626,altai,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
 627,altai,B-18,First vowel of word (root),B-18-6,,,Первый гласный слова (=корня),
 628,altai,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -742,8 +742,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 741,ancient_hebrew,A-25,Absent,A-25-1,,,Отсутствуют,
 742,ancient_hebrew,B-3,Syllable,B-3-1,,,Слог,
 743,ancient_hebrew,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-744,ancient_hebrew,B-5,Ultima,B-5-3,,,Конечный слог,
-745,ancient_hebrew,B-5,Penult,B-5-4,,,Пенультима,
+744,ancient_hebrew,B-5,Ultima,B-5-4,,,Конечный слог,
+745,ancient_hebrew,B-5,Penult,B-5-5,,,Пенультима,
 746,ancient_hebrew,D-7,Accompanying,D-7-2,,,Сопутствующие,
 747,ancient_hebrew,D-8,Vowel and consonant alternations,D-8-6,,,Вокалические и консонантные,
 748,ancient_hebrew,E-1,Fusional,E-1-3,,,Флективный,
@@ -860,9 +860,9 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 859,aragonese,B-2,Dynamic,B-2-1,,,Динамическое,
 860,aragonese,B-3,Syllable,B-3-1,,,Слог,
 861,aragonese,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-862,aragonese,B-5,Ultima,B-5-3,,,Конечный слог,Характерным для А.я./д. является смещение ударения в пропарокситонах на предпоследний слог.
-863,aragonese,B-5,Penult,B-5-4,,,Пенультима,Характерным для А.я./д. является смещение ударения в пропарокситонах на предпоследний слог.
-864,aragonese,B-5,Antepenult,B-5-5,,,Антепенультима,Характерным для А.я./д. является смещение ударения в пропарокситонах на предпоследний слог.
+862,aragonese,B-5,Ultima,B-5-4,,,Конечный слог,Характерным для А.я./д. является смещение ударения в пропарокситонах на предпоследний слог.
+863,aragonese,B-5,Penult,B-5-5,,,Пенультима,Характерным для А.я./д. является смещение ударения в пропарокситонах на предпоследний слог.
+864,aragonese,B-5,Antepenult,B-5-6,,,Антепенультима,Характерным для А.я./д. является смещение ударения в пропарокситонах на предпоследний слог.
 865,aragonese,B-15,Non-phonological,B-15-2,,,Нефонологическая,Других данных нет.
 866,aragonese,B-19,,,,,"Озвончение, йотирование и палатализация",
 867,aragonese,D-4,Differences in accentuation,D-4-3,,,Акцентные различия,
@@ -1017,7 +1017,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1016,aromanian,B-2,Dynamic,B-2-1,,,Динамическое,
 1017,aromanian,B-3,Syllable,B-3-1,,,Слог,
 1018,aromanian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-1019,aromanian,B-5,Not applicable,B-5-6,,,Неприменимо,
+1019,aromanian,B-5,Not applicable,B-5-7,,,Неприменимо,
 1020,aromanian,B-15,Non-phonological,B-15-2,,,Нефонологическая,В фаршеротском говоре зафиксированы долгие гласные.
 1021,aromanian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 1022,aromanian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -1113,7 +1113,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1112,ashkun,B-2,Dynamic,B-2-1,,,Динамическое,
 1113,ashkun,B-3,Syllable,B-3-1,,,Слог,
 1114,ashkun,B-4,,,,,Неподвижное фиксированное,
-1115,ashkun,B-5,Ultima,B-5-3,,,Конечный слог,
+1115,ashkun,B-5,Ultima,B-5-4,,,Конечный слог,
 1116,ashkun,B-14,Syllable,B-14-1,,,Слог,Отмечены фонологически значимые различия в тоне гласных. Вопрос не исследован из-за скудости материала.
 1117,ashkun,E-1,Fusional with some agglutinative features,E-1-4,,,Флективный с элементами агглютинации,
 1118,ashkun,E-2,,,,,Кумулятивность флексий,
@@ -1249,7 +1249,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1248,assamese,B-3,Syllable,B-3-1,,,Слог,
 1249,assamese,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
 1250,assamese,B-5,First syllable of word,B-5-1,Depending on a dialect,,Начальный слог,В зависимости от диалекта
-1251,assamese,B-5,Penult,B-5-4,Depending on a dialect,,Пенультима,В зависимости от диалекта
+1251,assamese,B-5,Penult,B-5-5,Depending on a dialect,,Пенультима,В зависимости от диалекта
 1252,assamese,B-9,Not applicable,B-9-6,,,Неприменимо,
 1253,assamese,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,
 1254,assamese,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
@@ -1334,7 +1334,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1333,astrakhan_karagash_nogai,A-24,"Labial, coronal and guttural",A-24-16,,,"Лабиальные, переднеязычные и заднеязычные",
 1334,astrakhan_karagash_nogai,B-2,Dynamic,B-2-1,,,Динамическое,
 1335,astrakhan_karagash_nogai,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-1336,astrakhan_karagash_nogai,B-5,Ultima,B-5-3,,,Конечный слог,
+1336,astrakhan_karagash_nogai,B-5,Ultima,B-5-4,,,Конечный слог,
 1337,astrakhan_karagash_nogai,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 1338,astrakhan_karagash_nogai,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 1339,astrakhan_karagash_nogai,E-1,Agglutinative,E-1-1,,,Агглютинативный,
@@ -1394,9 +1394,9 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1393,asturian,B-2,Dynamic,B-2-1,,,Динамическое,
 1394,asturian,B-3,Syllable,B-3-1,,,Слог,
 1395,asturian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-1396,asturian,B-5,Ultima,B-5-3,,,Конечный слог,
-1397,asturian,B-5,Penult,B-5-4,,,Пенультима,
-1398,asturian,B-5,Antepenult,B-5-5,,,Антепенультима,
+1396,asturian,B-5,Ultima,B-5-4,,,Конечный слог,
+1397,asturian,B-5,Penult,B-5-5,,,Пенультима,
+1398,asturian,B-5,Antepenult,B-5-6,,,Антепенультима,
 1399,asturian,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 1400,asturian,B-16,Phoneme,B-16-1,,,Фонема,
 1401,asturian,B-17,Height,B-17-3,,,Подъем,
@@ -2131,8 +2131,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2130,banjari,B-3,Syllable,B-3-1,,,Слог,
 2131,banjari,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 2132,banjari,B-5,First syllable of word,B-5-1,Depends on the quantity and quality of syllables,,Начальный слог,Зависит от качества и количества слогов в слове; заимствования не подчиняются общим правилам
-2133,banjari,B-5,Ultima,B-5-3,Depends on the quantity and quality of syllables,,Конечный слог,Зависит от качества и количества слогов в слове; заимствования не подчиняются общим правилам
-2134,banjari,B-5,Penult,B-5-4,Depends on the quantity and quality of syllables,,Пенультима,Зависит от качества и количества слогов в слове; заимствования не подчиняются общим правилам
+2133,banjari,B-5,Ultima,B-5-4,Depends on the quantity and quality of syllables,,Конечный слог,Зависит от качества и количества слогов в слове; заимствования не подчиняются общим правилам
+2134,banjari,B-5,Penult,B-5-5,Depends on the quantity and quality of syllables,,Пенультима,Зависит от качества и количества слогов в слове; заимствования не подчиняются общим правилам
 2135,banjari,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 2136,banjari,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 2137,banjari,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -2354,7 +2354,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2353,bashkir,B-2,Dynamic,B-2-1,,,Динамическое,
 2354,bashkir,B-3,Syllable,B-3-1,,,Слог,
 2355,bashkir,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-2356,bashkir,B-5,Ultima,B-5-3,,,Конечный слог,
+2356,bashkir,B-5,Ultima,B-5-4,,,Конечный слог,
 2357,bashkir,B-16,All vowels,B-16-6,,,Все гласные слова,
 2358,bashkir,B-17,Backness,B-17-2,,,Ряд,
 2359,bashkir,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -2818,8 +2818,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2817,bhojpuri,B-2,Dynamic,B-2-1,,,Динамическое,
 2818,bhojpuri,B-3,Syllable,B-3-1,,,Слог,
 2819,bhojpuri,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-2820,bhojpuri,B-5,Penult,B-5-4,,,Пенультима,
-2821,bhojpuri,B-5,Antepenult,B-5-5,,,Антепенультима,
+2820,bhojpuri,B-5,Penult,B-5-5,,,Пенультима,
+2821,bhojpuri,B-5,Antepenult,B-5-6,,,Антепенультима,
 2822,bhojpuri,B-9,Not applicable,B-9-6,,,Неприменимо,
 2823,bhojpuri,B-15,Rhythmic,B-15-3,Length depends on a position within a word,,Ритмическая,Долгота зависит от позиции в слове
 2824,bhojpuri,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
@@ -2896,7 +2896,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2895,biyabuneki,B-3,Syllable,B-3-1,,,Слог,
 2896,biyabuneki,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 2897,biyabuneki,B-5,First syllable of word,B-5-1,,,Начальный слог,
-2898,biyabuneki,B-5,Ultima,B-5-3,,,Конечный слог,
+2898,biyabuneki,B-5,Ultima,B-5-4,,,Конечный слог,
 2899,biyabuneki,E-1,Fusional,E-1-3,,,Флективный,
 2900,biyabuneki,E-2,Cumulative affixes,E-2-2,,,Кумулятивность аффиксов,
 2901,biyabuneki,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
@@ -3154,7 +3154,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3153,breton,B-2,Dynamic,B-2-1,,,Динамическое,
 3154,breton,B-3,Syllable,B-3-1,,,Слог,
 3155,breton,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-3156,breton,B-5,Penult,B-5-4,,,Пенультима,Имеются различия по диалектам. В ваннском диалекте ударение на конечном слоге; отмечается вторичное ударение в многосложных словах.
+3156,breton,B-5,Penult,B-5-5,,,Пенультима,Имеются различия по диалектам. В ваннском диалекте ударение на конечном слоге; отмечается вторичное ударение в многосложных словах.
 3157,breton,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,Долгота гласного имеет просодический характер и связана с признаком силы/слабости следующего за ним согласного.
 3158,breton,B-16,Phoneme,B-16-1,,,Фонема,
 3159,breton,B-17,Height,B-17-3,,,Подъем,
@@ -3503,7 +3503,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3502,catalan,B-2,Dynamic,B-2-1,,,Динамическое,
 3503,catalan,B-3,Syllable,B-3-1,,,Слог,
 3504,catalan,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-3505,catalan,B-5,Not applicable,B-5-6,,,Неприменимо,
+3505,catalan,B-5,Not applicable,B-5-7,,,Неприменимо,
 3506,catalan,B-15,Phonological,B-15-1,,,Фонологическая,Есть долгий дрожащий сонант /r:/. Долгота гласных фонологически нерелевантна.
 3507,catalan,B-19,,,,,"Фонация, геминация и веляризация",
 3508,catalan,B-20,Stiff voice and slack voice,B-20-2,,,Напряженная и слабая,
@@ -3698,7 +3698,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3697,chaha,A-25,By labialization,A-25-4,,,По лабиализации,
 3698,chaha,B-1,Non-phonological,B-1-3,,,Нефонологическое,
 3699,chaha,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-3700,chaha,B-5,Penult,B-5-4,,,Пенультима,
+3700,chaha,B-5,Penult,B-5-5,,,Пенультима,
 3701,chaha,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 3702,chaha,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 3703,chaha,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -4028,7 +4028,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4027,classical_armenian,B-2,,,,,"демаркативная функция, место в слове о границах слова и ударной синтагмы",
 4028,classical_armenian,B-3,Syllable,B-3-1,,,Слог,
 4029,classical_armenian,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-4030,classical_armenian,B-5,Ultima,B-5-3,,,Конечный слог,
+4030,classical_armenian,B-5,Ultima,B-5-4,,,Конечный слог,
 4031,classical_armenian,B-15,Phonological,B-15-1,,,Фонологическая,
 4032,classical_armenian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 4033,classical_armenian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -4157,7 +4157,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4156,classical_syriac,B-2,Dynamic,B-2-1,,,Динамическое,
 4157,classical_syriac,B-3,Syllable,B-3-1,,,Слог,
 4158,classical_syriac,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-4159,classical_syriac,B-5,Ultima,B-5-3,,,Конечный слог,
+4159,classical_syriac,B-5,Ultima,B-5-4,,,Конечный слог,
 4160,classical_syriac,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 4161,classical_syriac,D-6,Differences in phonetic structure,D-6-2,,,Различия в фонетическом составе,
 4162,classical_syriac,E-1,Fusional,E-1-3,,,Флективный,
@@ -4223,7 +4223,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4222,cornish,B-2,Weak dynamic,B-2-5,,,Слабо-динамическое,
 4223,cornish,B-3,Syllable,B-3-1,,,Слог,
 4224,cornish,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-4225,cornish,B-5,Penult,B-5-4,,,Пенультима,
+4225,cornish,B-5,Penult,B-5-5,,,Пенультима,
 4226,cornish,B-15,Phonological,B-15-1,,,Фонологическая,
 4227,cornish,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 4228,cornish,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -4392,7 +4392,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4391,crimean_tatar,B-2,Dynamic,B-2-1,,,Динамическое,
 4392,crimean_tatar,B-3,Syllable,B-3-1,,,Слог,
 4393,crimean_tatar,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-4394,crimean_tatar,B-5,Ultima,B-5-3,,,Конечный слог,
+4394,crimean_tatar,B-5,Ultima,B-5-4,,,Конечный слог,
 4395,crimean_tatar,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 4396,crimean_tatar,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
 4397,crimean_tatar,B-18,First vowel of word (root),B-18-6,,,Первый гласный слова (=корня),
@@ -4638,7 +4638,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4637,dalmatian,B-2,Dynamic,B-2-1,,,Динамическое,
 4638,dalmatian,B-3,Syllable,B-3-1,,,Слог,
 4639,dalmatian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-4640,dalmatian,B-5,Not applicable,B-5-6,,,Неприменимо,Преобладают парокситоны и пропарокситоны
+4640,dalmatian,B-5,Not applicable,B-5-7,,,Неприменимо,Преобладают парокситоны и пропарокситоны
 4641,dalmatian,B-19,,,,,Веляризация и элизия,
 4642,dalmatian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 4643,dalmatian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -5000,7 +5000,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4999,dargwa,B-2,Dynamic,B-2-1,,,Динамическое,
 5000,dargwa,B-3,Syllable,B-3-1,,,Слог,
 5001,dargwa,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-5002,dargwa,B-5,Ultima,B-5-3,,,Конечный слог,
+5002,dargwa,B-5,Ultima,B-5-4,,,Конечный слог,
 5003,dargwa,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 5004,dargwa,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 5005,dargwa,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -5070,7 +5070,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5069,dari,B-3,Syllable,B-3-1,,,Слог,
 5070,dari,B-4,,,,,Неподвижное фиксированное,
 5071,dari,B-5,First syllable of word,B-5-1,,,Начальный слог,
-5072,dari,B-5,Ultima,B-5-3,,,Конечный слог,
+5072,dari,B-5,Ultima,B-5-4,,,Конечный слог,
 5073,dari,B-9,Not applicable,B-9-6,,,Неприменимо,
 5074,dari,B-15,Phonological and non-phonological,B-15-4,,,Фонологическая и нефонологическая,
 5075,dari,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
@@ -5211,7 +5211,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5210,dolgan,B-2,Dynamic,B-2-1,,,Динамическое,
 5211,dolgan,B-3,Syllable,B-3-1,,,Слог,
 5212,dolgan,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-5213,dolgan,B-5,Ultima,B-5-3,,,Конечный слог,
+5213,dolgan,B-5,Ultima,B-5-4,,,Конечный слог,
 5214,dolgan,B-16,All vowels,B-16-6,,,Все гласные слова,
 5215,dolgan,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
 5216,dolgan,D-1,"Limited set of consonants possible, no consonant clusters",D-1-9,,,Ограниченный набор согласных и запрет на любые стечения согласных,
@@ -5365,7 +5365,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5364,domari,B-1,Phonological,B-1-2,,,Фонологическое,
 5365,domari,B-3,Syllable,B-3-1,,,Слог,
 5366,domari,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-5367,domari,B-5,Not applicable,B-5-6,Depends on accentological properties of morpheme,,Неприменимо,Зависит от акцентуалогического статуса морфемы
+5367,domari,B-5,Not applicable,B-5-7,Depends on accentological properties of morpheme,,Неприменимо,Зависит от акцентуалогического статуса морфемы
 5368,domari,B-9,Not applicable,B-9-6,,,Неприменимо,
 5369,domari,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 5370,domari,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -5457,8 +5457,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5456,dutch,B-3,Syllable,B-3-1,,,Слог,
 5457,dutch,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 5458,dutch,B-5,First syllable of word,B-5-1,,,Начальный слог,
-5459,dutch,B-5,Ultima,B-5-3,,,Конечный слог,
-5460,dutch,B-5,Penult,B-5-4,,,Пенультима,
+5459,dutch,B-5,Ultima,B-5-4,,,Конечный слог,
+5460,dutch,B-5,Penult,B-5-5,,,Пенультима,
 5461,dutch,B-15,Phonological,B-15-1,,,Фонологическая,
 5462,dutch,B-16,Phoneme,B-16-1,,,Фонема,Апофония в системе сильного глагола и в системе имени (как дополнительный маркер форм числа).
 5463,dutch,B-17,Height,B-17-3,,,Подъем,
@@ -6185,7 +6185,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6184,fars_dialects,B-2,Dynamic,B-2-1,,,Динамическое,
 6185,fars_dialects,B-3,Syllable,B-3-1,,,Слог,
 6186,fars_dialects,B-4,,,,,Неподвижное фиксированное,Есть второстепенное ударение.
-6187,fars_dialects,B-5,Ultima,B-5-3,,,Конечный слог,
+6187,fars_dialects,B-5,Ultima,B-5-4,,,Конечный слог,
 6188,fars_dialects,B-15,Phonological,B-15-1,,,Фонологическая,
 6189,fars_dialects,B-19,,,,,Фразовое ударение,
 6190,fars_dialects,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -6357,8 +6357,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6356,franco_provencal,B-2,Dynamic,B-2-1,,,Динамическое,
 6357,franco_provencal,B-3,Syllable,B-3-1,,,Слог,
 6358,franco_provencal,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-6359,franco_provencal,B-5,Penult,B-5-4,,,Пенультима,
-6360,franco_provencal,B-5,Antepenult,B-5-5,,,Антепенультима,
+6359,franco_provencal,B-5,Penult,B-5-5,,,Пенультима,
+6360,franco_provencal,B-5,Antepenult,B-5-6,,,Антепенультима,
 6361,franco_provencal,B-15,Phonological and non-phonological,B-15-4,,,Фонологическая и нефонологическая,Характер долготы меняется в зависимости от говора.
 6362,franco_provencal,B-19,,,,,"Назализация, геминация (удлинение), фонация и связывание (liaison)",
 6363,franco_provencal,B-20,Stiff voice,B-20-6,,,Напряженная,"Артикуляция согласных Фп.я. более напряженная, чем во французском языке."
@@ -6447,7 +6447,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6446,french,B-2,Dynamic,B-2-1,,,Динамическое,"Ударный слог характеризуется высотой тона, длительностью и интенсивностью."
 6447,french,B-3,Syllable,B-3-1,,,Слог,
 6448,french,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-6449,french,B-5,Ultima,B-5-3,,,Конечный слог,В потоке речи ударным является последний слог ритмической группы (mot phonique).
+6449,french,B-5,Ultima,B-5-4,,,Конечный слог,В потоке речи ударным является последний слог ритмической группы (mot phonique).
 6450,french,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,Имеются позиционные долгие варианты гласных в ударном закрытом слоге.
 6451,french,B-19,,,,,"Удлинение (геминация) согласных в середине слова и на стыке слов, замолкание конечных согласных, озвончение, немое -е и связывание (liaison)",
 6452,french,B-20,Stiff voice,B-20-6,,,Напряженная,
@@ -6834,7 +6834,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6833,gagauz,B-2,Dynamic,B-2-1,,,Динамическое,
 6834,gagauz,B-3,Syllable,B-3-1,,,Слог,
 6835,gagauz,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-6836,gagauz,B-5,Ultima,B-5-3,,,Конечный слог,
+6836,gagauz,B-5,Ultima,B-5-4,,,Конечный слог,
 6837,gagauz,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 6838,gagauz,B-16,All vowels,B-16-6,,,Все гласные слова,
 6839,gagauz,B-17,Backness,B-17-2,,,Ряд,
@@ -7084,8 +7084,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7083,gascon,B-2,Dynamic,B-2-1,,,Динамическое,
 7084,gascon,B-3,Syllable,B-3-1,,,Слог,
 7085,gascon,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-7086,gascon,B-5,Ultima,B-5-3,,,Конечный слог,
-7087,gascon,B-5,Penult,B-5-4,,,Пенультима,
+7086,gascon,B-5,Ultima,B-5-4,,,Конечный слог,
+7087,gascon,B-5,Penult,B-5-5,,,Пенультима,
 7088,gascon,B-15,Non-phonological,B-15-2,,,Нефонологическая,Других данных нет.
 7089,gascon,B-19,,,,,"Палатализация, фонация, озвончение, вокализация и ротацизм",
 7090,gascon,B-20,Slack voice,B-20-8,,,Слабая,
@@ -7399,8 +7399,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7398,geez,A-25,Absent,A-25-1,,,Отсутствуют,
 7399,geez,B-3,Syllable,B-3-1,,,Слог,
 7400,geez,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-7401,geez,B-5,Ultima,B-5-3,,,Конечный слог,
-7402,geez,B-5,Penult,B-5-4,,,Пенультима,
+7401,geez,B-5,Ultima,B-5-4,,,Конечный слог,
+7402,geez,B-5,Penult,B-5-5,,,Пенультима,
 7403,geez,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 7404,geez,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 7405,geez,D-6,Differences in phonetic structure,D-6-2,,,Различия в фонетическом составе,
@@ -7468,7 +7468,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7467,georgian,B-3,Syllable,B-3-1,,,Слог,
 7468,georgian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 7469,georgian,B-5,First syllable of word,B-5-1,,,Начальный слог,
-7470,georgian,B-5,Antepenult,B-5-5,,,Антепенультима,
+7470,georgian,B-5,Antepenult,B-5-6,,,Антепенультима,
 7471,georgian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 7472,georgian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 7473,georgian,D-1,No restrictions,D-1-1,,,Отсутствуют,
@@ -7649,7 +7649,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7648,gilaki,B-3,Syllable,B-3-1,,,Слог,
 7649,gilaki,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 7650,gilaki,B-5,First syllable of word,B-5-1,,,Начальный слог,
-7651,gilaki,B-5,Ultima,B-5-3,,,Конечный слог,
+7651,gilaki,B-5,Ultima,B-5-4,,,Конечный слог,
 7652,gilaki,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 7653,gilaki,B-16,Group of affixes,B-16-4,,,Группа аффиксов,Г.я. свойственна регрессивная ассимиляция гласных.
 7654,gilaki,B-17,,,,,"Ряд, открытость/закрытость и долгота",
@@ -8031,7 +8031,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8030,grangali,B-2,Dynamic,B-2-1,,,Динамическое,
 8031,grangali,B-3,Syllable,B-3-1,,,Слог,
 8032,grangali,B-4,,,,,Неподвижное фиксированное,
-8033,grangali,B-5,Ultima,B-5-3,,,Конечный слог,
+8033,grangali,B-5,Ultima,B-5-4,,,Конечный слог,
 8034,grangali,B-9,Not applicable,B-9-6,,,Неприменимо,
 8035,grangali,B-15,Phonological,B-15-1,,,Фонологическая,
 8036,grangali,B-16,,,,,Гармоническое уподобление гласных отсутствует,
@@ -8362,8 +8362,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8361,harari,B-1,Non-phonological,B-1-3,,,Нефонологическое,
 8362,harari,B-2,Dynamic,B-2-1,,,Динамическое,
 8363,harari,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-8364,harari,B-5,Ultima,B-5-3,,,Конечный слог,
-8365,harari,B-5,Penult,B-5-4,,,Пенультима,
+8364,harari,B-5,Ultima,B-5-4,,,Конечный слог,
+8365,harari,B-5,Penult,B-5-5,,,Пенультима,
 8366,harari,B-15,Phonological and non-phonological,B-15-4,,,Фонологическая и нефонологическая,
 8367,harari,B-16,Group of affixes,B-16-4,,,Группа аффиксов,
 8368,harari,B-19,Palatalization,B-19-2,,,Палатализация,
@@ -8445,7 +8445,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8444,hazaragi,B-3,Syllable,B-3-1,,,Слог,
 8445,hazaragi,B-4,,,,,Неподвижное фиксированное,
 8446,hazaragi,B-5,First syllable of word,B-5-1,,,Начальный слог,Есть основное и второстепенное ударение.
-8447,hazaragi,B-5,Ultima,B-5-3,,,Конечный слог,Есть основное и второстепенное ударение.
+8447,hazaragi,B-5,Ultima,B-5-4,,,Конечный слог,Есть основное и второстепенное ударение.
 8448,hazaragi,B-9,Not applicable,B-9-6,,,Неприменимо,
 8449,hazaragi,B-15,Phonological,B-15-1,,,Фонологическая,
 8450,hazaragi,B-16,Phoneme,B-16-1,,,Фонема,Сингармонизм существует в видо-временных формах глагола с приставками.
@@ -9330,7 +9330,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9329,ishkashimi,B-3,Syllable,B-3-1,,,Слог,
 9330,ishkashimi,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 9331,ishkashimi,B-5,First syllable of word,B-5-1,,,Начальный слог,
-9332,ishkashimi,B-5,Ultima,B-5-3,,,Конечный слог,
+9332,ishkashimi,B-5,Ultima,B-5-4,,,Конечный слог,
 9333,ishkashimi,B-15,Non-phonological,B-15-2,,,Нефонологическая,"По количественному признаку гласные определяются как длительные и устойчивые (две степени), и редуцированные."
 9334,ishkashimi,B-19,,,,,"Метатеза, ассимиляция и оглушение согласных и выпадение согласых и гласных",
 9335,ishkashimi,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
@@ -9413,7 +9413,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9412,istriot,B-2,Dynamic,B-2-1,,,Динамическое,
 9413,istriot,B-3,Syllable,B-3-1,,,Слог,
 9414,istriot,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-9415,istriot,B-5,Not applicable,B-5-6,,,Неприменимо,
+9415,istriot,B-5,Not applicable,B-5-7,,,Неприменимо,
 9416,istriot,B-15,Phonological and rhythmic,B-15-5,,,Фонологическая и ритмическая,
 9417,istriot,B-19,,,,,"Эпентеза, апокопа и афереза гласных, протеза согласного",
 9418,istriot,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -9497,7 +9497,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9496,istro_romanian,B-2,Dynamic,B-2-1,,,Динамическое,
 9497,istro_romanian,B-3,Syllable,B-3-1,,,Слог,
 9498,istro_romanian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-9499,istro_romanian,B-5,Not applicable,B-5-6,,,Неприменимо,
+9499,istro_romanian,B-5,Not applicable,B-5-7,,,Неприменимо,
 9500,istro_romanian,B-19,,,,,"Назализация, йотирование, лабиализация/делабиализация",
 9501,istro_romanian,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 9502,istro_romanian,C-2,Most syllables have a non-null coda,C-2-3,,,Большинство слогов закрытые,
@@ -9594,8 +9594,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9593,italian,B-2,Dynamic,B-2-1,,,Динамическое,
 9594,italian,B-3,Syllable,B-3-1,,,Слог,
 9595,italian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-9596,italian,B-5,Penult,B-5-4,,,Пенультима,Многосложные слова могут иметь одно или два второстепенных ударения.
-9597,italian,B-5,Antepenult,B-5-5,,,Антепенультима,Многосложные слова могут иметь одно или два второстепенных ударения.
+9596,italian,B-5,Penult,B-5-5,,,Пенультима,Многосложные слова могут иметь одно или два второстепенных ударения.
+9597,italian,B-5,Antepenult,B-5-6,,,Антепенультима,Многосложные слова могут иметь одно или два второстепенных ударения.
 9598,italian,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,Имеются долгие (геминированные) аллофоны согласных и долгие аллофоны гласных (в зависимости от ударности/безударности и открытости/закрытости слога).
 9599,italian,B-19,,,,,Синтаксическое удвоение согласных и элизия гласных,
 9600,italian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -10025,8 +10025,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10024,judeo_spanish,B-2,Dynamic,B-2-1,,,Динамическое,
 10025,judeo_spanish,B-3,Syllable,B-3-1,,,Слог,
 10026,judeo_spanish,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-10027,judeo_spanish,B-5,Ultima,B-5-3,,,Конечный слог,Характер ударения в Е.-и.я. не изменился по сравнению с испанским.
-10028,judeo_spanish,B-5,Penult,B-5-4,,,Пенультима,Характер ударения в Е.-и.я. не изменился по сравнению с испанским.
+10027,judeo_spanish,B-5,Ultima,B-5-4,,,Конечный слог,Характер ударения в Е.-и.я. не изменился по сравнению с испанским.
+10028,judeo_spanish,B-5,Penult,B-5-5,,,Пенультима,Характер ударения в Е.-и.я. не изменился по сравнению с испанским.
 10029,judeo_spanish,B-15,Phonological,B-15-1,,,Фонологическая,Есть долгий дрожащий сонант /r:/.
 10030,judeo_spanish,B-19,,,,,"Назализация, спирантизация и фонация",
 10031,judeo_spanish,B-20,Stiff voice and slack voice,B-20-2,,,Напряженная и слабая,
@@ -10558,7 +10558,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10557,karachay_balkar,B-2,Dynamic,B-2-1,,,Динамическое,
 10558,karachay_balkar,B-3,Syllable,B-3-1,,,Слог,
 10559,karachay_balkar,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-10560,karachay_balkar,B-5,Ultima,B-5-3,,,Конечный слог,
+10560,karachay_balkar,B-5,Ultima,B-5-4,,,Конечный слог,
 10561,karachay_balkar,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 10562,karachay_balkar,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 10563,karachay_balkar,E-1,Agglutinative,E-1-1,,,Агглютинативный,
@@ -10624,7 +10624,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10623,karaim,B-2,Dynamic,B-2-1,,,Динамическое,
 10624,karaim,B-3,Syllable,B-3-1,,,Слог,
 10625,karaim,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-10626,karaim,B-5,Ultima,B-5-3,,,Конечный слог,
+10626,karaim,B-5,Ultima,B-5-4,,,Конечный слог,
 10627,karaim,B-16,All vowels,B-16-6,,,Все гласные слова,
 10628,karaim,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
 10629,karaim,B-18,First vowel of word or last vowel of stem,B-18-8,,,Первый гласный слова или последний гласный основы,
@@ -10690,7 +10690,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10689,karakalpak,B-2,Mixed,B-2-4,,,Смешанное,
 10690,karakalpak,B-3,Syllable,B-3-1,,,Слог,
 10691,karakalpak,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-10692,karakalpak,B-5,Ultima,B-5-3,,,Конечный слог,
+10692,karakalpak,B-5,Ultima,B-5-4,,,Конечный слог,
 10693,karakalpak,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
 10694,karakalpak,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 10695,karakalpak,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -11038,7 +11038,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11037,kashubian,B-3,Syllable,B-3-1,,,Слог,
 11038,kashubian,B-4,,,,,Одноместно фиксированное и разноместное нефиксированное,Одноместно фиксированное (южный диалект) и разноместное нефиксированное (севернокашубский и среднекашубский диалекты).
 11039,kashubian,B-5,First syllable of word,B-5-1,,,Начальный слог,
-11040,kashubian,B-5,Penult,B-5-4,,,Пенультима,
+11040,kashubian,B-5,Penult,B-5-5,,,Пенультима,
 11041,kashubian,B-15,Non-phonological,B-15-2,,,Нефонологическая,Фонологическая оппозиция гласных по долготе/краткости утратила значимость в начале ХХ века.
 11042,kashubian,B-19,,,,,"Редукция, диссимиляция, назализация и деназализация гласных, озвончение и оглушение согласных",
 11043,kashubian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -11317,7 +11317,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11316,kazakh,B-2,Mixed,B-2-4,,,Смешанное,
 11317,kazakh,B-3,Syllable,B-3-1,,,Слог,
 11318,kazakh,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-11319,kazakh,B-5,Ultima,B-5-3,,,Конечный слог,
+11319,kazakh,B-5,Ultima,B-5-4,,,Конечный слог,
 11320,kazakh,B-14,Phrase,B-14-4,,,Фраза,
 11321,kazakh,B-16,One vowel or all vowels,B-16-7,,,Один гласный или все гласные слова,
 11322,kazakh,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
@@ -11677,8 +11677,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11676,khotanese,B-1,Phonological and non-phonological,B-1-4,,,Фонологическое/нефонологическое,
 11677,khotanese,B-2,Dynamic,B-2-1,,,Динамическое,
 11678,khotanese,B-3,Syllable,B-3-1,,,Слог,
-11679,khotanese,B-5,Penult,B-5-4,,,Пенультима,
-11680,khotanese,B-5,Antepenult,B-5-5,,,Антепенультима,
+11679,khotanese,B-5,Penult,B-5-5,,,Пенультима,
+11680,khotanese,B-5,Antepenult,B-5-6,,,Антепенультима,
 11681,khotanese,B-9,,,,,"Предположительно можно реконструировать фарингализованный тон - просодическая ""эризация""",
 11682,khotanese,B-14,,,,,Слогоморфема в составе отдельных слов,
 11683,khotanese,B-15,Phonological,B-15-1,,,Фонологическая,Раннехотаносакские и древнеиранские долготы замещаются качественными различиями в позднехотаносакском.
@@ -11766,7 +11766,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11765,khowar,B-2,Dynamic,B-2-1,,,Динамическое,
 11766,khowar,B-3,Syllable,B-3-1,,,Слог,
 11767,khowar,B-4,,,,,Неподвижно фиксированное,
-11768,khowar,B-5,Ultima,B-5-3,,,Конечный слог,Ударение тяготеет к исходу слова.
+11768,khowar,B-5,Ultima,B-5-4,,,Конечный слог,Ударение тяготеет к исходу слова.
 11769,khowar,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 11770,khowar,B-19,,,,,Удлинение гласных и ослабление согласных,Вибрант спирантизируется перед глухими смычными.
 11771,khowar,D-6,No differences,D-6-1,,,Отсутствуют,
@@ -12521,7 +12521,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12520,konkani,B-1,Non-phonological,B-1-3,,,Нефонологическое,
 12521,konkani,B-3,Syllable,B-3-1,,,Слог,
 12522,konkani,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-12523,konkani,B-5,Not applicable,B-5-6,Depends on the quality of syllable sequences,,Неприменимо,Зависит от качества последовательности слогов
+12523,konkani,B-5,Not applicable,B-5-7,Depends on the quality of syllable sequences,,Неприменимо,Зависит от качества последовательности слогов
 12524,konkani,B-9,Not applicable,B-9-6,,,Неприменимо,
 12525,konkani,B-16,,,,,Фонологическое слово,
 12526,konkani,B-17,Height,B-17-3,,,Подъем,
@@ -12889,7 +12889,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12888,kumyk,B-2,Dynamic,B-2-1,,,Динамическое,
 12889,kumyk,B-3,Syllable,B-3-1,,,Слог,
 12890,kumyk,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-12891,kumyk,B-5,Ultima,B-5-3,,,Конечный слог,
+12891,kumyk,B-5,Ultima,B-5-4,,,Конечный слог,
 12892,kumyk,B-16,All vowels,B-16-6,,,Все гласные слова,
 12893,kumyk,B-17,Backness and height,B-17-6,,,Ряд и подъем,
 12894,kumyk,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
@@ -13006,7 +13006,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13005,kurdish,B-3,Syllable,B-3-1,,,Слог,
 13006,kurdish,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 13007,kurdish,B-5,First syllable of word,B-5-1,,,Начальный слог,
-13008,kurdish,B-5,Ultima,B-5-3,,,Конечный слог,
+13008,kurdish,B-5,Ultima,B-5-4,,,Конечный слог,
 13009,kurdish,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 13010,kurdish,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 13011,kurdish,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -13125,7 +13125,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13124,kyrgyz,B-2,Dynamic,B-2-1,,,Динамическое,
 13125,kyrgyz,B-3,Syllable,B-3-1,,,Слог,
 13126,kyrgyz,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-13127,kyrgyz,B-5,Ultima,B-5-3,,,Конечный слог,
+13127,kyrgyz,B-5,Ultima,B-5-4,,,Конечный слог,
 13128,kyrgyz,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 13129,kyrgyz,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 13130,kyrgyz,D-1,Limited set of consonants possible,D-1-4,,,Ограниченный набор согласных,
@@ -13196,7 +13196,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13195,ladin,B-2,Dynamic,B-2-1,,,Динамическое,
 13196,ladin,B-3,Syllable,B-3-1,,,Слог,
 13197,ladin,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-13198,ladin,B-5,Not applicable,B-5-6,,,Неприменимо,
+13198,ladin,B-5,Not applicable,B-5-7,,,Неприменимо,
 13199,ladin,B-15,Phonological and non-phonological,B-15-4,,,Фонологическая и нефонологическая,Фонологическая в ударном слоге в верхнебадиотском и мареббанском диалектах.
 13200,ladin,B-19,,,,,"Палатализация, ротацизм, вокализация и фонация",
 13201,ladin,B-20,Slackened voice,B-20-9,,,Ослабленная,
@@ -13406,7 +13406,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13405,lasgerdi,B-3,Syllable,B-3-1,,,Слог,
 13406,lasgerdi,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 13407,lasgerdi,B-5,First syllable of word,B-5-1,,,Начальный слог,
-13408,lasgerdi,B-5,Ultima,B-5-3,,,Конечный слог,
+13408,lasgerdi,B-5,Ultima,B-5-4,,,Конечный слог,
 13409,lasgerdi,D-6,Accentual differences,D-6-3,,,Акцентные различия,
 13410,lasgerdi,E-1,Fusional,E-1-3,,,Флективный,
 13411,lasgerdi,E-2,,,,,Кумулятивность аффиксов (глагола) и супплетивное склонение личных местоимений,.
@@ -13557,8 +13557,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13556,laz,A-22,Absent,A-22-1,,,Отсутствуют,
 13557,laz,A-24,"Labial, coronal and dorsal",A-24-14,,,"Лабиальные, переднеязычные и среднеязычные",
 13558,laz,B-2,Dynamic,B-2-1,,,Динамическое,
-13559,laz,B-5,Penult,B-5-4,,,Пенультима,
-13560,laz,B-5,Antepenult,B-5-5,,,Антепенультима,
+13559,laz,B-5,Penult,B-5-5,,,Пенультима,
+13560,laz,B-5,Antepenult,B-5-6,,,Антепенультима,
 13561,laz,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 13562,laz,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 13563,laz,E-1,Agglutinative with some fusional features,E-1-2,,,Агглютинативный с элементами флективного,
@@ -13950,7 +13950,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13949,lomavren,B-2,Dynamic,B-2-1,,,Динамическое,
 13950,lomavren,B-3,Syllable,B-3-1,,,Слог,
 13951,lomavren,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-13952,lomavren,B-5,Ultima,B-5-3,,,Конечный слог,
+13952,lomavren,B-5,Ultima,B-5-4,,,Конечный слог,
 13953,lomavren,B-9,Not applicable,B-9-6,,,Неприменимо,
 13954,lomavren,E-1,Agglutinative with some fusional features,E-1-2,,,Агглютинативный с элементами флективного,
 13955,lomavren,E-4,Synthetic,E-4-5,,,Синтетический,
@@ -14566,9 +14566,9 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14565,macedonian,B-2,Dynamic,B-2-1,,,Динамическое,
 14566,macedonian,B-3,Syllable,B-3-1,,,Слог,
 14567,macedonian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-14568,macedonian,B-5,Ultima,B-5-3,,,Конечный слог,"Имеются различия между диалектами, исконной лексикой и заимствованиями."
-14569,macedonian,B-5,Penult,B-5-4,,,Пенультима,"Имеются различия между диалектами, исконной лексикой и заимствованиями."
-14570,macedonian,B-5,Antepenult,B-5-5,,,Антепенультима,"Имеются различия между диалектами, исконной лексикой и заимствованиями."
+14568,macedonian,B-5,Ultima,B-5-4,,,Конечный слог,"Имеются различия между диалектами, исконной лексикой и заимствованиями."
+14569,macedonian,B-5,Penult,B-5-5,,,Пенультима,"Имеются различия между диалектами, исконной лексикой и заимствованиями."
+14570,macedonian,B-5,Antepenult,B-5-6,,,Антепенультима,"Имеются различия между диалектами, исконной лексикой и заимствованиями."
 14571,macedonian,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 14572,macedonian,B-19,,,,,"Регрессивная ассимиляция, палатализация и упрощение групп согласных, выпадение согласных в интервокальной позиции и устранение зияния",
 14573,macedonian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -14672,8 +14672,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14671,magahi,B-2,Dynamic,B-2-1,,,Динамическое,
 14672,magahi,B-3,Syllable,B-3-1,,,Слог,
 14673,magahi,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-14674,magahi,B-5,Penult,B-5-4,,,Пенультима,
-14675,magahi,B-5,Antepenult,B-5-5,,,Антепенультима,
+14674,magahi,B-5,Penult,B-5-5,,,Пенультима,
+14675,magahi,B-5,Antepenult,B-5-6,,,Антепенультима,
 14676,magahi,B-9,Not applicable,B-9-6,,,Неприменимо,
 14677,magahi,B-15,Phonological and rhythmic,B-15-5,,,Фонологическая и ритмическая,
 14678,magahi,B-16,All vowels,B-16-6,,,Все гласные слова,
@@ -15392,7 +15392,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15391,marathi,B-3,Syllable,B-3-1,,,Слог,
 15392,marathi,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
 15393,marathi,B-5,First syllable of word,B-5-1,,,Начальный слог,
-15394,marathi,B-5,Penult,B-5-4,,,Пенультима,
+15394,marathi,B-5,Penult,B-5-5,,,Пенультима,
 15395,marathi,B-9,Not applicable,B-9-6,,,Неприменимо,
 15396,marathi,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 15397,marathi,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
@@ -15624,7 +15624,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15623,mazanderani,B-3,Syllable,B-3-1,,,Слог,
 15624,mazanderani,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 15625,mazanderani,B-5,First syllable of word,B-5-1,,,Начальный слог,
-15626,mazanderani,B-5,Ultima,B-5-3,,,Конечный слог,
+15626,mazanderani,B-5,Ultima,B-5-4,,,Конечный слог,
 15627,mazanderani,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 15628,mazanderani,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 15629,mazanderani,D-1,No consonant clusters,D-1-6,,,Запрет на любые стечения согласных,
@@ -15717,7 +15717,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15716,megleno_romanian,B-2,Dynamic,B-2-1,,,Динамическое,
 15717,megleno_romanian,B-3,Syllable,B-3-1,,,Слог,
 15718,megleno_romanian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-15719,megleno_romanian,B-5,Not applicable,B-5-6,,,Неприменимо,
+15719,megleno_romanian,B-5,Not applicable,B-5-7,,,Неприменимо,
 15720,megleno_romanian,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,
 15721,megleno_romanian,B-19,,,,,Назализация и веляризация,
 15722,megleno_romanian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -15872,7 +15872,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15871,middle_persian,B-2,Dynamic,B-2-1,,,Динамическое,
 15872,middle_persian,B-3,Syllable,B-3-1,,,Слог,
 15873,middle_persian,B-4,,,,,Неподвижное фиксированное,
-15874,middle_persian,B-5,Ultima,B-5-3,,,Конечный слог,Место ударения на исходе словоформы определяется предположительно. Предполагается существование второстепенного ударения.
+15874,middle_persian,B-5,Ultima,B-5-4,,,Конечный слог,Место ударения на исходе словоформы определяется предположительно. Предполагается существование второстепенного ударения.
 15875,middle_persian,B-15,Phonological,B-15-1,,,Фонологическая,
 15876,middle_persian,B-19,,,,,Спирантизация согласных,О позиционной реализации гласных фонем данных нет. 
 15877,middle_persian,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
@@ -16071,7 +16071,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16070,mingrelian,B-3,Syllable,B-3-1,,,Слог,
 16071,mingrelian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 16072,mingrelian,B-5,First syllable of word,B-5-1,,,Начальный слог,
-16073,mingrelian,B-5,Antepenult,B-5-5,,,Антепенультима,
+16073,mingrelian,B-5,Antepenult,B-5-6,,,Антепенультима,
 16074,mingrelian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 16075,mingrelian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 16076,mingrelian,E-1,Agglutinative with some fusional features,E-1-2,,,Агглютинативный с элементами флективного,
@@ -16210,7 +16210,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16209,moghol,A-25,Absent,A-25-1,,,Отсутствуют,
 16210,moghol,B-1,Non-phonological,B-1-3,,,Нефонологическое,
 16211,moghol,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-16212,moghol,B-5,Ultima,B-5-3,,,Конечный слог,
+16212,moghol,B-5,Ultima,B-5-4,,,Конечный слог,
 16213,moghol,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 16214,moghol,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 16215,moghol,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -16552,7 +16552,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16551,munji,B-3,Syllable,B-3-1,,,Слог,
 16552,munji,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 16553,munji,B-5,First syllable of word,B-5-1,,,Начальный слог,
-16554,munji,B-5,Ultima,B-5-3,,,Конечный слог,
+16554,munji,B-5,Ultima,B-5-4,,,Конечный слог,
 16555,munji,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 16556,munji,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 16557,munji,C-2,Most syllables have a non-null coda,C-2-3,,,Большинство слогов закрытые,
@@ -16728,7 +16728,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16727,nanai,B-3,Syllable,B-3-1,,,Слог,
 16728,nanai,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 16729,nanai,B-5,First syllable of word,B-5-1,,,Начальный слог,
-16730,nanai,B-5,Ultima,B-5-3,,,Конечный слог,
+16730,nanai,B-5,Ultima,B-5-4,,,Конечный слог,
 16731,nanai,B-16,All vowels,B-16-6,,,Все гласные слова,
 16732,nanai,B-17,Height,B-17-3,,,Подъем,
 16733,nanai,B-18,First vowel of word (root),B-18-6,,,Первый гласный слова (=корня),
@@ -16943,9 +16943,9 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16942,neo_mandaic,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",
 16943,neo_mandaic,A-24,"Labial, coronal and dorsal",A-24-14,,,"Лабиальные, переднеязычные и среднеязычные",
 16944,neo_mandaic,A-25,Absent,A-25-1,,,Отсутствуют,
-16945,neo_mandaic,B-5,Ultima,B-5-3,,,Конечный слог,
-16946,neo_mandaic,B-5,Penult,B-5-4,,,Пенультима,
-16947,neo_mandaic,B-5,Antepenult,B-5-5,,,Антепенультима,
+16945,neo_mandaic,B-5,Ultima,B-5-4,,,Конечный слог,
+16946,neo_mandaic,B-5,Penult,B-5-5,,,Пенультима,
+16947,neo_mandaic,B-5,Antepenult,B-5-6,,,Антепенультима,
 16948,neo_mandaic,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 16949,neo_mandaic,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 16950,neo_mandaic,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -17045,7 +17045,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17044,nogai,B-2,Dynamic,B-2-1,,,Динамическое,
 17045,nogai,B-3,Syllable,B-3-1,,,Слог,
 17046,nogai,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-17047,nogai,B-5,Ultima,B-5-3,,,Конечный слог,
+17047,nogai,B-5,Ultima,B-5-4,,,Конечный слог,
 17048,nogai,B-17,Backness,B-17-2,,,Ряд,
 17049,nogai,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 17050,nogai,D-5,Differences in syllable structure,D-5-4,,,Различия в структуре слога,
@@ -17224,9 +17224,9 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17223,occitan,B-2,Dynamic,B-2-1,,,Динамическое,
 17224,occitan,B-3,Syllable,B-3-1,,,Слог,
 17225,occitan,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-17226,occitan,B-5,Ultima,B-5-3,,,Конечный слог,
-17227,occitan,B-5,Penult,B-5-4,,,Пенультима,
-17228,occitan,B-5,Antepenult,B-5-5,,,Антепенультима,
+17226,occitan,B-5,Ultima,B-5-4,,,Конечный слог,
+17227,occitan,B-5,Penult,B-5-5,,,Пенультима,
+17228,occitan,B-5,Antepenult,B-5-6,,,Антепенультима,
 17229,occitan,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,Имеются долгие и краткие комбинаторные варианты гласных в зависимости от ударения и позиции слога.
 17230,occitan,B-19,,,,,"Назализация, палатализация, озвончение, вокализация, удлинение и фонация",
 17231,occitan,B-20,Slackened voice,B-20-9,,,Ослабленная,
@@ -17641,8 +17641,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17640,old_french,B-2,Dynamic,B-2-1,,,Динамическое,
 17641,old_french,B-3,Syllable,B-3-1,,,Слог,
 17642,old_french,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-17643,old_french,B-5,Ultima,B-5-3,,,Конечный слог,"Слова, выглядевшие на письме как пропарокситоны, произносились как парокситоны (без среднего слога)."
-17644,old_french,B-5,Penult,B-5-4,,,Пенультима,"Слова, выглядевшие на письме как пропарокситоны, произносились как парокситоны (без среднего слога)."
+17643,old_french,B-5,Ultima,B-5-4,,,Конечный слог,"Слова, выглядевшие на письме как пропарокситоны, произносились как парокситоны (без среднего слога)."
+17644,old_french,B-5,Penult,B-5-5,,,Пенультима,"Слова, выглядевшие на письме как пропарокситоны, произносились как парокситоны (без среднего слога)."
 17645,old_french,B-19,Nasalization,B-19-1,,,Назализация,
 17646,old_french,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 17647,old_french,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -17857,8 +17857,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17856,old_persian,B-2,Dynamic,B-2-1,,,Динамическое,
 17857,old_persian,B-3,Syllable,B-3-1,,,Слог,
 17858,old_persian,B-4,,,,,Неподвижное фиксированное,
-17859,old_persian,B-5,Penult,B-5-4,,,Пенультима,
-17860,old_persian,B-5,Antepenult,B-5-5,,,Антепенультима,
+17859,old_persian,B-5,Penult,B-5-5,,,Пенультима,
+17860,old_persian,B-5,Antepenult,B-5-6,,,Антепенультима,
 17861,old_persian,B-15,Phonological,B-15-1,,,Фонологическая,
 17862,old_persian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 17863,old_persian,C-2,Most syllables have a null coda,C-2-4,,,Большинство слогов открытые,
@@ -18044,7 +18044,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18043,old_uighur,B-2,Dynamic,B-2-1,,,Динамическое,
 18044,old_uighur,B-3,Syllable,B-3-1,,,Слог,
 18045,old_uighur,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-18046,old_uighur,B-5,Ultima,B-5-3,,,Конечный слог,
+18046,old_uighur,B-5,Ultima,B-5-4,,,Конечный слог,
 18047,old_uighur,B-16,Group of affixes,B-16-4,,,Группа аффиксов,
 18048,old_uighur,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
 18049,old_uighur,B-18,First vowel of word (root),B-18-6,,,Первый гласный слова (=корня),
@@ -18334,7 +18334,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18333,oroch,B-2,Mixed,B-2-4,,,Смешанное,
 18334,oroch,B-3,Syllable,B-3-1,,,Слог,
 18335,oroch,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-18336,oroch,B-5,Ultima,B-5-3,,,Конечный слог,
+18336,oroch,B-5,Ultima,B-5-4,,,Конечный слог,
 18337,oroch,B-16,"Group of affixes, all vowels",B-16-5,,,Группа слогов или все гласные слова,
 18338,oroch,B-18,First vowel of word,B-18-1,,,Первый гласный слова,
 18339,oroch,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -18609,7 +18609,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18608,pao_an,B-1,Non-phonological,B-1-3,,,Нефонологическое,
 18609,pao_an,B-3,Syllable,B-3-1,,,Слог,
 18610,pao_an,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-18611,pao_an,B-5,Ultima,B-5-3,,,Конечный слог,
+18611,pao_an,B-5,Ultima,B-5-4,,,Конечный слог,
 18612,pao_an,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 18613,pao_an,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 18614,pao_an,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -18754,7 +18754,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18753,parthian,B-2,Dynamic,B-2-1,,,Динамическое,
 18754,parthian,B-3,Syllable,B-3-1,,,Слог,
 18755,parthian,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-18756,parthian,B-5,Ultima,B-5-3,,,Конечный слог,
+18756,parthian,B-5,Ultima,B-5-4,,,Конечный слог,
 18757,parthian,B-15,Phonological,B-15-1,,,Фонологическая,
 18758,parthian,B-19,,,,,"Фарингализация, фрикативизация и йотирование смычных согласных",
 18759,parthian,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
@@ -18872,7 +18872,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18871,pashai,B-2,Dynamic,B-2-1,,,Динамическое,
 18872,pashai,B-3,Syllable,B-3-1,,,Слог,
 18873,pashai,B-4,,,,,Неподвижное фиксированное,
-18874,pashai,B-5,Ultima,B-5-3,,,Конечный слог,Ударным обычно является последний долгий гласный слова.
+18874,pashai,B-5,Ultima,B-5-4,,,Конечный слог,Ударным обычно является последний долгий гласный слова.
 18875,pashai,B-9,Not applicable,B-9-6,,,Неприменимо,В юго-восточных диалектах отмечено наличие восходящего тона на гласном в соседстве с аспирированными согласными.
 18876,pashai,B-15,Phonological,B-15-1,,,Фонологическая,
 18877,pashai,E-1,Fusional-agglutinative,E-1-5,,,Флективно-агглютинативный,
@@ -18953,7 +18953,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18952,pashto,B-2,Dynamic,B-2-1,,,Динамическое,
 18953,pashto,B-3,Syllable,B-3-1,,,Слог,
 18954,pashto,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-18955,pashto,B-5,Not applicable,B-5-6,,,Неприменимо,
+18955,pashto,B-5,Not applicable,B-5-7,,,Неприменимо,
 18956,pashto,B-15,Phonological and non-phonological,B-15-4,,,Фонологическая и нефонологическая,
 18957,pashto,B-19,Nasalization,B-19-1,,,Назализация,
 18958,pashto,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -19050,7 +19050,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19049,persian,B-3,Syllable,B-3-1,,,Слог,
 19050,persian,B-4,,,,,Неподвижное фиксированное,Есть второстепенное ударение.
 19051,persian,B-5,First syllable of word,B-5-1,,,Начальный слог,
-19052,persian,B-5,Ultima,B-5-3,,,Конечный слог,
+19052,persian,B-5,Ultima,B-5-4,,,Конечный слог,
 19053,persian,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 19054,persian,B-19,,,,,"Редукция гласных, палатализация, оглушение, озвончение, спирантизация и аспирация согласных",
 19055,persian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -19146,7 +19146,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19145,phalura,B-2,Dynamic,B-2-1,,,Динамическое,
 19146,phalura,B-3,Syllable,B-3-1,,,Слог,
 19147,phalura,B-4,,,,,Неподвижное фиксированное,
-19148,phalura,B-5,Ultima,B-5-3,,,Конечный слог,Ударение тяготеет к концу словоформы.
+19148,phalura,B-5,Ultima,B-5-4,,,Конечный слог,Ударение тяготеет к концу словоформы.
 19149,phalura,B-9,Not applicable,B-9-6,,,Неприменимо,Фонологически значимые тоновые оппозиции не прослежены.
 19150,phalura,B-15,Phonological,B-15-1,,,Фонологическая,
 19151,phalura,E-1,Fusional,E-1-3,,,Флективный,
@@ -19342,8 +19342,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19341,polabian,B-2,Dynamic and quantitative,B-2-6,,,Динамическое и количественное,
 19342,polabian,B-3,Syllable,B-3-1,,,Слог,
 19343,polabian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-19344,polabian,B-5,Ultima,B-5-3,,,Конечный слог,Есть другие гипотезы.
-19345,polabian,B-5,Penult,B-5-4,,,Пенультима,Есть другие гипотезы.
+19344,polabian,B-5,Ultima,B-5-4,,,Конечный слог,Есть другие гипотезы.
+19345,polabian,B-5,Penult,B-5-5,,,Пенультима,Есть другие гипотезы.
 19346,polabian,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,Есть другие гипотезы.
 19347,polabian,B-19,,,,,Редукция гласных и оглушение согласных,
 19348,polabian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -19446,7 +19446,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19445,polish,B-2,Dynamic,B-2-1,,,Динамическое,
 19446,polish,B-3,Syllable,B-3-1,,,Слог,
 19447,polish,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-19448,polish,B-5,Penult,B-5-4,,,Пенультима,В многосложных словах имеется дополнительное инициальное ударение.
+19448,polish,B-5,Penult,B-5-5,,,Пенультима,В многосложных словах имеется дополнительное инициальное ударение.
 19449,polish,B-19,,,,,"Назализация гласных, палатализация, ассимиляция, оглушение и озвончение согласных",
 19450,polish,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,В начале слога возможны сочетания от одного до четырех согласных.
 19451,polish,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -19552,7 +19552,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19551,polovets,B-2,Dynamic,B-2-1,,,Динамическое,
 19552,polovets,B-3,Syllable,B-3-1,,,Слог,
 19553,polovets,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-19554,polovets,B-5,Ultima,B-5-3,,,Конечный слог,
+19554,polovets,B-5,Ultima,B-5-4,,,Конечный слог,
 19555,polovets,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 19556,polovets,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 19557,polovets,D-1,No consonant clusters,D-1-6,,,Запрет на любые стечения согласных,
@@ -19610,9 +19610,9 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19609,portuguese,B-2,,,,,"Динамическое с элементами количественного, качественного и тонического","Для П.я. характерен резкий контраст между ударными и безударными слогами, которого нет в других романских языках."
 19610,portuguese,B-3,Syllable,B-3-1,,,Слог,
 19611,portuguese,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-19612,portuguese,B-5,Ultima,B-5-3,,,Конечный слог,
-19613,portuguese,B-5,Penult,B-5-4,,,Пенультима,
-19614,portuguese,B-5,Antepenult,B-5-5,,,Антепенультима,
+19612,portuguese,B-5,Ultima,B-5-4,,,Конечный слог,
+19613,portuguese,B-5,Penult,B-5-5,,,Пенультима,
+19614,portuguese,B-5,Antepenult,B-5-6,,,Антепенультима,
 19615,portuguese,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,
 19616,portuguese,B-16,Phoneme,B-16-1,,,Фонема,
 19617,portuguese,B-17,Backness,B-17-2,,,Ряд,
@@ -20166,9 +20166,9 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20164,rhaeto_romance,B-2,Dynamic,B-2-1,,,Динамическое,
 20165,rhaeto_romance,B-3,Syllable,B-3-1,,,Слог,
 20166,rhaeto_romance,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-20167,rhaeto_romance,B-5,Ultima,B-5-3,,,Конечный слог,
-20168,rhaeto_romance,B-5,Penult,B-5-4,,,Пенультима,
-20169,rhaeto_romance,B-5,Antepenult,B-5-5,,,Антепенультима,
+20167,rhaeto_romance,B-5,Ultima,B-5-4,,,Конечный слог,
+20168,rhaeto_romance,B-5,Penult,B-5-5,,,Пенультима,
+20169,rhaeto_romance,B-5,Antepenult,B-5-6,,,Антепенультима,
 20170,rhaeto_romance,B-15,Phonological and rhythmic,B-15-5,,,Фонологическая и ритмическая,"Долгота/краткость коррелирует с открытостью/закрытостью слога, реализуясь только под ударением."
 20171,rhaeto_romance,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 20172,rhaeto_romance,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -20372,9 +20372,9 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20370,romanian,B-2,Dynamic,B-2-1,,,Динамическое,
 20371,romanian,B-3,Syllable,B-3-1,,,Слог,
 20372,romanian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-20373,romanian,B-5,Ultima,B-5-3,,,Конечный слог,
-20374,romanian,B-5,Penult,B-5-4,,,Пенультима,
-20375,romanian,B-5,Antepenult,B-5-5,,,Антепенультима,
+20373,romanian,B-5,Ultima,B-5-4,,,Конечный слог,
+20374,romanian,B-5,Penult,B-5-5,,,Пенультима,
+20375,romanian,B-5,Antepenult,B-5-6,,,Антепенультима,
 20376,romanian,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 20377,romanian,B-16,Phoneme,B-16-1,,,Фонема,
 20378,romanian,B-17,Backness and height,B-17-6,,,Ряд и подъем,
@@ -20897,7 +20897,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20895,salar,B-2,Mixed,B-2-4,,,Смешанное,
 20896,salar,B-3,Syllable,B-3-1,,,Слог,
 20897,salar,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-20898,salar,B-5,Ultima,B-5-3,,,Конечный слог,
+20898,salar,B-5,Ultima,B-5-4,,,Конечный слог,
 20899,salar,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
 20900,salar,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 20901,salar,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -21033,7 +21033,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21031,sanglechi,B-3,Syllable,B-3-1,,,Слог,
 21032,sanglechi,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 21033,sanglechi,B-5,First syllable of word,B-5-1,,,Начальный слог,
-21034,sanglechi,B-5,Ultima,B-5-3,,,Конечный слог,
+21034,sanglechi,B-5,Ultima,B-5-4,,,Конечный слог,
 21035,sanglechi,B-15,Phonological and non-phonological,B-15-4,,,Фонологическая и нефонологическая,
 21036,sanglechi,B-19,,,,,"Выпадение, стяжение, вставка (протеза) и ассимиляция",
 21037,sanglechi,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
@@ -21204,8 +21204,8 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21202,sardinian,B-2,Dynamic,B-2-1,,,Динамическое,
 21203,sardinian,B-3,Syllable,B-3-1,,,Слог,
 21204,sardinian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-21205,sardinian,B-5,Penult,B-5-4,,,Пенультима,
-21206,sardinian,B-5,Antepenult,B-5-5,,,Антепенультима,
+21205,sardinian,B-5,Penult,B-5-5,,,Пенультима,
+21206,sardinian,B-5,Antepenult,B-5-6,,,Антепенультима,
 21207,sardinian,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 21208,sardinian,B-16,Phoneme,B-16-1,,,Фонема,"Метафония присутствует как живой процесс в логудорском диалекте С.я., исторически - в кампиданском диалекте и отсутствует в сассарском и галлурском диалектах."
 21209,sardinian,B-17,Openness/closedness,B-17-15,,,Открытость/закрытость,
@@ -21369,7 +21369,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21367,saryg_yugur,A-25,By palatalization,A-25-3,,,По палатализации,
 21368,saryg_yugur,B-3,Syllable,B-3-1,,,Слог,
 21369,saryg_yugur,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-21370,saryg_yugur,B-5,Ultima,B-5-3,,,Конечный слог,
+21370,saryg_yugur,B-5,Ultima,B-5-4,,,Конечный слог,
 21371,saryg_yugur,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
 21372,saryg_yugur,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 21373,saryg_yugur,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -21751,7 +21751,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21749,semnani,B-2,Dynamic,B-2-1,,,Динамическое,
 21750,semnani,B-3,Syllable,B-3-1,,,Слог,
 21751,semnani,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-21752,semnani,B-5,Ultima,B-5-3,,,Конечный слог,
+21752,semnani,B-5,Ultima,B-5-4,,,Конечный слог,
 21753,semnani,B-15,,,,,Противопоставление гласных по длительности отсутствует,Других данных нет.
 21754,semnani,B-16,Group of phonemes,B-16-2,,,Группа фонем,
 21755,semnani,B-18,,,,,Ударенные гласные в глагольных основах - исторический умлаут,
@@ -22067,7 +22067,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22065,shira_yugur,B-2,Dynamic,B-2-1,,,Динамическое,
 22066,shira_yugur,B-3,Syllable,B-3-1,,,Слог,
 22067,shira_yugur,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-22068,shira_yugur,B-5,Ultima,B-5-3,,,Конечный слог,
+22068,shira_yugur,B-5,Ultima,B-5-4,,,Конечный слог,
 22069,shira_yugur,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 22070,shira_yugur,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 22071,shira_yugur,D-6,Differences in phonetic structure,D-6-2,,,Различия в фонетическом составе,
@@ -22373,7 +22373,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22371,sindhi,B-2,Dynamic,B-2-1,,,Динамическое,
 22372,sindhi,B-3,Syllable,B-3-1,,,Слог,
 22373,sindhi,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-22374,sindhi,B-5,Penult,B-5-4,Additional research needed,,Пенультима,Вопрос изучен недостаточно
+22374,sindhi,B-5,Penult,B-5-5,Additional research needed,,Пенультима,Вопрос изучен недостаточно
 22375,sindhi,B-9,Not applicable,B-9-6,,,Неприменимо,
 22376,sindhi,B-15,Phonological,B-15-1,,,Фонологическая,
 22377,sindhi,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
@@ -22465,7 +22465,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22463,sinhala,B-1,Non-phonological,B-1-3,,,Нефонологическое,
 22464,sinhala,B-3,Syllable,B-3-1,,,Слог,
 22465,sinhala,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-22466,sinhala,B-5,Not applicable,B-5-6,,,Неприменимо,
+22466,sinhala,B-5,Not applicable,B-5-7,,,Неприменимо,
 22467,sinhala,B-9,Not applicable,B-9-6,,,Неприменимо,
 22468,sinhala,B-16,All vowels,B-16-6,,,Все гласные слова,
 22469,sinhala,B-17,Height,B-17-3,,,Подъем,
@@ -23195,9 +23195,9 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23193,spanish,B-2,Dynamic,B-2-1,,,Динамическое,
 23194,spanish,B-3,Syllable,B-3-1,,,Слог,
 23195,spanish,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,Сложные слова имеют два основных ударения.
-23196,spanish,B-5,Ultima,B-5-3,,,Конечный слог,В формах императива и герундия с местоименными энклитиками ударение может быть на четвертом или пятом от конца слоге.
-23197,spanish,B-5,Penult,B-5-4,,,Пенультима,В формах императива и герундия с местоименными энклитиками ударение может быть на четвертом или пятом от конца слоге.
-23198,spanish,B-5,Antepenult,B-5-5,,,Антепенультима,В формах императива и герундия с местоименными энклитиками ударение может быть на четвертом или пятом от конца слоге.
+23196,spanish,B-5,Ultima,B-5-4,,,Конечный слог,В формах императива и герундия с местоименными энклитиками ударение может быть на четвертом или пятом от конца слоге.
+23197,spanish,B-5,Penult,B-5-5,,,Пенультима,В формах императива и герундия с местоименными энклитиками ударение может быть на четвертом или пятом от конца слоге.
+23198,spanish,B-5,Antepenult,B-5-6,,,Антепенультима,В формах императива и герундия с местоименными энклитиками ударение может быть на четвертом или пятом от конца слоге.
 23199,spanish,B-15,Phonological,B-15-1,,,Фонологическая,Есть долгий дрожащий сонант /r/.
 23200,spanish,B-19,,,,,"Назализация, соноризация, палатализация, веляризация, спирантизация и фарингализация",
 23201,spanish,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -23297,7 +23297,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23295,standard_eastern_armenian,B-2,Mixed,B-2-4,,,Смешанное,
 23296,standard_eastern_armenian,B-3,Syllable,B-3-1,,,Слог,
 23297,standard_eastern_armenian,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,Есть ряд исключений
-23298,standard_eastern_armenian,B-5,Ultima,B-5-3,,,Конечный слог,Есть ряд исключений
+23298,standard_eastern_armenian,B-5,Ultima,B-5-4,,,Конечный слог,Есть ряд исключений
 23299,standard_eastern_armenian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 23300,standard_eastern_armenian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 23301,standard_eastern_armenian,D-1,Limited set of consonants and vowels possible,D-1-7,,,Ограниченный набор гласных и согласных,
@@ -23391,7 +23391,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23389,standard_western_armenian,B-2,Mixed,B-2-4,,,Смешанное,
 23390,standard_western_armenian,B-3,Syllable,B-3-1,,,Слог,
 23391,standard_western_armenian,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,но есть исключения
-23392,standard_western_armenian,B-5,Ultima,B-5-3,,,Конечный слог,но есть исключения
+23392,standard_western_armenian,B-5,Ultima,B-5-4,,,Конечный слог,но есть исключения
 23393,standard_western_armenian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 23394,standard_western_armenian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 23395,standard_western_armenian,D-1,Limited set of consonants and vowels possible,D-1-7,,,Ограниченный набор гласных и согласных,
@@ -23526,7 +23526,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23524,surkhei,B-3,Syllable,B-3-1,,,Слог,
 23525,surkhei,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 23526,surkhei,B-5,First syllable of word,B-5-1,,,Начальный слог,
-23527,surkhei,B-5,Ultima,B-5-3,,,Конечный слог,
+23527,surkhei,B-5,Ultima,B-5-4,,,Конечный слог,
 23528,surkhei,D-6,Accentual differences,D-6-3,,,Акцентные различия,
 23529,surkhei,E-1,Fusional,E-1-3,,,Флективный,
 23530,surkhei,E-2,Internal flection and cumulative flections,E-2-10,,,Внутренняя флексия и кумулятивность флексий,
@@ -24019,7 +24019,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24017,tajik,B-2,Dynamic,B-2-1,,,Динамическое,
 24018,tajik,B-3,Syllable,B-3-1,,,Слог,В потоке речи главным становится фразовое ударение на конец синтагмы.
 24019,tajik,B-4,,,,,Неподвижное фиксированное,
-24020,tajik,B-5,Ultima,B-5-3,,,Конечный слог,
+24020,tajik,B-5,Ultima,B-5-4,,,Конечный слог,
 24021,tajik,B-9,Not applicable,B-9-6,,,Неприменимо,
 24022,tajik,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 24023,tajik,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
@@ -24199,7 +24199,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24197,talysh,B-3,Syllable,B-3-1,,,Слог,
 24198,talysh,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 24199,talysh,B-5,First syllable of word,B-5-1,,,Начальный слог,
-24200,talysh,B-5,Ultima,B-5-3,,,Конечный слог,
+24200,talysh,B-5,Ultima,B-5-4,,,Конечный слог,
 24201,talysh,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 24202,talysh,B-16,,,,,"Частичный сингармонизм, ассимиляция гласных в пределах словоформы",Других данных нет.
 24203,talysh,B-17,,,,,Ряд и долгота,Других данных нет.
@@ -24395,7 +24395,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24393,tatar,B-2,Mixed,B-2-4,,,Смешанное,
 24394,tatar,B-3,Syllable,B-3-1,,,Слог,
 24395,tatar,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-24396,tatar,B-5,Ultima,B-5-3,,,Конечный слог,
+24396,tatar,B-5,Ultima,B-5-4,,,Конечный слог,
 24397,tatar,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 24398,tatar,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 24399,tatar,D-1,No vowel clusters and no consonant clusters,D-1-8,,,Запрет на любые стечения гласных и согласных,
@@ -24469,7 +24469,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24467,tati,B-2,Dynamic,B-2-1,,,Динамическое,
 24468,tati,B-3,Syllable,B-3-1,,,Слог,
 24469,tati,B-4,,,,,Неподвижное фиксированное,Есть второстепенное ударение.
-24470,tati,B-5,Not applicable,B-5-6,,,Неприменимо,
+24470,tati,B-5,Not applicable,B-5-7,,,Неприменимо,
 24471,tati,B-9,Not applicable,B-9-6,,,Неприменимо,
 24472,tati,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,
 24473,tati,B-16,Affix,B-16-3,,,Аффикс,
@@ -25229,7 +25229,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25226,tofalar,A-22,Absent,A-22-1,,,Отсутствуют,"Согласные перед и всегда палатализуются, а перед I остаются твердыми или чуть смягченными."
 25227,tofalar,B-3,Syllable,B-3-1,,,Слог,
 25228,tofalar,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-25229,tofalar,B-5,Ultima,B-5-3,,,Конечный слог,
+25229,tofalar,B-5,Ultima,B-5-4,,,Конечный слог,
 25230,tofalar,D-7,Accompanying,D-7-2,,,Сопутствующие,
 25231,tofalar,E-1,Agglutinative,E-1-1,,,Агглютинативный,
 25232,tofalar,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
@@ -25510,7 +25510,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25507,turkish,B-2,Mixed,B-2-4,,,Смешанное,
 25508,turkish,B-3,Syllable,B-3-1,,,Слог,
 25509,turkish,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-25510,turkish,B-5,Ultima,B-5-3,,,Конечный слог,
+25510,turkish,B-5,Ultima,B-5-4,,,Конечный слог,
 25511,turkish,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
 25512,turkish,B-18,First vowel of word (root),B-18-6,,,Первый гласный слова (=корня),
 25513,turkish,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -25582,7 +25582,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25579,turkmen,A-24,"Labial, coronal, dorsal and guttural",A-24-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
 25580,turkmen,B-2,Dynamic,B-2-1,,,Динамическое,
 25581,turkmen,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-25582,turkmen,B-5,Ultima,B-5-3,,,Конечный слог,
+25582,turkmen,B-5,Ultima,B-5-4,,,Конечный слог,
 25583,turkmen,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
 25584,turkmen,B-18,First vowel of word (root),B-18-6,,,Первый гласный слова (=корня),
 25585,turkmen,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -25699,7 +25699,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25696,tuvan,B-2,Mixed,B-2-4,,,Смешанное,
 25697,tuvan,B-3,Syllable,B-3-1,,,Слог,
 25698,tuvan,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-25699,tuvan,B-5,Ultima,B-5-3,,,Конечный слог,
+25699,tuvan,B-5,Ultima,B-5-4,,,Конечный слог,
 25700,tuvan,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 25701,tuvan,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 25702,tuvan,E-1,Agglutinative,E-1-1,,,Агглютинативный,
@@ -25823,7 +25823,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25820,udihe,B-2,Mixed,B-2-4,,,Смешанное,
 25821,udihe,B-3,Syllable,B-3-1,,,Слог,
 25822,udihe,B-5,First syllable of word,B-5-1,,,Начальный слог,
-25823,udihe,B-5,Ultima,B-5-3,,,Конечный слог,
+25823,udihe,B-5,Ultima,B-5-4,,,Конечный слог,
 25824,udihe,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 25825,udihe,C-2,Most syllables have a null coda,C-2-4,,,Большинство слогов открытые,
 25826,udihe,D-1,"Limited set of consonants possible, no consonant clusters",D-1-9,,,Ограниченный набор согласных и запрет на любые стечения согласных,
@@ -25876,7 +25876,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25873,udmurt,B-2,Dynamic,B-2-1,,,Динамическое,
 25874,udmurt,B-3,Syllable,B-3-1,,,Слог,
 25875,udmurt,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-25876,udmurt,B-5,Ultima,B-5-3,,,Конечный слог,
+25876,udmurt,B-5,Ultima,B-5-4,,,Конечный слог,
 25877,udmurt,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 25878,udmurt,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 25879,udmurt,D-1,No consonant clusters,D-1-6,,,Запрет на любые стечения согласных,
@@ -26003,7 +26003,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26000,uighur,B-2,Dynamic,B-2-1,,,Динамическое,
 26001,uighur,B-3,Syllable,B-3-1,,,Слог,
 26002,uighur,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-26003,uighur,B-5,Ultima,B-5-3,,,Конечный слог,
+26003,uighur,B-5,Ultima,B-5-4,,,Конечный слог,
 26004,uighur,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 26005,uighur,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 26006,uighur,D-7,Accompanying,D-7-2,,,Сопутствующие,
@@ -26219,7 +26219,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26216,urartian,B-2,Dynamic,B-2-1,,,Динамическое,
 26217,urartian,B-3,Syllable,B-3-1,,,Слог,
 26218,urartian,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-26219,urartian,B-5,Penult,B-5-4,,,Пенультима,
+26219,urartian,B-5,Penult,B-5-5,,,Пенультима,
 26220,urartian,B-15,Non-phonological,B-15-2,,,Нефонологическая,
 26221,urartian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 26222,urartian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -26284,7 +26284,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26281,uzbek,B-2,Mixed,B-2-4,,,Смешанное,
 26282,uzbek,B-3,Syllable,B-3-1,,,Слог,
 26283,uzbek,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-26284,uzbek,B-5,Ultima,B-5-3,,,Конечный слог,
+26284,uzbek,B-5,Ultima,B-5-4,,,Конечный слог,
 26285,uzbek,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 26286,uzbek,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 26287,uzbek,E-1,Agglutinative,E-1-1,,,Агглютинативный,
@@ -26683,7 +26683,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26680,wakhi,B-3,Syllable,B-3-1,,,Слог,
 26681,wakhi,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 26682,wakhi,B-5,First syllable of word,B-5-1,,,Начальный слог,
-26683,wakhi,B-5,Ultima,B-5-3,,,Конечный слог,
+26683,wakhi,B-5,Ultima,B-5-4,,,Конечный слог,
 26684,wakhi,B-15,Non-phonological,B-15-2,,,Нефонологическая,"Позиционные варианты гласных фонем - долгие, краткие и сверхкраткие."
 26685,wakhi,B-19,,,,,"Смягчение и назализация заднеязычных, оглушение (неполнозвонкость ) звонких и вокализация (неполносмычность) смычных согласных, сокращение и/или редукция гласных",
 26686,wakhi,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -26921,7 +26921,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26918,welsh,B-2,Weak dynamic,B-2-5,,,Слабо-динамическое,
 26919,welsh,B-3,Syllable,B-3-1,,,Слог,
 26920,welsh,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-26921,welsh,B-5,Antepenult,B-5-5,,,Антепенультима,Отмечается второстепенное ударение на первом слоге многосложных слов.
+26921,welsh,B-5,Antepenult,B-5-6,,,Антепенультима,Отмечается второстепенное ударение на первом слоге многосложных слов.
 26922,welsh,B-9,Two,B-9-1,,,Два,
 26923,welsh,B-11,,,,,Высокий/низкий,
 26924,welsh,B-14,Syllable,B-14-1,,,Слог,
@@ -27187,7 +27187,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 27184,yakut,B-1,Non-phonological,B-1-3,,,Нефонологическое,
 27185,yakut,B-3,Syllable,B-3-1,,,Слог,
 27186,yakut,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-27187,yakut,B-5,Ultima,B-5-3,,,Конечный слог,
+27187,yakut,B-5,Ultima,B-5-4,,,Конечный слог,
 27188,yakut,B-15,Phonological,B-15-1,,,Фонологическая,
 27189,yakut,B-17,Backness and roundedness,B-17-7,,,Ряд и лабиализация,
 27190,yakut,B-18,First vowel of word (root),B-18-6,,,Первый гласный слова (=корня),
@@ -27254,7 +27254,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 27251,yaoure,B-2,,,,,нет данных,
 27252,yaoure,B-3,Syllable,B-3-1,,,Слог,
 27253,yaoure,B-4,Single-place fixed,B-4-1,,,Одноместно фиксированное,
-27254,yaoure,B-5,Ultima,B-5-3,,,Конечный слог,
+27254,yaoure,B-5,Ultima,B-5-4,,,Конечный слог,
 27255,yaoure,B-9,,,,,Более трёх,
 27256,yaoure,B-14,Syllable,B-14-1,,,Слог,
 27257,yaoure,B-15,Non-phonological,B-15-2,,,Нефонологическая,
@@ -27400,7 +27400,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 27397,yazdi_and_kermani,B-3,Syllable,B-3-1,,,Слог,
 27398,yazdi_and_kermani,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
 27399,yazdi_and_kermani,B-5,First syllable of word,B-5-1,,,Начальный слог,
-27400,yazdi_and_kermani,B-5,Ultima,B-5-3,,,Конечный слог,
+27400,yazdi_and_kermani,B-5,Ultima,B-5-4,,,Конечный слог,
 27401,yazdi_and_kermani,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 27402,yazdi_and_kermani,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 27403,yazdi_and_kermani,D-3,,,,,Допустим тип слога из одного гласного,
@@ -27865,9 +27865,9 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 27862,zemiaki,B-2,Dynamic,B-2-1,,,Динамическое,
 27863,zemiaki,B-3,Syllable,B-3-1,,,Слог,
 27864,zemiaki,B-4,,,,,Неподвижное фиксированное,
-27865,zemiaki,B-5,Ultima,B-5-3,,,Конечный слог,
-27866,zemiaki,B-5,Penult,B-5-4,,,Пенультима,
-27867,zemiaki,B-5,Antepenult,B-5-5,,,Антепенультима,
+27865,zemiaki,B-5,Ultima,B-5-4,,,Конечный слог,
+27866,zemiaki,B-5,Penult,B-5-5,,,Пенультима,
+27867,zemiaki,B-5,Antepenult,B-5-6,,,Антепенультима,
 27868,zemiaki,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
 27869,zemiaki,D-1,No consonant clusters,D-1-6,,,Запрет на любые стечения согласных,
 27870,zemiaki,D-8,Mixed alternations,D-8-3,,,Смешанные,
