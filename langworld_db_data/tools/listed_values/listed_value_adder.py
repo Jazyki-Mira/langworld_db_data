@@ -274,12 +274,13 @@ class ListedValueAdder(ObjectWithPaths):
                     atomic_value_ids = row[KEY_FOR_VALUE_ID].split("&")
                     new_atomic_value_ids = []
                     for atomic_value_id in atomic_value_ids:
-                        if extract_value_index(atomic_value_id) < new_value_index:
+                        atomic_value_index = extract_value_index(atomic_value_id)
+                        if atomic_value_index < new_value_index:
                             new_atomic_value_ids.append(atomic_value_id)
                             continue
 
                         incremented_atomic_value_id = (
-                            f"{target_feature_id}{ID_SEPARATOR}{current_value_index + 1}"
+                            f"{target_feature_id}{ID_SEPARATOR}{atomic_value_index + 1}"
                         )
                         is_changed = True
                         new_atomic_value_ids.append(incremented_atomic_value_id)
