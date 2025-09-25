@@ -163,6 +163,6 @@ class ListedValueRenamer:
 
 if __name__ == "__main__":
     ListedValueRenamer().rename_value_in_profiles_and_inventories(
-        id_of_value_to_rename="",
-        new_value_name="",
+        id_of_value_to_rename="B-5-2",
+        new_value_name="Второй слог от начала",
     )  # pragma: no cover
