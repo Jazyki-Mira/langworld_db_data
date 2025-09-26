@@ -358,5 +358,5 @@ if __name__ == "__main__":
         feature_id="B-1",
         new_value_en="Phonological and non-phonological",
         new_value_ru="Фонологическая и нефонологическая",
-        index_to_assign=3
+        index_to_assign=3,
     )  # pragma: no cover
