@@ -29,7 +29,7 @@ B-1,Stress character,,,Тип ударения
 B-2,Stress type,,,Вид ударения
 B-3,Stress carrier,,,Носитель ударения
 B-4,Stress fixedness,,,Фиксированность ударения
-B-5,Fixed stress carrier,,,Носитель фиксированного ударения в слове
+B-5,Limited stress carriers,,,Носители ограниченного (разноместного) ударения
 B-6,Fixed stress types,,,Типы связанного ударения
 B-7,Stress pattern in inflection,,,Тип ударения при формообразовании (словоизменении)
 B-8,Strictly fixed stress type (by position in a word),,,Тип строго фиксированного ударения (по положению в слове)
