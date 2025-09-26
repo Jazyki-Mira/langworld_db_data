@@ -310,10 +310,8 @@
 - Неподвижно фиксированное: [кховар](../feature_profiles/khowar.csv)
 - Неподвижное фиксированное: [дари](../feature_profiles/dari.csv), [Фарса диалекты](../feature_profiles/fars_dialects.csv), [хазара](../feature_profiles/hazaragi.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [древнеперсидский](../feature_profiles/old_persian.csv), [персидский](../feature_profiles/persian.csv), [таджикский](../feature_profiles/tajik.csv), [татский](../feature_profiles/tati.csv), [ашкун](../feature_profiles/ashkun.csv), [глангали](../feature_profiles/grangali.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [кати](../feature_profiles/kati.csv), [пашаи](../feature_profiles/pashai.csv), [пхалура](../feature_profiles/phalura.csv), [шина](../feature_profiles/shina.csv), [земиаки](../feature_profiles/zemiaki.csv)
 - Одноместно фиксированное и разноместное нефиксированное: [кашубский](../feature_profiles/kashubian.csv)
-- Свободное: [дамели](../feature_profiles/dameli.csv), [гарви](../feature_profiles/garwi.csv), [гавар](../feature_profiles/gawar.csv)
 - Ударение условно свободное: [сербохорватский](../feature_profiles/serbocroatian.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
-- нет данных: [милийский](../feature_profiles/milyan.csv)
 ## B-5: Носители ограниченного (разноместного) ударения
 
 - Гласный основы в личных глагольных фоормах или конечный гласный слова: [бартангский](../feature_profiles/bartangi.csv)
