@@ -285,7 +285,7 @@ class ListedValueAdder(ObjectWithPaths):
                         is_changed = True
                         new_atomic_value_ids.append(incremented_atomic_value_id)
                     row[KEY_FOR_VALUE_ID] = "&".join(new_atomic_value_ids)
-                    print(f"Writing new fine with combined values for {file.stem}")
+                    print(f"Writing new file with combined values for {file.stem}")
 
                 else:
                     current_value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
@@ -356,7 +356,7 @@ class ListedValueAdder(ObjectWithPaths):
 if __name__ == "__main__":
     ListedValueAdder().add_listed_value(
         feature_id="B-5",
-        new_value_en="Any syllable except for ultima",
-        new_value_ru="На любой слог, кроме последнего",
-        index_to_assign=7,
+        new_value_en="Not stated",
+        new_value_ru="Нет данных",
+        index_to_assign=8,
     )  # pragma: no cover
