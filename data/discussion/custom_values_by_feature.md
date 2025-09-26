@@ -288,7 +288,6 @@
 - Ударение в текстах не зафиксировано: [бактрийский](../feature_profiles/bactrian.csv)
 - Фонетический характер ударения не изучен: [сарыкольский](../feature_profiles/sariqoli.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
-- нет данных: [карийский](../feature_profiles/carian.csv), [милийский](../feature_profiles/milyan.csv)
 - ничего неизвестно, plene интерпретируют как долготу: [палайский](../feature_profiles/palaic.csv)
 ## B-2: Вид ударения (качественные характеристики)
 
