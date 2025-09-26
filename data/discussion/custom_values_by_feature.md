@@ -290,7 +290,7 @@
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
 - нет данных: [карийский](../feature_profiles/carian.csv), [милийский](../feature_profiles/milyan.csv)
 - ничего неизвестно, plene интерпретируют как долготу: [палайский](../feature_profiles/palaic.csv)
-## B-2: Вид ударения
+## B-2: Вид ударения (качественные характеристики)
 
 - Динамическое и (поли)тоническое: [словенский](../feature_profiles/slovene.csv)
 - Динамическое и тоновое: [дамели](../feature_profiles/dameli.csv)
@@ -300,7 +300,6 @@
 - акцентное чередование по хореическому типу: [ительменский](../feature_profiles/itelmen.csv)
 - демаркативная функция, место в слове о границах слова и ударной синтагмы: [древнеармянский](../feature_profiles/classical_armenian.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
-- нет данных: [ликийский](../feature_profiles/lycian.csv), [милийский](../feature_profiles/milyan.csv), [яурэ](../feature_profiles/yaoure.csv)
 - чередование слогов по хореистическому типу: [чукотский](../feature_profiles/chukchi.csv)
 ## B-3: Носитель ударения
 
