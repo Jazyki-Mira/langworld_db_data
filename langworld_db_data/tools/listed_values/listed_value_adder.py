@@ -355,7 +355,8 @@ class ListedValueAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     ListedValueAdder().add_listed_value(
-        feature_id="B-2",
-        new_value_en="Not applicable",
-        new_value_ru="Неприменимо",
+        feature_id="B-1",
+        new_value_en="Phonological and non-phonological",
+        new_value_ru="Фонологическая и нефонологическая",
+        index_to_assign=3
     )  # pragma: no cover
