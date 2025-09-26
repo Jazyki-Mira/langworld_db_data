@@ -281,7 +281,7 @@
 - Лабиальные, переднеязычные, увулярные и фарингальные: [Фарса диалекты](../feature_profiles/fars_dialects.csv), [хазара](../feature_profiles/hazaragi.csv), [ларская группа диалектов](../feature_profiles/larestani_dialects.csv), [лурская и бахтиярская группа диалектов](../feature_profiles/luri_bakhtiari_dialects.csv), [древнеперсидский](../feature_profiles/old_persian.csv)
 - Переднеязычные, среднеязычные, увулярные и ларингальные: [катаркалаи](../feature_profiles/katarkalai.csv)
 - Переднеязычные, среднеязычные, увулярные и постувулярные: [давани](../feature_profiles/davani.csv)
-## B-1: Тип ударения
+## B-1: Характеристика просодической единицы по ее мотивации выбора акцентной вершины
 
 - Данных нет: [сусу](../feature_profiles/susu.csv)
 - Данных об ударении в И.я. нет: [ирула](../feature_profiles/irula.csv)
