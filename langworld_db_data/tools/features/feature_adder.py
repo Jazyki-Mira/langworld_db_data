@@ -406,5 +406,38 @@ class FeatureAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     FeatureAdder().add_feature(
-        category_id="", feature_en="", feature_ru="", listed_values_to_add=[]
+        category_id="B",
+        feature_en="Number of contour tone levels",
+        feature_ru="Количество уровней контурных тонов",
+        listed_values_to_add=[
+            {
+                "en": "Two",
+                "ru": "Два",
+            },
+            {
+                "en": "Three",
+                "ru": "Три",
+            },
+            {
+                "en": "Four",
+                "ru": "Четыре",
+            },
+            {
+                "en": "Five",
+                "ru": "Пять",
+            },
+            {
+                "en": "More than five",
+                "ru": "Больше пяти",
+            },
+            {
+                "en": "Not stated",
+                "ru": "Нет данных",
+            },
+            {
+                "en": "Not applicable",
+                "ru": "Неприменимо",
+            },
+        ],
+        index_to_assign=13,
     )  # pragma: no cover
