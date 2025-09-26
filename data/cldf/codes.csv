@@ -199,21 +199,15 @@ A-26-1,A-26,Mid and lateral,,Средние и боковые
 B-1-1,B-1,Phonological,,Фонологическая
 B-1-2,B-1,Non-phonological,,Нефонологическая
 B-1-3,B-1,Phonological and non-phonological,,Фонологическая и нефонологическая
-B-1-4,B-1,Not stated,,Нет данных
-B-1-5,B-1,Not applicable,,Неприменимо
 B-2-1,B-2,Dynamic,,Динамическое
 B-2-2,B-2,Quantitative,,Количественное
 B-2-3,B-2,Pitch-accent,,Музыкальное
 B-2-4,B-2,Pitch-accent and dynamic,,Музыкально-динамическое
-B-2-5,B-2,Not stated,,Нет данных
-B-2-6,B-2,Not applicable,,Неприменимо
 B-3-1,B-3,Syllable,,Слог
 B-3-2,B-3,Mora,,Мора
 B-3-3,B-3,Word,,Слово
 B-4-1,B-4,Flexible,,Свободное
 B-4-2,B-4,Fixed,,Связанное
-B-4-3,B-4,Not stated,,Нет данных
-B-4-4,B-4,Not applicable,,Неприменимо
 B-5-1,B-5,First syllable of word,,Начальный слог
 B-5-2,B-5,Second syllable from beginning,,Второй слог от начала
 B-5-3,B-5,Third syllable from the beginning,,Третий слог от начала
@@ -221,39 +215,27 @@ B-5-4,B-5,Ultima,,Конечный слог
 B-5-5,B-5,Penult,,Второй слог от конца слова
 B-5-6,B-5,Antepenult,,Третий слог от конца слова
 B-5-7,B-5,Any syllable except for ultima,,"На любой слог, кроме последнего"
-B-5-8,B-5,Not stated,,Нет данных
-B-5-9,B-5,Not applicable,,Неприменимо
 B-6-1,B-6,Strictly fixed,,Строго фиксированное
 B-6-2,B-6,Limited,,Ограниченное
-B-6-3,B-6,Not stated,,Нет данных
-B-6-4,B-6,Not applicable,,Неприменимо
 B-7-1,B-7,Flexible,,Подвижное
 B-7-2,B-7,Fixed,,Неподвижное
 B-7-3,B-7,Flexible and fixed,,Подвижное и неподвижное
-B-7-4,B-7,Not stated,,Нет данных
-B-7-5,B-7,Not applicable,,Неприменимо
 B-8-1,B-8,First syllable,,На первом слоге от начала слова
 B-8-2,B-8,Second syllable,,На втором слоге от начала слова
 B-8-3,B-8,Third syllable,,На третьем слоге от начала слова
 B-8-4,B-8,Antepenult,,На третьем слоге от конца слова
 B-8-5,B-8,Penult,,На втором слоге от конца слова
 B-8-6,B-8,Ultima,,На последнем слоге в слове
-B-8-7,B-8,Not stated,,Нет данных
-B-8-8,B-8,Not applicable,,Неприменимо
 B-9-1,B-9,Two,,Два
 B-9-2,B-9,Three,,Три
 B-9-3,B-9,Four,,Четыре
 B-9-4,B-9,Five and more,,Пять и более
-B-9-5,B-9,Not stated,,Нет данных
-B-9-6,B-9,Not applicable,,Неприменимо
 B-10-1,B-10,Level,,Уровневые
 B-10-2,B-10,Contour,,Контурные
 B-10-3,B-10,Register and contour,,Регистровые и контурные
 B-10-4,B-10,Combinatorial tones,,Комбинаторные тоны
 B-10-5,B-10,Broken tones,,Ломаные тоны
 B-10-6,B-10,Combination of tone and phonation features,,Сочетание тона с фонационными характеристиками
-B-10-7,B-10,Not stated,,Нет данных
-B-10-8,B-10,Not applicable,,Неприменимо
 B-11-1,B-11,Rising,,Восходящий
 B-11-2,B-11,Rising by 1-2 levels,,Восходящий на 1-2 уровня
 B-11-3,B-11,Rising by 3 and more levels,,Восходящий на 3 и более уровней
@@ -262,22 +244,16 @@ B-11-5,B-11,Falling by 1-2 levels,,Нисходящий на 1-2 уровня
 B-11-6,B-11,Falling by 3 and more levels,,Нисходящий на 3 и более уровней
 B-11-7,B-11,Falling-rising,,Нисходяще-восходящий
 B-11-8,B-11,Rising-falling,,Восходяще-нисходящий
-B-11-9,B-11,Not stated,,Нет данных
-B-11-10,B-11,Not applicable,,Неприменимо
 B-12-1,B-12,Ultra-high,,Сверхвысокий
 B-12-2,B-12,High,,Высокий
 B-12-3,B-12,Middle,,Средний
 B-12-4,B-12,Low,,Низкий
 B-12-5,B-12,Ultra-low,,Ультранизкий
-B-12-6,B-12,Not stated,,Нет данных
-B-12-7,B-12,Not applicable,,Неприменимо
 B-13-1,B-13,Two,,Два
 B-13-2,B-13,Three,,Три
 B-13-3,B-13,Four,,Четыре
 B-13-4,B-13,Five,,Пять
 B-13-5,B-13,More than five,,Больше пяти
-B-13-6,B-13,Not stated,,Нет данных
-B-13-7,B-13,Not applicable,,Неприменимо
 B-14-1,B-14,Syllable,,Слог
 B-14-2,B-14,Word,,Слово
 B-14-3,B-14,Syllable or word,,Слог или слово
