@@ -1017,7 +1017,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1016,aromanian,B-2,Dynamic,B-2-1,,,Динамическое,
 1017,aromanian,B-3,Syllable,B-3-1,,,Слог,
 1018,aromanian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-1019,aromanian,B-5,Not applicable,B-5-7,,,Неприменимо,
+1019,aromanian,B-5,Not applicable,B-5-8,,,Неприменимо,
 1020,aromanian,B-15,Non-phonological,B-15-2,,,Нефонологическая,В фаршеротском говоре зафиксированы долгие гласные.
 1021,aromanian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 1022,aromanian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -3503,7 +3503,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3502,catalan,B-2,Dynamic,B-2-1,,,Динамическое,
 3503,catalan,B-3,Syllable,B-3-1,,,Слог,
 3504,catalan,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-3505,catalan,B-5,Not applicable,B-5-7,,,Неприменимо,
+3505,catalan,B-5,Not applicable,B-5-8,,,Неприменимо,
 3506,catalan,B-15,Phonological,B-15-1,,,Фонологическая,Есть долгий дрожащий сонант /r:/. Долгота гласных фонологически нерелевантна.
 3507,catalan,B-19,,,,,"Фонация, геминация и веляризация",
 3508,catalan,B-20,Stiff voice and slack voice,B-20-2,,,Напряженная и слабая,
@@ -4638,7 +4638,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4637,dalmatian,B-2,Dynamic,B-2-1,,,Динамическое,
 4638,dalmatian,B-3,Syllable,B-3-1,,,Слог,
 4639,dalmatian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-4640,dalmatian,B-5,Not applicable,B-5-7,,,Неприменимо,Преобладают парокситоны и пропарокситоны
+4640,dalmatian,B-5,Not applicable,B-5-8,,,Неприменимо,Преобладают парокситоны и пропарокситоны
 4641,dalmatian,B-19,,,,,Веляризация и элизия,
 4642,dalmatian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
 4643,dalmatian,C-2,Both null and non-null ocoda possible,C-2-5,,,Есть закрытые и открытые слоги,
@@ -5365,7 +5365,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5364,domari,B-1,Phonological,B-1-2,,,Фонологическое,
 5365,domari,B-3,Syllable,B-3-1,,,Слог,
 5366,domari,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-5367,domari,B-5,Not applicable,B-5-7,Depends on accentological properties of morpheme,,Неприменимо,Зависит от акцентуалогического статуса морфемы
+5367,domari,B-5,Not applicable,B-5-8,Depends on accentological properties of morpheme,,Неприменимо,Зависит от акцентуалогического статуса морфемы
 5368,domari,B-9,Not applicable,B-9-6,,,Неприменимо,
 5369,domari,B-16,No vowel harmony,B-16-9,,,Гармоническое уподобление гласных отсутствует,
 5370,domari,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -9413,7 +9413,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9412,istriot,B-2,Dynamic,B-2-1,,,Динамическое,
 9413,istriot,B-3,Syllable,B-3-1,,,Слог,
 9414,istriot,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-9415,istriot,B-5,Not applicable,B-5-7,,,Неприменимо,
+9415,istriot,B-5,Not applicable,B-5-8,,,Неприменимо,
 9416,istriot,B-15,Phonological and rhythmic,B-15-5,,,Фонологическая и ритмическая,
 9417,istriot,B-19,,,,,"Эпентеза, апокопа и афереза гласных, протеза согласного",
 9418,istriot,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -9497,7 +9497,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9496,istro_romanian,B-2,Dynamic,B-2-1,,,Динамическое,
 9497,istro_romanian,B-3,Syllable,B-3-1,,,Слог,
 9498,istro_romanian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-9499,istro_romanian,B-5,Not applicable,B-5-7,,,Неприменимо,
+9499,istro_romanian,B-5,Not applicable,B-5-8,,,Неприменимо,
 9500,istro_romanian,B-19,,,,,"Назализация, йотирование, лабиализация/делабиализация",
 9501,istro_romanian,C-1,Most syllables have a non-null onset,C-1-3,,,Большинство слогов прикрытые,
 9502,istro_romanian,C-2,Most syllables have a non-null coda,C-2-3,,,Большинство слогов закрытые,
@@ -12521,7 +12521,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12520,konkani,B-1,Non-phonological,B-1-3,,,Нефонологическое,
 12521,konkani,B-3,Syllable,B-3-1,,,Слог,
 12522,konkani,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-12523,konkani,B-5,Not applicable,B-5-7,Depends on the quality of syllable sequences,,Неприменимо,Зависит от качества последовательности слогов
+12523,konkani,B-5,Not applicable,B-5-8,Depends on the quality of syllable sequences,,Неприменимо,Зависит от качества последовательности слогов
 12524,konkani,B-9,Not applicable,B-9-6,,,Неприменимо,
 12525,konkani,B-16,,,,,Фонологическое слово,
 12526,konkani,B-17,Height,B-17-3,,,Подъем,
@@ -13196,7 +13196,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13195,ladin,B-2,Dynamic,B-2-1,,,Динамическое,
 13196,ladin,B-3,Syllable,B-3-1,,,Слог,
 13197,ladin,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-13198,ladin,B-5,Not applicable,B-5-7,,,Неприменимо,
+13198,ladin,B-5,Not applicable,B-5-8,,,Неприменимо,
 13199,ladin,B-15,Phonological and non-phonological,B-15-4,,,Фонологическая и нефонологическая,Фонологическая в ударном слоге в верхнебадиотском и мареббанском диалектах.
 13200,ladin,B-19,,,,,"Палатализация, ротацизм, вокализация и фонация",
 13201,ladin,B-20,Slackened voice,B-20-9,,,Ослабленная,
@@ -15717,7 +15717,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15716,megleno_romanian,B-2,Dynamic,B-2-1,,,Динамическое,
 15717,megleno_romanian,B-3,Syllable,B-3-1,,,Слог,
 15718,megleno_romanian,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-15719,megleno_romanian,B-5,Not applicable,B-5-7,,,Неприменимо,
+15719,megleno_romanian,B-5,Not applicable,B-5-8,,,Неприменимо,
 15720,megleno_romanian,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,
 15721,megleno_romanian,B-19,,,,,Назализация и веляризация,
 15722,megleno_romanian,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -18953,7 +18953,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18952,pashto,B-2,Dynamic,B-2-1,,,Динамическое,
 18953,pashto,B-3,Syllable,B-3-1,,,Слог,
 18954,pashto,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-18955,pashto,B-5,Not applicable,B-5-7,,,Неприменимо,
+18955,pashto,B-5,Not applicable,B-5-8,,,Неприменимо,
 18956,pashto,B-15,Phonological and non-phonological,B-15-4,,,Фонологическая и нефонологическая,
 18957,pashto,B-19,Nasalization,B-19-1,,,Назализация,
 18958,pashto,C-1,Both null and non-null onset possible,C-1-5,,,Есть прикрытые и неприкрытые слоги,
@@ -22465,7 +22465,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22463,sinhala,B-1,Non-phonological,B-1-3,,,Нефонологическое,
 22464,sinhala,B-3,Syllable,B-3-1,,,Слог,
 22465,sinhala,B-4,Movable fixed,B-4-3,,,Разноместно фиксированное,
-22466,sinhala,B-5,Not applicable,B-5-7,,,Неприменимо,
+22466,sinhala,B-5,Not applicable,B-5-8,,,Неприменимо,
 22467,sinhala,B-9,Not applicable,B-9-6,,,Неприменимо,
 22468,sinhala,B-16,All vowels,B-16-6,,,Все гласные слова,
 22469,sinhala,B-17,Height,B-17-3,,,Подъем,
@@ -24469,7 +24469,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24467,tati,B-2,Dynamic,B-2-1,,,Динамическое,
 24468,tati,B-3,Syllable,B-3-1,,,Слог,
 24469,tati,B-4,,,,,Неподвижное фиксированное,Есть второстепенное ударение.
-24470,tati,B-5,Not applicable,B-5-7,,,Неприменимо,
+24470,tati,B-5,Not applicable,B-5-8,,,Неприменимо,
 24471,tati,B-9,Not applicable,B-9-6,,,Неприменимо,
 24472,tati,B-15,Non-phonological and rhythmic,B-15-6,,,Нефонологическая и ритмическая,
 24473,tati,B-16,Affix,B-16-3,,,Аффикс,

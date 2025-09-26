@@ -356,7 +356,7 @@ class ListedValueAdder(ObjectWithPaths):
 if __name__ == "__main__":
     ListedValueAdder().add_listed_value(
         feature_id="B-5",
-        new_value_en="Third syllable from the beginning",
-        new_value_ru="Третий слог от начала",
-        index_to_assign=3,
+        new_value_en="Any syllable except for ultima",
+        new_value_ru="На любой слог, кроме последнего",
+        index_to_assign=7,
     )  # pragma: no cover
