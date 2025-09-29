@@ -153,4 +153,4 @@ class FeatureRemover(ObjectWithPaths):
 
 
 if __name__ == "__main__":
-    FeatureRemover().remove_feature(feature_id="B-14")
+    FeatureRemover().remove_feature(feature_id="")

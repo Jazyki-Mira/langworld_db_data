@@ -163,6 +163,6 @@ class ListedValueRenamer:
 
 if __name__ == "__main__":
     ListedValueRenamer().rename_value_in_profiles_and_inventories(
-        id_of_value_to_rename="B-1-1",
-        new_value_name="Неприменимо",
+        id_of_value_to_rename="",
+        new_value_name="",
     )  # pragma: no cover

@@ -414,26 +414,8 @@ class FeatureAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     FeatureAdder().add_feature(
-        category_id="B",
-        feature_en="Basic prosodic unit",
-        feature_ru="Вид основной просодической единицы",
-        listed_values_to_add=[
-            {
-                "en": "Stress",
-                "ru": "Ударение",
-            },
-            {
-                "en": "Tones",
-                "ru": "Тоны",
-            },
-            {
-                "en": "Register",
-                "ru": "Регистр",
-            },
-            {
-                "en": "Stress and tones",
-                "ru": "Ударение и тоны",
-            },
-        ],
-        index_to_assign=1,
+        category_id="",
+        feature_en="",
+        feature_ru="",
+        listed_values_to_add=[],
     )  # pragma: no cover
