@@ -38,13 +38,12 @@ B-10,Tonema types,,,Виды тонем
 B-11,Contour tonema types,,,"Типы контурных (скользящих, модулярных, модулированных) тонем"
 B-12,Level tone types,,,"Типы уровневого (регистрового, ровного) тона"
 B-13,Number of contour tone levels,,,Количество уровней контурных тонов
-B-14,Tone carrier,,,Носитель тона
-B-15,Length character,,,Характер долготы
-B-16,Target of vowel harmony,,,Область гармонического уподобления гласных
-B-17,Feature of vowel harmony,,,Признак гармонического уподобления гласных
-B-18,Trigger of vowel harmony,,,Уподобляющий элемент при гармоническом уподоблении гласных
-B-19,Other suprasegmental phenomena,,,Прочие супрасегментные явления
-B-20,Types of phonation,,,Типы фонации
+B-14,Length character,,,Характер долготы
+B-15,Target of vowel harmony,,,Область гармонического уподобления гласных
+B-16,Feature of vowel harmony,,,Признак гармонического уподобления гласных
+B-17,Trigger of vowel harmony,,,Уподобляющий элемент при гармоническом уподоблении гласных
+B-18,Other suprasegmental phenomena,,,Прочие супрасегментные явления
+B-19,Types of phonation,,,Типы фонации
 C-1,Syllable onset,,,Начальный согласный в слоге
 C-2,Syllable coda,,,Конечный согласный в слоге
 D-1,Restrictions on the phonemic structure of segment morphemes in the initial position,,,Ограничения на фонемную структуру сегментных морфем в начальной позиции
