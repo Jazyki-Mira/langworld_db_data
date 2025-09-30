@@ -281,7 +281,10 @@
 - Лабиальные, переднеязычные, увулярные и фарингальные: [Фарса диалекты](../feature_profiles/fars_dialects.csv), [хазара](../feature_profiles/hazaragi.csv), [ларская группа диалектов](../feature_profiles/larestani_dialects.csv), [лурская и бахтиярская группа диалектов](../feature_profiles/luri_bakhtiari_dialects.csv), [древнеперсидский](../feature_profiles/old_persian.csv)
 - Переднеязычные, среднеязычные, увулярные и ларингальные: [катаркалаи](../feature_profiles/katarkalai.csv)
 - Переднеязычные, среднеязычные, увулярные и постувулярные: [давани](../feature_profiles/davani.csv)
-## B-2: Характеристика просодической единицы по ее мотивации выбора акцентной вершины
+## B-2: Носитель просодической единицы
+
+- не ясно: [хеттский](../feature_profiles/hittite.csv)
+## B-3: Характеристика просодической единицы по ее мотивации выбора акцентной вершины
 
 - Данных нет: [сусу](../feature_profiles/susu.csv)
 - Данных об ударении в И.я. нет: [ирула](../feature_profiles/irula.csv)
@@ -291,7 +294,7 @@
 - Фонетический характер ударения не изучен: [сарыкольский](../feature_profiles/sariqoli.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
 - ничего неизвестно, plene интерпретируют как долготу: [палайский](../feature_profiles/palaic.csv)
-## B-3: Вид ударения (качественные характеристики)
+## B-4: Вид ударения (качественные характеристики)
 
 - Динамическое и (поли)тоническое: [словенский](../feature_profiles/slovene.csv)
 - Динамическое и количественное: [полабский](../feature_profiles/polabian.csv)
@@ -304,9 +307,6 @@
 - демаркативная функция, место в слове о границах слова и ударной синтагмы: [древнеармянский](../feature_profiles/classical_armenian.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
 - чередование слогов по хореистическому типу: [чукотский](../feature_profiles/chukchi.csv)
-## B-4: Носитель просодической единицы
-
-- не ясно: [хеттский](../feature_profiles/hittite.csv)
 ## B-5: Фиксированность ударения
 
 - Неподвижно фиксированное: [кховар](../feature_profiles/khowar.csv)
@@ -315,7 +315,7 @@
 - Одноместно фиксированное и разноместное нефиксированное: [кашубский](../feature_profiles/kashubian.csv)
 - Ударение условно свободное: [сербохорватский](../feature_profiles/serbocroatian.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
-## B-6: Носители ограниченного (разноместного) ударения
+## B-9: Носители ограниченного (разноместного) ударения
 
 - Гласный основы в личных глагольных фоормах или конечный гласный слова: [бартангский](../feature_profiles/bartangi.csv)
 - Конечный слог основы: [катаркалаи](../feature_profiles/katarkalai.csv)
@@ -354,13 +354,13 @@
 - Префикс или последний слог, кроме постпозитивных элементов: изафетного показателя, неопределенного артикля и энклитических местоимений: [зефреи](../feature_profiles/zefrei.csv)
 - Префиксы или последний слог, кроме постпозтивных элементов: изафетного показателя, показателя неопределенности/единичности и энклитических местоимений: [вонишуни](../feature_profiles/vonishuni.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
-## B-10: Количество уровневых тонов (уровней регистровых (ровных) тонов)
+## B-11: Количество уровневых тонов (уровней регистровых (ровных) тонов)
 
 - Более трёх: [гарви](../feature_profiles/garwi.csv), [боко](../feature_profiles/boko.csv), [дан](../feature_profiles/dan.csv), [гбан](../feature_profiles/gban.csv), [гоо](../feature_profiles/goo.csv), [кла-дан](../feature_profiles/kla_dan.csv), [локо](../feature_profiles/loko.csv), [тура](../feature_profiles/tura.csv), [яурэ](../feature_profiles/yaoure.csv)
 - Неприменимо: [дари](../feature_profiles/dari.csv), [хазара](../feature_profiles/hazaragi.csv), [таджикский](../feature_profiles/tajik.csv), [татский](../feature_profiles/tati.csv), [бактрийский](../feature_profiles/bactrian.csv), [сарыкольский](../feature_profiles/sariqoli.csv), [язгулямский](../feature_profiles/yazghulami.csv), [гавар](../feature_profiles/gawar.csv), [глангали](../feature_profiles/grangali.csv), [калаша](../feature_profiles/kalasha.csv), [кашмири](../feature_profiles/kashmiri.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [пашаи](../feature_profiles/pashai.csv), [пхалура](../feature_profiles/phalura.csv), [ассамский](../feature_profiles/assamese.csv), [бенгальский](../feature_profiles/bengali.csv), [бходжпури](../feature_profiles/bhojpuri.csv), [домари](../feature_profiles/domari.csv), [гуджарати](../feature_profiles/gujarati.csv), [конкани](../feature_profiles/konkani.csv), [ломаврен](../feature_profiles/lomavren.csv), [магахи](../feature_profiles/magahi.csv), [майтхили](../feature_profiles/maithili.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [маратхи](../feature_profiles/marathi.csv), [ория](../feature_profiles/oriya.csv), [раджбанши/камта (в Индии и Бангладеш)](../feature_profiles/rajbanshi_kamta.csv), [раджбанши (Непал)](../feature_profiles/rajbanshi_nepal.csv), [цыганский](../feature_profiles/romani.csv), [садани/садри](../feature_profiles/sadani_sadri.csv), [саураштра](../feature_profiles/saurashtra.csv), [синдхи](../feature_profiles/sindhi.csv), [сингальский](../feature_profiles/sinhala.csv), [тамильский](../feature_profiles/tamil.csv)
 - Предположительно можно реконструировать фарингализованный тон - просодическая "эризация": [хотаносакский](../feature_profiles/khotanese.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
-## B-12: Типы контурных (скользящих, модулярных, модулированных) тонем
+## B-14: Типы контурных (скользящих, модулярных, модулированных) тонем
 
 - Восходящий, нисходящий и нисходяще-восходящий: [английский](../feature_profiles/english.csv)
 - Восходящий, нисходящий и циркумфлексный: [дамели](../feature_profiles/dameli.csv)

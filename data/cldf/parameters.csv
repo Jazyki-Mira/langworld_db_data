@@ -26,19 +26,19 @@ A-24,Inventory of sonorants by place of articulation,,,Инвентарь сон
 A-25,Additional articulatory oppositions of sonorants,,,Дополнительные противопоставления сонорных согласных
 A-26,Inventory of fricatives by place of articulation,,,Инвентарь фрикативных согласных по месту образования
 B-1,Basic prosodic unit,,,Вид основной просодической единицы
-B-2,Character of prosodic unit by its choice,,,Характеристика просодической единицы по ее мотивации выбора акцентной вершины
-B-3,Stress type (quality characteristics),,,Вид ударения (качественные характеристики)
-B-4,Prosodic unit carrier,,,Носитель просодической единицы
+B-2,Prosodic unit carrier,,,Носитель просодической единицы
+B-3,Character of prosodic unit by its choice,,,Характеристика просодической единицы по ее мотивации выбора акцентной вершины
+B-4,Stress type (quality characteristics),,,Вид ударения (качественные характеристики)
 B-5,Stress fixedness,,,Фиксированность ударения
-B-6,Limited stress carriers,,,Носители ограниченного (разноместного) ударения
-B-7,Fixed stress types,,,Типы связанного ударения
-B-8,Stress pattern in inflection,,,Тип ударения при формообразовании (словоизменении)
-B-9,Strictly fixed stress type (by position in a word),,,Тип строго фиксированного ударения (по положению в слове)
-B-10,Number of level tones,,,Количество уровневых тонов (уровней регистровых (ровных) тонов)
-B-11,Tonema types,,,Виды тонем
-B-12,Contour tonema types,,,"Типы контурных (скользящих, модулярных, модулированных) тонем"
-B-13,Level tone types,,,"Типы уровневого (регистрового, ровного) тона"
-B-14,Number of contour tone levels,,,Количество уровней контурных тонов
+B-6,Fixed stress types,,,Типы связанного ударения
+B-7,Stress pattern in inflection,,,Тип ударения при формообразовании (словоизменении)
+B-8,Strictly fixed stress type (by position in a word),,,Тип строго фиксированного ударения (по положению в слове)
+B-9,Limited stress carriers,,,Носители ограниченного (разноместного) ударения
+B-10,Tonema types,,,Виды тонем
+B-11,Number of level tones,,,Количество уровневых тонов (уровней регистровых (ровных) тонов)
+B-12,Level tone types,,,"Типы уровневого (регистрового, ровного) тона"
+B-13,Number of contour tone levels,,,Количество уровней контурных тонов
+B-14,Contour tonema types,,,"Типы контурных (скользящих, модулярных, модулированных) тонем"
 B-15,Length character,,,Характер долготы
 B-16,Target of vowel harmony,,,Область гармонического уподобления гласных
 B-17,Feature of vowel harmony,,,Признак гармонического уподобления гласных
