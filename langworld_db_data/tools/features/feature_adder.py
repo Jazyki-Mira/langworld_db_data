@@ -354,17 +354,9 @@ class FeatureAdder(ObjectWithPaths):
                     )
 
                     if row[KEY_FOR_VALUE_TYPE] == "listed":
-                        if "&" not in row[KEY_FOR_VALUE_ID]:
-                            row[KEY_FOR_VALUE_ID] = (
-                                f"{row[KEY_FOR_FEATURE_ID]}{ID_SEPARATOR}{extract_value_index(row[KEY_FOR_VALUE_ID])}"
-                            )
-                        else:
-                            atomic_value_ids = row[KEY_FOR_VALUE_ID].split("&")
-                            new_atomic_value_ids = []
-                            for atomic_value_id in atomic_value_ids:
-                                atomic_value_id = f"{row[KEY_FOR_FEATURE_ID]}{ID_SEPARATOR}{extract_value_index(atomic_value_id)}"
-                                new_atomic_value_ids.append(atomic_value_id)
-                            row[KEY_FOR_VALUE_ID] = "&".join(new_atomic_value_ids)
+                        row[KEY_FOR_VALUE_ID] = (
+                            f"{row[KEY_FOR_FEATURE_ID]}{ID_SEPARATOR}{extract_value_index(row[KEY_FOR_VALUE_ID])}"
+                        )
 
                 if not line_number_to_insert_before_is_found:
                     line_number_where_row_will_be_inserted = i + 1
@@ -414,8 +406,5 @@ class FeatureAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     FeatureAdder().add_feature(
-        category_id="",
-        feature_en="",
-        feature_ru="",
-        listed_values_to_add=[],
+        category_id="", feature_en="", feature_ru="", listed_values_to_add=[]
     )  # pragma: no cover

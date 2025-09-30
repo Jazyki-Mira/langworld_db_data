@@ -150,7 +150,3 @@ class FeatureRemover(ObjectWithPaths):
                 overwrite=True,
                 delimiter=",",
             )
-
-
-if __name__ == "__main__":
-    FeatureRemover().remove_feature(feature_id="")
