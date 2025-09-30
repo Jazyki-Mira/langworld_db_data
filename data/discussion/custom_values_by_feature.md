@@ -294,6 +294,7 @@
 ## B-3: Вид ударения (качественные характеристики)
 
 - Динамическое и (поли)тоническое: [словенский](../feature_profiles/slovene.csv)
+- Динамическое и количественное: [полабский](../feature_profiles/polabian.csv)
 - Динамическое и тоновое: [дамели](../feature_profiles/dameli.csv)
 - Динамическое с элементами количественного, качественного и тонического: [португальский](../feature_profiles/portuguese.csv)
 - Нет данных: [ликийский](../feature_profiles/lycian.csv), [милийский](../feature_profiles/milyan.csv), [яурэ](../feature_profiles/yaoure.csv)
