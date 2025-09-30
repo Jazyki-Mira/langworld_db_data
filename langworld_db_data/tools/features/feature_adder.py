@@ -354,9 +354,17 @@ class FeatureAdder(ObjectWithPaths):
                     )
 
                     if row[KEY_FOR_VALUE_TYPE] == "listed":
-                        row[KEY_FOR_VALUE_ID] = (
-                            f"{row[KEY_FOR_FEATURE_ID]}{ID_SEPARATOR}{extract_value_index(row[KEY_FOR_VALUE_ID])}"
-                        )
+                        if "&" not in row[KEY_FOR_VALUE_ID]:
+                            row[KEY_FOR_VALUE_ID] = (
+                                f"{row[KEY_FOR_FEATURE_ID]}{ID_SEPARATOR}{extract_value_index(row[KEY_FOR_VALUE_ID])}"
+                            )
+                        else:
+                            atomic_value_ids = row[KEY_FOR_VALUE_ID].split("&")
+                            new_atomic_value_ids = []
+                            for atomic_value_id in atomic_value_ids:
+                                atomic_value_id = f"{row[KEY_FOR_FEATURE_ID]}{ID_SEPARATOR}{extract_value_index(atomic_value_id)}"
+                                new_atomic_value_ids.append(atomic_value_id)
+                            row[KEY_FOR_VALUE_ID] = "&".join(new_atomic_value_ids)
 
                 if not line_number_to_insert_before_is_found:
                     line_number_where_row_will_be_inserted = i + 1
@@ -406,30 +414,8 @@ class FeatureAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     FeatureAdder().add_feature(
-        category_id="B",
-        feature_en="Stress pattern in inflection",
-        feature_ru="Тип ударения при формообразовании (словоизменении)",
-        listed_values_to_add=[
-            {
-                "en": "Flexible",
-                "ru": "Подвижное",
-            },
-            {
-                "en": "Fixed",
-                "ru": "Неподвижное",
-            },
-            {
-                "en": "Flexible and fixed",
-                "ru": "Подвижное и неподвижное",
-            },
-            {
-                "en": "Not stated",
-                "ru": "Нет данных",
-            },
-            {
-                "en": "Not applicable",
-                "ru": "Неприменимо",
-            },
-        ],
-        index_to_assign=7,
+        category_id="",
+        feature_en="",
+        feature_ru="",
+        listed_values_to_add=[],
     )  # pragma: no cover
