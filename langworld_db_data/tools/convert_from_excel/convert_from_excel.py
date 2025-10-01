@@ -112,12 +112,11 @@ def _get_value_from_row(column_id: str, row_: dict[str, str], name_for_id: dict[
 
 def _unzip_file(zip_path: Path, extract_to: Optional[Path] = None):
     zip_path = Path(zip_path)
-    if extract_to is None:
-        extract_to = zip_path.parent
-    else:
-        extract_to = Path(extract_to)
     if not zip_path.exists():
         raise FileNotFoundError(f"Error: {zip_path} does not exist.")
+
+    extract_to = zip_path.parent if extract_to is None else Path(extract_to)
+
     with zipfile.ZipFile(zip_path, "r") as zip_ref:
         zip_ref.extractall(extract_to)
     print(f"Extracted '{zip_path}' to '{extract_to}'")
