@@ -1,5 +1,7 @@
+import zipfile
 from functools import partial
 from pathlib import Path
+from typing import Optional
 
 from tinybear.csv_xls import read_dicts_from_xls
 from tinybear.json_toml_yaml import read_json_toml_yaml
@@ -90,7 +92,11 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
             value_for_feature_id[feature_id].value_id += f"{ATOMIC_VALUE_SEPARATOR}{value_id}"
             value_for_feature_id[feature_id].value_ru += f"{ATOMIC_VALUE_SEPARATOR}{value_ru}"
 
-    output_path = path_to_input_excel.parent / f"{path_to_input_excel.stem}.csv"
+    output_dir = path_to_input_excel.parent.parent / "output_csv"
+    if not output_dir.exists():
+        output_dir.mkdir(parents=True)
+
+    output_path = output_dir / f"{path_to_input_excel.stem}.csv"
     print(f"Saving converted Excel file as {output_path}")
     FeatureProfileWriterFromDictionary.write(
         feature_dict=value_for_feature_id, output_path=output_path
@@ -104,7 +110,25 @@ def _get_value_from_row(column_id: str, row_: dict[str, str], name_for_id: dict[
     return row_[name_for_id[column_id]]
 
 
+def _unzip_file(zip_path: Path, extract_to: Optional[Path] = None):
+    zip_path = Path(zip_path)
+    if not zip_path.exists():
+        raise FileNotFoundError(f"Error: {zip_path} does not exist.")
+
+    extract_to = zip_path.parent if extract_to is None else Path(extract_to)
+
+    with zipfile.ZipFile(zip_path, "r") as zip_ref:
+        zip_ref.extractall(extract_to)
+    print(f"Extracted '{zip_path}' to '{extract_to}'")
+
+
 if __name__ == "__main__":
-    for file in (Path(__file__).parent.resolve() / "input").glob("*.xlsm"):
+    input_dir = Path(__file__).parent.resolve() / "input_xlsm"  # pragma: no cover
+
+    for file in input_dir.glob("*.zip"):  # pragma: no cover
+        print(f"Extracting files from archive {file.name}")
+        _unzip_file(file)
+
+    for file in input_dir.glob("*.xlsm"):  # pragma: no cover
         print(f"Converting {file.name}")
         convert_from_excel(file)
