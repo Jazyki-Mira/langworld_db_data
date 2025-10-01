@@ -8,12 +8,12 @@ from langworld_db_data.tools.features.feature_adder import FeatureAdder
 def make_feature_profile_csv(tmp_path, rows, fname="profile.csv"):
     keys = [
         "feature_id",
-        "ru_name_of_feature",
+        "feature_name_ru",
         "value_type",
         "value_id",
-        "ru_name_of_value",
-        "ru_comment",
-        "en_comment",
+        "value_ru",
+        "comment_ru",
+        "comment_en",
     ]
     path = tmp_path / fname
     with open(path, "w", newline="") as f:
@@ -30,12 +30,12 @@ def test_add_feature_to_feature_profiles_print_and_updates(monkeypatch, tmp_path
         [
             {
                 "feature_id": "A-1",
-                "ru_name_of_feature": "Фича1",
+                "feature_name_ru": "Фича1",
                 "value_type": "listed",
                 "value_id": "A-1-5",
-                "ru_name_of_value": "вал",
-                "ru_comment": "",
-                "en_comment": "",
+                "value_ru": "вал",
+                "comment_ru": "",
+                "comment_en": "",
             }
         ],
     )
@@ -77,12 +77,12 @@ def test_add_feature_to_feature_profiles_combined_value_ids(monkeypatch, tmp_pat
         [
             {
                 "feature_id": "B-2",
-                "ru_name_of_feature": "Фича2",
+                "feature_name_ru": "Фича2",
                 "value_type": "listed",
                 "value_id": "B-2-3&B-2-4",
-                "ru_name_of_value": "вал2",
-                "ru_comment": "",
-                "en_comment": "",
+                "value_ru": "вал2",
+                "comment_ru": "",
+                "comment_en": "",
             }
         ],
         fname="profile2.csv",
