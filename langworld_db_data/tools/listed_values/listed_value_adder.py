@@ -270,18 +270,36 @@ class ListedValueAdder(ObjectWithPaths):
                     or row[KEY_FOR_VALUE_TYPE] != "listed"
                 ):
                     continue
-                current_value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
-                if current_value_index < new_value_index:
-                    continue
+                elif "&" in row[KEY_FOR_VALUE_ID]:
+                    atomic_value_ids = row[KEY_FOR_VALUE_ID].split("&")
+                    new_atomic_value_ids = []
+                    for atomic_value_id in atomic_value_ids:
+                        atomic_value_index = extract_value_index(atomic_value_id)
+                        if atomic_value_index < new_value_index:
+                            new_atomic_value_ids.append(atomic_value_id)
+                            continue
 
-                incremented_current_value_id = (
-                    f"{target_feature_id}{ID_SEPARATOR}{current_value_index + 1}"
-                )
-                row[KEY_FOR_VALUE_ID] = incremented_current_value_id
-                is_changed = True
+                        incremented_atomic_value_id = (
+                            f"{target_feature_id}{ID_SEPARATOR}{atomic_value_index + 1}"
+                        )
+                        is_changed = True
+                        new_atomic_value_ids.append(incremented_atomic_value_id)
+                    row[KEY_FOR_VALUE_ID] = "&".join(new_atomic_value_ids)
+                    print(f"Writing new file with combined values for {file.stem}")
+
+                else:
+                    current_value_index = extract_value_index(row[KEY_FOR_VALUE_ID])
+                    if current_value_index < new_value_index:
+                        continue
+
+                    incremented_current_value_id = (
+                        f"{target_feature_id}{ID_SEPARATOR}{current_value_index + 1}"
+                    )
+                    row[KEY_FOR_VALUE_ID] = incremented_current_value_id
+                    is_changed = True
+                    print(f"Writing new file for {file.stem}")
 
             if is_changed:
-                print(f"Writing new file for {file.stem}")
                 write_csv(
                     rows,
                     path_to_file=output_dir / file.name,
