@@ -269,7 +269,7 @@ fuyu_kyrgyz,language,0,0,Fuyu Kyrgyz,фуюйских кыргызов,,,,,khak_
 khalaj,language,0,0,Khalaj,халаджский,,,Arghu,халаджский диал.азербайджанского языка,karluk,klj,turk1303,khl,turk1303,,34.3751,50.3063,irn,,,0,,
 khorasani_turkic,language,0,0,Khorasani Turkic,хорасано-тюркский,,,,,oghuz_turk,kmz,khor1269,twx,,,36.6596,57.854,irn,,,0,,
 yurt_tatar,language,0,0,Yurt Tatar,юртовских татар,,,,ногайский,kipchak_nogai,,yurt1234,yta,,,46.3943,48.3288,rus,,,0,,
-jurchen,language,1,0,Jurchen,чжурчжэньский,,,,,south_tung,juc,jurc1239,jur,,,33.0071,114.3624,chn,,,0,,
+jurchen,language,1,0,Jurchen,чжурчжэньский,,,,,south_tung,juc,jurc1239,jur,,,33.0071,114.3624,chn,,,1,,
 tamil,language,0,0,Tamil,тамильский,,,,,south_drav,tam,tami1289,tsp,tami1289,tami1289,10.520219,78.825989,ind,19,47,1,,
 irula,language,0,0,Irula,ирула,,,,,south_drav,iru,irul1243,,,irul1243,11.4369,76.5032,ind,19,173,1,,
 malayalam,language,0,0,Malayalam,малаялам,,,,,south_drav,mal,mala1464,mym,mala1464,mala1464,8.5,77,ind,19,188,1,,
