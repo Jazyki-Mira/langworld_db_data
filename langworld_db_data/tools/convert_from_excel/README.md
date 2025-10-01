@@ -1,6 +1,6 @@
 # Converter of feature profiles from Excel to CSV
 
-1. Put Excel files (created from the [template](../../xslm_vba/_template.xlsm)) into [`input_xlsm/`](input_xlsm)
+1. Put Excel files (created from the [template](../../xslm_vba/_template.xlsm)) into [`input_xlsm/`](input_xlsm). You can also put a single zip file there.
 2. Run [`convert_from_excel.py`](convert_from_excel.py)
 3. Converted CSV files will be put into [`output_csv/`](output_csv)
 4. Move these CSV files to [directory with feature profiles](../../../data/feature_profiles).
