@@ -90,7 +90,11 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
             value_for_feature_id[feature_id].value_id += f"{ATOMIC_VALUE_SEPARATOR}{value_id}"
             value_for_feature_id[feature_id].value_ru += f"{ATOMIC_VALUE_SEPARATOR}{value_ru}"
 
-    output_path = path_to_input_excel.parent / f"{path_to_input_excel.stem}.csv"
+    output_dir = path_to_input_excel.parent.parent / "output_csv"
+    if not output_dir.exists():
+        output_dir.mkdir()
+
+    output_path = output_dir / f"{path_to_input_excel.stem}.csv"
     print(f"Saving converted Excel file as {output_path}")
     FeatureProfileWriterFromDictionary.write(
         feature_dict=value_for_feature_id, output_path=output_path
@@ -105,6 +109,6 @@ def _get_value_from_row(column_id: str, row_: dict[str, str], name_for_id: dict[
 
 
 if __name__ == "__main__":
-    for file in (Path(__file__).parent.resolve() / "input").glob("*.xlsm"):
+    for file in (Path(__file__).parent.resolve() / "input_xlsm").glob("*.xlsm"):
         print(f"Converting {file.name}")
         convert_from_excel(file)
