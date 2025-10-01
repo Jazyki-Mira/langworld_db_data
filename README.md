@@ -20,4 +20,8 @@ Most of these files are meant to be edited by hand
 `StructureDataset` [here](data/cldf) is generated programmatically using 
 [*pycldf*](https://github.com/cldf/pycldf).
 
+## For editors of feature profiles
+
+Converter from Excel to CSV can be found in [`langworld_db_data/tools/convert_from_excel/`](langworld_db_data/tools/convert_from_excel).
+
 [![License](https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
