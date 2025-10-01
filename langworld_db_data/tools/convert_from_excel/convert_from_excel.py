@@ -1,7 +1,7 @@
 import zipfile
 from functools import partial
 from pathlib import Path
-from typing import Union
+from typing import Optional
 
 from tinybear.csv_xls import read_dicts_from_xls
 from tinybear.json_toml_yaml import read_json_toml_yaml
@@ -94,7 +94,7 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
 
     output_dir = path_to_input_excel.parent.parent / "output_csv"
     if not output_dir.exists():
-        output_dir.mkdir()
+        output_dir.mkdir(parents=True)
 
     output_path = output_dir / f"{path_to_input_excel.stem}.csv"
     print(f"Saving converted Excel file as {output_path}")
@@ -110,15 +110,14 @@ def _get_value_from_row(column_id: str, row_: dict[str, str], name_for_id: dict[
     return row_[name_for_id[column_id]]
 
 
-def _unzip_file(zip_path: Path, extract_to: Union[Path, None] = None):
+def _unzip_file(zip_path: Path, extract_to: Optional[Path] = None):
     zip_path = Path(zip_path)
     if extract_to is None:
         extract_to = zip_path.parent
     else:
         extract_to = Path(extract_to)
     if not zip_path.exists():
-        print(f"Error: {zip_path} does not exist.")
-        return
+        raise FileNotFoundError(f"Error: {zip_path} does not exist.")
     with zipfile.ZipFile(zip_path, "r") as zip_ref:
         zip_ref.extractall(extract_to)
     print(f"Extracted '{zip_path}' to '{extract_to}'")
