@@ -124,12 +124,12 @@ def _unzip_file(zip_path: Path, extract_to: Optional[Path] = None):
 
 
 if __name__ == "__main__":
-    input_dir = Path(__file__).parent.resolve() / "input_xlsm"
+    input_dir = Path(__file__).parent.resolve() / "input_xlsm"  # pragma: no cover
 
-    for file in input_dir.glob("*.zip"):
+    for file in input_dir.glob("*.zip"):  # pragma: no cover
         print(f"Extracting files from archive {file.name}")
         _unzip_file(file)
 
-    for file in input_dir.glob("*.xlsm"):
+    for file in input_dir.glob("*.xlsm"):  # pragma: no cover
         print(f"Converting {file.name}")
         convert_from_excel(file)
