@@ -1,5 +1,7 @@
 import zipfile
 
+import pytest
+
 from langworld_db_data.tools.convert_from_excel.convert_from_excel import (
     _unzip_file,
     convert_from_excel,
@@ -34,6 +36,11 @@ def test__unzip_file_function(tmp_path):
     extracted = extract_dir / file_name
     assert extracted.exists()
     assert extracted.read_bytes() == mini_content
+
+    # Check FileNotFoundError for missing archive
+    missing_zip = tmp_path / "does_not_exist.zip"
+    with pytest.raises(FileNotFoundError):
+        _unzip_file(missing_zip, extract_dir)
 
 
 # --- FOCUSED TEST ON LINES 95-97 (extractall logic) ---
