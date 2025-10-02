@@ -128,6 +128,8 @@ latvian,Latvian,,56.9421,24.162,latv1249,lav,латышский
 lithuanian,Lithuanian,,54.6775,25.3382,lith1251,lit,литовский
 prussian,Prussian,,54.7319,20.4971,prus1238,prg,прусский
 akkadian,Akkadian,,33.1,44.1,akka1240,akk,аккадский
+old_akkadian,Old Akkadian,,32.32,44.36,olda1247,,староаккадский (саргоновский)
+old_assyrian,Old Assyrian,,35.27,43.15,olda1248,,староассирийский
 ancient_hebrew,Ancient Hebrew,,31.7833,35.2333,anci1244,hbo,древнееврейский
 classical_mandaic,Classical Mandaic,,33.0479,44.3137,clas1253,myz,классический мандейский
 classical_syriac,Classical Syriac,,36,43.3,clas1252,syc,классический сирийский
@@ -238,6 +240,8 @@ hattic,Hattic,,41.7269,36.0115,hatt1246,xht,хаттский
 hurrian,Hurrian,,36.8,40.3,hurr1240,xhu,хурритский
 sumerian,Sumerian,,31.3222,45.6361,sume1241,sux,шумерский
 urartian,Urartian,,38.5027,43.1222,urar1245,xur,урартский
+kassite,Kassite,,34.17,45.09,kass1244,,касситский
+harappan,Harappan,,30.61,72.89,hara1272,xiv,хараппский
 amharic,Amharic,,9.03,38.74,amha1245,amh,амхарский
 argobba,Argobba,,10.6596,39.756,argo1244,agj,аргобба
 chaha,Chaha,,8.1667,38.25,chah1248,sgw,чаха
