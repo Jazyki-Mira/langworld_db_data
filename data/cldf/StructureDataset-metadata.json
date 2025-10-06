@@ -176,7 +176,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#LanguageTable",
-            "dc:extent": 451,
+            "dc:extent": 452,
             "tableSchema": {
                 "columns": [
                     {
