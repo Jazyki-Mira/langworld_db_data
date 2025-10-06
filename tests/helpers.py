@@ -62,7 +62,7 @@ def check_existence_of_output_csv_files_in_dir_and_compare_them_with_gold_standa
     files_that_must_be_present_in_output = list(gold_standard_dir.glob("*.csv"))
     for file in files_that_must_be_present_in_output:
         logger.info(f"TEST: checking existence of output file {file.name} in output dir")
-        assert file.exists()
+        assert Path(output_dir / file.name).exists()
     # Should there be a check on files present in output dir
     # with no counterparts in gold standard dir?
 
