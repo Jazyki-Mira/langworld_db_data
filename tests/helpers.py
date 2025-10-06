@@ -82,7 +82,7 @@ def check_existence_of_output_csv_files_in_dir_and_compare_them_with_gold_standa
             )
 
         if unlink_files_if_successful:
-            logger.info(f"Deleting test output file {filename}")
+            logger.info(f"Deleting test output file {output_dir / filename}")
             file.unlink()
 
     if remove_output_dir_if_successful:
