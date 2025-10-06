@@ -66,24 +66,23 @@ def check_existence_of_output_csv_files_in_dir_and_compare_them_with_gold_standa
     # Should there be a check on files present in output dir
     # with no counterparts in gold standard dir?
 
-    files_present_in_output_dir = files_that_must_be_present_in_output
+    filenames_present_in_output_dir = [file.name for file in files_that_must_be_present_in_output]
 
-    for file in files_present_in_output_dir:
+    for filename in filenames_present_in_output_dir:
         logger.info(
-            f"TEST: comparing test output file {file.name} "
-            f"with gold standard file {file.name}"
+            f"TEST: comparing test output file {filename} "
+            f"with gold standard file {filename}"
         )
-        output_lines = read_plain_rows_from_csv(file)
-        gold_standard_lines = read_plain_rows_from_csv(file)
+        output_lines = read_plain_rows_from_csv(output_dir / filename)
+        gold_standard_lines = read_plain_rows_from_csv(gold_standard_dir / filename)
 
         for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
             assert output_line == gold_standard_line, (
                 f"Output line {output_line} does not match expected line {gold_standard_line}"
             )
 
-    if unlink_files_if_successful:
-        for file in files_present_in_output_dir:
-            logger.info(f"Deleting test output file {file.name}")
+        if unlink_files_if_successful:
+            logger.info(f"Deleting test output file {filename}")
             file.unlink()
 
     if remove_output_dir_if_successful:
