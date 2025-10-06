@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "02321c05770b2f90ae6c9afc7642a900be5a9fe73cc1bf405bb3758c9e42be77"
+            "sha256": "6a07f0f5f5e31850660bd80e0a30b6e9a7db5cd91603aa3c056deee59cde420c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -500,11 +500,11 @@
         },
         "pyperclip": {
             "hashes": [
-                "sha256:180c8346b1186921c75dfd14d9048a6b5d46bfc499778811952c6dd6eb1ca6be",
-                "sha256:596fbe55dc59263bff26e61d2afbe10223e2fccb5210c9c96a28d6887cfcc7ec"
+                "sha256:244035963e4428530d9e3a6101a1ef97209c6825edab1567beac148ccc1db1b6",
+                "sha256:299403e9ff44581cb9ba2ffeed69c7aa96a008622ad0c46cb575ca75b5b84273"
             ],
             "index": "pypi",
-            "version": "==1.10.0"
+            "version": "==1.11.0"
         },
         "python-dateutil": {
             "hashes": [
