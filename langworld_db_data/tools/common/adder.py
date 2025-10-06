@@ -395,7 +395,6 @@ class Adder(ObjectWithPaths):
         rows = read_dicts_from_csv(
             path_to_file=file_to_check_against,
         )
-        logger.debug(rows[-1]["id"])
         for row in rows:
             id = row["id"]
             if not id.startswith(f"{category_or_feature_id}{ID_SEPARATOR}"):

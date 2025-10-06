@@ -59,7 +59,11 @@ def check_existence_of_output_csv_files_in_dir_and_compare_them_with_gold_standa
     (override by setting `unlink_if_successful` to `False`).
     If specified so, also delete output dir.
     """
+    logger.info(gold_standard_dir)
     files_that_must_be_present_in_output = list(gold_standard_dir.glob("*.csv"))
+    for entry in gold_standard_dir.iterdir():
+        logger.info(entry)
+    logger.info(files_that_must_be_present_in_output)
     for file in files_that_must_be_present_in_output:
         logger.info(f"TEST: checking existence of output file {file.name} in output dir")
         assert Path(output_dir / file.name).exists()
@@ -67,23 +71,28 @@ def check_existence_of_output_csv_files_in_dir_and_compare_them_with_gold_standa
     # with no counterparts in gold standard dir?
 
     filenames_present_in_output_dir = [file.name for file in files_that_must_be_present_in_output]
+    logger.info(filenames_present_in_output_dir)
 
     for filename in filenames_present_in_output_dir:
+        output_filepath = Path(output_dir / filename)
         logger.info(
             f"TEST: comparing test output file {filename} "
             f"with gold standard file {filename}"
         )
-        output_lines = read_plain_rows_from_csv(output_dir / filename)
+        output_lines = read_plain_rows_from_csv(output_filepath)
         gold_standard_lines = read_plain_rows_from_csv(gold_standard_dir / filename)
 
         for output_line, gold_standard_line in zip(output_lines, gold_standard_lines):
             assert output_line == gold_standard_line, (
                 f"Output line {output_line} does not match expected line {gold_standard_line}"
             )
+    logger.info(filenames_present_in_output_dir)
 
-        if unlink_files_if_successful:
-            logger.info(f"Deleting test output file {output_dir / filename}")
-            file.unlink()
+    if unlink_files_if_successful:
+        for filename in filenames_present_in_output_dir:
+            output_filepath = Path(output_dir / filename)
+            logger.info(f"Deleting test output file {output_filepath}")
+            output_filepath.unlink()
 
     if remove_output_dir_if_successful:
         logger.info(f"Deleting test output dir {output_dir.name}")

@@ -4,7 +4,10 @@ from langworld_db_data.tools.common.adder import AdderError
 from langworld_db_data.tools.listed_values.listed_value_adder import (
     ListedValueAdder,
 )
-from tests.helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
+from tests.helpers import (
+    check_existence_of_output_csv_file_and_compare_with_gold_standard,
+    check_existence_of_output_csv_files_in_dir_and_compare_them_with_gold_standards,
+)
 from tests.paths import (
     DIR_WITH_ADDERS_FEATURE_PROFILES,
     DIR_WITH_ADDERS_TEST_FILES,
@@ -45,9 +48,6 @@ def test_adder():
 
 def test_add_listed_value_append_to_end_with_custom_values(test_adder):
 
-    # STEMS_OF_EXPECTED_OUTPUT_FILES = ("catalan", "corsican", "franco_provencal")
-    # STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED = ("pashto", "ukrainian")
-
     GS_DIR = (
         DIR_WITH_LISTED_VALUE_ADDER_TEST_FILES
         / "gs_add_listed_value_append_to_end_with_custom_values"
@@ -69,22 +69,10 @@ def test_add_listed_value_append_to_end_with_custom_values(test_adder):
         gold_standard_file=GS_DIR / "features_listed_values.csv",
     )
 
-    # for stem in STEMS_OF_EXPECTED_OUTPUT_FILES:
-    #     assert (DIR_WITH_OUTPUT_FILES / f"{stem}.csv").exists(), (
-    #         f"File {stem}.csv was not created. It means that no changes were made while"
-    #         " there should have been changes"
-    #     )
-
-    for file in test_adder.output_dir_with_feature_profiles.glob("*.csv"):
-        # assert (
-        #     file.stem not in STEMS_OF_FILES_THAT_MUST_NOT_BE_CHANGED
-        # ), f"File {file.name} is not supposed to be changed"
-
-        print(f"TEST: checking amended feature profile {file.name}")
-        check_existence_of_output_csv_file_and_compare_with_gold_standard(
-            output_file=file,
-            gold_standard_file=GS_DIR / file.name,
-        )
+    check_existence_of_output_csv_files_in_dir_and_compare_them_with_gold_standards(
+        output_dir=test_adder.output_dir_with_feature_profiles,
+        gold_standard_dir=GS_DIR / "feature_profiles",
+    )
 
 
 def test_add_listed_value_append_to_end_with_custom_values_and_updating_value_ids(test_adder):
