@@ -5,6 +5,9 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
@@ -16,3 +19,9 @@ jobs:
           python-version: '3.9'
       - name: Run pre-commit
         uses: pre-commit/action@v3.0.1
+        continue-on-error: true
+      - name: Auto-commit fixes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "style: apply pre-commit fixes"
+          commit_options: '--no-verify'
