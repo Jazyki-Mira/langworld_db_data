@@ -3,10 +3,11 @@ name: tests
 on: [push]
 
 jobs:
-  permissions: write
   test:
     runs-on: ubuntu-22.04
     timeout-minutes: 5
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
