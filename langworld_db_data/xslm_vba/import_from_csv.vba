@@ -61,29 +61,29 @@ Sub SecCopyImportedColumnsToInputSheet()
         :=False, Transpose:=False
     ActiveSheet.Previous.Select
     Range(strLanguage & "[value_type]").Select
-    Application.CutCopyMode = False
     Selection.Copy
     ActiveSheet.Next.Select
     Range("C2").Select
     Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
+    Application.CutCopyMode = False
     ActiveSheet.Previous.Select
     Range(strLanguage & "[[value_id_and_value]:[comment_ru]]").Select
-    Application.CutCopyMode = False
     Selection.Copy
     ActiveSheet.Next.Select
     Range("E2").Select
     Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
+    Application.CutCopyMode = False
 
     'add page numbers
     ActiveSheet.Previous.Select
     Range(strLanguage & "[page_numbers]").Select
-    Application.CutCopyMode = False
     Selection.Copy
     ActiveSheet.Next.Select
     Range("I2").Select
     Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks:=False, Transpose:=False
+    Application.CutCopyMode = False
 
     Range("A2").Select
 
