@@ -3,6 +3,7 @@ name: tests
 on: [push]
 
 jobs:
+  permissions: read
   test:
     runs-on: ubuntu-22.04
     timeout-minutes: 5
