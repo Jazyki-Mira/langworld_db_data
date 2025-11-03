@@ -19,8 +19,8 @@ jobs:
           python-version: '3.9'
       - name: Run pre-commit
         uses: pre-commit/action@v3.0.1
-        continue-on-error: true
       - name: Auto-commit fixes
+        if: failure()
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "style: apply pre-commit fixes"
