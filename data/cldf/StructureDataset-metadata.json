@@ -118,7 +118,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#CodeTable",
-            "dc:extent": 1227,
+            "dc:extent": 1229,
             "tableSchema": {
                 "columns": [
                     {
@@ -254,7 +254,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ParameterTable",
-            "dc:extent": 135,
+            "dc:extent": 136,
             "tableSchema": {
                 "columns": [
                     {
