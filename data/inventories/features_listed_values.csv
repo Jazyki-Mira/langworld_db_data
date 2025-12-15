@@ -342,7 +342,7 @@ C-3-2,C-3,Consonant clusters are only possible at the onset of syllable,Стеч
 C-3-3,C-3,Consonant clusters are only possible at the coda of syllable,Стечения согласных возможны только в конце слога,,
 C-3-4,C-3,Consonant clusters are possible at both the onset and the coda of syllable,"Стечения согласных возможны и в начале, и в конце слога",,
 D-1-1,D-1,Only vowels possible,Разрешены только гласные,,
-D-1-2,D-1,Only consonants possible,Только согласные,,
+D-1-2,D-1,Only consonants possible,Разрешены только согласные,,
 D-1-3,D-1,Limited set of consonants possible,Ограниченный набор согласных,,
 D-1-4,D-1,No vowel clusters,Запрет на любые стечения гласных,,
 D-1-5,D-1,No consonant clusters,Запрет на любые стечения согласных,,
