@@ -126,12 +126,14 @@ class ListedValueRenamer:
         data_from_file = read_dicts_from_csv(input_file)
         data_to_write = []
         for line in data_from_file:
-            if id_of_value_to_rename not in line[KEY_FOR_VALUE_ID]:
-                data_to_write.append(line)
-                continue
+            value_id_cell = line[KEY_FOR_VALUE_ID]
             line_to_write = line.copy()
-            # After this clause, only lines with the target value are considered (they may contain other values too)
-            if ATOMIC_VALUE_SEPARATOR in line[KEY_FOR_VALUE_ID]:
+            # Decide based on whether this is a combined value or a single value
+            if ATOMIC_VALUE_SEPARATOR in value_id_cell:
+                combined_value_ids = value_id_cell.split(ATOMIC_VALUE_SEPARATOR)
+                if id_of_value_to_rename not in combined_value_ids:
+                    data_to_write.append(line)
+                    continue
                 print(f"Found match in combined value in {input_file.name}")
                 combined_value_ids = line[KEY_FOR_VALUE_ID].split(ATOMIC_VALUE_SEPARATOR)
                 target_value_index = combined_value_ids.index(id_of_value_to_rename)
@@ -150,6 +152,9 @@ class ListedValueRenamer:
                 )
                 continue
             # After this clause, only those lines are considered which contain the target value only
+            if value_id_cell != id_of_value_to_rename:
+                data_to_write.append(line)
+                continue
             print(f"Found exact match in {input_file.name}")
             line_to_write[KEY_FOR_RUSSIAN_NAME_OF_VALUE] = new_value_name
             number_of_replacements += 1
