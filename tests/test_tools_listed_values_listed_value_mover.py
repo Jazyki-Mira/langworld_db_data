@@ -55,7 +55,7 @@ GS_FILE_FOR_MOVING_FROM_LAST_TO_MIDDLE = (
 def test_mover():
     for filepath in sorted(list(DIR_WITH_MOVERS_FEATURE_PROFILES.glob("*.csv"))):
         path_to_write_into = OUTPUT_DIR_FOR_LISTED_VALUE_MOVER_FEATURE_PROFILES / filepath.name
-        path_to_write_into.write_text(filepath.read_text())
+        path_to_write_into.write_text(filepath.read_text(encoding="utf-8"), encoding="utf-8")
     return ListedValueMover(
         input_file_with_listed_values=INPUT_FILE_WITH_LISTED_VALUES_FOR_MOVERS,
         output_file_with_listed_values=OUTPUT_FILE_WITH_LISTED_VALUES,

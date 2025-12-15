@@ -1,7 +1,7 @@
 import pytest
 
 from langworld_db_data.tools.listed_values import ListedValueRenamer, ListedValueRenamerError
-from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES
+from tests.paths import DIR_WITH_FEATURE_PROFILE_TOOLS_TEST_FILES, DIR_WITH_TEST_FILES
 from tests.test_helpers import check_existence_of_output_csv_file_and_compare_with_gold_standard
 
 DIR_WITH_TEST_UPDATE_PROFILES_INVENTORIES = (
@@ -109,6 +109,45 @@ def test_update_first_value_in_features_listed_values(value_renamer):
         / "features_listed_values_A-11-1.csv",
         unlink_if_successful=True,
     )
+
+
+def test_rename_value_in_profiles_and_inventories_keeps_values_at_two_digit_indices_intact():
+    test_data_dir = DIR_WITH_TEST_FILES / "movers" / "rename_value"
+    feature_profiles_dir = test_data_dir / "feature_profiles"
+
+    output_feature_profiles_dir = feature_profiles_dir / "output"
+    if not output_feature_profiles_dir.exists():
+        output_feature_profiles_dir.mkdir()
+
+    output_inventories_dir = test_data_dir / "output"
+    if not output_inventories_dir.exists():
+        output_inventories_dir.mkdir()
+
+    renamer = ListedValueRenamer(
+        input_feature_profiles_dir=feature_profiles_dir,
+        output_feature_profiles_dir=output_feature_profiles_dir,
+        input_inventories_dir=test_data_dir,
+        output_inventories_dir=output_inventories_dir,
+    )
+
+    renamer.rename_value_in_profiles_and_inventories(
+        id_of_value_to_rename="A-15-1",
+        new_value_name="Зубовные",
+    )
+
+    check_existence_of_output_csv_file_and_compare_with_gold_standard(
+        output_file=output_inventories_dir / "features_listed_values.csv",
+        gold_standard_file=test_data_dir
+        / "features_listed_values_gold_standard_renamed_A-15-1.csv",
+        unlink_if_successful=True,
+    )
+
+    for file_stem in "catalan", "corsican":
+        check_existence_of_output_csv_file_and_compare_with_gold_standard(
+            output_file=output_feature_profiles_dir / f"{file_stem}.csv",
+            gold_standard_file=feature_profiles_dir / "gold_standard" / f"{file_stem}.csv",
+            unlink_if_successful=True,
+        )
 
 
 def test_set_empty_name_for_value(value_renamer):
