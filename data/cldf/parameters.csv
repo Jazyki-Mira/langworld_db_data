@@ -49,8 +49,8 @@ C-1,Syllable onset,,,Начальный согласный в слоге
 C-2,Syllable coda,,,Конечный согласный в слоге
 C-3,Consonant clusters in syllable,,,Стечения согласных в слоге
 D-1,Restrictions on the phonemic structure in the initial position,,,Ограничения на фонемную структуру начала слова
-D-2,Types of restrictions on the phonemic structure of segment morphemes in the initial position,,,Тип ограничений на фонемную структуру начала слова (анлауте)
-D-3,Types of restrictions on the phonemic structure of segment morphemes in the final position,,,Тип ограничений  на фонемную структуру в конце слова (ауслауте)
+D-2,Types of restrictions on the phonemic structure in the initial position,,,Тип ограничений на фонемную структуру начала слова (анлаута)
+D-3,Types of restrictions on the phonemic structure in the final position,,,Тип ограничений  на фонемную структуру в конце слова (ауслауте)
 D-4,Variants of characteristics of the syllabic structure of words,,,Варианты особенностей слогового состава слова
 D-5,Types of differences between content and function words,,,Типы различий между знаменательными и служебными словами
 D-6,Types of differences between native and borrowed words,,,Типы различий между исконными и заимствованными словами
