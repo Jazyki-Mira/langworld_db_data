@@ -358,10 +358,10 @@ D-2-6,D-2,No vowel clusters,Запрет на любые стечения гла
 D-2-7,D-2,No consonant clusters,Запрет на любые стечения согласных,,
 D-2-8,D-2,No clusters of more than two consonants,Запрет на стечение более двух согласных,,"<p><i>Например, валлийский</i></p>"
 D-2-9,D-2,No long (geminate) consonants,Запрет на  долгие (геминированные) согласные,,"<p><i>Например, орочский</i></p>"
-D-3-1,D-3,Mainly monosyllabic words,Преимущественно односложные слова,,
-D-3-2,D-3,Mostly monosyllabic and bisyllabic words,Преимущественно одно- и двусложные слова,,
-D-3-3,D-3,Mostly bisyllabic words,Преимущественно двусложные слова,,
-D-3-4,D-3,Mainly polysyllabic words,Преимущественно неодносложные слова,,
+D-3-1,D-3,Mainly monosyllabic words,Преимущественно односложные слова,,"<p><i>Например, африкаанс</i></p>"
+D-3-2,D-3,Mostly monosyllabic and bisyllabic words,Преимущественно одно- и двусложные слова,,"<p><i>Например, румынский</i></p>"
+D-3-3,D-3,Mostly bisyllabic words,Преимущественно двусложные слова,,"<p><i>Например, истророманский</i></p>"
+D-3-4,D-3,Mainly polysyllabic words,Преимущественно неодносложные слова,,"<p>Например, старославянский</p>"
 D-4-1,D-4,No differences,Отсутствуют,,
 D-4-2,D-4,Differences in phonetic structure,Различия в фонетическом составе,,
 D-4-3,D-4,Differences in accentuation,Акцентные различия,,
