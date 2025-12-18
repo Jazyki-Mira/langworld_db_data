@@ -349,8 +349,7 @@ D-1-5,D-1,Limitations on consonant sequences,,Ограничения на пос
 D-1-6,D-1,No vowel clusters,,Запрет на любые стечения гласных
 D-1-7,D-1,No consonant clusters,,Запрет на любые стечения согласных
 D-1-8,D-1,No long (geminate) consonants,,Запрет на  долгие (геминированные) согласные
-D-1-9,D-1,"Limited set of consonants, no consonant clusters",,"Ограниченный набор гласных и согласных, запрет на стечения согласных"
-D-1-10,D-1,"Limited set of vowels and consonants, no consonant clusters or long vowels",,"Ограниченный набор гласных и согласных, запрет на стечение согласных и на долгие согласные"
+D-1-9,D-1,"Limited set of vowels and consonants, no consonant clusters or long vowels",,"Ограниченный набор гласных и согласных, запрет на стечение согласных и на долгие согласные"
 D-2-1,D-2,No restrictions,,Отсутствуют
 D-2-2,D-2,Only vowels possible,,Только гласные
 D-2-3,D-2,Only consonants possible,,Только согласные
