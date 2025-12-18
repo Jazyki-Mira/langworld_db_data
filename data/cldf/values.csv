@@ -22956,7 +22956,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22954,slovak,B-19,,,,,"Просодически значимая краткость/долгота слога: краткий слог = одна мора, долгий слог = две моры",
 22955,slovak,C-1,Most syllables have a non-null onset,C-1-2,,,Большинство слогов прикрытые,
 22956,slovak,C-2,Most syllables have a null coda,C-2-3,,,Большинство слогов открытые,
-22957,slovak,D-3,Alternation of long and short syllables,D-3-7,,,Чередуются долгий и краткий слоги,По закону слоговой гармонии два долгих слога не могут следовать друг за другом.
+22957,slovak,D-3,,,,,Чередуются долгий и краткий слоги,По закону слоговой гармонии два долгих слога не могут следовать друг за другом.
 22958,slovak,D-4,Differences in phonetic structure and accentual differences,D-4-5,,,Различия в фонетическом составе и акцентные различия,
 22959,slovak,D-7,Accompanying and distinctive,D-7-4,,,Сопутствующие и смыслоразличительные,
 22960,slovak,D-8,Vowel and consonant alternations,D-8-6,,,Вокалические и консонантные,
