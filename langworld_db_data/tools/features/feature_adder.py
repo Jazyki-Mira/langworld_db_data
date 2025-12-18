@@ -414,18 +414,8 @@ class FeatureAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     FeatureAdder().add_feature(
-        category_id="D",
-        feature_en="Differences between roots and affixes",
-        feature_ru="Различия между корневыми и аффиксальными морфемами",
-        listed_values_to_add=[
-            {
-                "en": "Absent",
-                "ru": "Отсутствуют",
-            },
-            {
-                "en": "Present",
-                "ru": "Присутствуют",
-            },
-        ],
-        index_to_assign=10,
+        category_id="",
+        feature_en="",
+        feature_ru="",
+        listed_values_to_add=[],
     )  # pragma: no cover
