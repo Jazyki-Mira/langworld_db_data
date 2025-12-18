@@ -48,14 +48,15 @@ B-20,Types of phonation,,,Типы фонации
 C-1,Syllable onset,,,Начальный согласный в слоге
 C-2,Syllable coda,,,Конечный согласный в слоге
 C-3,Consonant clusters in syllable,,,Стечения согласных в слоге
-D-1,Types of restrictions on the phonemic structure of segment morphemes in the initial position,,,Тип ограничений на фонемную структуру начала слова (анлауте)
-D-2,Types of restrictions on the phonemic structure of segment morphemes in the final position,,,Тип ограничений  на фонемную структуру в конце слова (ауслауте)
-D-3,Variants of characteristics of the syllabic structure of words,,,Варианты особенностей слогового состава слова
-D-4,Types of differences between content and function words,,,Типы различий между знаменательными и служебными словами
-D-5,Types of differences between native and borrowed words,,,Типы различий между исконными и заимствованными словами
-D-6,Types of differences between roots and affixes,,,Типы различий между корневыми и аффиксальными морфемами
-D-7,Functional type of alternations,,,Функциональный тип чередований
-D-8,Type of altenations,,,Вид чередований
+D-1,Restrictions on the phonemic structure in the initial position,,,Ограничения на фонемную структуру начала слова
+D-2,Types of restrictions on the phonemic structure of segment morphemes in the initial position,,,Тип ограничений на фонемную структуру начала слова (анлауте)
+D-3,Types of restrictions on the phonemic structure of segment morphemes in the final position,,,Тип ограничений  на фонемную структуру в конце слова (ауслауте)
+D-4,Variants of characteristics of the syllabic structure of words,,,Варианты особенностей слогового состава слова
+D-5,Types of differences between content and function words,,,Типы различий между знаменательными и служебными словами
+D-6,Types of differences between native and borrowed words,,,Типы различий между исконными и заимствованными словами
+D-7,Types of differences between roots and affixes,,,Типы различий между корневыми и аффиксальными морфемами
+D-8,Functional type of alternations,,,Функциональный тип чередований
+D-9,Type of altenations,,,Вид чередований
 E-1,Type of language by type of morpheme combination in a word,,,Тип языка по способу соединения морфем в слове
 E-2,Fusional type features,,,Признаки флективного строя
 E-3,Agglutinative type features,,,Признаки агглютинативного строя
