@@ -348,20 +348,19 @@ D-1-4,D-1,Limited set of consonants possible,Ограниченный набор
 D-1-5,D-1,Limitations on consonant sequences (combinations),Ограничения на последовательность (сочетания) согласных,,"<p>Например, панджаби: <b><i>“В начале слова допустимы сочетания типа «смычный + дрожащий»”.)</i></b></p>"
 D-1-6,D-1,No vowel clusters,Запрет на любые стечения гласных,,"<p><i>Например, старославянский</i></p>"
 D-1-7,D-1,No consonant clusters,Запрет на любые стечения согласных,,"<p>Например,  осетинский, из 2.1.4: <b><i>“Одним из характерных признаков фонологической структуры слога в О.я. является тенденция к «разгружению» его начала от групп согласных.” )</b></i></p>"
-D-1-8,D-1,No long (geminate) consonants,Запрет на  долгие (геминированные) согласные,,"<p>Орочский</p>"
-D-2-1,D-2,No restrictions,Отсутствуют,,
-D-2-2,D-2,Only vowels possible,Только гласные,,
-D-2-3,D-2,Only consonants possible,Только согласные,,
-D-2-4,D-2,Limited set of vowels possible,Ограниченный набор гласных,,
-D-2-5,D-2,Limited set of consonants possible,Ограниченный набор согласных,,
-D-2-6,D-2,No vowel clusters,Запрет на любые стечения гласных,,
-D-2-7,D-2,No consonant clusters,Запрет на любые стечения согласных,,
-D-2-8,D-2,Limited set of vowels and consonants possible,Ограниченный набор гласных и согласных,,
-D-2-9,D-2,No vowel clusters and no consonant clusters,Запрет на любые стечения гласных и согласных,,
-D-2-10,D-2,"Limited set of consonants possible, no vowel clusters",Ограниченный набор согласных и запрет на любые стечения гласных,,
-D-2-11,D-2,"Limited set of consonants possible, no consonant clusters",Ограниченный набор согласных и запрет на стечения согласных,,
-D-2-12,D-2,No clusters of more than two consonants,Запрет на стечение более двух согласных,,
-D-2-13,D-2,Limitations on consonant sequences,Ограничения на последовательность согласных,,
+D-1-8,D-1,No long (geminate) consonants,Запрет на  долгие (геминированные) согласные,,<p>Орочский</p>
+D-2-1,D-2,Only vowels possible,Только гласные,,
+D-2-2,D-2,Only consonants possible,Только согласные,,
+D-2-3,D-2,Limited set of vowels possible,Ограниченный набор гласных,,
+D-2-4,D-2,Limited set of consonants possible,Ограниченный набор согласных,,
+D-2-5,D-2,No vowel clusters,Запрет на любые стечения гласных,,
+D-2-6,D-2,No consonant clusters,Запрет на любые стечения согласных,,
+D-2-7,D-2,Limited set of vowels and consonants possible,Ограниченный набор гласных и согласных,,
+D-2-8,D-2,No vowel clusters and no consonant clusters,Запрет на любые стечения гласных и согласных,,
+D-2-9,D-2,"Limited set of consonants possible, no vowel clusters",Ограниченный набор согласных и запрет на любые стечения гласных,,
+D-2-10,D-2,"Limited set of consonants possible, no consonant clusters",Ограниченный набор согласных и запрет на стечения согласных,,
+D-2-11,D-2,No clusters of more than two consonants,Запрет на стечение более двух согласных,,
+D-2-12,D-2,Limitations on consonant sequences,Ограничения на последовательность согласных,,
 D-3-1,D-3,Only monosyllabic words,Только односложные слова,,
 D-3-2,D-3,Only polysyllabic words,Только неодносложные слова,,
 D-3-3,D-3,Mainly monosyllabic words,Преимущественно односложные слова,,
