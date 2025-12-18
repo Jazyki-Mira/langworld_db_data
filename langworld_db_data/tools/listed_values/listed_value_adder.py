@@ -355,8 +355,8 @@ class ListedValueAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     ListedValueAdder().add_listed_value(
-        feature_id="D-4",
-        new_value_en="Tone differences",
-        new_value_ru="Тоновые различия",
-        index_to_assign=4,
+        feature_id="D-6",
+        new_value_en="Differences in number of syllables",
+        new_value_ru="Различия в количестве слогов",
+        index_to_assign=5,
     )  # pragma: no cover
