@@ -355,8 +355,8 @@ class ListedValueAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     ListedValueAdder().add_listed_value(
-        feature_id="D-1",
+        feature_id="D-2",
         new_value_en="No long (geminate) consonants",
         new_value_ru="Запрет на  долгие (геминированные) согласные",
-        index_to_assign=8,
+        index_to_assign=9,
     )  # pragma: no cover

@@ -357,10 +357,11 @@ D-2-5,D-2,Limitations on consonant sequences,,Ограничения на пос
 D-2-6,D-2,No vowel clusters,,Запрет на любые стечения гласных
 D-2-7,D-2,No consonant clusters,,Запрет на любые стечения согласных
 D-2-8,D-2,No clusters of more than two consonants,,Запрет на стечение более двух согласных
-D-2-9,D-2,Limited set of vowels and consonants possible,,Ограниченный набор гласных и согласных
-D-2-10,D-2,No vowel clusters and no consonant clusters,,Запрет на любые стечения гласных и согласных
-D-2-11,D-2,"Limited set of consonants possible, no vowel clusters",,Ограниченный набор согласных и запрет на любые стечения гласных
-D-2-12,D-2,"Limited set of consonants possible, no consonant clusters",,Ограниченный набор согласных и запрет на стечения согласных
+D-2-9,D-2,No long (geminate) consonants,,Запрет на  долгие (геминированные) согласные
+D-2-10,D-2,Limited set of vowels and consonants possible,,Ограниченный набор гласных и согласных
+D-2-11,D-2,No vowel clusters and no consonant clusters,,Запрет на любые стечения гласных и согласных
+D-2-12,D-2,"Limited set of consonants possible, no vowel clusters",,Ограниченный набор согласных и запрет на любые стечения гласных
+D-2-13,D-2,"Limited set of consonants possible, no consonant clusters",,Ограниченный набор согласных и запрет на стечения согласных
 D-3-1,D-3,Only monosyllabic words,,Только односложные слова
 D-3-2,D-3,Only polysyllabic words,,Только неодносложные слова
 D-3-3,D-3,Mainly monosyllabic words,,Преимущественно односложные слова
