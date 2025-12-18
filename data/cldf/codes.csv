@@ -364,11 +364,11 @@ D-3-3,D-3,Mostly bisyllabic words,,Преимущественно двуслож
 D-3-4,D-3,Mainly polysyllabic words,,Преимущественно неодносложные слова
 D-4-1,D-4,Differences in phonetic structure,,Различия в фонетическом составе
 D-4-2,D-4,Differences in accentuation,,Акцентные различия
-D-4-3,D-4,Differences in phonetic structure and in syllable structure,,Различия в фонетическом составе и в структуре слога
-D-4-4,D-4,Differences in phonetic structure and accentual differences,,Различия в фонетическом составе и акцентные различия
-D-4-5,D-4,Differences in syllable structure and accentual differences,,Различия в структуре слога и акцентные различия
-D-4-6,D-4,"Differences in phonetic structure, in syllable structure and accentual differences",,"Различия в фонетическом составе, в структуре слога и акцентные различия"
-D-4-7,D-4,Differences in syllable structure,,Различия в структуре слога
+D-4-3,D-4,Differences in syllable structure,,Различия в структуре слога
+D-4-4,D-4,Differences in phonetic structure and in syllable structure,,Различия в фонетическом составе и в структуре слога
+D-4-5,D-4,Differences in phonetic structure and accentual differences,,Различия в фонетическом составе и акцентные различия
+D-4-6,D-4,Differences in syllable structure and accentual differences,,Различия в структуре слога и акцентные различия
+D-4-7,D-4,"Differences in phonetic structure, in syllable structure and accentual differences",,"Различия в фонетическом составе, в структуре слога и акцентные различия"
 D-5-1,D-5,No differences,,Отсутствуют
 D-5-2,D-5,Differences in phonetic structure,,Различия в фонетическом составе
 D-5-3,D-5,Differences in accentuation,,Акцентные различия
