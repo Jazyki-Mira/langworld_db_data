@@ -366,35 +366,37 @@ D-5-1,D-5,Mainly monosyllabic words,,Преимущественно односл
 D-5-2,D-5,Mostly monosyllabic and bisyllabic words,,Преимущественно одно- и двусложные слова
 D-5-3,D-5,Mostly bisyllabic words,,Преимущественно двусложные слова
 D-5-4,D-5,Mainly polysyllabic words,,Преимущественно неодносложные слова
-D-6-1,D-6,Differences in phonetic structure,,Различия в фонетическом составе
-D-6-2,D-6,Differences in accentuation,,Акцентные различия
-D-6-3,D-6,Differences in syllable structure,,Различия в структуре слога
-D-6-4,D-6,Tone differences,,Тоновые различия
+D-6-1,D-6,Absent,,Отсутствуют
+D-6-2,D-6,Present,,Присутствуют
 D-7-1,D-7,Differences in phonetic structure,,Различия в фонетическом составе
 D-7-2,D-7,Differences in accentuation,,Акцентные различия
 D-7-3,D-7,Differences in syllable structure,,Различия в структуре слога
+D-7-4,D-7,Tone differences,,Тоновые различия
 D-8-1,D-8,Differences in phonetic structure,,Различия в фонетическом составе
-D-8-2,D-8,Accentual differences,,Акцентные различия
+D-8-2,D-8,Differences in accentuation,,Акцентные различия
 D-8-3,D-8,Differences in syllable structure,,Различия в структуре слога
-D-8-4,D-8,Differences in tones,,Тоновые различия
-D-8-5,D-8,Differences in number of syllables,,Различия в количестве слогов
-D-9-1,D-9,No alternations,,Чередования отсутствуют
-D-9-2,D-9,Accompanying,,Сопутствующие
-D-9-3,D-9,Distinctive,,Смыслоразличительные
-D-9-4,D-9,Accompanying and distinctive,,Сопутствующие и смыслоразличительные
-D-10-1,D-10,Vowel alternations,,Вокалические
-D-10-2,D-10,Consonant alternations,,Консонантные
-D-10-3,D-10,Mixed alternations,,Смешанные
-D-10-4,D-10,Tone alternations,,Тоновые
-D-10-5,D-10,Phoneme complex alternations,,Чередование комплексов фонем
-D-10-6,D-10,Vowel and consonant alternations,,Вокалические и консонантные
-D-10-7,D-10,Vowel and mixed alternations,,Вокалические и смешанные
-D-10-8,D-10,"Vowel, consonant and mixed alternations",,"Вокалические, консонантные и смешанные"
-D-10-9,D-10,Consonant and phoneme complex alternations,,Консонантные и чередование комплексов
-D-10-10,D-10,"Vowel, consonant, mixed, and phoneme complex alternations",,"Вокалические, консонантные, смешанные и чередование комплексов"
-D-10-11,D-10,"Vowel, consonant, and phoneme complex alternations",,"Вокалические, консонантные и чередования комплексов"
-D-10-12,D-10,Vowel and tone alternations,,Вокалические и тоновые
-D-10-13,D-10,Consonant and tone alternations,,Консонантные и тоновые
+D-9-1,D-9,Differences in phonetic structure,,Различия в фонетическом составе
+D-9-2,D-9,Accentual differences,,Акцентные различия
+D-9-3,D-9,Differences in syllable structure,,Различия в структуре слога
+D-9-4,D-9,Differences in tones,,Тоновые различия
+D-9-5,D-9,Differences in number of syllables,,Различия в количестве слогов
+D-10-1,D-10,No alternations,,Чередования отсутствуют
+D-10-2,D-10,Accompanying,,Сопутствующие
+D-10-3,D-10,Distinctive,,Смыслоразличительные
+D-10-4,D-10,Accompanying and distinctive,,Сопутствующие и смыслоразличительные
+D-11-1,D-11,Vowel alternations,,Вокалические
+D-11-2,D-11,Consonant alternations,,Консонантные
+D-11-3,D-11,Mixed alternations,,Смешанные
+D-11-4,D-11,Tone alternations,,Тоновые
+D-11-5,D-11,Phoneme complex alternations,,Чередование комплексов фонем
+D-11-6,D-11,Vowel and consonant alternations,,Вокалические и консонантные
+D-11-7,D-11,Vowel and mixed alternations,,Вокалические и смешанные
+D-11-8,D-11,"Vowel, consonant and mixed alternations",,"Вокалические, консонантные и смешанные"
+D-11-9,D-11,Consonant and phoneme complex alternations,,Консонантные и чередование комплексов
+D-11-10,D-11,"Vowel, consonant, mixed, and phoneme complex alternations",,"Вокалические, консонантные, смешанные и чередование комплексов"
+D-11-11,D-11,"Vowel, consonant, and phoneme complex alternations",,"Вокалические, консонантные и чередования комплексов"
+D-11-12,D-11,Vowel and tone alternations,,Вокалические и тоновые
+D-11-13,D-11,Consonant and tone alternations,,Консонантные и тоновые
 E-1-1,E-1,Agglutinative,,Агглютинативный
 E-1-2,E-1,Agglutinative with some fusional features,,Агглютинативный с элементами флективного
 E-1-3,E-1,Fusional,,Флективный
