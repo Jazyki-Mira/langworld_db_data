@@ -351,48 +351,50 @@ D-2-5,D-2,Limitations on consonant sequences (combinations),,Ограничен�
 D-2-6,D-2,No vowel clusters,,Запрет на любые стечения гласных
 D-2-7,D-2,No consonant clusters,,Запрет на любые стечения согласных
 D-2-8,D-2,No long (geminate) consonants,,Запрет на  долгие (геминированные) согласные
-D-3-1,D-3,Only vowels possible,,Только гласные
-D-3-2,D-3,Only consonants possible,,Только согласные
-D-3-3,D-3,Limited set of vowels possible,,Ограниченный набор гласных
-D-3-4,D-3,Limited set of consonants possible,,Ограниченный набор согласных
-D-3-5,D-3,Limitations on consonant sequences (combinations),,Ограничения на последовательность (сочетания) согласных
-D-3-6,D-3,No vowel clusters,,Запрет на любые стечения гласных
-D-3-7,D-3,No consonant clusters,,Запрет на любые стечения согласных
-D-3-8,D-3,No clusters of more than two consonants,,Запрет на стечение более двух согласных
-D-3-9,D-3,No long (geminate) consonants,,Запрет на  долгие (геминированные) согласные
-D-4-1,D-4,Mainly monosyllabic words,,Преимущественно односложные слова
-D-4-2,D-4,Mostly monosyllabic and bisyllabic words,,Преимущественно одно- и двусложные слова
-D-4-3,D-4,Mostly bisyllabic words,,Преимущественно двусложные слова
-D-4-4,D-4,Mainly polysyllabic words,,Преимущественно неодносложные слова
-D-5-1,D-5,Differences in phonetic structure,,Различия в фонетическом составе
-D-5-2,D-5,Differences in accentuation,,Акцентные различия
-D-5-3,D-5,Differences in syllable structure,,Различия в структуре слога
-D-5-4,D-5,Tone differences,,Тоновые различия
+D-3-1,D-3,Absent,,Отсутствуют
+D-3-2,D-3,Present,,Присутствуют
+D-4-1,D-4,Only vowels possible,,Только гласные
+D-4-2,D-4,Only consonants possible,,Только согласные
+D-4-3,D-4,Limited set of vowels possible,,Ограниченный набор гласных
+D-4-4,D-4,Limited set of consonants possible,,Ограниченный набор согласных
+D-4-5,D-4,Limitations on consonant sequences (combinations),,Ограничения на последовательность (сочетания) согласных
+D-4-6,D-4,No vowel clusters,,Запрет на любые стечения гласных
+D-4-7,D-4,No consonant clusters,,Запрет на любые стечения согласных
+D-4-8,D-4,No clusters of more than two consonants,,Запрет на стечение более двух согласных
+D-4-9,D-4,No long (geminate) consonants,,Запрет на  долгие (геминированные) согласные
+D-5-1,D-5,Mainly monosyllabic words,,Преимущественно односложные слова
+D-5-2,D-5,Mostly monosyllabic and bisyllabic words,,Преимущественно одно- и двусложные слова
+D-5-3,D-5,Mostly bisyllabic words,,Преимущественно двусложные слова
+D-5-4,D-5,Mainly polysyllabic words,,Преимущественно неодносложные слова
 D-6-1,D-6,Differences in phonetic structure,,Различия в фонетическом составе
 D-6-2,D-6,Differences in accentuation,,Акцентные различия
 D-6-3,D-6,Differences in syllable structure,,Различия в структуре слога
+D-6-4,D-6,Tone differences,,Тоновые различия
 D-7-1,D-7,Differences in phonetic structure,,Различия в фонетическом составе
-D-7-2,D-7,Accentual differences,,Акцентные различия
+D-7-2,D-7,Differences in accentuation,,Акцентные различия
 D-7-3,D-7,Differences in syllable structure,,Различия в структуре слога
-D-7-4,D-7,Differences in tones,,Тоновые различия
-D-7-5,D-7,Differences in number of syllables,,Различия в количестве слогов
-D-8-1,D-8,No alternations,,Чередования отсутствуют
-D-8-2,D-8,Accompanying,,Сопутствующие
-D-8-3,D-8,Distinctive,,Смыслоразличительные
-D-8-4,D-8,Accompanying and distinctive,,Сопутствующие и смыслоразличительные
-D-9-1,D-9,Vowel alternations,,Вокалические
-D-9-2,D-9,Consonant alternations,,Консонантные
-D-9-3,D-9,Mixed alternations,,Смешанные
-D-9-4,D-9,Tone alternations,,Тоновые
-D-9-5,D-9,Phoneme complex alternations,,Чередование комплексов фонем
-D-9-6,D-9,Vowel and consonant alternations,,Вокалические и консонантные
-D-9-7,D-9,Vowel and mixed alternations,,Вокалические и смешанные
-D-9-8,D-9,"Vowel, consonant and mixed alternations",,"Вокалические, консонантные и смешанные"
-D-9-9,D-9,Consonant and phoneme complex alternations,,Консонантные и чередование комплексов
-D-9-10,D-9,"Vowel, consonant, mixed, and phoneme complex alternations",,"Вокалические, консонантные, смешанные и чередование комплексов"
-D-9-11,D-9,"Vowel, consonant, and phoneme complex alternations",,"Вокалические, консонантные и чередования комплексов"
-D-9-12,D-9,Vowel and tone alternations,,Вокалические и тоновые
-D-9-13,D-9,Consonant and tone alternations,,Консонантные и тоновые
+D-8-1,D-8,Differences in phonetic structure,,Различия в фонетическом составе
+D-8-2,D-8,Accentual differences,,Акцентные различия
+D-8-3,D-8,Differences in syllable structure,,Различия в структуре слога
+D-8-4,D-8,Differences in tones,,Тоновые различия
+D-8-5,D-8,Differences in number of syllables,,Различия в количестве слогов
+D-9-1,D-9,No alternations,,Чередования отсутствуют
+D-9-2,D-9,Accompanying,,Сопутствующие
+D-9-3,D-9,Distinctive,,Смыслоразличительные
+D-9-4,D-9,Accompanying and distinctive,,Сопутствующие и смыслоразличительные
+D-10-1,D-10,Vowel alternations,,Вокалические
+D-10-2,D-10,Consonant alternations,,Консонантные
+D-10-3,D-10,Mixed alternations,,Смешанные
+D-10-4,D-10,Tone alternations,,Тоновые
+D-10-5,D-10,Phoneme complex alternations,,Чередование комплексов фонем
+D-10-6,D-10,Vowel and consonant alternations,,Вокалические и консонантные
+D-10-7,D-10,Vowel and mixed alternations,,Вокалические и смешанные
+D-10-8,D-10,"Vowel, consonant and mixed alternations",,"Вокалические, консонантные и смешанные"
+D-10-9,D-10,Consonant and phoneme complex alternations,,Консонантные и чередование комплексов
+D-10-10,D-10,"Vowel, consonant, mixed, and phoneme complex alternations",,"Вокалические, консонантные, смешанные и чередование комплексов"
+D-10-11,D-10,"Vowel, consonant, and phoneme complex alternations",,"Вокалические, консонантные и чередования комплексов"
+D-10-12,D-10,Vowel and tone alternations,,Вокалические и тоновые
+D-10-13,D-10,Consonant and tone alternations,,Консонантные и тоновые
 E-1-1,E-1,Agglutinative,,Агглютинативный
 E-1-2,E-1,Agglutinative with some fusional features,,Агглютинативный с элементами флективного
 E-1-3,E-1,Fusional,,Флективный

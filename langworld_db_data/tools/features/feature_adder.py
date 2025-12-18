@@ -415,11 +415,11 @@ class FeatureAdder(ObjectWithPaths):
 if __name__ == "__main__":
     FeatureAdder().add_feature(
         category_id="D",
-        feature_en="Restrictions on the phonemic structure in the initial position",
-        feature_ru="Ограничения на фонемную структуру начала слова",
+        feature_en="Restrictions on the phonemic structure in the final position",
+        feature_ru="Ограничения на фонемную структуру в конце слова",
         listed_values_to_add=[
-            {"en": "Absent", "ru": "Отсутствуют,"},
-            {"en": "Present", "ru": "Присутствуют,"},
+            {"en": "Absent", "ru": "Отсутствуют",},
+            {"en": "Present", "ru": "Присутствуют",},
         ],
         index_to_assign=3,
     )  # pragma: no cover
