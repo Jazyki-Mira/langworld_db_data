@@ -341,8 +341,8 @@ C-3-1,C-3,Consonant clusters are absent,Стечения согласных не
 C-3-2,C-3,Consonant clusters are only possible at the onset of syllable,Стечения согласных возможны только в начале слога,,
 C-3-3,C-3,Consonant clusters are only possible at the coda of syllable,Стечения согласных возможны только в конце слога,,
 C-3-4,C-3,Consonant clusters are possible at both the onset and the coda of syllable,"Стечения согласных возможны и в начале, и в конце слога",,
-D-1-1,D-1,Absent,"Отсутствуют,",,
-D-1-2,D-1,Present,"Присутствуют,",,
+D-1-1,D-1,Absent,Отсутствуют,,
+D-1-2,D-1,Present,Присутствуют,,
 D-2-1,D-2,Only vowels possible,Разрешены только гласные,,
 D-2-2,D-2,Only consonants possible,Разрешены только согласные,,"<p>Например, серболужицкий: <b><i>в 2.1.4 “Слоги в исконных серболужицких лексемах, как правило, не начинаются с гласной; исключение составляют некоторые союзы, частицы, междометия (см. 2.2.2.), изредка другие слова (ср. в.-луж. ert ‘рот’)”.</i></b></p>"
 D-2-3,D-2,Limited set of vowels,Ограниченный набор гласных,,"<p><i>Например, истрорумынский</i></p>"
