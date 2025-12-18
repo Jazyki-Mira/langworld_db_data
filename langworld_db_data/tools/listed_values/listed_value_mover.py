@@ -57,6 +57,6 @@ class ListedValueMover(ObjectWithPaths):
 
 if __name__ == "__main__":
     ListedValueMover().move_listed_value(
-        initial_value_id="D-2-12",
-        index_to_assign=8,
+        initial_value_id="D-3-3",
+        index_to_assign=2,
     )  # pragma: no cover
