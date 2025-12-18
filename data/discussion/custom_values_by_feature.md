@@ -542,7 +542,7 @@
 - Различия в фонетическом составе и моделях словоизменения: [хазара](../feature_profiles/hazaragi.csv)
 - Различия в фонетическом составе и наличие отдельных словоизменительных классов: [цыганский](../feature_profiles/romani.csv)
 - нет данных: [лувийский](../feature_profiles/luwian.csv), [ликийский](../feature_profiles/lycian.csv), [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv), [палайский](../feature_profiles/palaic.csv), [гоо](../feature_profiles/goo.csv), [яурэ](../feature_profiles/yaoure.csv)
-## D-10: Типы различий между корневыми и аффиксальными морфемами
+## D-11: Типы различий между корневыми и аффиксальными морфемами
 
 - Вопрос не изучен: [согдийский](../feature_profiles/sogdian.csv)
 - Отсутствуют: [азиатских эскимосов](../feature_profiles/asiatic_eskimo.csv), [чукотский](../feature_profiles/chukchi.csv), [ительменский](../feature_profiles/itelmen.csv), [керекский](../feature_profiles/kerek.csv), [корякский](../feature_profiles/koryak.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [древнеперсидский](../feature_profiles/old_persian.csv), [персидский](../feature_profiles/persian.csv), [таджикский](../feature_profiles/tajik.csv), [мазандеранский](../feature_profiles/mazanderani.csv), [семнанский](../feature_profiles/semnani.csv), [осетинский](../feature_profiles/ossetian.csv), [кати](../feature_profiles/kati.csv), [кховар](../feature_profiles/khowar.csv), [бацбийский](../feature_profiles/bats.csv), [гунзибский](../feature_profiles/hunzib.csv), [ингушский](../feature_profiles/ingush.csv), [бретонский](../feature_profiles/breton.csv), [ирландский](../feature_profiles/irish_gaelic.csv), [валлийский](../feature_profiles/welsh.csv), [идиш](../feature_profiles/yiddish.csv), [арагонский](../feature_profiles/aragonese.csv), [далматинский](../feature_profiles/dalmatian.csv), [французский](../feature_profiles/french.csv), [истророманский](../feature_profiles/istriot.csv), [чешский](../feature_profiles/czech.csv), [кашубский](../feature_profiles/kashubian.csv), [македонский](../feature_profiles/macedonian.csv), [древнерусский](../feature_profiles/old_russian.csv), [полабский](../feature_profiles/polabian.csv), [русский](../feature_profiles/russian.csv), [сербохорватский](../feature_profiles/serbocroatian.csv), [украинский](../feature_profiles/ukrainian.csv), [ассамский](../feature_profiles/assamese.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [ория](../feature_profiles/oriya.csv), [малаялам](../feature_profiles/malayalam.csv), [карийский](../feature_profiles/carian.csv), [древнеармянский](../feature_profiles/classical_armenian.csv), [лувийский](../feature_profiles/luwian.csv), [ликийский](../feature_profiles/lycian.csv), [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv), [палайский](../feature_profiles/palaic.csv), [фригийский](../feature_profiles/phrygian.csv), [сидетский](../feature_profiles/sidetic.csv), [западноармянский литературный](../feature_profiles/standard_western_armenian.csv), [тохарский В](../feature_profiles/tocharian_b.csv), [бамана](../feature_profiles/bamana.csv), [бен](../feature_profiles/beng.csv), [джого](../feature_profiles/jogo.csv), [кпелле](../feature_profiles/kpelle.csv), [мандинка](../feature_profiles/mandinka.csv), [сонинке](../feature_profiles/soninke.csv), [уан](../feature_profiles/wan.csv)
@@ -550,11 +550,11 @@
 - Различия в слоговом составе: [татский](../feature_profiles/tati.csv)
 - Различия в фонетическом составе и тоновые различия: [шина](../feature_profiles/shina.csv)
 - нет данных: [гоо](../feature_profiles/goo.csv)
-## D-11: Функциональный тип чередований
+## D-12: Функциональный тип чередований
 
 - Нет надежных языковых материалов: [скифский](../feature_profiles/scythian.csv)
 - Сведений нет: [таджриши](../feature_profiles/tajrishi.csv)
-## D-12: Вид чередований
+## D-13: Вид чередований
 
 - Вокалические (качественные и количественные), консонантные, чередования комплексов и интонационные (при словоизменении): [сербохорватский](../feature_profiles/serbocroatian.csv)
 - Вокалические, консонантные и просодемные (тоновые и акцентные): [норвежский](../feature_profiles/norwegian.csv)
