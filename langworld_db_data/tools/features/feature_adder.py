@@ -421,5 +421,5 @@ if __name__ == "__main__":
             {"en": "Absent", "ru": "Отсутствуют,"},
             {"en": "Present", "ru": "Присутствуют,"},
         ],
-        index_to_assign=1,
+        index_to_assign=3,
     )  # pragma: no cover
