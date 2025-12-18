@@ -415,8 +415,8 @@ class FeatureAdder(ObjectWithPaths):
 if __name__ == "__main__":
     FeatureAdder().add_feature(
         category_id="D",
-        feature_en="Differences between content and function words",
-        feature_ru="Различия между знаменательными и служебными словами",
+        feature_en="Differences between native and borrowed words",
+        feature_ru="Различия между исконными и заимствованными словами",
         listed_values_to_add=[
             {
                 "en": "Absent",
@@ -427,5 +427,5 @@ if __name__ == "__main__":
                 "ru": "Присутствуют",
             },
         ],
-        index_to_assign=6,
+        index_to_assign=8,
     )  # pragma: no cover
