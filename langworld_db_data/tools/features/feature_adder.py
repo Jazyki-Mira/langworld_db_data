@@ -418,14 +418,8 @@ if __name__ == "__main__":
         feature_en="Restrictions on the phonemic structure in the initial position",
         feature_ru="Ограничения на фонемную структуру начала слова",
         listed_values_to_add=[
-            {
-                "en": "Absent",
-                "ru": "Отсутствуют,"
-            },
-            {
-                "en": "Present",
-                "ru": "Присутствуют,"
-            },
+            {"en": "Absent", "ru": "Отсутствуют,"},
+            {"en": "Present", "ru": "Присутствуют,"},
         ],
         index_to_assign=1,
     )  # pragma: no cover
