@@ -355,7 +355,7 @@ class ListedValueAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     ListedValueAdder().add_listed_value(
-        feature_id="",
-        new_value_en="",
-        new_value_ru="",
+        feature_id="F-5",
+        new_value_en="Present (adjectives do not differ in number)",
+        new_value_ru="Имеется (прилагательные по числу не различаются)",
     )  # pragma: no cover
