@@ -732,7 +732,6 @@
 - нет: [лидийский](../feature_profiles/lydian.csv)
 ## F-5: Атрибутивное согласование прилагательных по роду (в зависимости от числа)
 
-- Отсутствует: [майян](../feature_profiles/mayan.csv), [пашаи](../feature_profiles/pashai.csv)
 - Согласование отсутствует: [сангличский](../feature_profiles/sanglechi.csv)
 - Только в мужском роде: [банджари](../feature_profiles/banjari.csv)
 - нет данных: [милийский](../feature_profiles/milyan.csv)
