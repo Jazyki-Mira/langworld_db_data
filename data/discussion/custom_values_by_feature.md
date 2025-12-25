@@ -1432,7 +1432,7 @@
 - Местоимения, числительные и предлоги: [сангличский](../feature_profiles/sanglechi.csv)
 - Местоимения, числительные, постпозитивные показатели неопределенности/единичности и послелоги, характеризующие определенность: [джавшакани](../feature_profiles/jawshakani.csv)
 - Прилагательные, местоимения, числительные и частицы: [русский](../feature_profiles/russian.csv)
-## J-7: Способы выражения форм вежливости
+## J-7: Грамматические способы выражения вежливости
 
 - В глагольной группе: [персидский](../feature_profiles/persian.csv), [польский](../feature_profiles/polish.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [синдхи](../feature_profiles/sindhi.csv), [ирула](../feature_profiles/irula.csv), [гбан](../feature_profiles/gban.csv)
 - В глагольной группе, местоимениях и в отрицательном наречии: [сардинский](../feature_profiles/sardinian.csv)
