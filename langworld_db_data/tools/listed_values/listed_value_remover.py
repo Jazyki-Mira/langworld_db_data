@@ -164,4 +164,4 @@ class ListedValueRemover(ObjectWithPaths):
 
 
 if __name__ == "__main__":
-    ListedValueRemover().remove_listed_value(id_of_value_to_remove="")  # pragma: no cover
+    ListedValueRemover().remove_listed_value(id_of_value_to_remove="J-7-11")  # pragma: no cover

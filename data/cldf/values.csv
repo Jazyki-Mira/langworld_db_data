@@ -19752,7 +19752,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19751,polish,J-4,Pronouns and adverbs,J-4-6,,,Местоимения и наречия,
 19752,polish,J-5,Special verb form,J-5-4,,,Особая глагольная форма,Определенность/неопределенность деятеля выражается аффиксально в формах прошедшего времени изъявительного наклонения.
 19753,polish,J-6,,,,,Местоимения и сложные прилагательные с местоименной основой,
-19754,polish,J-7,In verb phrase and in quasi-pronouns,J-7-11,,,В глагольной группе и квазиместоимениях,
+19754,polish,J-7,In verb phrase,J-7-2,,,В глагольной группе,
 19755,polish,J-8,"Negative particles, affixes, pronouns, and conjunctions",J-8-31,,,"Отрицательные частицы, аффиксы, местоимения и союзы",Существует двойное и тройное отрицание.
 19756,polish,J-9,Preposition,J-9-3,,,Препозиция,
 19757,polish,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
