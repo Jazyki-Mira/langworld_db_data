@@ -20385,7 +20385,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20383,rajbanshi_nepal,I-10,Absent,I-10-1,,,Отсутствует,
 20384,rajbanshi_nepal,J-2,Demonstrative pronouns,J-2-1,,,Указательные местоимения,
 20385,rajbanshi_nepal,J-5,Absent,J-5-1,,,Отсутствует,
-20386,rajbanshi_nepal,J-7,In noun phrase and in pronouns,J-7-9,,,В именной группе и местоимениях,
+20386,rajbanshi_nepal,J-7,In pronouns,J-7-3,,,В местоимениях,
 20387,rajbanshi_nepal,J-8,Negative affixes,J-8-1,,,Отрицательные аффиксы,
 20388,rajbanshi_nepal,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,
 20389,rajbanshi_nepal,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
