@@ -18,7 +18,6 @@ mypy = "*"
 pytest = "*"
 pytest-cov = "*"
 ruff = "*"
-isort = "~=6.1.0"  # last version that supports Python 3.9
 pre-commit = "*"
 langworld-db-data = {editable = true, path = "."}
 
