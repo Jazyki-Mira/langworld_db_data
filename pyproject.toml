@@ -2,11 +2,6 @@
 line-length = 99
 target-version = ['py39']
 
-[tool.isort]
-profile = "black"
-line_length = 99
-skip_glob = ["api/migrations/*"]
-
 [tool.mypy]
 # langworld_db_data is an external package imported via git subtree
 exclude = ["./langworld_db_data", "langworld_db_pyramid/alembic", "tests", "setup.py"]
