@@ -623,7 +623,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 622,alanic,F-1,Two,F-1-2,,,Два,Других данных нет.
 623,alanic,F-2,,,,,Аффиксация в системе имени (прилагательном и местоимении),
 624,alanic,F-3,,,,,В  прилагательном и местоимении,
-625,alanic,F-5,Only in singular,F-5-1,,,Только в единственном числе,Других данных нет.
+625,alanic,F-5,Only in singular,F-5-2,,,Только в единственном числе,Других данных нет.
 626,alanic,H-2,Verbal agreement and case affixes,H-2-5,,,Глагольное согласование и падежные аффиксы,Других данных нет.
 627,alanic,H-6,Spatial adverbs,H-6-4,,,Наречия места,Других данных нет.
 628,alanic,I-8,"Tense, person and number",I-8-8,,,"Время, лицо, число",Других данных нет.
@@ -726,7 +726,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 725,amharic,E-1,Fusional with some agglutinative features,E-1-4,,,Флективный с элементами агглютинации,
 726,amharic,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 727,amharic,F-1,Two,F-1-2,,,Два,
-728,amharic,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+728,amharic,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 729,amharic,F-6,Absent,F-6-1,,,Отсутствует,
 730,amharic,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 731,amharic,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -786,7 +786,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 785,ancient_hebrew,E-1,Fusional,E-1-3,,,Флективный,
 786,ancient_hebrew,E-4,Synthetic,E-4-5,,,Синтетический,
 787,ancient_hebrew,F-1,Two,F-1-2,,,Два,
-788,ancient_hebrew,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+788,ancient_hebrew,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 789,ancient_hebrew,F-6,Always present,F-6-2,,,Всегда присутствует,
 790,ancient_hebrew,F-7,Absent,F-7-1,,,Отсутствуют,
 791,ancient_hebrew,G-1,"Singular, dual and plural",G-1-2,,,"Единственное, двойственное и множественное",
@@ -923,7 +923,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 922,aragonese,F-1,Two,F-1-2,,,Два,Состав и характер морфологических категорий идентичны испанским.
 923,aragonese,F-2,Articles,F-2-1,,,Артикли,
 924,aragonese,F-3,"Adjectives, numerals, pronouns, and articles",F-3-20,,,"В прилагательном, числительном, местоимении и артикле",
-925,aragonese,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+925,aragonese,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 926,aragonese,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
 927,aragonese,F-9,Lexical,F-9-1,,,Лексический,Других данных нет.
 928,aragonese,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -1024,7 +1024,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1023,argobba,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 1024,argobba,F-1,Two,F-1-2,,,Два,
 1025,argobba,F-3,,,,,глаголы и местоимения,
-1026,argobba,F-5,Absent,F-5-4,,,Отсутствует,
+1026,argobba,F-5,Absent,F-5-1,,,Отсутствует,
 1027,argobba,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 1028,argobba,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 1029,argobba,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -1091,7 +1091,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1090,aromanian,F-1,Three,F-1-3,,,Три,
 1091,aromanian,F-2,Articles,F-2-1,,,Артикли,
 1092,aromanian,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-1093,aromanian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+1093,aromanian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 1094,aromanian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 1095,aromanian,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 1096,aromanian,F-8,"Lexical, morphological and syntactic",F-8-7,,,"Лексическое, морфологическое и синтаксическое",Имена лиц (собственные и нарицательные) имеют аналитическое проклитическое склонение и формы вокатива.
@@ -1180,7 +1180,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1179,ashkun,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 1180,ashkun,F-2,,,,,Флексии в прилагательном и глаголе,
 1181,ashkun,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-1182,ashkun,F-5,Only in singular,F-5-1,,,Только в единственном числе,Прилагательное не имеет категории числа.
+1182,ashkun,F-5,Only in singular,F-5-2,,,Только в единственном числе,Прилагательное не имеет категории числа.
 1183,ashkun,F-6,Absent,F-6-1,,,Отсутствует,В статье приводятся две формы для числительных от двух до четырех. Их значение не описывается.
 1184,ashkun,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 1185,ashkun,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,Категория личности/неличности проявляется в наличии форм вокатива.
@@ -1320,7 +1320,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1319,assamese,E-1,Agglutinative with some fusional features,E-1-2,,,Агглютинативный с элементами флективного,
 1320,assamese,F-1,Two,F-1-2,Agreement is remnant,,Два,Согласовательные классы остаточные
 1321,assamese,F-3,Adjectives,F-3-6,,,В прилагательном,
-1322,assamese,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+1322,assamese,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 1323,assamese,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 1324,assamese,F-9,Morphological and syntactic,F-9-5,,,Морфологический и синтаксический,
 1325,assamese,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -1473,7 +1473,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1472,asturian,F-1,Two,F-1-2,,,Два,"Cуществует также класс неисчисляемых существительных ""вещественного среднего рода"" (neutro de materia)."
 1473,asturian,F-2,Articles,F-2-1,,,Артикли,
 1474,asturian,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-1475,asturian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+1475,asturian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 1476,asturian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",Других данных нет.
 1477,asturian,F-7,Countability/uncountability,F-7-6,,,Исчисляемость/неисчисляемость,
 1478,asturian,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -1699,7 +1699,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1698,awadhi,E-1,Fusional with some agglutinative features,E-1-4,,,Флективный с элементами агглютинации,
 1699,awadhi,F-1,,,,,Пять,
 1700,awadhi,F-3,"Adjectives. Numerals, and pronouns",F-3-14,,,"В прилагательном, числительном и местоимении","Только у порядковых числительных, местоимения - только в некоторых говорах"
-1701,awadhi,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+1701,awadhi,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 1702,awadhi,F-7,,,,,"Есть 2 рода, которые распределены по 5 согласовательным классам",
 1703,awadhi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 1704,awadhi,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
@@ -1835,7 +1835,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 1834,bactrian,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,Грамматический род  в системе имен не прослеживается.
 1835,bactrian,F-2,Articles,F-2-1,,,Артикли,"Релятивный артикль может быть понят, в частности, как фиксирующий форму женского рода (свойственную не всем диалектам Б.я.)."
 1836,bactrian,F-3,"Pronouns, adjectives, and verbs",F-3-9,,,"В местоимении, прилагательном и глаголе",
-1837,bactrian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,Других данных нет.
+1837,bactrian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,Других данных нет.
 1838,bactrian,F-7,Absent,F-7-1,,,Отсутствуют,Других данных нет.
 1839,bactrian,F-9,Lexical and morphological,F-9-6,,,Лексический и морфологический,Других данных нет.
 1840,bactrian,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -2124,7 +2124,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2123,bamana,D-13,Consonant and tone alternations,D-13-13,,,Консонантные и тоновые,
 2124,bamana,E-4,Isolating,E-4-4,,,Изолирующий,
 2125,bamana,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,
-2126,bamana,F-5,Absent,F-5-4,,,Отсутствует,
+2126,bamana,F-5,Absent,F-5-1,,,Отсутствует,
 2127,bamana,F-7,,,,,Автосемантичность,
 2128,bamana,F-8,Lexical,F-8-1,,,Лексическое,
 2129,bamana,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -2313,7 +2313,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2312,bartangi,F-2,,,,,Перегласовка основ и суффиксация,
 2313,bartangi,F-3,"Pronouns, adjectives, and verbs",F-3-9,,,"В местоимении, прилагательном и глаголе",
 2314,bartangi,F-4,,,,,"Отдельные лексемы и элементы композитов, огласовка глагольных основ",
-2315,bartangi,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+2315,bartangi,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 2316,bartangi,F-7,Absent,F-7-1,,,Отсутствуют,Других данных нет.
 2317,bartangi,F-8,Syntactic,F-8-3,,,Синтаксическое,
 2318,bartangi,F-9,Lexical,F-9-1,,,Лексический,
@@ -2573,7 +2573,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 2572,belorussian,F-1,Three,F-1-3,,,Три,Выделяются группы существительных общего рода и вариантной родовой принадлежности.
 2573,belorussian,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 2574,belorussian,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",
-2575,belorussian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+2575,belorussian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 2576,belorussian,F-6,,,,,"Для числительных ""один"", ""два"" и ""оба""",
 2577,belorussian,F-7,Person/non-person and animacy/inanimacy,F-7-4,,,Личность/неличность и одушевленность/неодушевленность,
 2578,belorussian,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,
@@ -3196,7 +3196,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3195,braj,E-1,Fusional with some agglutinative features,E-1-4,,,Флективный с элементами агглютинации,
 3196,braj,F-1,Three,F-1-3,,,Три,
 3197,braj,F-3,"Pronouns, adjectives, and verbs",F-3-9,,,"В местоимении, прилагательном и глаголе",
-3198,braj,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+3198,braj,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 3199,braj,F-7,Absent,F-7-1,,,Отсутствуют,
 3200,braj,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 3201,braj,G-4,Attributive,G-4-3,,,Атрибутивное,
@@ -3433,7 +3433,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3432,bulgarian,F-1,Three,F-1-3,,,Три,Выделяются группы существительных общего рода и вариантной родовой принадлежности.
 3433,bulgarian,F-2,Articles and nominal and verb flections,F-2-11,,,Артикли и флексии в имени и глаголе,
 3434,bulgarian,F-3,"Adjectives, numerals, pronouns, and participles",F-3-16,,,"В прилагательном, числительном, местоимении и причастии",
-3435,bulgarian,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+3435,bulgarian,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 3436,bulgarian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 3437,bulgarian,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 3438,bulgarian,F-8,Morphological and syntactic,F-8-6,,,Морфологическое и синтаксическое,
@@ -3646,7 +3646,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3645,catalan,F-1,Two,F-1-2,,,Два,
 3646,catalan,F-2,Articles,F-2-1,,,Артикли,
 3647,catalan,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-3648,catalan,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+3648,catalan,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 3649,catalan,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 3650,catalan,F-7,Absent,F-7-1,,,Отсутствуют,
 3651,catalan,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -3836,7 +3836,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3835,chaha,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 3836,chaha,F-1,Two,F-1-2,,,Два,
 3837,chaha,F-3,,,,,местоимения и глаголы,
-3838,chaha,F-5,Absent,F-5-4,,,Отсутствует,
+3838,chaha,F-5,Absent,F-5-1,,,Отсутствует,
 3839,chaha,F-6,Absent,F-6-1,,,Отсутствует,
 3840,chaha,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 3841,chaha,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -4244,7 +4244,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4243,classical_mandaic,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 4244,classical_mandaic,F-1,Two,F-1-2,,,Два,
 4245,classical_mandaic,F-3,"Adjectives, verbs, and numerals",F-3-10,,,"В прилагательном, глаголе и числительном",
-4246,classical_mandaic,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+4246,classical_mandaic,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 4247,classical_mandaic,F-6,Always present,F-6-2,,,Всегда присутствует,
 4248,classical_mandaic,F-7,Absent,F-7-1,,,Отсутствуют,
 4249,classical_mandaic,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -4307,7 +4307,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4306,classical_syriac,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 4307,classical_syriac,F-1,Two,F-1-2,,,Два,
 4308,classical_syriac,F-3,"Adjectives, verbs, and numerals",F-3-10,,,"В прилагательном, глаголе и числительном",
-4309,classical_syriac,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+4309,classical_syriac,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 4310,classical_syriac,F-6,Always present,F-6-2,,,Всегда присутствует,
 4311,classical_syriac,F-7,Absent,F-7-1,,,Отсутствуют,
 4312,classical_syriac,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -4379,7 +4379,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4378,cornish,F-1,Two,F-1-2,,,Два,
 4379,cornish,F-2,Anlaut mutations,F-2-12,,,Мутации анлаута,
 4380,cornish,F-3,,,,,"В артикле, числительном и местоимении",
-4381,cornish,F-5,Absent,F-5-4,,,Отсутствует,
+4381,cornish,F-5,Absent,F-5-1,,,Отсутствует,
 4382,cornish,F-6,,,,,"Для числительного ""два""",Других данных нет.
 4383,cornish,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 4384,cornish,G-4,Predicative,G-4-2,,,Предикативное,
@@ -4456,7 +4456,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4455,corsican,F-1,Two,F-1-2,,,Два,
 4456,corsican,F-2,Articles,F-2-1,,,Артикли,
 4457,corsican,F-3,"Adjectives, numerals, pronouns, and articles",F-3-20,,,"В прилагательном, числительном, местоимении и артикле",
-4458,corsican,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,Прилагательные в позиции предиката в безличных предложениях имеют форму женского рода.
+4458,corsican,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,Прилагательные в позиции предиката в безличных предложениях имеют форму женского рода.
 4459,corsican,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 4460,corsican,F-7,Absent,F-7-1,,,Отсутствуют,
 4461,corsican,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -4630,7 +4630,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4629,czech,F-1,Three,F-1-3,,,Три,
 4630,czech,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 4631,czech,F-3,,,,,"В прилагательном, числительном, местоимении, причастии и (в книжном языке) деепричастии",
-4632,czech,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+4632,czech,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 4633,czech,F-6,,,,,"Для числительных ""два"" и ""оба""",
 4634,czech,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 4635,czech,F-9,Morphological and syntactic,F-9-5,,,Морфологический и синтаксический,
@@ -4805,7 +4805,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4804,dalmatian,F-1,Two,F-1-2,,,Два,
 4805,dalmatian,F-2,Articles,F-2-1,,,Артикли,
 4806,dalmatian,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-4807,dalmatian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+4807,dalmatian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 4808,dalmatian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 4809,dalmatian,F-7,Absent,F-7-1,,,Отсутствуют,
 4810,dalmatian,F-8,Lexical,F-8-1,,,Лексическое,
@@ -4967,7 +4967,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4966,dan,E-1,Agglutinative with some fusional features,E-1-2,,,Агглютинативный с элементами флективного,
 4967,dan,E-4,,,,,Изолирующий с элементами синтетизма,
 4968,dan,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,
-4969,dan,F-5,Absent,F-5-4,,,Отсутствует,
+4969,dan,F-5,Absent,F-5-1,,,Отсутствует,
 4970,dan,F-7,,,,,Автосемантичность,
 4971,dan,F-9,Syntactic,F-9-3,,,Синтаксический,
 4972,dan,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -5064,7 +5064,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5063,danish,F-1,Two,F-1-2,,,Два,Общий и средний род.
 5064,danish,F-2,Articles,F-2-1,,,Артикли,
 5065,danish,F-3,,,,,"В прилагательном, причастии, местоимении и артикле (препозитивном или суффигированном постпозитивном)",
-5066,danish,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+5066,danish,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 5067,danish,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 5068,danish,F-7,Absent,F-7-1,,,Отсутствуют,
 5069,danish,F-8,Lexical,F-8-1,,,Лексическое,
@@ -5443,7 +5443,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5442,domaaki,F-1,Two,F-1-2,,,Два,
 5443,domaaki,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 5444,domaaki,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",
-5445,domaaki,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+5445,domaaki,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 5446,domaaki,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 5447,domaaki,F-7,Absent,F-7-1,,,Отсутствуют,
 5448,domaaki,F-9,Lexical,F-9-1,,,Лексический,
@@ -5541,7 +5541,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5540,domari,F-1,,,Six inflectional classes,,Шесть,Шесть словоизменительных типов
 5541,domari,F-2,Nominal flections,F-2-7,,,Именные флексии,
 5542,domari,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-5543,domari,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+5543,domari,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 5544,domari,F-7,Absent,F-7-1,,,Отсутствуют,
 5545,domari,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 5546,domari,G-2,Marked and unmarked,G-2-3,Singular and plural forms are equally complex,,Маркированное и немаркированное,Единственное и множественное число одинаково сложны морфологически
@@ -5641,7 +5641,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5640,dutch,F-1,Two or three,F-1-6,,,Два или три,Три рода в письменно-литературном (на базе фламандско-брабандского ареала) и два в устном языке (на базе голландского ареала).
 5641,dutch,F-2,Articles,F-2-1,,,Артикли,
 5642,dutch,F-3,"Adjectives, pronouns, and articles",F-3-24,,,"В прилагательном, местоимении и артикле",Прилагательные согласуются по роду только с существительными среднего рода с неопределенным артиклем.
-5643,dutch,F-5,Only in singular,F-5-1,,,Только в единственном числе,Только с именами среднего рода с неопределенным артиклем.
+5643,dutch,F-5,Only in singular,F-5-2,,,Только в единственном числе,Только с именами среднего рода с неопределенным артиклем.
 5644,dutch,F-6,Absent,F-6-1,,,Отсутствует,
 5645,dutch,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 5646,dutch,F-8,"Lexical, morphological and syntactic",F-8-7,,,"Лексическое, морфологическое и синтаксическое",
@@ -5843,7 +5843,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5842,english,E-4,Analytic,E-4-2,,,Аналитический,
 5843,english,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,"Три класса (мужской, женский и средний род) в системе личных и притяжательных местоимений."
 5844,english,F-3,Pronouns,F-3-3,,,В местоимении,
-5845,english,F-5,Absent,F-5-4,,,Отсутствует,
+5845,english,F-5,Absent,F-5-1,,,Отсутствует,
 5846,english,F-6,Absent,F-6-1,,,Отсутствует,
 5847,english,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 5848,english,F-9,"Lexical, morphological, and syntactic",F-9-7,,,"Лексический, морфологический и синтаксический",
@@ -6270,7 +6270,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6269,faroese,F-1,Three,F-1-3,,,Три,
 6270,faroese,F-2,Nominal flections and articles,F-2-6,,,Артикли и флексии в имени,
 6271,faroese,F-3,"Adjectives, pronouns, participles, and articles",F-3-15,,,"В прилагательном, местоимении, причастии и артикле",
-6272,faroese,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+6272,faroese,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 6273,faroese,F-7,Absent,F-7-1,,,Отсутствуют,
 6274,faroese,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
 6275,faroese,F-9,Lexical,F-9-1,,,Лексический,Других данных нет.
@@ -6551,7 +6551,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6550,franco_provencal,F-1,Two,F-1-2,,,Два,
 6551,franco_provencal,F-2,Nominal flections and articles,F-2-6,,,Артикли и флексии в имени,"В современных говорах Франции противопоставление по роду стирается, т.к. отпадают конечные безударные гласные."
 6552,franco_provencal,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-6553,franco_provencal,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+6553,franco_provencal,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 6554,franco_provencal,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 6555,franco_provencal,F-7,Absent,F-7-1,,,Отсутствуют,
 6556,franco_provencal,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -6646,7 +6646,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6645,french,F-1,Two,F-1-2,,,Два,
 6646,french,F-2,Articles,F-2-1,,,Артикли,
 6647,french,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-6648,french,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+6648,french,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 6649,french,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 6650,french,F-7,Absent,F-7-1,,,Отсутствуют,
 6651,french,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -6757,7 +6757,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6756,frisian,F-1,Two,F-1-2,,,Два,Общий и средний род; различия между мужским и женским родом сохраняются при прономинализации и в диалектах.
 6757,frisian,F-2,Articles,F-2-1,,,Артикли,
 6758,frisian,F-3,,,,,"В артикле, местоимении и (остаточно) прилагательном",
-6759,frisian,F-5,Only in singular,F-5-1,,,Только в единственном числе,Других данных нет.
+6759,frisian,F-5,Only in singular,F-5-2,,,Только в единственном числе,Других данных нет.
 6760,frisian,F-7,Absent,F-7-1,,,Отсутствуют,
 6761,frisian,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
 6762,frisian,F-9,Lexical and syntactic,F-9-4,,,Лексический и синтаксический,
@@ -6868,7 +6868,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6867,friulian,F-1,Two,F-1-2,,,Два,
 6868,friulian,F-2,Articles,F-2-1,,,Артикли,
 6869,friulian,F-3,,,,,"В прилагательном, местоимении, числительном, глаголе, причастии и артикле",
-6870,friulian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+6870,friulian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 6871,friulian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 6872,friulian,F-7,Absent,F-7-1,,,Отсутствуют,
 6873,friulian,F-8,Lexical,F-8-1,,,Лексическое,Других данных нет.
@@ -7122,7 +7122,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7121,galician,F-1,Two,F-1-2,,,Два,
 7122,galician,F-2,Articles,F-2-1,,,Артикли,
 7123,galician,F-3,"Adjectives, numerals, pronouns, and articles",F-3-20,,,"В прилагательном, числительном, местоимении и артикле",
-7124,galician,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+7124,galician,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 7125,galician,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 7126,galician,F-7,Absent,F-7-1,,,Отсутствуют,
 7127,galician,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -7214,7 +7214,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7213,garwi,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 7214,garwi,F-2,Umlaut,F-2-2,,,Перегласовка основы,Род выражается перегласовкой основы в прилагательном.
 7215,garwi,F-3,,,,,"В прилагательном, местоимении и глаголе", ИЗМЕНЕН ПОРЯДОК СЛОВ ПО СРАВНЕНИЮ СО СПИСКОМ LISTED
-7216,garwi,F-5,Only in singular,F-5-1,,,Только в единственном числе,Прилагательные не имеют категории числа.
+7216,garwi,F-5,Only in singular,F-5-2,,,Только в единственном числе,Прилагательные не имеют категории числа.
 7217,garwi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 7218,garwi,G-4,Attributive,G-4-3,,,Атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями.
 7219,garwi,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
@@ -7287,7 +7287,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7286,gascon,F-1,Two,F-1-2,,,Два,"Род существительных в некоторых случаях совпадает с иберо-романскими языками, отличаясь от французского."
 7287,gascon,F-2,Articles,F-2-1,,,Артикли,
 7288,gascon,F-3,"Adjectives, numerals, pronouns, and articles",F-3-20,,,"В прилагательном, числительном, местоимении и артикле",
-7289,gascon,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+7289,gascon,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 7290,gascon,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""","Количественные числительные того же типа, что и в окситанском языке."
 7291,gascon,F-7,Absent,F-7-1,,,Отсутствуют,Других данных нет.
 7292,gascon,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -7371,7 +7371,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7370,gaulish,F-1,Three,F-1-3,,,Три,
 7371,gaulish,F-2,,,,,Аффиксация в системе имени,
 7372,gaulish,F-3,Adjectives,F-3-6,,,В прилагательном,Других данных нет.
-7373,gaulish,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,Других данных нет.
+7373,gaulish,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,Других данных нет.
 7374,gaulish,G-1,"Singular, dual and plural",G-1-2,,,"Единственное, двойственное и множественное",
 7375,gaulish,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 7376,gaulish,H-1,Three-seven,H-1-2,,,Три-семь,
@@ -7434,7 +7434,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7433,gawar,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 7434,gawar,F-2,,,,,Флексии и аффиксы ,
 7435,gawar,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-7436,gawar,F-5,Only in singular,F-5-1,,,Только в единственном числе,Прилагательные не имеют  категории числа.
+7436,gawar,F-5,Only in singular,F-5-2,,,Только в единственном числе,Прилагательные не имеют  категории числа.
 7437,gawar,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 7438,gawar,F-9,Morphological,F-9-2,,,Морфологический,Суффиксальную форму множественного числа имеют только одушевленные существительные.
 7439,gawar,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -7592,7 +7592,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7591,geez,F-1,Two,F-1-2,,,Два,
 7592,geez,F-2,Verbal affixes,F-2-3,,,Аффиксация в глаголе,
 7593,geez,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",
-7594,geez,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+7594,geez,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 7595,geez,F-6,,,,,"Для один-два, от 3-10 - полярное согласование",
 7596,geez,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 7597,geez,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -7754,7 +7754,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 7753,german,F-1,Three,F-1-3,,,Три,
 7754,german,F-2,,,,,Артикли и аффиксация в прилагательном,
 7755,german,F-3,,,,,В артикле и прилагательном,
-7756,german,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+7756,german,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 7757,german,F-6,Absent,F-6-1,,,Отсутствует,
 7758,german,F-7,Absent,F-7-1,,,Отсутствуют,
 7759,german,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -8172,7 +8172,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8171,gothic,F-1,Three,F-1-3,,,Три,
 8172,gothic,F-2,Case and number flections,F-2-8,,,Падежно-числовые флексии,
 8173,gothic,F-3,,,,,"В прилагательном, причастии, местоимении и порядковых числительных",
-8174,gothic,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+8174,gothic,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 8175,gothic,F-7,Absent,F-7-1,,,Отсутствуют,
 8176,gothic,F-8,"Lexical, morphological and syntactic",F-8-7,,,"Лексическое, морфологическое и синтаксическое",
 8177,gothic,F-9,Lexical and morphological,F-9-6,,,Лексический и морфологический,
@@ -8265,7 +8265,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8264,grangali,F-2,,,,,Флексии в прилагательном,Прилагательные выражают род в зависимости от пола определяемого.
 8265,grangali,F-3,Adjectives,F-3-6,,,В прилагательном,
 8266,grangali,F-4,Numeral classifiers,F-4-2,,,Счетные классификаторы,Существуют счетные классификаторы для одушевленных и неодушевленных объектов и лиц.
-8267,grangali,F-5,Only in singular,F-5-1,,,Только в единственном числе,Прилагательные не имеют  категории числа.
+8267,grangali,F-5,Only in singular,F-5-2,,,Только в единственном числе,Прилагательные не имеют  категории числа.
 8268,grangali,F-6,Absent,F-6-1,,,Отсутствует,
 8269,grangali,F-7,Absent,F-7-1,,,Отсутствуют,
 8270,grangali,F-8,Lexical,F-8-1,,,Лексическое,Существует нумератив для обозначения лиц. В сочетании с количественным числительным он субстантивируется.
@@ -8358,7 +8358,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8357,gujarati,F-1,Three,F-1-3,,,Три,
 8358,gujarati,F-2,Nominal flections,F-2-7,,,Именные флексии,
 8359,gujarati,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-8360,gujarati,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+8360,gujarati,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 8361,gujarati,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 8362,gujarati,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 8363,gujarati,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -8507,7 +8507,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8506,guro,E-2,Phonetically unconditioned fusion,E-2-4,,,Фонетически необусловленная фузия,
 8507,guro,E-4,,,,,Изолирующий с элементами синтетизма,
 8508,guro,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,
-8509,guro,F-5,Absent,F-5-4,,,Отсутствует,
+8509,guro,F-5,Absent,F-5-1,,,Отсутствует,
 8510,guro,F-7,,,,,Автосемантичность,
 8511,guro,F-8,Lexical,F-8-1,,,Лексическое,
 8512,guro,F-9,Lexical,F-9-1,,,Лексический,
@@ -8595,7 +8595,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8594,harari,F-1,Two,F-1-2,,,Два,
 8595,harari,F-2,Verbal affixes,F-2-3,,,Аффиксация в глаголе,
 8596,harari,F-3,,,,,местоимения и глаголы,
-8597,harari,F-5,Absent,F-5-4,,,Отсутствует,
+8597,harari,F-5,Absent,F-5-1,,,Отсутствует,
 8598,harari,F-6,Absent,F-6-1,,,Отсутствует,
 8599,harari,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 8600,harari,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -8777,7 +8777,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8776,hindko,E-1,Fusional,E-1-3,,,Флективный,
 8777,hindko,F-1,Two,F-1-2,,,Два,
 8778,hindko,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-8779,hindko,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+8779,hindko,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 8780,hindko,F-7,Class,F-7-5,,,Класс,
 8781,hindko,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 8782,hindko,G-4,Attributive,G-4-3,,,Атрибутивное,нет данных о предикативном согласовании
@@ -8850,7 +8850,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8849,hittite,D-13,"Vowel, consonant, mixed, and phoneme complex alternations",D-13-10,,,"Вокалические, консонантные, смешанные и чередование комплексов",
 8850,hittite,E-1,Fusional,E-1-3,,,Флективный,
 8851,hittite,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
-8852,hittite,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+8852,hittite,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 8853,hittite,F-7,Person/non-person and animacy/inanimacy,F-7-4,,,Личность/неличность и одушевленность/неодушевленность,
 8854,hittite,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,
 8855,hittite,F-9,Morphological,F-9-2,,,Морфологический,
@@ -9169,7 +9169,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9168,icelandic,F-1,Three,F-1-3,,,Три,
 9169,icelandic,F-2,Articles and case and number flections,F-2-10,,,Артикли и падежно-числовые флексии,
 9170,icelandic,F-3,,,,,"В артикле, прилагательном и местоимении",
-9171,icelandic,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+9171,icelandic,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 9172,icelandic,F-6,"For ""one"", ""two"", ""three"", ""four""",F-6-5,,,"Для числительных ""один"", ""два"", ""три"" и ""четыре""",
 9173,icelandic,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 9174,icelandic,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -9408,7 +9408,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9407,irish_gaelic,F-1,Two,F-1-2,,,Два,
 9408,irish_gaelic,F-2,Anlaut mutations,F-2-12,,,Мутации анлаута,"Мутации анлаута у существительного после артикля или притяжательного местоимения, у прилагательного − после существительного."
 9409,irish_gaelic,F-3,"Adjectives. Numerals, and pronouns",F-3-14,,,"В прилагательном, числительном и местоимении",
-9410,irish_gaelic,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+9410,irish_gaelic,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 9411,irish_gaelic,F-6,Absent,F-6-1,,,Отсутствует,Других данных нет.
 9412,irish_gaelic,F-7,Absent,F-7-1,,,Отсутствуют,
 9413,irish_gaelic,F-8,Lexical,F-8-1,,,Лексическое,
@@ -9694,7 +9694,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9693,istriot,F-1,Two,F-1-2,,,Два,
 9694,istriot,F-2,Articles,F-2-1,,,Артикли,
 9695,istriot,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-9696,istriot,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+9696,istriot,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 9697,istriot,G-1,Singular and plural,G-1-1,,,Единственное и множественное,Структура числительных аналогична итальянской (с фонетическими отличиями).
 9698,istriot,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 9699,istriot,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
@@ -9780,7 +9780,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9779,istro_romanian,F-1,Two,F-1-2,,,Два,Третий класс (обоюдный род) сохранился в южных говорах. В жеянском говоре развивается категория среднего рода.
 9780,istro_romanian,F-2,Articles,F-2-1,,,Артикли,
 9781,istro_romanian,F-3,"Adjectives, numerals, pronouns, and articles",F-3-20,,,"В прилагательном, числительном, местоимении и артикле",
-9782,istro_romanian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+9782,istro_romanian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 9783,istro_romanian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 9784,istro_romanian,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 9785,istro_romanian,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,Имена лиц имеют формы вокатива.
@@ -9883,7 +9883,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9882,italian,F-1,Two,F-1-2,,,Два,
 9883,italian,F-2,Nominal flections and articles,F-2-6,,,Артикли и флексии в имени,
 9884,italian,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-9885,italian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+9885,italian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 9886,italian,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 9887,italian,F-7,Absent,F-7-1,,,Отсутствуют,
 9888,italian,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -10331,7 +10331,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 10330,judeo_spanish,F-1,Two,F-1-2,,,Два,
 10331,judeo_spanish,F-2,Articles,F-2-1,,,Артикли,
 10332,judeo_spanish,F-3,"Adjectives, numerals, pronouns, and articles",F-3-20,,,"В прилагательном, числительном, местоимении и артикле",
-10333,judeo_spanish,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+10333,judeo_spanish,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 10334,judeo_spanish,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 10335,judeo_spanish,F-9,Lexical and syntactic,F-9-4,,,Лексический и синтаксический,"Существительное в функции прямого дополнения, соотносящееся с одушевленным предметом, вводится предлогом, как в испанском языке."
 10336,judeo_spanish,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -11283,7 +11283,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11282,kashmiri,F-2,,,,,"Тип основы, тип склонения  и именные флексии ",
 11283,kashmiri,F-3,"Adjectives, numerals, pronouns, verbs, and participles",F-3-17,,,"В прилагательном, числительном, местоимении, глаголе и причастии",
 11284,kashmiri,F-4,Numeral classifiers,F-4-2,,,Счетные классификаторы,
-11285,kashmiri,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+11285,kashmiri,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 11286,kashmiri,F-6,Absent,F-6-1,,,Отсутствует,
 11287,kashmiri,F-7,Person/non-person and animacy/inanimacy,F-7-4,,,Личность/неличность и одушевленность/неодушевленность,
 11288,kashmiri,F-8,"Lexical, morphological and syntactic",F-8-7,,,"Лексическое, морфологическое и синтаксическое",
@@ -11387,7 +11387,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11386,kashubian,F-1,Three,F-1-3,,,Три,
 11387,kashubian,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 11388,kashubian,F-3,"Adjectives, numerals, pronouns, verbs, and participles",F-3-17,,,"В прилагательном, числительном, местоимении, глаголе и причастии",
-11389,kashubian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+11389,kashubian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 11390,kashubian,F-6,,,,,"Для числительных ""один"",""два"" и ""оба""",
 11391,kashubian,F-7,Person/non-person and animacy/inanimacy,F-7-4,,,Личность/неличность и одушевленность/неодушевленность,
 11392,kashubian,F-8,Morphological and syntactic,F-8-6,,,Морфологическое и синтаксическое,
@@ -11499,7 +11499,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11498,katarkalai,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 11499,katarkalai,F-2,,,,,"Перегласовка основы, внутренняя и внешняя флексии",
 11500,katarkalai,F-3,,,,,"В прилагательном, причастии и глаголе",
-11501,katarkalai,F-5,Only in singular,F-5-1,,,Только в единственном числе,Прилагательные не имеют категории числа.
+11501,katarkalai,F-5,Only in singular,F-5-2,,,Только в единственном числе,Прилагательные не имеют категории числа.
 11502,katarkalai,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 11503,katarkalai,G-2,Unmarked,G-2-2,,,Немаркированное,
 11504,katarkalai,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями.
@@ -11578,7 +11578,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 11577,kati,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 11578,kati,F-2,,,,,"Перегласовка основы в местоимении, суффиксы в глаголе и флексии в прилагательном, глаголе и причастии",
 11579,kati,F-3,,,,,"В прилагательном, местоимении, глаголе и причастии",
-11580,kati,F-5,Only in singular,F-5-1,,,Только в единственном числе,Прилагательное не имеет категории числа.
+11580,kati,F-5,Only in singular,F-5-2,,,Только в единственном числе,Прилагательное не имеет категории числа.
 11581,kati,F-6,Absent,F-6-1,,,Отсутствует,
 11582,kati,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 11583,kati,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,
@@ -12038,7 +12038,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12037,khotanese,F-1,Two,F-1-2,,,Два,
 12038,khotanese,F-2,,,,,Аффиксация и флексии в системе имени,
 12039,khotanese,F-3,,,,,В прилагательном и местоимении,
-12040,khotanese,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+12040,khotanese,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 12041,khotanese,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 12042,khotanese,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,
 12043,khotanese,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -12295,7 +12295,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12294,khvarshi,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 12295,khvarshi,F-1,Six,F-1-5,,,Шесть,
 12296,khvarshi,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-12297,khvarshi,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+12297,khvarshi,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 12298,khvarshi,F-6,Absent,F-6-1,,,Отсутствует,
 12299,khvarshi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 12300,khvarshi,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -12495,7 +12495,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12494,kla_dan,E-1,Fusional,E-1-3,,,Флективный,
 12495,kla_dan,E-4,,,,,Изолирующий с элементами синтетизма,
 12496,kla_dan,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,
-12497,kla_dan,F-5,Absent,F-5-4,,,Отсутствует,
+12497,kla_dan,F-5,Absent,F-5-1,,,Отсутствует,
 12498,kla_dan,F-7,,,,,Автосемантичность,
 12499,kla_dan,F-9,Syntactic,F-9-3,,,Синтаксический,
 12500,kla_dan,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -12890,7 +12890,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12889,konkani,F-1,Three,F-1-3,,,Три,
 12890,konkani,F-2,Nominal flections,F-2-7,,,Именные флексии,
 12891,konkani,F-3,Adjectives,F-3-6,,,В прилагательном,
-12892,konkani,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+12892,konkani,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 12893,konkani,F-7,Absent,F-7-1,,,Отсутствуют,
 12894,konkani,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 12895,konkani,G-2,Marked and unmarked,G-2-3,Singular and plural forms are equally complex,,Маркированное и немаркированное,Единственное и множественное число одинаково сложны морфологически
@@ -13380,7 +13380,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13379,kurdish,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 13380,kurdish,F-1,Two,F-1-2,,,Два,
 13381,kurdish,F-3,,,,,"В артикле, в изафетном показателе в составе атрибутивного комплекса и в местоимении",
-13382,kurdish,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+13382,kurdish,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 13383,kurdish,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 13384,kurdish,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
 13385,kurdish,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
@@ -13575,7 +13575,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13574,ladin,F-1,Two,F-1-2,,,Два,
 13575,ladin,F-2,Articles,F-2-1,,,Артикли,
 13576,ladin,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-13577,ladin,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+13577,ladin,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 13578,ladin,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 13579,ladin,F-7,Absent,F-7-1,,,Отсутствуют,
 13580,ladin,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -13853,7 +13853,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 13852,latvian,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 13853,latvian,F-1,Two,F-1-2,,,Два,
 13854,latvian,F-2,Verbal affixes,F-2-3,,,Аффиксация в глаголе,
-13855,latvian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+13855,latvian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 13856,latvian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 13857,latvian,F-7,Absent,F-7-1,,,Отсутствуют,
 13858,latvian,G-1,"Singular, dual and plural",G-1-2,,,"Единственное, двойственное и множественное",
@@ -14089,7 +14089,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14088,lithuanian,E-1,Fusional with some agglutinative features,E-1-4,,,Флективный с элементами агглютинации,
 14089,lithuanian,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 14090,lithuanian,F-1,Two,F-1-2,,,Два,
-14091,lithuanian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+14091,lithuanian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 14092,lithuanian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 14093,lithuanian,F-7,Absent,F-7-1,,,Отсутствуют,
 14094,lithuanian,G-1,"Singular, dual and plural",G-1-2,,,"Единственное, двойственное и множественное",
@@ -14400,7 +14400,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14399,looma,E-1,Agglutinative,E-1-1,,,Агглютинативный,
 14400,looma,E-4,,,,,Изолирующий с элементами синтетизма,
 14401,looma,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,
-14402,looma,F-5,Absent,F-5-4,,,Отсутствует,
+14402,looma,F-5,Absent,F-5-1,,,Отсутствует,
 14403,looma,F-7,,,,,Отчуждаемость/неотчуждаемость и автосемантичность,
 14404,looma,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 14405,looma,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -14561,7 +14561,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14560,luwian,E-4,Synthetic,E-4-5,,,Синтетический,
 14561,luwian,F-1,Two,F-1-2,,,Два,
 14562,luwian,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",
-14563,luwian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+14563,luwian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 14564,luwian,F-6,,,,,"в числительном ""первый""",
 14565,luwian,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 14566,luwian,F-9,Lexical and morphological,F-9-6,,,Лексический и морфологический,
@@ -14663,7 +14663,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14662,luxembourgian,F-1,Three,F-1-3,,,Три,
 14663,luxembourgian,F-2,Articles,F-2-1,,,Артикли,
 14664,luxembourgian,F-3,,,,,"В артикле, прилагательном и местоимении",
-14665,luxembourgian,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+14665,luxembourgian,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 14666,luxembourgian,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 14667,luxembourgian,G-2,Unmarked,G-2-2,,,Немаркированное,
 14668,luxembourgian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
@@ -14765,7 +14765,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14764,lycian,F-1,Two,F-1-2,,,Два,
 14765,lycian,F-2,Verbal affixes,F-2-3,,,Аффиксация в глаголе,
 14766,lycian,F-3,"Pronouns, adjectives, and verbs",F-3-9,,,"В местоимении, прилагательном и глаголе",
-14767,lycian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+14767,lycian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 14768,lycian,F-6,,,,,нет данных в языке,
 14769,lycian,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 14770,lycian,F-9,Lexical and morphological,F-9-6,,,Лексический и морфологический,
@@ -14858,7 +14858,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14857,lydian,F-2,Verbal affixes,F-2-3,,,Аффиксация в глаголе,
 14858,lydian,F-3,"Adjectives, verbs, and numerals",F-3-10,,,"В прилагательном, глаголе и числительном",
 14859,lydian,F-4,,,,,нет,
-14860,lydian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+14860,lydian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 14861,lydian,F-6,,,,,нет данных в текстах,
 14862,lydian,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 14863,lydian,F-8,,,,,нет данных,
@@ -14960,7 +14960,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 14959,macedonian,F-1,Three,F-1-3,,,Три,
 14960,macedonian,F-2,Articles and nominal and verb flections,F-2-11,,,Артикли и флексии в имени и глаголе,
 14961,macedonian,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",
-14962,macedonian,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+14962,macedonian,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 14963,macedonian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 14964,macedonian,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
 14965,macedonian,F-9,Lexical and syntactic,F-9-4,,,Лексический и синтаксический,
@@ -15059,7 +15059,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15058,magahi,D-4,Limitations on consonant sequences (combinations),D-4-5,,,Ограничения на последовательность (сочетания) согласных,
 15059,magahi,D-9,,,,,Отсутствуют,
 15060,magahi,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,
-15061,magahi,F-5,Absent,F-5-4,,,Отсутствует,
+15061,magahi,F-5,Absent,F-5-1,,,Отсутствует,
 15062,magahi,F-6,Absent,F-6-1,,,Отсутствует,
 15063,magahi,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 15064,magahi,F-9,Morphological,F-9-2,,,Морфологический,
@@ -15136,7 +15136,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15135,maithili,F-1,Two,F-1-2,,,Два,
 15136,maithili,F-2,Verbal affixes,F-2-3,Gender affixation only in polite forms ,,Аффиксация в глаголе,Аффиксация по роду есть только в вежливых формах
 15137,maithili,F-3,Verbs,F-3-2,,,В глаголе,
-15138,maithili,F-5,In singular and in plural,F-5-2,Genitive modifiers only agree with human-deoting nouns,,В единственном и множественном числе,"Притяжательные модификаторы согласуются только с существительными, обозначающими человека"
+15138,maithili,F-5,In singular and in plural,F-5-3,Genitive modifiers only agree with human-deoting nouns,,В единственном и множественном числе,"Притяжательные модификаторы согласуются только с существительными, обозначающими человека"
 15139,maithili,F-7,Class,F-7-5,Gender marking only in polite forms,,Класс,Аффиксация по роду есть только в вежливых формах
 15140,maithili,F-8,Syntactic,F-8-3,,,Синтаксическое,
 15141,maithili,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -15799,7 +15799,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15798,marathi,F-1,,,Ten inflectional classes,,Десять,Десять типов словоизменения
 15799,marathi,F-2,Nominal flections,F-2-7,,,Именные флексии,
 15800,marathi,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-15801,marathi,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+15801,marathi,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 15802,marathi,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 15803,marathi,F-9,Morphological and syntactic,F-9-5,,,Морфологический и синтаксический,
 15804,marathi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -15951,7 +15951,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15950,mayan,F-1,Two,F-1-2,,,Два,Мужской и женский род различаются в диалекте каньявали. В других диалектах категория рода не отмечена.
 15951,mayan,F-2,,,,,Перегласовка основы в имени и флексии в глаголе,
 15952,mayan,F-3,,,,,"В местоимении, глаголе и причастии",
-15953,mayan,F-5,,,,,Отсутствует, Прилагательные по роду не изменяются. Атрибутивное согласование по роду существует у притяжательных местоимений.
+15953,mayan,F-5,Absent,F-5-1,,,Отсутствует, Прилагательные по роду не изменяются. Атрибутивное согласование по роду существует у притяжательных местоимений.
 15954,mayan,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 15955,mayan,G-2,Unmarked,G-2-2,,,Немаркированное,
 15956,mayan,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу существует у указательных местоимений и причастий. Данных об изменении по числу прилагательных нет.
@@ -16120,7 +16120,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16119,megleno_romanian,F-1,Three,F-1-3,,,Три,
 16120,megleno_romanian,F-2,Articles,F-2-1,,,Артикли,
 16121,megleno_romanian,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-16122,megleno_romanian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+16122,megleno_romanian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 16123,megleno_romanian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 16124,megleno_romanian,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,Имена лиц имеют формы вокатива.
 16125,megleno_romanian,F-9,Lexical and syntactic,F-9-4,,,Лексический и синтаксический,
@@ -16538,7 +16538,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16537,modern_hebrew,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 16538,modern_hebrew,F-1,Two,F-1-2,,,Два,
 16539,modern_hebrew,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",
-16540,modern_hebrew,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+16540,modern_hebrew,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 16541,modern_hebrew,F-6,Always present,F-6-2,,,Всегда присутствует,
 16542,modern_hebrew,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 16543,modern_hebrew,F-9,Lexical,F-9-1,,,Лексический,
@@ -16982,7 +16982,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 16981,munji,F-1,Two,F-1-2,,,Два,
 16982,munji,F-2,,,,,"Аффиксация в системе имени,",
 16983,munji,F-3,"Adjectives, numerals, pronouns, and participles",F-3-16,,,"В прилагательном, числительном, местоимении и причастии",
-16984,munji,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+16984,munji,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 16985,munji,G-1,Singular and plural,G-1-1,,,Единственное и множественное,"В отличие от большинства иранских языков (кроме афганского), различающих формы по признаку совокупной/раздельной множественности."
 16986,munji,G-4,Predicative,G-4-2,,,Предикативное,
 16987,munji,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
@@ -17381,7 +17381,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17380,neo_mandaic,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 17381,neo_mandaic,F-1,Two,F-1-2,,,Два,
 17382,neo_mandaic,F-3,"Adjectives, verbs, and numerals",F-3-10,,,"В прилагательном, глаголе и числительном",
-17383,neo_mandaic,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+17383,neo_mandaic,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 17384,neo_mandaic,F-6,Absent,F-6-1,,,Отсутствует,
 17385,neo_mandaic,F-7,Absent,F-7-1,,,Отсутствуют,
 17386,neo_mandaic,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -17565,7 +17565,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17564,norwegian,F-1,,,,,Четыре или пять,"Личность/неличность (в букмоле) и два (в букмоле) или три (в ""новонорвежском"") рода."
 17565,norwegian,F-2,Articles,F-2-1,,,Артикли,
 17566,norwegian,F-3,"Adjectives, pronouns, participles, and articles",F-3-15,,,"В прилагательном, местоимении, причастии и артикле",
-17567,norwegian,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+17567,norwegian,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 17568,norwegian,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 17569,norwegian,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 17570,norwegian,F-8,"Lexical, morphological and syntactic",F-8-7,,,"Лексическое, морфологическое и синтаксическое",
@@ -17676,7 +17676,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 17675,occitan,F-1,Two,F-1-2,,,Два,
 17676,occitan,F-2,,,,,Артикли и перегласовка основы,
 17677,occitan,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-17678,occitan,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+17678,occitan,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 17679,occitan,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 17680,occitan,F-7,Absent,F-7-1,,,Отсутствуют,
 17681,occitan,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -18008,7 +18008,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18007,old_church_slavonic,F-1,Three,F-1-3,,,Три,
 18008,old_church_slavonic,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 18009,old_church_slavonic,F-3,,,,,"В прилагательном, местоимении, числительном, глаголе и причастии",
-18010,old_church_slavonic,F-5,"In singular, dual, and plural",F-5-3,,,"В единственном, двойственном и множественном числе",
+18010,old_church_slavonic,F-5,"In singular, dual, and plural",F-5-4,,,"В единственном, двойственном и множественном числе",
 18011,old_church_slavonic,F-6,,,,,"Для числительных ""два"", ""три"" и ""четыре""",
 18012,old_church_slavonic,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,Категория одушевленности/неодушевленности находилась в процессе становления.
 18013,old_church_slavonic,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,Особое окончание дательного падежа у ораниченного числа имен лиц мужского рода.
@@ -18112,7 +18112,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18111,old_french,F-1,Two,F-1-2,,,Два,
 18112,old_french,F-2,Articles,F-2-1,,,Артикли,
 18113,old_french,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-18114,old_french,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+18114,old_french,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 18115,old_french,F-6,"For ""one"", ""two"", ""three""",F-6-6,,,"Для числительных ""один"", ""два"" и ""три""",
 18116,old_french,F-7,Absent,F-7-1,,,Отсутствуют,
 18117,old_french,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -18248,7 +18248,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18247,old_novgorod,F-1,Three,F-1-3,,,Три,
 18248,old_novgorod,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 18249,old_novgorod,F-3,"Adjectives, verbs, and numerals",F-3-10,,,"В прилагательном, глаголе и числительном",
-18250,old_novgorod,F-5,"In singular, dual, and plural",F-5-3,,,"В единственном, двойственном и множественном числе",
+18250,old_novgorod,F-5,"In singular, dual, and plural",F-5-4,,,"В единственном, двойственном и множественном числе",
 18251,old_novgorod,F-6,,,,,"Для числительных  ""два"", ""три"" и ""четыре""",Других данных нет.
 18252,old_novgorod,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 18253,old_novgorod,F-9,Morphological,F-9-2,,,Морфологический,
@@ -18341,7 +18341,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18340,old_persian,F-1,Three,F-1-3,,,Три,"Различаются мужской, женский и средний род."
 18341,old_persian,F-2,,,,,Тип основы и флексии в имени,
 18342,old_persian,F-3,,,,,"В прилагательном, числительном, местоимении и причастии",
-18343,old_persian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+18343,old_persian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 18344,old_persian,F-6,Absent,F-6-1,,,Отсутствует,
 18345,old_persian,F-7,Person/non-person and animacy/inanimacy,F-7-4,,,Личность/неличность и одушевленность/неодушевленность,
 18346,old_persian,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,Категория личности/неличности проявляется в наличии формы вокатива у личных имен.
@@ -18441,7 +18441,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18440,old_russian,F-1,Three,F-1-3,,,Три,
 18441,old_russian,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 18442,old_russian,F-3,"Adjectives. Numerals, and pronouns",F-3-14,,,"В прилагательном, числительном и местоимении",
-18443,old_russian,F-5,"In singular, dual, and plural",F-5-3,,,"В единственном, двойственном и множественном числе",
+18443,old_russian,F-5,"In singular, dual, and plural",F-5-4,,,"В единственном, двойственном и множественном числе",
 18444,old_russian,F-6,"For ""one"", ""two"", ""three"", ""four""",F-6-5,,,"Для числительных ""один"", ""два"", ""три"" и ""четыре""",Других данных нет.
 18445,old_russian,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 18446,old_russian,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,
@@ -18592,7 +18592,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18591,oriya,E-1,Agglutinative with some fusional features,E-1-2,,,Агглютинативный с элементами флективного,
 18592,oriya,E-4,Analytic,E-4-2,,,Аналитический,
 18593,oriya,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,
-18594,oriya,F-5,In singular and in plural,F-5-2,Only a limited class of borrowed adjectives,,В единственном и множественном числе,С ограниченным классом заимствованных прилагательных
+18594,oriya,F-5,In singular and in plural,F-5-3,Only a limited class of borrowed adjectives,,В единственном и множественном числе,С ограниченным классом заимствованных прилагательных
 18595,oriya,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 18596,oriya,F-8,Morphological,F-8-2,,,Морфологическое,
 18597,oriya,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -18747,7 +18747,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 18746,ormuri,F-2,,,,,"Флексии существительных и прилагательных ж.р., аффиксация в глаголе",
 18747,ormuri,F-3,"Pronouns, adjectives, and verbs",F-3-9,,,"В местоимении, прилагательном и глаголе",
 18748,ormuri,F-4,,,,,Лексико-семантические средства,
-18749,ormuri,F-5,Only in singular,F-5-1,,,Только в единственном числе,Других данных нет.
+18749,ormuri,F-5,Only in singular,F-5-2,,,Только в единственном числе,Других данных нет.
 18750,ormuri,F-6,Absent,F-6-1,,,Отсутствует,
 18751,ormuri,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 18752,ormuri,F-8,"Lexical, morphological and syntactic",F-8-7,,,"Лексическое, морфологическое и синтаксическое",
@@ -19025,7 +19025,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19024,palaic,E-4,Synthetic,E-4-5,,,Синтетический,
 19025,palaic,F-1,Two,F-1-2,,,Два,
 19026,palaic,F-3,"Pronouns, adjectives, and verbs",F-3-9,,,"В местоимении, прилагательном и глаголе",
-19027,palaic,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+19027,palaic,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 19028,palaic,F-6,,,,,нет числительных,
 19029,palaic,F-7,,,,,нет данных,
 19030,palaic,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -19319,7 +19319,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19318,parya,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 19319,parya,F-1,Two,F-1-2,,,Два,
 19320,parya,F-2,Nominal flections,F-2-7,Agreement is on its way to disappear,,Именные флексии,Согласование на стадии исчезновения
-19321,parya,F-5,Absent,F-5-4,,,Отсутствует,
+19321,parya,F-5,Absent,F-5-1,,,Отсутствует,
 19322,parya,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 19323,parya,F-9,Morphological,F-9-2,,,Морфологический,
 19324,parya,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -19378,7 +19378,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19377,pashai,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 19378,pashai,F-2,,,,,"Именные аффиксы, чередование согласных основы и флексии в глаголе",
 19379,pashai,F-3,Verbs,F-3-2,,,В глаголе,Род выражается в формах прошедшего времени.
-19380,pashai,F-5,,,,,Отсутствует,
+19380,pashai,F-5,Absent,F-5-1,,,Отсутствует,
 19381,pashai,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 19382,pashai,F-8,Lexical,F-8-1,,,Лексическое,
 19383,pashai,F-9,Morphological,F-9-2,,,Морфологический,
@@ -19464,7 +19464,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19463,pashto,F-1,Two,F-1-2,,,Два,
 19464,pashto,F-2,,,,,"Аффиксация у существительных, прилагательных, числительных и глаголов",
 19465,pashto,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",
-19466,pashto,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+19466,pashto,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 19467,pashto,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 19468,pashto,F-8,"Lexical, morphological and syntactic",F-8-7,,,"Лексическое, морфологическое и синтаксическое",
 19469,pashto,F-9,Lexical and morphological,F-9-6,,,Лексический и морфологический,
@@ -19652,7 +19652,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19651,phalura,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 19652,phalura,F-2,,,,,Флексии в имени и конечный гласный основы в причастии,
 19653,phalura,F-3,"Adjectives, pronouns, and participles",F-3-22,,,"В прилагательном, местоимении и причастии",
-19654,phalura,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+19654,phalura,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 19655,phalura,F-9,Lexical,F-9-1,,,Лексический,
 19656,phalura,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 19657,phalura,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -19777,7 +19777,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19776,phrygian,E-4,Synthetic,E-4-5,,,Синтетический,
 19777,phrygian,F-1,Three,F-1-3,,,Три,
 19778,phrygian,F-3,"Adjectives, pronouns, and participles",F-3-22,,,"В прилагательном, местоимении и причастии",
-19779,phrygian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+19779,phrygian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 19780,phrygian,F-7,Absent,F-7-1,,,Отсутствуют,
 19781,phrygian,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 19782,phrygian,G-2,Marked,G-2-1,,,Маркированное,
@@ -19866,7 +19866,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19865,polabian,F-1,Three,F-1-3,,,Три,
 19866,polabian,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,В глаголе род выражается в формах претерита.
 19867,polabian,F-3,,,,,"В прилагательном, местоимении, числительном, глаголе и причастии",
-19868,polabian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+19868,polabian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 19869,polabian,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 19870,polabian,F-8,Lexical,F-8-1,,,Лексическое,
 19871,polabian,F-9,Morphological,F-9-2,,,Морфологический,
@@ -19969,7 +19969,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 19968,polish,F-1,,,,,Пять,
 19969,polish,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 19970,polish,F-3,"Adjectives, numerals, pronouns, verbs, and participles",F-3-17,,,"В прилагательном, числительном, местоимении, глаголе и причастии",
-19971,polish,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+19971,polish,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 19972,polish,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 19973,polish,F-7,Person/non-person and animacy/inanimacy,F-7-4,,,Личность/неличность и одушевленность/неодушевленность,
 19974,polish,F-8,"Lexical, morphological and syntactic",F-8-7,,,"Лексическое, морфологическое и синтаксическое",
@@ -20144,7 +20144,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20143,portuguese,F-1,Two,F-1-2,,,Два,
 20144,portuguese,F-2,Articles,F-2-1,,,Артикли,
 20145,portuguese,F-3,"Adjectives, numerals, pronouns, and articles",F-3-20,,,"В прилагательном, числительном, местоимении и артикле",
-20146,portuguese,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+20146,portuguese,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 20147,portuguese,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 20148,portuguese,F-7,Absent,F-7-1,,,Отсутствуют,
 20149,portuguese,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -20236,7 +20236,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20235,pothohari,F-1,Four,F-1-4,,,Четыре,Внутри каждого из двух классов (родов) есть два словоизменительных типа
 20236,pothohari,F-2,Nominal flections,F-2-7,,,Именные флексии,
 20237,pothohari,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-20238,pothohari,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+20238,pothohari,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 20239,pothohari,F-7,,,,,Род,Род является объединяющим признаком для двух словоизменительных классов
 20240,pothohari,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 20241,pothohari,G-2,Marked,G-2-1,,,Маркированное,Формы числа имеют одинаковую морфологическую сложность
@@ -20451,7 +20451,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20450,punjabi,F-1,Six,F-1-5,Each of the two classes has three inflectional types,,Шесть,Внутри каждого из двух классов (родов) есть три словоизменительных типа
 20451,punjabi,F-2,Case and number flections,F-2-8,,,Падежно-числовые флексии,
 20452,punjabi,F-3,Adjectives,F-3-6,,,В прилагательном,
-20453,punjabi,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+20453,punjabi,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 20454,punjabi,F-6,Absent,F-6-1,,,Отсутствует,
 20455,punjabi,F-7,,,Gender is shared by two inflectional types,,Род,Род является объединяющим признаком для двух словоизменительных классов
 20456,punjabi,F-9,Lexical,F-9-1,,,Лексический,
@@ -20549,7 +20549,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20547,rajbanshi_kamta,E-1,Agglutinative with some fusional features,E-1-2,,,Агглютинативный с элементами флективного,
 20548,rajbanshi_kamta,E-2,Phonetically unconditioned fusion,E-2-4,,,Фонетически необусловленная фузия,
 20549,rajbanshi_kamta,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,
-20550,rajbanshi_kamta,F-5,Absent,F-5-4,,,Отсутствует,
+20550,rajbanshi_kamta,F-5,Absent,F-5-1,,,Отсутствует,
 20551,rajbanshi_kamta,F-6,Absent,F-6-1,,,Отсутствует,
 20552,rajbanshi_kamta,F-7,Absent,F-7-1,,,Отсутствуют,
 20553,rajbanshi_kamta,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -20697,7 +20697,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20695,rhaeto_romance,F-1,Two,F-1-2,,,Два,
 20696,rhaeto_romance,F-2,Articles,F-2-1,,,Артикли,
 20697,rhaeto_romance,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-20698,rhaeto_romance,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+20698,rhaeto_romance,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 20699,rhaeto_romance,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 20700,rhaeto_romance,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 20701,rhaeto_romance,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -20803,7 +20803,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20801,romani,F-1,,,Eight inflectional classes,,Восемь ,Есть восемь словоизменительных классов
 20802,romani,F-2,Nominal flections,F-2-7,,,Именные флексии,
 20803,romani,F-3,,,,,"В артикле, прилагательном и глаголе",
-20804,romani,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+20804,romani,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 20805,romani,F-7,,,,,Род и одушевленность/неодушевленность,
 20806,romani,F-9,Syntactic,F-9-3,,,Синтаксический,
 20807,romani,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -20914,7 +20914,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 20912,romanian,F-1,Three,F-1-3,,,Три,
 20913,romanian,F-2,Articles,F-2-1,,,Артикли,
 20914,romanian,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-20915,romanian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+20915,romanian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 20916,romanian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 20917,romanian,F-7,"Person/non-person, animacy/inanimacy, and definiteness/indefiniteness",F-7-7,,,"Личность/неличность, одушевленность/неодушевленность и определенность/неопределенность",
 20918,romanian,F-8,Morphological and syntactic,F-8-6,,,Морфологическое и синтаксическое,
@@ -21007,7 +21007,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21005,roshorvi,F-2,,,,,"Перегласовка основы, именные суффиксы и аффиксация в глаголе",
 21006,roshorvi,F-3,,,,,"В местоимении, качественных именах и глагольных формах",
 21007,roshorvi,F-4,,,,,Лексические средства: полнозначные слова - конкретизаторы пола,
-21008,roshorvi,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+21008,roshorvi,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 21009,roshorvi,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 21010,roshorvi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 21011,roshorvi,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -21093,7 +21093,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21091,rushani,F-2,,,,,Перегласовка основ и суффиксация,
 21092,rushani,F-3,"Pronouns, adjectives, and verbs",F-3-9,,,"В местоимении, прилагательном и глаголе",
 21093,rushani,F-4,,,,,Лексические детерминативы,
-21094,rushani,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+21094,rushani,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 21095,rushani,F-7,,,,,Единичное/общее или конкретное/неконкретное,
 21096,rushani,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
 21097,rushani,F-9,Lexical and syntactic,F-9-4,,,Лексический и синтаксический,
@@ -21178,7 +21178,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21176,russian,F-1,,,,,Семь,В Р.я. три грамматических рода и семь согласовательных классов по признакам рода и одушевленности/неодушевленности.
 21177,russian,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 21178,russian,F-3,"Adjectives, numerals, pronouns, verbs, and participles",F-3-17,,,"В прилагательном, числительном, местоимении, глаголе и причастии",
-21179,russian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+21179,russian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 21180,russian,F-6,,,,,"Для числительных ""один"", ""два"", ""оба"" и ""полтора""",
 21181,russian,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 21182,russian,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,
@@ -21281,7 +21281,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21279,rutul,E-1,Agglutinative,E-1-1,,,Агглютинативный,
 21280,rutul,F-1,Four,F-1-4,,,Четыре,
 21281,rutul,F-3,Verbs,F-3-2,,,В глаголе,
-21282,rutul,F-5,Absent,F-5-4,,,Отсутствует,
+21282,rutul,F-5,Absent,F-5-1,,,Отсутствует,
 21283,rutul,F-6,Absent,F-6-1,,,Отсутствует,
 21284,rutul,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 21285,rutul,F-9,Syntactic,F-9-3,,,Синтаксический,
@@ -21352,7 +21352,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21350,sadani_sadri,E-2,Cumulative affixes,E-2-2,,,Кумулятивность аффиксов,
 21351,sadani_sadri,E-3,Low degree of fusion between root and non-root morphemes,E-3-3,,,Низкая степень фузии между некорневыми и корневыми морфемами,
 21352,sadani_sadri,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,
-21353,sadani_sadri,F-5,Absent,F-5-4,,,Отсутствует,
+21353,sadani_sadri,F-5,Absent,F-5-1,,,Отсутствует,
 21354,sadani_sadri,F-7,Absent,F-7-1,,,Отсутствуют,
 21355,sadani_sadri,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 21356,sadani_sadri,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -21749,7 +21749,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21747,sardinian,F-1,Two,F-1-2,,,Два,
 21748,sardinian,F-2,Articles,F-2-1,,,Артикли,
 21749,sardinian,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-21750,sardinian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+21750,sardinian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 21751,sardinian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 21752,sardinian,F-7,Absent,F-7-1,,,Отсутствуют,
 21753,sardinian,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -21976,7 +21976,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 21974,saurashtra,E-1,Agglutinative with some fusional features,E-1-2,,,Агглютинативный с элементами флективного,
 21975,saurashtra,E-2,Cumulative affixes,E-2-2,,,Кумулятивность аффиксов,
 21976,saurashtra,F-1,No agreement classes,F-1-1,,,Согласовательные классы отсутствуют,
-21977,saurashtra,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+21977,saurashtra,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 21978,saurashtra,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 21979,saurashtra,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 21980,saurashtra,G-2,Unmarked,G-2-2,,,Немаркированное,
@@ -22055,7 +22055,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22053,sawi,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 22054,sawi,F-2,,,,,"Аффиксы в существительном, флексии в прилагательном и глаголе",
 22055,sawi,F-3,,,,,В прилагательном и глаголе,
-22056,sawi,F-5,Only in singular,F-5-1,,,Только в единственном числе,Прилагательные не имеют категории числа.
+22056,sawi,F-5,Only in singular,F-5-2,,,Только в единственном числе,Прилагательные не имеют категории числа.
 22057,sawi,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 22058,sawi,F-9,Lexical and morphological,F-9-6,,,Лексический и морфологический,
 22059,sawi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -22367,7 +22367,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22365,serbocroatian,F-1,Three,F-1-3,,,Три,
 22366,serbocroatian,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 22367,serbocroatian,F-3,"Adjectives, numerals, pronouns, and participles",F-3-16,,,"В прилагательном, числительном, местоимении и причастии",
-22368,serbocroatian,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+22368,serbocroatian,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 22369,serbocroatian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 22370,serbocroatian,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 22371,serbocroatian,F-8,Lexical,F-8-1,,,Лексическое,
@@ -22515,7 +22515,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22513,shina,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 22514,shina,F-2,,,,,"Аффиксы в имени и флексии в прилагательном, числительном, местоимении и глаголе",
 22515,shina,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",Глагол различает род только в формах единственного числа.
-22516,shina,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+22516,shina,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 22517,shina,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 22518,shina,F-8,Lexical,F-8-1,,,Лексическое,
 22519,shina,F-9,Lexical,F-9-1,,,Лексический,
@@ -22800,7 +22800,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22798,shumashti,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 22799,shumashti,F-2,,,,,Конечный гласный основы имени,
 22800,shumashti,F-3,Adjectives,F-3-6,,,В прилагательном,
-22801,shumashti,F-5,Only in singular,F-5-1,,,Только в единственном числе,Прилагательные не имеют категории числа.
+22801,shumashti,F-5,Only in singular,F-5-2,,,Только в единственном числе,Прилагательные не имеют категории числа.
 22802,shumashti,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 22803,shumashti,G-2,Unmarked,G-2-2,,,Немаркированное,
 22804,shumashti,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Атрибутивное согласование по числу ограничено указательными местоимениями и происходит непоследовательно.
@@ -22919,7 +22919,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 22917,sindhi,F-1,,,Seven inflectional classes,,Семь,Семь словоизменительных типов
 22918,sindhi,F-2,Nominal flections,F-2-7,,,Именные флексии,
 22919,sindhi,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-22920,sindhi,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+22920,sindhi,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 22921,sindhi,F-7,,,Two genders are distributed over the inflectional classes,,Род,Два рода распределены по согласовательным классам
 22922,sindhi,F-9,Syntactic,F-9-3,,,Синтаксический,
 22923,sindhi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -23184,7 +23184,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23182,slovak,F-1,Three,F-1-3,,,Три,
 23183,slovak,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 23184,slovak,F-3,"Adjectives, numerals, pronouns, and participles",F-3-16,,,"В прилагательном, числительном, местоимении и причастии",
-23185,slovak,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+23185,slovak,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 23186,slovak,F-6,,,,,"Присутствует, за исключением составных количественных числительных с элементом -jeden",
 23187,slovak,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,Одушевленность/неодушевленность выражается в рамках мужского рода.
 23188,slovak,F-8,Lexical,F-8-1,,,Лексическое,
@@ -23291,7 +23291,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23289,slovene,F-1,Three,F-1-3,,,Три,
 23290,slovene,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 23291,slovene,F-3,,,,,"В прилагательном, числительном, местоимении, причастии и глаголе",
-23292,slovene,F-5,"In singular, dual, and plural",F-5-3,,,"В единственном, двойственном и множественном числе",
+23292,slovene,F-5,"In singular, dual, and plural",F-5-4,,,"В единственном, двойственном и множественном числе",
 23293,slovene,F-6,"For ""one"", ""two"", ""three"", ""four""",F-6-5,,,"Для числительных ""один"", ""два"", ""три"" и ""четыре""","Числительное ""один"" имеет формы трех родов. Числительные от двух до четырех - формы мужского и женского/среднего рода."
 23294,slovene,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,Только в парадигме склонения существительных мужского рода в единственном числе.
 23295,slovene,F-9,Morphological and syntactic,F-9-5,,,Морфологический и синтаксический,
@@ -23392,7 +23392,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23390,sogdian,F-1,Two,F-1-2,,,Два,
 23391,sogdian,F-2,,,,,"Артикли, аффиксация и флексии в имени и глаголе",
 23392,sogdian,F-3,,,,,"В прилагательных, причастиях, порядковых числительных, местоимениях и ряде аналитических форм глагола",
-23393,sogdian,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+23393,sogdian,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 23394,sogdian,F-6,Absent,F-6-1,,,Отсутствует,Других данных нет.
 23395,sogdian,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,
 23396,sogdian,F-9,Morphological and syntactic,F-9-5,,,Морфологический и синтаксический,
@@ -23639,7 +23639,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23637,sorbian,F-1,Three,F-1-3,,,Три,
 23638,sorbian,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,
 23639,sorbian,F-3,,,,,"В прилагательном, местоимении, числительном и причастии",
-23640,sorbian,F-5,"In singular, dual, and plural",F-5-3,,,"В единственном, двойственном и множественном числе",
+23640,sorbian,F-5,"In singular, dual, and plural",F-5-4,,,"В единственном, двойственном и множественном числе",
 23641,sorbian,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 23642,sorbian,F-7,Person/non-person and animacy/inanimacy,F-7-4,,,Личность/неличность и одушевленность/неодушевленность,Категория личности выражается только в верхнелужицком языке у существительных мужского рода в двойственном и множественном числе.
 23643,sorbian,F-8,Morphological and syntactic,F-8-6,,,Морфологическое и синтаксическое,
@@ -23755,7 +23755,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 23753,spanish,F-1,Two,F-1-2,,,Два,
 23754,spanish,F-2,Articles,F-2-1,,,Артикли,
 23755,spanish,F-3,"Adjectives, numerals, pronouns, participles, and articles",F-3-21,,,"В прилагательном, числительном, местоимении, причастии и артикле",
-23756,spanish,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+23756,spanish,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 23757,spanish,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 23758,spanish,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 23759,spanish,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -24306,7 +24306,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24304,swedish,F-1,Two,F-1-2,,,Два,При прономинализации сохраняются реликты старого деления на три рода.
 24305,swedish,F-2,Articles,F-2-1,,,Артикли,
 24306,swedish,F-3,"Adjectives, pronouns, participles, and articles",F-3-15,,,"В прилагательном, местоимении, причастии и артикле",
-24307,swedish,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+24307,swedish,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 24308,swedish,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 24309,swedish,F-7,Absent,F-7-1,,,Отсутствуют,
 24310,swedish,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -24421,7 +24421,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24419,swiss_german,F-1,Three,F-1-3,,,Три,
 24420,swiss_german,F-2,Articles and case and number flections,F-2-10,,,Артикли и падежно-числовые флексии,
 24421,swiss_german,F-3,"Adjectives, numerals, pronouns, and articles",F-3-20,,,"В прилагательном, числительном, местоимении и артикле",
-24422,swiss_german,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+24422,swiss_german,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 24423,swiss_german,F-6,"For ""one"", ""two"", ""three""",F-6-6,,,"Для числительных ""один"", ""два"" и ""три""",
 24424,swiss_german,F-7,Absent,F-7-1,,,Отсутствуют,
 24425,swiss_german,F-8,Lexical and syntactic,F-8-5,,,Лексическое и синтаксическое,
@@ -24518,7 +24518,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 24516,tabasaran,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 24517,tabasaran,F-1,Two,F-1-2,,,Два,
 24518,tabasaran,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-24519,tabasaran,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+24519,tabasaran,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 24520,tabasaran,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 24521,tabasaran,G-2,Unmarked,G-2-2,,,Немаркированное,
 24522,tabasaran,G-3,Absent,G-3-1,,,Отсутствуют,
@@ -25157,7 +25157,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25155,telugu,F-2,Verbal affixes,F-2-3,,,Аффиксация в глаголе,
 25156,telugu,F-3,,,,,"В числительном, местоимении и глаголе",
 25157,telugu,F-4,Numeral classifiers,F-4-2,,,Счетные классификаторы,
-25158,telugu,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+25158,telugu,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 25159,telugu,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 25160,telugu,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 25161,telugu,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,
@@ -25299,7 +25299,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25297,tigre,F-1,Two,F-1-2,,,Два,
 25298,tigre,F-2,Umlaut and affixes,F-2-5,,,Перегласовка основы и аффиксация,
 25299,tigre,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",
-25300,tigre,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+25300,tigre,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 25301,tigre,F-6,"For ""one"", ""two""",F-6-4,,,"Для числительных ""один"" и ""два""",
 25302,tigre,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 25303,tigre,F-9,Lexical and syntactic,F-9-4,,,Лексический и синтаксический,
@@ -25366,7 +25366,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25364,tigrinya,D-11,Differences in phonetic structure,D-11-1,,,Различия в фонетическом составе,
 25365,tigrinya,F-1,Two,F-1-2,,,Два,
 25366,tigrinya,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",
-25367,tigrinya,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+25367,tigrinya,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 25368,tigrinya,F-6,"For ""one""",F-6-3,,,"Для числительного ""один""",
 25369,tigrinya,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 25370,tigrinya,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
@@ -25486,7 +25486,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25484,tirahi,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 25485,tirahi,F-2,,,,,Конечный гласный основы прилагательного и флексии в глаголе,
 25486,tirahi,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-25487,tirahi,F-5,Only in singular,F-5-1,,,Только в единственном числе,Определенных данных об изменении прилагательных по числу нет. 
+25487,tirahi,F-5,Only in singular,F-5-2,,,Только в единственном числе,Определенных данных об изменении прилагательных по числу нет. 
 25488,tirahi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 25489,tirahi,G-2,Unmarked,G-2-2,,,Немаркированное,
 25490,tirahi,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Существование атрибутивного согласования прилагательных по числу предполагается.
@@ -25562,7 +25562,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25559,tocharian_a,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 25560,tocharian_a,F-1,Three,F-1-3,,,Три,
 25561,tocharian_a,F-3,"Adjectives, pronouns, verbs, and participles",F-3-23,,,"В прилагательном, местоимении, глаголе и причастии",
-25562,tocharian_a,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+25562,tocharian_a,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 25563,tocharian_a,F-6,"For ""one"", ""two"", ""three""",F-6-6,,,"Для числительных ""один"", ""два"" и ""три""",
 25564,tocharian_a,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 25565,tocharian_a,F-9,Lexical and morphological,F-9-6,,,Лексический и морфологический,
@@ -25650,7 +25650,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 25647,tocharian_b,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 25648,tocharian_b,F-1,Three,F-1-3,,,Три,
 25649,tocharian_b,F-3,"Adjectives, numerals, pronouns, and participles",F-3-16,,,"В прилагательном, числительном, местоимении и причастии",
-25650,tocharian_b,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+25650,tocharian_b,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 25651,tocharian_b,F-6,"For ""one"", ""three"", ""four""",F-6-7,,,"Для числительных ""один"", ""три"", ""четыре""",
 25652,tocharian_b,F-7,Absent,F-7-1,,,Отсутствуют,
 25653,tocharian_b,F-9,Lexical,F-9-1,,,Лексический,
@@ -26252,7 +26252,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26249,turoyo,D-13,Vowel and mixed alternations,D-13-7,,,Вокалические и смешанные,
 26250,turoyo,E-1,Fusional,E-1-3,,,Флективный,
 26251,turoyo,F-1,Two,F-1-2,,,Два,
-26252,turoyo,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+26252,turoyo,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 26253,turoyo,F-7,Absent,F-7-1,,,Отсутствуют,
 26254,turoyo,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 26255,turoyo,G-3,Absent,G-3-1,,,Отсутствуют,
@@ -26573,7 +26573,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26570,ugaritic,E-4,Synthetic,E-4-5,,,Синтетический,
 26571,ugaritic,F-1,Two,F-1-2,,,Два,
 26572,ugaritic,F-3,"Adjectives, numerals, pronouns, and verbs",F-3-11,,,"В прилагательном, числительном, местоимении и глаголе",
-26573,ugaritic,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+26573,ugaritic,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 26574,ugaritic,F-6,Always present,F-6-2,,,Всегда присутствует,
 26575,ugaritic,F-7,Absent,F-7-1,,,Отсутствуют,
 26576,ugaritic,G-1,"Singular, dual and plural",G-1-2,,,"Единственное, двойственное и множественное",
@@ -26713,7 +26713,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 26710,ukrainian,F-1,Three,F-1-3,,,Три,
 26711,ukrainian,F-2,Nominal and verb flections,F-2-9,,,Флексии в имени и глаголе,В глаголе род выражается в прошедшем времени и условном наклонении.
 26712,ukrainian,F-3,"Adjectives, numerals, pronouns, verbs, and participles",F-3-17,,,"В прилагательном, числительном, местоимении, глаголе и причастии",
-26713,ukrainian,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+26713,ukrainian,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 26714,ukrainian,F-6,,,,,"Для числительных ""один"", ""два"" и ""полтора""",
 26715,ukrainian,F-7,Animacy/inanimacy,F-7-3,,,Одушевленность/неодушевленность,
 26716,ukrainian,F-9,Morphological and syntactic,F-9-5,,,Морфологический и синтаксический,
@@ -27245,7 +27245,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 27242,waigali,F-1,Two,F-1-2,,,Два,Различаются мужской и женский род.
 27243,waigali,F-2,,,,,Флексии в имени и глаголе,
 27244,waigali,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-27245,waigali,F-5,Only in singular,F-5-1,,,Только в единственном числе,Прилагательное предположительно не имеет категории числа.
+27245,waigali,F-5,Only in singular,F-5-2,,,Только в единственном числе,Прилагательное предположительно не имеет категории числа.
 27246,waigali,F-6,Absent,F-6-1,,,Отсутствует,
 27247,waigali,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 27248,waigali,F-8,Lexical and morphological,F-8-4,,,Лексическое и морфологическое,Термины родства принимают посессивные энклитики.
@@ -27578,7 +27578,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 27575,welsh,F-1,Two,F-1-2,,,Два,Противопоставление по роду формально нейтрализуется во множественном числе.
 27576,welsh,F-2,,,,,"Флексия (внутренняя и внешняя), аффиксы и мутация анлаута",
 27577,welsh,F-3,,,,,"В прилагательном, местоимении и числительном",
-27578,welsh,F-5,Only in singular,F-5-1,,,Только в единственном числе,
+27578,welsh,F-5,Only in singular,F-5-2,,,Только в единственном числе,
 27579,welsh,F-6,,,,,"Для числительных ""два"", ""три"" и ""четыре""",
 27580,welsh,F-7,Absent,F-7-1,,,Отсутствуют,
 27581,welsh,F-9,Lexical,F-9-1,,,Лексический,Категория одушевленности формальными средствами не выражена.
@@ -28220,7 +28220,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 28217,yiddish,F-1,Three,F-1-3,,,Три,
 28218,yiddish,F-2,Articles and case and number flections,F-2-10,,,Артикли и падежно-числовые флексии,
 28219,yiddish,F-3,"Adjectives, numerals, pronouns, and participles",F-3-16,,,"В прилагательном, числительном, местоимении и причастии",
-28220,yiddish,F-5,In singular and in plural,F-5-2,,,В единственном и множественном числе,
+28220,yiddish,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,
 28221,yiddish,F-6,Absent,F-6-1,,,Отсутствует,
 28222,yiddish,F-7,Person/non-person,F-7-2,,,Личность/неличность,
 28223,yiddish,F-8,Morphological and syntactic,F-8-6,,,Морфологическое и синтаксическое,
