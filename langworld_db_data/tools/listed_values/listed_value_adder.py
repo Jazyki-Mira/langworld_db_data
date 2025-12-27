@@ -355,7 +355,8 @@ class ListedValueAdder(ObjectWithPaths):
 
 if __name__ == "__main__":
     ListedValueAdder().add_listed_value(
-        feature_id="",
-        new_value_en="",
-        new_value_ru="",
+        feature_id="J-7",
+        new_value_en="Agreement",
+        new_value_ru="Согласование",
+        index_to_assign=7,
     )  # pragma: no cover
