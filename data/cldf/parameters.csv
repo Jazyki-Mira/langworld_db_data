@@ -47,14 +47,20 @@ B-19,Other suprasegmental phenomena,,,Прочие супрасегментны�
 B-20,Types of phonation,,,Типы фонации
 C-1,Syllable onset,,,Начальный согласный в слоге
 C-2,Syllable coda,,,Конечный согласный в слоге
-D-1,Restrictions on the phonemic structure of segment morphemes in the initial position,,,Ограничения на фонемную структуру сегментных морфем в начальной позиции
-D-2,Restrictions on the phonemic structure of segment morphemes in the final position,,,Ограничения на фонемную структуру сегментных морфем в конечной позиции
-D-3,Characteristics of the syllabic structure of words,,,Особенности слогового состава слова
-D-4,Differences between content and function words,,,Различия между знаменательными и служебными словами
-D-5,Differences between native and borrowed words,,,Различия между исконными и заимствованными словами
-D-6,Differences between roots and affixes,,,Различия между корневыми и аффиксальными морфемами
-D-7,Functional type of alternations,,,Функциональный тип чередований
-D-8,Type of altenations,,,Вид чередований
+C-3,Consonant clusters in syllable,,,Стечения согласных в слоге
+D-1,Restrictions on the phonemic structure in the initial position,,,Ограничения на фонемную структуру начала слова
+D-2,Types of restrictions on the phonemic structure in the initial position,,,Тип ограничений на фонемную структуру начала слова (анлаута)
+D-3,Restrictions on the phonemic structure in the final position,,,Ограничения на фонемную структуру в конце слова
+D-4,Types of restrictions on the phonemic structure in the final position,,,Тип ограничений  на фонемную структуру в конце слова (ауслауте)
+D-5,Variants of characteristics of the syllabic structure of words,,,Варианты особенностей слогового состава слова
+D-6,Differences between content and function words,,,Различия между знаменательными и служебными словами
+D-7,Types of differences between content and function words,,,Типы различий между знаменательными и служебными словами
+D-8,Differences between native and borrowed words,,,Различия между исконными и заимствованными словами
+D-9,Types of differences between native and borrowed words,,,Типы различий между исконными и заимствованными словами
+D-10,Differences between roots and affixes,,,Различия между корневыми и аффиксальными морфемами
+D-11,Types of differences between roots and affixes,,,Типы различий между корневыми и аффиксальными морфемами
+D-12,Functional type of alternations,,,Функциональный тип чередований
+D-13,Type of altenations,,,Вид чередований
 E-1,Type of language by type of morpheme combination in a word,,,Тип языка по способу соединения морфем в слове
 E-2,Fusional type features,,,Признаки флективного строя
 E-3,Agglutinative type features,,,Признаки агглютинативного строя
@@ -63,7 +69,7 @@ F-1,Number of agreement classes,,,Количество согласовател�
 F-2,Morphological expression of agreement classes,,,Морфологические способы выражения согласовательных классов
 F-3,Syntactic expression of agreement classes,,,Синтаксические способы выражения согласовательных классов
 F-4,Other means of expressing agreement classes,,,Другие способы выражения согласовательных классов
-F-5,Attributive agreement in gender,,,Атрибутивное согласование по роду
+F-5,Attributive agreement in gender,,,Атрибутивное согласование прилагательных по роду (в зависимости от числа)
 F-6,Agreement of cardinal numerals in gender,,,Согласование количественных числительных в роде
 F-7,Nouns classifying categories,,,Классифицирующие категории существительных
 F-8,Opposition by person/non-person,,,Противопоставление по личности/неличности
@@ -99,11 +105,11 @@ J-3,Function words expressing spatial orientation of action,,,"Служебны�
 J-4,Content words expressing spatial orientation of action,,,"Знаменательные части речи, выражающие пространственную ориентацию действия"
 J-5,Morphological expression of (in)definiteness,,,Морфологическое выражение определенности/неопределенности имени
 J-6,Words expressing (in)definiteness,,,"Части речи, выражающие определенность/неопределенность имени"
-J-7,Expression of politeness,,,Способы выражения форм вежливости
+J-7,Grammatical ways to express politeness,,,Грамматические способы выражения вежливости
 J-8,Expression of negation,,,Способы выражения отрицания
 J-9,Negation marker position,,,Позиция показателя отрицания
 K-1,Personal pronouns inflection,,,Склонение личных местоимений
-K-2,Article types,,,Типы артиклей
+K-2,Articles,,,Артикли
 K-3,Indefinite article and numeral 'one',,,Неопределенный артикль и числительное «один»
 K-4,Article place,,,Расположение артикля
 K-5,Position of article in noun phrase,,,Постановка артикля в именной группе
