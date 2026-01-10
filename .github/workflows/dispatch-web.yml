@@ -1,0 +1,17 @@
+name: Dispatch update of git subtree in langworld_db_pyramid
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch event to web repo
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.LANGWORLD_WEB_UPDATE_PAT }}
+          repository: Jazyki-Mira/langworld_db_pyramid
+          event-type: langworld-data-updated
+          client-payload: |-
+            {"sha":"${{ github.sha }}","ref":"${{ github.ref }}"}
