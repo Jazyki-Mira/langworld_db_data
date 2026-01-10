@@ -336,7 +336,7 @@ C-1-4,C-1,Both null and non-null onset possible,,Есть прикрытые и 
 C-2-1,C-2,Only null coda possible,,Запрещен
 C-2-2,C-2,Most syllables have a non-null coda,,Большинство слогов закрытые
 C-2-3,C-2,Most syllables have a null coda,,Большинство слогов открытые
-C-2-4,C-2,Both null and non-null ocoda possible,,Есть закрытые и открытые слоги
+C-2-4,C-2,Both null and non-null coda possible,,Есть закрытые и открытые слоги
 C-3-1,C-3,Consonant clusters are absent,,Стечения согласных не встречаются
 C-3-2,C-3,Consonant clusters are only possible at the onset of syllable,,Стечения согласных возможны только в начале слога
 C-3-3,C-3,Consonant clusters are only possible at the coda of syllable,,Стечения согласных возможны только в конце слога
