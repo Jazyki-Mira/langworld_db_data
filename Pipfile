@@ -7,7 +7,7 @@ name = "pypi"
 tinybear = "~=0.3.1"
 pycldf = "==1.43.0"
 pyperclip = "~=1.11.0"
-setuptools = "~= 80.9.0"
+setuptools = "~= 80.10.2"
 certifi = "~=2025.11.12"
 
 [dev-packages]
