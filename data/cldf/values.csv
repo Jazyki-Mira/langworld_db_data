@@ -247,7 +247,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 246,adyghe,J-3,Preverbs and postpositions,J-3-11,,,Превербы и послелоги,
 247,adyghe,J-8,Negative affixes,J-8-1,,,Отрицательные аффиксы,
 248,adyghe,J-9,Preposition and postposition,J-9-9,,,Препозиция или постпозиция,
-249,adyghe,K-2,Only definite,K-2-3,,,Только определенный,Определенность выражаается суффиксом -р.
+249,adyghe,K-2,Only definite,K-2-3,,,Только определенный,Определенность выражается суффиксом -р.
 250,adyghe,K-4,Postposition,K-4-2,,,Постпозиция,
 251,adyghe,K-7,Single type of conjugation,K-7-1,,,Единый тип спряжения,
 252,adyghe,K-8,Subject and subject-object,K-8-4,,,Субъектное и субъектно-объектное,
@@ -3327,7 +3327,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 3326,botlikh,D-1,Present,D-1-2,,,Присутствуют,
 3327,botlikh,D-2,No vowel clusters,D-2-6,,,Запрет на любые стечения гласных,"В тч в заимствованиях из русского, где этот запрет обходится наращением гласных."
 3328,botlikh,D-3,Present,D-3-2,,,Присутствуют,
-3329,botlikh,D-4,No consonant clusters,D-4-7,,,Запрет на любые стечения согласных,Стечения соглсаных редки в языке в принципе.
+3329,botlikh,D-4,No consonant clusters,D-4-7,,,Запрет на любые стечения согласных,Стечения согласных редки в языке в принципе.
 3330,botlikh,D-6,Absent,D-6-1,,,Отсутствуют,
 3331,botlikh,D-8,Absent,D-8-1,,,Отсутствуют,В статье представлены примеры адаптирования заимствований к нормам Б.я.
 3332,botlikh,D-10,Absent,D-10-1,,,Отсутствуют,
@@ -9322,7 +9322,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9321,hunzib,C-2,Both null and non-null coda possible,C-2-4,,,Есть закрытые и открытые слоги,"Самый частый тип слога CV, потом CVC."
 9322,hunzib,C-3,Consonant clusters are only possible at the coda of syllable,C-3-3,,,Стечения согласных возможны только в конце слога,"Упоминается что ""для начала слова стечение согласных нехарактерно"". Среди моделей слога не приведено модели со стечением согласных в начале слова."
 9323,hunzib,D-1,Present,D-1-2,,,Присутствуют,
-9324,hunzib,D-2,Limitations on consonant sequences (combinations),D-2-5,,,Ограничения на последовательность (сочетания) согласных,Стечения согласных нехарактерны для начала слова. Также в случае стечения согласных в слове первый как правило является сонорнымм.
+9324,hunzib,D-2,Limitations on consonant sequences (combinations),D-2-5,,,Ограничения на последовательность (сочетания) согласных,Стечения согласных нехарактерны для начала слова. Также в случае стечения согласных в слове первый как правило является сонорным.
 9325,hunzib,D-3,Present,D-3-2,,,Присутствуют,
 9326,hunzib,D-4,Limitations on consonant sequences (combinations),D-4-5,,,Ограничения на последовательность (сочетания) согласных,В случае стечения согласных в слове первый как правило является сонорным.
 9327,hunzib,D-6,Absent,D-6-1,,,Отсутствуют,
@@ -12683,7 +12683,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 12682,khvarshi,E-4,Synthetic with elements of analytism,E-4-6,,,Синтетический с элементами аналитизма,
 12683,khvarshi,F-1,Six,F-1-5,,,Шесть,
 12684,khvarshi,F-3,Adjectives and verbs,F-3-12,,,В прилагательном и глаголе,
-12685,khvarshi,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,"Стоит говоритть не о родах, но о классах. Классы в мн.ч. отличаются от классов в ед.ч. Большая часть глаголов и прилагательных не имеют классово-числового показателя."
+12685,khvarshi,F-5,In singular and in plural,F-5-3,,,В единственном и множественном числе,"Стоит говорить не о родах, но о классах. Классы в мн.ч. отличаются от классов в ед.ч. Большая часть глаголов и прилагательных не имеют классово-числового показателя."
 12686,khvarshi,F-6,Absent,F-6-1,,,Отсутствует,
 12687,khvarshi,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
 12688,khvarshi,G-2,Unmarked,G-2-2,,,Немаркированное,
