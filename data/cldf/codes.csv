@@ -377,6 +377,7 @@ D-8-2,D-8,Present,,Присутствуют
 D-9-1,D-9,Differences in phonetic structure,,Различия в фонетическом составе
 D-9-2,D-9,Differences in accentuation,,Акцентные различия
 D-9-3,D-9,Differences in syllable structure,,Различия в структуре слога
+D-9-4,D-9,Differences in morphology usage,,Различия в используемой морфологии
 D-10-1,D-10,Absent,,Отсутствуют
 D-10-2,D-10,Present,,Присутствуют
 D-11-1,D-11,Differences in phonetic structure,,Различия в фонетическом составе
@@ -1052,10 +1053,11 @@ K-15-3,K-15,In case,,По падежу
 K-15-4,K-15,In gender,,По роду
 K-15-5,K-15,In class,,По классу
 K-15-6,K-15,In (in)humanness,,По лично-мужской/нелично-мужской форме
-K-15-7,K-15,In person,,По посессивности
+K-15-7,K-15,In possessive,,По посессивности
 K-15-8,K-15,In (in)definiteness,,По определённости/неопределённости
 K-15-9,K-15,In state,,По состоянию
 K-15-10,K-15,In (un)countability,,По исчисляемости/неисчисляемости
+K-15-11,K-15,In person,,По лицу
 K-16-1,K-16,Absent,,Отсутствуют
 K-16-2,K-16,Case,,Падеж
 K-16-3,K-16,(In)definiteness,,Определенность/ неопределенность
