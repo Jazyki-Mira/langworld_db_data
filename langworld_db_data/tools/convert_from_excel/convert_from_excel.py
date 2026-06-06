@@ -1,3 +1,4 @@
+import re
 import zipfile
 from functools import partial
 from pathlib import Path
@@ -67,13 +68,16 @@ def convert_from_excel(path_to_input_excel: Path) -> Path:
         _get = partial(_get_value_from_row, row_=row, name_for_id=sheet_or_column_name_for_id)
 
         feature_id = _get(KEY_FOR_FEATURE_ID)
-        value_type = _get(KEY_FOR_VALUE_TYPE)
+        value_type = _get(KEY_FOR_VALUE_TYPE).strip()
         value_id = _get(KEY_FOR_VALUE_ID)
-        value_ru = (
-            _get("listed_value_ru").removeprefix(f"{value_id}: ")
-            if value_type == "listed"
-            else _get("custom_value_ru")
-        )
+        listed_value_ru = _get("listed_value_ru")
+
+        if value_type == "listed":
+            # Robustly strip any leading "ID: " pattern to handle mismatched IDs
+            # and spacing inconsistencies caused by copy-pasting in Excel.
+            value_ru = re.sub(r"^[A-Za-z0-9_\-]+\s*:\s*", "", listed_value_ru)
+        else:
+            value_ru = _get("custom_value_ru")
 
         # if this is a new feature ID, just write the value
         if feature_id not in processed_feature_ids:
