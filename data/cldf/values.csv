@@ -4107,7 +4107,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4106,central_iran_dialects,A-23,"Nasal, liquid and vibrant",A-23-2,,,"Назальные, плавные и вибранты",
 4107,central_iran_dialects,A-24,Labial and coronal,A-24-7,,,Лабиальные и переднеязычные,
 4108,central_iran_dialects,A-25,Absent,A-25-1,,,Отсутствуют,
-4109,central_iran_dialects,A-26,,,,,"Лабиальные, переднеязычные, среднеязычные, заднеязычные и постувулярные ",Лабиальные: билабиальный  /w/ и лабиодентальные  глухой /f/ и звонкий /v/. Заднеязычные: велярные и увулярные. Постувулярные: нижнефарингальный /h/ и верхнефарингальный /ḥ/ (в арабских заимствованиях)верхнефарингальный /ḥ/ (в арабских заимствованиях). 
+4109,central_iran_dialects,A-26,,,,,"Лабиальные, переднеязычные, среднеязычные, заднеязычные и постувулярные ",Лабиальные: билабиальный /w/ и лабиодентальные глухой /f/ и звонкий /v/. Заднеязычные: велярные и увулярные. Постувулярные: нижнефарингальный /h/ и верхнефарингальный /ḥ/ (в арабских заимствованиях).
 4110,central_iran_dialects,B-1,Stress,B-1-1,,,Ударение,Вопросы ударения не изучены.
 4111,central_iran_dialects,B-2,Syllable,B-2-1,,,Слог,
 4112,central_iran_dialects,B-3,Phonological,B-3-1,,,Фонологическая,
@@ -4236,7 +4236,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 4235,central_persian_desert_dialects,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
 4236,central_persian_desert_dialects,I-9,In singular and plural,I-9-3,,,В единственном и множественном числе,
 4237,central_persian_desert_dialects,I-10,,,,,Флексии и клитики,"В формах претерита переходные глаголы могут иметь как флективные, так и клитические личные показатели."
-4238,central_persian_desert_dialects,J-1,,,,,"Местоимения существительные, местоимения-прилагательные и местоименные наречия","ИЗМЕНЕН ПОРЯДОК СЛОВ ПО ОТНОШЕНИЮ К  LISTED  J-1-10: Местоименные наречия, прилагательные и существительные"
+4238,central_persian_desert_dialects,J-1,,,,,"Местоимения-существительные, местоимения-прилагательные и местоименные наречия","ИЗМЕНЕН ПОРЯДОК СЛОВ ПО ОТНОШЕНИЮ К  LISTED  J-1-10: Местоименные наречия, прилагательные и существительные"
 4239,central_persian_desert_dialects,J-2,Demonstrative pronouns and adpositions,J-2-16,,,"Указательные местоимения, предлоги и послелоги",
 4240,central_persian_desert_dialects,J-3,Prepositions,J-3-3,,,Предлоги,
 4241,central_persian_desert_dialects,J-4,Pronouns and adverbs,J-4-6,,,Местоимения и наречия,
