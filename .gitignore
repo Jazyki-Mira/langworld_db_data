@@ -135,10 +135,15 @@ dmypy.json
 .pyre/
 
 # Auxiliary calling modules
-/langworld_db_data/add_listed_value.py
-/langworld_db_data/get_value.py
-/langworld_db_data/add_feature.py
+langworld_db_data/add_listed_value.py
+langworld_db_data/get_value.py
+langworld_db_data/add_feature.py
 
 # one-off scripts and data files
 temp_*.py
 temp_*.csv
+*.csv~
+
+langworld_db_data/tools/convert_from_excel/input_xslm/
+langworld_db_data/tools/convert_from_excel/output_csv/
+langworld_db_data/tools/convert_from_excel/input_xlsm/*.xlsm
