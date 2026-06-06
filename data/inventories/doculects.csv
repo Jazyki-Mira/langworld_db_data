@@ -451,3 +451,7 @@ zefrei,dialect,0,0,Zefrei,зефреи,,,,,north_west_iran,,zefr1234,,,,32.80592
 carian,language,1,0,Carian,карийский,,,,,anatol,xcr,cari1274,,,,37.203,28.182,tur,20,166,1,,
 pisidian,language,1,0,Pisidian,писидийский,,,,,anatol,xps,pisi1234,,,,37.273,31.28,tur,20,177,1,,
 sidetic,language,1,0,Sidetic,сидетский,,,,,anatol,xsd,side1240,,,,36.764,31.917,tur,20,175,1,,
+tati_dialects,dialect,0,1,Tati group of dialects,Тати группа диалектов,Tati group of dialects,Тати группа диалектов,,,north_west_iran,,,,,,36.5,50.5,irn,6,106,1,,
+semnan_dialects,dialect,0,1,Semnan region dialects,Семнана полосы диалектов,Semnan region dialects,Семнана полосы диалектов,,,north_west_iran,,,,,,35.5,53.5,irn,6,148,1,,
+central_iran_dialects,dialect,0,1,Central Iran Region dialects,Центрального Ирана диалекты,Central Iran Region dialects,Центрального Ирана диалекты,,,north_west_iran,,,,,,32.5,52.5,irn,6,174,1,,
+central_persian_desert_dialects,dialect,0,1,Dialects of the Central Persian Desert,Большой Соляной пустыни диалекты,Dialects of the Central Persian Desert,Большой Соляной пустыни диалектов,,,north_west_iran,,,,,,33.5,54.5,irn,6,232,1,,
