@@ -344,7 +344,6 @@
 - Основа или конечный гласный слова: [хорезмийский](../feature_profiles/khwaresmian.csv)
 - Первый (корневой) слог: [швейцарско-немецкий](../feature_profiles/swiss_german.csv)
 - Первый слог корня (слова германского происхождения) или антепенультима (слова семитского происхождения): [идиш](../feature_profiles/yiddish.csv)
-- Первый слог слова или корня: [английский](../feature_profiles/english.csv)
 - Первый слог слова или тактовой группы: [серболужицкий](../feature_profiles/sorbian.csv)
 - Последний слог за исключением постпозитивных элементов - изафетного показателя, показателя неопределенности/единичности и энклитических местоимений: [кохруди](../feature_profiles/kohrudi.csv)
 - Последний слог основы или корня, а также всегда ударные аффиксы.: [хиналугский](../feature_profiles/khinalug.csv)
@@ -365,7 +364,6 @@
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
 ## B-14: Типы контурных (скользящих, модулярных, модулированных) тонем
 
-- Восходящий, нисходящий и нисходяще-восходящий: [английский](../feature_profiles/english.csv)
 - Восходящий, нисходящий и циркумфлексный: [дамели](../feature_profiles/dameli.csv)
 - Высокий, низкий, восходящий и нисходящий (два типа): [гарви](../feature_profiles/garwi.csv)
 - Высокий/низкий: [валлийский](../feature_profiles/welsh.csv)
@@ -509,7 +507,7 @@
 - Запрет на стечение двух согласных: [сангличский](../feature_profiles/sanglechi.csv)
 - Нет данных: [какабе](../feature_profiles/kakabe.csv)
 - Ограниченный набор гласных в начале слова: [древнерусский](../feature_profiles/old_russian.csv)
-- Отсутствуют: [эрзянский](../feature_profiles/erzya.csv), [коми-зырянский](../feature_profiles/komi_zyrian.csv), [мокшанский](../feature_profiles/moksha.csv), [семнанский](../feature_profiles/semnani.csv), [сивенди](../feature_profiles/sivandi.csv), [таджриши](../feature_profiles/tajrishi.csv), [авесты](../feature_profiles/avestan.csv), [мунджанский](../feature_profiles/munji.csv), [ваханский](../feature_profiles/wakhi.csv), [ягнобский](../feature_profiles/yaghnobi.csv), [кати](../feature_profiles/kati.csv), [английский](../feature_profiles/english.csv), [исландский](../feature_profiles/icelandic.csv), [далматинский](../feature_profiles/dalmatian.csv), [фриульский](../feature_profiles/friulian.csv), [ладинский](../feature_profiles/ladin.csv), [белорусский](../feature_profiles/belorussian.csv), [болгарский](../feature_profiles/bulgarian.csv), [чешский](../feature_profiles/czech.csv), [кашубский](../feature_profiles/kashubian.csv), [польский](../feature_profiles/polish.csv), [словенский](../feature_profiles/slovene.csv), [литовский](../feature_profiles/lithuanian.csv), [бенгальский](../feature_profiles/bengali.csv), [домари](../feature_profiles/domari.csv), [цыганский](../feature_profiles/romani.csv), [лидийский](../feature_profiles/lydian.csv), [митаннийский индоарийский](../feature_profiles/mitanni_indo_aryan.csv), [фригийский](../feature_profiles/phrygian.csv), [бен](../feature_profiles/beng.csv), [боко](../feature_profiles/boko.csv), [гбан](../feature_profiles/gban.csv), [мандинка](../feature_profiles/mandinka.csv), [муан](../feature_profiles/mwan.csv)
+- Отсутствуют: [эрзянский](../feature_profiles/erzya.csv), [коми-зырянский](../feature_profiles/komi_zyrian.csv), [мокшанский](../feature_profiles/moksha.csv), [семнанский](../feature_profiles/semnani.csv), [сивенди](../feature_profiles/sivandi.csv), [таджриши](../feature_profiles/tajrishi.csv), [авесты](../feature_profiles/avestan.csv), [мунджанский](../feature_profiles/munji.csv), [ваханский](../feature_profiles/wakhi.csv), [ягнобский](../feature_profiles/yaghnobi.csv), [кати](../feature_profiles/kati.csv), [исландский](../feature_profiles/icelandic.csv), [далматинский](../feature_profiles/dalmatian.csv), [фриульский](../feature_profiles/friulian.csv), [ладинский](../feature_profiles/ladin.csv), [белорусский](../feature_profiles/belorussian.csv), [болгарский](../feature_profiles/bulgarian.csv), [чешский](../feature_profiles/czech.csv), [кашубский](../feature_profiles/kashubian.csv), [польский](../feature_profiles/polish.csv), [словенский](../feature_profiles/slovene.csv), [литовский](../feature_profiles/lithuanian.csv), [бенгальский](../feature_profiles/bengali.csv), [домари](../feature_profiles/domari.csv), [цыганский](../feature_profiles/romani.csv), [лидийский](../feature_profiles/lydian.csv), [митаннийский индоарийский](../feature_profiles/mitanni_indo_aryan.csv), [фригийский](../feature_profiles/phrygian.csv), [бен](../feature_profiles/beng.csv), [боко](../feature_profiles/boko.csv), [гбан](../feature_profiles/gban.csv), [мандинка](../feature_profiles/mandinka.csv), [муан](../feature_profiles/mwan.csv)
 - клинопись не позволяет выразить напрямую начальные и конечные сочетания: [палайский](../feature_profiles/palaic.csv)
 ## D-4: Тип ограничений  на фонемную структуру в конце слова (ауслауте)
 
