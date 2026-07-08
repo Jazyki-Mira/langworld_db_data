@@ -14,7 +14,7 @@
 - Список из 12 гласных фонем по количеству степеней подъема терминологически не интерпретируется: [дамели](../feature_profiles/dameli.csv), [кховар](../feature_profiles/khowar.csv), [пашаи](../feature_profiles/pashai.csv), [тирахи](../feature_profiles/tirahi.csv)
 - Список из 15 гласных фонем по количеству степеней подъема терминологически не интерпретируется: [гарви](../feature_profiles/garwi.csv)
 - Список из 18 гласных монофтонгов по количеству степеней подъема терминологически не интерпретируется: [шина](../feature_profiles/shina.csv)
-- Список из восьми гласных фонем по количеству степеней подъема терминологически не интерпретируется: [давани](../feature_profiles/davani.csv), [ларская группа диалектов](../feature_profiles/larestani_dialects.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [глангали](../feature_profiles/grangali.csv), [прасун](../feature_profiles/prasun.csv), [вайгали](../feature_profiles/waigali.csv), [земиаки](../feature_profiles/zemiaki.csv)
+- Список из восьми гласных фонем по количеству степеней подъема терминологически не интерпретируется: [глангали](../feature_profiles/grangali.csv), [прасун](../feature_profiles/prasun.csv), [вайгали](../feature_profiles/waigali.csv), [земиаки](../feature_profiles/zemiaki.csv)
 - Список из девяти гласных фонем и дополнительного гласного звукотипа по количеству степеней подъема терминологически не интерпретируется: [хотаносакский](../feature_profiles/khotanese.csv)
 - Список из девяти гласных фонем по количеству степеней подъема терминологически не интерпретируется: [бактрийский](../feature_profiles/bactrian.csv), [торвали](../feature_profiles/torwali.csv)
 - Список из десяти гласных фонем по количеству степеней подъема не интерпретируется: [пхалура](../feature_profiles/phalura.csv)
@@ -24,7 +24,7 @@
 - Список из семи гласных фонем по количеству степеней подъема терминологически не интерпретируется: [аланский](../feature_profiles/alanic.csv), [ашкун](../feature_profiles/ashkun.csv), [сави](../feature_profiles/sawi.csv)
 - Список из четырех гласных фонем по количеству степеней подъема терминологически не интерпретируется: [скифский](../feature_profiles/scythian.csv)
 - Список из шести гласных по количеству степеней подъема не интепретируется: [ваханский](../feature_profiles/wakhi.csv)
-- Список из шести гласных фонем по количеству степеней подъема терминологически не интерпретируется: [курдшули](../feature_profiles/kurdshuli.csv), [гавар](../feature_profiles/gawar.csv), [калаша](../feature_profiles/kalasha.csv), [шумашти](../feature_profiles/shumashti.csv)
+- Список из шести гласных фонем по количеству степеней подъема терминологически не интерпретируется: [гавар](../feature_profiles/gawar.csv), [калаша](../feature_profiles/kalasha.csv), [шумашти](../feature_profiles/shumashti.csv)
 ## A-2: Подъемы гласных
 
 - Верхний и нижний в раннеавестийском; верхний, средний и нижний в позднеавестийском: [авесты](../feature_profiles/avestan.csv)
@@ -39,13 +39,13 @@
 - Список из 12 гласных фонем по признаку подъема терминологически не интерпретируется: [дамели](../feature_profiles/dameli.csv), [кховар](../feature_profiles/khowar.csv), [пашаи](../feature_profiles/pashai.csv), [тирахи](../feature_profiles/tirahi.csv)
 - Список из 15 гласных фонем по признаку подъема терминологически не интерпретируется: [гарви](../feature_profiles/garwi.csv)
 - Список из 18 гласных монофтонгов  по признаку подъема терминологически не интерпретируется: [шина](../feature_profiles/shina.csv)
-- Список из восьми гласных фонем по признаку подъема терминологически не интерпретируется: [давани](../feature_profiles/davani.csv), [ларская группа диалектов](../feature_profiles/larestani_dialects.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [глангали](../feature_profiles/grangali.csv), [прасун](../feature_profiles/prasun.csv), [вайгали](../feature_profiles/waigali.csv), [земиаки](../feature_profiles/zemiaki.csv)
+- Список из восьми гласных фонем по признаку подъема терминологически не интерпретируется: [глангали](../feature_profiles/grangali.csv), [прасун](../feature_profiles/prasun.csv), [вайгали](../feature_profiles/waigali.csv), [земиаки](../feature_profiles/zemiaki.csv)
 - Список из девяти гласных фонем по признаку подъема терминологически не интерпретируется: [бактрийский](../feature_profiles/bactrian.csv), [хотаносакский](../feature_profiles/khotanese.csv), [торвали](../feature_profiles/torwali.csv)
 - Список из десяти гласных фонем по признаку подъема терминологически не интерпретируется: [катаркалаи](../feature_profiles/katarkalai.csv)
 - Список из пяти долгих и трех кратких гласных фонем по признаку подъема терминологически не интерпретируется: [хорезмийский](../feature_profiles/khwaresmian.csv)
 - Список из семи гласных фонем по признаку подъема терминологически не интерпретируется: [ашкун](../feature_profiles/ashkun.csv), [сави](../feature_profiles/sawi.csv)
 - Список из шести гласных по степени подъема терминологически не интепретируется: [ваханский](../feature_profiles/wakhi.csv)
-- Список из шести гласных фонем по признаку подъема терминологически не интерпретируется: [курдшули](../feature_profiles/kurdshuli.csv), [гавар](../feature_profiles/gawar.csv), [калаша](../feature_profiles/kalasha.csv), [шумашти](../feature_profiles/shumashti.csv)
+- Список из шести гласных фонем по признаку подъема терминологически не интерпретируется: [гавар](../feature_profiles/gawar.csv), [калаша](../feature_profiles/kalasha.csv), [шумашти](../feature_profiles/shumashti.csv)
 ## A-3: Противопоставление по открытости/закрытости в подъемах гласных
 
 - Отсутствует: [дари](../feature_profiles/dari.csv), [давани](../feature_profiles/davani.csv), [Фарса диалекты](../feature_profiles/fars_dialects.csv), [хазара](../feature_profiles/hazaragi.csv), [персидский](../feature_profiles/persian.csv), [таджикский](../feature_profiles/tajik.csv), [татский](../feature_profiles/tati.csv)
@@ -60,22 +60,19 @@
 - Передний, средний и задний в раннеавестийском (6 фонем); передний, средний и задний с двумя промежуточными между ними в позднеавестийском (10 фонем): [авесты](../feature_profiles/avestan.csv)
 - Список из 12 гласных фонем по признаку ряда терминологически не интерпретируется: [дамели](../feature_profiles/dameli.csv), [кховар](../feature_profiles/khowar.csv), [пашаи](../feature_profiles/pashai.csv), [тирахи](../feature_profiles/tirahi.csv)
 - Список из 15 гласных фонем по признаку ряда терминологически не интерпретируется: [гарви](../feature_profiles/garwi.csv)
-- Список из восьми гласных фонем по признаку ряда терминологически не интерпретируется: [давани](../feature_profiles/davani.csv), [ларская группа диалектов](../feature_profiles/larestani_dialects.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [глангали](../feature_profiles/grangali.csv), [прасун](../feature_profiles/prasun.csv), [вайгали](../feature_profiles/waigali.csv), [земиаки](../feature_profiles/zemiaki.csv)
+- Список из восьми гласных фонем по признаку ряда терминологически не интерпретируется: [глангали](../feature_profiles/grangali.csv), [прасун](../feature_profiles/prasun.csv), [вайгали](../feature_profiles/waigali.csv), [земиаки](../feature_profiles/zemiaki.csv)
 - Список из девяти гласных фонем по признаку ряда терминологически не интерпретируется: [торвали](../feature_profiles/torwali.csv)
 - Список из десяти гласных фонем по признаку ряда терминологически не интерпретируется: [майян](../feature_profiles/mayan.csv)
 - Список из десяти гласных фонем по признаку ряда терминологически не интерпретируются: [пхалура](../feature_profiles/phalura.csv)
 - Список из семи гласных фонем по признаку ряда терминологически не интерпретируется: [ашкун](../feature_profiles/ashkun.csv), [сави](../feature_profiles/sawi.csv)
 - Список из четырех гласных фонем по признаку ряда терминологически не интерпретируется: [скифский](../feature_profiles/scythian.csv)
 - Список из шести гласных по признаку ряда терминологически не интепретируется: [ваханский](../feature_profiles/wakhi.csv)
-- Список из шести гласных фонем по признаку ряда терминологически не интерпретируется: [курдшули](../feature_profiles/kurdshuli.csv), [гавар](../feature_profiles/gawar.csv), [калаша](../feature_profiles/kalasha.csv), [шумашти](../feature_profiles/shumashti.csv)
+- Список из шести гласных фонем по признаку ряда терминологически не интерпретируется: [гавар](../feature_profiles/gawar.csv), [калаша](../feature_profiles/kalasha.csv), [шумашти](../feature_profiles/shumashti.csv)
 ## A-6: Фонологические ступени долготы
 
-- Есть долгие и краткие гласные: [башкарди](../feature_profiles/bashkardi.csv), [кумзари](../feature_profiles/kumzari.csv), [ларская группа диалектов](../feature_profiles/larestani_dialects.csv), [лурская и бахтиярская группа диалектов](../feature_profiles/luri_bakhtiari_dialects.csv), [калаша](../feature_profiles/kalasha.csv), [пашаи](../feature_profiles/pashai.csv)
+- Есть долгие и краткие гласные: [калаша](../feature_profiles/kalasha.csv), [пашаи](../feature_profiles/pashai.csv)
 ## A-8: Противопоставление гласных по лабиализации
 
-- В смешанном и заднем рядах: [таджикский](../feature_profiles/tajik.csv)
-- Есть лабиализованные и нелабиализованные гласные: [лурская и бахтиярская группа диалектов](../feature_profiles/luri_bakhtiari_dialects.csv)
-- Есть лабиализованные и нелабиализованные гласные.: [давани](../feature_profiles/davani.csv)
 - Нейтральная гласная /?/ реализуется в широком диапазоне вариантов по огубленности, ряду и подъему: [сангличский](../feature_profiles/sanglechi.csv)
 ## A-10: Противопоставление гласных по назализации
 
@@ -106,7 +103,7 @@
 
 - Взрывные, аффрикаты, щелевые и шипящие: [хотаносакский](../feature_profiles/khotanese.csv)
 - Взрывные, фрикативные, аффрикаты и имплозивные: [синдхи](../feature_profiles/sindhi.csv)
-- Смычные, фрикативные и аффрикаты: [дари](../feature_profiles/dari.csv), [давани](../feature_profiles/davani.csv), [Фарса диалекты](../feature_profiles/fars_dialects.csv), [хазара](../feature_profiles/hazaragi.csv), [кумзари](../feature_profiles/kumzari.csv), [курдшули](../feature_profiles/kurdshuli.csv), [ларская группа диалектов](../feature_profiles/larestani_dialects.csv), [лурская и бахтиярская группа диалектов](../feature_profiles/luri_bakhtiari_dialects.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [древнеперсидский](../feature_profiles/old_persian.csv), [персидский](../feature_profiles/persian.csv), [таджикский](../feature_profiles/tajik.csv), [татский](../feature_profiles/tati.csv), [дамели](../feature_profiles/dameli.csv), [гарви](../feature_profiles/garwi.csv), [гавар](../feature_profiles/gawar.csv), [глангали](../feature_profiles/grangali.csv), [калаша](../feature_profiles/kalasha.csv), [кашмири](../feature_profiles/kashmiri.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [кховар](../feature_profiles/khowar.csv), [майян](../feature_profiles/mayan.csv), [пашаи](../feature_profiles/pashai.csv), [пхалура](../feature_profiles/phalura.csv), [сави](../feature_profiles/sawi.csv), [шина](../feature_profiles/shina.csv), [шумашти](../feature_profiles/shumashti.csv), [тирахи](../feature_profiles/tirahi.csv), [торвали](../feature_profiles/torwali.csv)
+- Смычные, фрикативные и аффрикаты: [дамели](../feature_profiles/dameli.csv), [гарви](../feature_profiles/garwi.csv), [гавар](../feature_profiles/gawar.csv), [глангали](../feature_profiles/grangali.csv), [калаша](../feature_profiles/kalasha.csv), [кашмири](../feature_profiles/kashmiri.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [кховар](../feature_profiles/khowar.csv), [майян](../feature_profiles/mayan.csv), [пашаи](../feature_profiles/pashai.csv), [пхалура](../feature_profiles/phalura.csv), [сави](../feature_profiles/sawi.csv), [шина](../feature_profiles/shina.csv), [шумашти](../feature_profiles/shumashti.csv), [тирахи](../feature_profiles/tirahi.csv), [торвали](../feature_profiles/torwali.csv)
 - Смычные, фрикативные и аффрикаты : [ашкун](../feature_profiles/ashkun.csv), [кати](../feature_profiles/kati.csv), [прасун](../feature_profiles/prasun.csv), [вайгали](../feature_profiles/waigali.csv), [земиаки](../feature_profiles/zemiaki.csv)
 - Смычные, фрикативные и имплозивные: [дан](../feature_profiles/dan.csv), [гуро](../feature_profiles/guro.csv), [кла-дан](../feature_profiles/kla_dan.csv), [лоома](../feature_profiles/looma.csv)
 - Смычные: чистые (неносовые и носовые) и аффрикаты (одно- и двухфокусные); щелевые: срединные (одно- и двухфокусные) и боковые; дрожащие: [мунджанский](../feature_profiles/munji.csv)
@@ -129,7 +126,6 @@
 - Лабиальные, дентальные, передненебные, средненебные и задненебные: [словенский](../feature_profiles/slovene.csv)
 - Лабиальные, дентальные, передненебные, средненебные, велярные: [сербохорватский](../feature_profiles/serbocroatian.csv)
 - Лабиальные, переднеязычные, среднезычные, заднеязычные и увулярные (q): [сонинке](../feature_profiles/soninke.csv)
-- Лабиальные, переднеязычные, среднеязычные, заднеязычные и постувулярные: [дари](../feature_profiles/dari.csv)
 - Список из 19 согласных фонем по месту образования терминологически не интерпретируется: [аланский](../feature_profiles/alanic.csv)
 - Список из 26 согласных фонем по месту образования терминологически не интерпретируется: [хорезмийский](../feature_profiles/khwaresmian.csv)
 ## A-19: Шумные переднеязычные согласные по месту образования
@@ -144,7 +140,6 @@
 - Дентальные, ретрофлексные и альвеопалательные: [панджаби](../feature_profiles/punjabi.csv)
 - Дорсальные и ретрофлексные: [хазара](../feature_profiles/hazaragi.csv)
 - Дорсальные и церебральные: [ишкашимский](../feature_profiles/ishkashimi.csv), [сангличский](../feature_profiles/sanglechi.csv), [ваханский](../feature_profiles/wakhi.csv)
-- Есть ретрофлексный /ḍ/.: [кумзари](../feature_profiles/kumzari.csv)
 - Интердентальные и альвеолярные: [английский](../feature_profiles/english.csv)
 - Нецеребральные и церебральные: [мунджанский](../feature_profiles/munji.csv), [пашто](../feature_profiles/pashto.csv), [ашкун](../feature_profiles/ashkun.csv), [дамели](../feature_profiles/dameli.csv), [гарви](../feature_profiles/garwi.csv), [гавар](../feature_profiles/gawar.csv), [глангали](../feature_profiles/grangali.csv), [калаша](../feature_profiles/kalasha.csv), [кашмири](../feature_profiles/kashmiri.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [кати](../feature_profiles/kati.csv), [кховар](../feature_profiles/khowar.csv), [майян](../feature_profiles/mayan.csv), [пашаи](../feature_profiles/pashai.csv), [пхалура](../feature_profiles/phalura.csv), [прасун](../feature_profiles/prasun.csv), [сави](../feature_profiles/sawi.csv), [шина](../feature_profiles/shina.csv), [шумашти](../feature_profiles/shumashti.csv), [тирахи](../feature_profiles/tirahi.csv), [торвали](../feature_profiles/torwali.csv), [вайгали](../feature_profiles/waigali.csv), [земиаки](../feature_profiles/zemiaki.csv)
 - Переднеязычные согласные фонемы по месту образования терминологически не интерпретируются. Отмечается наличие церебральных (аллофонов ?): [бактрийский](../feature_profiles/bactrian.csv)
@@ -164,7 +159,6 @@
 ## A-21: Типы шумных ларингальных согласных по месту образования
 
 - Гортанные: [мэнкский](../feature_profiles/manx.csv)
-- Есть верхнефарингальный /h/.: [кумзари](../feature_profiles/kumzari.csv)
 - Ларингальные (нижнефарингальные): [рушанский](../feature_profiles/rushani.csv)
 - Нижнефарингальные: [ирландский](../feature_profiles/irish_gaelic.csv)
 - Отсутствуют: [ашкун](../feature_profiles/ashkun.csv), [вайгали](../feature_profiles/waigali.csv)
@@ -184,7 +178,6 @@
 
 - Губные, зубные, ретрофлексные и среднеязычные: [авадхи](../feature_profiles/awadhi.csv)
 - Губные, переднеязычные, ретрофлексные и среднеязычные: [брадж](../feature_profiles/braj.csv), [хиндко](../feature_profiles/hindko.csv)
-- Есть ретрофлексный /ṛ/.: [кумзари](../feature_profiles/kumzari.csv)
 - Лабиальные и переднеязычные (дентальные и альвеолярные): [древнерусский](../feature_profiles/old_russian.csv)
 - Лабиальные, дентально-альвеолярные и палатальные: [словацкий](../feature_profiles/slovak.csv)
 - Лабиальные, дентальные и средненебные: [сербохорватский](../feature_profiles/serbocroatian.csv)
@@ -252,7 +245,7 @@
 ## B-5: Фиксированность ударения
 
 - Неподвижно фиксированное: [кховар](../feature_profiles/khowar.csv)
-- Неподвижное фиксированное: [дари](../feature_profiles/dari.csv), [Фарса диалекты](../feature_profiles/fars_dialects.csv), [хазара](../feature_profiles/hazaragi.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [древнеперсидский](../feature_profiles/old_persian.csv), [персидский](../feature_profiles/persian.csv), [таджикский](../feature_profiles/tajik.csv), [татский](../feature_profiles/tati.csv), [ашкун](../feature_profiles/ashkun.csv), [глангали](../feature_profiles/grangali.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [кати](../feature_profiles/kati.csv), [пашаи](../feature_profiles/pashai.csv), [пхалура](../feature_profiles/phalura.csv), [шина](../feature_profiles/shina.csv), [земиаки](../feature_profiles/zemiaki.csv)
+- Неподвижное фиксированное: [ашкун](../feature_profiles/ashkun.csv), [глангали](../feature_profiles/grangali.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [кати](../feature_profiles/kati.csv), [пашаи](../feature_profiles/pashai.csv), [пхалура](../feature_profiles/phalura.csv), [шина](../feature_profiles/shina.csv), [земиаки](../feature_profiles/zemiaki.csv)
 - Нет данных: [милийский](../feature_profiles/milyan.csv)
 - Одноместно фиксированное и разноместное нефиксированное: [кашубский](../feature_profiles/kashubian.csv)
 - Ударение условно свободное: [сербохорватский](../feature_profiles/serbocroatian.csv)
@@ -274,7 +267,7 @@
 - Начальный слог и второстепенное ударение (одно или несколько) на непервом компоненте: [норвежский](../feature_profiles/norwegian.csv)
 - Начальный слог корня: [датский](../feature_profiles/danish.csv), [немецкий](../feature_profiles/german.csv), [готский](../feature_profiles/gothic.csv)
 - Начальный слог слова или тактовой группы: [чешский](../feature_profiles/czech.csv)
-- Неприменимо: [татский](../feature_profiles/tati.csv), [пашто](../feature_profiles/pashto.csv), [арумынский](../feature_profiles/aromanian.csv), [каталонский](../feature_profiles/catalan.csv), [далматинский](../feature_profiles/dalmatian.csv), [истророманский](../feature_profiles/istriot.csv), [истрорумынский](../feature_profiles/istro_romanian.csv), [ладинский](../feature_profiles/ladin.csv), [мегленорумынский](../feature_profiles/megleno_romanian.csv), [домари](../feature_profiles/domari.csv), [конкани](../feature_profiles/konkani.csv), [сингальский](../feature_profiles/sinhala.csv)
+- Неприменимо: [пашто](../feature_profiles/pashto.csv), [арумынский](../feature_profiles/aromanian.csv), [каталонский](../feature_profiles/catalan.csv), [далматинский](../feature_profiles/dalmatian.csv), [истророманский](../feature_profiles/istriot.csv), [истрорумынский](../feature_profiles/istro_romanian.csv), [ладинский](../feature_profiles/ladin.csv), [мегленорумынский](../feature_profiles/megleno_romanian.csv), [домари](../feature_profiles/domari.csv), [конкани](../feature_profiles/konkani.csv), [сингальский](../feature_profiles/sinhala.csv)
 - Основа или конечный гласный слова: [хорезмийский](../feature_profiles/khwaresmian.csv)
 - Первый (корневой) слог: [швейцарско-немецкий](../feature_profiles/swiss_german.csv)
 - Первый слог корня (слова германского происхождения) или антепенультима (слова семитского происхождения): [идиш](../feature_profiles/yiddish.csv)
@@ -286,7 +279,7 @@
 ## B-11: Количество уровневых тонов (уровней регистровых (ровных) тонов)
 
 - Более трёх: [гарви](../feature_profiles/garwi.csv), [боко](../feature_profiles/boko.csv), [дан](../feature_profiles/dan.csv), [гбан](../feature_profiles/gban.csv), [гоо](../feature_profiles/goo.csv), [кла-дан](../feature_profiles/kla_dan.csv), [локо](../feature_profiles/loko.csv), [тура](../feature_profiles/tura.csv), [яурэ](../feature_profiles/yaoure.csv)
-- Неприменимо: [дари](../feature_profiles/dari.csv), [хазара](../feature_profiles/hazaragi.csv), [таджикский](../feature_profiles/tajik.csv), [татский](../feature_profiles/tati.csv), [бактрийский](../feature_profiles/bactrian.csv), [сарыкольский](../feature_profiles/sariqoli.csv), [язгулямский](../feature_profiles/yazghulami.csv), [гавар](../feature_profiles/gawar.csv), [глангали](../feature_profiles/grangali.csv), [калаша](../feature_profiles/kalasha.csv), [кашмири](../feature_profiles/kashmiri.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [пашаи](../feature_profiles/pashai.csv), [пхалура](../feature_profiles/phalura.csv), [ассамский](../feature_profiles/assamese.csv), [бенгальский](../feature_profiles/bengali.csv), [бходжпури](../feature_profiles/bhojpuri.csv), [домари](../feature_profiles/domari.csv), [гуджарати](../feature_profiles/gujarati.csv), [конкани](../feature_profiles/konkani.csv), [ломаврен](../feature_profiles/lomavren.csv), [магахи](../feature_profiles/magahi.csv), [майтхили](../feature_profiles/maithili.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [маратхи](../feature_profiles/marathi.csv), [ория](../feature_profiles/oriya.csv), [раджбанши/камта (в Индии и Бангладеш)](../feature_profiles/rajbanshi_kamta.csv), [раджбанши (Непал)](../feature_profiles/rajbanshi_nepal.csv), [цыганский](../feature_profiles/romani.csv), [садани/садри](../feature_profiles/sadani_sadri.csv), [саураштра](../feature_profiles/saurashtra.csv), [синдхи](../feature_profiles/sindhi.csv), [сингальский](../feature_profiles/sinhala.csv), [тамильский](../feature_profiles/tamil.csv)
+- Неприменимо: [бактрийский](../feature_profiles/bactrian.csv), [сарыкольский](../feature_profiles/sariqoli.csv), [язгулямский](../feature_profiles/yazghulami.csv), [гавар](../feature_profiles/gawar.csv), [глангали](../feature_profiles/grangali.csv), [калаша](../feature_profiles/kalasha.csv), [кашмири](../feature_profiles/kashmiri.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [пашаи](../feature_profiles/pashai.csv), [пхалура](../feature_profiles/phalura.csv), [ассамский](../feature_profiles/assamese.csv), [бенгальский](../feature_profiles/bengali.csv), [бходжпури](../feature_profiles/bhojpuri.csv), [домари](../feature_profiles/domari.csv), [гуджарати](../feature_profiles/gujarati.csv), [конкани](../feature_profiles/konkani.csv), [ломаврен](../feature_profiles/lomavren.csv), [магахи](../feature_profiles/magahi.csv), [майтхили](../feature_profiles/maithili.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [маратхи](../feature_profiles/marathi.csv), [ория](../feature_profiles/oriya.csv), [раджбанши/камта (в Индии и Бангладеш)](../feature_profiles/rajbanshi_kamta.csv), [раджбанши (Непал)](../feature_profiles/rajbanshi_nepal.csv), [цыганский](../feature_profiles/romani.csv), [садани/садри](../feature_profiles/sadani_sadri.csv), [саураштра](../feature_profiles/saurashtra.csv), [синдхи](../feature_profiles/sindhi.csv), [сингальский](../feature_profiles/sinhala.csv), [тамильский](../feature_profiles/tamil.csv)
 - Предположительно можно реконструировать фарингализованный тон - просодическая "эризация": [хотаносакский](../feature_profiles/khotanese.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
 ## B-14: Типы контурных (скользящих, модулярных, модулированных) тонем
@@ -393,7 +386,6 @@
 - Регрессивная ассимиляция, палатализация и упрощение групп согласных, выпадение согласных в интервокальной позиции и устранение зияния: [македонский](../feature_profiles/macedonian.csv)
 - Редукция гласных и оглушение согласных: [полабский](../feature_profiles/polabian.csv)
 - Редукция гласных, палатализация, оглушение, озвончение, спирантизация и аспирация согласных: [персидский](../feature_profiles/persian.csv)
-- Редукция и аккомодация гласных, озвончение, оглушение,  спирантизация, ослабление  и отпадение конечных согласных: [таджикский](../feature_profiles/tajik.csv)
 - Редукция и дифтонгизация гласных, вокализация, палатализация, назализация и оглушение согласных: [словенский](../feature_profiles/slovene.csv)
 - Редукция и расширение гласных, оглушение, смягчение, отвердение согласных и принцип восходящей звучности слога: [русский](../feature_profiles/russian.csv)
 - Редукция, диссимиляция, назализация и деназализация гласных, озвончение и оглушение согласных: [кашубский](../feature_profiles/kashubian.csv)
@@ -412,6 +404,7 @@
 - Фонация, геминация и веляризация: [каталонский](../feature_profiles/catalan.csv)
 - Фонация, спирантизация, парагога гласной, геминирование и синтаксическое удвоение согласных: [сардинский](../feature_profiles/sardinian.csv)
 - Фразовое ударение: [Фарса диалекты](../feature_profiles/fars_dialects.csv)
+- Фразовое ударение, редукция и аккомодация гласных, озвончение, оглушение,  спирантизация, ослабление  и отпадение конечных согласных: [таджикский](../feature_profiles/tajik.csv)
 - Эпентеза гласных, ассимиляция, назализация и палатализация согласных: [серболужицкий](../feature_profiles/sorbian.csv)
 - Эпентеза, апокопа и афереза гласных, протеза согласного: [истророманский](../feature_profiles/istriot.csv)
 ## B-20: Типы фонации
@@ -442,7 +435,7 @@
 - Запрет на стечения согласных в заударной позиции: [ягнобский](../feature_profiles/yaghnobi.csv)
 - Ограниченный набор гласных и запрет на стечение согласных: [рушанский](../feature_profiles/rushani.csv)
 - Ограниченный набор гласных и согласных и запрет на стечение согласных: [истророманский](../feature_profiles/istriot.csv)
-- Отсутствуют: [эрзянский](../feature_profiles/erzya.csv), [венгерский](../feature_profiles/hungarian.csv), [коми-зырянский](../feature_profiles/komi_zyrian.csv), [мокшанский](../feature_profiles/moksha.csv), [ненецкий](../feature_profiles/nenets.csv), [маньчжурский](../feature_profiles/manchu.csv), [Фарса диалекты](../feature_profiles/fars_dialects.csv), [аланский](../feature_profiles/alanic.csv), [авесты](../feature_profiles/avestan.csv), [хуфский](../feature_profiles/khufi.csv), [мунджанский](../feature_profiles/munji.csv), [осетинский](../feature_profiles/ossetian.csv), [согдийский](../feature_profiles/sogdian.csv), [ваханский](../feature_profiles/wakhi.csv), [язгулямский](../feature_profiles/yazghulami.csv), [африкаанс](../feature_profiles/afrikaans.csv), [далматинский](../feature_profiles/dalmatian.csv), [белорусский](../feature_profiles/belorussian.csv), [болгарский](../feature_profiles/bulgarian.csv), [чешский](../feature_profiles/czech.csv), [кашубский](../feature_profiles/kashubian.csv), [древнерусский](../feature_profiles/old_russian.csv), [словенский](../feature_profiles/slovene.csv), [литовский](../feature_profiles/lithuanian.csv), [гуджарати](../feature_profiles/gujarati.csv), [майтхили](../feature_profiles/maithili.csv), [раджбанши (Непал)](../feature_profiles/rajbanshi_nepal.csv), [цыганский](../feature_profiles/romani.csv), [сингальский](../feature_profiles/sinhala.csv), [гафат](../feature_profiles/gafat.csv), [кота](../feature_profiles/kota.csv), [лидийский](../feature_profiles/lydian.csv), [какабе](../feature_profiles/kakabe.csv), [тура](../feature_profiles/tura.csv)
+- Отсутствуют: [эрзянский](../feature_profiles/erzya.csv), [венгерский](../feature_profiles/hungarian.csv), [коми-зырянский](../feature_profiles/komi_zyrian.csv), [мокшанский](../feature_profiles/moksha.csv), [ненецкий](../feature_profiles/nenets.csv), [маньчжурский](../feature_profiles/manchu.csv), [аланский](../feature_profiles/alanic.csv), [авесты](../feature_profiles/avestan.csv), [хуфский](../feature_profiles/khufi.csv), [мунджанский](../feature_profiles/munji.csv), [осетинский](../feature_profiles/ossetian.csv), [согдийский](../feature_profiles/sogdian.csv), [ваханский](../feature_profiles/wakhi.csv), [язгулямский](../feature_profiles/yazghulami.csv), [африкаанс](../feature_profiles/afrikaans.csv), [далматинский](../feature_profiles/dalmatian.csv), [белорусский](../feature_profiles/belorussian.csv), [болгарский](../feature_profiles/bulgarian.csv), [чешский](../feature_profiles/czech.csv), [кашубский](../feature_profiles/kashubian.csv), [древнерусский](../feature_profiles/old_russian.csv), [словенский](../feature_profiles/slovene.csv), [литовский](../feature_profiles/lithuanian.csv), [гуджарати](../feature_profiles/gujarati.csv), [майтхили](../feature_profiles/maithili.csv), [раджбанши (Непал)](../feature_profiles/rajbanshi_nepal.csv), [цыганский](../feature_profiles/romani.csv), [сингальский](../feature_profiles/sinhala.csv), [гафат](../feature_profiles/gafat.csv), [кота](../feature_profiles/kota.csv), [лидийский](../feature_profiles/lydian.csv), [какабе](../feature_profiles/kakabe.csv), [тура](../feature_profiles/tura.csv)
 - клинопись не позволяет выразить напрямую начальные и конечные сочетания: [палайский](../feature_profiles/palaic.csv)
 - согласные присутствуют в заимствованиях и экспрессивных наречиях: [джого](../feature_profiles/jogo.csv)
 ## D-5: Варианты особенностей слогового состава слова
@@ -456,14 +449,13 @@
 - нет данных: [джого](../feature_profiles/jogo.csv)
 ## D-7: Типы различий между знаменательными и служебными словами
 
-- Отсутствуют: [азиатских эскимосов](../feature_profiles/asiatic_eskimo.csv), [чукотский](../feature_profiles/chukchi.csv), [ительменский](../feature_profiles/itelmen.csv), [керекский](../feature_profiles/kerek.csv), [корякский](../feature_profiles/koryak.csv), [хазара](../feature_profiles/hazaragi.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [татский](../feature_profiles/tati.csv), [бактрийский](../feature_profiles/bactrian.csv), [ишкашимский](../feature_profiles/ishkashimi.csv), [хотаносакский](../feature_profiles/khotanese.csv), [согдийский](../feature_profiles/sogdian.csv), [кати](../feature_profiles/kati.csv), [ирландский](../feature_profiles/irish_gaelic.csv), [валлийский](../feature_profiles/welsh.csv), [французский](../feature_profiles/french.csv), [гасконский](../feature_profiles/gascon.csv), [ладинский](../feature_profiles/ladin.csv), [ретороманский](../feature_profiles/rhaeto_romance.csv), [кашубский](../feature_profiles/kashubian.csv), [полабский](../feature_profiles/polabian.csv), [русский](../feature_profiles/russian.csv), [сербохорватский](../feature_profiles/serbocroatian.csv), [домааки](../feature_profiles/domaaki.csv), [гуджарати](../feature_profiles/gujarati.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [маратхи](../feature_profiles/marathi.csv), [ория](../feature_profiles/oriya.csv), [саураштра](../feature_profiles/saurashtra.csv), [малаялам](../feature_profiles/malayalam.csv), [тамильский](../feature_profiles/tamil.csv), [карийский](../feature_profiles/carian.csv), [древнеармянский](../feature_profiles/classical_armenian.csv), [хеттский](../feature_profiles/hittite.csv), [лувийский](../feature_profiles/luwian.csv), [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv), [палайский](../feature_profiles/palaic.csv), [фригийский](../feature_profiles/phrygian.csv), [восточноармянский литературный](../feature_profiles/standard_eastern_armenian.csv), [западноармянский литературный](../feature_profiles/standard_western_armenian.csv), [тохарский А](../feature_profiles/tocharian_a.csv), [тохарский В](../feature_profiles/tocharian_b.csv), [бен](../feature_profiles/beng.csv), [гуро](../feature_profiles/guro.csv), [кла-дан](../feature_profiles/kla_dan.csv), [кпелле](../feature_profiles/kpelle.csv), [мандинка](../feature_profiles/mandinka.csv), [мано](../feature_profiles/mano.csv), [яурэ](../feature_profiles/yaoure.csv)
+- Отсутствуют: [азиатских эскимосов](../feature_profiles/asiatic_eskimo.csv), [чукотский](../feature_profiles/chukchi.csv), [ительменский](../feature_profiles/itelmen.csv), [керекский](../feature_profiles/kerek.csv), [корякский](../feature_profiles/koryak.csv), [бактрийский](../feature_profiles/bactrian.csv), [ишкашимский](../feature_profiles/ishkashimi.csv), [хотаносакский](../feature_profiles/khotanese.csv), [согдийский](../feature_profiles/sogdian.csv), [кати](../feature_profiles/kati.csv), [ирландский](../feature_profiles/irish_gaelic.csv), [валлийский](../feature_profiles/welsh.csv), [французский](../feature_profiles/french.csv), [гасконский](../feature_profiles/gascon.csv), [ладинский](../feature_profiles/ladin.csv), [ретороманский](../feature_profiles/rhaeto_romance.csv), [кашубский](../feature_profiles/kashubian.csv), [полабский](../feature_profiles/polabian.csv), [русский](../feature_profiles/russian.csv), [сербохорватский](../feature_profiles/serbocroatian.csv), [домааки](../feature_profiles/domaaki.csv), [гуджарати](../feature_profiles/gujarati.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [маратхи](../feature_profiles/marathi.csv), [ория](../feature_profiles/oriya.csv), [саураштра](../feature_profiles/saurashtra.csv), [малаялам](../feature_profiles/malayalam.csv), [тамильский](../feature_profiles/tamil.csv), [карийский](../feature_profiles/carian.csv), [древнеармянский](../feature_profiles/classical_armenian.csv), [хеттский](../feature_profiles/hittite.csv), [лувийский](../feature_profiles/luwian.csv), [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv), [палайский](../feature_profiles/palaic.csv), [фригийский](../feature_profiles/phrygian.csv), [восточноармянский литературный](../feature_profiles/standard_eastern_armenian.csv), [западноармянский литературный](../feature_profiles/standard_western_armenian.csv), [тохарский А](../feature_profiles/tocharian_a.csv), [тохарский В](../feature_profiles/tocharian_b.csv), [бен](../feature_profiles/beng.csv), [гуро](../feature_profiles/guro.csv), [кла-дан](../feature_profiles/kla_dan.csv), [кпелле](../feature_profiles/kpelle.csv), [мандинка](../feature_profiles/mandinka.csv), [мано](../feature_profiles/mano.csv), [яурэ](../feature_profiles/yaoure.csv)
 - нет данных: [ликийский](../feature_profiles/lycian.csv), [гоо](../feature_profiles/goo.csv)
 ## D-9: Типы различий между исконными и заимствованными словами
 
 - Нет данных: [бен](../feature_profiles/beng.csv), [боко](../feature_profiles/boko.csv), [кпелле](../feature_profiles/kpelle.csv), [локо](../feature_profiles/loko.csv), [муан](../feature_profiles/mwan.csv), [тура](../feature_profiles/tura.csv)
 - Отсутствие дополнительных артикуляций.: [тиндинский](../feature_profiles/tindi.csv)
 - Отсутствуют: [бактрийский](../feature_profiles/bactrian.csv), [хотаносакский](../feature_profiles/khotanese.csv), [язгулямский](../feature_profiles/yazghulami.csv), [африкаанс](../feature_profiles/afrikaans.csv), [фризский](../feature_profiles/frisian.csv), [далматинский](../feature_profiles/dalmatian.csv), [старофранцузский](../feature_profiles/old_french.csv), [португальский](../feature_profiles/portuguese.csv), [белорусский](../feature_profiles/belorussian.csv), [русский](../feature_profiles/russian.csv), [словенский](../feature_profiles/slovene.csv), [магахи](../feature_profiles/magahi.csv), [гбан](../feature_profiles/gban.csv)
-- Различия в фонетическом составе и моделях словоизменения: [хазара](../feature_profiles/hazaragi.csv)
 - Различия в фонетическом составе и наличие отдельных словоизменительных классов: [цыганский](../feature_profiles/romani.csv)
 - нет данных: [лувийский](../feature_profiles/luwian.csv), [ликийский](../feature_profiles/lycian.csv), [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv), [палайский](../feature_profiles/palaic.csv), [гоо](../feature_profiles/goo.csv), [яурэ](../feature_profiles/yaoure.csv)
 ## D-11: Типы различий между корневыми и аффиксальными морфемами
@@ -471,9 +463,8 @@
 - Вопрос не изучен: [согдийский](../feature_profiles/sogdian.csv)
 - Ограничения на последовательность (сочетания) согласных: [лезгинский](../feature_profiles/lezgian.csv), [удинский](../feature_profiles/udi.csv)
 - Ограничения на стечения согласных.: [цахурский](../feature_profiles/tsakhur.csv)
-- Отсутствуют: [азиатских эскимосов](../feature_profiles/asiatic_eskimo.csv), [чукотский](../feature_profiles/chukchi.csv), [ительменский](../feature_profiles/itelmen.csv), [керекский](../feature_profiles/kerek.csv), [корякский](../feature_profiles/koryak.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [древнеперсидский](../feature_profiles/old_persian.csv), [персидский](../feature_profiles/persian.csv), [таджикский](../feature_profiles/tajik.csv), [осетинский](../feature_profiles/ossetian.csv), [кати](../feature_profiles/kati.csv), [кховар](../feature_profiles/khowar.csv), [бретонский](../feature_profiles/breton.csv), [ирландский](../feature_profiles/irish_gaelic.csv), [валлийский](../feature_profiles/welsh.csv), [идиш](../feature_profiles/yiddish.csv), [арагонский](../feature_profiles/aragonese.csv), [далматинский](../feature_profiles/dalmatian.csv), [французский](../feature_profiles/french.csv), [истророманский](../feature_profiles/istriot.csv), [чешский](../feature_profiles/czech.csv), [кашубский](../feature_profiles/kashubian.csv), [македонский](../feature_profiles/macedonian.csv), [древнерусский](../feature_profiles/old_russian.csv), [полабский](../feature_profiles/polabian.csv), [русский](../feature_profiles/russian.csv), [сербохорватский](../feature_profiles/serbocroatian.csv), [украинский](../feature_profiles/ukrainian.csv), [ассамский](../feature_profiles/assamese.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [ория](../feature_profiles/oriya.csv), [малаялам](../feature_profiles/malayalam.csv), [карийский](../feature_profiles/carian.csv), [древнеармянский](../feature_profiles/classical_armenian.csv), [лувийский](../feature_profiles/luwian.csv), [ликийский](../feature_profiles/lycian.csv), [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv), [палайский](../feature_profiles/palaic.csv), [фригийский](../feature_profiles/phrygian.csv), [сидетский](../feature_profiles/sidetic.csv), [западноармянский литературный](../feature_profiles/standard_western_armenian.csv), [тохарский В](../feature_profiles/tocharian_b.csv), [бамана](../feature_profiles/bamana.csv), [бен](../feature_profiles/beng.csv), [джого](../feature_profiles/jogo.csv), [кпелле](../feature_profiles/kpelle.csv), [мандинка](../feature_profiles/mandinka.csv), [сонинке](../feature_profiles/soninke.csv), [уан](../feature_profiles/wan.csv)
+- Отсутствуют: [азиатских эскимосов](../feature_profiles/asiatic_eskimo.csv), [чукотский](../feature_profiles/chukchi.csv), [ительменский](../feature_profiles/itelmen.csv), [керекский](../feature_profiles/kerek.csv), [корякский](../feature_profiles/koryak.csv), [осетинский](../feature_profiles/ossetian.csv), [кати](../feature_profiles/kati.csv), [кховар](../feature_profiles/khowar.csv), [бретонский](../feature_profiles/breton.csv), [ирландский](../feature_profiles/irish_gaelic.csv), [валлийский](../feature_profiles/welsh.csv), [идиш](../feature_profiles/yiddish.csv), [арагонский](../feature_profiles/aragonese.csv), [далматинский](../feature_profiles/dalmatian.csv), [французский](../feature_profiles/french.csv), [истророманский](../feature_profiles/istriot.csv), [чешский](../feature_profiles/czech.csv), [кашубский](../feature_profiles/kashubian.csv), [македонский](../feature_profiles/macedonian.csv), [древнерусский](../feature_profiles/old_russian.csv), [полабский](../feature_profiles/polabian.csv), [русский](../feature_profiles/russian.csv), [сербохорватский](../feature_profiles/serbocroatian.csv), [украинский](../feature_profiles/ukrainian.csv), [ассамский](../feature_profiles/assamese.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [ория](../feature_profiles/oriya.csv), [малаялам](../feature_profiles/malayalam.csv), [карийский](../feature_profiles/carian.csv), [древнеармянский](../feature_profiles/classical_armenian.csv), [лувийский](../feature_profiles/luwian.csv), [ликийский](../feature_profiles/lycian.csv), [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv), [палайский](../feature_profiles/palaic.csv), [фригийский](../feature_profiles/phrygian.csv), [сидетский](../feature_profiles/sidetic.csv), [западноармянский литературный](../feature_profiles/standard_western_armenian.csv), [тохарский В](../feature_profiles/tocharian_b.csv), [бамана](../feature_profiles/bamana.csv), [бен](../feature_profiles/beng.csv), [джого](../feature_profiles/jogo.csv), [кпелле](../feature_profiles/kpelle.csv), [мандинка](../feature_profiles/mandinka.csv), [сонинке](../feature_profiles/soninke.csv), [уан](../feature_profiles/wan.csv)
 - Различий не выявлено: [сусу](../feature_profiles/susu.csv)
-- Различия в слоговом составе: [татский](../feature_profiles/tati.csv)
 - Различия в фонетическом составе и тоновые различия: [шина](../feature_profiles/shina.csv)
 - нет данных: [гоо](../feature_profiles/goo.csv)
 ## D-12: Функциональный тип чередований
@@ -726,7 +717,7 @@
 - Глагольное согласование и местоименные клитики: [башкарди](../feature_profiles/bashkardi.csv)
 - Глагольное согласование и послелоги: [курдшули](../feature_profiles/kurdshuli.csv), [Диалекты Большой Соляной пустыни](../feature_profiles/central_persian_desert_dialects.csv)
 - Глагольное согласование, (факультативные) падежные аффиксы, предлоги и послелоги: [ишкашимский](../feature_profiles/ishkashimi.csv)
-- Глагольное согласование, местоименные клитики, предлоги и порядок слов: [Фарса диалекты](../feature_profiles/fars_dialects.csv), [ларская группа диалектов](../feature_profiles/larestani_dialects.csv)
+- Глагольное согласование, местоименные клитики, предлоги и порядок слов: [ларская группа диалектов](../feature_profiles/larestani_dialects.csv)
 - Глагольное согласование, морфонологические средства (мутации начальных согласных) и порядок слов: [валлийский](../feature_profiles/welsh.csv)
 - Глагольное согласование, мутации анлаута и порядок слов: [корнский](../feature_profiles/cornish.csv)
 - Глагольное согласование, падежно-числовые флексии и энклитические формы личных местоимений: [древнерусский](../feature_profiles/old_russian.csv)
@@ -797,6 +788,7 @@
 - Порядок слов, субъектная и объектная форма личных местоимений, падежные формы артикля и глагольное согласование: [люксембургский](../feature_profiles/luxembourgian.csv)
 - Послелоги, глагольное согласование и порядок слов: [Центрального Ирана диалекты](../feature_profiles/central_iran_dialects.csv), [сивенди](../feature_profiles/sivandi.csv), [вонишуни](../feature_profiles/vonishuni.csv), [зефреи](../feature_profiles/zefrei.csv)
 - Послелоги, местоименная реприза, глагольное согласование и порядок слов: [йезди и кермани](../feature_profiles/yazdi_and_kermani.csv)
+- Постпозитивный определенный артикль, глагольное согласование, местоименные клитики, предлоги и порядок слов: [Фарса диалекты](../feature_profiles/fars_dialects.csv)
 - Предлоги, глагольное согласование и порядок слов: [парфянский](../feature_profiles/parthian.csv)
 - Предлоги, глагольное согласование и порядок слов : [яран(д)и](../feature_profiles/yarandi.csv)
 - Предлоги, послелоги и порядок слов: [среднеперсидский](../feature_profiles/middle_persian.csv)
@@ -871,7 +863,6 @@
 - Поссесивные энклитики и послелоги: [вайгали](../feature_profiles/waigali.csv)
 - Предлоги и порядок слов: [хуфский](../feature_profiles/khufi.csv)
 - Предлоги и послелоги: [сангличский](../feature_profiles/sanglechi.csv)
-- Предлоги, послелоги, изафетный показатель, личные местоимения и местоименные энклитики: [хазара](../feature_profiles/hazaragi.csv)
 - Предлоги, послелоги, посессивные определения и порядок слов: [шугнанский](../feature_profiles/shughni.csv)
 - Притяжательное местоимение и артикль (в форме датива): [люксембургский](../feature_profiles/luxembourgian.csv)
 - Притяжательные местоимения (прилагательные), предлоги и суффигированные личные местоимения: [ирландский](../feature_profiles/irish_gaelic.csv)
@@ -890,10 +881,10 @@
 - Притяжательные прилагательные, притяжательные местоимения и энклитические формы личных местоимений в дательном падеже: [сербохорватский](../feature_profiles/serbocroatian.csv)
 - Соположение и посессивные аффиксы: [Диалекты Большой Соляной пустыни](../feature_profiles/central_persian_desert_dialects.csv), [гилянский](../feature_profiles/gilaki.csv), [джавшакани](../feature_profiles/jawshakani.csv), [шамерзади](../feature_profiles/shamerzadi.csv)
 - Соположение и послелоги (проверить у уан и джого): [яурэ](../feature_profiles/yaoure.csv)
+- Соположение, аффиксы, местоимения, местоименные энклитики, предлоги и послелоги: [среднеперсидский](../feature_profiles/middle_persian.csv)
 - Соположение, конструкции с глаголами обладания и предлоги: [согдийский](../feature_profiles/sogdian.csv)
 - Соположение, конструкции с реляционными элементами (релаторами) и изафет: [тура](../feature_profiles/tura.csv)
 - Соположение, личные местоимения и посессивные аффиксы: [биябунеки](../feature_profiles/biyabuneki.csv)
-- Соположение, местоимения, местоименные энклитики, предлоги и послелоги: [среднеперсидский](../feature_profiles/middle_persian.csv)
 - Соположение, посессивные аффиксы и личные местоимения: [курдский](../feature_profiles/kurdish.csv), [ласгерди](../feature_profiles/lasgerdi.csv), [парачи](../feature_profiles/parachi.csv), [сурхеи](../feature_profiles/surkhei.csv)
 - Соположение, посессивные аффиксы и личные местоимения : [Семнана полосы диалекты](../feature_profiles/semnan_dialects.csv)
 - Соположение, посессивные аффиксы и местоименные клитики: [хунсари](../feature_profiles/khunsari.csv)
@@ -902,6 +893,7 @@
 - Соположение, посессивные аффиксы, возвратно-определительные местоимения и местоименные клитики: [яран(д)и](../feature_profiles/yarandi.csv)
 - Соположение, посессивные аффиксы, личные местоимения и местоименные клитики: [кешеи](../feature_profiles/keshei.csv), [кохруди](../feature_profiles/kohrudi.csv)
 - Соположение, посессивные аффиксы, личные местоимения, местоименные клитики и предлоги: [Центрального Ирана диалекты](../feature_profiles/central_iran_dialects.csv)
+- Соположение, посессивные аффиксы, предлоги, послелоги, личные местоимения и местоименные энклитики: [хазара](../feature_profiles/hazaragi.csv)
 - Соположение, посессивные аффиксы, указательные местоимения и предлоги: [ормури](../feature_profiles/ormuri.csv)
 - Соположение, поссесивные аффиксы и местоименные клитики: [зефреи](../feature_profiles/zefrei.csv)
 - Соположение, поссесивные аффиксы и местоименные энклитики : [кати](../feature_profiles/kati.csv)
@@ -953,6 +945,7 @@
 - Нет данных: [тура](../feature_profiles/tura.csv)
 - Падежные флексии, местоимения, наречия и послелоги: [кашмири](../feature_profiles/kashmiri.csv)
 - Падежные флексии, указательные местоимения и послелоги : [шина](../feature_profiles/shina.csv)
+- Предлоги и послелоги: [таджикский](../feature_profiles/tajik.csv)
 - Пространственные падежи и превербы: [осетинский](../feature_profiles/ossetian.csv)
 - Пространственные падежи, местоимения и наречия: [шумашти](../feature_profiles/shumashti.csv)
 - Пространственные падежи, местоимения и послелоги: [бадага](../feature_profiles/badaga.csv)
@@ -971,20 +964,18 @@
 - Указательные местоимения, наречия, именные аффиксы и предлоги: [словенский](../feature_profiles/slovene.csv)
 - Указательные местоимения, наречия, предлоги и послелоги: [ишкашимский](../feature_profiles/ishkashimi.csv), [сарыкольский](../feature_profiles/sariqoli.csv)
 - Указательные местоимения, наречия, пространственные падежи и предлоги: [полабский](../feature_profiles/polabian.csv)
-- Указательные местоимения, предлоги и послелоги: [таджикский](../feature_profiles/tajik.csv)
 - Указательные местоимения, предлоги послелоги: [бартангский](../feature_profiles/bartangi.csv)
 - Указательные местоимения, предлоги, послелоги и превербы: [среднеперсидский](../feature_profiles/middle_persian.csv)
 - Упрелоги.казательные местоимения, местоимения-наречия и: [рошорвский](../feature_profiles/roshorvi.csv)
 - именные аффиксы и специальный подкласс адвербиальных слов, предлоги и послелоги: [ительменский](../feature_profiles/itelmen.csv)
 ## H-7: Маркирование в посессивной конструкции
 
-- Генитив отсутствует: [хазара](../feature_profiles/hazaragi.csv), [лурская и бахтиярская группа диалектов](../feature_profiles/luri_bakhtiari_dialects.csv), [гавар](../feature_profiles/gawar.csv), [кашмири](../feature_profiles/kashmiri.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [кати](../feature_profiles/kati.csv), [кховар](../feature_profiles/khowar.csv), [майян](../feature_profiles/mayan.csv), [прасун](../feature_profiles/prasun.csv), [шина](../feature_profiles/shina.csv), [тирахи](../feature_profiles/tirahi.csv), [торвали](../feature_profiles/torwali.csv)
+- Генитив отсутствует: [гавар](../feature_profiles/gawar.csv), [кашмири](../feature_profiles/kashmiri.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [кати](../feature_profiles/kati.csv), [кховар](../feature_profiles/khowar.csv), [майян](../feature_profiles/mayan.csv), [прасун](../feature_profiles/prasun.csv), [шина](../feature_profiles/shina.csv), [тирахи](../feature_profiles/tirahi.csv), [торвали](../feature_profiles/torwali.csv)
 - Маркирование есть, требует уточнения: [удмуртский](../feature_profiles/udmurt.csv), [хорезмийский](../feature_profiles/khwaresmian.csv), [скифский](../feature_profiles/scythian.csv), [ашкун](../feature_profiles/ashkun.csv), [гарви](../feature_profiles/garwi.csv), [глангали](../feature_profiles/grangali.csv), [калаша](../feature_profiles/kalasha.csv), [пашаи](../feature_profiles/pashai.csv), [пхалура](../feature_profiles/phalura.csv), [сави](../feature_profiles/sawi.csv), [шумашти](../feature_profiles/shumashti.csv), [вайгали](../feature_profiles/waigali.csv), [земиаки](../feature_profiles/zemiaki.csv), [кельтиберский](../feature_profiles/celtiberian.csv), [датский](../feature_profiles/danish.csv), [нидерландский](../feature_profiles/dutch.csv), [английский](../feature_profiles/english.csv), [фарерский](../feature_profiles/faroese.csv), [фризский](../feature_profiles/frisian.csv), [галльский](../feature_profiles/gaulish.csv), [немецкий](../feature_profiles/german.csv), [исландский](../feature_profiles/icelandic.csv), [ирландский](../feature_profiles/irish_gaelic.csv), [лепонтийский](../feature_profiles/lepontic.csv), [норвежский](../feature_profiles/norwegian.csv), [шотландский](../feature_profiles/scottish_gaelic.csv), [шведский](../feature_profiles/swedish.csv), [идиш](../feature_profiles/yiddish.csv), [мегленорумынский](../feature_profiles/megleno_romanian.csv), [белорусский](../feature_profiles/belorussian.csv), [чешский](../feature_profiles/czech.csv), [кашубский](../feature_profiles/kashubian.csv), [старославянский](../feature_profiles/old_church_slavonic.csv), [древненовгородский](../feature_profiles/old_novgorod.csv), [древнерусский](../feature_profiles/old_russian.csv), [полабский](../feature_profiles/polabian.csv), [польский](../feature_profiles/polish.csv), [русский](../feature_profiles/russian.csv), [сербохорватский](../feature_profiles/serbocroatian.csv), [словацкий](../feature_profiles/slovak.csv), [словенский](../feature_profiles/slovene.csv), [серболужицкий](../feature_profiles/sorbian.csv), [украинский](../feature_profiles/ukrainian.csv), [древнееврейский](../feature_profiles/ancient_hebrew.csv), [классический сирийский](../feature_profiles/classical_syriac.csv), [современный иврит](../feature_profiles/modern_hebrew.csv), [финикийский](../feature_profiles/phoenician.csv), [ассамский](../feature_profiles/assamese.csv), [банджари](../feature_profiles/banjari.csv), [бенгальский](../feature_profiles/bengali.csv), [бходжпури](../feature_profiles/bhojpuri.csv), [домари](../feature_profiles/domari.csv), [гуджарати](../feature_profiles/gujarati.csv), [конкани](../feature_profiles/konkani.csv), [майтхили](../feature_profiles/maithili.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [маратхи](../feature_profiles/marathi.csv), [панджаби](../feature_profiles/punjabi.csv), [раджбанши/камта (в Индии и Бангладеш)](../feature_profiles/rajbanshi_kamta.csv), [раджбанши (Непал)](../feature_profiles/rajbanshi_nepal.csv), [цыганский](../feature_profiles/romani.csv), [садани/садри](../feature_profiles/sadani_sadri.csv), [саураштра](../feature_profiles/saurashtra.csv), [сингальский](../feature_profiles/sinhala.csv), [геэз](../feature_profiles/geez.csv), [зай](../feature_profiles/zay.csv), [бадага](../feature_profiles/badaga.csv), [ирула](../feature_profiles/irula.csv), [каннада](../feature_profiles/kannada.csv), [кодагу](../feature_profiles/kodagu.csv), [кота](../feature_profiles/kota.csv), [малаялам](../feature_profiles/malayalam.csv), [тамильский](../feature_profiles/tamil.csv), [телугу](../feature_profiles/telugu.csv), [древнеармянский](../feature_profiles/classical_armenian.csv), [лувийский](../feature_profiles/luwian.csv), [ликийский](../feature_profiles/lycian.csv), [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv), [палайский](../feature_profiles/palaic.csv), [фригийский](../feature_profiles/phrygian.csv), [восточноармянский литературный](../feature_profiles/standard_eastern_armenian.csv), [западноармянский литературный](../feature_profiles/standard_western_armenian.csv), [тохарский А](../feature_profiles/tocharian_a.csv), [тохарский В](../feature_profiles/tocharian_b.csv), [бамана](../feature_profiles/bamana.csv), [гуро](../feature_profiles/guro.csv), [джого](../feature_profiles/jogo.csv), [какабе](../feature_profiles/kakabe.csv), [кла-дан](../feature_profiles/kla_dan.csv), [локо](../feature_profiles/loko.csv), [мандинка](../feature_profiles/mandinka.csv)
 - Маркирование отсутствует: [парфянский](../feature_profiles/parthian.csv)
-- Маркированное: [древнеперсидский](../feature_profiles/old_persian.csv)
 - Маркированное и немаркированное: [дан](../feature_profiles/dan.csv), [яурэ](../feature_profiles/yaoure.csv)
 - Маркированное/немаркированное: [тода](../feature_profiles/toda.csv)
-- Немаркированное: [дари](../feature_profiles/dari.csv), [кумзари](../feature_profiles/kumzari.csv)
+- Немаркированное: [дари](../feature_profiles/dari.csv)
 ## H-8: Падежное оформление одушевленных и неодушевленных имен существительных
 
 - иногда различное: [корейский](../feature_profiles/korean.csv)
@@ -997,7 +988,7 @@
 - Вспомогательный глагол + инфинитив и возвратное местоимение: [тамильский](../feature_profiles/tamil.csv)
 - Вспомогательный глагол + инфинитив/причастие прошедшего времени: [пашто](../feature_profiles/pashto.csv)
 - Вспомогательный глагол + масдар : [курдский](../feature_profiles/kurdish.csv)
-- Вспомогательный глагол + причастие: [дари](../feature_profiles/dari.csv), [катаркалаи](../feature_profiles/katarkalai.csv), [кховар](../feature_profiles/khowar.csv), [майян](../feature_profiles/mayan.csv)
+- Вспомогательный глагол + причастие: [катаркалаи](../feature_profiles/katarkalai.csv), [кховар](../feature_profiles/khowar.csv), [майян](../feature_profiles/mayan.csv)
 - Вспомогательный глагол + причастие и возвратная частица: [серболужицкий](../feature_profiles/sorbian.csv)
 - Вспомогательный глагол + причастие и возвратное местоимение-частица: [древнерусский](../feature_profiles/old_russian.csv)
 - Вспомогательный глагол + причастие и возвратные формы глаголов: [сербохорватский](../feature_profiles/serbocroatian.csv)
@@ -1187,12 +1178,13 @@
 - Местоимения существительные, местоимения-прилагательные и местоименные наречия: [йезди и кермани](../feature_profiles/yazdi_and_kermani.csv)
 - Местоимения-существительные (самостоятельные и энклитические формы) и местоимения-прилагательные: [бактрийский](../feature_profiles/bactrian.csv)
 - Местоимения-существительные и местоименные наречия: [курдшули](../feature_profiles/kurdshuli.csv)
-- Местоимения-существительные, местоимения-прилагательные и местоименные наречия: [кумзари](../feature_profiles/kumzari.csv), [древнеперсидский](../feature_profiles/old_persian.csv), [абдуи](../feature_profiles/abdui.csv), [белуджский](../feature_profiles/balochi.csv), [Диалекты Большой Соляной пустыни](../feature_profiles/central_persian_desert_dialects.csv), [фаризанди](../feature_profiles/farizandi.csv), [гилянский](../feature_profiles/gilaki.csv), [джавшакани](../feature_profiles/jawshakani.csv), [кешеи](../feature_profiles/keshei.csv), [хунсари](../feature_profiles/khunsari.csv), [кохруди](../feature_profiles/kohrudi.csv), [ласгерди](../feature_profiles/lasgerdi.csv), [меймеи](../feature_profiles/meimei.csv), [ормури](../feature_profiles/ormuri.csv), [парфянский](../feature_profiles/parthian.csv), [сивенди](../feature_profiles/sivandi.csv), [сурхеи](../feature_profiles/surkhei.csv), [вонишуни](../feature_profiles/vonishuni.csv), [полабский](../feature_profiles/polabian.csv)
+- Местоимения-существительные, местоимения-прилагательные и местоименные наречия: [дари](../feature_profiles/dari.csv), [кумзари](../feature_profiles/kumzari.csv), [древнеперсидский](../feature_profiles/old_persian.csv), [абдуи](../feature_profiles/abdui.csv), [белуджский](../feature_profiles/balochi.csv), [Диалекты Большой Соляной пустыни](../feature_profiles/central_persian_desert_dialects.csv), [фаризанди](../feature_profiles/farizandi.csv), [гилянский](../feature_profiles/gilaki.csv), [джавшакани](../feature_profiles/jawshakani.csv), [кешеи](../feature_profiles/keshei.csv), [хунсари](../feature_profiles/khunsari.csv), [кохруди](../feature_profiles/kohrudi.csv), [ласгерди](../feature_profiles/lasgerdi.csv), [меймеи](../feature_profiles/meimei.csv), [ормури](../feature_profiles/ormuri.csv), [парфянский](../feature_profiles/parthian.csv), [сивенди](../feature_profiles/sivandi.csv), [сурхеи](../feature_profiles/surkhei.csv), [вонишуни](../feature_profiles/vonishuni.csv), [полабский](../feature_profiles/polabian.csv)
 - Местоимения-существительные, местоимения-прилагательные и местоименные наречия : [яран(д)и](../feature_profiles/yarandi.csv), [заза](../feature_profiles/zaza.csv)
 - Местоимения-существительные, местоимения-прилагательные и местоименные предлоги: [корнский](../feature_profiles/cornish.csv), [ирландский](../feature_profiles/irish_gaelic.csv), [валлийский](../feature_profiles/welsh.csv)
 - Местоимения-существительные, местоимения-прилагательные, местоимения -числительные и местоимения-наречия: [язгулямский](../feature_profiles/yazghulami.csv)
 - Местоимения-существительные, местоимения-прилагательные, местоимения-числительные и местоименные наречия: [болгарский](../feature_profiles/bulgarian.csv)
 - Местоимения-существительные, местоимения-прилагательные, местоименные наречия и квазиместоимения: [польский](../feature_profiles/polish.csv)
+- Местоимения-существительные? местоимения-прилагательные и местоименные наречия: [татский](../feature_profiles/tati.csv)
 - Местоименные наречия и предлоги, прилагательные и существительные: [бретонский](../feature_profiles/breton.csv)
 - Местоименные существительные, прилагательные, числительные и наречия: [телугу](../feature_profiles/telugu.csv)
 ## J-2: Способы выражения дейктических категорий
@@ -1212,7 +1204,6 @@
 - Указательные местоимения и именные флексии: [сави](../feature_profiles/sawi.csv)
 - Указательные местоимения и определенный артикль: [исландский](../feature_profiles/icelandic.csv)
 - Указательные местоимения, артикли и аффиксы: [лурская и бахтиярская группа диалектов](../feature_profiles/luri_bakhtiari_dialects.csv)
-- Указательные местоимения, артикли и послелоги : [дари](../feature_profiles/dari.csv)
 - Указательные местоимения, артикли и превербы: [персидский](../feature_profiles/persian.csv)
 - Указательные местоимения, местоименные наречия, превербы и предлоги: [готский](../feature_profiles/gothic.csv)
 - Указательные местоимения, местоименные прилагательные, местоименные наречия и частицы: [сербохорватский](../feature_profiles/serbocroatian.csv)
@@ -1220,6 +1211,7 @@
 - Указательные местоимения, наречия и числительные: [телугу](../feature_profiles/telugu.csv)
 - Указательные местоимения, наречия,  предлоги и послелоги: [белуджский](../feature_profiles/balochi.csv)
 - Указательные местоимения, наречия, артикли и предлоги: [корнский](../feature_profiles/cornish.csv)
+- Указательные местоимения, наречия, артикли, предлоги и послелоги : [дари](../feature_profiles/dari.csv)
 - Указательные местоимения, наречия, предлоги и послелоги: [фаризанди](../feature_profiles/farizandi.csv), [гилянский](../feature_profiles/gilaki.csv), [джавшакани](../feature_profiles/jawshakani.csv), [ласгерди](../feature_profiles/lasgerdi.csv), [заза](../feature_profiles/zaza.csv), [ишкашимский](../feature_profiles/ishkashimi.csv), [хуфский](../feature_profiles/khufi.csv)
 - Указательные местоимения, определенный артикль, наречия и предлоги: [фарерский](../feature_profiles/faroese.csv)
 - Указательные местоимения, предлоги, послелоги и частицы: [парачи](../feature_profiles/parachi.csv)
@@ -1249,25 +1241,21 @@
 - нет данных: [палайский](../feature_profiles/palaic.csv)
 ## J-5: Морфологическое выражение определенности/неопределенности имени
 
-- Именные аффиксы и послелоги: [фаризанди](../feature_profiles/farizandi.csv), [джавшакани](../feature_profiles/jawshakani.csv)
+- Именные аффиксы и послелоги: [дари](../feature_profiles/dari.csv), [фаризанди](../feature_profiles/farizandi.csv), [джавшакани](../feature_profiles/jawshakani.csv)
 - Именные аффиксы и различное падежное оформление определенного и неопределенного объекта: [белуджский](../feature_profiles/balochi.csv)
 - Именные аффиксы и различное падежное оформление определенного и неопределенного объекта : [мазандеранский](../feature_profiles/mazanderani.csv), [шамерзади](../feature_profiles/shamerzadi.csv)
+- Именные аффиксы, послелоги и местоименные энклитики: [таджикский](../feature_profiles/tajik.csv)
 - Мутация анлаута после определенного артикля: [корнский](../feature_profiles/cornish.csv)
 - Предложный именной показатель определенности: [сарыкольский](../feature_profiles/sariqoli.csv)
 - Предложный показатель определеннго прямого объекта: [рошорвский](../feature_profiles/roshorvi.csv)
 - Препозитивный показатель прямого объекта: [бартангский](../feature_profiles/bartangi.csv)
-- Суффигированные неопределенный артикль и послелог: [дари](../feature_profiles/dari.csv)
-- Суффигированные определенный и неопределенный артикли: [лурская и бахтиярская группа диалектов](../feature_profiles/luri_bakhtiari_dialects.csv)
-- Суффигированные определенный и неопределенный артикли.: [Фарса диалекты](../feature_profiles/fars_dialects.csv)
-- Суффигированные послелоги: [башкарди](../feature_profiles/bashkardi.csv), [хазара](../feature_profiles/hazaragi.csv), [кумзари](../feature_profiles/kumzari.csv), [курдшули](../feature_profiles/kurdshuli.csv)
-- Суффигированный неопределенный артикль: [среднеперсидский](../feature_profiles/middle_persian.csv), [персидский](../feature_profiles/persian.csv), [таджикский](../feature_profiles/tajik.csv)
-- Суффигированный определенный и неопределенный артикль: [ларская группа диалектов](../feature_profiles/larestani_dialects.csv)
 - Суффигированный показатель неопределенности: [тирахи](../feature_profiles/tirahi.csv)
 - местоименная энклитика: [геэз](../feature_profiles/geez.csv)
 ## J-6: Части речи, выражающие определенность/неопределенность имени
 
-- Артикли, местоимения, числительные и послелоги: [джавшакани](../feature_profiles/jawshakani.csv)
+- Артикли, местоимения, числительные и послелоги: [таджикский](../feature_profiles/tajik.csv), [джавшакани](../feature_profiles/jawshakani.csv)
 - Артикли, местоимения, числительные и послелоги : [сангесари](../feature_profiles/sangesari.csv)
+- Артикли, послелоги, местоимения и числительные: [хазара](../feature_profiles/hazaragi.csv)
 - Артикли, числительные и послелоги: [фаризанди](../feature_profiles/farizandi.csv)
 - Артикли, числительные, местоимения и послелоги: [дари](../feature_profiles/dari.csv), [персидский](../feature_profiles/persian.csv)
 - Артикль и притяжательные местоимения (прилагательные) в сочетании с артиклем: [ирландский](../feature_profiles/irish_gaelic.csv)
@@ -1275,12 +1263,11 @@
 - Местоимения и местоименные наречия: [словацкий](../feature_profiles/slovak.csv)
 - Местоимения и сложные прилагательные с местоименной основой: [польский](../feature_profiles/polish.csv)
 - Местоимения, местоименные наречия и частицы: [чешский](../feature_profiles/czech.csv)
-- Местоимения, числительные и местоименные энклитики: [таджикский](../feature_profiles/tajik.csv)
 - Местоимения, числительные и предлоги: [сангличский](../feature_profiles/sanglechi.csv)
 - Прилагательные, местоимения, числительные и частицы: [русский](../feature_profiles/russian.csv)
 ## J-7: Грамматические способы выражения вежливости
 
-- В глагольной группе: [персидский](../feature_profiles/persian.csv), [польский](../feature_profiles/polish.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [синдхи](../feature_profiles/sindhi.csv), [ирула](../feature_profiles/irula.csv), [гбан](../feature_profiles/gban.csv)
+- В глагольной группе: [польский](../feature_profiles/polish.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [синдхи](../feature_profiles/sindhi.csv), [ирула](../feature_profiles/irula.csv), [гбан](../feature_profiles/gban.csv)
 - В глагольной группе, местоимениях и в отрицательном наречии: [сардинский](../feature_profiles/sardinian.csv)
 - В именной группе: [какабе](../feature_profiles/kakabe.csv), [локо](../feature_profiles/loko.csv)
 - в местоимениях и глаголах: [амхарский](../feature_profiles/amharic.csv)
@@ -1303,7 +1290,6 @@
 - Отрицательные глаголы и аффиксы: [ассамский](../feature_profiles/assamese.csv)
 - Отрицательные глаголы, отрицательное спряжение глагола, отрицательные аффиксы и послелоги: [телугу](../feature_profiles/telugu.csv)
 - Отрицательные и запретительные частицы: [кашмири](../feature_profiles/kashmiri.csv)
-- Отрицательные местоимения и отрицательные аффиксы: [персидский](../feature_profiles/persian.csv)
 - Отрицательные местоимения, наречия, (парные) союзы, частицы, предлоги и отрицательный артикль: [немецкий](../feature_profiles/german.csv)
 - Отрицательные наречия, местоимения, прилагательные, союзы и префиксы: [румынский](../feature_profiles/romanian.csv)
 - Отрицательные префиксы (в глагольных формах) и отрицательные местоимения: [пашто](../feature_profiles/pashto.csv)
@@ -1355,7 +1341,7 @@
 
 - Определенность, референтность и число: [локо](../feature_profiles/loko.csv)
 - Определенность, род и падеж: [шугнанский](../feature_profiles/shughni.csv)
-- Определенность/неопределенность: [дари](../feature_profiles/dari.csv), [Фарса диалекты](../feature_profiles/fars_dialects.csv), [ларская группа диалектов](../feature_profiles/larestani_dialects.csv), [лурская и бахтиярская группа диалектов](../feature_profiles/luri_bakhtiari_dialects.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [персидский](../feature_profiles/persian.csv), [абдуи](../feature_profiles/abdui.csv), [белуджский](../feature_profiles/balochi.csv), [Центрального Ирана диалекты](../feature_profiles/central_iran_dialects.csv), [Диалекты Большой Соляной пустыни](../feature_profiles/central_persian_desert_dialects.csv), [фаризанди](../feature_profiles/farizandi.csv), [гилянский](../feature_profiles/gilaki.csv), [гурани](../feature_profiles/gurani.csv), [джавшакани](../feature_profiles/jawshakani.csv), [кешеи](../feature_profiles/keshei.csv), [хунсари](../feature_profiles/khunsari.csv), [кохруди](../feature_profiles/kohrudi.csv), [курдский](../feature_profiles/kurdish.csv), [ласгерди](../feature_profiles/lasgerdi.csv), [мазандеранский](../feature_profiles/mazanderani.csv), [меймеи](../feature_profiles/meimei.csv), [ормури](../feature_profiles/ormuri.csv), [парачи](../feature_profiles/parachi.csv), [сангесари](../feature_profiles/sangesari.csv), [Семнана полосы диалекты](../feature_profiles/semnan_dialects.csv), [шамерзади](../feature_profiles/shamerzadi.csv), [сивенди](../feature_profiles/sivandi.csv), [сурхеи](../feature_profiles/surkhei.csv), [таджриши](../feature_profiles/tajrishi.csv), [талышский](../feature_profiles/talysh.csv), [велатру](../feature_profiles/velatru.csv), [вонишуни](../feature_profiles/vonishuni.csv), [яран(д)и](../feature_profiles/yarandi.csv), [йезди и кермани](../feature_profiles/yazdi_and_kermani.csv), [заза](../feature_profiles/zaza.csv), [зефреи](../feature_profiles/zefrei.csv), [бартангский](../feature_profiles/bartangi.csv), [пашаи](../feature_profiles/pashai.csv), [африкаанс](../feature_profiles/afrikaans.csv), [английский](../feature_profiles/english.csv)
+- Определенность/неопределенность: [башкарди](../feature_profiles/bashkardi.csv), [дари](../feature_profiles/dari.csv), [Фарса диалекты](../feature_profiles/fars_dialects.csv), [хазара](../feature_profiles/hazaragi.csv), [кумзари](../feature_profiles/kumzari.csv), [ларская группа диалектов](../feature_profiles/larestani_dialects.csv), [лурская и бахтиярская группа диалектов](../feature_profiles/luri_bakhtiari_dialects.csv), [среднеперсидский](../feature_profiles/middle_persian.csv), [персидский](../feature_profiles/persian.csv), [таджикский](../feature_profiles/tajik.csv), [абдуи](../feature_profiles/abdui.csv), [белуджский](../feature_profiles/balochi.csv), [Центрального Ирана диалекты](../feature_profiles/central_iran_dialects.csv), [Диалекты Большой Соляной пустыни](../feature_profiles/central_persian_desert_dialects.csv), [фаризанди](../feature_profiles/farizandi.csv), [гилянский](../feature_profiles/gilaki.csv), [гурани](../feature_profiles/gurani.csv), [джавшакани](../feature_profiles/jawshakani.csv), [кешеи](../feature_profiles/keshei.csv), [хунсари](../feature_profiles/khunsari.csv), [кохруди](../feature_profiles/kohrudi.csv), [курдский](../feature_profiles/kurdish.csv), [ласгерди](../feature_profiles/lasgerdi.csv), [мазандеранский](../feature_profiles/mazanderani.csv), [меймеи](../feature_profiles/meimei.csv), [ормури](../feature_profiles/ormuri.csv), [парачи](../feature_profiles/parachi.csv), [сангесари](../feature_profiles/sangesari.csv), [Семнана полосы диалекты](../feature_profiles/semnan_dialects.csv), [шамерзади](../feature_profiles/shamerzadi.csv), [сивенди](../feature_profiles/sivandi.csv), [сурхеи](../feature_profiles/surkhei.csv), [таджриши](../feature_profiles/tajrishi.csv), [талышский](../feature_profiles/talysh.csv), [велатру](../feature_profiles/velatru.csv), [вонишуни](../feature_profiles/vonishuni.csv), [яран(д)и](../feature_profiles/yarandi.csv), [йезди и кермани](../feature_profiles/yazdi_and_kermani.csv), [заза](../feature_profiles/zaza.csv), [зефреи](../feature_profiles/zefrei.csv), [бартангский](../feature_profiles/bartangi.csv), [пашаи](../feature_profiles/pashai.csv), [африкаанс](../feature_profiles/afrikaans.csv), [английский](../feature_profiles/english.csv)
 - Определенность/неопределенность и число: [парфянский](../feature_profiles/parthian.csv)
 ## K-7: Количество типов спряжения глаголов
 
@@ -1426,7 +1412,6 @@
 - В зависимости от морфологического класса прилагательного: [пашто](../feature_profiles/pashto.csv)
 - Есть склоняемые и несклоняемые прилагательные: [швейцарско-немецкий](../feature_profiles/swiss_german.csv)
 - Ограниченно присутствует при определенных условиях: [фризский](../feature_profiles/frisian.csv)
-- Присутствует нерегулярно: [среднеперсидский](../feature_profiles/middle_persian.csv)
 - Присутствует ограниченно: [глангали](../feature_profiles/grangali.csv), [шумашти](../feature_profiles/shumashti.csv)
 - Только в постпозиции. Согласование отсутствует в препозиции к существительным женского рода множественного числа: [ладинский](../feature_profiles/ladin.csv)
 - Только в предикативном употреблении: [мунджанский](../feature_profiles/munji.csv)
