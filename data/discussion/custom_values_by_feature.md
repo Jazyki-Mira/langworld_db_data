@@ -796,6 +796,7 @@
 - Единственное, множественное и собирательное: [ванеци](../feature_profiles/waneci.csv)
 ## G-2: Маркирование единственного числа существительных
 
+- Имеет кумулятивное выражение во флексии совместно с другими грамматическими значениями имени.: [готский](../feature_profiles/gothic.csv)
 - Нулевой показатель ед. числа существительных. Морфологические показатели ед. и мн. числа в системе глагола: [йезди и кермани](../feature_profiles/yazdi_and_kermani.csv)
 - Нулевой показатель ед.числа существительных; личные окончания ед. и мн. числа в системе глагола: [ласгерди](../feature_profiles/lasgerdi.csv)
 ## G-5: Форма числа существительного в сочетании с числительными
@@ -1446,6 +1447,7 @@
 - В глагольной группе: [персидский](../feature_profiles/persian.csv), [польский](../feature_profiles/polish.csv), [мальдивский/дивехи](../feature_profiles/maldivian_dhivehi.csv), [синдхи](../feature_profiles/sindhi.csv), [ирула](../feature_profiles/irula.csv), [гбан](../feature_profiles/gban.csv)
 - В глагольной группе, местоимениях и в отрицательном наречии: [сардинский](../feature_profiles/sardinian.csv)
 - В именной группе: [какабе](../feature_profiles/kakabe.csv), [локо](../feature_profiles/loko.csv)
+- Отсутствуют: [готский](../feature_profiles/gothic.csv)
 - в местоимениях и глаголах: [амхарский](../feature_profiles/amharic.csv)
 - не зафиксировано в текстах: [ликийский](../feature_profiles/lycian.csv)
 - нет данных: [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv), [палайский](../feature_profiles/palaic.csv)
