@@ -28832,13 +28832,13 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 28829,yiddish,A-13,Only diphthongs present,A-13-2,,,Только дифтонги,
 28830,yiddish,A-14,Falling (descending),A-14-2,,,Нисходящие,
 28831,yiddish,A-15,Opposition by presence and absence of voice,A-15-1,,,Противопоставление по звонкости/глухости,
-28832,yiddish,A-16,"Plosives, affricates and fricatives",A-16-3,,,"Взрывные, аффрикаты и фрикативные",
+28832,yiddish,A-16,Plosives and fricatives,A-16-1,,,Взрывные и фрикативные,
 28833,yiddish,A-17,"Labial, coronal, velar/uvular and laryngeal",A-17-4,,,"Губные, переднеязычные, велярные/увулярные и ларингальные",
 28834,yiddish,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
 28835,yiddish,A-19,Alveolar,A-19-3,,,Альвеолярные,
 28836,yiddish,A-20,Velar,A-20-1,,,Велярные,
 28837,yiddish,A-21,Only pharyngeal,A-21-1,,,Только фарингальные,
-28838,yiddish,A-22,By palatalization,A-22-3,,,По палатализации,Противопоставление по палатализации носит маргинальный характер.
+28838,yiddish,A-22,By palatalization,A-22-3,,,По палатализации,
 28839,yiddish,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",Глайд /j/ классифицируется как полугласный.
 28840,yiddish,A-24,"Labial, coronal and guttural",A-24-16,,,"Лабиальные, переднеязычные и заднеязычные",Фонема /r/ может произноситься как постальвеолярный вибрант.
 28841,yiddish,A-25,By palatalization,A-25-3,,,По палатализации,Противопоставление по палатализации носит маргинальный характер.
