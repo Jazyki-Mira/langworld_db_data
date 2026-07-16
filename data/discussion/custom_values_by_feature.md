@@ -343,7 +343,6 @@
 - Неприменимо: [татский](../feature_profiles/tati.csv), [пашто](../feature_profiles/pashto.csv), [арумынский](../feature_profiles/aromanian.csv), [каталонский](../feature_profiles/catalan.csv), [далматинский](../feature_profiles/dalmatian.csv), [истророманский](../feature_profiles/istriot.csv), [истрорумынский](../feature_profiles/istro_romanian.csv), [ладинский](../feature_profiles/ladin.csv), [мегленорумынский](../feature_profiles/megleno_romanian.csv), [домари](../feature_profiles/domari.csv), [конкани](../feature_profiles/konkani.csv), [сингальский](../feature_profiles/sinhala.csv)
 - Основа или конечный гласный слова: [хорезмийский](../feature_profiles/khwaresmian.csv)
 - Первый (корневой) слог: [швейцарско-немецкий](../feature_profiles/swiss_german.csv)
-- Первый слог корня (слова германского происхождения) или антепенультима (слова семитского происхождения): [идиш](../feature_profiles/yiddish.csv)
 - Первый слог слова или тактовой группы: [серболужицкий](../feature_profiles/sorbian.csv)
 - Последний слог за исключением постпозитивных элементов - изафетного показателя, показателя неопределенности/единичности и энклитических местоимений: [кохруди](../feature_profiles/kohrudi.csv)
 - Последний слог основы или корня, а также всегда ударные аффиксы.: [хиналугский](../feature_profiles/khinalug.csv)
@@ -1528,7 +1527,6 @@
 
 - В изафетной конструкции артикль может оформлять определение-прилагательное: [абдуи](../feature_profiles/abdui.csv)
 - Возможно повторное употребление артикля перед именем существительным и прилагательным в функции определения: [хорезмийский](../feature_profiles/khwaresmian.csv)
-- Собственный неопределенный артикль перед каждым членом группы и единый определенный артикль для всей именной группы: [идиш](../feature_profiles/yiddish.csv)
 - артикль присоединяется к определению: [гафат](../feature_profiles/gafat.csv)
 - артикль присоединяется к прилагательному: [аргобба](../feature_profiles/argobba.csv)
 - оба варианта (если определение после сущ - ему тоже артикль): [тигре](../feature_profiles/tigre.csv)
