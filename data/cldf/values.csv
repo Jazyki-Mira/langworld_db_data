@@ -270,7 +270,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 269,afrikaans,A-17,"Labial, coronal, palatal, guttural and laryngeal",A-17-2,,,"Губные, переднеязычные, палатальные, велярные/увулярные и ларингальные",
 270,afrikaans,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
 271,afrikaans,A-20,Velar,A-20-1,,,Велярные,
-272,afrikaans,A-21,Only pharyngeal,A-21-1,,,Только фарингальные,Фарингал /h/ представляет собой изолированную фонему со специфической локализацией.
+272,afrikaans,A-21,Only glottal,A-21-2,,,Только глоттальные,"Фонему /h/ мы квалифицируем кк глоттальную, даже если в статье она названа фарингальной."
 273,afrikaans,A-22,Absent,A-22-1,,,Отсутствуют,В разделах о согласных фонемах и их позиционных реализациях дополнительные артикуляции не упомянуты и графически не обозначены.
 274,afrikaans,A-23,"Nasal, liquid and vibrant",A-23-2,,,"Назальные, плавные и вибранты",
 275,afrikaans,A-24,"Labial, coronal and guttural",A-24-16,,,"Лабиальные, переднеязычные и заднеязычные",Дрожащий плавный реализуется как переднеязычный.
@@ -5271,7 +5271,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 5270,danish,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
 5271,danish,A-19,Dental,A-19-1,,,Дентальные,
 5272,danish,A-20,Velar and uvular,A-20-3,,,Велярные и увулярные,
-5273,danish,A-21,Only pharyngeal,A-21-1,,,Только фарингальные,
+5273,danish,A-21,Only glottal,A-21-2,,,Только глоттальные,"Фонему /h/ мы квалифицируем кк глоттальную, даже если в статье она названа фарингальной."
 5274,danish,A-22,Absent,A-22-1,,,Отсутствуют,В разделах о согласных фонемах и их позиционных реализациях дополнительные артикуляции не упомянуты и графически не обозначены.
 5275,danish,A-23,"Nasal, liquid and vibrant",A-23-2,,,"Назальные, плавные и вибранты",Существует разряд вокализованных согласных (вокоидов).
 5276,danish,A-24,,,,,"Лабиальные, переднеязычные, среднеязычные и увулярные",
@@ -6062,7 +6062,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6061,english,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
 6062,english,A-19,,,,,Интердентальные и альвеолярные,
 6063,english,A-20,Velar,A-20-1,,,Велярные,
-6064,english,A-21,Only pharyngeal,A-21-1,,,Только фарингальные,
+6064,english,A-21,Only glottal,A-21-2,,,Только глоттальные,"Фонему /h/ мы квалифицируем кк глоттальную, даже если в статье она названа фарингальной."
 6065,english,A-22,Absent,A-22-1,,,Отсутствуют,В разделах о согласных фонемах и их позиционных реализациях дополнительные артикуляции не упомянуты и графически не обозначены.
 6066,english,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",Глайды /w/ и /j/ определяются как срединные щелевые сонанты; вибрант /r/ определяется как срединный переднеязычный какуминальный сонант.
 6067,english,A-24,"Labial, coronal, dorsal and guttural",A-24-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
@@ -15128,74 +15128,74 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15127,luxembourgian,A-1,Three,A-1-2,,,Три,
 15128,luxembourgian,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний","Верхний (закрытые), средний (полузакрытые, полуоткрытые и медиальный) и нижний (открытые)."
 15129,luxembourgian,A-4,"Front, central and back",A-4-3,,,"Передний, средний (смешанный) и задний",
-15130,luxembourgian,A-5,Present,A-5-1,,,Присутствуют,
-15131,luxembourgian,A-6,Two,A-6-1,,,Две ступени,
-15132,luxembourgian,A-7,Present,A-7-1,,,Присутствует,
-15133,luxembourgian,A-8,Present for central and back vowels,A-8-6,,,В среднем и заднем рядах,
-15134,luxembourgian,A-9,Absent,A-9-2,,,Отсутствует,
-15135,luxembourgian,A-13,Only diphthongs present,A-13-2,,,Только дифтонги,
-15136,luxembourgian,A-14,Falling (descending),A-14-2,,,Нисходящие,
-15137,luxembourgian,A-15,Opposition by presence and absence of voice,A-15-1,,,Противопоставление по звонкости/глухости,
-15138,luxembourgian,A-16,Plosives and fricatives,A-16-1,,,Взрывные и фрикативные,
-15139,luxembourgian,A-17,"Labial, coronal, palatal, guttural and laryngeal",A-17-2,,,"Губные, переднеязычные, палатальные, велярные/увулярные и ларингальные",
-15140,luxembourgian,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
-15141,luxembourgian,A-19,Dental and postalveolar,A-19-9,,,Дентальные и постальвеолярные,
-15142,luxembourgian,A-20,Velar,A-20-1,,,Велярные,
-15143,luxembourgian,A-21,Only pharyngeal,A-21-1,,,Только фарингальные,
-15144,luxembourgian,A-22,Absent,A-22-1,,,Отсутствуют,
-15145,luxembourgian,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",
-15146,luxembourgian,A-24,"Labial, coronal, dorsal and guttural",A-24-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
-15147,luxembourgian,A-25,Absent,A-25-1,,,Отсутствуют,
-15148,luxembourgian,B-2,Syllable,B-2-1,,,Слог,
-15149,luxembourgian,B-4,Dynamic,B-4-1,,,Динамическое,
-15150,luxembourgian,B-5,Fixed,B-5-2,,,Связанное,
-15151,luxembourgian,B-9,First syllable,B-9-1,,,Начальный слог,
-15152,luxembourgian,B-15,Phonological,B-15-1,,,Фонологическая,
-15153,luxembourgian,B-16,Phoneme,B-16-1,,,Фонема,
-15154,luxembourgian,B-17,Height,B-17-3,,,Подъем,
-15155,luxembourgian,B-18,First vowel of affix,B-18-2,,,Первый гласный аффикса,
-15156,luxembourgian,C-1,Both null and non-null onset possible,C-1-4,,,Есть прикрытые и неприкрытые слоги,
-15157,luxembourgian,C-2,Both null and non-null coda possible,C-2-4,,,Есть закрытые и открытые слоги,
-15158,luxembourgian,D-5,Mainly polysyllabic words,D-5-4,,,Преимущественно неодносложные слова,Вследствие регулярной апокопы конечного гласного в Л.я. много односложных слов.
-15159,luxembourgian,D-9,Differences in phonetic structure,D-9-1,,,Различия в фонетическом составе,
-15160,luxembourgian,D-9,Differences in accentuation,D-9-2,,,Акцентные различия,
-15161,luxembourgian,D-12,Accompanying and distinctive,D-12-4,,,Сопутствующие и смыслоразличительные,
-15162,luxembourgian,D-13,Vowel and consonant alternations,D-13-6,,,Вокалические и консонантные,Чередования позиционные (согласные) и исторические (гласные).
-15163,luxembourgian,E-1,Fusional,E-1-3,,,Флективный,
-15164,luxembourgian,E-2,Internal flection,E-2-1,,,Внутренняя флексия,
-15165,luxembourgian,E-4,Analytic with elements of synthetism,E-4-3,,,Аналитический с элементами синтетизма,
-15166,luxembourgian,F-1,Three,F-1-3,,,Три,
-15167,luxembourgian,F-2,Articles,F-2-1,,,Артикли,
-15168,luxembourgian,F-3,,,,,"В артикле, прилагательном и местоимении",
-15169,luxembourgian,F-5,Only in singular,F-5-2,,,Только в единственном числе,
-15170,luxembourgian,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
-15171,luxembourgian,G-2,Unmarked,G-2-2,,,Немаркированное,
-15172,luxembourgian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,
-15173,luxembourgian,G-5,Singular and plural,G-5-3,,,Единственное и множественное,
-15174,luxembourgian,H-1,Three-seven,H-1-2,,,Три-семь,"Винительный (совмещает функции именительного и винительного), дательный и реликтовая форма флективного родительного."
-15175,luxembourgian,H-2,,,,,"Порядок слов, субъектная и объектная форма личных местоимений, падежные формы артикля и глагольное согласование",
-15176,luxembourgian,H-4,Genitive or dative,H-4-6,,,Генитив или датив,
-15177,luxembourgian,H-5,,,,,Притяжательное местоимение и артикль (в форме датива),
-15178,luxembourgian,H-6,Pronouns and adverbs,H-6-33,,,Местоимения и наречия,
-15179,luxembourgian,I-1,Auxiliary verb + participle,I-1-18,,,Вспомогательный глагол + причастие,
-15180,luxembourgian,I-5,Past,I-5-1,,,Прошедшее,
-15181,luxembourgian,I-5,Present,I-5-2,,,Настоящее,
-15182,luxembourgian,I-5,Future,I-5-3,,,Будущее,
-15183,luxembourgian,I-6,Syncretic,I-6-2,,,Синкретическое,
-15184,luxembourgian,I-7,Auxiliary verbs and affixes,I-7-3,,,Вспомогательный глагол и аффиксы,
-15185,luxembourgian,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
-15186,luxembourgian,I-9,In singular and plural,I-9-3,,,В единственном и множественном числе,
-15187,luxembourgian,J-1,"Pronominal adverbs, adjectives and nouns",J-1-10,,,"Местоименные наречия, прилагательные и существительные",
-15188,luxembourgian,J-2,"Demonstrative pronouns, adverbs, prepositions, and articles",J-2-25,,,"Указательные местоимения, наречия, предлоги и артикли",
-15189,luxembourgian,J-3,Prepositions,J-3-3,,,Предлоги,
-15190,luxembourgian,J-4,Pronouns and adverbs,J-4-6,,,Местоимения и наречия,
-15191,luxembourgian,J-5,Absent,J-5-1,,,Отсутствует,
-15192,luxembourgian,J-6,Articles,J-6-1,,,Артикли,
-15193,luxembourgian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
-15194,luxembourgian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
-15195,luxembourgian,K-3,Same,K-3-1,,,Совпадают,
-15196,luxembourgian,K-4,Preposition,K-4-1,,,Препозиция,
-15197,luxembourgian,K-5,Single article preceding the phrase,K-5-1,,,Единый артикль для всей именной группы,
+15130,luxembourgian,A-5,Absent,A-5-2,,,Отсутствуют,"Долгими бывают только две фонемы из двенадцати: /ɛ/ и /e/. У остальных гласных долгота фиксирована, т.е. одни бывают только долгими, другие только краткими."
+15131,luxembourgian,A-7,Absent,A-7-2,,,Отсутствует,Выведено из отсутствия упоминаний в тексте статьи.
+15132,luxembourgian,A-13,Only diphthongs present,A-13-2,,,Только дифтонги,
+15133,luxembourgian,A-14,Rising (ascending) and falling (descending),A-14-3,,,Восходящие и нисходящие,"Толкование списка дифтонгов: видимо, прописная буква в каждом дитонге означает его неслоговой компонент."
+15134,luxembourgian,A-15,Opposition by presence and absence of voice,A-15-1,,,Противопоставление по звонкости/глухости,
+15135,luxembourgian,A-16,Plosives and fricatives,A-16-1,,,Взрывные и фрикативные,Противоречит со списком примеров под таблицей.
+15136,luxembourgian,A-17,"Labial, coronal, palatal, guttural and laryngeal",A-17-2,,,"Губные, переднеязычные, палатальные, велярные/увулярные и ларингальные",
+15137,luxembourgian,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
+15138,luxembourgian,A-19,Dental and postalveolar,A-19-9,,,Дентальные и постальвеолярные,
+15139,luxembourgian,A-20,Velar,A-20-1,,,Велярные,
+15140,luxembourgian,A-21,Only glottal,A-21-2,,,Только глоттальные,
+15141,luxembourgian,A-22,Absent,A-22-1,,,Отсутствуют,Выведено из отсутствия упоминаний в тексте статьи.
+15142,luxembourgian,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",
+15143,luxembourgian,A-24,"Labial, coronal, dorsal and guttural",A-24-17,,,"Лабиальные, переднеязычные, среднеязычные и заднеязычные",
+15144,luxembourgian,A-25,Absent,A-25-1,,,Отсутствуют,
+15145,luxembourgian,B-1,Stress,B-1-1,,,Ударение,
+15146,luxembourgian,B-2,Syllable,B-2-1,,,Слог,
+15147,luxembourgian,B-3,Phonological,B-3-1,,,Фонологическая,
+15148,luxembourgian,B-4,Dynamic,B-4-1,,,Динамическое,
+15149,luxembourgian,B-5,Fixed,B-5-2,,,Связанное,
+15150,luxembourgian,B-6,Limited,B-6-2,,,Ограниченное,
+15151,luxembourgian,B-7,Flexible and fixed,B-7-3,,,Подвижное и неподвижное,"Выведено с помощью толкования текста: в германской лексике падает на первый слог слова независимо от его грамматической формы, в романских заимствованиях ударение падает на последний слог слова, а значит может менять положение в зависимости от словоформы."
+15152,luxembourgian,B-9,First syllable,B-9-1,,,Начальный слог,Сказано с оговоркой 'как правило'.
+15153,luxembourgian,B-9,Ultima,B-9-4,,,Конечный слог,Сказано с оговоркой 'как правило'.
+15154,luxembourgian,B-15,Phonological,B-15-1,,,Фонологическая,
+15155,luxembourgian,B-16,Phoneme,B-16-1,,,Фонема,
+15156,luxembourgian,B-17,Height,B-17-3,,,Подъем,
+15157,luxembourgian,B-18,First vowel of affix,B-18-2,,,Первый гласный аффикса,
+15158,luxembourgian,C-1,Both null and non-null onset possible,C-1-4,,,Есть прикрытые и неприкрытые слоги,
+15159,luxembourgian,C-2,Both null and non-null coda possible,C-2-4,,,Есть закрытые и открытые слоги,
+15160,luxembourgian,C-3,Consonant clusters are possible at both the onset and the coda of syllable,C-3-4,,,"Стечения согласных возможны и в начале, и в конце слога",См. слоговые модели.
+15161,luxembourgian,D-5,Mainly polysyllabic words,D-5-4,,,Преимущественно неодносложные слова,Вследствие регулярной апокопы конечного гласного в Л.я. много односложных слов.
+15162,luxembourgian,D-8,Present,D-8-2,,,Присутствуют,
+15163,luxembourgian,D-9,Differences in phonetic structure,D-9-1,,,Различия в фонетическом составе,Дана ссылка на фонетические различия; об акцентных см. с. 204.
+15164,luxembourgian,D-9,Differences in accentuation,D-9-2,,,Акцентные различия,Дана ссылка на фонетические различия; об акцентных см. с. 204.
+15165,luxembourgian,D-12,Accompanying and distinctive,D-12-4,,,Сопутствующие и смыслоразличительные,
+15166,luxembourgian,D-13,Vowel and consonant alternations,D-13-6,,,Вокалические и консонантные,Чередования позиционные (согласные) и исторические (гласные).
+15167,luxembourgian,E-1,Fusional,E-1-3,,,Флективный,
+15168,luxembourgian,E-2,Internal flection,E-2-1,,,Внутренняя флексия,
+15169,luxembourgian,E-4,Analytic with elements of synthetism,E-4-3,,,Аналитический с элементами синтетизма,
+15170,luxembourgian,F-1,Three,F-1-3,,,Три,
+15171,luxembourgian,F-2,Articles,F-2-1,,,Артикли,
+15172,luxembourgian,F-3,,,,,"В артикле, прилагательном и местоимении",
+15173,luxembourgian,F-5,Only in singular,F-5-2,,,Только в единственном числе,
+15174,luxembourgian,G-1,Singular and plural,G-1-1,,,Единственное и множественное,
+15175,luxembourgian,G-2,Unmarked,G-2-2,,,Немаркированное,
+15176,luxembourgian,G-4,Predicative and attributive,G-4-4,,,Предикативное и атрибутивное,Дана ссылка на пример склонения прилагательного по числам; о глаголе см. с. 209.
+15177,luxembourgian,H-1,Three-seven,H-1-2,,,Три-семь,"Винительный (совмещает функции именительного и винительного), дательный и реликтовая форма флективного родительного."
+15178,luxembourgian,H-2,,,,,"Порядок слов, субъектная и объектная форма личных местоимений, падежные формы артикля и глагольное согласование",
+15179,luxembourgian,H-4,Dative,H-4-2,,,Датив,Реликтовый генитив сохранился только в застывших словосочетаниях и сложных словах.
+15180,luxembourgian,H-5,,,,,Притяжательное местоимение и артикль (в форме датива),
+15181,luxembourgian,H-6,Pronouns and adverbs,H-6-33,,,Местоимения и наречия,
+15182,luxembourgian,H-9,Absent,H-9-2,,,Отсутствуют,
+15183,luxembourgian,I-1,Auxiliary verb + participle,I-1-18,,,Вспомогательный глагол + причастие,
+15184,luxembourgian,I-5,Past,I-5-1,,,Прошедшее,
+15185,luxembourgian,I-5,Present,I-5-2,,,Настоящее,
+15186,luxembourgian,I-6,Syncretic,I-6-2,,,Синкретическое,
+15187,luxembourgian,I-7,Auxiliary verbs and affixes,I-7-3,,,Вспомогательный глагол и аффиксы,
+15188,luxembourgian,I-8,"Person, number, tense, aspect, and modality (mood)",I-8-17,,,"Лицо, число, время, вид и модальность (наклонение)",
+15189,luxembourgian,I-9,In singular and plural,I-9-3,,,В единственном и множественном числе,
+15190,luxembourgian,J-1,"Pronominal adverbs, adjectives and nouns",J-1-10,,,"Местоименные наречия, прилагательные и существительные",
+15191,luxembourgian,J-2,"Demonstrative pronouns, adverbs, prepositions, and articles",J-2-25,,,"Указательные местоимения, наречия, предлоги и артикли",
+15192,luxembourgian,J-3,Prepositions,J-3-3,,,Предлоги,
+15193,luxembourgian,J-4,Pronouns and adverbs,J-4-6,,,Местоимения и наречия,
+15194,luxembourgian,J-5,Absent,J-5-1,,,Отсутствует,
+15195,luxembourgian,J-6,Articles,J-6-1,,,Артикли,
+15196,luxembourgian,K-1,Pronominal inflection type,K-1-3,,,Собственный тип склонения,
+15197,luxembourgian,K-2,Definite and indefinite,K-2-4,,,Определенный и неопределенный,
 15198,luxembourgian,K-6,"Definiteness, case, gender and number",K-6-11,,,"Определенность, падеж, род и число",Неопределенный артикль не имеет форм множественного числа.
 15199,luxembourgian,K-7,Four types of conjugation,K-7-4,,,Четыре типа спряжения,
 15200,luxembourgian,K-8,Subject,K-8-2,,,Субъектное,
@@ -28847,7 +28847,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 28844,yiddish,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
 28845,yiddish,A-19,Alveolar,A-19-3,,,Альвеолярные,
 28846,yiddish,A-20,Velar,A-20-1,,,Велярные,
-28847,yiddish,A-21,Only pharyngeal,A-21-1,,,Только фарингальные,
+28847,yiddish,A-21,Only glottal,A-21-2,,,Только глоттальные,"Фонему /h/ мы квалифицируем кк глоттальную, даже если в статье она названа фарингальной."
 28848,yiddish,A-22,By palatalization,A-22-3,,,По палатализации,
 28849,yiddish,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",Глайд /j/ классифицируется как полугласный.
 28850,yiddish,A-24,"Labial, coronal and guttural",A-24-16,,,"Лабиальные, переднеязычные и заднеязычные",Фонема /r/ может произноситься как постальвеолярный вибрант.
