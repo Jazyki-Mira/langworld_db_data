@@ -438,6 +438,7 @@
 
 - Нет данных: [гоо](../feature_profiles/goo.csv)
 - От одного до трех слогов в слове: [тамильский](../feature_profiles/tamil.csv)
+- Отсутствуют: [нидерландский](../feature_profiles/dutch.csv)
 - Преимущественно дву- и трехсложные слова.: [лазский](../feature_profiles/laz.csv), [мегрельский](../feature_profiles/mingrelian.csv)
 - Чередуются долгий и краткий слоги: [словацкий](../feature_profiles/slovak.csv)
 - Число слогов от одного до четырех: [валлийский](../feature_profiles/welsh.csv)
@@ -828,7 +829,6 @@
 - Генитив или локатив: [сингальский](../feature_profiles/sinhala.csv)
 - Косвенный падеж с предлогами: [пашто](../feature_profiles/pashto.csv)
 - Отсутствует: [майян](../feature_profiles/mayan.csv)
-- Притяжательный падеж и рудиментарная форма родительного падежа определенного артикля: [нидерландский](../feature_profiles/dutch.csv)
 - Прямой: [прасун](../feature_profiles/prasun.csv), [торвали](../feature_profiles/torwali.csv)
 - Родительно-дательный или косвенный падеж: [согдийский](../feature_profiles/sogdian.csv)
 - Родительно-дательный падеж: [истрорумынский](../feature_profiles/istro_romanian.csv)
