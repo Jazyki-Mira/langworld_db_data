@@ -285,7 +285,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 284,adyghe,M-1,Ergative,M-1-5,,,Эргативная,
 285,adyghe,M-3,SVO,M-3-1,,,SVO,
 286,adyghe,M-4,Modifier follows noun,M-4-2,,,Определение следует за определяемым,
-287,afrikaans,A-1,Three,A-1-2,,,Три,
+287,afrikaans,A-1,Four,A-1-3,,,Четыре,"В добавление к трем рядам в таблице имеется противопоставление /e/ и /ɛ/, /o/ и /ɔ/, которое сообщает о различении верхне-среднего и средне-нижнего подъемов."
 288,afrikaans,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 289,afrikaans,A-4,"Front, central and back",A-4-3,,,"Передний, средний (смешанный) и задний",
 290,afrikaans,A-5,Absent,A-5-2,,,Отсутствуют,Гласные делятся на напряженные (тж. закрытые) и ненапряженные (тж. открытые). Цитата: 'различение кратких и долгих напряженных (закрытых) нефонематично. Открытые долгие гласные (...) являются редкими вариантами соответствующих фонем.'
@@ -6176,13 +6176,13 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6175,domari,N-3,Finite forms,N-3-1,,,Финитные формы,
 6176,domari,N-4,"Subordination, compounding and clause chaining",N-4-5,,,"Сочинение, подчинение и цепочки клауз",
 6177,domari,N-5,Both syndesis and asyndeton possible,N-5-3,,,Союзная и бессоюзная,
-6178,dutch,A-1,Three,A-1-2,,,Три,
+6178,dutch,A-1,Four,A-1-3,,,Четыре,"В добавление к трем рядам в таблице имеется противопоставление /e/ и /ɛ/, которое сообщает о различении верхне-среднего и средне-нижнего подъемов."
 6179,dutch,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 6180,dutch,A-4,"Front, central and back",A-4-3,,,"Передний, средний (смешанный) и задний",
 6181,dutch,A-5,Present,A-5-1,,,Присутствуют,
 6182,dutch,A-6,Two,A-6-1,,,Две ступени,"Традиционно различаются краткие (открытые, ненапряженные) и полудолгие (закрытые, напряженные)."
-6183,dutch,A-7,Present,A-7-1,,,Присутствует,
-6184,dutch,A-8,Present for front vowels,A-8-1,,,В переднем ряду,
+6183,dutch,A-7,Present,A-7-1,,,Присутствует,"В таблице представлены пары символов /i/ и /y/, /e/ и /ø/, /ɔ/ и /o/."
+6184,dutch,A-8,Present for front and back vowels,A-8-5,,,В переднем и заднем / непереднем рядах,"В таблице представлены пары символов /i/ и /y/, /e/ и /ø/, /ɔ/ и /o/."
 6185,dutch,A-9,Absent,A-9-2,,,Отсутствует,
 6186,dutch,A-13,Only diphthongs present,A-13-2,,,Только дифтонги,
 6187,dutch,A-14,Falling (descending),A-14-2,,,Нисходящие,
@@ -6380,7 +6380,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 6379,enets,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
 6380,enets,N-4,Compounding,N-4-3,,,Сочинение,
 6381,enets,N-5,Asyndeton dominant,N-5-2,,,Преобладает бессоюзная,
-6382,english,A-1,Three,A-1-2,,,Три,
+6382,english,A-1,Four,A-1-3,,,Четыре,"В добавление к трем рядам в таблице имеется противопоставление /e/ и /ɛ/, которое сообщает о различении верхне-среднего и средне-нижнего подъемов."
 6383,english,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 6384,english,A-4,"Front, central and back",A-4-3,,,"Передний, средний (смешанный) и задний",В описании перед таблицей даны более подробные сведения о ряде у некоторых гласных.
 6385,english,A-5,Absent,A-5-2,,,Отсутствуют,
@@ -8341,7 +8341,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 8340,georgian,M-4,Modifier precedes noun,M-4-1,,,Определение предшествует определяемому,
 8341,georgian,N-4,Subordination and compounding,N-4-4,,,Сочинение и подчинение,
 8342,georgian,N-5,Both syndesis and asyndeton possible,N-5-3,,,Союзная и бессоюзная,
-8343,german,A-1,Three,A-1-2,,,Три,
+8343,german,A-1,Four,A-1-3,,,Четыре,"В добавление к трем рядам в таблице имеется противопоставление /e:/ и /ɛ:/, которое сообщает о различении верхне-среднего и средне-нижнего подъемов."
 8344,german,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 8345,german,A-4,"Front, central and back",A-4-3,,,"Передний, средний (смешанный) и задний",
 8346,german,A-5,Present,A-5-1,,,Присутствуют,Чистое долготное противопоставление есть только у фонемы /a/ (см. с. 226). У других фонем долгота сопряжена с напряженностью.
@@ -9925,7 +9925,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 9924,hurrian,M-4,Modifier follows noun,M-4-2,,,Определение следует за определяемым,
 9925,hurrian,N-4,Subordination and compounding,N-4-4,,,Сочинение и подчинение,
 9926,hurrian,N-5,Both syndesis and asyndeton possible,N-5-3,,,Союзная и бессоюзная,
-9927,icelandic,A-1,Three,A-1-2,,,Три,
+9927,icelandic,A-1,Four,A-1-3,,,Четыре,"В первом столбце таблицы обозначено только три подъема, но в содержани их отражено четыре."
 9928,icelandic,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний",
 9929,icelandic,A-4,Front and back,A-4-2,,,Передний и непередний / задний,
 9930,icelandic,A-5,Present,A-5-1,,,Присутствуют,
@@ -15893,7 +15893,7 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 15892,luwian,N-3,Finite forms,N-3-1,,,Финитные формы,
 15893,luwian,N-4,Subordination and compounding,N-4-4,,,Сочинение и подчинение,
 15894,luwian,N-5,Syndesis dominant,N-5-1,,,Преобладает союзная,
-15895,luxembourgian,A-1,Three,A-1-2,,,Три,
+15895,luxembourgian,A-1,Four,A-1-3,,,Четыре,"В добавление к трем рядам в таблице имеется противопоставление /e/ и /ɛ/, которое сообщает о различении верхне-среднего и средне-нижнего подъемов."
 15896,luxembourgian,A-2,"Close, mid and open",A-2-3,,,"Верхний, средний и нижний","Верхний (закрытые), средний (полузакрытые, полуоткрытые и медиальный) и нижний (открытые)."
 15897,luxembourgian,A-4,"Front, central and back",A-4-3,,,"Передний, средний (смешанный) и задний",
 15898,luxembourgian,A-5,Absent,A-5-2,,,Отсутствуют,"Долгими бывают только две фонемы из двенадцати: /ɛ/ и /e/. У остальных гласных долгота фиксирована, т.е. одни бывают только долгими, другие только краткими."
