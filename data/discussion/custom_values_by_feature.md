@@ -268,7 +268,6 @@
 - Начальный слог слова или тактовой группы: [чешский](../feature_profiles/czech.csv)
 - Неприменимо: [пашто](../feature_profiles/pashto.csv), [арумынский](../feature_profiles/aromanian.csv), [каталонский](../feature_profiles/catalan.csv), [далматинский](../feature_profiles/dalmatian.csv), [истророманский](../feature_profiles/istriot.csv), [истрорумынский](../feature_profiles/istro_romanian.csv), [ладинский](../feature_profiles/ladin.csv), [мегленорумынский](../feature_profiles/megleno_romanian.csv), [домари](../feature_profiles/domari.csv), [конкани](../feature_profiles/konkani.csv), [сингальский](../feature_profiles/sinhala.csv)
 - Основа или конечный гласный слова: [хорезмийский](../feature_profiles/khwaresmian.csv)
-- Первый (корневой) слог: [швейцарско-немецкий](../feature_profiles/swiss_german.csv)
 - Первый слог слова или тактовой группы: [серболужицкий](../feature_profiles/sorbian.csv)
 - Последний слог основы или корня, а также всегда ударные аффиксы.: [хиналугский](../feature_profiles/khinalug.csv)
 - Слог с долгим или дифтонгоидным гласным: [эвенский](../feature_profiles/even.csv)
