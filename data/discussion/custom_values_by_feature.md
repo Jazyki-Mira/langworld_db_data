@@ -272,6 +272,9 @@
 - Последний слог основы или корня, а также всегда ударные аффиксы.: [хиналугский](../feature_profiles/khinalug.csv)
 - Слог с долгим или дифтонгоидным гласным: [эвенский](../feature_profiles/even.csv)
 - не ясно: [хеттский](../feature_profiles/hittite.csv)
+## B-10: Виды тонем
+
+- Один контурный тон и один ломаный.: [шведский](../feature_profiles/swedish.csv)
 ## B-11: Количество уровневых тонов (уровней регистровых (ровных) тонов)
 
 - Более трёх: [гарви](../feature_profiles/garwi.csv), [боко](../feature_profiles/boko.csv), [дан](../feature_profiles/dan.csv), [гбан](../feature_profiles/gban.csv), [гоо](../feature_profiles/goo.csv), [кла-дан](../feature_profiles/kla_dan.csv), [локо](../feature_profiles/loko.csv), [тура](../feature_profiles/tura.csv), [яурэ](../feature_profiles/yaoure.csv)
@@ -285,7 +288,6 @@
 - Высокий/низкий: [валлийский](../feature_profiles/welsh.csv)
 - Нет данных о контурных тонах: [какабе](../feature_profiles/kakabe.csv)
 - Низкий, средний и высокий: [каннада](../feature_profiles/kannada.csv)
-- Нисходящий (акут) и нисходяще-восходящий (гравис): [шведский](../feature_profiles/swedish.csv)
 - Ровный: [бамана](../feature_profiles/bamana.csv), [боко](../feature_profiles/boko.csv), [гоо](../feature_profiles/goo.csv), [кпелле](../feature_profiles/kpelle.csv), [лоома](../feature_profiles/looma.csv), [тура](../feature_profiles/tura.csv)
 - Ровный и низкий-восходящий: [шина](../feature_profiles/shina.csv)
 - Ровный, восходящий, нисходящий и "скользящий" (в статье понятие не конкретизируется): [бен](../feature_profiles/beng.csv)
