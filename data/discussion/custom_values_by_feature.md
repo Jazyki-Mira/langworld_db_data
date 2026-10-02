@@ -161,7 +161,6 @@
 
 - Гортанные: [мэнкский](../feature_profiles/manx.csv)
 - Ларингальные (нижнефарингальные): [рушанский](../feature_profiles/rushani.csv)
-- Нижнефарингальные: [ирландский](../feature_profiles/irish_gaelic.csv)
 - Отсутствуют: [ашкун](../feature_profiles/ashkun.csv), [вайгали](../feature_profiles/waigali.csv)
 - их нет: [хеттский](../feature_profiles/hittite.csv)
 - нет: [лувийский](../feature_profiles/luwian.csv), [лидийский](../feature_profiles/lydian.csv), [милийский](../feature_profiles/milyan.csv)
