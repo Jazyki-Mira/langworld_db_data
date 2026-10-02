@@ -159,7 +159,6 @@
 - Средненебные и задненебные: [русский](../feature_profiles/russian.csv)
 ## A-21: Типы шумных ларингальных согласных по месту образования
 
-- Гортанные: [мэнкский](../feature_profiles/manx.csv)
 - Ларингальные (нижнефарингальные): [рушанский](../feature_profiles/rushani.csv)
 - Отсутствуют: [ашкун](../feature_profiles/ashkun.csv), [вайгали](../feature_profiles/waigali.csv)
 - их нет: [хеттский](../feature_profiles/hittite.csv)
