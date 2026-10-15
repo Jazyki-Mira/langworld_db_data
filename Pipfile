@@ -4,11 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-tinybear = "~=0.3.1"
 pycldf = "==1.43.1"
 pyperclip = "~=1.11.0"
 setuptools = "~= 82.0.1"
 certifi = "~=2026.5.20"
+tinybear = "*"
 
 [dev-packages]
 black = "*"
@@ -22,4 +22,4 @@ pre-commit = "*"
 langworld-db-data = {editable = true, path = "."}
 
 [requires]
-python_version = "3.9"
+python_version = "3.13"
