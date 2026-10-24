@@ -710,17 +710,17 @@ ID,Language_ID,Parameter_ID,Value,Code_ID,Comment,Source,Value_RU,Comment_RU
 709,alabugat_tatar,L-2,Suffixes,L-2-2,,,Суффиксы,
 710,alabugat_tatar,M-1,Accusative,M-1-3,,,Аккузативная,
 711,alabugat_tatar,N-5,Both syndesis and asyndeton possible,N-5-3,,,Союзная и бессоюзная,
-712,alanic,A-1,,,,,Список из семи гласных фонем по количеству степеней подъема терминологически не интерпретируется,Представляет собой среднее звено  в языковом континууме скифский - аланский - осетинский языки.
-713,alanic,A-5,Present,A-5-1,,,Присутствуют,
-714,alanic,A-6,Two,A-6-1,,,Две ступени,
-715,alanic,A-15,Opposition by presence and absence of voice,A-15-1,,,Противопоставление по звонкости/глухости,Других данных нет.
-716,alanic,A-16,,,,,Список из 19 согласных фонем по способу артикуляции терминологически не интерпретируется. Отмечается отсутствие смычно-гортанных,
-717,alanic,A-17,,,,,Список из 19 согласных фонем по месту образования терминологически не интерпретируется,
-718,alanic,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
-719,alanic,A-20,Velar,A-20-1,,,Велярные,Терминологическая интерпретация отсутствует. Отмечается отсутствие увулярного q.
-720,alanic,A-23,"Nasal, liquid, vibrant and glide",A-23-6,,,"Назальные, плавные, вибранты и глайды",Других данных нет.
-721,alanic,A-24,,,,,Терминологическая интерпретация отсутствует,
-722,alanic,B-15,Phonological,B-15-1,,,Фонологическая,Других данных нет.
+712,alanic,A-5,Present,A-5-1,,,Присутствуют,
+713,alanic,A-6,Two,A-6-1,,,Две ступени,
+714,alanic,A-9,Absent,A-9-2,,,Отсутствует,
+715,alanic,A-13,No diphthongs and triphthongs,A-13-1,,,Дифтонги и трифтонги отсутствуют,
+716,alanic,A-15,Opposition by presence and absence of voice,A-15-1,,,Противопоставление по звонкости/глухости,
+717,alanic,A-16,"Plosives, affricates and fricatives",A-16-3,Glottalized plosives (ejectives)are noted to be absent.,,"Взрывные, аффрикаты и фрикативные",Отмечается отсутствие смычно-гортанных согласных.
+718,alanic,A-17,"Labial, coronal, palatal and velar/uvular",A-17-3,,,"Губные, переднеязычные, палатальные и велярные/увулярные",
+719,alanic,A-18,Bilabial and labiodental,A-18-2,,,Губно-губные и губно-зубные,
+720,alanic,A-20,Velar,A-20-1,The uvular [q] is found to be absent. ,,Велярные, Отмечается отсутствие увулярного q.
+721,alanic,A-23,"Nasal, liquid and vibrant",A-23-2,,,"Назальные, плавные и вибранты",
+722,alanic,B-15,Phonological,B-15-1,,,Фонологическая,
 723,alanic,C-1,Both null and non-null onset possible,C-1-4,,,Есть прикрытые и неприкрытые слоги,
 724,alanic,C-2,Both null and non-null coda possible,C-2-4,,,Есть закрытые и открытые слоги,
 725,alanic,D-2,Only vowels possible,D-2-1,,,Разрешены только гласные,
